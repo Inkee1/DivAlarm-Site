@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DivAlarm</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; padding: 24px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+    .btn { padding: 10px 14px; border:1px solid #ccc; border-radius: 10px; text-decoration:none; color:#111; }
+    select { padding: 10px 14px; border-radius: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Select language</h1>
+
+  <!-- 자주 쓰는 것만 버튼 -->
+  <div class="row">
+    <a class="btn" href="en/" onclick="localStorage.setItem('lang','en')">English</a>
+    <a class="btn" href="ko/" onclick="localStorage.setItem('lang','ko')">한국어</a>
+    <a class="btn" href="ja/" onclick="localStorage.setItem('lang','ja')">日本語</a>
+    <a class="btn" href="es/" onclick="localStorage.setItem('lang','es')">Español</a>
+  </div>
+
+  <!-- 전체 언어는 드롭다운 -->
+  <p style="margin-top:18px;">More languages</p>
+  <select id="langSelect"></select>
+  <button class="btn" id="goBtn" type="button">Go</button>
+
+  <script>
+    // ✅ “실제 폴더”로 존재시키려는 목록(폴더명과 동일)
+    const SUPPORTED = [
+      "en","ko","ru","vi","tr","pt-br","uk","id","ja","de","ur","fil","th","ms","zh-hans","es"
+    ];
+
+    // ✅ 흔한/기기별 언어코드 차이를 폴더명으로 매핑 (alias)
+    const ALIASES = {
+      "pt": "pt-br",        // 포르투갈어 일반이면 브라질로 보내고 싶을 때
+      "pt-pt": "pt-br",     // 필요하면 pt-pt 별도 폴더로 분리 가능
+      "tl": "fil",          // Tagalog -> Filipino 폴더로 통일 추천
+      "zh": "zh-hans",
+      "zh-cn": "zh-hans",
+      "zh-sg": "zh-hans",
+      "zh-hans-cn": "zh-hans",
+      "zh-hans-sg": "zh-hans"
+    };
+
+    const LABELS = {
+      "en":"English","ko":"한국어","ru":"Русский","vi":"Tiếng Việt","tr":"Türkçe",
+      "pt-br":"Português (Brasil)","uk":"Українська","id":"Bahasa Indonesia",
+      "ja":"日本語","de":"Deutsch","ur":"اردو","fil":"Filipino","th":"ไทย",
+      "ms":"Bahasa Melayu","zh-hans":"中文(简体)","es":"Español"
+    };
+
+    const supportedSet = new Set(SUPPORTED);
+
+    function normalize(tag) {
+      if (!tag) return "";
+      return tag.toLowerCase().replace(/_/g, "-");
+    }
+
+    // full -> progressive truncate match: e.g. "pt-br-x" -> "pt-br" -> "pt"
+    function resolve(tag) {
+      let t = normalize(tag);
+      if (!t) return "";
+
+      // alias 우선
+      if (ALIASES[t]) t = ALIASES[t];
+
+      // exact match
+      if (supportedSet.has(t)) return t;
+
+      // truncate 시도 (zh-hans-cn -> zh-hans -> zh)
+      while (t.includes("-")) {
+        t = t.substring(0, t.lastIndexOf("-"));
+        if (ALIASES[t]) t = ALIASES[t];
+        if (supportedSet.has(t)) return t;
+      }
+
+      // 마지막으로 base alias
+      if (ALIASES[t]) return ALIASES[t];
+      return supportedSet.has(t) ? t : "";
+    }
+
+    function pickBestLang() {
+      const qsLang = new URLSearchParams(location.search).get("lang");
+      const saved = localStorage.getItem("lang");
+
+      // 1) ?lang=xx 우선
+      let r = resolve(qsLang);
+      if (r) return r;
+
+      // 2) 저장값
+      r = resolve(saved);
+      if (r) return r;
+
+      // 3) 브라우저 언어들
+      const list = (navigator.languages && navigator.languages.length)
+        ? navigator.languages
+        : [navigator.language || "en"];
+
+      for (const l of list) {
+        r = resolve(l);
+        if (r) return r;
+      }
+
+      return "en";
+    }
+
+    function go(lang) {
+      const l = resolve(lang) || "en";
+      localStorage.setItem("lang", l);
+      // ✅ 상대경로로 이동 (GitHub Pages 프로젝트 경로에서도 안전)
+      location.replace(new URL(l + "/", location.href).toString());
+    }
+
+    // dropdown 채우기
+    const sel = document.getElementById("langSelect");
+    for (const code of SUPPORTED) {
+      const opt = document.createElement("option");
+      opt.value = code;
+      opt.textContent = `${LABELS[code] || code} (${code})`;
+      sel.appendChild(opt);
+    }
+
+    document.getElementById("goBtn").onclick = () => go(sel.value);
+
+    // 자동 이동 (원치 않으면 이 줄을 주석처리하면 됨)
+    go(pickBestLang());
+  </script>
+</body>
+</html>
