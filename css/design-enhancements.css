@@ -2046,3 +2046,62 @@ input, select, textarea, button {
 code, pre, kbd, samp {
   font-family: var(--font-mono) !important;
 }
+
+/* ============================================
+   Login/Signup mobile fixes (must be AFTER base !important rules)
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+  .section_hero {
+    padding: 0 12px !important;
+  }
+
+  .hero_grid {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .hero_left-content {
+    width: 92vw !important;
+    max-width: 520px !important;
+    padding: 34px 20px !important;
+    border-radius: 22px !important;
+  }
+
+  .hero_heading {
+    font-size: 2.2rem !important;
+    margin-bottom: 26px !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .form_text-field {
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .hero_button.orange_button,
+  .button-6,
+  .hero_button-copy {
+    padding: 14px 18px !important;
+    font-size: 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .hero_button-div {
+    gap: 12px !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .hero_left-content {
+    width: 94vw !important;
+    max-width: 420px !important;
+    padding: 28px 16px !important;
+  }
+
+  .hero_heading {
+    font-size: 1.95rem !important;
+    margin-bottom: 22px !important;
+  }
+}
