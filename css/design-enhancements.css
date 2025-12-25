@@ -336,6 +336,35 @@ h1, h2, h3, .centered-heading, .centered-heading-copy,
   gap: 20px;
 }
 
+/* Navbar alignment fix (multi-language / font fallback safe)
+   - Prevent dropdown labels from getting extra padding/height
+   - Force consistent vertical centering across links/toggles/buttons */
+.nav-menu-three,
+.nav-menu-block {
+  align-items: center !important;
+}
+
+.nav-link,
+.nav-link-accent,
+.nav-dropdown-toggle,
+.auth-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 1.15 !important;
+  min-height: 36px !important;
+}
+
+.nav-dropdown-toggle {
+  padding: 8px 30px 8px 14px !important;
+}
+
+.nav-dropdown-toggle .text-block-9,
+.nav-dropdown-toggle .text-block-10 {
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.15 !important;
+}
+
 .nav-menu-three {
   background: transparent !important;
 }
@@ -1979,4 +2008,41 @@ body {
   pointer-events: none;
   mask-image: radial-gradient(ellipse 100% 70% at 50% 50%, black 0%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse 100% 70% at 50% 50%, black 0%, transparent 70%);
+}
+
+/* ============================================
+   FONT OVERRIDES (easy customization)
+   - Edit `--font-display` and `--font-body` in :root at the top of this file.
+   - Keep `!important` so this wins over Webflow-exported CSS.
+   ============================================ */
+
+body {
+  font-family: var(--font-body) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.centered-heading, .centered-heading-copy, .centered-heading-copy2, .centered-heading-copy3,
+.small-head, .small-head-copy,
+.pricing-title, .pricing-title-2,
+.heading-small,
+.hero_heading,
+.bold-text {
+  font-family: var(--font-display) !important;
+}
+
+.nav-link, .text-block-9, .text-block-10,
+.nav-dropdown-link,
+.auth-btn,
+.margin-bottom-24px, .margin-bottom-cap,
+.testimonial-text-four, .text-block-11,
+.text-size-small, .text-size-small.text-color-gray,
+.form_text-field, .form_link-text,
+.hero_button, .hero_button-copy, .button-6,
+.w-input, .w-select, .w-button,
+input, select, textarea, button {
+  font-family: var(--font-body) !important;
+}
+
+code, pre, kbd, samp {
+  font-family: var(--font-mono) !important;
 }
