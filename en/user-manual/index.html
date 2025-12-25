@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Manual - DivAlarm</title>
+    <meta http-equiv="refresh" content="0; url=../user-manual.html" />
+    <script>
+      (function () {
+        // Support:
+        //   /en/user-manual#ei  -> /en/user-manual.html#ei
+        //   /en/user-manual/ei  -> /en/user-manual.html#ei
+        var target = "../user-manual.html";
+        var search = window.location.search || "";
+        var hash = window.location.hash || "";
+        if (!hash) {
+          var path = window.location.pathname || "";
+          var m = path.match(/\/user-manual\/([^\/]+)\/?$/);
+          if (m && m[1]) hash = "#" + m[1];
+        }
+        window.location.replace(target + search + hash);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>
+      Redirecting… If nothing happens,
+      <a href="../user-manual.html">open the user manual</a>.
+    </p>
+  </body>
+</html>
+
+

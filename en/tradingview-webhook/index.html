@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TradingView Webhook Guide - DivAlarm</title>
+    <meta http-equiv="refresh" content="0; url=../tradingview-webhook.html" />
+    <script>
+      (function () {
+        // Support:
+        //   /en/tradingview-webhook#keyword  -> /en/tradingview-webhook.html#keyword
+        //   /en/tradingview-webhook/keyword  -> /en/tradingview-webhook.html#keyword
+        var target = "../tradingview-webhook.html";
+        var search = window.location.search || "";
+        var hash = window.location.hash || "";
+        if (!hash) {
+          var path = window.location.pathname || "";
+          var m = path.match(/\/tradingview-webhook\/([^\/]+)\/?$/);
+          if (m && m[1]) hash = "#" + m[1];
+        }
+        window.location.replace(target + search + hash);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>
+      Redirecting… If nothing happens,
+      <a href="../tradingview-webhook.html">open the guide</a>.
+    </p>
+  </body>
+</html>
+
+
