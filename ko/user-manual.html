@@ -1,4 +1,4 @@
-html
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="utf-8"/>
@@ -42,6 +42,7 @@ html
       margin-bottom: 2rem;
       background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
@@ -162,6 +163,8 @@ html
       .manual-section h2 { font-size: 1.8rem; }
       .manual-section h3 { font-size: 1.4rem; }
       .manual-section p, .manual-section li { font-size: 1.1rem; }
+      /* 모바일에서 inline max-width(예: style="max-width: 500px")도 컨테이너 폭을 넘지 않게 */
+      .manual-section img { max-width: 100% !important; }
       .image-row img { max-width: 100%; min-width: auto; }
     }
   </style>

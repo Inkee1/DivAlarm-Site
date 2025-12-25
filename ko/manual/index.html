@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>매뉴얼 - DivAlarm</title>
+    <meta http-equiv="refresh" content="0; url=../user-manual.html" />
+    <script>
+      (function () {
+        var target = "../user-manual.html";
+        var search = window.location.search || "";
+        var hash = window.location.hash || "";
+        if (!hash) {
+          var path = window.location.pathname || "";
+          var m = path.match(/\/manual\/([^\/]+)\/?$/);
+          if (m && m[1]) hash = "#" + m[1];
+        }
+        window.location.replace(target + search + hash);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>
+      매뉴얼로 이동 중… 자동으로 이동하지 않으면
+      <a href="../user-manual.html">여기</a>를 눌러주세요.
+    </p>
+  </body>
+</html>
+
+
