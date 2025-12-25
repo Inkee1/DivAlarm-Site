@@ -160,6 +160,12 @@ h1, h2, h3, .centered-heading, .centered-heading-copy,
   background-clip: text;
 }
 
+/* Hero question lines (index page) - slightly larger than the base h1,
+   but still smaller than the orange headline above. */
+.hero-question {
+  font-size: 1.09em;
+}
+
 /* Orange Accent Heading */
 .centered-heading-copy {
   font-size: clamp(1.8rem, 4.5vw, 2.8rem) !important;
@@ -204,6 +210,8 @@ h1, h2, h3, .centered-heading, .centered-heading-copy,
   padding-left: 28px;
   text-shadow: none !important;
   font-weight: 600 !important;
+  line-height: 1.4 !important;
+  padding-bottom: 4px !important;
 }
 
 .small-head.margin-bottom-32px::before,
@@ -240,6 +248,7 @@ h1, h2, h3, .centered-heading, .centered-heading-copy,
   font-style: normal !important;  /* 이탤릭 아님 */
   -webkit-text-fill-color: rgba(180, 200, 220, 0.85) !important;
   background: none !important;
+  text-align: center !important;
 }
 
 .text-block-11 {
@@ -594,6 +603,13 @@ h1, h2, h3, .centered-heading, .centered-heading-copy,
   box-shadow: 
     0 4px 22px rgba(234, 88, 12, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Main hero CTA: make it consistently wider (works especially when parent is a flex container) */
+.hero-heading-center .button-8,
+.section-22 .button-8,
+.section-copy .button-8 {
+  width: min(520px, 92vw) !important;
 }
 
 .button-8:hover {
@@ -1157,7 +1173,7 @@ h1, h2, h3, .centered-heading, .centered-heading-copy,
   }
   
   .centered-heading-copy {
-    font-size: 2.5rem !important;  /* 주황색 타이틀 (It's Essential...) */
+    font-size: 2.6rem !important;  /* 주황색 타이틀 (It's Essential...) */
     padding: 0 5px !important;
   }
   
@@ -1778,10 +1794,14 @@ h1, h2, h3, .centered-heading, .centered-heading-copy,
   background: var(--bg-card) !important;
   border: 1px solid var(--border-subtle);
   border-radius: 18px !important;
-  padding: 22px 32px !important;
+  padding: 28px 48px !important;
   transition: var(--transition-smooth);
   width: auto !important;
-  min-width: 230px;
+  min-width: 260px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
 }
 
 .div-block-4:hover, .div-block-4-copy:hover {
@@ -1793,7 +1813,7 @@ h1, h2, h3, .centered-heading, .centered-heading-copy,
 .text-block-4, .text-block-4-copy, .text-block-5, .text-block-5-copy {
   font-family: 'Exo', 'Droid Sans', sans-serif!important;
   font-weight: 600 !important;
-  font-size: 1.2rem !important;
+  font-size: 1.5rem !important;
   color: var(--text-primary) !important;
 }
 
@@ -1815,6 +1835,11 @@ h1, h2, h3, .centered-heading, .centered-heading-copy,
 .image {
   filter: brightness(1.1);
   transition: var(--transition-smooth);
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: contain !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
 }
 
 .div-block-4:hover .image,

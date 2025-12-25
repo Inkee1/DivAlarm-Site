@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="utf-8"/>
+<title>TradingView ویب ہُک گائیڈ - DivAlarm</title>
+<meta content="TradingView ویب ہُک گائیڈ - DivAlarm" property="og:title"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
+      color: #f8fafc;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+    
+    .manual-container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 50px 40px;
+    }
+    
+    .back-link {
+      display: inline-block;
+      color: #00d4ff;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 0.8; }
+    
+    .manual-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .toc {
+      background: rgba(12, 12, 24, 0.9);
+      padding: 2rem 2.5rem;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+    }
+    .toc h3 {
+      color: #00d4ff;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .toc ul { list-style: none; }
+    .toc li { margin: 0.8rem 0; }
+    .toc a {
+      color: rgba(248, 250, 252, 0.85);
+      text-decoration: none;
+      font-size: 1.15rem;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: #00d4ff; }
+    
+    .manual-section {
+      margin-bottom: 4rem;
+    }
+    .manual-section h2 {
+      font-size: 2.2rem;
+      color: #00d4ff;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+    }
+    .manual-section h3 {
+      font-size: 1.6rem;
+      color: #f97316;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .manual-section p {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+      color: rgba(248, 250, 252, 0.9);
+    }
+    .manual-section ol, .manual-section ul {
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .manual-section li {
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.8;
+    }
+    .manual-section img {
+      max-width: 100%;
+      height: auto !important;
+      object-fit: contain !important;
+      border-radius: 12px;
+      margin: 2rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    .manual-section strong {
+      color: #00d4ff;
+    }
+    .manual-section code {
+      background: rgba(0, 212, 255, 0.15);
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: #fbbf24;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.05rem;
+    }
+    
+    .highlight {
+      background: rgba(0, 212, 255, 0.12);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border-left: 5px solid #00d4ff;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+    }
+    .warning {
+      background: rgba(249, 115, 22, 0.12);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border-left: 5px solid #f97316;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+    }
+    
+    .code-block {
+      background: rgba(12, 12, 24, 0.95);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      margin: 1.5rem 0;
+      font-family: 'JetBrains Mono', monospace;
+      overflow-x: auto;
+    }
+    .code-block p {
+      margin: 0.5rem 0;
+      color: #fbbf24;
+      font-size: 1.1rem;
+    }
+    .code-block .desc {
+      color: rgba(248, 250, 252, 0.6);
+      font-size: 1rem;
+      margin-left: 1rem;
+    }
+    
+    .image-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 2rem 0;
+    }
+    .image-row img {
+      max-width: 48%;
+      min-width: 300px;
+      height: auto !important;
+    }
+    .image-row > div {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    @media (max-width: 768px) {
+      .manual-container { padding: 30px 20px; }
+      .manual-title { font-size: 2.2rem; }
+      .manual-section h2 { font-size: 1.8rem; }
+      .manual-section h3 { font-size: 1.4rem; }
+      .manual-section p, .manual-section li { font-size: 1.1rem; }
+      /* Override any inline max-width (e.g., style="max-width: 680px") on mobile */
+      .manual-section img { max-width: 100% !important; }
+      .image-row img { max-width: 100%; min-width: auto; }
+      .code-block p { font-size: 0.95rem; }
+    }
+  </style>
+<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
+<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="manual-container">
+<a class="back-link" href="user-manual.html">← یوزر مینوئل پر واپس جائیں</a>
+<h1 class="manual-title">🔗 TradingView ویب ہُک گائیڈ</h1>
+<!-- Table of Contents -->
+<div class="toc">
+<h3>📋 فہرستِ مضامین</h3>
+<ul>
+<li><a href="#keyword">کی ورڈ الرٹس</a></li>
+<li><a href="#auto-order">TradingView کے ساتھ آٹو-آرڈر</a></li>
+<li><a href="#divalarm-keywords">DivAlarm سگنل کی ورڈز</a></li>
+<li><a href="#combination">سگنل کمبینیشن الرٹس</a></li>
+</ul>
+</div>
+<!-- Keyword Alerts Section -->
+<div class="manual-section" id="keyword">
+<h2>🔔 کی ورڈ الرٹس</h2>
+<h3>TradingView میں ویب ہُک شامل کرنا</h3>
+<img alt="TradingView الرٹ شامل کریں" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>TradingView میں جس انڈیکیٹر سے آپ سگنلز لینا چاہتے ہیں اس پر رائٹ کلک کریں اور "Add Alert on ~" پر کلک کریں۔</p>
+<img alt="Webhook URL سیٹنگ" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
+<img alt="نوٹیفکیشن سیٹنگز" src="../images/image_tv.png" style="max-width: 600px;"/>
+<p>"Notifications" سیکشن میں "Webhook URL" کو چیک کریں اور ایپ سے کاپی کیا گیا ایڈریس نیچے والے اِن پٹ فیلڈ میں پیسٹ کریں۔</p>
+<p>ایک بار سیٹ ہو جائے تو، دیگر الرٹس کے لیے یہ خودکار طور پر چیک/فل ہو جائے گا۔</p>
+<img alt="میسج سیٹنگز" src="../images/image%201_tv.png" style="max-width: 680px;"/>
+<p>"Messages" سیکشن میں "Message" کے تحت، کوئی بھی کی ورڈ شامل کریں جو آپ چاہتے ہیں (مثلاً "AAA")۔</p>
+<p>TradingView الرٹ شیڈول کرنے کے لیے "Create" پر کلک کریں۔</p>
+<h3>ایپ میں TradingView الرٹس وصول کرنا</h3>
+<img alt="ایپ کی ورڈ سیٹنگز" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>ایپ میں 'Keyword Include' سیکشن میں کی ورڈ (مثلاً "AAA") شامل کریں۔ جب TradingView الرٹ کے "Message" میں وہ کی ورڈ موجود ہو، تو ترتیب کے مطابق الارم بجے گا۔</p>
+</div>
+<!-- Auto-Order Section -->
+<div class="manual-section" id="auto-order">
+<h2>🤖 TradingView الرٹس کے ساتھ آٹو-آرڈر</h2>
+<img alt="آٹو-آرڈر سیٹنگز" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>جب کی ورڈ الرٹس موصول ہوں تو آپ ایکسچینجز کو بھیجنے کے لیے 'Auto-Orders' سیٹ اپ کر سکتے ہیں۔</p>
+<img alt="ایکسچینج API سیٹنگز" src="../images/image%202_tv.png" style="max-width: 500px;"/>
+<div class="highlight">
+<p>آٹو-آرڈرز کے لیے سپورٹڈ ایکسچینجز: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
+<p>آپ کو ایپ کے Settings صفحے میں API keys درج کرنا ہوں گی۔</p>
+</div>
+</div>
+<!-- DivAlarm Keywords Section -->
+<div class="manual-section" id="divalarm-keywords">
+<h2>📝 DivAlarm سگنلز کو کی ورڈز کے طور پر رجسٹر کرنا</h2>
+<img alt="DivAlarm سگنل کی ورڈز" src="../images/image%203_tv.png" style="max-width: 500px;"/>
+<p>DivAlarm کے اپنے الرٹس کو بھی 'Keyword Combinations' میں شامل کیا جا سکتا ہے (کمبینیشن الرٹس یا آٹو-آرڈرز کے لیے)۔</p>
+<div class="highlight">
+<p><strong>فارمیٹ:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+</div>
+<p><strong>الارم کی اقسام:</strong></p>
+<ul>
+<li><code>@D</code> — RSI ڈائیورجنس فلٹرز</li>
+<li><code>@E</code> — اضافی انڈیکیٹرز</li>
+<li><code>@P</code> — پرائس الرٹس</li>
+</ul>
+<h3>مثالیں</h3>
+<div class="code-block">
+<p><code>"@D@BTC@Bull@5m@1m"</code></p>
+<p class="desc">→ RSI ڈائیورجنس، BTCUSDT.P، عنوان میں "Bull" شامل ہے، Forming، مین 5m، سب 1m</p>
+</div>
+<div class="code-block">
+<p><code>"@D@ETH@Bear@15m@O"</code></p>
+<p class="desc">→ RSI ڈائیورجنس، ETHUSDT.P، عنوان میں "Bear" شامل ہے، Complete، 15m، کوئی سب ٹائم فریم نہیں</p>
+</div>
+<img alt="کی ورڈ کی مثال" src="../images/image%204_tv.png" style="max-width: 500px;"/>
+<div class="code-block">
+<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ اضافی انڈیکیٹر، BTC کوائن، عنوان میں "Sell" شامل ہے، 30m</span></p>
+<p><code>"@E@BTC@Buy@1h"</code></p>
+<p><code>"@E@ETH@Breakout@15m"</code></p>
+<p><code>"@E@BTC@Breakdown@5m"</code></p>
+<p><code>"@E@BTC@Near Support@1m"</code></p>
+<p><code>"@E@BTC@Near Resistance@5m"</code></p>
+<p><code>"@E@BTC@EMA50@1h"</code></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ پرائس الرٹ، BTC کوائن، عنوان میں "Up" شامل ہے</span></p>
+<p><code>"@P@ETH@Down"</code></p>
+</div>
+</div>
+<!-- Combination Alerts Section -->
+<div class="manual-section" id="combination">
+<h2>🔀 سگنل کمبینیشن الرٹس</h2>
+<p>نئے یا فلٹرڈ سگنلز بنانے کے لیے متعدد TradingView سگنلز کو یکجا کریں۔</p>
+<div class="image-row">
+<img alt="کمبینیشن الرٹ سیٹنگز" src="../images/image%205_tv.png"/>
+<div>
+<p>ایسی شرائط سیٹ کریں جو الارمز کے ٹرگر ہونے کے لیے ایک وقت کی ونڈو کے اندر پوری ہونا ضروری ہوں۔</p>
+<p><strong>مثال:</strong><br/>
+          1 گھنٹہ 30 منٹ کے اندر:<br/>
+          • 'کی ورڈ A کے ساتھ الرٹ' AND<br/>
+          • 'کی ورڈ B کے ساتھ الرٹ' دونوں موصول ہوں، OR<br/>
+          • 'کی ورڈ C کے ساتھ الرٹ' موصول ہو</p>
+<p>درج کریں <code>(1&amp;2)|3</code> 'Alarm Combination' میں اور <code>1h 30m</code> 'Time Combination' میں۔</p>
+</div>
+</div>
+<div class="highlight">
+<p><strong>&amp;</strong> = "AND" (دونوں شرائط پوری ہونا ضروری ہیں)</p>
+<p><strong>|</strong> = "OR" (کسی ایک شرط کا پورا ہونا کافی ہے)</p>
+<p>اگر انفرادی کی ورڈ الارمز غیر فعال بھی ہوں، تب بھی شرائط پوری ہونے پر کمبینیشن ٹرگر ہو سکتا ہے۔</p>
+<p><strong>کمبینیشن الرٹس کے ساتھ آٹو-آرڈرز بھی ممکن ہیں!</strong></p>
+</div>
+</div>
+</div>
+</body>
+</html>

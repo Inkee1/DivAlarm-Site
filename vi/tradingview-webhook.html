@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<title>TradingView Hướng dẫn Webhook - DivAlarm</title>
+<meta content="TradingView Hướng dẫn Webhook - DivAlarm" property="og:title"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
+      color: #f8fafc;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+    
+    .manual-container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 50px 40px;
+    }
+    
+    .back-link {
+      display: inline-block;
+      color: #00d4ff;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 0.8; }
+    
+    .manual-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .toc {
+      background: rgba(12, 12, 24, 0.9);
+      padding: 2rem 2.5rem;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+    }
+    .toc h3 {
+      color: #00d4ff;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .toc ul { list-style: none; }
+    .toc li { margin: 0.8rem 0; }
+    .toc a {
+      color: rgba(248, 250, 252, 0.85);
+      text-decoration: none;
+      font-size: 1.15rem;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: #00d4ff; }
+    
+    .manual-section {
+      margin-bottom: 4rem;
+    }
+    .manual-section h2 {
+      font-size: 2.2rem;
+      color: #00d4ff;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+    }
+    .manual-section h3 {
+      font-size: 1.6rem;
+      color: #f97316;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .manual-section p {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+      color: rgba(248, 250, 252, 0.9);
+    }
+    .manual-section ol, .manual-section ul {
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .manual-section li {
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.8;
+    }
+    .manual-section img {
+      max-width: 100%;
+      height: auto !important;
+      object-fit: contain !important;
+      border-radius: 12px;
+      margin: 2rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    .manual-section strong {
+      color: #00d4ff;
+    }
+    .manual-section code {
+      background: rgba(0, 212, 255, 0.15);
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: #fbbf24;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.05rem;
+    }
+    
+    .highlight {
+      background: rgba(0, 212, 255, 0.12);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border-left: 5px solid #00d4ff;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+    }
+    .warning {
+      background: rgba(249, 115, 22, 0.12);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border-left: 5px solid #f97316;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+    }
+    
+    .code-block {
+      background: rgba(12, 12, 24, 0.95);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      margin: 1.5rem 0;
+      font-family: 'JetBrains Mono', monospace;
+      overflow-x: auto;
+    }
+    .code-block p {
+      margin: 0.5rem 0;
+      color: #fbbf24;
+      font-size: 1.1rem;
+    }
+    .code-block .desc {
+      color: rgba(248, 250, 252, 0.6);
+      font-size: 1rem;
+      margin-left: 1rem;
+    }
+    
+    .image-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 2rem 0;
+    }
+    .image-row img {
+      max-width: 48%;
+      min-width: 300px;
+      height: auto !important;
+    }
+    .image-row > div {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    @media (max-width: 768px) {
+      .manual-container { padding: 30px 20px; }
+      .manual-title { font-size: 2.2rem; }
+      .manual-section h2 { font-size: 1.8rem; }
+      .manual-section h3 { font-size: 1.4rem; }
+      .manual-section p, .manual-section li { font-size: 1.1rem; }
+      /* Override any inline max-width (e.g., style="max-width: 680px") on mobile */
+      .manual-section img { max-width: 100% !important; }
+      .image-row img { max-width: 100%; min-width: auto; }
+      .code-block p { font-size: 0.95rem; }
+    }
+  </style>
+<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
+<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="manual-container">
+<a class="back-link" href="user-manual.html">← Quay lại Sổ tay người dùng</a>
+<h1 class="manual-title">🔗 TradingView Hướng dẫn Webhook</h1>
+<!-- Table of Contents -->
+<div class="toc">
+<h3>📋 Mục lục</h3>
+<ul>
+<li><a href="#keyword">Cảnh báo từ khóa</a></li>
+<li><a href="#auto-order">Tự động đặt lệnh với TradingView</a></li>
+<li><a href="#divalarm-keywords">Từ khóa tín hiệu DivAlarm</a></li>
+<li><a href="#combination">Cảnh báo kết hợp tín hiệu</a></li>
+</ul>
+</div>
+<!-- Keyword Alerts Section -->
+<div class="manual-section" id="keyword">
+<h2>🔔 Cảnh báo từ khóa</h2>
+<h3>Thêm Webhook trong TradingView</h3>
+<img alt="TradingView Thêm cảnh báo" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>Nhấp chuột phải vào chỉ báo mà bạn muốn nhận tín hiệu trong TradingView và bấm "Add Alert on ~".</p>
+<img alt="Cài đặt URL Webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
+<img alt="Cài đặt thông báo" src="../images/image_tv.png" style="max-width: 600px;"/>
+<p>Trong mục "Notifications", tích "Webhook URL" và dán địa chỉ đã sao chép từ ứng dụng vào ô nhập bên dưới.</p>
+<p>Sau khi thiết lập, mục này sẽ tự động được tích/điền cho các cảnh báo khác.</p>
+<img alt="Cài đặt tin nhắn" src="../images/image%201_tv.png" style="max-width: 680px;"/>
+<p>Trong mục "Messages" dưới "Message", thêm bất kỳ từ khóa nào bạn muốn (ví dụ: "AAA").</p>
+<p>Bấm "Create" để tạo cảnh báo TradingView.</p>
+<h3>Nhận cảnh báo TradingView trong ứng dụng</h3>
+<img alt="Cài đặt từ khóa ứng dụng" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Thêm từ khóa (ví dụ: "AAA") vào mục 'Keyword Include' trong ứng dụng. Khi "Message" của cảnh báo TradingView chứa từ khóa, chuông báo sẽ kêu theo cấu hình.</p>
+</div>
+<!-- Auto-Order Section -->
+<div class="manual-section" id="auto-order">
+<h2>🤖 Tự động đặt lệnh với cảnh báo TradingView</h2>
+<img alt="Cài đặt tự động đặt lệnh" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Bạn có thể thiết lập 'Auto-Orders' để gửi đến sàn khi nhận được cảnh báo từ khóa.</p>
+<img alt="Cài đặt API sàn giao dịch" src="../images/image%202_tv.png" style="max-width: 500px;"/>
+<div class="highlight">
+<p>Các sàn được hỗ trợ cho tự động đặt lệnh: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
+<p>Bạn phải nhập khóa API trong trang Cài đặt của ứng dụng.</p>
+</div>
+</div>
+<!-- DivAlarm Keywords Section -->
+<div class="manual-section" id="divalarm-keywords">
+<h2>📝 Đăng ký tín hiệu DivAlarm làm từ khóa</h2>
+<img alt="Từ khóa tín hiệu DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
+<p>Các cảnh báo riêng của DivAlarm cũng có thể được thêm vào 'Keyword Combinations' (cho cảnh báo kết hợp hoặc tự động đặt lệnh).</p>
+<div class="highlight">
+<p><strong>Định dạng:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+</div>
+<p><strong>Loại cảnh báo:</strong></p>
+<ul>
+<li><code>@D</code> — Bộ lọc phân kỳ RSI</li>
+<li><code>@E</code> — Chỉ báo bổ sung</li>
+<li><code>@P</code> — Cảnh báo giá</li>
+</ul>
+<h3>Ví dụ</h3>
+<div class="code-block">
+<p><code>"@D@BTC@Bull@5m@1m"</code></p>
+<p class="desc">→ RSI Phân kỳ, BTCUSDT.P, tiêu đề chứa "Bull", Đang hình thành, khung chính 5m, khung phụ 1m</p>
+</div>
+<div class="code-block">
+<p><code>"@D@ETH@Bear@15m@O"</code></p>
+<p class="desc">→ RSI Phân kỳ, ETHUSDT.P, tiêu đề chứa "Bear", Hoàn tất, 15m, không có khung thời gian phụ</p>
+</div>
+<img alt="Ví dụ từ khóa" src="../images/image%204_tv.png" style="max-width: 500px;"/>
+<div class="code-block">
+<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Chỉ báo bổ sung, coin BTC, tiêu đề chứa "Sell", 30m</span></p>
+<p><code>"@E@BTC@Buy@1h"</code></p>
+<p><code>"@E@ETH@Breakout@15m"</code></p>
+<p><code>"@E@BTC@Breakdown@5m"</code></p>
+<p><code>"@E@BTC@Near Support@1m"</code></p>
+<p><code>"@E@BTC@Near Resistance@5m"</code></p>
+<p><code>"@E@BTC@EMA50@1h"</code></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ Cảnh báo giá, coin BTC, tiêu đề chứa "Up"</span></p>
+<p><code>"@P@ETH@Down"</code></p>
+</div>
+</div>
+<!-- Combination Alerts Section -->
+<div class="manual-section" id="combination">
+<h2>🔀 Cảnh báo kết hợp tín hiệu</h2>
+<p>Kết hợp nhiều tín hiệu TradingView để tạo tín hiệu mới hoặc tín hiệu đã lọc.</p>
+<div class="image-row">
+<img alt="Cài đặt cảnh báo kết hợp" src="../images/image%205_tv.png"/>
+<div>
+<p>Đặt các điều kiện phải được đáp ứng trong một khoảng thời gian để cảnh báo được kích hoạt.</p>
+<p><strong>Ví dụ:</strong><br/>
+          Trong vòng 1 giờ 30 phút:<br/>
+          • 'Cảnh báo với từ khóa A' VÀ<br/>
+          • 'Cảnh báo với từ khóa B' cùng đến, HOẶC<br/>
+          • 'Cảnh báo với từ khóa C' đến</p>
+<p>Nhập <code>(1&amp;2)|3</code> trong 'Kết hợp cảnh báo' và <code>1h 30m</code> trong 'Kết hợp thời gian'.</p>
+</div>
+</div>
+<div class="highlight">
+<p><strong>&amp;</strong> = "AND" (cả hai điều kiện phải được đáp ứng)</p>
+<p><strong>|</strong> = "OR" (một trong hai điều kiện có thể được đáp ứng)</p>
+<p>Ngay cả khi các cảnh báo từ khóa riêng lẻ bị tắt, cảnh báo kết hợp vẫn có thể kích hoạt khi các điều kiện được đáp ứng.</p>
+<p><strong>Cũng có thể tự động đặt lệnh với cảnh báo kết hợp!</strong></p>
+</div>
+</div>
+</div>
+</body>
+</html>

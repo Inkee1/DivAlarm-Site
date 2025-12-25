@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<title>Manual de usuario - DivAlarm</title>
+<meta content="Manual de usuario - DivAlarm" property="og:title"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
+      color: #f8fafc;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+    
+    .manual-container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 50px 40px;
+    }
+    
+    .back-link {
+      display: inline-block;
+      color: #00d4ff;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 0.8; }
+    
+    .manual-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .toc {
+      background: rgba(12, 12, 24, 0.9);
+      padding: 2rem 2.5rem;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+    }
+    .toc h3 {
+      color: #00d4ff;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .toc ul { list-style: none; }
+    .toc li { margin: 0.8rem 0; }
+    .toc a {
+      color: rgba(248, 250, 252, 0.85);
+      text-decoration: none;
+      font-size: 1.15rem;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: #00d4ff; }
+    
+    .manual-section {
+      margin-bottom: 4rem;
+    }
+    .manual-section h2 {
+      font-size: 2.2rem;
+      color: #00d4ff;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+    }
+    .manual-section h3 {
+      font-size: 1.6rem;
+      color: #f97316;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .manual-section p {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+      color: rgba(248, 250, 252, 0.9);
+    }
+    .manual-section ol, .manual-section ul {
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .manual-section li {
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.8;
+    }
+    .manual-section img {
+      max-width: 100%;
+      height: auto !important;
+      object-fit: contain !important;
+      border-radius: 12px;
+      margin: 2rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    .manual-section strong {
+      color: #00d4ff;
+    }
+    
+    .highlight {
+      background: rgba(0, 212, 255, 0.12);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border-left: 5px solid #00d4ff;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+    }
+    .warning {
+      background: rgba(249, 115, 22, 0.12);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border-left: 5px solid #f97316;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+    }
+    
+    .alarm-type {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-right: 0.8rem;
+    }
+    .alarm-type-a { background: #ef4444; color: white; }
+    .alarm-type-b { background: #f97316; color: white; }
+    .alarm-type-c { background: #3b82f6; color: white; }
+    .alarm-type-d { background: #8b5cf6; color: white; }
+    .alarm-type-e { background: #6b7280; color: white; }
+    
+    .image-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .image-row img {
+      max-width: 48%;
+      min-width: 300px;
+      height: auto !important;
+    }
+    
+    @media (max-width: 768px) {
+      .manual-container { padding: 30px 20px; }
+      .manual-title { font-size: 2.2rem; }
+      .manual-section h2 { font-size: 1.8rem; }
+      .manual-section h3 { font-size: 1.4rem; }
+      .manual-section p, .manual-section li { font-size: 1.1rem; }
+      /* Override any inline max-width (e.g., style="max-width: 600px") on mobile */
+      .manual-section img { max-width: 100% !important; }
+      .image-row img { max-width: 100%; min-width: auto; }
+    }
+  </style>
+<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
+<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="manual-container">
+<a class="back-link" href="index.html">← Volver al inicio</a>
+<h1 class="manual-title">📱 Manual de usuario</h1>
+<!-- Table of Contents -->
+<div class="toc">
+<h3>📋 Tabla de contenidos</h3>
+<ul>
+<li><a href="#menu">Resumen del menú</a></li>
+<li><a href="#divlog">Ver notificaciones de señales (DivLog)</a></li>
+<li><a href="#div">RSI Ajustes de alertas de divergencia (Div)</a></li>
+<li><a href="#ei">Alertas adicionales de indicadores (EI)</a></li>
+<li><a href="#webhook">TradingView Webhook y orden automática</a></li>
+<li><a href="#settings">Página de ajustes</a></li>
+<li><a href="#referral">Recompensas por referidos</a></li>
+</ul>
+</div>
+<!-- Menu Section -->
+<div class="manual-section" id="menu">
+<h2>📌 Resumen del menú</h2>
+<p><strong>"DivLog"</strong> — Donde recibes señales de alertas de divergencia.</p>
+<p><strong>"Div"</strong> — Configura señales de 'RSI Divergence Complete' o 'RSI Divergence Forming'.</p>
+<p><strong>"EI"</strong> — Configura alertas adicionales de indicadores: alertas de alcance de precio, alertas de aproximación a soporte/resistencia, alertas de EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
+<p><strong>"Webhook"</strong> — Solo visible para usuarios Pro. Recibe webhooks de TradingView para alarmas potentes, combinaciones de señales y órdenes automáticas.</p>
+<p><strong>"Setting"</strong> — Configura tipos de alarma, sonidos, ajustes de recompensas por referidos, anuncios y notificaciones de referidos.</p>
+</div>
+<!-- DivLog Section -->
+<div class="manual-section" id="divlog">
+<h2>📊 Ver notificaciones de señales ("DivLog")</h2>
+<p>"DivLog" es donde recibes señales de alertas de divergencia.</p>
+<ol>
+<li>Se almacenan hasta 150 señales. Limpia periódicamente.</li>
+<li>Muestra alertas sin marcar. Marca la casilla para descartar la alarma. Se muestran como máximo 5 alertas recientes sin marcar.</li>
+<li>Filtra para ver solo las señales que quieras.</li>
+</ol>
+</div>
+<!-- Div Section -->
+<div class="manual-section" id="div">
+<h2>⚙️ RSI Ajustes de alertas de divergencia ("Div")</h2>
+<img alt="Pantalla de ajustes de Div" src="../images/image_manual.png" style="max-width: 500px;"/>
+<h3>Ajustes generales de RSI Divergence</h3>
+<ol>
+<li>Selecciona qué moneda configurar.</li>
+<li>Elige entre señales de 'RSI Divergence Complete' y 'RSI Divergence Forming'.</li>
+<li>Área de ajustes por lotes — aplica la configuración a todos los elementos de abajo de una sola vez.</li>
+<li>Añade filtros de divergencia con el botón +.</li>
+<li>Restablece los filtros a la configuración predeterminada recomendada.</li>
+<li>Configura condiciones de precio por lotes.</li>
+</ol>
+<h3>Ajustes individuales de filtros</h3>
+<ol start="7">
+<li>Configura qué señales de divergencia RSI individuales quieres recibir:
+          <p><strong>(a)</strong> Selecciona el marco temporal deseado. Para "RSI Divergence Forming", elige tanto un "marco temporal principal" como un "submarco temporal". Las alertas se activan cuando se forma el pico RSI en el marco temporal más pequeño mientras la divergencia se está formando en el marco temporal principal (reversión del precio).</p>
+<p><strong>(b)</strong> Elige señales: "Bull (alcista)" o "Bear (bajista)". Azul = alertas activadas, gris = desactivadas.</p>
+<p><strong>(c)</strong> Configura los umbrales de sobreventa/sobrecompra. Alertas alcistas cuando el "RSI inicial" está por debajo del nivel de sobreventa; bajistas cuando el "RSI inicial" está por encima del nivel de sobrecompra.</p>
+<p><strong>(d)</strong> Configura el tipo de alarma y el sonido. Ajustes detallados en la página de Configuración:</p>
+<div class="highlight">
+<span class="alarm-type alarm-type-a">A</span> Forzar alarma (bucle) — se reproduce continuamente hasta detenerla manualmente; ignora el modo silencioso<br/><br/>
+<span class="alarm-type alarm-type-b">B</span> Forzar alarma (una vez) — se reproduce una vez; ignora el modo silencioso<br/><br/>
+<span class="alarm-type alarm-type-c">C</span> Seguir ajustes del teléfono — usa la configuración de sonido normal del dispositivo<br/><br/>
+<span class="alarm-type alarm-type-d">D</span> Solo vibración — vibración sin sonido<br/><br/>
+<span class="alarm-type alarm-type-e">E</span> Modo silencioso — sin sonido ni vibración
+          </div>
+<img alt="Ajustes del tipo de alarma" src="../images/image%201_manual.png" style="max-width: 350px;"/>
+<p><strong>(e)</strong> Configura condiciones adicionales para recibir solo señales útiles: condiciones de precio, condiciones de formación de RSI en otro marco temporal, condiciones de Bandas de Bollinger.</p>
+</li>
+</ol>
+<div class="image-row">
+<img alt="Condiciones adicionales 1" src="../images/image%202_manual.png"/>
+<img alt="Condiciones adicionales 2" src="../images/image%203_manual.png"/>
+</div>
+<p><strong>e0)</strong> Cuando se configuran varias condiciones, define la relación: "and" (todas deben cumplirse) u "or" (se cumple cualquiera).</p>
+<p><strong>e1)</strong> Configura condiciones de precio — alerta cuando el precio de inicio/fin de la divergencia está por encima/por debajo de un precio específico.</p>
+<p><strong>e2)</strong> Alerta cuando se esté formando una divergencia en otro marco temporal.</p>
+<p><strong>e3)</strong> Comprueba si el precio del pico final de la divergencia RSI está fuera de las Bandas de Bollinger.</p>
+<h3>Consejos de estrategia</h3>
+<div class="warning">
+<ul>
+<li>Combínalo siempre con otros indicadores: resistencia, líneas de tendencia, Fibonacci, etc.</li>
+<li>Como todos los indicadores, la divergencia RSI no es 100% precisa; mejora la probabilidad.</li>
+<li>Las divergencias de 1m y 5m suelen ignorarse, pero la fiabilidad aumenta: 15m &lt; 1h &lt; 4h. <strong>La divergencia de 4h es muy fiable; se recomienda configurarla como alarma de grado A.</strong></li>
+</ul>
+</div>
+</div>
+<!-- EI Section -->
+<div class="manual-section" id="ei">
+<h2>📈 Alertas de indicadores adicionales ("EI")</h2>
+<div class="image-row">
+<img alt="Ajustes de EI 1" src="../images/image%204_manual.png"/>
+<img alt="Ajustes de EI 2" src="../images/image%205_manual.png"/>
+</div>
+<ol>
+<li>Selecciona qué moneda configurar.</li>
+<li>Configura alertas de precio para la moneda.</li>
+<li>Configura alertas de cruce de EMA (Media Móvil Exponencial).</li>
+<li>Configura alertas de aproximación a soporte/resistencia.</li>
+<li>Configura alertas de ruptura de las Bandas de Bollinger.</li>
+<li>Configura alertas de cambio de Supertrend.</li>
+</ol>
+<div class="warning">
+<p>※ Los indicadores adicionales (3, 4, 5, 6) se restablecen al cerrar sesión.</p>
+</div>
+</div>
+<!-- Webhook Section -->
+<div class="manual-section" id="webhook">
+<h2>🔗 Webhook de TradingView, combinación de señales y auto-orden</h2>
+<p><strong>"Webhook"</strong> — Función Pro para usuarios avanzados.</p>
+<p>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">
+          📖 Ir a la guía detallada de Webhook
+        </a>
+</p>
+</div>
+<!-- Settings Section -->
+<div class="manual-section" id="settings">
+<h2>⚙️ Página de configuración</h2>
+<div class="image-row">
+<img alt="Ajustes 1" src="../images/image%206_manual.png"/>
+<img alt="Ajustes 2" src="../images/image%207_manual.png"/>
+</div>
+<ol>
+<li>Configura los tipos de alarma (A, B...) y los sonidos de alarma (1, 2...).</li>
+<li>Para las auto-órdenes, introduce las claves API de cada exchange.</li>
+</ol>
+</div>
+<!-- Referral Section -->
+<div class="manual-section" id="referral">
+<h2>💰 Recompensas por referidos</h2>
+<img alt="Ajustes de referidos" src="../images/image%208_manual.png" style="max-width: 550px;"/>
+<p><strong>(a)</strong> Tu código de referido. Cuando otros se suscriben con este código, te conviertes en su referente.</p>
+<p><strong>(b)</strong> Tu enlace de invitación. Cualquiera que se suscriba a través de este enlace te registra automáticamente como su referente.</p>
+<p><strong>(c)</strong> Introduce la dirección de tu wallet para las recompensas por referidos. Debe ser una wallet BEP-20 USDT (se recomiendan wallets de los principales exchanges). Puedes probar si los depósitos funcionan correctamente desde "My Info" en el sitio web de DivAlarm.</p>
+<p><strong>(d)</strong> Muestra el estado de tus recompensas por referidos: número actual de referidos, importe potencial de la recompensa, importe confirmado e importe pagado.</p>
+<p>Las recompensas pasan de "potencial" a "confirmado" 14 días después del pago de la suscripción del usuario referido (excluida la prueba gratuita). Los pagos se realizan semanalmente los martes a las 00:00 UTC.</p>
+<h3>Cómo ganar recompensas por referidos</h3>
+<div class="highlight">
+<p><strong>1]</strong> Ve a Configuración → Recompensas por referidos → Introduce la dirección de tu wallet de recompensas.</p>
+<p><strong>2]</strong> Comparte tu enlace de referidos. Los demás serán dirigidos a la página de suscripción con tu código.</p>
+<p><strong>3]</strong> Cuando se suscriben y pagan, se depositan las recompensas.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

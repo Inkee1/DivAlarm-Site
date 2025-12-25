@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <title>User Manual - DivAlarm</title>
-  <meta content="User Manual - DivAlarm" property="og:title">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <style>
+<meta charset="utf-8"/>
+<title>Руководство пользователя — DivAlarm</title>
+<meta content="Руководство пользователя — DivAlarm" property="og:title"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
@@ -168,166 +168,150 @@
       .image-row img { max-width: 100%; min-width: auto; }
     }
   </style>
-  <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css">
-  <script src="../js/lang-switcher.js" type="text/javascript" defer></script>
+<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
+<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
 </head>
 <body>
-  <div class="manual-container">
-    <a href="index.html" class="back-link">← Back to Home</a>
-    <h1 class="manual-title">📱 User Manual</h1>
-    
-    <!-- Table of Contents -->
-    <div class="toc">
-      <h3>📋 Table of Contents</h3>
-      <ul>
-        <li><a href="#menu">Menu Overview</a></li>
-        <li><a href="#divlog">Viewing Signal Notifications (DivLog)</a></li>
-        <li><a href="#div">RSI Divergence Alert Settings (Div)</a></li>
-        <li><a href="#ei">Additional Indicator Alerts (EI)</a></li>
-        <li><a href="#webhook">TradingView Webhook & Auto-Order</a></li>
-        <li><a href="#settings">Settings Page</a></li>
-        <li><a href="#referral">Referral Rewards</a></li>
-      </ul>
-    </div>
-
-    <!-- Menu Section -->
-    <div class="manual-section" id="menu">
-      <h2>📌 Menu Overview</h2>
-      <p><strong>"DivLog"</strong> — Where you receive divergence alert signals.</p>
-      <p><strong>"Div"</strong> — Configure 'RSI Divergence Complete' or 'RSI Divergence Forming' signals.</p>
-      <p><strong>"EI"</strong> — Set up additional indicator alerts: price reach alerts, support/resistance approach alerts, EMA/Bollinger Band/Supertrend alerts. ("Extra Indicators")</p>
-      <p><strong>"Webhook"</strong> — Only visible to Pro users. Receive TradingView webhooks for powerful alarms, signal combinations, and auto-orders.</p>
-      <p><strong>"Setting"</strong> — Configure alarm types, sounds, referral reward settings, announcements, and referral notifications.</p>
-    </div>
-
-    <!-- DivLog Section -->
-    <div class="manual-section" id="divlog">
-      <h2>📊 Viewing Signal Notifications ("DivLog")</h2>
-      <p>"DivLog" is where you receive divergence alert signals.</p>
-      <ol>
-        <li>Up to 150 signals are stored. Clean up periodically.</li>
-        <li>Shows unchecked alerts. Check the mark to dismiss the alarm. Maximum 5 recent unchecked alerts shown.</li>
-        <li>Filter to view only the signals you want.</li>
-      </ol>
-    </div>
-
-    <!-- Div Section -->
-    <div class="manual-section" id="div">
-      <h2>⚙️ RSI Divergence Alert Settings ("Div")</h2>
-      <img src="../images/image_manual.png" alt="Div Settings Screen" style="max-width: 500px;">
-      
-      <h3>Overall RSI Divergence Settings</h3>
-      <ol>
-        <li>Select which coin to configure.</li>
-        <li>Choose between 'RSI Divergence Complete' vs 'RSI Divergence Forming' signals.</li>
-        <li>Batch settings area — apply settings to all items below at once.</li>
-        <li>Add divergence filters with the + button.</li>
-        <li>Reset filters to recommended default settings.</li>
-        <li>Set price conditions in batch.</li>
-      </ol>
-
-      <h3>Individual Filter Settings</h3>
-      <ol start="7">
-        <li>Configure individual RSI divergence signals to receive:
-          <p><strong>(a)</strong> Select the desired timeframe. For 'RSI Divergence Forming', choose both a 'main timeframe' and 'sub timeframe'. Alerts trigger when RSI peak forms on the smaller timeframe while divergence is forming on the main timeframe (price reversal).</p>
-          <p><strong>(b)</strong> Choose signals: "Bull(bullish)" or "Bear(bearish)". Blue = alerts enabled, Gray = disabled.</p>
-          <p><strong>(c)</strong> Set oversold/overbought thresholds. Bullish alerts when 'starting RSI' is below oversold level; bearish when 'starting RSI' is above overbought level.</p>
-          <p><strong>(d)</strong> Configure alarm type and sound. Detailed settings in the Settings page:</p>
-          <div class="highlight">
-            <span class="alarm-type alarm-type-a">A</span> Force Alarm (Loop) — plays continuously until stopped manually, ignores silent mode<br><br>
-            <span class="alarm-type alarm-type-b">B</span> Force Alarm (Once) — plays once, ignores silent mode<br><br>
-            <span class="alarm-type alarm-type-c">C</span> Follow Phone Settings — uses device's normal sound settings<br><br>
-            <span class="alarm-type alarm-type-d">D</span> Vibrate Only — vibration without sound<br><br>
-            <span class="alarm-type alarm-type-e">E</span> Silent Mode — no sound or vibration
+<div class="manual-container">
+<a class="back-link" href="index.html">← Назад на главную</a>
+<h1 class="manual-title">📱 Руководство пользователя</h1>
+<!-- Table of Contents -->
+<div class="toc">
+<h3>📋 Содержание</h3>
+<ul>
+<li><a href="#menu">Обзор меню</a></li>
+<li><a href="#divlog">Просмотр уведомлений о сигналах (DivLog)</a></li>
+<li><a href="#div">RSI Настройки оповещений о дивергенции (Div)</a></li>
+<li><a href="#ei">Дополнительные оповещения индикаторов (EI)</a></li>
+<li><a href="#webhook">TradingView Webhook и авто-ордер</a></li>
+<li><a href="#settings">Страница настроек</a></li>
+<li><a href="#referral">Реферальные награды</a></li>
+</ul>
+</div>
+<!-- Menu Section -->
+<div class="manual-section" id="menu">
+<h2>📌 Обзор меню</h2>
+<p><strong>"DivLog"</strong> — Здесь вы получаете сигналы оповещений о дивергенции.</p>
+<p><strong>"Div"</strong> — Настройте сигналы «RSI Divergence Complete» или «RSI Divergence Forming».</p>
+<p><strong>"EI"</strong> — Настройте дополнительные оповещения индикаторов: достижение цены, приближение к поддержке/сопротивлению, оповещения EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
+<p><strong>"Webhook"</strong> — Видно только пользователям Pro. Получайте вебхуки TradingView для мощных сигнализаций, комбинаций сигналов и авто-ордеров.</p>
+<p><strong>"Setting"</strong> — Настройте типы оповещений, звуки, параметры реферальных наград, объявления и реферальные уведомления.</p>
+</div>
+<!-- DivLog Section -->
+<div class="manual-section" id="divlog">
+<h2>📊 Просмотр уведомлений о сигналах ("DivLog")</h2>
+<p>"DivLog" — это место, где вы получаете сигналы оповещений о дивергенции.</p>
+<ol>
+<li>Хранится до 150 сигналов. Периодически очищайте.</li>
+<li>Показывает непроверенные оповещения. Отметьте галочкой, чтобы отключить сигнал. Отображается максимум 5 последних непроверенных оповещений.</li>
+<li>Используйте фильтр, чтобы видеть только нужные сигналы.</li>
+</ol>
+</div>
+<!-- Div Section -->
+<div class="manual-section" id="div">
+<h2>⚙️ RSI Настройки оповещений о дивергенции ("Div")</h2>
+<img alt="Экран настроек дивергенций" src="../images/image_manual.png" style="max-width: 500px;"/>
+<h3>Общие настройки дивергенции RSI</h3>
+<ol>
+<li>Выберите монету для настройки.</li>
+<li>Выберите между сигналами «RSI Divergence Complete» и «RSI Divergence Forming».</li>
+<li>Область пакетных настроек — применяйте настройки сразу ко всем элементам ниже.</li>
+<li>Добавляйте фильтры дивергенции кнопкой +.</li>
+<li>Сбросьте фильтры к рекомендуемым настройкам по умолчанию.</li>
+<li>Задайте ценовые условия пакетно.</li>
+</ol>
+<h3>Индивидуальные настройки фильтра</h3>
+<ol start="7">
+<li>Настройте, какие сигналы дивергенции RSI получать:
+          <p><strong>(a)</strong> Выберите нужный таймфрейм. Для «RSI Divergence Forming» выберите и «основной таймфрейм», и «подтаймфрейм». Оповещения срабатывают, когда на меньшем таймфрейме формируется пик RSI, пока на основном таймфрейме формируется дивергенция (разворот цены).</p>
+<p><strong>(b)</strong> Выберите сигналы: «Bull (бычий)» или «Bear (медвежий)». Синий = оповещения включены, серый = выключены.</p>
+<p><strong>(c)</strong> Задайте пороги перепроданности/перекупленности. Бычьи оповещения — когда «starting RSI» ниже уровня перепроданности; медвежьи — когда «starting RSI» выше уровня перекупленности.</p>
+<p><strong>(d)</strong> Настройте тип и звук тревоги. Подробные настройки — на странице Settings:</p>
+<div class="highlight">
+<span class="alarm-type alarm-type-a">A</span> Принудительная тревога (цикл) — воспроизводится непрерывно, пока не остановите вручную; игнорирует беззвучный режим<br/><br/>
+<span class="alarm-type alarm-type-b">B</span> Принудительная тревога (один раз) — воспроизводится один раз; игнорирует беззвучный режим<br/><br/>
+<span class="alarm-type alarm-type-c">C</span> Следовать настройкам телефона — использует обычные настройки звука устройства<br/><br/>
+<span class="alarm-type alarm-type-d">D</span> Только вибрация — вибрация без звука<br/><br/>
+<span class="alarm-type alarm-type-e">E</span> Беззвучный режим — без звука и вибрации
           </div>
-          <img src="../images/image%201_manual.png" alt="Alarm Type Settings" style="max-width: 350px;">
-          <p><strong>(e)</strong> Set additional conditions for useful signals only: price conditions, other timeframe RSI forming conditions, Bollinger Band conditions.</p>
-        </li>
-      </ol>
-
-      <div class="image-row">
-        <img src="../images/image%202_manual.png" alt="Additional Conditions 1">
-        <img src="../images/image%203_manual.png" alt="Additional Conditions 2">
-      </div>
-
-      <p><strong>e0)</strong> When multiple conditions are set, configure the relationship: "and" (all must be satisfied) or "or" (any one satisfied).</p>
-      <p><strong>e1)</strong> Set price conditions — alert when divergence start/end price is above/below a specific price.</p>
-      <p><strong>e2)</strong> Alert when divergence is forming on another timeframe.</p>
-      <p><strong>e3)</strong> Check if RSI divergence final peak price is outside Bollinger Bands.</p>
-
-      <h3>Strategy Tips</h3>
-      <div class="warning">
-        <ul>
-          <li>Always combine with other indicators: resistance, trendlines, Fibonacci, etc.</li>
-          <li>Like all indicators, RSI divergence isn't 100% accurate — it improves probability.</li>
-          <li>1m, 5m divergences are often ignored, but reliability increases: 15m < 1h < 4h. <strong>4h divergence is highly reliable — recommended to set as A-grade alarm.</strong></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- EI Section -->
-    <div class="manual-section" id="ei">
-      <h2>📈 Additional Indicator Alerts ("EI")</h2>
-      <div class="image-row">
-        <img src="../images/image%204_manual.png" alt="EI Settings 1">
-        <img src="../images/image%205_manual.png" alt="EI Settings 2">
-      </div>
-      <ol>
-        <li>Select which coin to configure.</li>
-        <li>Set price alerts for the coin.</li>
-        <li>Configure EMA (Exponential Moving Average) cross alerts.</li>
-        <li>Set support/resistance approach alerts.</li>
-        <li>Configure Bollinger Band breakout alerts.</li>
-        <li>Set Supertrend change alerts.</li>
-      </ol>
-      <div class="warning">
-        <p>※ Additional indicators (3, 4, 5, 6) reset when you log out.</p>
-      </div>
-    </div>
-
-    <!-- Webhook Section -->
-    <div class="manual-section" id="webhook">
-      <h2>🔗 TradingView Webhook, Signal Combination & Auto-Order</h2>
-      <p><strong>"Webhook"</strong> — Pro feature for advanced users.</p>
-      <p>
-        <a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">
-          📖 Go to Detailed Webhook Guide
+<img alt="Настройки типа сигналов" src="../images/image%201_manual.png" style="max-width: 350px;"/>
+<p><strong>(e)</strong> Задайте дополнительные условия, чтобы получать только полезные сигналы: ценовые условия, условия формирования RSI на другом таймфрейме, условия по полосам Боллинджера.</p>
+</li>
+</ol>
+<div class="image-row">
+<img alt="Дополнительные условия 1" src="../images/image%202_manual.png"/>
+<img alt="Дополнительные условия 2" src="../images/image%203_manual.png"/>
+</div>
+<p><strong>e0)</strong> Если задано несколько условий, настройте связь: «and» (должны выполняться все) или «or» (достаточно любого одного).</p>
+<p><strong>e1)</strong> Задайте ценовые условия — оповещение, когда цена начала/конца дивергенции выше/ниже заданной цены.</p>
+<p><strong>e2)</strong> Оповещать, когда дивергенция формируется на другом таймфрейме.</p>
+<p><strong>e3)</strong> Проверять, находится ли финальная пиковая цена дивергенции RSI за пределами полос Боллинджера.</p>
+<h3>Советы по стратегии</h3>
+<div class="warning">
+<ul>
+<li>Всегда комбинируйте с другими индикаторами: уровни сопротивления, трендовые линии, Фибоначчи и т. д.</li>
+<li>Как и любые индикаторы, дивергенция RSI не даёт 100% точности — она повышает вероятность.</li>
+<li>Дивергенции на 1m и 5m часто игнорируют, но надёжность растёт: 15m &lt; 1h &lt; 4h. <strong>Дивергенция на 4h очень надёжна — рекомендуется настроить как сигнал уровня A.</strong></li>
+</ul>
+</div>
+</div>
+<!-- EI Section -->
+<div class="manual-section" id="ei">
+<h2>📈 Дополнительные оповещения по индикаторам ("EI")</h2>
+<div class="image-row">
+<img alt="Настройки EI 1" src="../images/image%204_manual.png"/>
+<img alt="Настройки EI 2" src="../images/image%205_manual.png"/>
+</div>
+<ol>
+<li>Выберите монету для настройки.</li>
+<li>Настройте ценовые оповещения для монеты.</li>
+<li>Настройте оповещения о пересечении EMA (Exponential Moving Average).</li>
+<li>Настройте оповещения о подходе к поддержке/сопротивлению.</li>
+<li>Настройте оповещения о пробое полос Боллинджера.</li>
+<li>Настройте оповещения о смене Supertrend.</li>
+</ol>
+<div class="warning">
+<p>※ Дополнительные индикаторы (3, 4, 5, 6) сбрасываются при выходе из аккаунта.</p>
+</div>
+</div>
+<!-- Webhook Section -->
+<div class="manual-section" id="webhook">
+<h2>🔗 Вебхук TradingView, комбинирование сигналов и авто-ордер</h2>
+<p><strong>"Webhook"</strong> — Pro-функция для продвинутых пользователей.</p>
+<p>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">
+          📖 Перейти к подробному руководству по вебхукам
         </a>
-      </p>
-    </div>
-
-    <!-- Settings Section -->
-    <div class="manual-section" id="settings">
-      <h2>⚙️ Settings Page</h2>
-      <div class="image-row">
-        <img src="../images/image%206_manual.png" alt="Settings 1">
-        <img src="../images/image%207_manual.png" alt="Settings 2">
-      </div>
-      <ol>
-        <li>Configure alarm types (A, B...) and alarm sounds (1, 2...).</li>
-        <li>For auto-orders, enter each exchange's API keys.</li>
-      </ol>
-    </div>
-
-    <!-- Referral Section -->
-    <div class="manual-section" id="referral">
-      <h2>💰 Referral Rewards</h2>
-      <img src="../images/image%208_manual.png" alt="Referral Settings" style="max-width: 550px;">
-      
-      <p><strong>(a)</strong> Your referral code. When others subscribe with this code, you become their referrer.</p>
-      <p><strong>(b)</strong> Your invite link. Anyone who subscribes through this link automatically registers you as their referrer.</p>
-      <p><strong>(c)</strong> Enter your wallet address for referral rewards. Must be a BEP-20 USDT wallet (major exchange wallets recommended). You can test if deposits work correctly from 'My Info' on the DivAlarm website.</p>
-      <p><strong>(d)</strong> Shows your referral reward status: current referral count, potential reward amount, confirmed amount, and paid amount.</p>
-      <p>Rewards move from 'potential' to 'confirmed' 14 days after the referred user's subscription payment (excluding free trial). Payments are made weekly on Tuesday UTC midnight.</p>
-
-      <h3>How to Earn Referral Rewards</h3>
-      <div class="highlight">
-        <p><strong>1]</strong> Go to Settings → Referral Rewards → Enter your reward wallet address.</p>
-        <p><strong>2]</strong> Share your referral link. Others will be directed to the subscription page with your code.</p>
-        <p><strong>3]</strong> When they subscribe and pay, rewards are deposited.</p>
-      </div>
-    </div>
-
-  </div>
+</p>
+</div>
+<!-- Settings Section -->
+<div class="manual-section" id="settings">
+<h2>⚙️ Страница настроек</h2>
+<div class="image-row">
+<img alt="Настройки 1" src="../images/image%206_manual.png"/>
+<img alt="Настройки 2" src="../images/image%207_manual.png"/>
+</div>
+<ol>
+<li>Настройте типы сигналов (A, B...) и звуки сигналов (1, 2...).</li>
+<li>Для авто-ордеров введите API-ключи каждой биржи.</li>
+</ol>
+</div>
+<!-- Referral Section -->
+<div class="manual-section" id="referral">
+<h2>💰 Реферальные вознаграждения</h2>
+<img alt="Реферальные настройки" src="../images/image%208_manual.png" style="max-width: 550px;"/>
+<p><strong>(a)</strong> Ваш реферальный код. Когда другие оформляют подписку с этим кодом, вы становитесь их реферером.</p>
+<p><strong>(b)</strong> Ваша ссылка-приглашение. Любой, кто оформит подписку по этой ссылке, автоматически зарегистрирует вас как своего реферера.</p>
+<p><strong>(c)</strong> Введите адрес кошелька для реферальных вознаграждений. Должен быть кошелёк BEP-20 USDT (рекомендуются кошельки крупных бирж). Вы можете проверить, корректно ли работают депозиты, в разделе «My Info» на сайте DivAlarm.</p>
+<p><strong>(d)</strong> Показывает статус ваших реферальных вознаграждений: текущее число рефералов, потенциальную сумму, подтверждённую сумму и выплаченную сумму.</p>
+<p>Вознаграждения переходят из «потенциальных» в «подтверждённые» через 14 дней после оплаты подписки приглашённым пользователем (без учёта бесплатного пробного периода). Выплаты производятся еженедельно по вторникам в 00:00 UTC.</p>
+<h3>Как получать реферальные вознаграждения</h3>
+<div class="highlight">
+<p><strong>1]</strong> Перейдите в Settings → Referral Rewards → введите адрес кошелька для вознаграждений.</p>
+<p><strong>2]</strong> Поделитесь своей реферальной ссылкой. Другие будут перенаправлены на страницу подписки с вашим кодом.</p>
+<p><strong>3]</strong> Когда они оформят подписку и оплатят, вознаграждения будут зачислены.</p>
+</div>
+</div>
+</div>
 </body>
 </html>

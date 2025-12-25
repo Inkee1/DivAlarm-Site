@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Manual - DivAlarm</title>
+<meta content="0; url=../user-manual.html" http-equiv="refresh"/>
+<script>
+      (function () {
+        // Support:
+        //   /en/manual#ei  -> /en/user-manual.html#ei
+        //   /en/manual/ei  -> /en/user-manual.html#ei
+        var target = "../user-manual.html";
+        var search = window.location.search || "";
+        var hash = window.location.hash || "";
+        if (!hash) {
+          var path = window.location.pathname || "";
+          var m = path.match(/\/manual\/([^\/]+)\/?$/);
+          if (m && m[1]) hash = "#" + m[1];
+        }
+        window.location.replace(target + search + hash);
+      })();
+    </script>
+</head>
+<body>
+<p>
+      Mengalihkan ke manual… Jika tiada apa-apa berlaku,
+      <a href="../user-manual.html">buka manual</a>.
+    </p>
+</body>
+</html>

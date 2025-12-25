@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<title>คู่มือผู้ใช้ - DivAlarm</title>
+<meta content="คู่มือผู้ใช้ - DivAlarm" property="og:title"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
+      color: #f8fafc;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+    
+    .manual-container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 50px 40px;
+    }
+    
+    .back-link {
+      display: inline-block;
+      color: #00d4ff;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 0.8; }
+    
+    .manual-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .toc {
+      background: rgba(12, 12, 24, 0.9);
+      padding: 2rem 2.5rem;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+    }
+    .toc h3 {
+      color: #00d4ff;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .toc ul { list-style: none; }
+    .toc li { margin: 0.8rem 0; }
+    .toc a {
+      color: rgba(248, 250, 252, 0.85);
+      text-decoration: none;
+      font-size: 1.15rem;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: #00d4ff; }
+    
+    .manual-section {
+      margin-bottom: 4rem;
+    }
+    .manual-section h2 {
+      font-size: 2.2rem;
+      color: #00d4ff;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+    }
+    .manual-section h3 {
+      font-size: 1.6rem;
+      color: #f97316;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .manual-section p {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+      color: rgba(248, 250, 252, 0.9);
+    }
+    .manual-section ol, .manual-section ul {
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .manual-section li {
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.8;
+    }
+    .manual-section img {
+      max-width: 100%;
+      height: auto !important;
+      object-fit: contain !important;
+      border-radius: 12px;
+      margin: 2rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    .manual-section strong {
+      color: #00d4ff;
+    }
+    
+    .highlight {
+      background: rgba(0, 212, 255, 0.12);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border-left: 5px solid #00d4ff;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+    }
+    .warning {
+      background: rgba(249, 115, 22, 0.12);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border-left: 5px solid #f97316;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+    }
+    
+    .alarm-type {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-right: 0.8rem;
+    }
+    .alarm-type-a { background: #ef4444; color: white; }
+    .alarm-type-b { background: #f97316; color: white; }
+    .alarm-type-c { background: #3b82f6; color: white; }
+    .alarm-type-d { background: #8b5cf6; color: white; }
+    .alarm-type-e { background: #6b7280; color: white; }
+    
+    .image-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .image-row img {
+      max-width: 48%;
+      min-width: 300px;
+      height: auto !important;
+    }
+    
+    @media (max-width: 768px) {
+      .manual-container { padding: 30px 20px; }
+      .manual-title { font-size: 2.2rem; }
+      .manual-section h2 { font-size: 1.8rem; }
+      .manual-section h3 { font-size: 1.4rem; }
+      .manual-section p, .manual-section li { font-size: 1.1rem; }
+      /* Override any inline max-width (e.g., style="max-width: 600px") on mobile */
+      .manual-section img { max-width: 100% !important; }
+      .image-row img { max-width: 100%; min-width: auto; }
+    }
+  </style>
+<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
+<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="manual-container">
+<a class="back-link" href="index.html">← กลับไปหน้าแรก</a>
+<h1 class="manual-title">📱 คู่มือผู้ใช้</h1>
+<!-- Table of Contents -->
+<div class="toc">
+<h3>📋 สารบัญ</h3>
+<ul>
+<li><a href="#menu">ภาพรวมเมนู</a></li>
+<li><a href="#divlog">ดูการแจ้งเตือนสัญญาณ (DivLog)</a></li>
+<li><a href="#div">RSI การตั้งค่าแจ้งเตือน Divergence (Div)</a></li>
+<li><a href="#ei">การแจ้งเตือนอินดิเคเตอร์เพิ่มเติม (EI)</a></li>
+<li><a href="#webhook">TradingView Webhook และสั่งออเดอร์อัตโนมัติ</a></li>
+<li><a href="#settings">หน้าการตั้งค่า</a></li>
+<li><a href="#referral">รางวัลแนะนำเพื่อน</a></li>
+</ul>
+</div>
+<!-- Menu Section -->
+<div class="manual-section" id="menu">
+<h2>📌 ภาพรวมเมนู</h2>
+<p><strong>"DivLog"</strong> — ที่ที่คุณจะได้รับสัญญาณแจ้งเตือน Divergence</p>
+<p><strong>"Div"</strong> — ตั้งค่าสัญญาณ 'RSI Divergence Complete' หรือ 'RSI Divergence Forming'</p>
+<p><strong>"EI"</strong> — ตั้งค่าการแจ้งเตือนอินดิเคเตอร์เพิ่มเติม: แจ้งเตือนเมื่อราคาถึงเป้าหมาย, แจ้งเตือนเมื่อเข้าใกล้แนวรับ/แนวต้าน, แจ้งเตือน EMA/Bollinger Band/Supertrend ("Extra Indicators")</p>
+<p><strong>"Webhook"</strong> — แสดงเฉพาะผู้ใช้ Pro เท่านั้น รับ TradingView webhooks เพื่อการแจ้งเตือนที่ทรงพลัง การผสมสัญญาณ และการสั่งออเดอร์อัตโนมัติ</p>
+<p><strong>"Setting"</strong> — ตั้งค่าประเภทการแจ้งเตือน เสียง การตั้งค่ารางวัลแนะนำเพื่อน ประกาศ และการแจ้งเตือนการแนะนำเพื่อน</p>
+</div>
+<!-- DivLog Section -->
+<div class="manual-section" id="divlog">
+<h2>📊 ดูการแจ้งเตือนสัญญาณ ("DivLog")</h2>
+<p>"DivLog" คือที่ที่คุณจะได้รับสัญญาณแจ้งเตือน Divergence</p>
+<ol>
+<li>บันทึกสัญญาณได้สูงสุด 150 รายการ ควรล้างเป็นระยะ</li>
+<li>แสดงการแจ้งเตือนที่ยังไม่ได้ตรวจสอบ ติ๊กเครื่องหมายเพื่อปิดการแจ้งเตือน แสดงได้สูงสุด 5 รายการล่าสุดที่ยังไม่ได้ตรวจสอบ</li>
+<li>กรองเพื่อดูเฉพาะสัญญาณที่คุณต้องการ</li>
+</ol>
+</div>
+<!-- Div Section -->
+<div class="manual-section" id="div">
+<h2>⚙️ RSI การตั้งค่าแจ้งเตือน Divergence ("Div")</h2>
+<img alt="หน้าจอตั้งค่า Div" src="../images/image_manual.png" style="max-width: 500px;"/>
+<h3>การตั้งค่า RSI Divergence โดยรวม</h3>
+<ol>
+<li>เลือกเหรียญที่ต้องการตั้งค่า</li>
+<li>เลือกระหว่างสัญญาณ 'RSI Divergence Complete' กับ 'RSI Divergence Forming'</li>
+<li>พื้นที่ตั้งค่าแบบชุด — ใช้การตั้งค่ากับรายการทั้งหมดด้านล่างพร้อมกัน</li>
+<li>เพิ่มตัวกรอง Divergence ด้วยปุ่ม +</li>
+<li>รีเซ็ตตัวกรองเป็นค่าเริ่มต้นที่แนะนำ</li>
+<li>ตั้งค่าเงื่อนไขราคาแบบชุด</li>
+</ol>
+<h3>การตั้งค่าตัวกรองรายรายการ</h3>
+<ol start="7">
+<li>กำหนดค่าสัญญาณ Divergence RSI รายตัวที่ต้องการรับ:
+          <p><strong>(a)</strong> เลือกไทม์เฟรมที่ต้องการ สำหรับ 'RSI Divergence Forming' ให้เลือกทั้ง 'ไทม์เฟรมหลัก' และ 'ไทม์เฟรมย่อย' การแจ้งเตือนจะทำงานเมื่อเกิดยอด RSI บนไทม์เฟรมที่เล็กกว่า ขณะที่ Divergence กำลังก่อตัวบนไทม์เฟรมหลัก (การกลับตัวของราคา)</p>
+<p><strong>(b)</strong> เลือกสัญญาณ: "Bull(bullish)" หรือ "Bear(bearish)" สีน้ำเงิน = เปิดการแจ้งเตือน, สีเทา = ปิด</p>
+<p><strong>(c)</strong> ตั้งค่าเกณฑ์ Oversold/Overbought แจ้งเตือนขาขึ้นเมื่อ 'starting RSI' ต่ำกว่าระดับ Oversold; ขาลงเมื่อ 'starting RSI' สูงกว่าระดับ Overbought</p>
+<p><strong>(d)</strong> กำหนดประเภทการเตือนและเสียง รายละเอียดเพิ่มเติมอยู่ในหน้า Settings:</p>
+<div class="highlight">
+<span class="alarm-type alarm-type-a">A</span> บังคับเตือน (วนซ้ำ) — เล่นต่อเนื่องจนกว่าจะหยุดเองด้วยมือ, ไม่สนใจโหมดเงียบ<br/><br/>
+<span class="alarm-type alarm-type-b">B</span> บังคับเตือน (ครั้งเดียว) — เล่นหนึ่งครั้ง, ไม่สนใจโหมดเงียบ<br/><br/>
+<span class="alarm-type alarm-type-c">C</span> ตามการตั้งค่าโทรศัพท์ — ใช้การตั้งค่าเสียงปกติของอุปกรณ์<br/><br/>
+<span class="alarm-type alarm-type-d">D</span> สั่นอย่างเดียว — สั่นโดยไม่มีเสียง<br/><br/>
+<span class="alarm-type alarm-type-e">E</span> โหมดเงียบ — ไม่มีเสียงหรือการสั่น
+          </div>
+<img alt="ตั้งค่าประเภทการแจ้งเตือน" src="../images/image%201_manual.png" style="max-width: 350px;"/>
+<p><strong>(e)</strong> ตั้งค่าเงื่อนไขเพิ่มเติมเพื่อให้ได้เฉพาะสัญญาณที่มีประโยชน์: เงื่อนไขราคา, เงื่อนไขการก่อตัวของ RSI บนไทม์เฟรมอื่น, เงื่อนไข Bollinger Band</p>
+</li>
+</ol>
+<div class="image-row">
+<img alt="เงื่อนไขเพิ่มเติม 1" src="../images/image%202_manual.png"/>
+<img alt="เงื่อนไขเพิ่มเติม 2" src="../images/image%203_manual.png"/>
+</div>
+<p><strong>e0)</strong> เมื่อกำหนดหลายเงื่อนไข ให้ตั้งค่าความสัมพันธ์: "and" (ต้องเป็นจริงทั้งหมด) หรือ "or" (เป็นจริงอย่างใดอย่างหนึ่ง)</p>
+<p><strong>e1)</strong> ตั้งค่าเงื่อนไขราคา — แจ้งเตือนเมื่อราคาเริ่มต้น/สิ้นสุดของ Divergence สูงกว่า/ต่ำกว่าราคาที่กำหนด</p>
+<p><strong>e2)</strong> แจ้งเตือนเมื่อกำลังก่อตัวเป็น Divergence บนไทม์เฟรมอื่น</p>
+<p><strong>e3)</strong> ตรวจสอบว่าราคายอดพีคสุดท้ายของ RSI divergence อยู่นอก Bollinger Bands หรือไม่</p>
+<h3>ทิปส์การวางกลยุทธ์</h3>
+<div class="warning">
+<ul>
+<li>ควรใช้ร่วมกับอินดิเคเตอร์อื่นเสมอ: แนวต้าน, เส้นเทรนด์ไลน์, Fibonacci ฯลฯ</li>
+<li>เหมือนกับอินดิเคเตอร์ทั้งหมด RSI divergence ไม่แม่น 100% — แต่ช่วยเพิ่มความน่าจะเป็น</li>
+<li>Divergence บน 1m, 5m มักถูกมองข้าม แต่ความน่าเชื่อถือจะเพิ่มขึ้น: 15m &lt; 1h &lt; 4h <strong>Divergence บน 4h มีความน่าเชื่อถือสูง — แนะนำให้ตั้งเป็นสัญญาณเตือนเกรด A</strong></li>
+</ul>
+</div>
+</div>
+<!-- EI Section -->
+<div class="manual-section" id="ei">
+<h2>📈 การแจ้งเตือนอินดิเคเตอร์เพิ่มเติม ("EI")</h2>
+<div class="image-row">
+<img alt="ตั้งค่า EI 1" src="../images/image%204_manual.png"/>
+<img alt="ตั้งค่า EI 2" src="../images/image%205_manual.png"/>
+</div>
+<ol>
+<li>เลือกเหรียญที่ต้องการตั้งค่า</li>
+<li>ตั้งการแจ้งเตือนราคาให้กับเหรียญ</li>
+<li>ตั้งค่าการแจ้งเตือนการตัดกันของ EMA (Exponential Moving Average)</li>
+<li>ตั้งการแจ้งเตือนเมื่อราคาเข้าใกล้แนวรับ/แนวต้าน</li>
+<li>ตั้งค่าการแจ้งเตือนเมื่อทะลุ Bollinger Band</li>
+<li>ตั้งการแจ้งเตือนเมื่อ Supertrend เปลี่ยนทิศทาง</li>
+</ol>
+<div class="warning">
+<p>※ อินดิเคเตอร์เพิ่มเติม (3, 4, 5, 6) จะถูกรีเซ็ตเมื่อคุณออกจากระบบ</p>
+</div>
+</div>
+<!-- Webhook Section -->
+<div class="manual-section" id="webhook">
+<h2>🔗 TradingView Webhook, การผสานสัญญาณ &amp; สั่งออเดอร์อัตโนมัติ</h2>
+<p><strong>"Webhook"</strong> — ฟีเจอร์ Pro สำหรับผู้ใช้ขั้นสูง</p>
+<p>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">
+          📖 ไปที่คู่มือ Webhook แบบละเอียด
+        </a>
+</p>
+</div>
+<!-- Settings Section -->
+<div class="manual-section" id="settings">
+<h2>⚙️ หน้าการตั้งค่า</h2>
+<div class="image-row">
+<img alt="การตั้งค่า 1" src="../images/image%206_manual.png"/>
+<img alt="การตั้งค่า 2" src="../images/image%207_manual.png"/>
+</div>
+<ol>
+<li>ตั้งค่าประเภทสัญญาณเตือน (A, B...) และเสียงสัญญาณเตือน (1, 2...)</li>
+<li>สำหรับการสั่งออเดอร์อัตโนมัติ ให้กรอก API keys ของแต่ละเอ็กซ์เชนจ์</li>
+</ol>
+</div>
+<!-- Referral Section -->
+<div class="manual-section" id="referral">
+<h2>💰 รางวัลการแนะนำเพื่อน</h2>
+<img alt="ตั้งค่าการแนะนำ" src="../images/image%208_manual.png" style="max-width: 550px;"/>
+<p><strong>(a)</strong> โค้ดแนะนำของคุณ เมื่อผู้อื่นสมัครสมาชิกด้วยโค้ดนี้ คุณจะเป็นผู้แนะนำของพวกเขา</p>
+<p><strong>(b)</strong> ลิงก์เชิญของคุณ ใครก็ตามที่สมัครสมาชิกผ่านลิงก์นี้ ระบบจะลงทะเบียนให้คุณเป็นผู้แนะนำโดยอัตโนมัติ</p>
+<p><strong>(c)</strong> กรอกที่อยู่กระเป๋าเงินของคุณสำหรับรับรางวัลการแนะนำเพื่อน ต้องเป็นกระเป๋าเงิน BEP-20 USDT (แนะนำกระเป๋าเงินจากเอ็กซ์เชนจ์หลัก) คุณสามารถทดสอบว่าการฝากทำงานถูกต้องหรือไม่ได้จาก 'My Info' บนเว็บไซต์ DivAlarm</p>
+<p><strong>(d)</strong> แสดงสถานะรางวัลการแนะนำเพื่อนของคุณ: จำนวนผู้แนะนำปัจจุบัน, จำนวนรางวัลที่คาดว่าจะได้รับ, จำนวนที่ยืนยันแล้ว และจำนวนที่จ่ายแล้ว</p>
+<p>รางวัลจะเปลี่ยนจาก 'potential' เป็น 'confirmed' หลังจากผู้ใช้ที่ถูกแนะนำชำระค่าสมัครสมาชิก 14 วัน (ไม่รวมช่วงทดลองใช้ฟรี) การจ่ายเงินจะทำทุกสัปดาห์ในวันอังคาร เวลาเที่ยงคืนตาม UTC</p>
+<h3>วิธีรับรางวัลการแนะนำเพื่อน</h3>
+<div class="highlight">
+<p><strong>1]</strong> ไปที่ Settings → Referral Rewards → กรอกที่อยู่กระเป๋าเงินรับรางวัลของคุณ</p>
+<p><strong>2]</strong> แชร์ลิงก์แนะนำของคุณ ผู้อื่นจะถูกนำไปยังหน้าสมัครสมาชิกพร้อมโค้ดของคุณ</p>
+<p><strong>3]</strong> เมื่อพวกเขาสมัครสมาชิกและชำระเงิน รางวัลจะถูกโอนเข้าบัญชี</p>
+</div>
+</div>
+</div>
+</body>
+</html>

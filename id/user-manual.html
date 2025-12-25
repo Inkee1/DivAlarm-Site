@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<title>Panduan Pengguna - DivAlarm</title>
+<meta content="Panduan Pengguna - DivAlarm" property="og:title"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
+      color: #f8fafc;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+    
+    .manual-container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 50px 40px;
+    }
+    
+    .back-link {
+      display: inline-block;
+      color: #00d4ff;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 0.8; }
+    
+    .manual-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .toc {
+      background: rgba(12, 12, 24, 0.9);
+      padding: 2rem 2.5rem;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+    }
+    .toc h3 {
+      color: #00d4ff;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .toc ul { list-style: none; }
+    .toc li { margin: 0.8rem 0; }
+    .toc a {
+      color: rgba(248, 250, 252, 0.85);
+      text-decoration: none;
+      font-size: 1.15rem;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: #00d4ff; }
+    
+    .manual-section {
+      margin-bottom: 4rem;
+    }
+    .manual-section h2 {
+      font-size: 2.2rem;
+      color: #00d4ff;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+    }
+    .manual-section h3 {
+      font-size: 1.6rem;
+      color: #f97316;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .manual-section p {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+      color: rgba(248, 250, 252, 0.9);
+    }
+    .manual-section ol, .manual-section ul {
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .manual-section li {
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.8;
+    }
+    .manual-section img {
+      max-width: 100%;
+      height: auto !important;
+      object-fit: contain !important;
+      border-radius: 12px;
+      margin: 2rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    .manual-section strong {
+      color: #00d4ff;
+    }
+    
+    .highlight {
+      background: rgba(0, 212, 255, 0.12);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border-left: 5px solid #00d4ff;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+    }
+    .warning {
+      background: rgba(249, 115, 22, 0.12);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border-left: 5px solid #f97316;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+    }
+    
+    .alarm-type {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-right: 0.8rem;
+    }
+    .alarm-type-a { background: #ef4444; color: white; }
+    .alarm-type-b { background: #f97316; color: white; }
+    .alarm-type-c { background: #3b82f6; color: white; }
+    .alarm-type-d { background: #8b5cf6; color: white; }
+    .alarm-type-e { background: #6b7280; color: white; }
+    
+    .image-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .image-row img {
+      max-width: 48%;
+      min-width: 300px;
+      height: auto !important;
+    }
+    
+    @media (max-width: 768px) {
+      .manual-container { padding: 30px 20px; }
+      .manual-title { font-size: 2.2rem; }
+      .manual-section h2 { font-size: 1.8rem; }
+      .manual-section h3 { font-size: 1.4rem; }
+      .manual-section p, .manual-section li { font-size: 1.1rem; }
+      /* Override any inline max-width (e.g., style="max-width: 600px") on mobile */
+      .manual-section img { max-width: 100% !important; }
+      .image-row img { max-width: 100%; min-width: auto; }
+    }
+  </style>
+<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
+<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="manual-container">
+<a class="back-link" href="index.html">← Kembali ke Beranda</a>
+<h1 class="manual-title">📱 Panduan Pengguna</h1>
+<!-- Table of Contents -->
+<div class="toc">
+<h3>📋 Daftar Isi</h3>
+<ul>
+<li><a href="#menu">Ringkasan Menu</a></li>
+<li><a href="#divlog">Melihat Notifikasi Sinyal (DivLog)</a></li>
+<li><a href="#div">RSI Pengaturan Alarm Divergence (Div)</a></li>
+<li><a href="#ei">Alarm Indikator Tambahan (EI)</a></li>
+<li><a href="#webhook">TradingView Webhook &amp; Order Otomatis</a></li>
+<li><a href="#settings">Halaman Pengaturan</a></li>
+<li><a href="#referral">Hadiah Referral</a></li>
+</ul>
+</div>
+<!-- Menu Section -->
+<div class="manual-section" id="menu">
+<h2>📌 Ringkasan Menu</h2>
+<p><strong>"DivLog"</strong> — Tempat Anda menerima sinyal alarm divergence.</p>
+<p><strong>"Div"</strong> — Konfigurasikan sinyal 'RSI Divergence Complete' atau 'RSI Divergence Forming'.</p>
+<p><strong>"EI"</strong> — Atur alarm indikator tambahan: alarm harga tercapai, alarm mendekati support/resistance, alarm EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
+<p><strong>"Webhook"</strong> — Hanya terlihat untuk pengguna Pro. Terima webhook TradingView untuk alarm yang lebih powerful, kombinasi sinyal, dan order otomatis.</p>
+<p><strong>"Setting"</strong> — Konfigurasikan jenis alarm, suara, pengaturan hadiah referral, pengumuman, dan notifikasi referral.</p>
+</div>
+<!-- DivLog Section -->
+<div class="manual-section" id="divlog">
+<h2>📊 Melihat Notifikasi Sinyal ("DivLog")</h2>
+<p>"DivLog" adalah tempat Anda menerima sinyal alarm divergence.</p>
+<ol>
+<li>Hingga 150 sinyal disimpan. Bersihkan secara berkala.</li>
+<li>Menampilkan alarm yang belum dicek. Centang tanda untuk menutup alarm. Maksimal 5 alarm terbaru yang belum dicek ditampilkan.</li>
+<li>Gunakan filter untuk melihat hanya sinyal yang Anda inginkan.</li>
+</ol>
+</div>
+<!-- Div Section -->
+<div class="manual-section" id="div">
+<h2>⚙️ RSI Pengaturan Alarm Divergence ("Div")</h2>
+<img alt="Layar Pengaturan Div" src="../images/image_manual.png" style="max-width: 500px;"/>
+<h3>Pengaturan Divergence RSI Secara Keseluruhan</h3>
+<ol>
+<li>Pilih koin yang ingin dikonfigurasi.</li>
+<li>Pilih antara sinyal 'RSI Divergence Complete' vs 'RSI Divergence Forming'.</li>
+<li>Area pengaturan batch — terapkan pengaturan ke semua item di bawah sekaligus.</li>
+<li>Tambahkan filter divergensi dengan tombol +.</li>
+<li>Reset filter ke pengaturan default yang direkomendasikan.</li>
+<li>Atur kondisi harga secara batch.</li>
+</ol>
+<h3>Pengaturan Filter Individual</h3>
+<ol start="7">
+<li>Konfigurasikan sinyal divergensi RSI individual yang ingin diterima:
+          <p><strong>(a)</strong> Pilih timeframe yang diinginkan. Untuk 'RSI Divergence Forming', pilih 'timeframe utama' dan 'sub timeframe'. Alert akan terpicu saat puncak RSI terbentuk pada timeframe yang lebih kecil sementara divergensi sedang terbentuk pada timeframe utama (pembalikan harga).</p>
+<p><strong>(b)</strong> Pilih sinyal: "Bull (bullish)" atau "Bear (bearish)". Biru = alert aktif, Abu-abu = nonaktif.</p>
+<p><strong>(c)</strong> Atur ambang oversold/overbought. Alert bullish saat 'starting RSI' berada di bawah level oversold; bearish saat 'starting RSI' berada di atas level overbought.</p>
+<p><strong>(d)</strong> Konfigurasikan jenis alarm dan suara. Pengaturan detail ada di halaman Settings:</p>
+<div class="highlight">
+<span class="alarm-type alarm-type-a">A</span> Paksa Alarm (Loop) — diputar terus-menerus sampai dihentikan manual, mengabaikan mode senyap<br/><br/>
+<span class="alarm-type alarm-type-b">B</span> Paksa Alarm (Sekali) — diputar sekali, mengabaikan mode senyap<br/><br/>
+<span class="alarm-type alarm-type-c">C</span> Ikuti Pengaturan Ponsel — menggunakan pengaturan suara normal perangkat<br/><br/>
+<span class="alarm-type alarm-type-d">D</span> Hanya Getar — getaran tanpa suara<br/><br/>
+<span class="alarm-type alarm-type-e">E</span> Mode Senyap — tanpa suara atau getaran
+          </div>
+<img alt="Pengaturan Jenis Alarm" src="../images/image%201_manual.png" style="max-width: 350px;"/>
+<p><strong>(e)</strong> Atur kondisi tambahan agar hanya sinyal yang berguna: kondisi harga, kondisi pembentukan RSI pada timeframe lain, kondisi Bollinger Band.</p>
+</li>
+</ol>
+<div class="image-row">
+<img alt="Kondisi Tambahan 1" src="../images/image%202_manual.png"/>
+<img alt="Kondisi Tambahan 2" src="../images/image%203_manual.png"/>
+</div>
+<p><strong>e0)</strong> Jika beberapa kondisi diatur, konfigurasikan relasinya: "and" (semua harus terpenuhi) atau "or" (cukup salah satu terpenuhi).</p>
+<p><strong>e1)</strong> Atur kondisi harga — alert saat harga awal/akhir divergensi berada di atas/di bawah harga tertentu.</p>
+<p><strong>e2)</strong> Beri alert saat divergensi sedang terbentuk di timeframe lain.</p>
+<p><strong>e3)</strong> Periksa apakah harga puncak final divergensi RSI berada di luar Bollinger Bands.</p>
+<h3>Tips Strategi</h3>
+<div class="warning">
+<ul>
+<li>Selalu kombinasikan dengan indikator lain: resistance, trendline, Fibonacci, dll.</li>
+<li>Seperti semua indikator, divergensi RSI tidak 100% akurat — ini meningkatkan probabilitas.</li>
+<li>Divergensi 1m, 5m sering diabaikan, tetapi reliabilitas meningkat: 15m &lt; 1h &lt; 4h. <strong>Divergensi 4h sangat andal — direkomendasikan untuk disetel sebagai alarm grade A.</strong></li>
+</ul>
+</div>
+</div>
+<!-- EI Section -->
+<div class="manual-section" id="ei">
+<h2>📈 Alert Indikator Tambahan ("EI")</h2>
+<div class="image-row">
+<img alt="Pengaturan EI 1" src="../images/image%204_manual.png"/>
+<img alt="Pengaturan EI 2" src="../images/image%205_manual.png"/>
+</div>
+<ol>
+<li>Pilih koin yang ingin dikonfigurasi.</li>
+<li>Atur alert harga untuk koin.</li>
+<li>Konfigurasikan alert persilangan EMA (Exponential Moving Average).</li>
+<li>Atur alert saat mendekati support/resistance.</li>
+<li>Konfigurasikan alert breakout Bollinger Band.</li>
+<li>Atur alert perubahan Supertrend.</li>
+</ol>
+<div class="warning">
+<p>※ Indikator tambahan (3, 4, 5, 6) akan direset saat Anda logout.</p>
+</div>
+</div>
+<!-- Webhook Section -->
+<div class="manual-section" id="webhook">
+<h2>🔗 Webhook TradingView, Kombinasi Sinyal &amp; Auto-Order</h2>
+<p><strong>"Webhook"</strong> — Fitur Pro untuk pengguna tingkat lanjut.</p>
+<p>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">
+          📖 Buka Panduan Webhook Detail
+        </a>
+</p>
+</div>
+<!-- Settings Section -->
+<div class="manual-section" id="settings">
+<h2>⚙️ Halaman Pengaturan</h2>
+<div class="image-row">
+<img alt="Pengaturan 1" src="../images/image%206_manual.png"/>
+<img alt="Pengaturan 2" src="../images/image%207_manual.png"/>
+</div>
+<ol>
+<li>Konfigurasikan jenis alarm (A, B...) dan suara alarm (1, 2...).</li>
+<li>Untuk auto-order, masukkan API key masing-masing exchange.</li>
+</ol>
+</div>
+<!-- Referral Section -->
+<div class="manual-section" id="referral">
+<h2>💰 Reward Referral</h2>
+<img alt="Pengaturan Referral" src="../images/image%208_manual.png" style="max-width: 550px;"/>
+<p><strong>(a)</strong> Kode referral Anda. Saat orang lain berlangganan dengan kode ini, Anda menjadi referrer mereka.</p>
+<p><strong>(b)</strong> Link undangan Anda. Siapa pun yang berlangganan melalui link ini akan otomatis mendaftarkan Anda sebagai referrer mereka.</p>
+<p><strong>(c)</strong> Masukkan alamat wallet Anda untuk reward referral. Harus wallet USDT BEP-20 (disarankan wallet dari exchange besar). Anda dapat menguji apakah deposit berfungsi dengan benar dari 'My Info' di website DivAlarm.</p>
+<p><strong>(d)</strong> Menampilkan status reward referral Anda: jumlah referral saat ini, jumlah reward potensial, jumlah terkonfirmasi, dan jumlah yang sudah dibayar.</p>
+<p>Reward berpindah dari 'potensial' ke 'terkonfirmasi' 14 hari setelah pembayaran langganan pengguna yang direferensikan (tidak termasuk free trial). Pembayaran dilakukan mingguan setiap Selasa pukul 00:00 UTC.</p>
+<h3>Cara Mendapatkan Reward Referral</h3>
+<div class="highlight">
+<p><strong>1]</strong> Buka Pengaturan → Reward Referral → Masukkan alamat wallet reward Anda.</p>
+<p><strong>2]</strong> Bagikan tautan referral Anda. Orang lain akan diarahkan ke halaman berlangganan dengan kode Anda.</p>
+<p><strong>3]</strong> Saat mereka berlangganan dan membayar, reward akan disetorkan.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

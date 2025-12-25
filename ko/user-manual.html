@@ -163,7 +163,7 @@
       .manual-section h2 { font-size: 1.8rem; }
       .manual-section h3 { font-size: 1.4rem; }
       .manual-section p, .manual-section li { font-size: 1.1rem; }
-      /* 모바일에서 inline max-width(예: style="max-width: 500px")도 컨테이너 폭을 넘지 않게 */
+      /* Override any inline max-width (e.g., style="max-width: 600px") on mobile */
       .manual-section img { max-width: 100% !important; }
       .image-row img { max-width: 100%; min-width: auto; }
     }
@@ -180,107 +180,107 @@
 <h3>📋 목차</h3>
 <ul>
 <li><a href="#menu">메뉴 개요</a></li>
-<li><a href="#divlog">신호 알림 보기 (DivLog)</a></li>
-<li><a href="#div">RSI 다이버전스 알림 설정 (Div)</a></li>
-<li><a href="#ei">추가 지표 알림 (EI)</a></li>
-<li><a href="#webhook">TradingView Webhook &amp; 자동 주문</a></li>
+<li><a href="#divlog">신호 알림 확인하기(DivLog)</a></li>
+<li><a href="#div">RSI 다이버전스 알림 설정(Div)</a></li>
+<li><a href="#ei">추가 지표 알림(EI)</a></li>
+<li><a href="#webhook">TradingView 웹훅 &amp; 자동 주문</a></li>
 <li><a href="#settings">설정 페이지</a></li>
-<li><a href="#referral">추천 보상</a></li>
+<li><a href="#referral">추천인 리워드</a></li>
 </ul>
 </div>
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
 <h2>📌 메뉴 개요</h2>
 <p><strong>"DivLog"</strong> — 다이버전스 알림 신호를 받는 곳입니다.</p>
-<p><strong>"Div"</strong> — 'RSI 다이버전스 완료' 또는 'RSI 다이버전스 형성 중' 신호를 설정하세요.</p>
-<p><strong>"EI"</strong> — 추가 지표 알림 설정: 가격 도달 알림, 지지/저항 접근 알림, EMA/볼린저 밴드/슈퍼트렌드 알림. ("추가 지표")</p>
-<p><strong>"Webhook"</strong> — Pro 사용자에게만 보입니다. 강력한 알람, 신호 조합, 자동 주문을 위한 TradingView 웹훅을 받으세요.</p>
-<p><strong>"설정"</strong> — 알람 유형, 소리, 추천 보상 설정, 공지사항 및 추천 알림을 설정하세요.</p>
+<p><strong>"Div"</strong> — 'RSI Divergence Complete' 또는 'RSI Divergence Forming' 신호를 설정합니다.</p>
+<p><strong>"EI"</strong> — 추가 지표 알림을 설정합니다: 가격 도달 알림, 지지/저항 접근 알림, EMA/볼린저 밴드/슈퍼트렌드 알림. ("Extra Indicators")</p>
+<p><strong>"Webhook"</strong> — Pro 사용자에게만 표시됩니다. 강력한 알람, 신호 조합, 자동 주문을 위해 TradingView 웹훅을 받으세요.</p>
+<p><strong>"Setting"</strong> — 알람 유형, 사운드, 추천인 리워드 설정, 공지사항, 추천인 알림을 설정합니다.</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
-<h2>📊 신호 알림 보기 ("DivLog")</h2>
+<h2>📊 신호 알림 확인하기("DivLog")</h2>
 <p>"DivLog"는 다이버전스 알림 신호를 받는 곳입니다.</p>
 <ol>
 <li>최대 150개의 신호가 저장됩니다. 주기적으로 정리하세요.</li>
-<li>확인되지 않은 알림을 표시합니다. 알람을 해제하려면 체크 표시를 하세요. 최대 5개의 최근 미확인 알림이 표시됩니다.</li>
-<li>원하는 신호만 보이도록 필터링하세요.</li>
+<li>확인하지 않은 알림을 표시합니다. 체크 표시를 눌러 알람을 해제하세요. 최근 미확인 알림은 최대 5개까지 표시됩니다.</li>
+<li>원하는 신호만 보도록 필터링하세요.</li>
 </ol>
 </div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ RSI 다이버전스 알림 설정 ("Div")</h2>
-<img alt="Div 설정 화면" src="../images/image_manual.png" style="max-width: 500px;"/>
+<h2>⚙️ RSI 다이버전스 알림 설정("Div")</h2>
+<img alt="다이버전스 설정 화면" src="../images/image_manual.png" style="max-width: 500px;"/>
 <h3>전체 RSI 다이버전스 설정</h3>
 <ol>
 <li>설정할 코인을 선택하세요.</li>
-<li>'RSI 다이버전스 완료'와 'RSI 다이버전스 형성 중' 신호 중에서 선택하세요.</li>
+<li>'RSI Divergence Complete'와 'RSI Divergence Forming' 신호 중에서 선택하세요.</li>
 <li>일괄 설정 영역 — 아래 모든 항목에 설정을 한 번에 적용합니다.</li>
 <li>+ 버튼으로 다이버전스 필터를 추가하세요.</li>
-<li>필터를 권장 기본 설정으로 재설정하세요.</li>
-<li>가격 조건을 일괄 설정하세요.</li>
+<li>필터를 권장 기본 설정으로 초기화합니다.</li>
+<li>가격 조건을 일괄로 설정합니다.</li>
 </ol>
 <h3>개별 필터 설정</h3>
 <ol start="7">
-<li>개별 RSI 다이버전스 신호를 설정하여 받으세요:
-          <p><strong>(a)</strong> 원하는 시간대를 선택하세요. 'RSI 다이버전스 형성 중'의 경우 '주 시간대'와 '보조 시간대'를 모두 선택하세요. 작은 시간대에서 RSI 피크가 형성되면서 주 시간대에서 다이버전스가 형성될 때 알림이 발생합니다 (가격 반전).</p>
-<p><strong>(b)</strong> 신호를 선택하세요: "Bull(상승)" 또는 "Bear(하락)". 파란색 = 알림 활성화, 회색 = 비활성화.</p>
-<p><strong>(c)</strong> 과매도/과매수 임계값을 설정하세요. '시작 RSI'이 과매도 수준 아래에 있을 때는 매수 알림, '시작 RSI'이 과매수 수준 위에 있을 때는 매도 알림이 발생합니다.</p>
-<p><strong>(d)</strong> 알람 유형과 소리를 설정하세요. 자세한 설정은 설정 페이지에서 확인하세요:</p>
+<li>수신할 개별 RSI 다이버전스 신호를 설정하세요:
+          <p><strong>(a)</strong> 원하는 타임프레임을 선택하세요. 'RSI Divergence Forming'의 경우 '메인 타임프레임'과 '서브 타임프레임'을 모두 선택합니다. 메인 타임프레임에서 다이버전스가 형성되는 동안(가격 반전) 더 작은 타임프레임에서 RSI 피크가 형성되면 알림이 발생합니다.</p>
+<p><strong>(b)</strong> 신호를 선택하세요: "Bull(상승)" 또는 "Bear(하락)". 파란색 = 알림 켜짐, 회색 = 꺼짐.</p>
+<p><strong>(c)</strong> 과매도/과매수 기준값을 설정합니다. 'starting RSI'가 과매도 수준보다 낮으면 상승 알림, 'starting RSI'가 과매수 수준보다 높으면 하락 알림이 울립니다.</p>
+<p><strong>(d)</strong> 알람 유형과 소리를 설정합니다. 자세한 설정은 설정 페이지에서 확인하세요:</p>
 <div class="highlight">
-<span class="alarm-type alarm-type-a">A</span> 강제 알람 (반복) — 수동으로 중지할 때까지 계속 재생, 무음 모드 무시<br/><br/>
-<span class="alarm-type alarm-type-b">B</span> 강제 알람 (한 번) — 한 번 재생, 무음 모드 무시<br/><br/>
-<span class="alarm-type alarm-type-c">C</span> 휴대폰 설정 따름 — 기기의 일반 소리 설정 사용<br/><br/>
-<span class="alarm-type alarm-type-d">D</span> 진동만 — 소리 없이 진동<br/><br/>
-<span class="alarm-type alarm-type-e">E</span> 무음 모드 — 소리 및 진동 없음
+<span class="alarm-type alarm-type-a">A</span> 강제 알람(반복) — 수동으로 중지할 때까지 계속 재생되며, 무음 모드를 무시합니다<br/><br/>
+<span class="alarm-type alarm-type-b">B</span> 강제 알람(1회) — 한 번 재생되며, 무음 모드를 무시합니다<br/><br/>
+<span class="alarm-type alarm-type-c">C</span> 휴대폰 설정 따름 — 기기의 일반 소리 설정을 사용합니다<br/><br/>
+<span class="alarm-type alarm-type-d">D</span> 진동만 — 소리 없이 진동만<br/><br/>
+<span class="alarm-type alarm-type-e">E</span> 무음 모드 — 소리와 진동 모두 없음
           </div>
 <img alt="알람 유형 설정" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> 유용한 신호를 위한 추가 조건 설정: 가격 조건, 다른 시간대 RSI 형성 조건, 볼린저 밴드 조건.</p>
+<p><strong>(e)</strong> 유용한 신호만 받도록 추가 조건을 설정합니다: 가격 조건, 다른 타임프레임 RSI 형성 조건, 볼린저 밴드 조건.</p>
 </li>
 </ol>
 <div class="image-row">
 <img alt="추가 조건 1" src="../images/image%202_manual.png"/>
 <img alt="추가 조건 2" src="../images/image%203_manual.png"/>
 </div>
-<p><strong>e0)</strong> 여러 조건이 설정된 경우 관계를 구성하세요: "그리고" (모두 만족해야 함) 또는 "또는" (하나만 만족해도 됨).</p>
-<p><strong>e1)</strong> 가격 조건 설정 — 발산 시작/종료 가격이 특정 가격 이상/이하일 때 알림.</p>
-<p><strong>e2)</strong> 다른 시간대에서 발산이 형성될 때 알림.</p>
-<p><strong>e3)</strong> RSI 발산의 최종 피크 가격이 볼린저 밴드 밖에 있는지 확인하세요.</p>
+<p><strong>e0)</strong> 여러 조건을 설정한 경우, 관계를 설정하세요: "and"(모두 충족) 또는 "or"(하나만 충족).</p>
+<p><strong>e1)</strong> 가격 조건을 설정합니다 — 다이버전스 시작/종료 가격이 특정 가격보다 위/아래일 때 알림이 울립니다.</p>
+<p><strong>e2)</strong> 다른 타임프레임에서 다이버전스가 형성 중일 때 알림을 받습니다.</p>
+<p><strong>e3)</strong> RSI 다이버전스의 최종 피크 가격이 볼린저 밴드 밖에 있는지 확인합니다.</p>
 <h3>전략 팁</h3>
 <div class="warning">
 <ul>
-<li>항상 다른 지표와 결합하세요: 저항선, 추세선, 피보나치 등.</li>
-<li>모든 지표와 마찬가지로 RSI 발산은 100% 정확하지 않으며, 확률을 높여줍니다.</li>
-<li>1분, 5분 발산은 종종 무시되지만, 신뢰성은 증가합니다: 15분 &lt; 1시간 &lt; 4시간. <strong>4시간 발산은 매우 신뢰할 수 있습니다 — A급 알람으로 설정하는 것을 권장합니다.</strong></li>
+<li>항상 다른 지표와 함께 사용하세요: 저항선, 추세선, 피보나치 등.</li>
+<li>모든 지표가 그렇듯 RSI 다이버전스도 100% 정확하진 않으며, 확률을 높여줍니다.</li>
+<li>1m, 5m 다이버전스는 종종 무시되지만, 신뢰도는 15m &lt; 1h &lt; 4h로 높아집니다. <strong>4h 다이버전스는 신뢰도가 매우 높습니다 — A등급 알람으로 설정하는 것을 추천합니다.</strong></li>
 </ul>
 </div>
 </div>
 <!-- EI Section -->
 <div class="manual-section" id="ei">
-<h2>📈 추가 지표 알림 ("EI")</h2>
+<h2>📈 추가 지표 알림("EI")</h2>
 <div class="image-row">
 <img alt="EI 설정 1" src="../images/image%204_manual.png"/>
 <img alt="EI 설정 2" src="../images/image%205_manual.png"/>
 </div>
 <ol>
 <li>설정할 코인을 선택하세요.</li>
-<li>코인의 가격 알림을 설정하세요.</li>
-<li>EMA (지수 이동 평균) 교차 알림을 설정하세요.</li>
-<li>지지/저항 접근 알림을 설정하세요.</li>
-<li>볼린저 밴드 돌파 알림을 설정하세요.</li>
-<li>슈퍼트렌드 변화 알림을 설정하세요.</li>
+<li>코인 가격 알림을 설정합니다.</li>
+<li>EMA (지수이동평균) 교차 알림을 설정합니다.</li>
+<li>지지/저항 접근 알림을 설정합니다.</li>
+<li>볼린저 밴드 돌파 알림을 설정합니다.</li>
+<li>슈퍼트렌드 변경 알림을 설정합니다.</li>
 </ol>
 <div class="warning">
-<p>※ 추가 지표 (3, 4, 5, 6)는 로그아웃 시 초기화됩니다.</p>
+<p>※ 추가 지표(3, 4, 5, 6)는 로그아웃하면 초기화됩니다.</p>
 </div>
 </div>
 <!-- Webhook Section -->
 <div class="manual-section" id="webhook">
-<h2>🔗 TradingView 웹훅, 신호 조합 &amp; 자동 주문</h2>
-<p><strong>"Webhook"</strong> — 고급 사용자를 위한 프로 기능입니다.</p>
+<h2>🔗 TradingView Webhook, 시그널 조합 &amp; 자동 주문</h2>
+<p><strong>"Webhook"</strong> — 고급 사용자를 위한 Pro 기능입니다.</p>
 <p>
 <a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">
-          📖 자세한 웹훅 가이드로 이동
+          📖 자세한 Webhook 가이드로 이동
         </a>
 </p>
 </div>
@@ -292,24 +292,24 @@
 <img alt="설정 2" src="../images/image%207_manual.png"/>
 </div>
 <ol>
-<li>알람 유형 (A, B...)과 알람 소리 (1, 2...)를 설정하세요.</li>
-<li>자동 주문을 위해 각 거래소의 API 키를 입력하세요.</li>
+<li>알람 종류(A, B...)와 알람 사운드(1, 2...)를 설정합니다.</li>
+<li>자동 주문을 사용하려면 각 거래소의 API 키를 입력하세요.</li>
 </ol>
 </div>
 <!-- Referral Section -->
 <div class="manual-section" id="referral">
-<h2>💰 추천 보상</h2>
+<h2>💰 추천인 리워드</h2>
 <img alt="추천 설정" src="../images/image%208_manual.png" style="max-width: 550px;"/>
-<p><strong>(a)</strong> 귀하의 추천 코드입니다. 다른 사용자가 이 코드를 사용하여 구독하면 귀하가 추천인이 됩니다.</p>
-<p><strong>(b)</strong> 귀하의 초대 링크입니다. 이 링크를 통해 구독한 사람은 자동으로 귀하를 추천인으로 등록합니다.</p>
-<p><strong>(c)</strong> 추천 보상을 위한 지갑 주소를 입력하세요. 반드시 BEP-20 USDT 지갑이어야 합니다 (주요 거래소 지갑 권장). DivAlarm 웹사이트의 '내 정보'에서 입금이 정상적으로 이루어지는지 테스트할 수 있습니다.</p>
-<p><strong>(d)</strong> 추천 보상 상태를 보여줍니다: 현재 추천 수, 예상 보상 금액, 확정 금액, 지급 금액.</p>
-<p>보상은 추천 사용자의 구독 결제 후 14일 후에 '예상'에서 '확정'으로 이동합니다 (무료 체험 제외). 지급은 매주 화요일 UTC 자정에 이루어집니다.</p>
-<h3>추천 보상 받는 방법</h3>
+<p><strong>(a)</strong> 내 추천 코드입니다. 다른 사람이 이 코드로 구독하면 내가 추천인으로 등록됩니다.</p>
+<p><strong>(b)</strong> 내 초대 링크입니다. 이 링크로 구독한 사람은 자동으로 나를 추천인으로 등록합니다.</p>
+<p><strong>(c)</strong> 추천인 리워드를 받을 지갑 주소를 입력하세요. BEP-20 USDT 지갑이어야 합니다(주요 거래소 지갑 권장). 입금이 정상 작동하는지는 DivAlarm 웹사이트의 '내 정보'에서 테스트할 수 있습니다.</p>
+<p><strong>(d)</strong> 추천인 리워드 현황을 보여줍니다: 현재 추천인 수, 예상 리워드 금액, 확정 금액, 지급 금액.</p>
+<p>리워드는 추천받은 사용자의 구독 결제(무료 체험 제외) 후 14일이 지나면 '예상'에서 '확정'으로 전환됩니다. 지급은 매주 화요일 UTC 00:00에 진행됩니다.</p>
+<h3>추천인 리워드 받는 방법</h3>
 <div class="highlight">
-<p><strong>1]</strong> 설정 → 추천 보상 → 보상 지갑 주소 입력으로 이동하세요.</p>
-<p><strong>2]</strong> 추천 링크를 공유하세요. 다른 사용자는 귀하의 코드로 구독 페이지로 이동합니다.</p>
-<p><strong>3]</strong> 그들이 구독하고 결제하면 보상이 입금됩니다.</p>
+<p><strong>1]</strong> 설정 → 추천인 리워드 → 리워드 지갑 주소를 입력하세요.</p>
+<p><strong>2]</strong> 추천 링크를 공유하세요. 다른 사용자는 회원님의 코드가 적용된 구독 페이지로 이동합니다.</p>
+<p><strong>3]</strong> 상대가 구독하고 결제하면 리워드가 적립됩니다.</p>
 </div>
 </div>
 </div>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fil">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Manwal ng User - DivAlarm</title>
+<meta content="0; url=../user-manual.html" http-equiv="refresh"/>
+<script>
+      (function () {
+        // Support:
+        //   /en/user-manual#ei  -> /en/user-manual.html#ei
+        //   /en/user-manual/ei  -> /en/user-manual.html#ei
+        var target = "../user-manual.html";
+        var search = window.location.search || "";
+        var hash = window.location.hash || "";
+        if (!hash) {
+          var path = window.location.pathname || "";
+          var m = path.match(/\/user-manual\/([^\/]+)\/?$/);
+          if (m && m[1]) hash = "#" + m[1];
+        }
+        window.location.replace(target + search + hash);
+      })();
+    </script>
+</head>
+<body>
+<p>
+      Nire-redirect… Kung walang nangyari,
+      <a href="../user-manual.html">buksan ang manwal ng gumagamit</a>.
+    </p>
+</body>
+</html>

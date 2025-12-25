@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<title>用户手册 - DivAlarm</title>
+<meta content="用户手册 - DivAlarm" property="og:title"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
+      color: #f8fafc;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+    
+    .manual-container {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 50px 40px;
+    }
+    
+    .back-link {
+      display: inline-block;
+      color: #00d4ff;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 0.8; }
+    
+    .manual-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .toc {
+      background: rgba(12, 12, 24, 0.9);
+      padding: 2rem 2.5rem;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+    }
+    .toc h3 {
+      color: #00d4ff;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .toc ul { list-style: none; }
+    .toc li { margin: 0.8rem 0; }
+    .toc a {
+      color: rgba(248, 250, 252, 0.85);
+      text-decoration: none;
+      font-size: 1.15rem;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: #00d4ff; }
+    
+    .manual-section {
+      margin-bottom: 4rem;
+    }
+    .manual-section h2 {
+      font-size: 2.2rem;
+      color: #00d4ff;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+    }
+    .manual-section h3 {
+      font-size: 1.6rem;
+      color: #f97316;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .manual-section p {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+      color: rgba(248, 250, 252, 0.9);
+    }
+    .manual-section ol, .manual-section ul {
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .manual-section li {
+      font-size: 1.15rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.8;
+    }
+    .manual-section img {
+      max-width: 100%;
+      height: auto !important;
+      object-fit: contain !important;
+      border-radius: 12px;
+      margin: 2rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    .manual-section strong {
+      color: #00d4ff;
+    }
+    
+    .highlight {
+      background: rgba(0, 212, 255, 0.12);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border-left: 5px solid #00d4ff;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+    }
+    .warning {
+      background: rgba(249, 115, 22, 0.12);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      border-left: 5px solid #f97316;
+      margin: 1.5rem 0;
+      font-size: 1.15rem;
+    }
+    
+    .alarm-type {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-right: 0.8rem;
+    }
+    .alarm-type-a { background: #ef4444; color: white; }
+    .alarm-type-b { background: #f97316; color: white; }
+    .alarm-type-c { background: #3b82f6; color: white; }
+    .alarm-type-d { background: #8b5cf6; color: white; }
+    .alarm-type-e { background: #6b7280; color: white; }
+    
+    .image-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .image-row img {
+      max-width: 48%;
+      min-width: 300px;
+      height: auto !important;
+    }
+    
+    @media (max-width: 768px) {
+      .manual-container { padding: 30px 20px; }
+      .manual-title { font-size: 2.2rem; }
+      .manual-section h2 { font-size: 1.8rem; }
+      .manual-section h3 { font-size: 1.4rem; }
+      .manual-section p, .manual-section li { font-size: 1.1rem; }
+      /* Override any inline max-width (e.g., style="max-width: 600px") on mobile */
+      .manual-section img { max-width: 100% !important; }
+      .image-row img { max-width: 100%; min-width: auto; }
+    }
+  </style>
+<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
+<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="manual-container">
+<a class="back-link" href="index.html">← 返回首页</a>
+<h1 class="manual-title">📱 用户手册</h1>
+<!-- Table of Contents -->
+<div class="toc">
+<h3>📋 目录</h3>
+<ul>
+<li><a href="#menu">菜单概览</a></li>
+<li><a href="#divlog">查看信号通知（DivLog）</a></li>
+<li><a href="#div">RSI 背离提醒设置（Div）</a></li>
+<li><a href="#ei">附加指标提醒（EI）</a></li>
+<li><a href="#webhook">TradingView Webhook 与自动下单</a></li>
+<li><a href="#settings">设置页面</a></li>
+<li><a href="#referral">邀请奖励</a></li>
+</ul>
+</div>
+<!-- Menu Section -->
+<div class="manual-section" id="menu">
+<h2>📌 菜单概览</h2>
+<p><strong>"DivLog"</strong> — 你接收背离提醒信号的地方。</p>
+<p><strong>"Div"</strong> — 配置“RSI 背离完成”或“RSI 背离形成中”信号。</p>
+<p><strong>"EI"</strong> — 设置附加指标提醒：价格触达提醒、支撑/阻力接近提醒、EMA/布林带/Supertrend 提醒。（“Extra Indicators”）</p>
+<p><strong>"Webhook"</strong> — 仅 Pro 用户可见。接收 TradingView webhook，用于强大的闹钟、信号组合与自动下单。</p>
+<p><strong>"Setting"</strong> — 配置提醒类型、声音、邀请奖励设置、公告与邀请通知。</p>
+</div>
+<!-- DivLog Section -->
+<div class="manual-section" id="divlog">
+<h2>📊 查看信号通知（“DivLog”）</h2>
+<p>“DivLog”是你接收背离提醒信号的地方。</p>
+<ol>
+<li>最多保存 150 条信号。请定期清理。</li>
+<li>显示未确认的提醒。勾选标记即可关闭闹钟。最多显示最近 5 条未确认提醒。</li>
+<li>筛选只查看你想要的信号。</li>
+</ol>
+</div>
+<!-- Div Section -->
+<div class="manual-section" id="div">
+<h2>⚙️ RSI 背离提醒设置（“Div”）</h2>
+<img alt="Div 设置界面" src="../images/image_manual.png" style="max-width: 500px;"/>
+<h3>整体 RSI 背离设置</h3>
+<ol>
+<li>选择要配置的币种。</li>
+<li>在“RSI 背离完成”和“RSI 背离形成中”信号之间选择。</li>
+<li>批量设置区域——一次性将设置应用到下方所有项目。</li>
+<li>点击 + 按钮添加背离过滤条件。</li>
+<li>将过滤条件重置为推荐的默认设置。</li>
+<li>批量设置价格条件。</li>
+</ol>
+<h3>单个过滤器设置</h3>
+<ol start="7">
+<li>配置要接收的单个 RSI 背离信号：
+          <p><strong>（a）</strong> 选择所需的时间周期。对于“RSI Divergence Forming”，请同时选择“主周期”和“子周期”。当子周期上形成 RSI 峰值、且主周期上背离正在形成（价格反转）时触发提醒。</p>
+<p><strong>（b）</strong> 选择信号：“Bull（看涨）”或“Bear（看跌）”。蓝色=已开启提醒，灰色=已关闭。</p>
+<p><strong>（c）</strong> 设置超卖/超买阈值。当“starting RSI”低于超卖水平时触发看涨提醒；当“starting RSI”高于超买水平时触发看跌提醒。</p>
+<p><strong>（d）</strong> 配置提醒类型和声音。详细设置在“设置”页面：</p>
+<div class="highlight">
+<span class="alarm-type alarm-type-a">A</span> 强制提醒（循环）——持续播放直到手动停止，忽略静音模式<br/><br/>
+<span class="alarm-type alarm-type-b">B</span> 强制提醒（一次）——播放一次，忽略静音模式<br/><br/>
+<span class="alarm-type alarm-type-c">C</span> 跟随手机设置——使用设备的常规声音设置<br/><br/>
+<span class="alarm-type alarm-type-d">D</span> 仅震动——无声音，仅震动<br/><br/>
+<span class="alarm-type alarm-type-e">E</span> 静音模式——无声音也无震动
+          </div>
+<img alt="报警类型设置" src="../images/image%201_manual.png" style="max-width: 350px;"/>
+<p><strong>（e）</strong> 仅为更有用的信号设置附加条件：价格条件、其他周期的 RSI 形成条件、布林带条件。</p>
+</li>
+</ol>
+<div class="image-row">
+<img alt="附加条件 1" src="../images/image%202_manual.png"/>
+<img alt="附加条件 2" src="../images/image%203_manual.png"/>
+</div>
+<p><strong>e0）</strong> 当设置了多个条件时，配置它们的关系：“and”（全部满足）或“or”（满足任意一个）。</p>
+<p><strong>e1）</strong> 设置价格条件——当背离起点/终点价格高于或低于指定价格时触发提醒。</p>
+<p><strong>e2)</strong> 当其他时间周期正在形成背离时发出提醒。</p>
+<p><strong>e3)</strong> 检查 RSI 背离的最终峰值价格是否在布林带之外。</p>
+<h3>策略建议</h3>
+<div class="warning">
+<ul>
+<li>务必结合其他指标：阻力位、趋势线、斐波那契等。</li>
+<li>和所有指标一样，RSI 背离并非 100% 准确——它提升的是胜率。</li>
+<li>1m、5m 的背离常被忽略，但可靠性会随周期增大而提升：15m &lt; 1h &lt; 4h。 <strong>4h 背离可靠性很高——建议设为 A 级警报。</strong></li>
+</ul>
+</div>
+</div>
+<!-- EI Section -->
+<div class="manual-section" id="ei">
+<h2>📈 额外指标提醒（“EI”）</h2>
+<div class="image-row">
+<img alt="EI 设置 1" src="../images/image%204_manual.png"/>
+<img alt="EI 设置 2" src="../images/image%205_manual.png"/>
+</div>
+<ol>
+<li>选择要配置的币种。</li>
+<li>为该币种设置价格提醒。</li>
+<li>配置 EMA（指数移动平均线）交叉提醒。</li>
+<li>设置接近支撑/阻力位提醒。</li>
+<li>配置布林带突破提醒。</li>
+<li>设置 Supertrend 变更提醒。</li>
+</ol>
+<div class="warning">
+<p>※ 额外指标（3、4、5、6）在你退出登录时会重置。</p>
+</div>
+</div>
+<!-- Webhook Section -->
+<div class="manual-section" id="webhook">
+<h2>🔗 TradingView Webhook、信号组合与自动下单</h2>
+<p><strong>"Webhook"</strong> — 面向高级用户的 Pro 功能。</p>
+<p>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">
+          📖 前往 Webhook 详细指南
+        </a>
+</p>
+</div>
+<!-- Settings Section -->
+<div class="manual-section" id="settings">
+<h2>⚙️ 设置页面</h2>
+<div class="image-row">
+<img alt="设置 1" src="../images/image%206_manual.png"/>
+<img alt="设置 2" src="../images/image%207_manual.png"/>
+</div>
+<ol>
+<li>配置警报类型（A、B…）和警报声音（1、2…）。</li>
+<li>如需自动下单，请输入各交易所的 API Key。</li>
+</ol>
+</div>
+<!-- Referral Section -->
+<div class="manual-section" id="referral">
+<h2>💰 邀请返佣</h2>
+<img alt="推荐设置" src="../images/image%208_manual.png" style="max-width: 550px;"/>
+<p><strong>（a）</strong> 你的邀请码。其他人使用此码订阅后，你将成为其推荐人。</p>
+<p><strong>（b）</strong> 你的邀请链接。任何人通过此链接订阅，系统会自动将你登记为其推荐人。</p>
+<p><strong>（c）</strong> 填写你的返佣收款钱包地址。必须为 BEP-20 USDT 钱包（推荐使用主流交易所钱包）。你可以在 DivAlarm 网站的“我的信息”中测试充值是否正常。</p>
+<p><strong>（d）</strong> 显示你的返佣状态：当前邀请人数、预计返佣金额、已确认金额和已发放金额。</p>
+<p>被邀请用户完成订阅付款（不含免费试用）后 14 天，返佣将从“预计”转为“已确认”。返佣每周二 UTC 0 点发放。</p>
+<h3>如何获得邀请返佣</h3>
+<div class="highlight">
+<p><strong>1]</strong> 前往 设置 → 邀请返佣 → 输入你的返佣收款钱包地址。</p>
+<p><strong>2]</strong> 分享你的推荐链接。其他人将通过你的代码跳转到订阅页面。</p>
+<p><strong>3]</strong> 当他们订阅并付款后，奖励将自动入账。</p>
+</div>
+</div>
+</div>
+</body>
+</html>
