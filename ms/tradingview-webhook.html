@@ -2,8 +2,8 @@
 <html lang="ms">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView Panduan Webhook - DivAlarm</title>
-<meta content="TradingView Panduan Webhook - DivAlarm" property="og:title"/>
+<title>Panduan Webhook TradingView - DivAlarm</title>
+<meta content="Panduan Webhook TradingView - DivAlarm" property="og:title"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -194,7 +194,7 @@
 <body>
 <div class="manual-container">
 <a class="back-link" href="user-manual.html">← Kembali ke Manual Pengguna</a>
-<h1 class="manual-title">🔗 TradingView Panduan Webhook</h1>
+<h1 class="manual-title">🔗 Panduan Webhook TradingView</h1>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Kandungan</h3>
@@ -214,7 +214,7 @@
 <img alt="Tetapan URL Webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Tetapan Notifikasi" src="../images/image_tv.png" style="max-width: 600px;"/>
 <p>Dalam bahagian "Notifications", tandakan "Webhook URL" dan tampal alamat yang disalin daripada aplikasi ke dalam medan input di bawah.</p>
-<p>Setelah ditetapkan, ini akan ditanda/diisi secara automatik untuk amaran lain.</p>
+<p>Selepas ditetapkan, ini akan ditanda/diisi secara automatik untuk amaran lain.</p>
 <img alt="Tetapan Mesej" src="../images/image%201_tv.png" style="max-width: 680px;"/>
 <p>Dalam bahagian "Messages" di bawah "Message", tambah sebarang kata kunci yang anda mahu (cth., "AAA").</p>
 <p>Klik "Create" untuk menjadualkan amaran TradingView.</p>
@@ -226,11 +226,11 @@
 <div class="manual-section" id="auto-order">
 <h2>🤖 Auto-Order dengan Amaran TradingView</h2>
 <img alt="Tetapan Auto-Order" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Anda boleh menyediakan 'Auto-Orders' untuk dihantar ke bursa apabila amaran kata kunci diterima.</p>
+<p>Anda boleh tetapkan 'Auto-Orders' untuk dihantar ke bursa apabila amaran kata kunci diterima.</p>
 <img alt="Tetapan API Exchange" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
 <p>Bursa yang disokong untuk auto-order: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Anda mesti memasukkan kunci API pada halaman Tetapan aplikasi.</p>
+<p>Anda perlu masukkan kunci API pada halaman Tetapan aplikasi.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
@@ -241,16 +241,16 @@
 <div class="highlight">
 <p><strong>Format:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(jika ada)</p>
 </div>
-<p><strong>Jenis Penggera:</strong></p>
+<p><strong>Jenis Alarm:</strong></p>
 <ul>
-<li><code>@D</code> — Penapis Divergence RSI</li>
-<li><code>@E</code> — Indikator Tambahan</li>
-<li><code>@P</code> — Amaran harga</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>Contoh</h3>
 <div class="code-block">
 <p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ RSI Divergence, BTCUSDT.P, tajuk mengandungi "Bull", Sedang terbentuk, utama 5m, sub 1m</p>
+<p class="desc">→ RSI Divergence, BTCUSDT.P, tajuk mengandungi "Bull", Sedang Terbentuk, utama 5m, sub 1m</p>
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
@@ -258,7 +258,7 @@
 </div>
 <img alt="Contoh Kata Kunci" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
-<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Indikator Tambahan, syiling BTC, tajuk mengandungi "Sell", 30m</span></p>
+<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Penunjuk Tambahan, syiling BTC, tajuk mengandungi "Sell", 30m</span></p>
 <p><code>"@E@BTC@Buy@1h"</code></p>
 <p><code>"@E@ETH@Breakout@15m"</code></p>
 <p><code>"@E@BTC@Breakdown@5m"</code></p>
@@ -272,24 +272,20 @@
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
 <h2>🔀 Amaran Gabungan Isyarat</h2>
-<p>Gabungkan berbilang isyarat TradingView untuk mencipta isyarat baharu atau isyarat yang ditapis.</p>
+<p>Gabungkan beberapa isyarat TradingView untuk cipta isyarat baharu atau isyarat bertapis.</p>
 <div class="image-row">
 <img alt="Tetapan Amaran Gabungan" src="../images/image%205_tv.png"/>
 <div>
-<p>Tetapkan syarat yang mesti dipenuhi dalam tetingkap masa untuk mencetuskan amaran.</p>
-<p><strong>Contoh:</strong><br/>
-          Dalam 1 jam 30 minit:<br/>
-          • 'Amaran dengan kata kunci A' DAN<br/>
-          • 'Amaran dengan kata kunci B' kedua-duanya diterima, ATAU<br/>
-          • 'Amaran dengan kata kunci C' diterima</p>
-<p>Masukkan <code>(1&amp;2)|3</code> dalam 'Gabungan Amaran' dan <code>1h 30m</code> dalam 'Gabungan Masa'.</p>
+<p>Tetapkan syarat yang mesti dipenuhi dalam tetingkap masa untuk mencetuskan alarm.</p>
+<p><strong>Contoh:</strong><br/> Dalam 1 jam 30 minit:<br/> • 'Amaran dengan kata kunci A' DAN<br/> • 'Amaran dengan kata kunci B' kedua-duanya tiba, ATAU<br/> • 'Amaran dengan kata kunci C' tiba</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = "AND" (kedua-dua syarat mesti dipenuhi)</p>
-<p><strong>|</strong> = "OR" (mana-mana satu syarat boleh dipenuhi)</p>
-<p>Walaupun amaran kata kunci individu dinyahdayakan, gabungan masih boleh dicetuskan apabila syarat dipenuhi.</p>
-<p><strong>Auto-order juga boleh dilakukan dengan amaran gabungan!</strong></p>
+<p><strong>&amp;</strong> = "DAN" (kedua-dua syarat mesti dipenuhi)</p>
+<p><strong>|</strong> = "ATAU" (mana-mana satu syarat boleh dipenuhi)</p>
+<p>Walaupun alarm kata kunci individu dinyahaktifkan, gabungan masih boleh dicetuskan apabila syarat dipenuhi.</p>
+<p><strong>Auto-order juga boleh dibuat dengan amaran gabungan!</strong></p>
 </div>
 </div>
 </div>

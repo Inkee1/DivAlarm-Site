@@ -194,58 +194,58 @@
 <body>
 <div class="manual-container">
 <a class="back-link" href="user-manual.html">← Voltar para o Manual do Usuário</a>
-<h1 class="manual-title">🔗 Guia de Webhook do TradingView</h1>
+<h1 class="manual-title">🔗 TradingView Guia de Webhook</h1>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Sumário</h3>
 <ul>
-<li><a href="#keyword">Alertas por Palavra-chave</a></li>
-<li><a href="#auto-order">Auto-Order com TradingView</a></li>
-<li><a href="#divalarm-keywords">Palavras-chave de Sinal do DivAlarm</a></li>
-<li><a href="#combination">Alertas de Combinação de Sinais</a></li>
+<li><a href="#keyword">Alertas por palavra-chave</a></li>
+<li><a href="#auto-order">Ordem automática com TradingView</a></li>
+<li><a href="#divalarm-keywords">Palavras-chave de sinal do DivAlarm</a></li>
+<li><a href="#combination">Alertas de combinação de sinais</a></li>
 </ul>
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
-<h2>🔔 Alertas por Palavra-chave</h2>
+<h2>🔔 Alertas por palavra-chave</h2>
 <h3>Adicionando Webhook no TradingView</h3>
 <img alt="TradingView Adicionar alerta" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>Clique com o botão direito no indicador do qual você quer receber sinais no TradingView e clique em "Add Alert on ~".</p>
+<p>Clique com o botão direito no indicador do qual você quer receber sinais no TradingView e clique em "Adicionar alerta em ~".</p>
 <img alt="Configuração da URL do webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Configurações de notificação" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>Na seção "Notifications", marque "Webhook URL" e cole o endereço copiado do app no campo de entrada abaixo.</p>
+<p>Na seção "Notificações", marque "Webhook URL" e cole o endereço copiado do app no campo de entrada abaixo.</p>
 <p>Depois de configurado, isso será marcado/preenchido automaticamente para outros alertas.</p>
 <img alt="Configurações de mensagem" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>Na seção "Messages", em "Message", adicione qualquer palavra-chave que você quiser (ex.: "AAA").</p>
-<p>Clique em "Create" para agendar o alerta do TradingView.</p>
-<h3>Recebendo Alertas do TradingView no App</h3>
+<p>Na seção "Mensagens", em "Mensagem", adicione qualquer palavra-chave que você quiser (ex.: "AAA").</p>
+<p>Clique em "Criar" para agendar o alerta do TradingView.</p>
+<h3>Recebendo alertas do TradingView no app</h3>
 <img alt="Configurações de palavras-chave do app" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Adicione a palavra-chave (ex.: "AAA") à seção 'Keyword Include' no app. Quando o "Message" do alerta do TradingView contiver a palavra-chave, o alarme tocará conforme configurado.</p>
+<p>Adicione a palavra-chave (ex.: "AAA") na seção "Incluir palavra-chave" do app. Quando a "Mensagem" do alerta do TradingView contiver a palavra-chave, o alarme tocará conforme configurado.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 Auto-Order com Alertas do TradingView</h2>
-<img alt="Configurações de ordem automática" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Você pode configurar 'Auto-Orders' para serem enviados às exchanges quando alertas por palavra-chave forem recebidos.</p>
-<img alt="Configurações da API da exchange" src="../images/image%202_tv.png" style="max-width: 500px;"/>
+<h2>🤖 Ordem automática com alertas do TradingView</h2>
+<img alt="Configurações de auto-ordem" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Você pode configurar "Ordens automáticas" para serem enviadas às corretoras quando alertas por palavra-chave forem recebidos.</p>
+<img alt="Configurações da API da corretora" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>Exchanges compatíveis com auto-orders: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Você deve inserir as chaves de API na página de Configurações do app.</p>
+<p>Corretoras compatíveis com ordens automáticas: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
+<p>Você precisa inserir as chaves de API na página de Configurações do app.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
-<h2>📝 Registrando Sinais do DivAlarm como Palavras-chave</h2>
-<img alt="Palavras-chave de Sinal do DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Os próprios alertas do DivAlarm também podem ser adicionados a 'Keyword Combinations' (para alertas de combinação ou auto-orders).</p>
+<h2>📝 Registrando sinais do DivAlarm como palavras-chave</h2>
+<img alt="Palavras-chave de sinal do DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
+<p>Os próprios alertas do DivAlarm também podem ser adicionados em "Combinações de palavras-chave" (para alertas de combinação ou ordens automáticas).</p>
 <div class="highlight">
-<p><strong>Formato:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>Formato:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(se houver)</p>
 </div>
-<p><strong>Tipos de Alarme:</strong></p>
+<p><strong>Tipos de alarme:</strong></p>
 <ul>
-<li><code>@D</code> — Filtros de divergência do RSI</li>
-<li><code>@E</code> — Indicadores extras</li>
-<li><code>@P</code> — Alertas de preço</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>Exemplos</h3>
 <div class="code-block">
@@ -254,7 +254,7 @@
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ RSI Divergência, ETHUSDT.P, título contém "Bear", Completa, 15m, sem subperíodo</p>
+<p class="desc">→ RSI Divergência, ETHUSDT.P, título contém "Bear", Completo, 15m, sem sub timeframe</p>
 </div>
 <img alt="Exemplo de palavra-chave" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
@@ -276,20 +276,16 @@
 <div class="image-row">
 <img alt="Configurações de alerta de combinação" src="../images/image%205_tv.png"/>
 <div>
-<p>Defina condições que devem ser atendidas dentro de uma janela de tempo para que os alarmes sejam acionados.</p>
-<p><strong>Exemplo:</strong><br/>
-          Dentro de 1 hora e 30 minutos:<br/>
-          • 'Alerta com palavra-chave A' E<br/>
-          • 'Alerta com palavra-chave B' chegam ambos, OU<br/>
-          • 'Alerta com palavra-chave C' chega</p>
-<p>Insira <code>(1&amp;2)|3</code> em 'Combinação de alarmes' e <code>1h 30m</code> em 'Combinação de tempo'.</p>
+<p>Defina condições que precisam ser atendidas dentro de uma janela de tempo para os alarmes dispararem.</p>
+<p><strong>Exemplo:</strong><br/> Em 1 hora e 30 minutos:<br/> • 'Alerta com palavra-chave A' E<br/> • 'Alerta com palavra-chave B' chegam, OU<br/> • 'Alerta com palavra-chave C' chega</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = "AND" (ambas as condições devem ser atendidas)</p>
-<p><strong>|</strong> = "OR" (qualquer uma das condições pode ser atendida)</p>
-<p>Mesmo que alarmes individuais por palavra-chave estejam desativados, a combinação ainda pode ser acionada quando as condições forem atendidas.</p>
-<p><strong>Ordens automáticas também são possíveis com alertas de combinação!</strong></p>
+<p><strong>&amp;</strong> = "E" (as duas condições precisam ser atendidas)</p>
+<p><strong>|</strong> = "OU" (qualquer uma das condições pode ser atendida)</p>
+<p>Mesmo que alarmes individuais por palavra-chave estejam desativados, a combinação ainda pode disparar quando as condições forem atendidas.</p>
+<p><strong>Auto-ordens também são possíveis com alertas de combinação!</strong></p>
 </div>
 </div>
 </div>

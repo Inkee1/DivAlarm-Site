@@ -2,8 +2,8 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView Webhook 가이드 - DivAlarm</title>
-<meta content="TradingView Webhook 가이드 - DivAlarm" property="og:title"/>
+<title>TradingView 웹훅 가이드 - DivAlarm</title>
+<meta content="TradingView 웹훅 가이드 - DivAlarm" property="og:title"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -194,58 +194,58 @@
 <body>
 <div class="manual-container">
 <a class="back-link" href="user-manual.html">← 사용자 매뉴얼로 돌아가기</a>
-<h1 class="manual-title">🔗 TradingView Webhook 가이드</h1>
+<h1 class="manual-title">🔗 TradingView 웹훅 가이드</h1>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 목차</h3>
 <ul>
 <li><a href="#keyword">키워드 알림</a></li>
 <li><a href="#auto-order">TradingView 알림으로 자동 주문</a></li>
-<li><a href="#divalarm-keywords">DivAlarm 신호 키워드</a></li>
-<li><a href="#combination">신호 조합 알림</a></li>
+<li><a href="#divalarm-keywords">DivAlarm 시그널 키워드</a></li>
+<li><a href="#combination">시그널 조합 알림</a></li>
 </ul>
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
 <h2>🔔 키워드 알림</h2>
-<h3>TradingView에서 Webhook 추가하기</h3>
+<h3>TradingView에 웹훅 추가하기</h3>
 <img alt="TradingView 알림 추가" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>TradingView에서 신호를 받을 인디케이터를 우클릭한 뒤 "Add Alert on ~"을 클릭하세요.</p>
-<img alt="Webhook URL 설정" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>TradingView에서 시그널을 받을 지표를 우클릭한 뒤, "Add Alert on ~"을 클릭하세요.</p>
+<img alt="웹훅 URL 설정" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="알림 설정" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>"Notifications" 섹션에서 "Webhook URL"을 체크하고, 앱에서 복사한 주소를 아래 입력란에 붙여넣으세요.</p>
+<p>"Notifications" 섹션에서 "Webhook URL"을 체크하고, 앱에서 복사한 주소를 아래 입력칸에 붙여넣으세요.</p>
 <p>한 번 설정하면 다른 알림에서도 자동으로 체크/입력됩니다.</p>
 <img alt="메시지 설정" src="../images/image%201_tv.png" style="max-width: 680px;"/>
 <p>"Messages" 섹션의 "Message"에 원하는 키워드(예: "AAA")를 추가하세요.</p>
 <p>"Create"를 클릭해 TradingView 알림을 생성하세요.</p>
 <h3>앱에서 TradingView 알림 받기</h3>
 <img alt="앱 키워드 설정" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>앱의 'Keyword Include' 섹션에 키워드(예: "AAA")를 추가하세요. TradingView 알림의 "Message"에 해당 키워드가 포함되면 설정한 대로 알람이 울립니다.</p>
+<p>앱의 'Keyword Include'에 키워드(예: "AAA")를 추가하세요. TradingView 알림의 "Message"에 해당 키워드가 포함되면, 설정한 대로 알람이 울립니다.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
 <h2>🤖 TradingView 알림으로 자동 주문</h2>
 <img alt="자동 주문 설정" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>키워드 알림을 받으면 거래소로 '자동 주문(Auto-Orders)'을 전송하도록 설정할 수 있습니다.</p>
+<p>키워드 알림을 받으면 거래소로 '자동 주문'을 전송하도록 설정할 수 있습니다.</p>
 <img alt="거래소 API 설정" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
 <p>자동 주문 지원 거래소: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>앱 설정(Settings) 페이지에서 API 키를 입력해야 합니다.</p>
+<p>앱 설정 페이지에서 API 키를 입력해야 합니다.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
-<h2>📝 DivAlarm 신호를 키워드로 등록하기</h2>
-<img alt="DivAlarm 신호 키워드" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>DivAlarm 자체 알림도 'Keyword Combinations'(조합 알림 또는 자동 주문용)에 추가할 수 있습니다.</p>
+<h2>📝 DivAlarm 시그널을 키워드로 등록하기</h2>
+<img alt="DivAlarm 시그널 키워드" src="../images/image%203_tv.png" style="max-width: 500px;"/>
+<p>DivAlarm 자체 알림도 'Keyword Combinations'에 추가할 수 있습니다(조합 알림 또는 자동 주문용).</p>
 <div class="highlight">
-<p><strong>형식:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>형식:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(있을 경우)</p>
 </div>
-<p><strong>알림 유형:</strong></p>
+<p><strong>알람 유형:</strong></p>
 <ul>
-<li><code>@D</code> — RSI 다이버전스 필터</li>
-<li><code>@E</code> — 추가 지표</li>
-<li><code>@P</code> — 가격 알림</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>예시</h3>
 <div class="code-block">
@@ -272,23 +272,19 @@
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
 <h2>🔀 신호 조합 알림</h2>
-<p>여러 TradingView 신호를 조합해 새로운 신호를 만들거나 필터링된 신호를 생성하세요.</p>
+<p>여러 TradingView 신호를 조합해 새로운 신호를 만들거나 신호를 필터링할 수 있습니다.</p>
 <div class="image-row">
 <img alt="조합 알림 설정" src="../images/image%205_tv.png"/>
 <div>
-<p>알림이 울리도록, 지정한 시간 창 안에서 충족되어야 하는 조건을 설정하세요.</p>
-<p><strong>예시:</strong><br/>
-          1시간 30분 이내:<br/>
-          • '키워드 A가 포함된 알림' AND<br/>
-          • '키워드 B가 포함된 알림'이 둘 다 도착, OR<br/>
-          • '키워드 C가 포함된 알림'이 도착</p>
-<p>입력 <code>(1&amp;2)|3</code> '알림 조합'에 입력하고 <code>1h 30m</code> '시간 조합'에 입력하세요.</p>
+<p>알람이 울리려면 지정한 시간 창 안에서 충족되어야 하는 조건을 설정하세요.</p>
+<p><strong>예시:</strong><br/> 1시간 30분 이내에:<br/> • '키워드 A 알림' AND<br/> • '키워드 B 알림'이 모두 도착하거나, OR<br/> • '키워드 C 알림'이 도착</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
 <p><strong>&amp;</strong> = "AND" (두 조건을 모두 충족해야 함)</p>
 <p><strong>|</strong> = "OR" (둘 중 하나만 충족해도 됨)</p>
-<p>개별 키워드 알림이 비활성화되어 있어도, 조건이 충족되면 조합 알림은 여전히 트리거될 수 있습니다.</p>
+<p>개별 키워드 알람이 비활성화되어 있어도, 조건이 충족되면 조합 알림은 여전히 트리거될 수 있습니다.</p>
 <p><strong>조합 알림으로 자동 주문도 가능합니다!</strong></p>
 </div>
 </div>

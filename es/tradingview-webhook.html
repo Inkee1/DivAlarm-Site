@@ -211,7 +211,7 @@
 <h3>Añadir Webhook en TradingView</h3>
 <img alt="TradingView Añadir alerta" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
 <p>Haz clic derecho en el indicador del que quieres recibir señales en TradingView y haz clic en "Add Alert on ~".</p>
-<img alt="Configuración de URL de webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
+<img alt="Configuración de URL del webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Configuración de notificaciones" src="../images/image_tv.png" style="max-width: 600px;"/>
 <p>En la sección "Notifications", marca "Webhook URL" y pega la dirección copiada desde la app en el campo de entrada de abajo.</p>
 <p>Una vez configurado, esto se marcará/rellenará automáticamente para otras alertas.</p>
@@ -220,16 +220,16 @@
 <p>Haz clic en "Create" para programar la alerta de TradingView.</p>
 <h3>Recibir alertas de TradingView en la app</h3>
 <img alt="Configuración de palabras clave de la app" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Añade la palabra clave (p. ej., "AAA") a la sección 'Keyword Include' en la app. Cuando el "Message" de la alerta de TradingView contenga la palabra clave, sonará la alarma según la configuración.</p>
+<p>Añade la palabra clave (p. ej., "AAA") a la sección "Keyword Include" en la app. Cuando el "Message" de la alerta de TradingView contenga la palabra clave, sonará la alarma según la configuración.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
 <h2>🤖 Auto-orden con alertas de TradingView</h2>
 <img alt="Configuración de órdenes automáticas" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Puedes configurar 'Auto-Orders' para que se envíen a los exchanges cuando se reciban alertas por palabra clave.</p>
+<p>Puedes configurar "Auto-Orders" para que se envíen a los exchanges cuando se reciban alertas por palabra clave.</p>
 <img alt="Configuración de API del exchange" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>Exchanges compatibles con auto-órdenes: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
+<p>Exchanges compatibles para auto-órdenes: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
 <p>Debes introducir las claves API en la página de Ajustes de la app.</p>
 </div>
 </div>
@@ -237,24 +237,24 @@
 <div class="manual-section" id="divalarm-keywords">
 <h2>📝 Registrar señales de DivAlarm como palabras clave</h2>
 <img alt="Palabras clave de señal de DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Las alertas propias de DivAlarm también se pueden añadir a 'Keyword Combinations' (para alertas de combinación o auto-órdenes).</p>
+<p>Las alertas propias de DivAlarm también se pueden añadir a "Keyword Combinations" (para alertas combinadas o auto-órdenes).</p>
 <div class="highlight">
-<p><strong>Formato:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>Formato:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(si aplica)</p>
 </div>
 <p><strong>Tipos de alarma:</strong></p>
 <ul>
-<li><code>@D</code> — Filtros de divergencia de RSI</li>
-<li><code>@E</code> — Indicadores extra</li>
-<li><code>@P</code> — Alertas de precio</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>Ejemplos</h3>
 <div class="code-block">
 <p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ RSI Divergencia, BTCUSDT.P, el título contiene "Bull", Formándose, principal 5m, sub 1m</p>
+<p class="desc">→ RSI Divergencia, BTCUSDT.P, el título contiene "Bull", en formación, principal 5m, sub 1m</p>
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ RSI Divergencia, ETHUSDT.P, el título contiene "Bear", Completa, 15m, sin sub marco temporal</p>
+<p class="desc">→ RSI Divergencia, ETHUSDT.P, el título contiene "Bear", completa, 15m, sin sub temporalidad</p>
 </div>
 <img alt="Ejemplo de palabra clave" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
@@ -272,24 +272,20 @@
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
 <h2>🔀 Alertas de combinación de señales</h2>
-<p>Combina varias señales de TradingView para crear señales nuevas o filtradas.</p>
+<p>Combina varias señales TradingView para crear señales nuevas o filtradas.</p>
 <div class="image-row">
 <img alt="Configuración de alertas de combinación" src="../images/image%205_tv.png"/>
 <div>
-<p>Configura condiciones que deben cumplirse dentro de una ventana de tiempo para que se activen las alarmas.</p>
-<p><strong>Ejemplo:</strong><br/>
-          Dentro de 1 hora 30 minutos:<br/>
-          • "Alerta con palabra clave A" Y<br/>
-          • "Alerta con palabra clave B" llegan ambas, O<br/>
-          • llega "Alerta con palabra clave C"</p>
-<p>Introduce <code>(1&amp;2)|3</code> en "Combinación de alarmas" y <code>1h 30m</code> en "Combinación de tiempo".</p>
+<p>Define condiciones que deben cumplirse dentro de una ventana de tiempo para que se activen las alarmas.</p>
+<p><strong>Ejemplo:</strong><br/> En 1 hora 30 minutos:<br/> • llegan tanto 'Alerta con palabra clave A' Y<br/> • 'Alerta con palabra clave B', O<br/> • llega 'Alerta con palabra clave C'</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = "AND" (deben cumplirse ambas condiciones)</p>
-<p><strong>|</strong> = "OR" (puede cumplirse cualquiera de las condiciones)</p>
+<p><strong>&amp;</strong> = "Y" (deben cumplirse ambas condiciones)</p>
+<p><strong>|</strong> = "O" (puede cumplirse cualquiera de las condiciones)</p>
 <p>Aunque las alarmas individuales por palabra clave estén desactivadas, la combinación puede activarse igualmente cuando se cumplan las condiciones.</p>
-<p><strong>¡También son posibles las órdenes automáticas con alertas de combinación!</strong></p>
+<p><strong>¡También es posible hacer órdenes automáticas con alertas de combinación!</strong></p>
 </div>
 </div>
 </div>

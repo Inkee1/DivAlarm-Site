@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView Руководство по Webhook — DivAlarm</title>
-<meta content="TradingView Руководство по Webhook — DivAlarm" property="og:title"/>
+<title>Руководство по Webhook — TradingView — DivAlarm</title>
+<meta content="Руководство по Webhook — TradingView — DivAlarm" property="og:title"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -194,7 +194,7 @@
 <body>
 <div class="manual-container">
 <a class="back-link" href="user-manual.html">← Назад к руководству пользователя</a>
-<h1 class="manual-title">🔗 TradingView Руководство по Webhook</h1>
+<h1 class="manual-title">🔗 Руководство по Webhook TradingView</h1>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Содержание</h3>
@@ -209,87 +209,83 @@
 <div class="manual-section" id="keyword">
 <h2>🔔 Оповещения по ключевым словам</h2>
 <h3>Добавление Webhook в TradingView</h3>
-<img alt="TradingView Добавить алерт" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>Щёлкните правой кнопкой мыши по индикатору, от которого вы хотите получать сигналы в TradingView, и нажмите «Add Alert on ~».</p>
+<img alt="TradingView Добавить сигнал" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>В TradingView нажмите правой кнопкой мыши на индикатор, от которого хотите получать сигналы, и выберите «Add Alert on ~».</p>
 <img alt="Настройка URL вебхука" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Настройки уведомлений" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>В разделе «Notifications» отметьте «Webhook URL» и вставьте адрес, скопированный из приложения, в поле ввода ниже.</p>
-<p>После настройки это будет автоматически отмечаться/заполняться для других оповещений.</p>
+<p>В разделе «Notifications» отметьте «Webhook URL» и вставьте в поле ниже адрес, скопированный из приложения.</p>
+<p>После настройки это будет автоматически отмечаться/заполняться и для других оповещений.</p>
 <img alt="Настройки сообщения" src="../images/image%201_tv.png" style="max-width: 680px;"/>
 <p>В разделе «Messages» в поле «Message» добавьте любое ключевое слово (например, «AAA»).</p>
 <p>Нажмите «Create», чтобы создать оповещение TradingView.</p>
 <h3>Получение оповещений TradingView в приложении</h3>
-<img alt="Настройки ключевых слов приложения" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Добавьте ключевое слово (например, «AAA») в раздел 'Keyword Include' в приложении. Когда «Message» оповещения TradingView содержит это ключевое слово, сработает сигнал тревоги согласно настройкам.</p>
+<img alt="Настройки ключевых слов в приложении" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Добавьте ключевое слово (например, «AAA») в разделе приложения «Keyword Include». Когда в поле «Message» оповещения TradingView будет содержаться это ключевое слово, сработает сигнал согласно настройкам.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 Авто-ордера с оповещениями TradingView</h2>
-<img alt="Настройки авто-ордера" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Вы можете настроить отправку «Авто-ордеров» на биржи при получении оповещений по ключевым словам.</p>
+<h2>🤖 Авто-ордера по оповещениям TradingView</h2>
+<img alt="Настройки авто-ордеров" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Вы можете настроить «Auto-Orders», чтобы отправлять ордера на биржи при получении оповещений по ключевым словам.</p>
 <img alt="Настройки API биржи" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
 <p>Поддерживаемые биржи для авто-ордеров: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Вам нужно ввести API-ключи на странице настроек приложения.</p>
+<p>Вам нужно указать API-ключи на странице настроек приложения.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
 <h2>📝 Регистрация сигналов DivAlarm как ключевых слов</h2>
 <img alt="Ключевые слова сигналов DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Собственные оповещения DivAlarm также можно добавить в «Keyword Combinations» (для оповещений по комбинациям или авто-ордеров).</p>
+<p>Собственные оповещения DivAlarm также можно добавлять в «Keyword Combinations» (для оповещений по комбинациям или авто-ордеров).</p>
 <div class="highlight">
 <p><strong>Формат:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
 </div>
 <p><strong>Типы сигналов:</strong></p>
 <ul>
-<li><code>@D</code> — Фильтры дивергенций RSI</li>
-<li><code>@E</code> — Дополнительные индикаторы</li>
-<li><code>@P</code> — Ценовые алерты</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>Примеры</h3>
 <div class="code-block">
 <p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ RSI Дивергенция, BTCUSDT.P, заголовок содержит "Bull", Формируется, основной 5m, дополнительный 1m</p>
+<p class="desc">→ RSI Дивергенция, BTCUSDT.P, заголовок содержит «Bull», формируется, основной 5m, доп. 1m</p>
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ RSI Дивергенция, ETHUSDT.P, заголовок содержит "Bear", Завершено, 15m, без дополнительного таймфрейма</p>
+<p class="desc">→ RSI Дивергенция, ETHUSDT.P, заголовок содержит «Bear», завершено, 15m, без доп. таймфрейма</p>
 </div>
 <img alt="Пример ключевых слов" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
-<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Дополнительный индикатор, монета BTC, заголовок содержит "Sell", 30m</span></p>
+<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Доп. индикатор, монета BTC, заголовок содержит «Sell», 30m</span></p>
 <p><code>"@E@BTC@Buy@1h"</code></p>
 <p><code>"@E@ETH@Breakout@15m"</code></p>
 <p><code>"@E@BTC@Breakdown@5m"</code></p>
 <p><code>"@E@BTC@Near Support@1m"</code></p>
 <p><code>"@E@BTC@Near Resistance@5m"</code></p>
 <p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ Ценовой алерт, монета BTC, заголовок содержит "Up"</span></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ Ценовой сигнал, монета BTC, заголовок содержит «Up»</span></p>
 <p><code>"@P@ETH@Down"</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 Алерты комбинации сигналов</h2>
+<h2>🔀 Сигналы-комбинации</h2>
 <p>Комбинируйте несколько сигналов TradingView, чтобы создавать новые или отфильтрованные сигналы.</p>
 <div class="image-row">
-<img alt="Настройки комбинированных алертов" src="../images/image%205_tv.png"/>
+<img alt="Настройки сигналов-комбинаций" src="../images/image%205_tv.png"/>
 <div>
-<p>Задайте условия, которые должны быть выполнены в пределах временного окна, чтобы сработали тревоги.</p>
-<p><strong>Пример:</strong><br/>
-          В течение 1 часа 30 минут:<br/>
-          • «Алерт с ключевым словом A» И<br/>
-          • «Алерт с ключевым словом B» оба приходят, ИЛИ<br/>
-          • приходит «Алерт с ключевым словом C»</p>
-<p>Введите <code>(1&amp;2)|3</code> в «Комбинация тревог» и <code>1h 30m</code> в «Комбинация по времени».</p>
+<p>Задайте условия, которые должны выполниться в заданном окне времени, чтобы сработал сигнал.</p>
+<p><strong>Пример:</strong><br/> В течение 1 часа 30 минут:<br/> • приходят «Сигнал с ключевым словом A» И<br/> • «Сигнал с ключевым словом B», ИЛИ<br/> • приходит «Сигнал с ключевым словом C»</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = "AND" (должны быть выполнены оба условия)</p>
-<p><strong>|</strong> = "OR" (может быть выполнено любое из условий)</p>
-<p>Даже если отдельные тревоги по ключевым словам отключены, комбинация всё равно может сработать при выполнении условий.</p>
-<p><strong>С комбинированными алертами также возможны авто-ордера!</strong></p>
+<p><strong>&amp;</strong> = «AND» (должны выполниться оба условия)</p>
+<p><strong>|</strong> = «OR» (может выполниться любое из условий)</p>
+<p>Даже если отдельные сигналы по ключевым словам отключены, комбинация всё равно может сработать при выполнении условий.</p>
+<p><strong>С сигналами-комбинациями также возможны авто-ордера!</strong></p>
 </div>
 </div>
 </div>

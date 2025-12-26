@@ -194,29 +194,29 @@
 <body>
 <div class="manual-container">
 <a class="back-link" href="user-manual.html">← กลับไปที่คู่มือผู้ใช้</a>
-<h1 class="manual-title">🔗 TradingView คู่มือ Webhook</h1>
+<h1 class="manual-title">🔗 คู่มือ Webhook ของ TradingView</h1>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 สารบัญ</h3>
 <ul>
-<li><a href="#keyword">การแจ้งเตือนด้วยคีย์เวิร์ด</a></li>
+<li><a href="#keyword">แจ้งเตือนด้วยคีย์เวิร์ด</a></li>
 <li><a href="#auto-order">สั่งออเดอร์อัตโนมัติด้วย TradingView</a></li>
-<li><a href="#divalarm-keywords">คีย์เวิร์ดสัญญาณ DivAlarm</a></li>
-<li><a href="#combination">การแจ้งเตือนแบบผสมสัญญาณ</a></li>
+<li><a href="#divalarm-keywords">คีย์เวิร์ดสัญญาณของ DivAlarm</a></li>
+<li><a href="#combination">แจ้งเตือนแบบผสมสัญญาณ</a></li>
 </ul>
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
-<h2>🔔 การแจ้งเตือนด้วยคีย์เวิร์ด</h2>
+<h2>🔔 แจ้งเตือนด้วยคีย์เวิร์ด</h2>
 <h3>การเพิ่ม Webhook ใน TradingView</h3>
 <img alt="TradingView เพิ่มการแจ้งเตือน" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>คลิกขวาที่อินดิเคเตอร์ที่คุณต้องการรับสัญญาณใน TradingView แล้วคลิก "Add Alert on ~".</p>
-<img alt="ตั้งค่า URL ของ Webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>คลิกขวาที่อินดิเคเตอร์ที่ต้องการรับสัญญาณใน TradingView แล้วคลิก "Add Alert on ~"</p>
+<img alt="ตั้งค่า Webhook URL" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="ตั้งค่าการแจ้งเตือน" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>ในส่วน "Notifications" ให้ติ๊ก "Webhook URL" แล้ววางที่อยู่ที่คัดลอกจากแอปลงในช่องด้านล่าง</p>
-<p>เมื่อตั้งค่าแล้ว ระบบจะติ๊ก/กรอกให้อัตโนมัติสำหรับการแจ้งเตือนอื่นๆ</p>
+<p>ในส่วน "Notifications" ให้ติ๊ก "Webhook URL" แล้ววางที่อยู่ที่คัดลอกจากแอปลงในช่องกรอกด้านล่าง</p>
+<p>เมื่อตั้งค่าแล้ว รายการนี้จะถูกติ๊ก/กรอกให้อัตโนมัติสำหรับการแจ้งเตือนอื่น ๆ</p>
 <img alt="ตั้งค่าข้อความ" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>ในส่วน "Messages" ใต้ "Message" ให้ใส่คีย์เวิร์ดที่ต้องการ (เช่น "AAA").</p>
+<p>ในส่วน "Messages" ใต้ "Message" ให้ใส่คีย์เวิร์ดที่ต้องการ (เช่น "AAA")</p>
 <p>คลิก "Create" เพื่อสร้างการแจ้งเตือน TradingView</p>
 <h3>การรับการแจ้งเตือน TradingView ในแอป</h3>
 <img alt="ตั้งค่าคีย์เวิร์ดในแอป" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
@@ -226,26 +226,26 @@
 <div class="manual-section" id="auto-order">
 <h2>🤖 สั่งออเดอร์อัตโนมัติด้วยการแจ้งเตือน TradingView</h2>
 <img alt="ตั้งค่าออเดอร์อัตโนมัติ" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>คุณสามารถตั้งค่า 'Auto-Orders' ให้ส่งไปยังเอ็กซ์เชนจ์เมื่อได้รับการแจ้งเตือนด้วยคีย์เวิร์ด</p>
-<img alt="ตั้งค่า API ของ Exchange" src="../images/image%202_tv.png" style="max-width: 500px;"/>
+<p>คุณสามารถตั้งค่า 'Auto-Orders' เพื่อส่งคำสั่งไปยังเอ็กซ์เชนจ์เมื่อได้รับการแจ้งเตือนด้วยคีย์เวิร์ด</p>
+<img alt="ตั้งค่า API ของเอ็กซ์เชนจ์" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
 <p>เอ็กซ์เชนจ์ที่รองรับสำหรับออเดอร์อัตโนมัติ: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>คุณต้องกรอก API keys ในหน้าการตั้งค่าของแอป</p>
+<p>คุณต้องกรอก API key ในหน้า Settings ของแอป</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
 <h2>📝 ลงทะเบียนสัญญาณ DivAlarm เป็นคีย์เวิร์ด</h2>
-<img alt="คีย์เวิร์ดสัญญาณ DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>การแจ้งเตือนของ DivAlarm เองก็สามารถเพิ่มไปที่ 'Keyword Combinations' ได้ (สำหรับการแจ้งเตือนแบบผสมหรือออเดอร์อัตโนมัติ)</p>
+<img alt="คีย์เวิร์ดสัญญาณของ DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
+<p>การแจ้งเตือนของ DivAlarm เองก็สามารถเพิ่มเข้าไปใน 'Keyword Combinations' ได้เช่นกัน (สำหรับการแจ้งเตือนแบบผสมหรือออเดอร์อัตโนมัติ)</p>
 <div class="highlight">
-<p><strong>รูปแบบ:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>รูปแบบ:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(ถ้ามี)</p>
 </div>
-<p><strong>ประเภทการเตือน:</strong></p>
+<p><strong>ประเภทการแจ้งเตือน:</strong></p>
 <ul>
-<li><code>@D</code> — ฟิลเตอร์ Divergence ของ RSI</li>
-<li><code>@E</code> — อินดิเคเตอร์เพิ่มเติม</li>
-<li><code>@P</code> — การแจ้งเตือนราคา</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>ตัวอย่าง</h3>
 <div class="code-block">
@@ -265,31 +265,27 @@
 <p><code>"@E@BTC@Near Support@1m"</code></p>
 <p><code>"@E@BTC@Near Resistance@5m"</code></p>
 <p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ การแจ้งเตือนราคา, เหรียญ BTC, ชื่อมีคำว่า "Up"</span></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ แจ้งเตือนราคา, เหรียญ BTC, ชื่อมีคำว่า "Up"</span></p>
 <p><code>"@P@ETH@Down"</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 การแจ้งเตือนการผสานสัญญาณ</h2>
-<p>ผสานสัญญาณ TradingView หลายรายการเพื่อสร้างสัญญาณใหม่หรือสัญญาณที่ผ่านการกรอง</p>
+<h2>🔀 การแจ้งเตือนแบบผสานสัญญาณ</h2>
+<p>รวมหลายสัญญาณ TradingView เพื่อสร้างสัญญาณใหม่หรือกรองสัญญาณ</p>
 <div class="image-row">
 <img alt="ตั้งค่าการแจ้งเตือนแบบผสาน" src="../images/image%205_tv.png"/>
 <div>
-<p>ตั้งเงื่อนไขที่ต้องเป็นจริงภายในช่วงเวลา เพื่อให้สัญญาณเตือนทำงาน</p>
-<p><strong>ตัวอย่าง:</strong><br/>
-          ภายใน 1 ชั่วโมง 30 นาที:<br/>
-          • 'การแจ้งเตือนที่มีคีย์เวิร์ด A' AND<br/>
-          • 'การแจ้งเตือนที่มีคีย์เวิร์ด B' มาถึงทั้งคู่, OR<br/>
-          • 'การแจ้งเตือนที่มีคีย์เวิร์ด C' มาถึง</p>
-<p>กรอก <code>(1&amp;2)|3</code> ใน 'Alarm Combination' และ <code>1h 30m</code> ใน 'Time Combination'</p>
+<p>ตั้งเงื่อนไขที่ต้องเกิดภายในช่วงเวลา เพื่อให้ทริกเกอร์การแจ้งเตือน</p>
+<p><strong>ตัวอย่าง:</strong><br/> ภายใน 1 ชั่วโมง 30 นาที:<br/> • 'แจ้งเตือนที่มีคีย์เวิร์ด A' และ<br/> • 'แจ้งเตือนที่มีคีย์เวิร์ด B' เข้ามาทั้งคู่, หรือ<br/> • 'แจ้งเตือนที่มีคีย์เวิร์ด C' เข้ามา</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
 <p><strong>&amp;</strong> = "AND" (ต้องเป็นไปตามทั้งสองเงื่อนไข)</p>
 <p><strong>|</strong> = "OR" (เป็นไปตามเงื่อนไขใดเงื่อนไขหนึ่งก็ได้)</p>
-<p>แม้จะปิดการแจ้งเตือนคีย์เวิร์ดรายตัวไว้ การผสานก็ยังสามารถทริกเกอร์ได้เมื่อเงื่อนไขครบ</p>
-<p><strong>สามารถทำออเดอร์อัตโนมัติได้ด้วยการแจ้งเตือนแบบผสานด้วย!</strong></p>
+<p>แม้จะปิดการแจ้งเตือนคีย์เวิร์ดรายตัวไว้ แต่การผสานยังสามารถทริกเกอร์ได้เมื่อเข้าเงื่อนไข</p>
+<p><strong>การสั่งออเดอร์อัตโนมัติก็ทำได้ด้วยการแจ้งเตือนแบบผสาน!</strong></p>
 </div>
 </div>
 </div>

@@ -2,8 +2,8 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView Hướng dẫn Webhook - DivAlarm</title>
-<meta content="TradingView Hướng dẫn Webhook - DivAlarm" property="og:title"/>
+<title>Hướng dẫn Webhook TradingView - DivAlarm</title>
+<meta content="Hướng dẫn Webhook TradingView - DivAlarm" property="og:title"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -194,12 +194,12 @@
 <body>
 <div class="manual-container">
 <a class="back-link" href="user-manual.html">← Quay lại Sổ tay người dùng</a>
-<h1 class="manual-title">🔗 TradingView Hướng dẫn Webhook</h1>
+<h1 class="manual-title">🔗 Hướng dẫn Webhook TradingView</h1>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Mục lục</h3>
 <ul>
-<li><a href="#keyword">Cảnh báo từ khóa</a></li>
+<li><a href="#keyword">Cảnh báo theo từ khóa</a></li>
 <li><a href="#auto-order">Tự động đặt lệnh với TradingView</a></li>
 <li><a href="#divalarm-keywords">Từ khóa tín hiệu DivAlarm</a></li>
 <li><a href="#combination">Cảnh báo kết hợp tín hiệu</a></li>
@@ -207,45 +207,45 @@
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
-<h2>🔔 Cảnh báo từ khóa</h2>
+<h2>🔔 Cảnh báo theo từ khóa</h2>
 <h3>Thêm Webhook trong TradingView</h3>
 <img alt="TradingView Thêm cảnh báo" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>Nhấp chuột phải vào chỉ báo mà bạn muốn nhận tín hiệu trong TradingView và bấm "Add Alert on ~".</p>
-<img alt="Cài đặt URL Webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>Nhấp chuột phải vào indicator bạn muốn nhận tín hiệu trong TradingView và chọn "Add Alert on ~".</p>
+<img alt="Cài đặt URL webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Cài đặt thông báo" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>Trong mục "Notifications", tích "Webhook URL" và dán địa chỉ đã sao chép từ ứng dụng vào ô nhập bên dưới.</p>
-<p>Sau khi thiết lập, mục này sẽ tự động được tích/điền cho các cảnh báo khác.</p>
-<img alt="Cài đặt tin nhắn" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>Trong mục "Messages" dưới "Message", thêm bất kỳ từ khóa nào bạn muốn (ví dụ: "AAA").</p>
-<p>Bấm "Create" để tạo cảnh báo TradingView.</p>
-<h3>Nhận cảnh báo TradingView trong ứng dụng</h3>
-<img alt="Cài đặt từ khóa ứng dụng" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Thêm từ khóa (ví dụ: "AAA") vào mục 'Keyword Include' trong ứng dụng. Khi "Message" của cảnh báo TradingView chứa từ khóa, chuông báo sẽ kêu theo cấu hình.</p>
+<p>Trong mục "Notifications", tick "Webhook URL" và dán địa chỉ đã copy từ app vào ô nhập bên dưới.</p>
+<p>Sau khi thiết lập, mục này sẽ tự động được tick/điền cho các cảnh báo khác.</p>
+<img alt="Cài đặt nội dung tin nhắn" src="../images/image%201_tv.png" style="max-width: 680px;"/>
+<p>Trong mục "Messages", ở phần "Message", thêm bất kỳ từ khóa nào bạn muốn (ví dụ: "AAA").</p>
+<p>Nhấn "Create" để tạo cảnh báo TradingView.</p>
+<h3>Nhận cảnh báo TradingView trong app</h3>
+<img alt="Cài đặt từ khóa trong app" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Thêm từ khóa (ví dụ: "AAA") vào mục 'Keyword Include' trong app. Khi "Message" của cảnh báo TradingView có chứa từ khóa, chuông báo sẽ kêu theo cấu hình.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
 <h2>🤖 Tự động đặt lệnh với cảnh báo TradingView</h2>
-<img alt="Cài đặt tự động đặt lệnh" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Bạn có thể thiết lập 'Auto-Orders' để gửi đến sàn khi nhận được cảnh báo từ khóa.</p>
-<img alt="Cài đặt API sàn giao dịch" src="../images/image%202_tv.png" style="max-width: 500px;"/>
+<img alt="Cài đặt auto-order" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Bạn có thể thiết lập 'Auto-Orders' để gửi lệnh lên sàn khi nhận được cảnh báo theo từ khóa.</p>
+<img alt="Cài đặt API sàn" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>Các sàn được hỗ trợ cho tự động đặt lệnh: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Bạn phải nhập khóa API trong trang Cài đặt của ứng dụng.</p>
+<p>Các sàn hỗ trợ auto-order: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
+<p>Bạn cần nhập API key trong trang Cài đặt của app.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
 <h2>📝 Đăng ký tín hiệu DivAlarm làm từ khóa</h2>
 <img alt="Từ khóa tín hiệu DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Các cảnh báo riêng của DivAlarm cũng có thể được thêm vào 'Keyword Combinations' (cho cảnh báo kết hợp hoặc tự động đặt lệnh).</p>
+<p>Các cảnh báo riêng của DivAlarm cũng có thể được thêm vào 'Keyword Combinations' (để tạo cảnh báo kết hợp hoặc auto-order).</p>
 <div class="highlight">
-<p><strong>Định dạng:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>Định dạng:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(nếu có)</p>
 </div>
-<p><strong>Loại cảnh báo:</strong></p>
+<p><strong>Các loại alarm:</strong></p>
 <ul>
-<li><code>@D</code> — Bộ lọc phân kỳ RSI</li>
-<li><code>@E</code> — Chỉ báo bổ sung</li>
-<li><code>@P</code> — Cảnh báo giá</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>Ví dụ</h3>
 <div class="code-block">
@@ -254,7 +254,7 @@
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ RSI Phân kỳ, ETHUSDT.P, tiêu đề chứa "Bear", Hoàn tất, 15m, không có khung thời gian phụ</p>
+<p class="desc">→ RSI Phân kỳ, ETHUSDT.P, tiêu đề chứa "Bear", Hoàn tất, 15m, không có khung phụ</p>
 </div>
 <img alt="Ví dụ từ khóa" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
@@ -272,24 +272,20 @@
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
 <h2>🔀 Cảnh báo kết hợp tín hiệu</h2>
-<p>Kết hợp nhiều tín hiệu TradingView để tạo tín hiệu mới hoặc tín hiệu đã lọc.</p>
+<p>Kết hợp nhiều tín hiệu TradingView để tạo tín hiệu mới hoặc lọc tín hiệu.</p>
 <div class="image-row">
 <img alt="Cài đặt cảnh báo kết hợp" src="../images/image%205_tv.png"/>
 <div>
-<p>Đặt các điều kiện phải được đáp ứng trong một khoảng thời gian để cảnh báo được kích hoạt.</p>
-<p><strong>Ví dụ:</strong><br/>
-          Trong vòng 1 giờ 30 phút:<br/>
-          • 'Cảnh báo với từ khóa A' VÀ<br/>
-          • 'Cảnh báo với từ khóa B' cùng đến, HOẶC<br/>
-          • 'Cảnh báo với từ khóa C' đến</p>
-<p>Nhập <code>(1&amp;2)|3</code> trong 'Kết hợp cảnh báo' và <code>1h 30m</code> trong 'Kết hợp thời gian'.</p>
+<p>Đặt các điều kiện phải thỏa trong một khoảng thời gian để alarm kích hoạt.</p>
+<p><strong>Ví dụ:</strong><br/> Trong vòng 1 giờ 30 phút:<br/> • 'Cảnh báo có từ khóa A' VÀ<br/> • 'Cảnh báo có từ khóa B' cùng đến, HOẶC<br/> • 'Cảnh báo có từ khóa C' đến</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = "AND" (cả hai điều kiện phải được đáp ứng)</p>
-<p><strong>|</strong> = "OR" (một trong hai điều kiện có thể được đáp ứng)</p>
-<p>Ngay cả khi các cảnh báo từ khóa riêng lẻ bị tắt, cảnh báo kết hợp vẫn có thể kích hoạt khi các điều kiện được đáp ứng.</p>
-<p><strong>Cũng có thể tự động đặt lệnh với cảnh báo kết hợp!</strong></p>
+<p><strong>&amp;</strong> = "AND" (phải thỏa cả hai điều kiện)</p>
+<p><strong>|</strong> = "OR" (chỉ cần thỏa một trong các điều kiện)</p>
+<p>Ngay cả khi các alarm theo từng từ khóa bị tắt, cảnh báo kết hợp vẫn có thể kích hoạt khi đủ điều kiện.</p>
+<p><strong>Cảnh báo kết hợp cũng có thể dùng để auto-order!</strong></p>
 </div>
 </div>
 </div>

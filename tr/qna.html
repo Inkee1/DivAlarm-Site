@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <title>Soru-Cevap - DivAlarm Yardım Merkezi</title>
 <meta content="DivAlarm Hakkında Sıkça Sorulan Sorular" property="og:title"/>
-<meta content="DivAlarm RSI uyumsuzluk uyarıları hakkında sık sorulan soruların yanıtlarını bulun" name="description"/>
+<meta content="DivAlarm RSI uyumsuzluk uyarılarıyla ilgili sık sorulan soruların yanıtlarını bulun" name="description"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="Webflow" name="generator"/>
 <link href="../css/normalize.css" rel="stylesheet" type="text/css"/>
@@ -279,7 +279,7 @@
 <div class="nav-menu-three">
 <ul class="nav-menu-block w-list-unstyled" role="list">
 <li>
-<a class="nav-link" href="features.html">Özellik</a>
+<a class="nav-link" href="features.html">Özellikler</a>
 </li>
 <li>
 <a class="nav-link" href="downlaods.html"><strong>İndirmeler</strong></a>
@@ -332,10 +332,10 @@
 <section class="testimonial-image-left">
 <div class="qna-container">
 <div class="qna-header">
-<h1 class="qna-title">Sıkça Sorulan Sorular</h1>
+<h1 class="qna-title">Sık Sorulan Sorular</h1>
 <p class="qna-subtitle">DivAlarm hakkında sık sorulan soruların yanıtlarını bulun</p>
 <div class="search-container">
-<input class="search-input" id="faq-search" placeholder="Soruları ara..." type="text"/>
+<input class="search-input" id="faq-search" placeholder="Sorularda ara..." type="text"/>
 <span class="search-icon">🔍</span>
 </div>
 </div>
@@ -355,9 +355,9 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p>RSI değerleri, şu kadarın ortalamasını kullanır: <strong>14 mum</strong>ve hesaplamanın başlangıç noktası, değerlerde küçük farklılıklara neden olabilir.</p>
+<p>RSI değerleri <strong>14 mum</strong> ortalamasıyla hesaplanır ve hesaplamanın başlangıç noktası değerlerde küçük farklara neden olabilir.</p>
 <p>Ayrıca iki ana hesaplama yöntemi vardır: <strong>EMA (Üstel Hareketli Ortalama)</strong> ve <strong>SMA (Basit Hareketli Ortalama)</strong>.</p>
-<p>DivAlarm, RSI değerini şu şekilde hesaplar: <em>son trendleri daha iyi yansıtır</em>, bu da diğer platformlara kıyasla küçük farklılıklara yol açabilir.</p>
+<p>DivAlarm, RSI hesaplamasını <em>son trendleri daha iyi yansıtacak</em> şekilde yapar; bu da diğer platformlara kıyasla küçük farklılıklara yol açabilir.</p>
 </div>
 </div>
 </div>
@@ -366,7 +366,7 @@
 <div class="faq-question">
 <div>
 <span class="faq-category account">Hesap</span>
-<div class="faq-question-text">Hesap başına uygulamayı yalnızca bir kişi mi kullanabilir?</div>
+<div class="faq-question-text">Bir hesapla uygulamayı yalnızca bir kişi mi kullanabilir?</div>
 </div>
 <div class="faq-icon">
 <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -376,9 +376,9 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p><strong>Evet</strong>, sinyaller öncelikle <em>en son oturum açılan cihaza</em>.</p>
-<p>gönderilir. Aynı anda oturum açılmışsa bazı sinyaller birden fazla cihazda yine de alınabilir; ancak güvenilir çalışma için, oturum açtığınız cihazı kullanmanızı öneririz: <strong>en son</strong>.</p>
-<p>Sorun yaşarsanız, <strong>Ayarlar → Senkronizasyon Ayarları</strong> bölümüne gidin ve uygulamada <em>"Bu cihazda al"</em> seçeneğine dokunarak düzgün çalıştığından emin olun.</p>
+<p><strong>Evet</strong>, sinyaller öncelikle <em>en son giriş yapılan cihaza</em> gönderilir.</p>
+<p>Aynı anda giriş yapıldıysa bazı sinyaller birden fazla cihaza da gelebilir; ancak sorunsuz kullanım için <strong>en son giriş yaptığınız</strong> cihazı kullanmanızı öneririz.</p>
+<p>Sorun yaşarsanız uygulamada <strong>Ayarlar → Senkronizasyon Ayarları</strong> bölümüne gidin ve doğru çalıştığından emin olmak için <em>"Bu cihazda al"</em> seçeneğine dokunun.</p>
 </div>
 </div>
 </div>
@@ -387,7 +387,7 @@
 <div class="faq-question">
 <div>
 <span class="faq-category platform">Platform</span>
-<div class="faq-question-text">iPhone (iOS) sürümü mevcut mu?</div>
+<div class="faq-question-text">iPhone (iOS) sürümü var mı?</div>
 </div>
 <div class="faq-icon">
 <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -397,12 +397,10 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p>Apple'ın iOS'u, <strong>çok daha katı politikalara</strong> Android'e kıyasla sahiptir.</p>
+<p>Apple’ın iOS’u, Android’e kıyasla <strong>çok daha katı politikalara</strong> sahiptir.</p>
 <p>Başlıca kısıtlamalar şunlardır:</p>
-<p>• <strong>Zorunlu alarmlar</strong> sessiz modu geçersiz kılan alarmlara izin verilmez<br/>
-                 • <strong>Arka planda otomatik emirler</strong> kısıtlıdır<br/>
-                 • Push bildirim teslimi daha sınırlıdır</p>
-<p>Bir <em>sınırlı özellikli sürüm</em> ileride iOS için yayınlayabiliriz, ancak henüz doğrulanmış bir zaman çizelgesi yok.</p>
+<p>• Sessiz modu devre dışı bırakan <strong>zorunlu alarmlara</strong> izin verilmez<br/> • <strong>Arka planda otomatik emirler</strong> kısıtlıdır<br/> • Push bildirim teslimatı daha sınırlıdır</p>
+<p>İleride iOS için <em>özellikleri sınırlı bir sürüm</em> yayınlayabiliriz, ancak henüz net bir takvim yok.</p>
 </div>
 </div>
 </div>
@@ -421,9 +419,9 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p>Bu <strong>1m/1m</strong> ayar, şu anda bir uyarı tetikler: <em>tam</em> 1 dakikalık grafikte bir uyumsuzluk oluşmak üzereyken.</p>
-<p>Bu, şu durumlarda bir uyarı alacağınız anlamına gelir: <strong>mum trendi ile RSI trendi ayrışmaya başladığında</strong> — olası dönüşleri mümkün olan en erken anda yakalayarak.</p>
-<p>Bu, bildirim almak isteyen yatırımcılar için idealdir <em>önce</em> uyumsuzluk tamamen doğrulanmadan.</p>
+<p><strong>1m/1m</strong> ayarı, 1 dakikalık grafikte bir uyumsuzluk oluşmak üzereyken <em>tam o anda</em> uyarı tetikler.</p>
+<p>Bu, <strong>mum trendi ile RSI trendi ayrışmaya başladığında</strong> uyarı alacağınız anlamına gelir — olası dönüşleri mümkün olan en erken anda yakalarsınız.</p>
+<p>Bu, uyumsuzluk tamamen doğrulanmadan <em>önce</em> bildirim almak isteyen yatırımcılar için idealdir.</p>
 </div>
 </div>
 </div>
@@ -442,10 +440,10 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p><strong>RSI Uyumsuzluk</strong> fiyat hareketi ile RSI göstergesi zıt yönlerde hareket ettiğinde ortaya çıkar.</p>
-<p><strong>Boğa Uyumsuzluğu:</strong> Fiyat daha düşük bir dip yapar, ancak RSI daha yüksek bir dip yapar → olası yukarı yönlü dönüş</p>
-<p><strong>Ayı Uyumsuzluğu:</strong> Fiyat daha yüksek bir tepe yapar, ancak RSI daha düşük bir tepe yapar → olası aşağı yönlü dönüş</p>
-<p>RSI uyumsuzluğu, yaygın olarak <em>en güvenilir göstergelerden biri</em> olarak teknik analizde piyasa dönüşlerini öngörmek için kabul edilir.</p>
+<p><strong>RSI Uyumsuzluğu</strong>, fiyat hareketi ile RSI göstergesinin zıt yönlerde hareket etmesiyle oluşur.</p>
+<p><strong>Boğa Uyumsuzluğu:</strong> Fiyat daha düşük dip yapar, ancak RSI daha yüksek dip yapar → olası yukarı yönlü dönüş</p>
+<p><strong>Ayı Uyumsuzluğu:</strong> Fiyat daha yüksek tepe yapar, ancak RSI daha düşük tepe yapar → olası aşağı yönlü dönüş</p>
+<p>RSI uyumsuzluğu, teknik analizde piyasa dönüşlerini öngörmek için <em>en güvenilir göstergelerden biri</em> olarak yaygın şekilde kabul edilir.</p>
 </div>
 </div>
 </div>
@@ -464,12 +462,10 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p>İle <strong>Pro aboneliği</strong>ile DivAlarm’ı TradingView’e bağlayan benzersiz bir webhook URL’si alırsınız.</p>
-<p>Özellikler şunları içerir:</p>
-<p>• <strong>Güçlü telefon alarmları</strong> sessiz modu aşan<br/>
-                 • <strong>Bileşik sinyaller</strong> — birden fazla uyarıyı tek bir uyarıda birleştirin<br/>
-                 • <strong>Otomatik emir yürütme</strong> desteklenen borsalarda</p>
-<p>Webhook URL’nizi TradingView’nin uyarı ayarlarına yapıştırın ve ilgili eylemi tetiklemek için uyarı mesajınıza belirli anahtar kelimeleri ekleyin.</p>
+<p><strong>Pro abonelik</strong> ile, DivAlarm’ı TradingView’e bağlayan size özel bir webhook URL’si alırsınız.</p>
+<p>Özellikler:</p>
+<p>• Sessiz modu aşan <strong>güçlü telefon alarmları</strong><br/> • <strong>Bileşik sinyaller</strong> — birden fazla uyarıyı tek bir uyarıda birleştirin<br/> • Desteklenen borsalarda <strong>otomatik emir çalıştırma</strong></p>
+<p>Webhook URL’nizi TradingView’ın uyarı ayarlarına yapıştırın ve ilgili eylemi tetiklemek için uyarı mesajınıza belirli anahtar kelimeleri ekleyin.</p>
 </div>
 </div>
 </div>
@@ -478,7 +474,7 @@
 <div class="faq-question">
 <div>
 <span class="faq-category features">Özellikler</span>
-<div class="faq-question-text">Otomatik Emir nasıl çalışır?</div>
+<div class="faq-question-text">Auto-Order nasıl çalışır?</div>
 </div>
 <div class="faq-icon">
 <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -488,19 +484,17 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p><strong>Otomatik Emir</strong> (Yalnızca Pro) seçtiğiniz TradingView uyarıları tetiklendiğinde işlemleri otomatik olarak gerçekleştirir.</p>
-<p>En fazla <strong>5 borsada</strong>desteklenir; şunları yapmanıza olanak tanır:</p>
-<p>• Belirli uyarı anahtar kelimeleriyle tetiklenen alım/satım emirleri oluşturun<br/>
-                 • Emir boyutunu, türünü ve koşullarını yapılandırın<br/>
-                 • Telefonunuz cebinizdeyken bile işlemleri gerçekleştirin</p>
-<p><em>Not:</em> Otomatik emir, borsanızla doğru API anahtarı kurulumunu gerektirir.</p>
+<p><strong>Auto-Order</strong> (yalnızca Pro), seçtiğiniz TradingView uyarıları tetiklendiğinde işlemleri otomatik olarak gerçekleştirir.</p>
+<p>En fazla <strong>5 borsada</strong> desteklenir; şunları yapmanızı sağlar:</p>
+<p>• Belirli uyarı anahtar kelimeleriyle tetiklenen al/sat emirleri oluşturun<br/> • Emir boyutunu, türünü ve koşullarını yapılandırın<br/> • Telefonunuz cebinizdeyken bile işlemleri gerçekleştirin</p>
+<p><em>Not:</em> Auto-Order, borsanızda doğru API anahtarı kurulumunu gerektirir.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="no-results" id="no-results">
 <p>😕 Aramanızla eşleşen soru bulunamadı.</p>
-<p>Farklı anahtar kelimeler deneyin veya <a href="#" style="color: #00d4ff;">bizimle iletişime geçin</a> yardım için.</p>
+<p>Try different keywords or <a href="#" style="color: #00d4ff;">bize ulaşın</a> for help.</p>
 </div>
 </div>
 </section>

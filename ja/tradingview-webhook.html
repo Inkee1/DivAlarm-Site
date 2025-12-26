@@ -200,7 +200,7 @@
 <h3>📋 目次</h3>
 <ul>
 <li><a href="#keyword">キーワードアラート</a></li>
-<li><a href="#auto-order">TradingView アラートで自動発注</a></li>
+<li><a href="#auto-order">TradingViewで自動発注</a></li>
 <li><a href="#divalarm-keywords">DivAlarm シグナルキーワード</a></li>
 <li><a href="#combination">シグナル組み合わせアラート</a></li>
 </ul>
@@ -208,44 +208,44 @@
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
 <h2>🔔 キーワードアラート</h2>
-<h3>TradingView でWebhookを追加</h3>
-<img alt="TradingView アラート追加" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>TradingView でシグナルを受け取りたいインジケーターを右クリックし、「〜でアラートを追加」をクリックします。</p>
+<h3>TradingViewでWebhookを追加</h3>
+<img alt="TradingView アラートを追加" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>TradingViewでシグナルを受け取りたいインジケーターを右クリックし、「〜にアラートを追加」をクリックします。</p>
 <img alt="Webhook URL設定" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="通知設定" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>「通知」セクションで「Webhook URL」にチェックを入れ、アプリでコピーしたアドレスを下の入力欄に貼り付けます。</p>
+<p>「Notifications」セクションで「Webhook URL」にチェックを入れ、アプリでコピーしたアドレスを下の入力欄に貼り付けます。</p>
 <p>一度設定すると、他のアラートでも自動的にチェック／入力されます。</p>
 <img alt="メッセージ設定" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>「メッセージ」セクションの「メッセージ」に、任意のキーワード（例：「AAA」）を追加します。</p>
-<p>「作成」をクリックして TradingView アラートを設定します。</p>
-<h3>アプリで TradingView アラートを受信</h3>
+<p>「Messages」セクションの「Message」に、任意のキーワード（例：「AAA」）を追加します。</p>
+<p>「Create」をクリックして、TradingView アラートを作成します。</p>
+<h3>アプリでTradingViewアラートを受信する</h3>
 <img alt="アプリのキーワード設定" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>アプリの「キーワード含む」にキーワード（例：「AAA」）を追加します。TradingView アラートの「メッセージ」にそのキーワードが含まれていると、設定どおりにアラームが鳴ります。</p>
+<p>アプリの「Keyword Include」にキーワード（例：「AAA」）を追加します。TradingView アラートの「Message」にそのキーワードが含まれていると、設定どおりにアラームが鳴ります。</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 TradingView アラートで自動発注</h2>
-<img alt="自動注文設定" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>キーワードアラートを受信したときに、取引所へ「自動発注」を送信するよう設定できます。</p>
+<h2>🤖 TradingViewアラートで自動発注</h2>
+<img alt="自動発注設定" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>キーワードアラートを受信したときに、取引所へ「自動発注」を送るよう設定できます。</p>
 <img alt="取引所API設定" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>自動発注に対応している取引所： <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
+<p>自動発注の対応取引所：<strong>Binance、ByBit、OKX、Bitget、Gate</strong></p>
 <p>アプリの設定ページでAPIキーを入力する必要があります。</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
-<h2>📝 DivAlarm シグナルをキーワードとして登録</h2>
+<h2>📝 DivAlarmシグナルをキーワードとして登録</h2>
 <img alt="DivAlarm シグナルキーワード" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>DivAlarm 独自のアラートも、「キーワード組み合わせ」（組み合わせアラート／自動発注用）に追加できます。</p>
+<p>DivAlarm独自のアラートも、「Keyword Combinations」（組み合わせアラート／自動発注用）に追加できます。</p>
 <div class="highlight">
-<p><strong>形式：</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>形式：</strong>@AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe（ある場合）</p>
 </div>
-<p><strong>アラーム種別：</strong></p>
+<p><strong>アラーム種類：</strong></p>
 <ul>
-<li><code>@D</code> — RSI ダイバージェンスフィルター</li>
-<li><code>@E</code> — 追加インジケーター</li>
-<li><code>@P</code> — 価格アラート</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>例</h3>
 <div class="code-block">
@@ -254,7 +254,7 @@
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ RSI ダイバージェンス、ETHUSDT.P、タイトルに「Bear」を含む、完了、15m、サブ時間足なし</p>
+<p class="desc">→ RSI ダイバージェンス、ETHUSDT.P、タイトルに「Bear」を含む、確定、15m、サブ時間足なし</p>
 </div>
 <img alt="キーワード例" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
@@ -276,20 +276,16 @@
 <div class="image-row">
 <img alt="組み合わせアラート設定" src="../images/image%205_tv.png"/>
 <div>
-<p>指定した時間内に満たすべき条件を設定し、条件成立時にアラームを鳴らします。</p>
-<p><strong>例：</strong><br/>
-          1時間30分以内：<br/>
-          • 「キーワードAのアラート」AND<br/>
-          • 「キーワードBのアラート」が両方届く、または<br/>
-          • 「キーワードCのアラート」が届く</p>
-<p>入力 <code>(1&amp;2)|3</code> を「アラーム組み合わせ」に、そして <code>1h 30m</code> を「時間組み合わせ」に入力します。</p>
+<p>指定した時間内に条件を満たした場合にアラームが発火するよう、条件を設定できます。</p>
+<p><strong>例：</strong><br/> 1時間30分以内に：<br/> • 「キーワードAのアラート」AND<br/> • 「キーワードBのアラート」が両方届く、または<br/> • 「キーワードCのアラート」が届く</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
 <p><strong>&amp;</strong> = 「AND」（両方の条件を満たす必要があります）</p>
 <p><strong>|</strong> = 「OR」（どちらかの条件を満たせばOK）</p>
-<p>個別のキーワードアラームを無効にしていても、条件を満たせば組み合わせアラートは発動します。</p>
-<p><strong>組み合わせアラートなら自動注文も可能！</strong></p>
+<p>個別のキーワードアラームを無効にしていても、条件を満たせば組み合わせアラートは発火します。</p>
+<p><strong>組み合わせアラートなら自動発注も可能です！</strong></p>
 </div>
 </div>
 </div>

@@ -210,47 +210,47 @@
 <h2>🔔 Mga Keyword Alert</h2>
 <h3>Pagdaragdag ng Webhook sa TradingView</h3>
 <img alt="TradingView Magdagdag ng Alert" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>I-right-click ang indicator na gusto mong pagkunan ng mga signal sa TradingView at i-click ang "Add Alert on ~".</p>
+<p>I-right click ang indicator na gusto mong pagkunan ng signals sa TradingView at i-click ang "Add Alert on ~".</p>
 <img alt="Setting ng Webhook URL" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Mga Setting ng Notification" src="../images/image_tv.png" style="max-width: 600px;"/>
 <p>Sa seksyong "Notifications", i-check ang "Webhook URL" at i-paste ang address na kinopya mula sa app sa input field sa ibaba.</p>
-<p>Kapag na-set na, awtomatikong naka-check/nakapuno ito para sa iba pang mga alert.</p>
+<p>Kapag na-set na, awtomatikong naka-check/naka-fill ito para sa iba pang alerts.</p>
 <img alt="Mga Setting ng Mensahe" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>Sa seksyong "Messages" sa ilalim ng "Message", magdagdag ng anumang keyword na gusto mo (hal., "AAA").</p>
+<p>Sa seksyong "Messages" sa ilalim ng "Message", maglagay ng kahit anong keyword na gusto mo (hal., "AAA").</p>
 <p>I-click ang "Create" para i-schedule ang TradingView alert.</p>
-<h3>Pagtanggap ng mga TradingView Alert sa App</h3>
+<h3>Pagtanggap ng TradingView Alerts sa App</h3>
 <img alt="Mga Setting ng App Keyword" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Idagdag ang keyword (hal., "AAA") sa seksyong 'Keyword Include' sa app. Kapag ang TradingView alert na "Message" ay naglalaman ng keyword, tutunog ang alarm ayon sa naka-configure.</p>
+<p>Idagdag ang keyword (hal., "AAA") sa seksyong 'Keyword Include' sa app. Kapag ang TradingView alert na "Message" ay may keyword, tutunog ang alarm ayon sa naka-configure.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 Auto-Order gamit ang mga TradingView Alert</h2>
+<h2>🤖 Auto-Order gamit ang TradingView Alerts</h2>
 <img alt="Mga Setting ng Auto-Order" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Maaari kang mag-set up ng 'Auto-Orders' na ipapadala sa mga exchange kapag may natanggap na keyword alert.</p>
+<p>Puwede kang mag-set up ng 'Auto-Orders' para maipadala sa mga exchange kapag may natanggap na keyword alerts.</p>
 <img alt="Mga Setting ng Exchange API" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
 <p>Mga suportadong exchange para sa auto-orders: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Kailangan mong ilagay ang mga API key sa page na Settings ng app.</p>
+<p>Kailangan mong ilagay ang mga API key sa Settings page ng app.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
-<h2>📝 Pagrehistro ng mga DivAlarm Signal bilang mga Keyword</h2>
+<h2>📝 Pagrehistro ng DivAlarm Signals bilang Keywords</h2>
 <img alt="DivAlarm Mga Signal Keyword" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Ang sariling mga alert ng DivAlarm ay maaari ring idagdag sa 'Keyword Combinations' (para sa combination alerts o auto-orders).</p>
+<p>Puwede ring idagdag ang sariling alerts ng DivAlarm sa 'Keyword Combinations' (para sa combination alerts o auto-orders).</p>
 <div class="highlight">
-<p><strong>Format:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>Format:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(kung meron)</p>
 </div>
 <p><strong>Mga Uri ng Alarm:</strong></p>
 <ul>
-<li><code>@D</code> — RSI Mga filter ng Divergence</li>
-<li><code>@E</code> — Mga Karagdagang Indicator</li>
-<li><code>@P</code> — Mga alert sa presyo</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>Mga Halimbawa</h3>
 <div class="code-block">
 <p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ RSI Divergence, BTCUSDT.P, ang title ay may "Bull", Nabubuo, pangunahing 5m, sub 1m</p>
+<p class="desc">→ RSI Divergence, BTCUSDT.P, ang title ay may "Bull", Nabubuo, main 5m, sub 1m</p>
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
@@ -258,14 +258,14 @@
 </div>
 <img alt="Halimbawa ng Keyword" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
-<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Karagdagang Indicator, BTC coin, ang title ay may "Sell", 30m</span></p>
+<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Extra Indicator, BTC coin, ang title ay may "Sell", 30m</span></p>
 <p><code>"@E@BTC@Buy@1h"</code></p>
 <p><code>"@E@ETH@Breakout@15m"</code></p>
 <p><code>"@E@BTC@Breakdown@5m"</code></p>
 <p><code>"@E@BTC@Near Support@1m"</code></p>
 <p><code>"@E@BTC@Near Resistance@5m"</code></p>
 <p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ Alert sa presyo, BTC coin, ang title ay may "Up"</span></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ Price alert, BTC coin, ang title ay may "Up"</span></p>
 <p><code>"@P@ETH@Down"</code></p>
 </div>
 </div>
@@ -276,20 +276,16 @@
 <div class="image-row">
 <img alt="Mga Setting ng Combination Alert" src="../images/image%205_tv.png"/>
 <div>
-<p>Magtakda ng mga kundisyong dapat matugunan sa loob ng isang time window para mag-trigger ang mga alarm.</p>
-<p><strong>Halimbawa:</strong><br/>
-          Sa loob ng 1 oras 30 minuto:<br/>
-          • 'Alert na may keyword A' AT<br/>
-          • 'Alert na may keyword B' ay parehong dumating, O<br/>
-          • 'Alert na may keyword C' ay dumating</p>
-<p>Ilagay <code>(1&amp;2)|3</code> sa 'Alarm Combination' at <code>1h 30m</code> sa 'Time Combination'.</p>
+<p>Itakda ang mga kundisyong dapat matugunan sa loob ng time window para mag-trigger ang mga alarm.</p>
+<p><strong>Halimbawa:</strong><br/> Sa loob ng 1 oras 30 minuto:<br/> • parehong dumating ang 'Alert na may keyword A' AT<br/> • 'Alert na may keyword B', O<br/> • dumating ang 'Alert na may keyword C'</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = "AND" (dapat matugunan ang parehong kundisyon)</p>
-<p><strong>|</strong> = "OR" (puwedeng matugunan ang alinmang kundisyon)</p>
-<p>Kahit naka-disable ang mga alarm ng indibidwal na keyword, puwede pa ring mag-trigger ang kombinasyon kapag natugunan ang mga kundisyon.</p>
-<p><strong>Posible rin ang auto-orders gamit ang combination alerts!</strong></p>
+<p><strong>&amp;</strong> = "AND" (dapat matugunan ang parehong kondisyon)</p>
+<p><strong>|</strong> = "OR" (puwedeng matugunan ang alinman sa kondisyon)</p>
+<p>Kahit naka-disable ang mga alarm ng individual na keyword, puwede pa ring mag-trigger ang combination kapag natugunan ang mga kondisyon.</p>
+<p><strong>Puwede rin ang auto-order gamit ang combination alerts!</strong></p>
 </div>
 </div>
 </div>

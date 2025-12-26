@@ -173,19 +173,19 @@
 </head>
 <body>
 <div class="manual-container">
-<a class="back-link" href="index.html">← Voltar para a Página Inicial</a>
-<h1 class="manual-title">📱 Manual do Usuário</h1>
+<a class="back-link" href="index.html">← Voltar para a página inicial</a>
+<h1 class="manual-title">📱 Manual do usuário</h1>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Sumário</h3>
 <ul>
 <li><a href="#menu">Visão geral do menu</a></li>
-<li><a href="#divlog">Visualizando notificações de sinais (DivLog)</a></li>
-<li><a href="#div">RSI Configurações de alertas de divergência (Div)</a></li>
+<li><a href="#divlog">Ver notificações de sinais (DivLog)</a></li>
+<li><a href="#div">RSI Configurações de alerta de divergência (Div)</a></li>
 <li><a href="#ei">Alertas de indicadores adicionais (EI)</a></li>
-<li><a href="#webhook">TradingView Webhook e Auto-Order</a></li>
-<li><a href="#settings">Página de configurações</a></li>
-<li><a href="#referral">Recompensas por indicação</a></li>
+<li><a href="#webhook">TradingView Webhook e Ordem Automática</a></li>
+<li><a href="#settings">Página de Configurações</a></li>
+<li><a href="#referral">Recompensas por Indicação</a></li>
 </ul>
 </div>
 <!-- Menu Section -->
@@ -193,8 +193,8 @@
 <h2>📌 Visão geral do menu</h2>
 <p><strong>"DivLog"</strong> — Onde você recebe os sinais de alerta de divergência.</p>
 <p><strong>"Div"</strong> — Configure os sinais 'RSI Divergence Complete' ou 'RSI Divergence Forming'.</p>
-<p><strong>"EI"</strong> — Configure alertas de indicadores adicionais: alertas de alcance de preço, alertas de aproximação de suporte/resistência, alertas de EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
-<p><strong>"Webhook"</strong> — Visível apenas para usuários Pro. Receba webhooks TradingView para alarmes poderosos, combinações de sinais e auto-ordens.</p>
+<p><strong>"EI"</strong> — Configure alertas adicionais de indicadores: alertas de preço atingido, alertas de aproximação de suporte/resistência, alertas de EMA/Bollinger Band/Supertrend. ("Indicadores Extras")</p>
+<p><strong>"Webhook"</strong> — Visível apenas para usuários Pro. Receba webhooks TradingView para alarmes poderosos, combinações de sinais e ordens automáticas.</p>
 <p><strong>"Setting"</strong> — Configure tipos de alarme, sons, configurações de recompensas por indicação, anúncios e notificações de indicação.</p>
 </div>
 <!-- DivLog Section -->
@@ -202,47 +202,41 @@
 <h2>📊 Visualizando notificações de sinais ("DivLog")</h2>
 <p>"DivLog" é onde você recebe os sinais de alerta de divergência.</p>
 <ol>
-<li>Até 150 sinais são armazenados. Faça uma limpeza periodicamente.</li>
+<li>Até 150 sinais ficam armazenados. Faça uma limpeza periodicamente.</li>
 <li>Mostra alertas não verificados. Marque para dispensar o alarme. No máximo 5 alertas recentes não verificados são exibidos.</li>
-<li>Filtre para ver apenas os sinais que você deseja.</li>
+<li>Filtre para ver apenas os sinais que você quer.</li>
 </ol>
 </div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ RSI Configurações de alertas de divergência ("Div")</h2>
+<h2>⚙️ Configurações de alerta de divergência RSI ("Div")</h2>
 <img alt="Tela de Configurações de Div" src="../images/image_manual.png" style="max-width: 500px;"/>
 <h3>Configurações gerais de divergência RSI</h3>
 <ol>
 <li>Selecione qual moeda configurar.</li>
 <li>Escolha entre os sinais 'RSI Divergence Complete' e 'RSI Divergence Forming'.</li>
-<li>Área de configurações em lote — aplique as configurações a todos os itens abaixo de uma só vez.</li>
+<li>Área de configurações em lote — aplique as configurações a todos os itens abaixo de uma vez.</li>
 <li>Adicione filtros de divergência com o botão +.</li>
 <li>Redefina os filtros para as configurações padrão recomendadas.</li>
 <li>Defina condições de preço em lote.</li>
 </ol>
-<h3>Configurações Individuais de Filtro</h3>
+<h3>Configurações individuais de filtro</h3>
 <ol start="7">
-<li>Configure sinais individuais de divergência RSI para receber:
-          <p><strong>(a)</strong> Selecione o timeframe desejado. Para "RSI Divergence Forming", escolha tanto um "timeframe principal" quanto um "sub-timeframe". Os alertas disparam quando o pico RSI se forma no timeframe menor enquanto a divergência está se formando no timeframe principal (reversão de preço).</p>
+<li>Configure individual RSI divergence signals to receive:
+          <p><strong>(a)</strong> Selecione o timeframe desejado. Para 'RSI Divergence Forming', escolha um 'timeframe principal' e um 'timeframe secundário'. Os alertas disparam quando o RSI topo se forma no timeframe menor enquanto a divergência está se formando no timeframe principal (reversão de preço).</p>
 <p><strong>(b)</strong> Escolha os sinais: "Bull (alta)" ou "Bear (baixa)". Azul = alertas ativados, Cinza = desativados.</p>
-<p><strong>(c)</strong> Defina os limites de sobrevenda/sobrecompra. Alertas de alta quando o "RSI inicial" estiver abaixo do nível de sobrevenda; de baixa quando o "RSI inicial" estiver acima do nível de sobrecompra.</p>
-<p><strong>(d)</strong> Configure o tipo de alarme e o som. Configurações detalhadas na página Configurações:</p>
-<div class="highlight">
-<span class="alarm-type alarm-type-a">A</span> Forçar Alarme (Loop) — toca continuamente até ser interrompido manualmente; ignora o modo silencioso<br/><br/>
-<span class="alarm-type alarm-type-b">B</span> Forçar Alarme (Uma vez) — toca uma vez; ignora o modo silencioso<br/><br/>
-<span class="alarm-type alarm-type-c">C</span> Seguir Configurações do Celular — usa as configurações normais de som do dispositivo<br/><br/>
-<span class="alarm-type alarm-type-d">D</span> Somente Vibrar — vibração sem som<br/><br/>
-<span class="alarm-type alarm-type-e">E</span> Modo Silencioso — sem som nem vibração
-          </div>
+<p><strong>(c)</strong> Defina os limites de sobrevenda/sobrecompra. Alertas de alta quando o 'início RSI' estiver abaixo do nível de sobrevenda; de baixa quando o 'início RSI' estiver acima do nível de sobrecompra.</p>
+<p><strong>(d)</strong> Configure o tipo de alarme e o som. Configurações detalhadas na página de Configurações:</p>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Alarme forçado (Loop) — toca continuamente até ser parado manualmente, ignora o modo silencioso<br/><br/> <span class="alarm-type alarm-type-b">B</span> Alarme forçado (Uma vez) — toca uma vez, ignora o modo silencioso<br/><br/> <span class="alarm-type alarm-type-c">C</span> Seguir configurações do celular — usa as configurações normais de som do dispositivo<br/><br/> <span class="alarm-type alarm-type-d">D</span> Apenas vibrar — vibração sem som<br/><br/> <span class="alarm-type alarm-type-e">E</span> Modo silencioso — sem som nem vibração</div>
 <img alt="Configurações do Tipo de Alarme" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Defina condições adicionais para receber apenas sinais úteis: condições de preço, condições de formação de RSI em outro timeframe, condições de Bandas de Bollinger.</p>
+<p><strong>(e)</strong> Defina condições adicionais para receber apenas sinais úteis: condições de preço, condições de formação em outro timeframe RSI, condições de Bandas de Bollinger.</p>
 </li>
 </ol>
 <div class="image-row">
 <img alt="Condições Adicionais 1" src="../images/image%202_manual.png"/>
 <img alt="Condições Adicionais 2" src="../images/image%203_manual.png"/>
 </div>
-<p><strong>e0)</strong> Quando várias condições forem definidas, configure a relação: "and" (todas devem ser atendidas) ou "or" (qualquer uma atendida).</p>
+<p><strong>e0)</strong> Quando várias condições estiverem definidas, configure a relação: "e" (todas devem ser atendidas) ou "ou" (qualquer uma atende).</p>
 <p><strong>e1)</strong> Defina condições de preço — alerta quando o preço de início/fim da divergência estiver acima/abaixo de um preço específico.</p>
 <p><strong>e2)</strong> Alerta quando a divergência estiver se formando em outro timeframe.</p>
 <p><strong>e3)</strong> Verifique se o preço do pico final da divergência RSI está fora das Bandas de Bollinger.</p>
@@ -250,8 +244,8 @@
 <div class="warning">
 <ul>
 <li>Sempre combine com outros indicadores: resistência, linhas de tendência, Fibonacci etc.</li>
-<li>Como todos os indicadores, a divergência RSI não é 100% precisa — ela aumenta a probabilidade.</li>
-<li>Divergências de 1m e 5m muitas vezes são ignoradas, mas a confiabilidade aumenta: 15m &lt; 1h &lt; 4h. <strong>A divergência de 4h é altamente confiável — recomendado definir como alarme de nível A.</strong></li>
+<li>Como todo indicador, a divergência RSI não é 100% precisa — ela aumenta a probabilidade.</li>
+<li>Divergências em 1m e 5m muitas vezes são ignoradas, mas a confiabilidade aumenta: 15m &lt; 1h &lt; 4h. <strong>A divergência em 4h é muito confiável — recomendamos definir como alarme de nível A.</strong></li>
 </ul>
 </div>
 </div>
@@ -276,12 +270,10 @@
 </div>
 <!-- Webhook Section -->
 <div class="manual-section" id="webhook">
-<h2>🔗 Webhook, Combinação de Sinais e Ordem Automática TradingView</h2>
-<p><strong>"Webhook"</strong> — Recurso Pro para usuários avançados.</p>
+<h2>🔗 TradingView Webhook, Combinação de Sinais e Ordem Automática</h2>
+<p><strong>"Webhook"</strong> — recurso Pro para usuários avançados.</p>
 <p>
-<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">
-          📖 Ir para o Guia Detalhado de Webhook
-        </a>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Ir para o Guia Detalhado de Webhook</a>
 </p>
 </div>
 <!-- Settings Section -->
@@ -293,23 +285,23 @@
 </div>
 <ol>
 <li>Configure os tipos de alarme (A, B...) e os sons de alarme (1, 2...).</li>
-<li>Para ordens automáticas, insira as chaves de API de cada exchange.</li>
+<li>Para ordens automáticas, insira as chaves de API de cada corretora.</li>
 </ol>
 </div>
 <!-- Referral Section -->
 <div class="manual-section" id="referral">
 <h2>💰 Recompensas por Indicação</h2>
 <img alt="Configurações de Indicação" src="../images/image%208_manual.png" style="max-width: 550px;"/>
-<p><strong>(a)</strong> Seu código de indicação. Quando outras pessoas assinam com este código, você se torna o indicador delas.</p>
-<p><strong>(b)</strong> Seu link de convite. Qualquer pessoa que assinar por este link registra você automaticamente como indicador.</p>
-<p><strong>(c)</strong> Insira o endereço da sua carteira para receber recompensas por indicação. Deve ser uma carteira BEP-20 USDT (recomendamos carteiras de grandes exchanges). Você pode testar se os depósitos funcionam corretamente em "My Info" no site DivAlarm.</p>
-<p><strong>(d)</strong> Mostra o status das suas recompensas por indicação: contagem atual de indicados, valor potencial da recompensa, valor confirmado e valor pago.</p>
-<p>As recompensas passam de "potencial" para "confirmado" 14 dias após o pagamento da assinatura do usuário indicado (excluindo o teste grátis). Os pagamentos são feitos semanalmente, na terça-feira, à meia-noite UTC.</p>
+<p><strong>(a)</strong> Seu código de indicação. Quando outras pessoas assinam com esse código, você se torna o indicador delas.</p>
+<p><strong>(b)</strong> Seu link de convite. Qualquer pessoa que assinar por esse link registra você automaticamente como indicador.</p>
+<p><strong>(c)</strong> Informe o endereço da sua carteira para receber as recompensas de indicação. Deve ser uma carteira BEP-20 USDT (recomendamos carteiras de grandes corretoras). Você pode testar se os depósitos estão funcionando corretamente em "Minhas Informações" no site DivAlarm.</p>
+<p><strong>(d)</strong> Mostra o status das suas recompensas de indicação: número atual de indicados, valor potencial da recompensa, valor confirmado e valor pago.</p>
+<p>As recompensas passam de “potenciais” para “confirmadas” 14 dias após o pagamento da assinatura do usuário indicado (excluindo o teste grátis). Os pagamentos são feitos semanalmente, na terça-feira, à meia-noite (UTC).</p>
 <h3>Como Ganhar Recompensas por Indicação</h3>
 <div class="highlight">
-<p><strong>1]</strong> Vá em Configurações → Recompensas por Indicação → Insira o endereço da sua carteira de recompensas.</p>
-<p><strong>2]</strong> Compartilhe seu link de indicação. Outras pessoas serão direcionadas para a página de assinatura com o seu código.</p>
-<p><strong>3]</strong> Quando elas assinarem e pagarem, as recompensas serão depositadas.</p>
+<p><strong>1]</strong> Vá em Configurações → Recompensas por Indicação → Insira o endereço da sua carteira para receber as recompensas.</p>
+<p><strong>2]</strong> Compartilhe seu link de indicação. As pessoas serão direcionadas para a página de assinatura com o seu código.</p>
+<p><strong>3]</strong> Quando elas assinarem e pagarem, as recompensas são depositadas.</p>
 </div>
 </div>
 </div>

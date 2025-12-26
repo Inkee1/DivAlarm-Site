@@ -200,7 +200,7 @@
 <h3>📋 目录</h3>
 <ul>
 <li><a href="#keyword">关键词提醒</a></li>
-<li><a href="#auto-order">使用 TradingView 自动下单</a></li>
+<li><a href="#auto-order">通过 TradingView 自动下单</a></li>
 <li><a href="#divalarm-keywords">DivAlarm 信号关键词</a></li>
 <li><a href="#combination">信号组合提醒</a></li>
 </ul>
@@ -210,42 +210,42 @@
 <h2>🔔 关键词提醒</h2>
 <h3>在 TradingView 中添加 Webhook</h3>
 <img alt="TradingView 添加提醒" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>在 TradingView 中右键点击你想接收信号的指标，然后点击“Add Alert on ~”。</p>
+<p>在 TradingView 中，右键点击你想接收信号的指标，然后点击“Add Alert on ~”。</p>
 <img alt="Webhook URL 设置" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="通知设置" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>在“Notifications”部分，勾选“Webhook URL”，并将从应用中复制的地址粘贴到下方输入框中。</p>
-<p>设置完成后，其他提醒会自动勾选/填入该项。</p>
+<p>在“Notifications”部分，勾选“Webhook URL”，并将从应用复制的地址粘贴到下方输入框中。</p>
+<p>设置一次后，其他提醒会自动勾选/填充该项。</p>
 <img alt="消息设置" src="../images/image%201_tv.png" style="max-width: 680px;"/>
 <p>在“Messages”部分的“Message”下，添加任意你想要的关键词（例如“AAA”）。</p>
 <p>点击“Create”以创建 TradingView 提醒。</p>
 <h3>在应用中接收 TradingView 提醒</h3>
 <img alt="App 关键词设置" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>在应用的“Keyword Include”中添加该关键词（例如“AAA”）。当 TradingView 提醒的“Message”包含该关键词时，将按配置触发报警。</p>
+<p>在应用的“Keyword Include”中添加关键词（例如“AAA”）。当 TradingView 提醒的“Message”包含该关键词时，将按配置触发报警。</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 使用 TradingView 提醒自动下单</h2>
+<h2>🤖 通过 TradingView 提醒自动下单</h2>
 <img alt="自动下单设置" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
 <p>当收到关键词提醒时，你可以设置将“自动下单”发送到交易所。</p>
 <img alt="交易所 API 设置" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>支持自动下单的交易所： <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>你必须在应用的设置页面中输入 API Key。</p>
+<p>自动下单支持的交易所：<strong>Binance、ByBit、OKX、Bitget、Gate</strong></p>
+<p>你必须在应用的设置页面中填写 API Key。</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
 <h2>📝 将 DivAlarm 信号注册为关键词</h2>
 <img alt="DivAlarm 信号关键词" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>DivAlarm 自带的提醒也可以添加到“Keyword Combinations”（用于组合提醒或自动下单）。</p>
+<p>DivAlarm 自带的提醒也可以添加到“关键词组合”（用于组合提醒或自动下单）。</p>
 <div class="highlight">
-<p><strong>格式：</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>格式：</strong>@AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe（如有）</p>
 </div>
-<p><strong>提醒类型：</strong></p>
+<p><strong>报警类型：</strong></p>
 <ul>
-<li><code>@D</code> — RSI 背离过滤器</li>
-<li><code>@E</code> — 额外指标</li>
-<li><code>@P</code> — 价格提醒</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>示例</h3>
 <div class="code-block">
@@ -271,25 +271,21 @@
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 信号组合提醒</h2>
-<p>组合多个 TradingView 信号，创建新的或筛选后的信号。</p>
+<h2>🔀 信号组合报警</h2>
+<p>组合多个 TradingView 信号，生成新的或筛选后的信号。</p>
 <div class="image-row">
-<img alt="组合提醒设置" src="../images/image%205_tv.png"/>
+<img alt="组合报警设置" src="../images/image%205_tv.png"/>
 <div>
-<p>设置必须在时间窗口内满足的条件，满足后才会触发报警。</p>
-<p><strong>示例：</strong><br/>
-          在 1 小时 30 分钟内：<br/>
-          • “包含关键词 A 的提醒” AND<br/>
-          • “包含关键词 B 的提醒”同时到达，或<br/>
-          • “包含关键词 C 的提醒”到达</p>
-<p>输入 <code>(1&amp;2)|3</code> 在“报警组合”中，并 <code>1h 30m</code> 在“时间组合”中。</p>
+<p>设置在时间窗口内必须满足的条件，满足后才会触发报警。</p>
+<p><strong>示例：</strong><br/>在 1 小时 30 分钟内：<br/> • “包含关键词 A 的提醒” AND<br/> • “包含关键词 B 的提醒”同时到达，或<br/> • “包含关键词 C 的提醒”到达</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = “AND”（必须同时满足两个条件）</p>
-<p><strong>|</strong> = “OR”（满足任一条件即可）</p>
-<p>即使单个关键词报警被禁用，只要满足条件，组合仍可触发。</p>
-<p><strong>使用组合提醒也可以实现自动下单！</strong></p>
+<p><strong>&amp;</strong> = “AND”（必须同时满足）</p>
+<p><strong>|</strong> = “OR”（满足其一即可）</p>
+<p>即使单个关键词报警被禁用，只要满足条件，组合报警仍可触发。</p>
+<p><strong>组合报警也支持自动下单！</strong></p>
 </div>
 </div>
 </div>

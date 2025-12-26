@@ -179,8 +179,8 @@
 <div class="toc">
 <h3>📋 Inhaltsverzeichnis</h3>
 <ul>
-<li><a href="#menu">Menü-Übersicht</a></li>
-<li><a href="#divlog">Signalbenachrichtigungen anzeigen (DivLog)</a></li>
+<li><a href="#menu">Menüübersicht</a></li>
+<li><a href="#divlog">Signalbenachrichtigungen ansehen (DivLog)</a></li>
 <li><a href="#div">RSI Divergenz-Alarm-Einstellungen (Div)</a></li>
 <li><a href="#ei">Zusätzliche Indikator-Alarme (EI)</a></li>
 <li><a href="#webhook">TradingView Webhook &amp; Auto-Order</a></li>
@@ -191,67 +191,61 @@
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
 <h2>📌 Menü-Übersicht</h2>
-<p><strong>"DivLog"</strong> — Hier erhältst du Divergenz-Alarm-Signale.</p>
-<p><strong>"Div"</strong> — Konfiguriere Signale für 'RSI Divergence Complete' oder 'RSI Divergence Forming'.</p>
-<p><strong>"EI"</strong> — Richte zusätzliche Indikator-Alarme ein: Preisziel-Alarme, Annäherungsalarme an Support/Resistance, EMA/Bollinger Band/Supertrend-Alarme. ("Extra Indicators")</p>
-<p><strong>"Webhook"</strong> — Nur für Pro-Nutzer sichtbar. Erhalte TradingView Webhooks für leistungsstarke Alarme, Signalkombinationen und Auto-Orders.</p>
-<p><strong>"Setting"</strong> — Konfiguriere Alarmtypen, Sounds, Einstellungen für Empfehlungsprämien, Ankündigungen und Empfehlungsbenachrichtigungen.</p>
+<p><strong>„DivLog“</strong> — Hier erhältst du Divergenz-Alarm-Signale.</p>
+<p><strong>„Div“</strong> — Konfiguriere Signale für „RSI Divergence Complete“ oder „RSI Divergence Forming“.</p>
+<p><strong>„EI“</strong> — Richte zusätzliche Indikator-Alarme ein: Kursziel-Alarme, Annäherung an Support/Resistance, EMA/Bollinger Band/Supertrend-Alarme. („Extra Indicators“)</p>
+<p><strong>„Webhook“</strong> — Nur für Pro-Nutzer sichtbar. Erhalte TradingView Webhooks für leistungsstarke Alarme, Signalkombinationen und Auto-Orders.</p>
+<p><strong>„Setting“</strong> — Konfiguriere Alarmtypen, Sounds, Einstellungen für Empfehlungsprämien, Ankündigungen und Empfehlungsbenachrichtigungen.</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
-<h2>📊 Signalbenachrichtigungen anzeigen ("DivLog")</h2>
-<p>"DivLog" ist der Ort, an dem du Divergenz-Alarm-Signale erhältst.</p>
+<h2>📊 Signalbenachrichtigungen ansehen („DivLog“)</h2>
+<p>„DivLog“ ist der Bereich, in dem du Divergenz-Alarm-Signale erhältst.</p>
 <ol>
-<li>Es werden bis zu 150 Signale gespeichert. Regelmäßig bereinigen.</li>
+<li>Bis zu 150 Signale werden gespeichert. Regelmäßig aufräumen.</li>
 <li>Zeigt ungeprüfte Alarme. Setze das Häkchen, um den Alarm zu schließen. Maximal 5 aktuelle ungeprüfte Alarme werden angezeigt.</li>
-<li>Filtere, um nur die gewünschten Signale anzuzeigen.</li>
+<li>Filtere, um nur die gewünschten Signale zu sehen.</li>
 </ol>
 </div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ RSI Divergenz-Alarm-Einstellungen ("Div")</h2>
+<h2>⚙️ RSI Divergenz-Alarm-Einstellungen („Div“)</h2>
 <img alt="Div-Einstellungsbildschirm" src="../images/image_manual.png" style="max-width: 500px;"/>
 <h3>Allgemeine RSI Divergenz-Einstellungen</h3>
 <ol>
-<li>Wähle aus, welche Coin du konfigurieren möchtest.</li>
-<li>Wähle zwischen 'RSI Divergence Complete' und 'RSI Divergence Forming'-Signalen.</li>
-<li>Bereich für Stapel-Einstellungen — Einstellungen auf alle untenstehenden Elemente auf einmal anwenden.</li>
-<li>Divergenzfilter mit der +‑Schaltfläche hinzufügen.</li>
-<li>Filter auf die empfohlenen Standardeinstellungen zurücksetzen.</li>
-<li>Preisbedingungen im Stapel festlegen.</li>
+<li>Wähle die Coin aus, die du konfigurieren möchtest.</li>
+<li>Wähle zwischen Signalen „RSI Divergence Complete“ und „RSI Divergence Forming“.</li>
+<li>Bereich für Stapel-Einstellungen — wende die Einstellungen auf alle untenstehenden Einträge gleichzeitig an.</li>
+<li>Füge Divergenz-Filter mit der + Taste hinzu.</li>
+<li>Setze die Filter auf die empfohlenen Standardwerte zurück.</li>
+<li>Lege Kursbedingungen im Stapel fest.</li>
 </ol>
 <h3>Individuelle Filtereinstellungen</h3>
 <ol start="7">
-<li>Einzelne RSI Divergenzsignale konfigurieren, die du erhalten möchtest:
-          <p><strong>(a)</strong> Wähle den gewünschten Zeitrahmen. Für „RSI Divergence Forming“ wähle sowohl einen „Hauptzeitrahmen“ als auch einen „Unterzeitrahmen“. Alarme werden ausgelöst, wenn sich ein RSI-Peak im kleineren Zeitrahmen bildet, während sich die Divergenz im Hauptzeitrahmen formt (Preisumkehr).</p>
-<p><strong>(b)</strong> Signale auswählen: „Bull (bullish)“ oder „Bear (bearish)“. Blau = Alarme aktiviert, Grau = deaktiviert.</p>
-<p><strong>(c)</strong> Schwellenwerte für überverkauft/überkauft festlegen. Bullishe Alarme, wenn der „starting RSI“ unter dem Überverkauft-Level liegt; bearishe, wenn der „starting RSI“ über dem Überkauft-Level liegt.</p>
-<p><strong>(d)</strong> Alarmtyp und Sound konfigurieren. Detaillierte Einstellungen auf der Seite „Einstellungen“:</p>
-<div class="highlight">
-<span class="alarm-type alarm-type-a">A</span> Alarm erzwingen (Schleife) — wird kontinuierlich abgespielt, bis er manuell gestoppt wird; ignoriert den Lautlosmodus<br/><br/>
-<span class="alarm-type alarm-type-b">B</span> Alarm erzwingen (einmal) — wird einmal abgespielt; ignoriert den Lautlosmodus<br/><br/>
-<span class="alarm-type alarm-type-c">C</span> Telefoneinstellungen folgen — verwendet die normalen Soundeinstellungen des Geräts<br/><br/>
-<span class="alarm-type alarm-type-d">D</span> Nur Vibration — Vibration ohne Ton<br/><br/>
-<span class="alarm-type alarm-type-e">E</span> Lautlosmodus — kein Ton und keine Vibration
-          </div>
+<li>Configure individual RSI divergence signals to receive:
+          <p><strong>(a)</strong> Wähle den gewünschten Zeitrahmen. Für „RSI Divergence Forming“ wähle sowohl einen „Haupt-Zeitrahmen“ als auch einen „Unter-Zeitrahmen“. Alarme werden ausgelöst, wenn sich RSI ein Peak im kleineren Zeitrahmen bildet, während sich im Haupt-Zeitrahmen eine Divergenz formt (Kursumkehr).</p>
+<p><strong>(b)</strong> Wähle Signale: „Bull (bullish)“ oder „Bear (bearish)“. Blau = Alarme aktiviert, Grau = deaktiviert.</p>
+<p><strong>(c)</strong> Lege Schwellen für überverkauft/überkauft fest. Bullish-Alarm, wenn „starting RSI“ unter dem Überverkauft-Level liegt; bearish, wenn „starting RSI“ über dem Überkauft-Level liegt.</p>
+<p><strong>(d)</strong> Konfiguriere Alarmtyp und Sound. Detaileinstellungen auf der Einstellungsseite:</p>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Zwangsalarm (Schleife) — läuft kontinuierlich, bis er manuell gestoppt wird; ignoriert den Lautlosmodus<br/><br/> <span class="alarm-type alarm-type-b">B</span> Zwangsalarm (einmalig) — spielt einmal ab; ignoriert den Lautlosmodus<br/><br/> <span class="alarm-type alarm-type-c">C</span> Telefon-Einstellungen folgen — nutzt die normalen Sound-Einstellungen des Geräts<br/><br/> <span class="alarm-type alarm-type-d">D</span> Nur Vibration — Vibration ohne Ton<br/><br/> <span class="alarm-type alarm-type-e">E</span> Lautlosmodus — kein Ton und keine Vibration</div>
 <img alt="Einstellungen für Alarmtyp" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Zusätzliche Bedingungen festlegen, damit nur nützliche Signale gemeldet werden: Preisbedingungen, RSI-Forming-Bedingungen in einem anderen Zeitrahmen, Bollinger-Band-Bedingungen.</p>
+<p><strong>(e)</strong> Lege zusätzliche Bedingungen fest, damit nur nützliche Signale ausgelöst werden: Kursbedingungen, Bedingungen zur Bildung in einem anderen Zeitrahmen RSI, Bollinger-Band-Bedingungen.</p>
 </li>
 </ol>
 <div class="image-row">
 <img alt="Zusätzliche Bedingungen 1" src="../images/image%202_manual.png"/>
 <img alt="Zusätzliche Bedingungen 2" src="../images/image%203_manual.png"/>
 </div>
-<p><strong>e0)</strong> Wenn mehrere Bedingungen gesetzt sind, die Verknüpfung konfigurieren: „and“ (alle müssen erfüllt sein) oder „or“ (eine beliebige erfüllt).</p>
-<p><strong>e1)</strong> Preisbedingungen festlegen — Alarm, wenn der Start-/Endpreis der Divergenz über/unter einem bestimmten Preis liegt.</p>
-<p><strong>e2)</strong> Alarm, wenn sich eine Divergenz in einem anderen Zeitrahmen bildet.</p>
-<p><strong>e3)</strong> Prüfen, ob der finale Peak-Preis der RSI-Divergenz außerhalb der Bollinger-Bänder liegt.</p>
+<p><strong>e0)</strong> Wenn mehrere Bedingungen gesetzt sind, konfiguriere die Verknüpfung: „and“ (alle müssen erfüllt sein) oder „or“ (eine reicht).</p>
+<p><strong>e1)</strong> Lege Kursbedingungen fest — Alarm, wenn der Start-/Endkurs der Divergenz über/unter einem bestimmten Kurs liegt.</p>
+<p><strong>e2)</strong> Alarm, wenn sich die Divergenz in einem anderen Zeitrahmen bildet.</p>
+<p><strong>e3)</strong> Prüfe, ob der finale Peak-Kurs der Divergenz RSI außerhalb der Bollinger-Bänder liegt.</p>
 <h3>Strategie-Tipps</h3>
 <div class="warning">
 <ul>
 <li>Immer mit anderen Indikatoren kombinieren: Widerstände, Trendlinien, Fibonacci usw.</li>
-<li>Wie alle Indikatoren ist die RSI-Divergenz nicht zu 100% genau — sie erhöht die Wahrscheinlichkeit.</li>
-<li>1m- und 5m-Divergenzen werden oft ignoriert, aber die Zuverlässigkeit steigt: 15m &lt; 1h &lt; 4h. <strong>4h-Divergenzen sind sehr zuverlässig — empfohlen, sie als Alarm der Stufe A zu setzen.</strong></li>
+<li>Wie alle Indikatoren ist die Divergenz RSI nicht zu 100% genau — sie erhöht die Wahrscheinlichkeit.</li>
+<li>1m- und 5m-Divergenzen werden oft ignoriert, aber die Zuverlässigkeit steigt: 15m &lt; 1h &lt; 4h. <strong>4h-Divergenzen sind sehr zuverlässig — empfohlen als Alarm der Stufe A.</strong></li>
 </ul>
 </div>
 </div>
@@ -263,25 +257,23 @@
 <img alt="EI-Einstellungen 2" src="../images/image%205_manual.png"/>
 </div>
 <ol>
-<li>Wähle aus, welche Coin du konfigurieren möchtest.</li>
-<li>Preisalarme für die Coin festlegen.</li>
-<li>EMA- (Exponential Moving Average) Kreuzungsalarme konfigurieren.</li>
-<li>Alarme beim Annähern an Support/Widerstand festlegen.</li>
+<li>Wähle die Coin aus, die du konfigurieren möchtest.</li>
+<li>Kursalarme für die Coin festlegen.</li>
+<li>EMA-Kreuzungsalarme (Exponential Moving Average) konfigurieren.</li>
+<li>Alarme bei Annäherung an Support/Widerstand festlegen.</li>
 <li>Bollinger-Band-Ausbruchalarme konfigurieren.</li>
-<li>Supertrend-Änderungsalarme festlegen.</li>
+<li>Alarme bei Supertrend-Wechsel festlegen.</li>
 </ol>
 <div class="warning">
-<p>※ Zusätzliche Indikatoren (3, 4, 5, 6) werden beim Ausloggen zurückgesetzt.</p>
+<p>※ Zusätzliche Indikatoren (3, 4, 5, 6) werden beim Abmelden zurückgesetzt.</p>
 </div>
 </div>
 <!-- Webhook Section -->
 <div class="manual-section" id="webhook">
 <h2>🔗 TradingView Webhook, Signal-Kombination &amp; Auto-Order</h2>
-<p><strong>"Webhook"</strong> — Pro-Funktion für fortgeschrittene Nutzer.</p>
+<p><strong>„Webhook“</strong> — Pro-Funktion für fortgeschrittene Nutzer.</p>
 <p>
-<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">
-          📖 Zum detaillierten Webhook-Leitfaden
-        </a>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Zum ausführlichen Webhook-Leitfaden</a>
 </p>
 </div>
 <!-- Settings Section -->
@@ -292,23 +284,23 @@
 <img alt="Einstellungen 2" src="../images/image%207_manual.png"/>
 </div>
 <ol>
-<li>Alarmtypen (A, B...) und Alarmtöne (1, 2...) konfigurieren.</li>
+<li>Alarmtypen (A, B …) und Alarmsounds (1, 2 …) konfigurieren.</li>
 <li>Für Auto-Orders die API-Keys jeder Börse eingeben.</li>
 </ol>
 </div>
 <!-- Referral Section -->
 <div class="manual-section" id="referral">
 <h2>💰 Empfehlungsprämien</h2>
-<img alt="Empfehlungs-Einstellungen" src="../images/image%208_manual.png" style="max-width: 550px;"/>
-<p><strong>(a)</strong> Dein Empfehlungscode. Wenn andere mit diesem Code abonnieren, wirst du ihr Referrer.</p>
-<p><strong>(b)</strong> Dein Einladungslink. Jeder, der über diesen Link abonniert, registriert dich automatisch als Referrer.</p>
-<p><strong>(c)</strong> Gib deine Wallet-Adresse für Empfehlungsprämien ein. Muss eine BEP-20-USDT-Wallet sein (Wallets großer Börsen empfohlen). Du kannst auf der DivAlarm-Website unter „My Info“ testen, ob Einzahlungen korrekt funktionieren.</p>
-<p><strong>(d)</strong> Zeigt den Status deiner Empfehlungsprämien: aktuelle Anzahl an Empfehlungen, potenzieller Prämienbetrag, bestätigter Betrag und ausgezahlter Betrag.</p>
-<p>Prämien wechseln 14 Tage nach der Abo-Zahlung des geworbenen Nutzers (ohne kostenlose Testphase) von „potenziell“ zu „bestätigt“. Auszahlungen erfolgen wöchentlich am Dienstag um 00:00 Uhr UTC.</p>
+<img alt="Empfehlungseinstellungen" src="../images/image%208_manual.png" style="max-width: 550px;"/>
+<p><strong>(a)</strong> Dein Empfehlungscode. Wenn andere mit diesem Code abonnieren, wirst du als ihr Referrer eingetragen.</p>
+<p><strong>(b)</strong> Dein Einladungslink. Wer über diesen Link abonniert, registriert dich automatisch als Referrer.</p>
+<p><strong>(c)</strong> Gib deine Wallet-Adresse für Empfehlungsprämien ein. Es muss eine BEP-20-Wallet USDT sein (Wallets großer Börsen empfohlen). Ob Einzahlungen korrekt funktionieren, kannst du auf der DivAlarm-Website unter „My Info“ testen.</p>
+<p><strong>(d)</strong> Zeigt den Status deiner Empfehlungsprämien: aktuelle Anzahl an Empfehlungen, möglicher Prämienbetrag, bestätigter Betrag und ausgezahlter Betrag.</p>
+<p>Prämien wechseln 14 Tage nach der Abo-Zahlung des geworbenen Nutzers (ohne kostenlose Testphase) von „potenziell“ zu „bestätigt“. Auszahlungen erfolgen wöchentlich dienstags um 00:00 Uhr UTC.</p>
 <h3>So verdienst du Empfehlungsprämien</h3>
 <div class="highlight">
-<p><strong>1]</strong> Gehe zu Einstellungen → Empfehlungsprämien → Gib deine Prämien-Wallet-Adresse ein.</p>
-<p><strong>2]</strong> Teile deinen Empfehlungslink. Andere werden mit deinem Code zur Abonnementseite weitergeleitet.</p>
+<p><strong>1]</strong> Gehe zu Einstellungen → Empfehlungsprämien → Gib deine Wallet-Adresse für Prämien ein.</p>
+<p><strong>2]</strong> Teile deinen Empfehlungslink. Andere werden mit deinem Code zur Abo-Seite weitergeleitet.</p>
 <p><strong>3]</strong> Wenn sie abonnieren und bezahlen, werden die Prämien gutgeschrieben.</p>
 </div>
 </div>

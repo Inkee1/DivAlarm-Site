@@ -193,8 +193,8 @@
 <h2>📌 Menüye Genel Bakış</h2>
 <p><strong>"DivLog"</strong> — Uyumsuzluk alarm sinyallerini aldığınız yer.</p>
 <p><strong>"Div"</strong> — 'RSI Divergence Complete' veya 'RSI Divergence Forming' sinyallerini yapılandırın.</p>
-<p><strong>"EI"</strong> — Ek gösterge alarmlarını ayarlayın: fiyat hedefe ulaşma alarmları, destek/direnç yaklaşma alarmları, EMA/Bollinger Band/Supertrend alarmları. ("Extra Indicators")</p>
-<p><strong>"Webhook"</strong> — Yalnızca Pro kullanıcılarına görünür. Güçlü alarmlar, sinyal kombinasyonları ve otomatik emirler için TradingView webhook'ları alın.</p>
+<p><strong>"EI"</strong> — Ek indikatör alarmlarını ayarlayın: fiyat hedefe ulaşma alarmları, destek/direnç yaklaşım alarmları, EMA/Bollinger Band/Supertrend alarmları. ("Extra Indicators")</p>
+<p><strong>"Webhook"</strong> — Yalnızca Pro kullanıcılara görünür. Güçlü alarmlar, sinyal kombinasyonları ve otomatik emirler için TradingView webhook'larını alın.</p>
 <p><strong>"Setting"</strong> — Alarm türlerini, sesleri, referans ödül ayarlarını, duyuruları ve referans bildirimlerini yapılandırın.</p>
 </div>
 <!-- DivLog Section -->
@@ -203,7 +203,7 @@
 <p>"DivLog", uyumsuzluk alarm sinyallerini aldığınız yerdir.</p>
 <ol>
 <li>En fazla 150 sinyal saklanır. Düzenli olarak temizleyin.</li>
-<li>Kontrol edilmemiş alarmları gösterir. Alarmı kapatmak için işareti işaretleyin. En fazla 5 adet en yeni kontrol edilmemiş alarm gösterilir.</li>
+<li>Kontrol edilmemiş alarmları gösterir. Alarmı kapatmak için işareti onaylayın. En fazla 5 adet son kontrol edilmemiş alarm gösterilir.</li>
 <li>Yalnızca istediğiniz sinyalleri görmek için filtreleyin.</li>
 </ol>
 </div>
@@ -213,29 +213,23 @@
 <img alt="Div Ayarları Ekranı" src="../images/image_manual.png" style="max-width: 500px;"/>
 <h3>Genel RSI Uyumsuzluk Ayarları</h3>
 <ol>
-<li>Hangi coini yapılandıracağınızı seçin.</li>
+<li>Yapılandırılacak coini seçin.</li>
 <li>'RSI Divergence Complete' ile 'RSI Divergence Forming' sinyalleri arasında seçim yapın.</li>
-<li>Toplu ayarlar alanı — ayarları aşağıdaki tüm öğelere tek seferde uygular.</li>
+<li>Toplu ayarlar alanı — aşağıdaki tüm öğelere ayarları tek seferde uygular.</li>
 <li>+ düğmesiyle uyumsuzluk filtreleri ekleyin.</li>
 <li>Filtreleri önerilen varsayılan ayarlara sıfırlayın.</li>
 <li>Fiyat koşullarını toplu olarak ayarlayın.</li>
 </ol>
 <h3>Tekil Filtre Ayarları</h3>
 <ol start="7">
-<li>Alınacak tekil RSI uyumsuzluk sinyallerini yapılandırın:
-          <p><strong>(a)</strong> İstenen zaman dilimini seçin. 'RSI Divergence Forming' için hem bir 'ana zaman dilimi' hem de 'alt zaman dilimi' seçin. Uyarılar, ana zaman diliminde uyumsuzluk oluşurken (fiyat dönüşü) daha küçük zaman diliminde RSI tepe oluştuğunda tetiklenir.</p>
-<p><strong>(b)</strong> Sinyalleri seçin: "Bull (yükseliş)" veya "Bear (düşüş)". Mavi = uyarılar açık, Gri = kapalı.</p>
-<p><strong>(c)</strong> Aşırı satım/aşırı alım eşiklerini ayarlayın. 'starting RSI' aşırı satım seviyesinin altındaysa yükseliş uyarısı; 'starting RSI' aşırı alım seviyesinin üstündeyse düşüş uyarısı.</p>
-<p><strong>(d)</strong> Alarm türünü ve sesini yapılandırın. Ayrıntılı ayarlar Ayarlar sayfasında:</p>
-<div class="highlight">
-<span class="alarm-type alarm-type-a">A</span> Zorla Alarm (Döngü) — manuel olarak durdurulana kadar sürekli çalar, sessiz modu yok sayar<br/><br/>
-<span class="alarm-type alarm-type-b">B</span> Zorla Alarm (Bir Kez) — bir kez çalar, sessiz modu yok sayar<br/><br/>
-<span class="alarm-type alarm-type-c">C</span> Telefon Ayarlarını Takip Et — cihazın normal ses ayarlarını kullanır<br/><br/>
-<span class="alarm-type alarm-type-d">D</span> Yalnızca Titreşim — ses olmadan titreşim<br/><br/>
-<span class="alarm-type alarm-type-e">E</span> Sessiz Mod — ses veya titreşim yok
-          </div>
+<li>Configure individual RSI divergence signals to receive:
+          <p><strong>(a)</strong> İstediğiniz zaman dilimini seçin. 'RSI Divergence Forming' için hem 'ana zaman dilimi' hem de 'alt zaman dilimi' seçin. Ana zaman diliminde uyumsuzluk oluşurken (fiyat dönüşü) daha küçük zaman diliminde RSI tepe oluştuğunda alarm tetiklenir.</p>
+<p><strong>(b)</strong> Sinyalleri seçin: "Bull (yükseliş)" veya "Bear (düşüş)". Mavi = alarmlar açık, Gri = kapalı.</p>
+<p><strong>(c)</strong> Aşırı satım/aşırı alım eşiklerini ayarlayın. 'başlangıç RSI' aşırı satım seviyesinin altındaysa yükseliş; 'başlangıç RSI' aşırı alım seviyesinin üstündeyse düşüş alarmı verir.</p>
+<p><strong>(d)</strong> Alarm türünü ve sesi yapılandırın. Detaylı ayarlar Ayarlar sayfasında:</p>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Zorunlu Alarm (Döngü) — manuel olarak durdurulana kadar sürekli çalar, sessiz modu yok sayar<br/><br/> <span class="alarm-type alarm-type-b">B</span> Zorunlu Alarm (Tek Sefer) — bir kez çalar, sessiz modu yok sayar<br/><br/> <span class="alarm-type alarm-type-c">C</span> Telefon Ayarlarını Takip Et — cihazın normal ses ayarlarını kullanır<br/><br/> <span class="alarm-type alarm-type-d">D</span> Yalnızca Titreşim — ses olmadan titreşim<br/><br/> <span class="alarm-type alarm-type-e">E</span> Sessiz Mod — ses veya titreşim yok</div>
 <img alt="Alarm Türü Ayarları" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Yalnızca faydalı sinyaller için ek koşullar belirleyin: fiyat koşulları, diğer zaman dilimi RSI oluşum koşulları, Bollinger Band koşulları.</p>
+<p><strong>(e)</strong> Yalnızca işe yarar sinyaller için ek koşullar belirleyin: fiyat koşulları, diğer zaman dilimi RSI oluşum koşulları, Bollinger Bandı koşulları.</p>
 </li>
 </ol>
 <div class="image-row">
@@ -243,45 +237,43 @@
 <img alt="Ek Koşullar 2" src="../images/image%203_manual.png"/>
 </div>
 <p><strong>e0)</strong> Birden fazla koşul ayarlandığında ilişkiyi yapılandırın: "and" (hepsi sağlanmalı) veya "or" (herhangi biri sağlansa yeter).</p>
-<p><strong>e1)</strong> Fiyat koşullarını ayarlayın — uyumsuzluğun başlangıç/bitiş fiyatı belirli bir fiyatın üstünde/altında olduğunda uyarı ver.</p>
-<p><strong>e2)</strong> Başka bir zaman diliminde uyumsuzluk oluşurken uyarı ver.</p>
-<p><strong>e3)</strong> RSI uyumsuzluğunun son tepe fiyatının Bollinger Bantları dışında olup olmadığını kontrol et.</p>
+<p><strong>e1)</strong> Fiyat koşullarını ayarlayın — uyumsuzluğun başlangıç/bitiş fiyatı belirli bir fiyatın üstünde/altında olduğunda alarm ver.</p>
+<p><strong>e2)</strong> Uyumsuzluk başka bir zaman diliminde oluşuyorsa alarm ver.</p>
+<p><strong>e3)</strong> RSI uyumsuzluğunun son tepe fiyatının Bollinger Bantlarının dışında olup olmadığını kontrol edin.</p>
 <h3>Strateji İpuçları</h3>
 <div class="warning">
 <ul>
-<li>Her zaman diğer göstergelerle birlikte kullanın: direnç, trend çizgileri, Fibonacci vb.</li>
-<li>Tüm göstergelerde olduğu gibi, RSI uyumsuzluğu %100 doğru değildir — olasılığı artırır.</li>
-<li>1m, 5m uyumsuzlukları çoğu zaman göz ardı edilir; ancak güvenilirlik artar: 15m &lt; 1h &lt; 4h. <strong>4h uyumsuzluğu oldukça güvenilirdir — A-seviye alarm olarak ayarlamanız önerilir.</strong></li>
+<li>Her zaman diğer indikatörlerle birlikte kullanın: direnç, trend çizgileri, Fibonacci vb.</li>
+<li>Tüm indikatörlerde olduğu gibi, RSI uyumsuzluğu %100 doğru değildir — olasılığı artırır.</li>
+<li>1m, 5m uyumsuzlukları çoğu zaman göz ardı edilir; ancak güvenilirlik artar: 15m &lt; 1h &lt; 4h. <strong>4h uyumsuzluğu oldukça güvenilirdir — A seviye alarm olarak ayarlamanız önerilir.</strong></li>
 </ul>
 </div>
 </div>
 <!-- EI Section -->
 <div class="manual-section" id="ei">
-<h2>📈 Ek Gösterge Uyarıları ("EI")</h2>
+<h2>📈 Ek İndikatör Alarmları ("EI")</h2>
 <div class="image-row">
 <img alt="EI Ayarları 1" src="../images/image%204_manual.png"/>
 <img alt="EI Ayarları 2" src="../images/image%205_manual.png"/>
 </div>
 <ol>
-<li>Hangi coini yapılandıracağınızı seçin.</li>
-<li>Coin için fiyat uyarıları ayarlayın.</li>
-<li>EMA (Üstel Hareketli Ortalama) kesişim uyarılarını yapılandırın.</li>
-<li>Destek/direnç yaklaşım uyarıları ayarlayın.</li>
-<li>Bollinger Bandı kırılım uyarılarını yapılandırın.</li>
-<li>Supertrend değişim uyarıları ayarlayın.</li>
+<li>Yapılandırılacak coini seçin.</li>
+<li>Coin için fiyat alarmları ayarlayın.</li>
+<li>EMA (Exponential Moving Average) kesişim alarmlarını yapılandırın.</li>
+<li>Destek/dirence yaklaşım alarmları ayarlayın.</li>
+<li>Bollinger Bandı kırılım alarmlarını yapılandırın.</li>
+<li>Supertrend değişim alarmları ayarlayın.</li>
 </ol>
 <div class="warning">
-<p>※ Ek göstergeler (3, 4, 5, 6) çıkış yaptığınızda sıfırlanır.</p>
+<p>※ Ek indikatörler (3, 4, 5, 6) çıkış yaptığınızda sıfırlanır.</p>
 </div>
 </div>
 <!-- Webhook Section -->
 <div class="manual-section" id="webhook">
-<h2>🔗 TradingView Webhook, Sinyal Kombinasyonu ve Otomatik Emir</h2>
-<p><strong>"Webhook"</strong> — İleri seviye kullanıcılar için Pro özelliği.</p>
+<h2>🔗 TradingView Webhook, Sinyal Birleştirme ve Otomatik Emir</h2>
+<p><strong>"Webhook"</strong> — ileri seviye kullanıcılar için Pro özellik.</p>
 <p>
-<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">
-          📖 Detaylı Webhook Rehberine Git
-        </a>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Detaylı Webhook Rehberine Git</a>
 </p>
 </div>
 <!-- Settings Section -->
@@ -300,15 +292,15 @@
 <div class="manual-section" id="referral">
 <h2>💰 Referans Ödülleri</h2>
 <img alt="Referans Ayarları" src="../images/image%208_manual.png" style="max-width: 550px;"/>
-<p><strong>(a)</strong> Referans kodunuz. Başkaları bu kodla abone olduğunda, onların referans veren kişisi olursunuz.</p>
+<p><strong>(a)</strong> Referans kodunuz. Başkaları bu kodla abone olduğunda, onların referans veren kişisi siz olursunuz.</p>
 <p><strong>(b)</strong> Davet bağlantınız. Bu bağlantı üzerinden abone olan herkes sizi otomatik olarak referans veren kişi olarak kaydeder.</p>
-<p><strong>(c)</strong> Referans ödülleri için cüzdan adresinizi girin. BEP-20 USDT cüzdanı olmalıdır (büyük borsa cüzdanları önerilir). Yatırma işlemlerinin doğru çalışıp çalışmadığını DivAlarm web sitesindeki 'My Info' bölümünden test edebilirsiniz.</p>
-<p><strong>(d)</strong> Referans ödülü durumunuzu gösterir: mevcut referans sayısı, potansiyel ödül tutarı, onaylanan tutar ve ödenen tutar.</p>
-<p>Ödüller, referans verilen kullanıcının abonelik ödemesinden (ücretsiz deneme hariç) 14 gün sonra 'potansiyel'den 'onaylı'ya geçer. Ödemeler haftalık olarak Salı günü UTC gece yarısında yapılır.</p>
+<p><strong>(c)</strong> Referans ödülleri için cüzdan adresinizi girin. BEP-20 USDT cüzdanı olmalıdır (büyük borsa cüzdanları önerilir). Yatırma işlemlerinin doğru çalışıp çalışmadığını DivAlarm sitesindeki 'Bilgilerim' bölümünden test edebilirsiniz.</p>
+<p><strong>(d)</strong> Referans ödül durumunuzu gösterir: mevcut referans sayısı, potansiyel ödül tutarı, onaylanan tutar ve ödenen tutar.</p>
+<p>Ödüller, yönlendirdiğiniz kullanıcının abonelik ödemesinden (ücretsiz deneme hariç) 14 gün sonra “potansiyel” durumundan “onaylı” durumuna geçer. Ödemeler her hafta Salı günü UTC 00:00’da yapılır.</p>
 <h3>Referans Ödülleri Nasıl Kazanılır</h3>
 <div class="highlight">
 <p><strong>1]</strong> Ayarlar → Referans Ödülleri → Ödül cüzdan adresinizi girin.</p>
-<p><strong>2]</strong> Referans bağlantınızı paylaşın. Diğerleri kodunuzla birlikte abonelik sayfasına yönlendirilecektir.</p>
+<p><strong>2]</strong> Referans bağlantınızı paylaşın. Diğerleri, kodunuzla birlikte abonelik sayfasına yönlendirilir.</p>
 <p><strong>3]</strong> Abone olup ödeme yaptıklarında, ödüller hesabınıza yatırılır.</p>
 </div>
 </div>

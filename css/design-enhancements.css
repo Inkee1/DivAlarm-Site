@@ -1842,6 +1842,12 @@ h1, h2, h3, .centered-heading, .centered-heading-copy,
   margin: 0 !important;
 }
 
+/* Notion embedded docs (article.page.sans): prevent `.image` icon sizing from collapsing figure blocks */
+.page.sans figure.image {
+  width: 100% !important;
+  height: auto !important;
+}
+
 .div-block-4:hover .image,
 .div-block-4-copy:hover .image {
   filter: brightness(1.35);

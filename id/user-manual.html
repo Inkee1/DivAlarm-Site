@@ -181,77 +181,71 @@
 <ul>
 <li><a href="#menu">Ringkasan Menu</a></li>
 <li><a href="#divlog">Melihat Notifikasi Sinyal (DivLog)</a></li>
-<li><a href="#div">RSI Pengaturan Alarm Divergence (Div)</a></li>
+<li><a href="#div">Pengaturan Alarm Divergence RSI (Div)</a></li>
 <li><a href="#ei">Alarm Indikator Tambahan (EI)</a></li>
-<li><a href="#webhook">TradingView Webhook &amp; Order Otomatis</a></li>
+<li><a href="#webhook">TradingView Webhook &amp; Auto-Order</a></li>
 <li><a href="#settings">Halaman Pengaturan</a></li>
-<li><a href="#referral">Hadiah Referral</a></li>
+<li><a href="#referral">Reward Referral</a></li>
 </ul>
 </div>
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
 <h2>📌 Ringkasan Menu</h2>
-<p><strong>"DivLog"</strong> — Tempat Anda menerima sinyal alarm divergence.</p>
-<p><strong>"Div"</strong> — Konfigurasikan sinyal 'RSI Divergence Complete' atau 'RSI Divergence Forming'.</p>
-<p><strong>"EI"</strong> — Atur alarm indikator tambahan: alarm harga tercapai, alarm mendekati support/resistance, alarm EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
-<p><strong>"Webhook"</strong> — Hanya terlihat untuk pengguna Pro. Terima webhook TradingView untuk alarm yang lebih powerful, kombinasi sinyal, dan order otomatis.</p>
-<p><strong>"Setting"</strong> — Konfigurasikan jenis alarm, suara, pengaturan hadiah referral, pengumuman, dan notifikasi referral.</p>
+<p><strong>"DivLog"</strong> — Tempat Anda menerima sinyal alert divergence.</p>
+<p><strong>"Div"</strong> — Atur sinyal 'RSI Divergence Complete' atau 'RSI Divergence Forming'.</p>
+<p><strong>"EI"</strong> — Atur alert indikator tambahan: alert harga menyentuh level, alert mendekati support/resistance, alert EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
+<p><strong>"Webhook"</strong> — Hanya terlihat untuk pengguna Pro. Terima webhook TradingView untuk alarm yang lebih powerful, kombinasi sinyal, dan auto-order.</p>
+<p><strong>"Setting"</strong> — Atur jenis alarm, suara, pengaturan reward referral, pengumuman, dan notifikasi referral.</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
 <h2>📊 Melihat Notifikasi Sinyal ("DivLog")</h2>
-<p>"DivLog" adalah tempat Anda menerima sinyal alarm divergence.</p>
+<p>"DivLog" adalah tempat Anda menerima sinyal alert divergence.</p>
 <ol>
 <li>Hingga 150 sinyal disimpan. Bersihkan secara berkala.</li>
-<li>Menampilkan alarm yang belum dicek. Centang tanda untuk menutup alarm. Maksimal 5 alarm terbaru yang belum dicek ditampilkan.</li>
-<li>Gunakan filter untuk melihat hanya sinyal yang Anda inginkan.</li>
+<li>Menampilkan alert yang belum dicek. Centang untuk menutup alarm. Maksimal 5 alert terbaru yang belum dicek ditampilkan.</li>
+<li>Filter untuk menampilkan hanya sinyal yang Anda inginkan.</li>
 </ol>
 </div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ RSI Pengaturan Alarm Divergence ("Div")</h2>
+<h2>⚙️ RSI Pengaturan Alert Divergence ("Div")</h2>
 <img alt="Layar Pengaturan Div" src="../images/image_manual.png" style="max-width: 500px;"/>
-<h3>Pengaturan Divergence RSI Secara Keseluruhan</h3>
+<h3>Pengaturan Divergence RSI (Umum)</h3>
 <ol>
-<li>Pilih koin yang ingin dikonfigurasi.</li>
+<li>Pilih koin yang ingin diatur.</li>
 <li>Pilih antara sinyal 'RSI Divergence Complete' vs 'RSI Divergence Forming'.</li>
-<li>Area pengaturan batch — terapkan pengaturan ke semua item di bawah sekaligus.</li>
-<li>Tambahkan filter divergensi dengan tombol +.</li>
+<li>Area pengaturan massal — terapkan pengaturan ke semua item di bawah sekaligus.</li>
+<li>Tambahkan filter divergence dengan tombol +.</li>
 <li>Reset filter ke pengaturan default yang direkomendasikan.</li>
-<li>Atur kondisi harga secara batch.</li>
+<li>Atur kondisi harga secara massal.</li>
 </ol>
-<h3>Pengaturan Filter Individual</h3>
+<h3>Pengaturan Filter Per Item</h3>
 <ol start="7">
-<li>Konfigurasikan sinyal divergensi RSI individual yang ingin diterima:
-          <p><strong>(a)</strong> Pilih timeframe yang diinginkan. Untuk 'RSI Divergence Forming', pilih 'timeframe utama' dan 'sub timeframe'. Alert akan terpicu saat puncak RSI terbentuk pada timeframe yang lebih kecil sementara divergensi sedang terbentuk pada timeframe utama (pembalikan harga).</p>
+<li>Configure individual RSI divergence signals to receive:
+          <p><strong>(a)</strong> Pilih timeframe yang diinginkan. Untuk 'RSI Divergence Forming', pilih 'timeframe utama' dan 'sub timeframe'. Alert akan terpicu saat puncak RSI terbentuk di timeframe yang lebih kecil ketika divergence sedang terbentuk di timeframe utama (pembalikan harga).</p>
 <p><strong>(b)</strong> Pilih sinyal: "Bull (bullish)" atau "Bear (bearish)". Biru = alert aktif, Abu-abu = nonaktif.</p>
 <p><strong>(c)</strong> Atur ambang oversold/overbought. Alert bullish saat 'starting RSI' berada di bawah level oversold; bearish saat 'starting RSI' berada di atas level overbought.</p>
-<p><strong>(d)</strong> Konfigurasikan jenis alarm dan suara. Pengaturan detail ada di halaman Settings:</p>
-<div class="highlight">
-<span class="alarm-type alarm-type-a">A</span> Paksa Alarm (Loop) — diputar terus-menerus sampai dihentikan manual, mengabaikan mode senyap<br/><br/>
-<span class="alarm-type alarm-type-b">B</span> Paksa Alarm (Sekali) — diputar sekali, mengabaikan mode senyap<br/><br/>
-<span class="alarm-type alarm-type-c">C</span> Ikuti Pengaturan Ponsel — menggunakan pengaturan suara normal perangkat<br/><br/>
-<span class="alarm-type alarm-type-d">D</span> Hanya Getar — getaran tanpa suara<br/><br/>
-<span class="alarm-type alarm-type-e">E</span> Mode Senyap — tanpa suara atau getaran
-          </div>
+<p><strong>(d)</strong> Atur jenis alarm dan suara. Pengaturan detail ada di halaman Pengaturan:</p>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Alarm Paksa (Loop) — bunyi terus-menerus sampai dihentikan manual, mengabaikan mode senyap<br/><br/> <span class="alarm-type alarm-type-b">B</span> Alarm Paksa (Sekali) — bunyi sekali, mengabaikan mode senyap<br/><br/> <span class="alarm-type alarm-type-c">C</span> Ikuti Pengaturan Ponsel — menggunakan pengaturan suara normal perangkat<br/><br/> <span class="alarm-type alarm-type-d">D</span> Hanya Getar — getar tanpa suara<br/><br/> <span class="alarm-type alarm-type-e">E</span> Mode Senyap — tanpa suara maupun getar</div>
 <img alt="Pengaturan Jenis Alarm" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Atur kondisi tambahan agar hanya sinyal yang berguna: kondisi harga, kondisi pembentukan RSI pada timeframe lain, kondisi Bollinger Band.</p>
+<p><strong>(e)</strong> Atur kondisi tambahan agar hanya sinyal yang berguna yang muncul: kondisi harga, kondisi pembentukan RSI di timeframe lain, kondisi Bollinger Band.</p>
 </li>
 </ol>
 <div class="image-row">
 <img alt="Kondisi Tambahan 1" src="../images/image%202_manual.png"/>
 <img alt="Kondisi Tambahan 2" src="../images/image%203_manual.png"/>
 </div>
-<p><strong>e0)</strong> Jika beberapa kondisi diatur, konfigurasikan relasinya: "and" (semua harus terpenuhi) atau "or" (cukup salah satu terpenuhi).</p>
-<p><strong>e1)</strong> Atur kondisi harga — alert saat harga awal/akhir divergensi berada di atas/di bawah harga tertentu.</p>
-<p><strong>e2)</strong> Beri alert saat divergensi sedang terbentuk di timeframe lain.</p>
-<p><strong>e3)</strong> Periksa apakah harga puncak final divergensi RSI berada di luar Bollinger Bands.</p>
+<p><strong>e0)</strong> Jika beberapa kondisi diaktifkan, atur relasinya: "and" (semua harus terpenuhi) atau "or" (cukup salah satu terpenuhi).</p>
+<p><strong>e1)</strong> Atur kondisi harga — beri alert saat harga awal/akhir divergence berada di atas/di bawah harga tertentu.</p>
+<p><strong>e2)</strong> Beri alert saat divergence sedang terbentuk di timeframe lain.</p>
+<p><strong>e3)</strong> Cek apakah harga puncak final divergence RSI berada di luar Bollinger Bands.</p>
 <h3>Tips Strategi</h3>
 <div class="warning">
 <ul>
 <li>Selalu kombinasikan dengan indikator lain: resistance, trendline, Fibonacci, dll.</li>
-<li>Seperti semua indikator, divergensi RSI tidak 100% akurat — ini meningkatkan probabilitas.</li>
-<li>Divergensi 1m, 5m sering diabaikan, tetapi reliabilitas meningkat: 15m &lt; 1h &lt; 4h. <strong>Divergensi 4h sangat andal — direkomendasikan untuk disetel sebagai alarm grade A.</strong></li>
+<li>Seperti semua indikator, divergence RSI tidak 100% akurat — tapi meningkatkan probabilitas.</li>
+<li>Divergence 1m, 5m sering diabaikan, tetapi reliabilitas meningkat: 15m &lt; 1h &lt; 4h. <strong>Divergence 4h sangat andal — disarankan untuk diset sebagai alarm grade A.</strong></li>
 </ul>
 </div>
 </div>
@@ -263,9 +257,9 @@
 <img alt="Pengaturan EI 2" src="../images/image%205_manual.png"/>
 </div>
 <ol>
-<li>Pilih koin yang ingin dikonfigurasi.</li>
+<li>Pilih koin yang ingin diatur.</li>
 <li>Atur alert harga untuk koin.</li>
-<li>Konfigurasikan alert persilangan EMA (Exponential Moving Average).</li>
+<li>Konfigurasikan alert cross EMA (Exponential Moving Average).</li>
 <li>Atur alert saat mendekati support/resistance.</li>
 <li>Konfigurasikan alert breakout Bollinger Band.</li>
 <li>Atur alert perubahan Supertrend.</li>
@@ -277,11 +271,9 @@
 <!-- Webhook Section -->
 <div class="manual-section" id="webhook">
 <h2>🔗 Webhook TradingView, Kombinasi Sinyal &amp; Auto-Order</h2>
-<p><strong>"Webhook"</strong> — Fitur Pro untuk pengguna tingkat lanjut.</p>
+<p><strong>"Webhook"</strong> — fitur Pro untuk pengguna tingkat lanjut.</p>
 <p>
-<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">
-          📖 Buka Panduan Webhook Detail
-        </a>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Buka Panduan Webhook Lengkap</a>
 </p>
 </div>
 <!-- Settings Section -->
@@ -292,8 +284,8 @@
 <img alt="Pengaturan 2" src="../images/image%207_manual.png"/>
 </div>
 <ol>
-<li>Konfigurasikan jenis alarm (A, B...) dan suara alarm (1, 2...).</li>
-<li>Untuk auto-order, masukkan API key masing-masing exchange.</li>
+<li>Konfigurasikan tipe alarm (A, B...) dan suara alarm (1, 2...).</li>
+<li>Untuk auto-order, masukkan API key tiap exchange.</li>
 </ol>
 </div>
 <!-- Referral Section -->
@@ -301,15 +293,15 @@
 <h2>💰 Reward Referral</h2>
 <img alt="Pengaturan Referral" src="../images/image%208_manual.png" style="max-width: 550px;"/>
 <p><strong>(a)</strong> Kode referral Anda. Saat orang lain berlangganan dengan kode ini, Anda menjadi referrer mereka.</p>
-<p><strong>(b)</strong> Link undangan Anda. Siapa pun yang berlangganan melalui link ini akan otomatis mendaftarkan Anda sebagai referrer mereka.</p>
-<p><strong>(c)</strong> Masukkan alamat wallet Anda untuk reward referral. Harus wallet USDT BEP-20 (disarankan wallet dari exchange besar). Anda dapat menguji apakah deposit berfungsi dengan benar dari 'My Info' di website DivAlarm.</p>
-<p><strong>(d)</strong> Menampilkan status reward referral Anda: jumlah referral saat ini, jumlah reward potensial, jumlah terkonfirmasi, dan jumlah yang sudah dibayar.</p>
-<p>Reward berpindah dari 'potensial' ke 'terkonfirmasi' 14 hari setelah pembayaran langganan pengguna yang direferensikan (tidak termasuk free trial). Pembayaran dilakukan mingguan setiap Selasa pukul 00:00 UTC.</p>
+<p><strong>(b)</strong> Link undangan Anda. Siapa pun yang berlangganan lewat link ini otomatis mendaftarkan Anda sebagai referrer mereka.</p>
+<p><strong>(c)</strong> Masukkan alamat wallet Anda untuk menerima reward referral. Harus wallet BEP-20 USDT (disarankan wallet dari exchange besar). Anda bisa mengetes apakah deposit berjalan dengan benar dari 'My Info' di website DivAlarm.</p>
+<p><strong>(d)</strong> Menampilkan status reward referral Anda: jumlah referral saat ini, estimasi reward, jumlah terkonfirmasi, dan jumlah yang sudah dibayar.</p>
+<p>Reward berubah dari 'potensial' menjadi 'terkonfirmasi' 14 hari setelah pembayaran langganan pengguna yang Anda referensikan (tidak termasuk masa uji coba gratis). Pembayaran dilakukan mingguan setiap hari Selasa pukul 00:00 UTC.</p>
 <h3>Cara Mendapatkan Reward Referral</h3>
 <div class="highlight">
-<p><strong>1]</strong> Buka Pengaturan → Reward Referral → Masukkan alamat wallet reward Anda.</p>
-<p><strong>2]</strong> Bagikan tautan referral Anda. Orang lain akan diarahkan ke halaman berlangganan dengan kode Anda.</p>
-<p><strong>3]</strong> Saat mereka berlangganan dan membayar, reward akan disetorkan.</p>
+<p><strong>1]</strong> Buka Settings → Referral Rewards → Masukkan alamat wallet reward Anda.</p>
+<p><strong>2]</strong> Bagikan link referral Anda. Orang lain akan diarahkan ke halaman langganan dengan kode Anda.</p>
+<p><strong>3]</strong> Saat mereka berlangganan dan membayar, reward akan masuk.</p>
 </div>
 </div>
 </div>

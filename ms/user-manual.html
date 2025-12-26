@@ -180,8 +180,8 @@
 <h3>📋 Kandungan</h3>
 <ul>
 <li><a href="#menu">Gambaran Keseluruhan Menu</a></li>
-<li><a href="#divlog">Melihat Notifikasi Isyarat (DivLog)</a></li>
-<li><a href="#div">RSI Tetapan Amaran Divergens (Div)</a></li>
+<li><a href="#divlog">Lihat Notifikasi Isyarat (DivLog)</a></li>
+<li><a href="#div">RSI Tetapan Amaran Divergence (Div)</a></li>
 <li><a href="#ei">Amaran Penunjuk Tambahan (EI)</a></li>
 <li><a href="#webhook">TradingView Webhook &amp; Auto-Order</a></li>
 <li><a href="#settings">Halaman Tetapan</a></li>
@@ -191,66 +191,60 @@
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
 <h2>📌 Gambaran Keseluruhan Menu</h2>
-<p><strong>"DivLog"</strong> — Tempat anda menerima isyarat amaran divergens.</p>
-<p><strong>"Div"</strong> — Konfigurasikan isyarat 'RSI Divergence Complete' atau 'RSI Divergence Forming'.</p>
-<p><strong>"EI"</strong> — Sediakan amaran penunjuk tambahan: amaran capai harga, amaran menghampiri sokongan/rintangan, amaran EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
-<p><strong>"Webhook"</strong> — Hanya kelihatan kepada pengguna Pro. Terima webhook TradingView untuk amaran yang berkuasa, gabungan isyarat dan auto-order.</p>
-<p><strong>"Setting"</strong> — Konfigurasikan jenis amaran, bunyi, tetapan ganjaran rujukan, pengumuman dan notifikasi rujukan.</p>
+<p><strong>"DivLog"</strong> — Tempat anda menerima isyarat amaran divergence.</p>
+<p><strong>"Div"</strong> — Konfigurasi isyarat 'RSI Divergence Complete' atau 'RSI Divergence Forming'.</p>
+<p><strong>"EI"</strong> — Sediakan amaran indikator tambahan: amaran capai harga, amaran menghampiri sokongan/rintangan, amaran EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
+<p><strong>"Webhook"</strong> — Hanya kelihatan untuk pengguna Pro. Terima webhook TradingView untuk alarm yang lebih berkuasa, gabungan isyarat dan auto-order.</p>
+<p><strong>"Setting"</strong> — Konfigurasi jenis alarm, bunyi, tetapan ganjaran rujukan, pengumuman dan notifikasi rujukan.</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
 <h2>📊 Melihat Notifikasi Isyarat ("DivLog")</h2>
-<p>"DivLog" ialah tempat anda menerima isyarat amaran divergens.</p>
+<p>"DivLog" ialah tempat anda menerima isyarat amaran divergence.</p>
 <ol>
 <li>Sehingga 150 isyarat disimpan. Bersihkan secara berkala.</li>
-<li>Memaparkan amaran yang belum disemak. Tanda semak untuk menutup amaran. Maksimum 5 amaran terkini yang belum disemak dipaparkan.</li>
-<li>Tapis untuk melihat hanya isyarat yang anda mahu.</li>
+<li>Memaparkan amaran yang belum disemak. Tanda semak untuk menutup alarm. Maksimum 5 amaran terkini yang belum disemak dipaparkan.</li>
+<li>Tapis untuk lihat hanya isyarat yang anda mahu.</li>
 </ol>
 </div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ RSI Tetapan Amaran Divergens ("Div")</h2>
+<h2>⚙️ Tetapan Amaran Divergence RSI ("Div")</h2>
 <img alt="Skrin Tetapan Div" src="../images/image_manual.png" style="max-width: 500px;"/>
-<h3>Tetapan Divergens RSI Keseluruhan</h3>
+<h3>Tetapan Divergence Keseluruhan RSI</h3>
 <ol>
-<li>Pilih syiling yang hendak dikonfigurasikan.</li>
+<li>Pilih coin yang ingin dikonfigurasi.</li>
 <li>Pilih antara isyarat 'RSI Divergence Complete' vs 'RSI Divergence Forming'.</li>
-<li>Kawasan tetapan kelompok — gunakan tetapan pada semua item di bawah sekali gus.</li>
+<li>Ruang tetapan pukal — gunakan tetapan pada semua item di bawah sekali gus.</li>
 <li>Tambah penapis divergence dengan butang +.</li>
-<li>Tetapkan semula penapis kepada tetapan lalai yang disyorkan.</li>
-<li>Tetapkan syarat harga secara kelompok.</li>
+<li>Set semula penapis kepada tetapan lalai yang disyorkan.</li>
+<li>Tetapkan syarat harga secara pukal.</li>
 </ol>
 <h3>Tetapan Penapis Individu</h3>
 <ol start="7">
-<li>Konfigurasikan isyarat divergence RSI individu untuk diterima:
-          <p><strong>(a)</strong> Pilih rangka masa yang diingini. Untuk 'RSI Divergence Forming', pilih kedua-dua 'rangka masa utama' dan 'rangka masa sub'. Amaran dicetuskan apabila puncak RSI terbentuk pada rangka masa yang lebih kecil ketika divergence sedang terbentuk pada rangka masa utama (pembalikan harga).</p>
+<li>Configure individual RSI divergence signals to receive:
+          <p><strong>(a)</strong> Pilih timeframe yang diingini. Untuk 'RSI Divergence Forming', pilih kedua-dua 'timeframe utama' dan 'timeframe sub'. Amaran akan dicetuskan apabila puncak RSI terbentuk pada timeframe yang lebih kecil semasa divergence sedang terbentuk pada timeframe utama (pembalikan harga).</p>
 <p><strong>(b)</strong> Pilih isyarat: "Bull(bullish)" atau "Bear(bearish)". Biru = amaran diaktifkan, Kelabu = dinyahaktifkan.</p>
-<p><strong>(c)</strong> Tetapkan ambang oversold/overbought. Amaran bullish apabila 'starting RSI' berada di bawah paras oversold; bearish apabila 'starting RSI' berada di atas paras overbought.</p>
-<p><strong>(d)</strong> Konfigurasikan jenis dan bunyi penggera. Tetapan terperinci di halaman Tetapan:</p>
-<div class="highlight">
-<span class="alarm-type alarm-type-a">A</span> Paksa Penggera (Gelung) — dimainkan berterusan sehingga dihentikan secara manual, mengabaikan mod senyap<br/><br/>
-<span class="alarm-type alarm-type-b">B</span> Paksa Penggera (Sekali) — dimainkan sekali, mengabaikan mod senyap<br/><br/>
-<span class="alarm-type alarm-type-c">C</span> Ikut Tetapan Telefon — menggunakan tetapan bunyi biasa peranti<br/><br/>
-<span class="alarm-type alarm-type-d">D</span> Getar Sahaja — getaran tanpa bunyi<br/><br/>
-<span class="alarm-type alarm-type-e">E</span> Mod Senyap — tiada bunyi atau getaran
-          </div>
-<img alt="Tetapan Jenis Penggera" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Tetapkan syarat tambahan untuk isyarat yang benar-benar berguna sahaja: syarat harga, syarat pembentukan RSI pada rangka masa lain, syarat Bollinger Band.</p>
+<p><strong>(c)</strong> Tetapkan ambang oversold/overbought. Amaran bullish apabila 'permulaan RSI' berada di bawah paras oversold; bearish apabila 'permulaan RSI' berada di atas paras overbought.</p>
+<p><strong>(d)</strong> Konfigurasi jenis alarm dan bunyi. Tetapan terperinci di Halaman Tetapan:</p>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Alarm Paksa (Ulang) — dimainkan berterusan sehingga dihentikan secara manual, abaikan mod senyap<br/><br/> <span class="alarm-type alarm-type-b">B</span> Alarm Paksa (Sekali) — dimainkan sekali, abaikan mod senyap<br/><br/> <span class="alarm-type alarm-type-c">C</span> Ikut Tetapan Telefon — guna tetapan bunyi biasa peranti<br/><br/> <span class="alarm-type alarm-type-d">D</span> Getar Sahaja — getaran tanpa bunyi<br/><br/> <span class="alarm-type alarm-type-e">E</span> Mod Senyap — tiada bunyi atau getaran</div>
+<img alt="Tetapan Jenis Alarm" src="../images/image%201_manual.png" style="max-width: 350px;"/>
+<p><strong>(e)</strong> Tetapkan syarat tambahan supaya hanya isyarat yang berguna dihantar: syarat harga, syarat pembentukan RSI pada rangka masa lain, syarat Bollinger Band.</p>
 </li>
 </ol>
 <div class="image-row">
 <img alt="Syarat Tambahan 1" src="../images/image%202_manual.png"/>
 <img alt="Syarat Tambahan 2" src="../images/image%203_manual.png"/>
 </div>
-<p><strong>e0)</strong> Apabila berbilang syarat ditetapkan, konfigurasikan hubungannya: "and" (semua mesti dipenuhi) atau "or" (mana-mana satu dipenuhi).</p>
-<p><strong>e1)</strong> Tetapkan syarat harga — amaran apabila harga mula/tamat divergence berada di atas/di bawah harga tertentu.</p>
-<p><strong>e2)</strong> Beri amaran apabila divergence sedang terbentuk pada rangka masa lain.</p>
+<p><strong>e0)</strong> Jika berbilang syarat ditetapkan, konfigurasikan hubungannya: "and" (semua mesti dipenuhi) atau "or" (mana-mana satu dipenuhi).</p>
+<p><strong>e1)</strong> Tetapkan syarat harga — amaran apabila harga mula/akhir divergence berada di atas/di bawah harga tertentu.</p>
+<p><strong>e2)</strong> Amaran apabila divergence sedang terbentuk pada rangka masa lain.</p>
 <p><strong>e3)</strong> Semak sama ada harga puncak akhir divergence RSI berada di luar Bollinger Bands.</p>
 <h3>Tip Strategi</h3>
 <div class="warning">
 <ul>
 <li>Sentiasa gabungkan dengan indikator lain: rintangan, garisan trend, Fibonacci, dll.</li>
-<li>Seperti semua indikator, divergence RSI tidak 100% tepat — ia meningkatkan kebarangkalian.</li>
+<li>Seperti semua indikator, divergence RSI bukan 100% tepat — ia meningkatkan kebarangkalian.</li>
 <li>Divergence 1m, 5m sering diabaikan, tetapi kebolehpercayaan meningkat: 15m &lt; 1h &lt; 4h. <strong>Divergence 4h sangat boleh dipercayai — disyorkan untuk ditetapkan sebagai alarm gred A.</strong></li>
 </ul>
 </div>
@@ -263,25 +257,23 @@
 <img alt="Tetapan EI 2" src="../images/image%205_manual.png"/>
 </div>
 <ol>
-<li>Pilih syiling yang hendak dikonfigurasikan.</li>
+<li>Pilih coin yang ingin dikonfigurasi.</li>
 <li>Tetapkan amaran harga untuk syiling.</li>
 <li>Konfigurasikan amaran silang EMA (Exponential Moving Average).</li>
 <li>Tetapkan amaran apabila menghampiri sokongan/rintangan.</li>
-<li>Konfigurasikan amaran penembusan Bollinger Band.</li>
+<li>Konfigurasikan amaran pecahan Bollinger Band.</li>
 <li>Tetapkan amaran perubahan Supertrend.</li>
 </ol>
 <div class="warning">
-<p>※ Indikator tambahan (3, 4, 5, 6) akan ditetapkan semula apabila anda log keluar.</p>
+<p>※ Indikator tambahan (3, 4, 5, 6) akan direset apabila anda log keluar.</p>
 </div>
 </div>
 <!-- Webhook Section -->
 <div class="manual-section" id="webhook">
 <h2>🔗 Webhook TradingView, Gabungan Isyarat &amp; Auto-Order</h2>
-<p><strong>"Webhook"</strong> — Ciri Pro untuk pengguna lanjutan.</p>
+<p><strong>"Webhook"</strong> — ciri Pro untuk pengguna lanjutan.</p>
 <p>
-<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">
-          📖 Pergi ke Panduan Webhook Terperinci
-        </a>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Pergi ke Panduan Webhook Terperinci</a>
 </p>
 </div>
 <!-- Settings Section -->
@@ -302,14 +294,14 @@
 <img alt="Tetapan Rujukan" src="../images/image%208_manual.png" style="max-width: 550px;"/>
 <p><strong>(a)</strong> Kod rujukan anda. Apabila orang lain melanggan dengan kod ini, anda menjadi perujuk mereka.</p>
 <p><strong>(b)</strong> Pautan jemputan anda. Sesiapa yang melanggan melalui pautan ini akan mendaftarkan anda secara automatik sebagai perujuk mereka.</p>
-<p><strong>(c)</strong> Masukkan alamat dompet anda untuk ganjaran rujukan. Mesti dompet USDT BEP-20 (dompet bursa utama disyorkan). Anda boleh menguji sama ada deposit berfungsi dengan betul melalui 'My Info' di laman web DivAlarm.</p>
+<p><strong>(c)</strong> Masukkan alamat dompet anda untuk ganjaran rujukan. Mesti dompet USDT BEP-20 (disyorkan dompet bursa utama). Anda boleh menguji sama ada deposit berfungsi dengan betul melalui 'My Info' di laman web DivAlarm.</p>
 <p><strong>(d)</strong> Memaparkan status ganjaran rujukan anda: bilangan rujukan semasa, jumlah ganjaran berpotensi, jumlah disahkan, dan jumlah dibayar.</p>
-<p>Ganjaran akan berpindah daripada 'berpotensi' kepada 'disahkan' 14 hari selepas pembayaran langganan pengguna yang dirujuk (tidak termasuk percubaan percuma). Pembayaran dibuat setiap minggu pada hari Selasa, tengah malam UTC.</p>
+<p>Ganjaran akan berubah daripada 'berpotensi' kepada 'disahkan' 14 hari selepas bayaran langganan pengguna yang dirujuk (tidak termasuk percubaan percuma). Pembayaran dibuat setiap minggu pada hari Selasa, tepat tengah malam UTC.</p>
 <h3>Cara Mendapatkan Ganjaran Rujukan</h3>
 <div class="highlight">
 <p><strong>1]</strong> Pergi ke Tetapan → Ganjaran Rujukan → Masukkan alamat dompet ganjaran anda.</p>
 <p><strong>2]</strong> Kongsi pautan rujukan anda. Orang lain akan dibawa ke halaman langganan dengan kod anda.</p>
-<p><strong>3]</strong> Apabila mereka melanggan dan membuat bayaran, ganjaran akan dikreditkan.</p>
+<p><strong>3]</strong> Apabila mereka melanggan dan membuat bayaran, ganjaran akan dimasukkan.</p>
 </div>
 </div>
 </div>

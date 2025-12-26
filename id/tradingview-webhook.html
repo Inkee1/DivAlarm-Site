@@ -2,8 +2,8 @@
 <html lang="id">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView Panduan Webhook - DivAlarm</title>
-<meta content="TradingView Panduan Webhook - DivAlarm" property="og:title"/>
+<title>Panduan Webhook TradingView - DivAlarm</title>
+<meta content="Panduan Webhook TradingView - DivAlarm" property="og:title"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -194,7 +194,7 @@
 <body>
 <div class="manual-container">
 <a class="back-link" href="user-manual.html">← Kembali ke Manual Pengguna</a>
-<h1 class="manual-title">🔗 TradingView Panduan Webhook</h1>
+<h1 class="manual-title">🔗 Panduan Webhook TradingView</h1>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Daftar Isi</h3>
@@ -209,52 +209,52 @@
 <div class="manual-section" id="keyword">
 <h2>🔔 Alert Kata Kunci</h2>
 <h3>Menambahkan Webhook di TradingView</h3>
-<img alt="TradingView Tambah Peringatan" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>Klik kanan pada indikator yang ingin Anda terima sinyalnya di TradingView lalu klik "Add Alert on ~".</p>
+<img alt="TradingView Tambah Alarm" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>Klik kanan pada indikator yang ingin Anda terima sinyalnya di TradingView, lalu klik "Add Alert on ~".</p>
 <img alt="Pengaturan URL Webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Pengaturan Notifikasi" src="../images/image_tv.png" style="max-width: 600px;"/>
 <p>Di bagian "Notifications", centang "Webhook URL" lalu tempel alamat yang disalin dari aplikasi ke kolom input di bawah.</p>
-<p>Setelah diatur, ini akan otomatis dicentang/diisi untuk alert lainnya.</p>
+<p>Setelah diatur, opsi ini akan otomatis dicentang/diisi untuk alert lainnya.</p>
 <img alt="Pengaturan Pesan" src="../images/image%201_tv.png" style="max-width: 680px;"/>
 <p>Di bagian "Messages" pada "Message", tambahkan kata kunci apa pun yang Anda inginkan (misalnya, "AAA").</p>
 <p>Klik "Create" untuk menjadwalkan alert TradingView.</p>
 <h3>Menerima Alert TradingView di Aplikasi</h3>
 <img alt="Pengaturan Kata Kunci Aplikasi" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Tambahkan kata kunci (misalnya, "AAA") ke bagian 'Keyword Include' di aplikasi. Saat "Message" alert TradingView berisi kata kunci tersebut, alarm akan berbunyi sesuai pengaturan.</p>
+<p>Tambahkan kata kunci (misalnya, "AAA") ke bagian 'Keyword Include' di aplikasi. Saat "Message" pada alert TradingView berisi kata kunci tersebut, alarm akan berbunyi sesuai pengaturan.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
 <h2>🤖 Auto-Order dengan Alert TradingView</h2>
 <img alt="Pengaturan Auto-Order" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Anda dapat menyiapkan 'Auto-Orders' untuk dikirim ke exchange saat alert kata kunci diterima.</p>
+<p>Anda bisa menyiapkan 'Auto-Orders' untuk dikirim ke exchange saat alert kata kunci diterima.</p>
 <img alt="Pengaturan API Exchange" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
 <p>Exchange yang didukung untuk auto-order: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Anda harus memasukkan API key di halaman Settings aplikasi.</p>
+<p>Anda harus memasukkan API key di halaman Pengaturan aplikasi.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
 <h2>📝 Mendaftarkan Sinyal DivAlarm sebagai Kata Kunci</h2>
 <img alt="Kata Kunci Sinyal DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Alert bawaan DivAlarm juga dapat ditambahkan ke 'Keyword Combinations' (untuk alert kombinasi atau auto-order).</p>
+<p>Alert bawaan DivAlarm juga bisa ditambahkan ke 'Keyword Combinations' (untuk alert kombinasi atau auto-order).</p>
 <div class="highlight">
-<p><strong>Format:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>Format:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(jika ada)</p>
 </div>
 <p><strong>Jenis Alarm:</strong></p>
 <ul>
-<li><code>@D</code> — Filter divergensi RSI</li>
-<li><code>@E</code> — Indikator Tambahan</li>
-<li><code>@P</code> — Peringatan harga</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>Contoh</h3>
 <div class="code-block">
 <p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ RSI Divergence, BTCUSDT.P, judul berisi "Bull", Forming, utama 5m, sub 1m</p>
+<p class="desc">→ Divergence RSI, BTCUSDT.P, judul berisi "Bull", Sedang Terbentuk, utama 5m, sub 1m</p>
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ RSI Divergence, ETHUSDT.P, judul berisi "Bear", Complete, 15m, tanpa timeframe sub</p>
+<p class="desc">→ Divergence RSI, ETHUSDT.P, judul berisi "Bear", Selesai, 15m, tanpa timeframe sub</p>
 </div>
 <img alt="Contoh Kata Kunci" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
@@ -265,31 +265,27 @@
 <p><code>"@E@BTC@Near Support@1m"</code></p>
 <p><code>"@E@BTC@Near Resistance@5m"</code></p>
 <p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ Peringatan harga, koin BTC, judul berisi "Up"</span></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ Alarm harga, koin BTC, judul berisi "Up"</span></p>
 <p><code>"@P@ETH@Down"</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 Peringatan Kombinasi Sinyal</h2>
+<h2>🔀 Alarm Kombinasi Sinyal</h2>
 <p>Gabungkan beberapa sinyal TradingView untuk membuat sinyal baru atau sinyal yang difilter.</p>
 <div class="image-row">
-<img alt="Pengaturan Peringatan Kombinasi" src="../images/image%205_tv.png"/>
+<img alt="Pengaturan Alarm Kombinasi" src="../images/image%205_tv.png"/>
 <div>
 <p>Atur kondisi yang harus terpenuhi dalam jendela waktu agar alarm terpicu.</p>
-<p><strong>Contoh:</strong><br/>
-          Dalam 1 jam 30 menit:<br/>
-          • 'Peringatan dengan kata kunci A' DAN<br/>
-          • 'Peringatan dengan kata kunci B' keduanya masuk, ATAU<br/>
-          • 'Peringatan dengan kata kunci C' masuk</p>
-<p>Masukkan <code>(1&amp;2)|3</code> di 'Kombinasi Alarm' dan <code>1h 30m</code> di 'Kombinasi Waktu'.</p>
+<p><strong>Contoh:</strong><br/> Dalam 1 jam 30 menit:<br/> • 'Alarm dengan kata kunci A' DAN<br/> • 'Alarm dengan kata kunci B' keduanya masuk, ATAU<br/> • 'Alarm dengan kata kunci C' masuk</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = "AND" (kedua kondisi harus terpenuhi)</p>
-<p><strong>|</strong> = "OR" (salah satu kondisi dapat terpenuhi)</p>
-<p>Meski alarm kata kunci individual dinonaktifkan, kombinasi tetap dapat terpicu saat kondisi terpenuhi.</p>
-<p><strong>Auto-order juga bisa dilakukan dengan peringatan kombinasi!</strong></p>
+<p><strong>&amp;</strong> = "DAN" (kedua kondisi harus terpenuhi)</p>
+<p><strong>|</strong> = "ATAU" (salah satu kondisi bisa terpenuhi)</p>
+<p>Meski alarm kata kunci individual dinonaktifkan, kombinasinya tetap bisa terpicu saat kondisi terpenuhi.</p>
+<p><strong>Auto-order juga bisa dilakukan dengan alarm kombinasi!</strong></p>
 </div>
 </div>
 </div>

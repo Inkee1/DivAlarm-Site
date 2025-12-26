@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <title>Q&amp;A - DivAlarm ヘルプセンター</title>
-<meta content="DivAlarm に関するよくある質問" property="og:title"/>
-<meta content="DivAlarm RSI のダイバージェンスアラートに関するよくある質問への回答を見つけましょう" name="description"/>
+<meta content="DivAlarmに関するよくある質問" property="og:title"/>
+<meta content="DivAlarm RSIダイバージェンスアラートに関するよくある質問への回答を見つけましょう" name="description"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="Webflow" name="generator"/>
 <link href="../css/normalize.css" rel="stylesheet" type="text/css"/>
@@ -306,7 +306,7 @@
 <div class="text-block-10">ヘルプ</div>
 </div>
 <nav class="nav-dropdown-list shadow-three mobile-shadow-hide w-dropdown-list">
-<a aria-current="page" class="nav-dropdown-link w-dropdown-link w--current" href="qna.html">Q&amp;A</a>
+<a aria-current="page" class="nav-dropdown-link w-dropdown-link w--current" href="qna.html">よくある質問</a>
 <a class="nav-dropdown-link w-dropdown-link" href="mailto:info@wise-signal.com">お問い合わせ</a>
 </nav>
 </div>
@@ -333,7 +333,7 @@
 <div class="qna-container">
 <div class="qna-header">
 <h1 class="qna-title">よくある質問</h1>
-<p class="qna-subtitle">DivAlarm に関するよくある質問への回答をご覧いただけます</p>
+<p class="qna-subtitle">DivAlarm に関するよくある質問への回答はこちら</p>
 <div class="search-container">
 <input class="search-input" id="faq-search" placeholder="質問を検索..." type="text"/>
 <span class="search-icon">🔍</span>
@@ -345,7 +345,7 @@
 <div class="faq-question">
 <div>
 <span class="faq-category technical">技術</span>
-<div class="faq-question-text">RSI の値が TradingView や他のプラットフォームと少し異なるのはなぜですか？</div>
+<div class="faq-question-text">なぜ RSI の値は TradingView や他のプラットフォームと少し違うのですか？</div>
 </div>
 <div class="faq-icon">
 <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -355,9 +355,9 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p>RSI の値は平均 <strong>14本のローソク足</strong>を使用しており、計算の開始点によって値にわずかな差が出ることがあります。</p>
-<p>また、主な計算方法は2種類あります： <strong>EMA（指数移動平均）</strong> さらに <strong>SMA（単純移動平均）</strong>.</p>
-<p>DivAlarm は、RSI を <em>直近のトレンドをより反映する</em>ように計算するため、他のプラットフォームと比べてわずかな差が生じる場合があります。</p>
+<p>RSI の値は<strong>14本のローソク足</strong>の平均を使用しており、計算の開始点によってわずかな差が生じることがあります。</p>
+<p>また、主な計算方法は2つあります：<strong>EMA（Exponential Moving Average）</strong>と<strong>SMA（Simple Moving Average）</strong>です。</p>
+<p>DivAlarm は、<em>直近のトレンドをより反映</em>する形で RSI を計算するため、他のプラットフォームと比べてわずかな差が出る場合があります。</p>
 </div>
 </div>
 </div>
@@ -376,9 +376,9 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p><strong>はい</strong>。シグナルは主に <em>最後にログインした端末</em>.</p>
-<p>に送信されます。同時にログインしている場合、複数端末で受信できることもありますが、確実に動作させるため、 <strong>最後にログインした</strong>.</p>
-<p>端末の使用をおすすめします。問題がある場合は、アプリ内の <strong>設定 → 同期設定</strong> に移動して <em>「この端末で受信」</em> をタップし、正常に動作するようにしてください。</p>
+<p><strong>はい</strong>。シグナルは基本的に、<em>最後にログインした端末</em>に送信されます。</p>
+<p>同時にログインしている場合、複数端末で受信できることもありますが、安定して利用するために<strong>最後にログインした端末</strong>でのご利用をおすすめします。</p>
+<p>問題がある場合は、アプリの<strong>設定 → 同期設定</strong>から <em>「この端末で受信」</em>をタップして、正しく動作するように設定してください。</p>
 </div>
 </div>
 </div>
@@ -397,12 +397,10 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p>AppleのiOSは <strong>Androidよりもはるかに厳しいポリシー</strong> があります。</p>
-<p>主な制限は次のとおりです：</p>
-<p>• <strong>強制アラーム</strong> （サイレントモードを無効化するもの）は許可されていません<br/>
-                 • <strong>バックグラウンドでの自動注文</strong> 制限されます<br/>
-                 • プッシュ通知の配信がより制限されます</p>
-<p>私たちは <em>機能制限版</em> 将来的にiOS向けに提供する可能性はありますが、現時点では確定した時期はありません。</p>
+<p>AppleのiOSは、Androidに比べて<strong>ポリシーがはるかに厳格</strong>です。</p>
+<p>主な制限は以下のとおりです：</p>
+<p>• マナーモードを無視する<strong>強制アラーム</strong>は許可されていません<br/> • <strong>バックグラウンドでの自動発注</strong>は制限されています<br/> • プッシュ通知の配信にも制限があります</p>
+<p>将来的にiOS向けに<em>機能を限定したバージョン</em>を提供する可能性はありますが、現時点で確定した時期はありません。</p>
 </div>
 </div>
 </div>
@@ -421,9 +419,9 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p>「 <strong>1m/1m</strong> 」設定では、 <em>まさに</em> 1分足チャートでダイバージェンスが形成されそうになった瞬間にアラートが発動します。</p>
-<p>つまり、 <strong>ローソク足のトレンドとRSIのトレンドが乖離し始めるたびに</strong> — 反転の可能性をできるだけ早い段階で捉えられます。</p>
-<p>これは、通知を受け取りたいトレーダーに最適です。 <em>完全に確定する</em> 前に。</p>
+<p><strong>1m/1m</strong>設定では、1分足でダイバージェンスが形成されそうになった<em>瞬間</em>にアラートが発動します。</p>
+<p>つまり、<strong>ローソク足のトレンドとRSIのトレンドが乖離し始めたとき</strong>にアラートを受け取れます。— 反転の兆しを可能な限り早い段階で捉えられます。</p>
+<p>ダイバージェンスが完全に確定する<em>前</em>に通知を受け取りたいトレーダーに最適です。</p>
 </div>
 </div>
 </div>
@@ -432,7 +430,7 @@
 <div class="faq-question">
 <div>
 <span class="faq-category technical">技術</span>
-<div class="faq-question-text">RSIダイバージェンスとは何ですか？ なぜ重要なのですか？</div>
+<div class="faq-question-text">RSIダイバージェンスとは？ なぜ重要なのですか？</div>
 </div>
 <div class="faq-icon">
 <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -442,10 +440,10 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p><strong>RSI ダイバージェンス</strong> は、価格の動きとRSI指標が逆方向に動くときに発生します。</p>
-<p><strong>強気のダイバージェンス：</strong> 価格は安値を更新する一方で、RSIは安値を切り上げる → 上昇反転の可能性</p>
-<p><strong>弱気のダイバージェンス：</strong> 価格は高値を更新する一方で、RSIは高値を切り下げる → 下落反転の可能性</p>
-<p>RSIダイバージェンスは、テクニカル分析において <em>最も信頼性の高い指標の一つ</em> として、市場の反転を予測するのに広く認識されています。</p>
+<p><strong>RSIダイバージェンス</strong>は、価格の動きとRSI指標の動きが逆方向になったときに発生します。</p>
+<p><strong>強気ダイバージェンス：</strong>価格は安値を更新する一方、RSIは切り上げ → 上昇反転の可能性</p>
+<p><strong>弱気ダイバージェンス：</strong>価格は高値を更新する一方、RSIは切り下げ → 下落反転の可能性</p>
+<p>RSIダイバージェンスは、テクニカル分析において相場の反転を予測するための<em>最も信頼性の高い指標</em>の一つとして広く知られています。</p>
 </div>
 </div>
 </div>
@@ -464,12 +462,10 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p>〜と一緒に <strong>Proサブスクリプション</strong>では、DivAlarmをTradingViewに接続するための専用Webhook URLが発行されます。</p>
+<p><strong>Proサブスクリプション</strong>では、DivAlarmをTradingViewに接続する専用のWebhook URLが発行されます。</p>
 <p>主な機能：</p>
-<p>• <strong>強力なスマホアラーム</strong> サイレントモードを回避<br/>
-                 • <strong>複合シグナル</strong> — 複数のアラートを1つにまとめる<br/>
-                 • <strong>自動注文執行</strong> 対応取引所で利用可能</p>
-<p>TradingView のアラート設定にWebhook URLを貼り付け、アラートメッセージに指定のキーワードを含めるだけで、対応するアクションが実行されます。</p>
+<p>• マナーモードを回避できる<strong>強力なスマホアラーム</strong><br/> • <strong>複合シグナル</strong> — 複数のアラートを1つに統合<br/> • 対応取引所での<strong>自動発注</strong></p>
+<p>TradingViewのアラート設定にWebhook URLを貼り付け、アラートメッセージに指定のキーワードを含めるだけで、対応するアクションが実行されます。</p>
 </div>
 </div>
 </div>
@@ -478,7 +474,7 @@
 <div class="faq-question">
 <div>
 <span class="faq-category features">機能</span>
-<div class="faq-question-text">自動注文はどのように動作しますか？</div>
+<div class="faq-question-text">Auto-Orderはどのように動作しますか？</div>
 </div>
 <div class="faq-icon">
 <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -488,19 +484,17 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p><strong>自動注文</strong> （Proのみ）選択した TradingView のアラートが発火すると、自動で取引を実行します。</p>
-<p>最大 <strong>5取引所</strong>に対応し、次のことが可能です：</p>
-<p>• 特定のアラートキーワードで発動する買い／売り注文を設定<br/>
-                 • 注文数量、注文タイプ、条件を設定<br/>
-                 • スマホがポケットの中でも取引を実行</p>
-<p><em>注意：</em> 自動注文を利用するには、取引所でAPIキーを正しく設定する必要があります。</p>
+<p><strong>Auto-Order</strong>（Pro限定）は、選択したTradingViewアラートが発動すると自動で取引を実行します。</p>
+<p>最大<strong>5つの取引所</strong>に対応しており、次のことが可能です：</p>
+<p>• 特定のアラートキーワードで買い/売り注文を発注<br/> • 注文数量・注文タイプ・条件を設定<br/> • スマホがポケットの中でも取引を実行</p>
+<p><em>注：</em>Auto-Orderを利用するには、取引所でAPIキーを正しく設定する必要があります。</p>
 </div>
 </div>
 </div>
 </div>
 <div class="no-results" id="no-results">
 <p>😕 検索条件に一致する質問が見つかりませんでした。</p>
-<p>別のキーワードを試すか、 <a href="#" style="color: #00d4ff;">お問い合わせ</a> ください。</p>
+<p>Try different keywords or <a href="#" style="color: #00d4ff;">お問い合わせ</a> for help.</p>
 </div>
 </div>
 </section>

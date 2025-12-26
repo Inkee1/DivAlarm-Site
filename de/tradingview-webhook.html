@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView Webhook-Anleitung – DivAlarm</title>
-<meta content="TradingView Webhook-Anleitung – DivAlarm" property="og:title"/>
+<title>TradingView Webhook-Leitfaden – DivAlarm</title>
+<meta content="TradingView Webhook-Leitfaden – DivAlarm" property="og:title"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -194,7 +194,7 @@
 <body>
 <div class="manual-container">
 <a class="back-link" href="user-manual.html">← Zurück zum Benutzerhandbuch</a>
-<h1 class="manual-title">🔗 TradingView Webhook-Anleitung</h1>
+<h1 class="manual-title">🔗 TradingView Webhook-Leitfaden</h1>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Inhaltsverzeichnis</h3>
@@ -210,42 +210,42 @@
 <h2>🔔 Keyword-Alarme</h2>
 <h3>Webhook in TradingView hinzufügen</h3>
 <img alt="TradingView Alarm hinzufügen" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>Klicke in TradingView mit der rechten Maustaste auf den Indikator, von dem du Signale erhalten möchtest, und klicke auf „Alarm hinzufügen bei ~“.</p>
+<p>Klicke in TradingView mit der rechten Maustaste auf den Indikator, von dem du Signale erhalten möchtest, und wähle „Add Alert on ~“.</p>
 <img alt="Webhook-URL-Einstellung" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Benachrichtigungseinstellungen" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>Aktiviere im Abschnitt „Benachrichtigungen“ „Webhook-URL“ und füge die aus der App kopierte Adresse in das Eingabefeld darunter ein.</p>
-<p>Nach dem Einrichten wird dies bei anderen Alarmen automatisch aktiviert/ausgefüllt.</p>
+<p>Aktiviere im Bereich „Notifications“ die Option „Webhook URL“ und füge die aus der App kopierte Adresse in das Eingabefeld darunter ein.</p>
+<p>Nach dem Einrichten wird dies bei anderen Alerts automatisch übernommen.</p>
 <img alt="Nachrichteneinstellungen" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>Füge im Abschnitt „Nachrichten“ unter „Nachricht“ ein beliebiges Keyword hinzu (z. B. „AAA“).</p>
-<p>Klicke auf „Erstellen“, um den TradingView-Alarm zu erstellen.</p>
-<h3>TradingView-Alarme in der App empfangen</h3>
+<p>Füge im Bereich „Messages“ unter „Message“ ein beliebiges Keyword hinzu (z. B. „AAA“).</p>
+<p>Klicke auf „Create“, um den TradingView Alert zu erstellen.</p>
+<h3>TradingView Alerts in der App empfangen</h3>
 <img alt="App-Keyword-Einstellungen" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Füge das Keyword (z. B. „AAA“) in der App im Abschnitt „Keyword Include“ hinzu. Wenn die TradingView-Alarm-„Nachricht“ das Keyword enthält, ertönt der Alarm wie konfiguriert.</p>
+<p>Füge das Keyword (z. B. „AAA“) in der App im Bereich „Keyword Include“ hinzu. Wenn die „Message“ des TradingView Alerts das Keyword enthält, wird der Alarm wie konfiguriert ausgelöst.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 Auto-Order mit TradingView-Alarmen</h2>
+<h2>🤖 Auto-Order mit TradingView Alerts</h2>
 <img alt="Auto-Order-Einstellungen" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Du kannst „Auto-Orders“ einrichten, die an Börsen gesendet werden, wenn Keyword-Alarme empfangen werden.</p>
+<p>Du kannst „Auto-Orders“ einrichten, die beim Empfang von Keyword-Alarmen an Börsen gesendet werden.</p>
 <img alt="Exchange-API-Einstellungen" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
 <p>Unterstützte Börsen für Auto-Orders: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Du musst API-Keys auf der Einstellungsseite der App eingeben.</p>
+<p>Du musst die API-Keys in den App-Einstellungen hinterlegen.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
-<h2>📝 DivAlarm-Signale als Keywords registrieren</h2>
+<h2>📝 DivAlarm Signale als Keywords registrieren</h2>
 <img alt="DivAlarm Signal-Keywords" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Die eigenen Alarme von DivAlarm können auch zu „Keyword Combinations“ hinzugefügt werden (für Kombinationsalarme oder Auto-Orders).</p>
+<p>Auch die eigenen Alerts von DivAlarm können zu „Keyword Combinations“ hinzugefügt werden (für Kombinationsalarme oder Auto-Orders).</p>
 <div class="highlight">
-<p><strong>Format:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>Format:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(falls vorhanden)</p>
 </div>
 <p><strong>Alarmtypen:</strong></p>
 <ul>
-<li><code>@D</code> — RSI Divergenz-Filter</li>
-<li><code>@E</code> — Zusätzliche Indikatoren</li>
-<li><code>@P</code> — Preisalarme</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>Beispiele</h3>
 <div class="code-block">
@@ -258,7 +258,7 @@
 </div>
 <img alt="Keyword-Beispiel" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
-<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Zusätzlicher Indikator, BTC Coin, Titel enthält „Sell“, 30m</span></p>
+<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Extra-Indikator, BTC Coin, Titel enthält „Sell“, 30m</span></p>
 <p><code>"@E@BTC@Buy@1h"</code></p>
 <p><code>"@E@ETH@Breakout@15m"</code></p>
 <p><code>"@E@BTC@Breakdown@5m"</code></p>
@@ -277,18 +277,14 @@
 <img alt="Einstellungen für Kombinationsalarme" src="../images/image%205_tv.png"/>
 <div>
 <p>Lege Bedingungen fest, die innerhalb eines Zeitfensters erfüllt sein müssen, damit Alarme ausgelöst werden.</p>
-<p><strong>Beispiel:</strong><br/>
-          Innerhalb von 1 Stunde 30 Minuten:<br/>
-          • „Alarm mit Keyword A“ UND<br/>
-          • „Alarm mit Keyword B“ beide treffen ein, ODER<br/>
-          • „Alarm mit Keyword C“ trifft ein</p>
-<p>Gib <code>(1&amp;2)|3</code> in „Alarmkombination“ ein und <code>1h 30m</code> in „Zeitkombination“.</p>
+<p><strong>Beispiel:</strong><br/> Innerhalb von 1 Stunde 30 Minuten:<br/> • „Alarm mit Keyword A“ UND<br/> • „Alarm mit Keyword B“ treffen beide ein, ODER<br/> • „Alarm mit Keyword C“ trifft ein</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = „AND“ (beide Bedingungen müssen erfüllt sein)</p>
-<p><strong>|</strong> = „OR“ (eine der Bedingungen kann erfüllt sein)</p>
-<p>Auch wenn einzelne Keyword-Alarme deaktiviert sind, kann die Kombination dennoch auslösen, sobald die Bedingungen erfüllt sind.</p>
+<p><strong>&amp;</strong> = „UND“ (beide Bedingungen müssen erfüllt sein)</p>
+<p><strong>|</strong> = „ODER“ (eine der Bedingungen kann erfüllt sein)</p>
+<p>Auch wenn einzelne Keyword-Alarme deaktiviert sind, kann die Kombination trotzdem auslösen, sobald die Bedingungen erfüllt sind.</p>
 <p><strong>Auto-Orders sind auch mit Kombinationsalarmen möglich!</strong></p>
 </div>
 </div>

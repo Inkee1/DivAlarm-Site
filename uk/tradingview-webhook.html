@@ -193,59 +193,59 @@
 </head>
 <body>
 <div class="manual-container">
-<a class="back-link" href="user-manual.html">← Назад до Посібника користувача</a>
+<a class="back-link" href="user-manual.html">← Назад до посібника користувача</a>
 <h1 class="manual-title">🔗 TradingView Посібник із Webhook</h1>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Зміст</h3>
 <ul>
 <li><a href="#keyword">Сповіщення за ключовими словами</a></li>
-<li><a href="#auto-order">Авто-ордери з TradingView</a></li>
-<li><a href="#divalarm-keywords">DivAlarm Ключові слова сигналів</a></li>
-<li><a href="#combination">Сповіщення про комбінації сигналів</a></li>
+<li><a href="#auto-order">Автоордери з TradingView</a></li>
+<li><a href="#divalarm-keywords">Ключові слова сигналів DivAlarm</a></li>
+<li><a href="#combination">Сповіщення за комбінаціями сигналів</a></li>
 </ul>
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
 <h2>🔔 Сповіщення за ключовими словами</h2>
 <h3>Додавання Webhook у TradingView</h3>
-<img alt="TradingView Додати алерт" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>Клацніть правою кнопкою миші по індикатору, від якого хочете отримувати сигнали в TradingView, і натисніть «Add Alert on ~».</p>
+<img alt="TradingView Додати сповіщення" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>Клацніть правою кнопкою миші по індикатору, з якого хочете отримувати сигнали в TradingView, і натисніть "Add Alert on ~".</p>
 <img alt="Налаштування URL вебхука" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Налаштування сповіщень" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>У розділі «Notifications» поставте прапорець «Webhook URL» і вставте адресу, скопійовану з застосунку, у поле введення нижче.</p>
-<p>Після налаштування це буде автоматично позначено/заповнено для інших сповіщень.</p>
+<p>У розділі "Notifications" поставте прапорець "Webhook URL" і вставте адресу, скопійовану з застосунку, в поле введення нижче.</p>
+<p>Після налаштування це буде автоматично позначатися/заповнюватися для інших сповіщень.</p>
 <img alt="Налаштування повідомлення" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>У розділі «Messages» під «Message» додайте будь-яке ключове слово (наприклад, «AAA»).</p>
-<p>Натисніть «Create», щоб запланувати сповіщення TradingView.</p>
+<p>У розділі "Messages" в полі "Message" додайте будь-яке ключове слово (наприклад, "AAA").</p>
+<p>Натисніть "Create", щоб створити сповіщення TradingView.</p>
 <h3>Отримання сповіщень TradingView у застосунку</h3>
 <img alt="Налаштування ключових слів у застосунку" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Додайте ключове слово (наприклад, «AAA») у розділ 'Keyword Include' у застосунку. Коли «Message» сповіщення TradingView міститиме це ключове слово, пролунає сигнал тривоги згідно з налаштуваннями.</p>
+<p>Додайте ключове слово (наприклад, "AAA") у розділ 'Keyword Include' в застосунку. Коли "Message" сповіщення TradingView міститиме це ключове слово, пролунає сигнал тривоги згідно з налаштуваннями.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 Авто-ордери зі сповіщеннями TradingView</h2>
+<h2>🤖 Автоордери зі сповіщеннями TradingView</h2>
 <img alt="Налаштування автоордера" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Ви можете налаштувати «Auto-Orders», щоб вони надсилалися на біржі, коли надходять сповіщення за ключовими словами.</p>
+<p>Ви можете налаштувати 'Auto-Orders', щоб надсилати ордери на біржі, коли надходять сповіщення за ключовими словами.</p>
 <img alt="Налаштування API біржі" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>Підтримувані біржі для авто-ордерів: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Ви повинні ввести API-ключі на сторінці налаштувань застосунку.</p>
+<p>Підтримувані біржі для автоордерів: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
+<p>Вам потрібно ввести API-ключі на сторінці налаштувань застосунку.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
 <h2>📝 Реєстрація сигналів DivAlarm як ключових слів</h2>
-<img alt="DivAlarm Ключові слова сигналів" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Власні сповіщення DivAlarm також можна додати до «Keyword Combinations» (для сповіщень-комбінацій або авто-ордерів).</p>
+<img alt="Ключові слова сигналів DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
+<p>Власні сповіщення DivAlarm також можна додавати до 'Keyword Combinations' (для сповіщень за комбінаціями або автоордерів).</p>
 <div class="highlight">
-<p><strong>Формат:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>Формат:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(за наявності)</p>
 </div>
-<p><strong>Типи тривог:</strong></p>
+<p><strong>Типи сповіщень:</strong></p>
 <ul>
-<li><code>@D</code> — Фільтри дивергенції RSI</li>
-<li><code>@E</code> — Додаткові індикатори</li>
-<li><code>@P</code> — Цінові алерти</li>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
 </ul>
 <h3>Приклади</h3>
 <div class="code-block">
@@ -256,7 +256,7 @@
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
 <p class="desc">→ RSI Дивергенція, ETHUSDT.P, заголовок містить "Bear", Завершено, 15m, без додаткового таймфрейму</p>
 </div>
-<img alt="Приклад ключових слів" src="../images/image%204_tv.png" style="max-width: 500px;"/>
+<img alt="Приклад ключового слова" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
 <p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Додатковий індикатор, монета BTC, заголовок містить "Sell", 30m</span></p>
 <p><code>"@E@BTC@Buy@1h"</code></p>
@@ -265,31 +265,27 @@
 <p><code>"@E@BTC@Near Support@1m"</code></p>
 <p><code>"@E@BTC@Near Resistance@5m"</code></p>
 <p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ Ціновий алерт, монета BTC, заголовок містить "Up"</span></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ Сповіщення про ціну, монета BTC, заголовок містить "Up"</span></p>
 <p><code>"@P@ETH@Down"</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 Алерти комбінації сигналів</h2>
+<h2>🔀 Сповіщення про комбінації сигналів</h2>
 <p>Комбінуйте кілька сигналів TradingView, щоб створювати нові або відфільтровані сигнали.</p>
 <div class="image-row">
-<img alt="Налаштування алертів-комбінацій" src="../images/image%205_tv.png"/>
+<img alt="Налаштування сповіщення-комбінації" src="../images/image%205_tv.png"/>
 <div>
-<p>Задайте умови, які мають бути виконані в межах часового вікна, щоб спрацювали тривоги.</p>
-<p><strong>Приклад:</strong><br/>
-          Протягом 1 години 30 хвилин:<br/>
-          • «Алерт із ключовим словом A» І<br/>
-          • «Алерт із ключовим словом B» обидва надходять, АБО<br/>
-          • надходить «Алерт із ключовим словом C»</p>
-<p>Введіть <code>(1&amp;2)|3</code> у «Комбінація тривог» і <code>1h 30m</code> у «Комбінація часу».</p>
+<p>Задайте умови, які мають виконатися в межах часового вікна, щоб сповіщення спрацювало.</p>
+<p><strong>Приклад:</strong><br/> Протягом 1 години 30 хвилин:<br/> • «Сповіщення з ключовим словом A» І<br/> • «Сповіщення з ключовим словом B» обидва надходять, АБО<br/> • надходить «Сповіщення з ключовим словом C»</p>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = "AND" (обидві умови мають бути виконані)</p>
-<p><strong>|</strong> = "OR" (може бути виконана будь-яка з умов)</p>
-<p>Навіть якщо окремі тривоги за ключовими словами вимкнені, комбінація все одно може спрацювати, коли умови виконані.</p>
-<p><strong>Автоордери також можливі з алертами-комбінаціями!</strong></p>
+<p><strong>&amp;</strong> = «AND» (мають виконатися обидві умови)</p>
+<p><strong>|</strong> = «OR» (може виконатися будь-яка з умов)</p>
+<p>Навіть якщо окремі сповіщення за ключовими словами вимкнені, комбінація все одно може спрацювати, коли умови виконано.</p>
+<p><strong>Автоордери також можливі зі сповіщеннями-комбінаціями!</strong></p>
 </div>
 </div>
 </div>
