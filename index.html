@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DivAlarm</title>
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; padding: 24px; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; padding: 24px; display: none; }
+    body.show { display: block; }
     .row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
     .btn { padding: 10px 14px; border:1px solid #ccc; border-radius: 10px; text-decoration:none; color:#111; }
     select { padding: 10px 14px; border-radius: 10px; }
@@ -114,19 +115,22 @@
       location.replace(new URL(l + "/", location.href).toString());
     }
 
-    // dropdown 채우기
-    const sel = document.getElementById("langSelect");
-    for (const code of SUPPORTED) {
-      const opt = document.createElement("option");
-      opt.value = code;
-      opt.textContent = `${LABELS[code] || code} (${code})`;
-      sel.appendChild(opt);
+    const showUI = new URLSearchParams(location.search).get("select") === "1";
+    if (showUI) {
+      document.body.classList.add("show");
+      // dropdown 채우기
+      const sel = document.getElementById("langSelect");
+      for (const code of SUPPORTED) {
+        const opt = document.createElement("option");
+        opt.value = code;
+        opt.textContent = `${LABELS[code] || code} (${code})`;
+        sel.appendChild(opt);
+      }
+      document.getElementById("goBtn").onclick = () => go(sel.value);
+    } else {
+      // 자동 이동 (UI 숨김)
+      go(pickBestLang());
     }
-
-    document.getElementById("goBtn").onclick = () => go(sel.value);
-
-    // 자동 이동 (원치 않으면 이 줄을 주석처리하면 됨)
-    go(pickBestLang());
   </script>
 </body>
 </html>
