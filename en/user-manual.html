@@ -85,6 +85,12 @@
       margin-top: 2rem;
       margin-bottom: 1rem;
     }
+    .manual-section h4 {
+      font-size: 1.3rem;
+      color: #a78bfa;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
     .manual-section p {
       font-size: 1.2rem;
       line-height: 1.9;
@@ -182,6 +188,7 @@
       <ul>
         <li><a href="#menu">Menu Overview</a></li>
         <li><a href="#divlog">Viewing Signal Notifications (DivLog)</a></li>
+        <li><a href="#signal-details">View Signal Details</a></li>
         <li><a href="#div">RSI Divergence Alert Settings (Div)</a></li>
         <li><a href="#ei">Additional Indicator Alerts (EI)</a></li>
         <li><a href="#webhook">TradingView Webhook & Auto-Order</a></li>
@@ -209,6 +216,33 @@
         <li>Shows unchecked alerts. Check the mark to dismiss the alarm. Maximum 5 recent unchecked alerts shown.</li>
         <li>Filter to view only the signals you want.</li>
       </ol>
+    </div>
+
+    <!-- Signal Details Section -->
+    <div class="manual-section" id="signal-details">
+      <h2>🔍 View Signal Details</h2>
+      <img src="../images/image_detail.png" alt="Signal Detail View" style="max-width: 500px;">
+      <p>By tapping each alert, you can view detailed signal information.</p>
+      <p>For RSI Divergence alerts, you can see the start and end prices, RSI values, and timestamps.</p>
+
+      <p><strong>"DivForming"</strong> shows divergences that are forming on other timeframes at the moment the signal occurs.</p>
+
+      <p><strong>"OutsideBB"</strong> shows which timeframes were outside the Bollinger Bands when the signal occurred.</p>
+      <ul>
+        <li>For timeframes <strong>smaller</strong> than the signal's timeframe, it shows which candles were outside the Bollinger Band at the signal moment (<em>at now</em>).</li>
+        <li>For timeframes <strong>larger</strong> than the signal's timeframe, it shows which candles were outside the Bollinger Band at the later RSI divergence peak (<em>at peak</em>).</li>
+      </ul>
+
+      <h4>Example</h4>
+      <div class="highlight">
+        <p>In the example above, a <strong>Bullish signal</strong> occurs on the <strong>15m</strong> timeframe.</p>
+        <p><strong>"DivForming"</strong> indicates that bearish divergences are forming on the 30m and 1h timeframes.</p>
+        <p><strong>"OutsideBB"</strong> shows:</p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+          <li>At the signal moment, the <strong>5m</strong> timeframe was outside the Bollinger Band.</li>
+          <li>At the RSI divergence peak, the <strong>15m, 30m, and 1h</strong> timeframes were outside the Bollinger Band.</li>
+        </ul>
+      </div>
     </div>
 
     <!-- Div Section -->
@@ -306,6 +340,11 @@
       <ol>
         <li>Configure alarm types (A, B...) and alarm sounds (1, 2...).</li>
         <li>For auto-orders, enter each exchange's API keys.</li>
+        <li>You can test whether notifications are arriving on your current phone. By sending a test message to yourself, you can check whether alerts are delivered according to your configured filters.</li>
+        <li>This is a page for setting up referral reward-related options.</li>
+        <li>This is the place where you receive global announcements.</li>
+        <li>This is the place where you receive exclusive announcements sent by the referral you registered when you signed up.</li>
+        <li>You can switch the entire app between Light Mode and Dark Mode.</li>
       </ol>
     </div>
 

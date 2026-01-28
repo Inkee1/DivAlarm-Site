@@ -41,8 +41,8 @@
       font-weight: 700;
       margin-bottom: 2rem;
       background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
-      -webkit-background-clip: text;
       background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
@@ -176,20 +176,82 @@
       min-width: 300px;
     }
     
+    /* Quick Summary (collapsible video embeds) */
+    #quick-summary h2 { margin-top: 0; }
+    .video-toggle {
+      margin: 1.25rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.22);
+      border-radius: 12px;
+      background: rgba(12, 12, 24, 0.75);
+      overflow: hidden;
+    }
+    .video-toggle h3 { margin: 0; }
+    .video-toggle-btn {
+      width: 100%;
+      text-align: left;
+      padding: 1.1rem 1.25rem;
+      background: transparent;
+      border: none;
+      color: #f97316;
+      font: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .video-toggle-btn::after {
+      content: "▸";
+      color: rgba(248, 250, 252, 0.65);
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+      transform: rotate(0deg);
+      flex: 0 0 auto;
+    }
+    .video-toggle-btn[aria-expanded="true"]::after { transform: rotate(90deg); }
+    .video-toggle-btn:focus-visible {
+      outline: 2px solid rgba(0, 212, 255, 0.8);
+      outline-offset: -2px;
+    }
+    .video-toggle-panel {
+      padding: 0 1.25rem 1.25rem 1.25rem;
+      border-top: 1px solid rgba(0, 212, 255, 0.18);
+    }
+    .video-embed {
+      width: 100%;
+      max-width: 435px;
+      margin: 1rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      background: #000;
+    }
+    .video-embed iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9/16;
+      min-height: 500px; /* Fallback */
+      border: 0;
+      display: block;
+    }
+    .video-links a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    .video-links a:hover { opacity: 0.85; }
+
     @media (max-width: 768px) {
       .manual-container { padding: 30px 20px; }
       .manual-title { font-size: 2.2rem; }
       .manual-section h2 { font-size: 1.8rem; }
       .manual-section h3 { font-size: 1.4rem; }
       .manual-section p, .manual-section li { font-size: 1.1rem; }
-      /* Override any inline max-width (e.g., style="max-width: 680px") on mobile */
-      .manual-section img { max-width: 100% !important; }
       .image-row img { max-width: 100%; min-width: auto; }
       .code-block p { font-size: 0.95rem; }
+      .video-toggle-btn { padding: 1rem 1.1rem; }
     }
   </style>
-  <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css">
-  <script src="../js/lang-switcher.js" type="text/javascript" defer></script>
 </head>
 <body>
   <div class="manual-container">
@@ -200,11 +262,132 @@
     <div class="toc">
       <h3>📋 Table of Contents</h3>
       <ul>
+        <li><a href="#quick-summary">Quick Summary</a></li>
         <li><a href="#keyword">Keyword Alerts</a></li>
         <li><a href="#auto-order">Auto-Order with TradingView</a></li>
         <li><a href="#divalarm-keywords">DivAlarm Signal Keywords</a></li>
         <li><a href="#combination">Signal Combination Alerts</a></li>
       </ul>
+    </div>
+
+    <!-- Quick Summary Section -->
+    <div class="manual-section" id="quick-summary">
+      <h2>DivAlarm × TradingView – Quick Summary</h2>
+
+      <div class="video-toggle">
+        <h3>
+          <button type="button" class="video-toggle-btn" aria-expanded="true" aria-controls="qs-connect-tv">
+            Connect TradingView to the App
+          </button>
+        </h3>
+        <div id="qs-connect-tv" class="video-toggle-panel">
+          <div class="video-embed">
+            <iframe
+              width="435"
+              height="773"
+              src="https://www.youtube.com/embed/00UnIp_ZYf4"
+              data-src="https://www.youtube.com/embed/00UnIp_ZYf4"
+              title="Connect TradingView to the App"
+              frameborder="0"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" target="_blank" rel="noopener noreferrer">Open on YouTube</a></p>
+        </div>
+      </div>
+
+      <div class="video-toggle">
+        <h3>
+          <button type="button" class="video-toggle-btn" aria-expanded="true" aria-controls="qs-force-alarm">
+            Force Alarm Setup for TradingView
+          </button>
+        </h3>
+        <div id="qs-force-alarm" class="video-toggle-panel">
+          <div class="video-embed">
+            <iframe
+              width="435"
+              height="773"
+              src="https://www.youtube.com/embed/Q3jDFKG8wIo"
+              data-src="https://www.youtube.com/embed/Q3jDFKG8wIo"
+              title="Force Alarm Setup for TradingView"
+              frameborder="0"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" target="_blank" rel="noopener noreferrer">Open on YouTube</a></p>
+        </div>
+      </div>
+
+      <div class="video-toggle">
+        <h3>
+          <button type="button" class="video-toggle-btn" aria-expanded="true" aria-controls="qs-auto-order">
+            Auto-Order from TradingView Signals
+          </button>
+        </h3>
+        <div id="qs-auto-order" class="video-toggle-panel">
+          <div class="video-embed">
+            <iframe
+              width="435"
+              height="773"
+              src="https://www.youtube.com/embed/T4NzR8Pnv9A"
+              data-src="https://www.youtube.com/embed/T4NzR8Pnv9A"
+              title="Auto-Order from TradingView Signals"
+              frameborder="0"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" target="_blank" rel="noopener noreferrer">Open on YouTube</a></p>
+        </div>
+      </div>
+
+      <div class="video-toggle">
+        <h3>
+          <button type="button" class="video-toggle-btn" aria-expanded="true" aria-controls="qs-exchange-api">
+            Exchange API Key Setup
+          </button>
+        </h3>
+        <div id="qs-exchange-api" class="video-toggle-panel">
+          <div class="video-embed">
+            <iframe
+              width="435"
+              height="773"
+              src="https://www.youtube.com/embed/JBv2UXysv3A"
+              data-src="https://www.youtube.com/embed/JBv2UXysv3A"
+              title="Exchange API Key Setup"
+              frameborder="0"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" target="_blank" rel="noopener noreferrer">Open on YouTube</a></p>
+        </div>
+      </div>
+
+      <div class="video-toggle">
+        <h3>
+          <button type="button" class="video-toggle-btn" aria-expanded="true" aria-controls="qs-custom-indicators">
+            Create Custom Indicator Combinations from TradingView
+          </button>
+        </h3>
+        <div id="qs-custom-indicators" class="video-toggle-panel">
+          <div class="video-embed">
+            <iframe
+              width="435"
+              height="773"
+              src="https://www.youtube.com/embed/x57bL0uNVc4"
+              data-src="https://www.youtube.com/embed/x57bL0uNVc4"
+              title="Create Custom Indicator Combinations from TradingView"
+              frameborder="0"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+          <p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" target="_blank" rel="noopener noreferrer">Open on YouTube</a></p>
+        </div>
+      </div>
     </div>
 
     <!-- Keyword Alerts Section -->
@@ -312,5 +495,28 @@
     </div>
 
   </div>
+
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll('.video-toggle-btn');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var btn = this;
+          var panelId = btn.getAttribute('aria-controls');
+          var panel = panelId ? document.getElementById(panelId) : null;
+          if (!panel) return;
+
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+
+          if (expanded) {
+            panel.setAttribute('hidden', '');
+          } else {
+            panel.removeAttribute('hidden');
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
