@@ -41,8 +41,8 @@
       font-weight: 700;
       margin-bottom: 2rem;
       background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
-      -webkit-background-clip: text;
       background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
@@ -176,20 +176,82 @@
       min-width: 300px;
     }
     
+    /* Quick Summary (collapsible video embeds) */
+    #quick-summary h2 { margin-top: 0; }
+    .video-toggle {
+      margin: 1.25rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.22);
+      border-radius: 12px;
+      background: rgba(12, 12, 24, 0.75);
+      overflow: hidden;
+    }
+    .video-toggle h3 { margin: 0; }
+    .video-toggle-btn {
+      width: 100%;
+      text-align: left;
+      padding: 1.1rem 1.25rem;
+      background: transparent;
+      border: none;
+      color: #f97316;
+      font: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .video-toggle-btn::after {
+      content: "▸";
+      color: rgba(248, 250, 252, 0.65);
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+      transform: rotate(0deg);
+      flex: 0 0 auto;
+    }
+    .video-toggle-btn[aria-expanded="true"]::after { transform: rotate(90deg); }
+    .video-toggle-btn:focus-visible {
+      outline: 2px solid rgba(0, 212, 255, 0.8);
+      outline-offset: -2px;
+    }
+    .video-toggle-panel {
+      padding: 0 1.25rem 1.25rem 1.25rem;
+      border-top: 1px solid rgba(0, 212, 255, 0.18);
+    }
+    .video-embed {
+      width: 100%;
+      max-width: 435px;
+      margin: 1rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      background: #000;
+    }
+    .video-embed iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9/16;
+      min-height: 500px; /* Fallback */
+      border: 0;
+      display: block;
+    }
+    .video-links a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    .video-links a:hover { opacity: 0.85; }
+
     @media (max-width: 768px) {
       .manual-container { padding: 30px 20px; }
       .manual-title { font-size: 2.2rem; }
       .manual-section h2 { font-size: 1.8rem; }
       .manual-section h3 { font-size: 1.4rem; }
       .manual-section p, .manual-section li { font-size: 1.1rem; }
-      /* Override any inline max-width (e.g., style="max-width: 680px") on mobile */
-      .manual-section img { max-width: 100% !important; }
       .image-row img { max-width: 100%; min-width: auto; }
       .code-block p { font-size: 0.95rem; }
+      .video-toggle-btn { padding: 1rem 1.1rem; }
     }
   </style>
-<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
-<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="manual-container">
@@ -199,38 +261,98 @@
 <div class="toc">
 <h3>📋 Daftar Isi</h3>
 <ul>
+<li><a href="#quick-summary">Ringkasan Cepat</a></li>
 <li><a href="#keyword">Alert Kata Kunci</a></li>
 <li><a href="#auto-order">Auto-Order dengan TradingView</a></li>
 <li><a href="#divalarm-keywords">Kata Kunci Sinyal DivAlarm</a></li>
 <li><a href="#combination">Alert Kombinasi Sinyal</a></li>
 </ul>
 </div>
+<!-- Quick Summary Section -->
+<div class="manual-section" id="quick-summary">
+<h2>DivAlarm × TradingView – Ringkasan Cepat</h2>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">Hubungkan TradingView ke Aplikasi</button>
+</h3>
+<div class="video-toggle-panel" id="qs-connect-tv">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="Hubungkan TradingView ke Aplikasi" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">Buka di YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">Setup Force Alarm untuk TradingView</button>
+</h3>
+<div class="video-toggle-panel" id="qs-force-alarm">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="Setup Force Alarm untuk TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">Buka di YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">Auto-Order dari Sinyal TradingView</button>
+</h3>
+<div class="video-toggle-panel" id="qs-auto-order">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="Auto-Order dari Sinyal TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">Buka di YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">Setup API Key Exchange</button>
+</h3>
+<div class="video-toggle-panel" id="qs-exchange-api">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="Setup API Key Exchange" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" rel="noopener noreferrer" target="_blank">Buka di YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">Buat Kombinasi Indikator Kustom dari TradingView</button>
+</h3>
+<div class="video-toggle-panel" id="qs-custom-indicators">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="Buat Kombinasi Indikator Kustom dari TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">Buka di YouTube</a></p>
+</div>
+</div>
+</div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
 <h2>🔔 Alert Kata Kunci</h2>
 <h3>Menambahkan Webhook di TradingView</h3>
-<img alt="TradingView Tambah Alarm" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>Klik kanan pada indikator yang ingin Anda terima sinyalnya di TradingView, lalu klik "Add Alert on ~".</p>
+<img alt="TradingView Tambah Alert" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>Klik kanan pada indikator yang ingin kamu terima sinyalnya di TradingView, lalu klik "Add Alert on ~".</p>
 <img alt="Pengaturan URL Webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Pengaturan Notifikasi" src="../images/image_tv.png" style="max-width: 600px;"/>
 <p>Di bagian "Notifications", centang "Webhook URL" lalu tempel alamat yang disalin dari aplikasi ke kolom input di bawah.</p>
-<p>Setelah diatur, opsi ini akan otomatis dicentang/diisi untuk alert lainnya.</p>
+<p>Setelah diatur, ini akan otomatis dicentang/diisi untuk alert lainnya.</p>
 <img alt="Pengaturan Pesan" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>Di bagian "Messages" pada "Message", tambahkan kata kunci apa pun yang Anda inginkan (misalnya, "AAA").</p>
+<p>Di bagian "Messages" pada "Message", tambahkan kata kunci apa pun yang kamu mau (misalnya, "AAA").</p>
 <p>Klik "Create" untuk menjadwalkan alert TradingView.</p>
 <h3>Menerima Alert TradingView di Aplikasi</h3>
 <img alt="Pengaturan Kata Kunci Aplikasi" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Tambahkan kata kunci (misalnya, "AAA") ke bagian 'Keyword Include' di aplikasi. Saat "Message" pada alert TradingView berisi kata kunci tersebut, alarm akan berbunyi sesuai pengaturan.</p>
+<p>Tambahkan kata kunci (misalnya, "AAA") ke bagian 'Keyword Include' di aplikasi. Saat "Message" alert TradingView berisi kata kunci tersebut, alarm akan berbunyi sesuai pengaturan.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
 <h2>🤖 Auto-Order dengan Alert TradingView</h2>
 <img alt="Pengaturan Auto-Order" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Anda bisa menyiapkan 'Auto-Orders' untuk dikirim ke exchange saat alert kata kunci diterima.</p>
+<p>Anda bisa mengatur 'Auto-Order' untuk dikirim ke exchange saat alert kata kunci diterima.</p>
 <img alt="Pengaturan API Exchange" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
 <p>Exchange yang didukung untuk auto-order: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Anda harus memasukkan API key di halaman Pengaturan aplikasi.</p>
+<p>Anda harus memasukkan API key di halaman Settings aplikasi.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
@@ -250,44 +372,66 @@
 <h3>Contoh</h3>
 <div class="code-block">
 <p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ Divergence RSI, BTCUSDT.P, judul berisi "Bull", Sedang Terbentuk, utama 5m, sub 1m</p>
+<p class="desc">→ Divergence RSI, BTCUSDT.P, judul berisi "Bull", Forming, utama 5m, sub 1m</p>
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ Divergence RSI, ETHUSDT.P, judul berisi "Bear", Selesai, 15m, tanpa timeframe sub</p>
+<p class="desc">→ Divergence RSI, ETHUSDT.P, judul berisi "Bear", Complete, 15m, tanpa timeframe sub</p>
 </div>
 <img alt="Contoh Kata Kunci" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
-<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Indikator Tambahan, koin BTC, judul berisi "Sell", 30m</span></p>
+<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Indikator tambahan, koin BTC, judul berisi "Sell", 30m</span></p>
 <p><code>"@E@BTC@Buy@1h"</code></p>
 <p><code>"@E@ETH@Breakout@15m"</code></p>
 <p><code>"@E@BTC@Breakdown@5m"</code></p>
 <p><code>"@E@BTC@Near Support@1m"</code></p>
 <p><code>"@E@BTC@Near Resistance@5m"</code></p>
 <p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ Alarm harga, koin BTC, judul berisi "Up"</span></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ Alert harga, koin BTC, judul berisi "Up"</span></p>
 <p><code>"@P@ETH@Down"</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 Alarm Kombinasi Sinyal</h2>
-<p>Gabungkan beberapa sinyal TradingView untuk membuat sinyal baru atau sinyal yang difilter.</p>
+<h2>🔀 Alert Kombinasi Sinyal</h2>
+<p>Gabungkan beberapa sinyal TradingView untuk membuat sinyal baru atau sinyal yang terfilter.</p>
 <div class="image-row">
-<img alt="Pengaturan Alarm Kombinasi" src="../images/image%205_tv.png"/>
+<img alt="Pengaturan Alert Kombinasi" src="../images/image%205_tv.png"/>
 <div>
-<p>Atur kondisi yang harus terpenuhi dalam jendela waktu agar alarm terpicu.</p>
-<p><strong>Contoh:</strong><br/> Dalam 1 jam 30 menit:<br/> • 'Alarm dengan kata kunci A' DAN<br/> • 'Alarm dengan kata kunci B' keduanya masuk, ATAU<br/> • 'Alarm dengan kata kunci C' masuk</p>
+<p>Atur kondisi yang harus terpenuhi dalam rentang waktu tertentu agar alarm terpicu.</p>
+<p><strong>Contoh:</strong><br/> Dalam 1 jam 30 menit:<br/> • 'Alert dengan kata kunci A' DAN<br/> • 'Alert dengan kata kunci B' keduanya masuk, ATAU<br/> • 'Alert dengan kata kunci C' masuk</p>
 <p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = "DAN" (kedua kondisi harus terpenuhi)</p>
-<p><strong>|</strong> = "ATAU" (salah satu kondisi bisa terpenuhi)</p>
-<p>Meski alarm kata kunci individual dinonaktifkan, kombinasinya tetap bisa terpicu saat kondisi terpenuhi.</p>
-<p><strong>Auto-order juga bisa dilakukan dengan alarm kombinasi!</strong></p>
+<p><strong>&amp;</strong> = "AND" (kedua kondisi harus terpenuhi)</p>
+<p><strong>|</strong> = "OR" (salah satu kondisi bisa terpenuhi)</p>
+<p>Meski alarm kata kunci individual dinonaktifkan, kombinasi tetap bisa terpicu saat kondisinya terpenuhi.</p>
+<p><strong>Auto-order juga bisa dengan alert kombinasi!</strong></p>
 </div>
 </div>
 </div>
+<script>
+    (function () {
+      var buttons = document.querySelectorAll('.video-toggle-btn');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var btn = this;
+          var panelId = btn.getAttribute('aria-controls');
+          var panel = panelId ? document.getElementById(panelId) : null;
+          if (!panel) return;
+
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+
+          if (expanded) {
+            panel.setAttribute('hidden', '');
+          } else {
+            panel.removeAttribute('hidden');
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

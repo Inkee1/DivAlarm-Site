@@ -279,7 +279,7 @@
 <div class="nav-menu-three">
 <ul class="nav-menu-block w-list-unstyled" role="list">
 <li>
-<a class="nav-link" href="features.html">Özellikler</a>
+<a class="nav-link" href="features.html">Özellik</a>
 </li>
 <li>
 <a class="nav-link" href="downlaods.html"><strong>İndirmeler</strong></a>
@@ -355,9 +355,9 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p>RSI değerleri <strong>14 mum</strong> ortalamasıyla hesaplanır ve hesaplamanın başlangıç noktası değerlerde küçük farklara neden olabilir.</p>
-<p>Ayrıca iki ana hesaplama yöntemi vardır: <strong>EMA (Üstel Hareketli Ortalama)</strong> ve <strong>SMA (Basit Hareketli Ortalama)</strong>.</p>
-<p>DivAlarm, RSI hesaplamasını <em>son trendleri daha iyi yansıtacak</em> şekilde yapar; bu da diğer platformlara kıyasla küçük farklılıklara yol açabilir.</p>
+<p>RSI değerleri <strong>14 mum</strong> ortalamasını kullanır ve hesaplamanın başlangıç noktası değerlerde küçük farklara yol açabilir.</p>
+<p>Ayrıca iki ana hesaplama yöntemi vardır: <strong>EMA (Exponential Moving Average)</strong> ve <strong>SMA (Simple Moving Average)</strong>.</p>
+<p>DivAlarm, RSI değerini <em>son trendleri daha iyi yansıtacak</em> şekilde hesaplar; bu da diğer platformlara kıyasla küçük farklılıklara neden olabilir.</p>
 </div>
 </div>
 </div>
@@ -366,7 +366,7 @@
 <div class="faq-question">
 <div>
 <span class="faq-category account">Hesap</span>
-<div class="faq-question-text">Bir hesapla uygulamayı yalnızca bir kişi mi kullanabilir?</div>
+<div class="faq-question-text">Hesap başına uygulamayı yalnızca bir kişi mi kullanabilir?</div>
 </div>
 <div class="faq-icon">
 <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -377,8 +377,8 @@
 <div class="faq-answer">
 <div class="faq-answer-content">
 <p><strong>Evet</strong>, sinyaller öncelikle <em>en son giriş yapılan cihaza</em> gönderilir.</p>
-<p>Aynı anda giriş yapıldıysa bazı sinyaller birden fazla cihaza da gelebilir; ancak sorunsuz kullanım için <strong>en son giriş yaptığınız</strong> cihazı kullanmanızı öneririz.</p>
-<p>Sorun yaşarsanız uygulamada <strong>Ayarlar → Senkronizasyon Ayarları</strong> bölümüne gidin ve doğru çalıştığından emin olmak için <em>"Bu cihazda al"</em> seçeneğine dokunun.</p>
+<p>Aynı anda giriş yapıldıysa bazı sinyaller birden fazla cihazda yine de alınabilir; ancak güvenilir kullanım için <strong>en son giriş yaptığınız</strong> cihazı kullanmanızı öneririz.</p>
+<p>Sorun yaşarsanız uygulamada <strong>Ayarlar → Senkronizasyon Ayarları</strong> bölümüne gidin ve düzgün çalıştığından emin olmak için <em>"Bu cihazda al"</em> seçeneğine dokunun.</p>
 </div>
 </div>
 </div>
@@ -421,7 +421,7 @@
 <div class="faq-answer-content">
 <p><strong>1m/1m</strong> ayarı, 1 dakikalık grafikte bir uyumsuzluk oluşmak üzereyken <em>tam o anda</em> uyarı tetikler.</p>
 <p>Bu, <strong>mum trendi ile RSI trendi ayrışmaya başladığında</strong> uyarı alacağınız anlamına gelir — olası dönüşleri mümkün olan en erken anda yakalarsınız.</p>
-<p>Bu, uyumsuzluk tamamen doğrulanmadan <em>önce</em> bildirim almak isteyen yatırımcılar için idealdir.</p>
+<p>Bu, uyumsuzluk tamamen doğrulanmadan <em>önce</em> bildirim almak isteyen trader’lar için idealdir.</p>
 </div>
 </div>
 </div>
@@ -440,7 +440,7 @@
 </div>
 <div class="faq-answer">
 <div class="faq-answer-content">
-<p><strong>RSI Uyumsuzluğu</strong>, fiyat hareketi ile RSI göstergesinin zıt yönlerde hareket etmesiyle oluşur.</p>
+<p><strong>RSI Uyumsuzluğu</strong>, fiyat hareketi ile RSI göstergesi zıt yönlerde hareket ettiğinde oluşur.</p>
 <p><strong>Boğa Uyumsuzluğu:</strong> Fiyat daha düşük dip yapar, ancak RSI daha yüksek dip yapar → olası yukarı yönlü dönüş</p>
 <p><strong>Ayı Uyumsuzluğu:</strong> Fiyat daha yüksek tepe yapar, ancak RSI daha düşük tepe yapar → olası aşağı yönlü dönüş</p>
 <p>RSI uyumsuzluğu, teknik analizde piyasa dönüşlerini öngörmek için <em>en güvenilir göstergelerden biri</em> olarak yaygın şekilde kabul edilir.</p>
@@ -463,7 +463,7 @@
 <div class="faq-answer">
 <div class="faq-answer-content">
 <p><strong>Pro abonelik</strong> ile, DivAlarm’ı TradingView’e bağlayan size özel bir webhook URL’si alırsınız.</p>
-<p>Özellikler:</p>
+<p>Özellikler şunları içerir:</p>
 <p>• Sessiz modu aşan <strong>güçlü telefon alarmları</strong><br/> • <strong>Bileşik sinyaller</strong> — birden fazla uyarıyı tek bir uyarıda birleştirin<br/> • Desteklenen borsalarda <strong>otomatik emir çalıştırma</strong></p>
 <p>Webhook URL’nizi TradingView’ın uyarı ayarlarına yapıştırın ve ilgili eylemi tetiklemek için uyarı mesajınıza belirli anahtar kelimeleri ekleyin.</p>
 </div>

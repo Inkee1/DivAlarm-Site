@@ -85,6 +85,12 @@
       margin-top: 2rem;
       margin-bottom: 1rem;
     }
+    .manual-section h4 {
+      font-size: 1.3rem;
+      color: #a78bfa;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
     .manual-section p {
       font-size: 1.2rem;
       line-height: 1.9;
@@ -173,7 +179,7 @@
 </head>
 <body>
 <div class="manual-container">
-<a class="back-link" href="index.html">← Về trang chủ</a>
+<a class="back-link" href="index.html">← Về Trang chủ</a>
 <h1 class="manual-title">📱 Hướng dẫn sử dụng</h1>
 <!-- Table of Contents -->
 <div class="toc">
@@ -181,6 +187,7 @@
 <ul>
 <li><a href="#menu">Tổng quan menu</a></li>
 <li><a href="#divlog">Xem thông báo tín hiệu (DivLog)</a></li>
+<li><a href="#signal-details">Xem chi tiết tín hiệu</a></li>
 <li><a href="#div">Cài đặt cảnh báo phân kỳ RSI (Div)</a></li>
 <li><a href="#ei">Cảnh báo chỉ báo bổ sung (EI)</a></li>
 <li><a href="#webhook">TradingView Webhook &amp; Tự động đặt lệnh</a></li>
@@ -193,7 +200,7 @@
 <h2>📌 Tổng quan menu</h2>
 <p><strong>"DivLog"</strong> — Nơi bạn nhận các tín hiệu cảnh báo phân kỳ.</p>
 <p><strong>"Div"</strong> — Cấu hình tín hiệu 'RSI Divergence Complete' hoặc 'RSI Divergence Forming'.</p>
-<p><strong>"EI"</strong> — Thiết lập thêm cảnh báo chỉ báo: cảnh báo chạm giá, cảnh báo tiến gần hỗ trợ/kháng cự, cảnh báo EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
+<p><strong>"EI"</strong> — Thiết lập cảnh báo chỉ báo bổ sung: cảnh báo chạm giá, cảnh báo tiến gần hỗ trợ/kháng cự, cảnh báo EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
 <p><strong>"Webhook"</strong> — Chỉ hiển thị với người dùng Pro. Nhận webhook TradingView để tạo cảnh báo mạnh mẽ, kết hợp tín hiệu và tự động đặt lệnh.</p>
 <p><strong>"Setting"</strong> — Cấu hình loại cảnh báo, âm thanh, cài đặt thưởng giới thiệu, thông báo và thông báo giới thiệu.</p>
 </div>
@@ -202,14 +209,37 @@
 <h2>📊 Xem thông báo tín hiệu ("DivLog")</h2>
 <p>"DivLog" là nơi bạn nhận các tín hiệu cảnh báo phân kỳ.</p>
 <ol>
-<li>Lưu tối đa 150 tín hiệu. Nên dọn dẹp định kỳ.</li>
+<li>Lưu tối đa 150 tín hiệu. Hãy dọn dẹp định kỳ.</li>
 <li>Hiển thị các cảnh báo chưa kiểm tra. Tích dấu để tắt cảnh báo. Hiển thị tối đa 5 cảnh báo chưa kiểm tra gần nhất.</li>
 <li>Lọc để chỉ xem các tín hiệu bạn muốn.</li>
 </ol>
 </div>
+<!-- Signal Details Section -->
+<div class="manual-section" id="signal-details">
+<h2>🔍 Xem chi tiết tín hiệu</h2>
+<img alt="Màn hình chi tiết tín hiệu" src="../images/image_detail.png" style="max-width: 500px;"/>
+<p>Chạm vào từng cảnh báo để xem thông tin tín hiệu chi tiết.</p>
+<p>Với cảnh báo phân kỳ RSI, bạn có thể xem giá bắt đầu và kết thúc, giá trị RSI và mốc thời gian.</p>
+<p><strong>"DivForming"</strong> hiển thị các phân kỳ đang hình thành ở các khung thời gian khác tại thời điểm tín hiệu xuất hiện.</p>
+<p><strong>"OutsideBB"</strong> hiển thị những khung thời gian nào nằm ngoài Bollinger Bands khi tín hiệu xuất hiện.</p>
+<ul>
+<li>Với các khung thời gian <strong>nhỏ hơn</strong> khung thời gian của tín hiệu, mục này hiển thị nến nào nằm ngoài Bollinger Band tại thời điểm tín hiệu (<em>at now</em>).</li>
+<li>Với các khung thời gian <strong>lớn hơn</strong> khung thời gian của tín hiệu, mục này hiển thị nến nào nằm ngoài Bollinger Band tại đỉnh phân kỳ RSI về sau (<em>at peak</em>).</li>
+</ul>
+<h4>Ví dụ</h4>
+<div class="highlight">
+<p>Trong ví dụ ở trên, một <strong>tín hiệu Bullish</strong> xuất hiện trên khung thời gian <strong>15m</strong>.</p>
+<p><strong>"DivForming"</strong> cho biết đang hình thành phân kỳ bearish trên các khung thời gian 30m và 1h.</p>
+<p><strong>"OutsideBB"</strong> hiển thị:</p>
+<ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+<li>Tại thời điểm có tín hiệu, khung <strong>5m</strong> nằm ngoài dải Bollinger Band.</li>
+<li>Tại đỉnh phân kỳ RSI, các khung <strong>15m, 30m và 1h</strong> nằm ngoài dải Bollinger Band.</li>
+</ul>
+</div>
+</div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ RSI Cài đặt cảnh báo phân kỳ ("Div")</h2>
+<h2>⚙️ Cài đặt cảnh báo phân kỳ RSI ("Div")</h2>
 <img alt="Màn hình cài đặt Div" src="../images/image_manual.png" style="max-width: 500px;"/>
 <h3>Cài đặt phân kỳ RSI tổng thể</h3>
 <ol>
@@ -223,13 +253,13 @@
 <h3>Cài đặt bộ lọc riêng lẻ</h3>
 <ol start="7">
 <li>Configure individual RSI divergence signals to receive:
-          <p><strong>(a)</strong> Chọn khung thời gian mong muốn. Với 'RSI Divergence Forming', hãy chọn cả 'khung thời gian chính' và 'khung thời gian phụ'. Cảnh báo sẽ kích hoạt khi RSI đỉnh hình thành trên khung nhỏ hơn trong lúc phân kỳ đang hình thành trên khung chính (đảo chiều giá).</p>
-<p><strong>(b)</strong> Chọn tín hiệu: "Bull (tăng)" hoặc "Bear (giảm)". Màu xanh = bật cảnh báo, màu xám = tắt.</p>
-<p><strong>(c)</strong> Đặt ngưỡng quá bán/quá mua. Cảnh báo tăng khi 'bắt đầu RSI' thấp hơn mức quá bán; cảnh báo giảm khi 'bắt đầu RSI' cao hơn mức quá mua.</p>
-<p><strong>(d)</strong> Cấu hình loại cảnh báo và âm thanh. Cài đặt chi tiết trong trang Cài đặt:</p>
+          <p><strong>(a)</strong> Chọn khung thời gian mong muốn. Với 'RSI Divergence Forming', hãy chọn cả 'khung chính' và 'khung phụ'. Cảnh báo sẽ kích hoạt khi đỉnh RSI hình thành trên khung nhỏ hơn trong lúc phân kỳ đang hình thành trên khung chính (đảo chiều giá).</p>
+<p><strong>(b)</strong> Chọn tín hiệu: "Bull(bullish)" hoặc "Bear(bearish)". Màu xanh = bật cảnh báo, Màu xám = tắt.</p>
+<p><strong>(c)</strong> Đặt ngưỡng quá bán/quá mua. Cảnh báo bullish khi 'starting RSI' thấp hơn mức quá bán; bearish khi 'starting RSI' cao hơn mức quá mua.</p>
+<p><strong>(d)</strong> Cấu hình kiểu báo động và âm thanh. Cài đặt chi tiết trong trang Settings:</p>
 <div class="highlight"><span class="alarm-type alarm-type-a">A</span> Báo động cưỡng bức (Lặp) — phát liên tục cho đến khi dừng thủ công, bỏ qua chế độ im lặng<br/><br/> <span class="alarm-type alarm-type-b">B</span> Báo động cưỡng bức (Một lần) — phát một lần, bỏ qua chế độ im lặng<br/><br/> <span class="alarm-type alarm-type-c">C</span> Theo cài đặt điện thoại — dùng cài đặt âm thanh bình thường của thiết bị<br/><br/> <span class="alarm-type alarm-type-d">D</span> Chỉ rung — rung không có âm thanh<br/><br/> <span class="alarm-type alarm-type-e">E</span> Chế độ im lặng — không âm thanh, không rung</div>
 <img alt="Cài đặt loại cảnh báo" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Đặt thêm điều kiện để chỉ lấy tín hiệu hữu ích: điều kiện giá, điều kiện đang hình thành ở khung thời gian khác RSI, điều kiện Bollinger Band.</p>
+<p><strong>(e)</strong> Đặt thêm điều kiện để chỉ lấy tín hiệu hữu ích: điều kiện giá, điều kiện hình thành RSI ở khung thời gian khác, điều kiện Bollinger Band.</p>
 </li>
 </ol>
 <div class="image-row">
@@ -239,13 +269,13 @@
 <p><strong>e0)</strong> Khi đặt nhiều điều kiện, hãy cấu hình mối quan hệ: "and" (phải thỏa tất cả) hoặc "or" (chỉ cần thỏa một).</p>
 <p><strong>e1)</strong> Đặt điều kiện giá — cảnh báo khi giá bắt đầu/kết thúc phân kỳ cao hơn/thấp hơn một mức giá cụ thể.</p>
 <p><strong>e2)</strong> Cảnh báo khi phân kỳ đang hình thành ở một khung thời gian khác.</p>
-<p><strong>e3)</strong> Kiểm tra xem giá đỉnh cuối của phân kỳ RSI có nằm ngoài Bollinger Bands hay không.</p>
+<p><strong>e3)</strong> Kiểm tra xem giá tại đỉnh cuối cùng của phân kỳ RSI có nằm ngoài dải Bollinger Bands hay không.</p>
 <h3>Mẹo chiến lược</h3>
 <div class="warning">
 <ul>
 <li>Luôn kết hợp với các chỉ báo khác: kháng cự, đường xu hướng, Fibonacci, v.v.</li>
 <li>Như mọi chỉ báo khác, phân kỳ RSI không chính xác 100% — nó giúp tăng xác suất.</li>
-<li>Phân kỳ 1m, 5m thường bị bỏ qua, nhưng độ tin cậy tăng dần: 15m &lt; 1h &lt; 4h. <strong>Phân kỳ 4h rất đáng tin — khuyến nghị đặt làm cảnh báo hạng A.</strong></li>
+<li>Phân kỳ 1m, 5m thường bị bỏ qua, nhưng độ tin cậy tăng dần: 15m &lt; 1h &lt; 4h. <strong>Phân kỳ 4h rất đáng tin — khuyến nghị đặt làm báo động hạng A.</strong></li>
 </ul>
 </div>
 </div>
@@ -273,7 +303,7 @@
 <h2>🔗 TradingView Webhook, Kết hợp tín hiệu &amp; Tự động đặt lệnh</h2>
 <p><strong>"Webhook"</strong> — tính năng Pro dành cho người dùng nâng cao.</p>
 <p>
-<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Đi tới hướng dẫn Webhook chi tiết</a>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Xem hướng dẫn Webhook chi tiết</a>
 </p>
 </div>
 <!-- Settings Section -->
@@ -284,8 +314,13 @@
 <img alt="Cài đặt 2" src="../images/image%207_manual.png"/>
 </div>
 <ol>
-<li>Cấu hình loại cảnh báo (A, B...) và âm thanh cảnh báo (1, 2...).</li>
+<li>Cấu hình loại báo động (A, B...) và âm báo (1, 2...).</li>
 <li>Để tự động đặt lệnh, hãy nhập API key của từng sàn.</li>
+<li>Bạn có thể kiểm tra xem thông báo có đến điện thoại hiện tại hay không. Bằng cách tự gửi một tin nhắn test cho chính mình, bạn có thể kiểm tra cảnh báo có được gửi theo các bộ lọc bạn đã cấu hình hay không.</li>
+<li>Đây là trang để cài đặt các tuỳ chọn liên quan đến thưởng giới thiệu.</li>
+<li>Đây là nơi bạn nhận các thông báo chung.</li>
+<li>Đây là nơi bạn nhận các thông báo độc quyền do người giới thiệu bạn đã đăng ký khi tạo tài khoản gửi.</li>
+<li>Bạn có thể chuyển toàn bộ app giữa Chế độ Sáng và Chế độ Tối.</li>
 </ol>
 </div>
 <!-- Referral Section -->
@@ -293,15 +328,15 @@
 <h2>💰 Thưởng giới thiệu</h2>
 <img alt="Cài đặt giới thiệu" src="../images/image%208_manual.png" style="max-width: 550px;"/>
 <p><strong>(a)</strong> Mã giới thiệu của bạn. Khi người khác đăng ký bằng mã này, bạn sẽ trở thành người giới thiệu của họ.</p>
-<p><strong>(b)</strong> Link mời của bạn. Ai đăng ký qua link này sẽ tự động ghi nhận bạn là người giới thiệu.</p>
-<p><strong>(c)</strong> Nhập địa chỉ ví để nhận thưởng giới thiệu. Phải là ví BEP-20 USDT (khuyến nghị dùng ví của các sàn lớn). Bạn có thể kiểm tra việc nạp có hoạt động đúng không trong mục 'My Info' trên website DivAlarm.</p>
-<p><strong>(d)</strong> Hiển thị trạng thái thưởng giới thiệu: số lượt giới thiệu hiện tại, số tiền thưởng tiềm năng, số tiền đã xác nhận và số tiền đã chi trả.</p>
-<p>Hoa hồng sẽ chuyển từ “tạm tính” sang “đã xác nhận” sau 14 ngày kể từ khi người được giới thiệu thanh toán gói đăng ký (không tính dùng thử miễn phí). Thanh toán được thực hiện hàng tuần vào thứ Ba lúc 00:00 UTC.</p>
-<h3>Cách nhận hoa hồng giới thiệu</h3>
+<p><strong>(b)</strong> Link mời của bạn. Bất kỳ ai đăng ký qua link này sẽ tự động ghi nhận bạn là người giới thiệu.</p>
+<p><strong>(c)</strong> Nhập địa chỉ ví để nhận thưởng giới thiệu. Phải là ví BEP-20 USDT (khuyến nghị dùng ví của các sàn lớn). Bạn có thể test xem nạp tiền có hoạt động đúng không trong mục 'My Info' trên website DivAlarm.</p>
+<p><strong>(d)</strong> Hiển thị trạng thái thưởng giới thiệu của bạn: số lượt giới thiệu hiện tại, số tiền thưởng tiềm năng, số tiền đã xác nhận và số tiền đã chi trả.</p>
+<p>Thưởng sẽ chuyển từ 'tiềm năng' sang 'đã xác nhận' sau 14 ngày kể từ khi người được giới thiệu thanh toán gói đăng ký (không tính dùng thử miễn phí). Tiền sẽ được chi trả hàng tuần vào thứ Ba lúc 00:00 UTC.</p>
+<h3>Cách kiếm thưởng giới thiệu</h3>
 <div class="highlight">
-<p><strong>1]</strong> Vào Cài đặt → Hoa hồng giới thiệu → Nhập địa chỉ ví nhận thưởng của bạn.</p>
+<p><strong>1]</strong> Vào Cài đặt → Thưởng giới thiệu → Nhập địa chỉ ví nhận thưởng của bạn.</p>
 <p><strong>2]</strong> Chia sẻ link giới thiệu của bạn. Người khác sẽ được chuyển đến trang đăng ký kèm mã của bạn.</p>
-<p><strong>3]</strong> Khi họ đăng ký và thanh toán, hoa hồng sẽ được chuyển vào ví.</p>
+<p><strong>3]</strong> Khi họ đăng ký và thanh toán, phần thưởng sẽ được ghi có.</p>
 </div>
 </div>
 </div>

@@ -41,8 +41,8 @@
       font-weight: 700;
       margin-bottom: 2rem;
       background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
-      -webkit-background-clip: text;
       background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
@@ -176,20 +176,82 @@
       min-width: 300px;
     }
     
+    /* Quick Summary (collapsible video embeds) */
+    #quick-summary h2 { margin-top: 0; }
+    .video-toggle {
+      margin: 1.25rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.22);
+      border-radius: 12px;
+      background: rgba(12, 12, 24, 0.75);
+      overflow: hidden;
+    }
+    .video-toggle h3 { margin: 0; }
+    .video-toggle-btn {
+      width: 100%;
+      text-align: left;
+      padding: 1.1rem 1.25rem;
+      background: transparent;
+      border: none;
+      color: #f97316;
+      font: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .video-toggle-btn::after {
+      content: "▸";
+      color: rgba(248, 250, 252, 0.65);
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+      transform: rotate(0deg);
+      flex: 0 0 auto;
+    }
+    .video-toggle-btn[aria-expanded="true"]::after { transform: rotate(90deg); }
+    .video-toggle-btn:focus-visible {
+      outline: 2px solid rgba(0, 212, 255, 0.8);
+      outline-offset: -2px;
+    }
+    .video-toggle-panel {
+      padding: 0 1.25rem 1.25rem 1.25rem;
+      border-top: 1px solid rgba(0, 212, 255, 0.18);
+    }
+    .video-embed {
+      width: 100%;
+      max-width: 435px;
+      margin: 1rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      background: #000;
+    }
+    .video-embed iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9/16;
+      min-height: 500px; /* Fallback */
+      border: 0;
+      display: block;
+    }
+    .video-links a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    .video-links a:hover { opacity: 0.85; }
+
     @media (max-width: 768px) {
       .manual-container { padding: 30px 20px; }
       .manual-title { font-size: 2.2rem; }
       .manual-section h2 { font-size: 1.8rem; }
       .manual-section h3 { font-size: 1.4rem; }
       .manual-section p, .manual-section li { font-size: 1.1rem; }
-      /* Override any inline max-width (e.g., style="max-width: 680px") on mobile */
-      .manual-section img { max-width: 100% !important; }
       .image-row img { max-width: 100%; min-width: auto; }
       .code-block p { font-size: 0.95rem; }
+      .video-toggle-btn { padding: 1rem 1.1rem; }
     }
   </style>
-<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
-<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="manual-container">
@@ -199,33 +261,93 @@
 <div class="toc">
 <h3>📋 Sumário</h3>
 <ul>
+<li><a href="#quick-summary">Resumo rápido</a></li>
 <li><a href="#keyword">Alertas por palavra-chave</a></li>
 <li><a href="#auto-order">Ordem automática com TradingView</a></li>
 <li><a href="#divalarm-keywords">Palavras-chave de sinal do DivAlarm</a></li>
 <li><a href="#combination">Alertas de combinação de sinais</a></li>
 </ul>
 </div>
+<!-- Quick Summary Section -->
+<div class="manual-section" id="quick-summary">
+<h2>DivAlarm × TradingView – Resumo rápido</h2>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">Conectar TradingView ao app</button>
+</h3>
+<div class="video-toggle-panel" id="qs-connect-tv">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="Conectar TradingView ao app" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">Abrir no YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">Configurar alarme forçado para TradingView</button>
+</h3>
+<div class="video-toggle-panel" id="qs-force-alarm">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="Configurar alarme forçado para TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">Abrir no YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">Ordem automática a partir de sinais do TradingView</button>
+</h3>
+<div class="video-toggle-panel" id="qs-auto-order">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="Ordem automática a partir de sinais do TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">Abrir no YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">Configurar chave de API da corretora</button>
+</h3>
+<div class="video-toggle-panel" id="qs-exchange-api">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="Configurar chave de API da corretora" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" rel="noopener noreferrer" target="_blank">Abrir no YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">Criar combinações personalizadas de indicadores a partir do TradingView</button>
+</h3>
+<div class="video-toggle-panel" id="qs-custom-indicators">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="Criar combinações personalizadas de indicadores a partir do TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">Abrir no YouTube</a></p>
+</div>
+</div>
+</div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
 <h2>🔔 Alertas por palavra-chave</h2>
 <h3>Adicionando Webhook no TradingView</h3>
 <img alt="TradingView Adicionar alerta" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>Clique com o botão direito no indicador do qual você quer receber sinais no TradingView e clique em "Adicionar alerta em ~".</p>
+<p>Clique com o botão direito no indicador do qual você quer receber sinais no TradingView e clique em "Add Alert on ~".</p>
 <img alt="Configuração da URL do webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
-<img alt="Configurações de notificação" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>Na seção "Notificações", marque "Webhook URL" e cole o endereço copiado do app no campo de entrada abaixo.</p>
+<img alt="Configurações de notificações" src="../images/image_tv.png" style="max-width: 600px;"/>
+<p>Na seção "Notifications", marque "Webhook URL" e cole o endereço copiado do app no campo de entrada abaixo.</p>
 <p>Depois de configurado, isso será marcado/preenchido automaticamente para outros alertas.</p>
 <img alt="Configurações de mensagem" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>Na seção "Mensagens", em "Mensagem", adicione qualquer palavra-chave que você quiser (ex.: "AAA").</p>
-<p>Clique em "Criar" para agendar o alerta do TradingView.</p>
+<p>Na seção "Messages", em "Message", adicione qualquer palavra-chave que você quiser (ex.: "AAA").</p>
+<p>Clique em "Create" para agendar o alerta do TradingView.</p>
 <h3>Recebendo alertas do TradingView no app</h3>
 <img alt="Configurações de palavras-chave do app" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Adicione a palavra-chave (ex.: "AAA") na seção "Incluir palavra-chave" do app. Quando a "Mensagem" do alerta do TradingView contiver a palavra-chave, o alarme tocará conforme configurado.</p>
+<p>Adicione a palavra-chave (ex.: "AAA") na seção "Incluir palavra-chave" do app. Quando a "Mensagem" do alerta TradingView contiver a palavra-chave, o alarme tocará conforme configurado.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 Ordem automática com alertas do TradingView</h2>
-<img alt="Configurações de auto-ordem" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<h2>🤖 Ordem Automática com alertas TradingView</h2>
+<img alt="Configurações de ordem automática" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
 <p>Você pode configurar "Ordens automáticas" para serem enviadas às corretoras quando alertas por palavra-chave forem recebidos.</p>
 <img alt="Configurações da API da corretora" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
@@ -235,7 +357,7 @@
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
-<h2>📝 Registrando sinais do DivAlarm como palavras-chave</h2>
+<h2>📝 Cadastrando sinais DivAlarm como palavras-chave</h2>
 <img alt="Palavras-chave de sinal do DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
 <p>Os próprios alertas do DivAlarm também podem ser adicionados em "Combinações de palavras-chave" (para alertas de combinação ou ordens automáticas).</p>
 <div class="highlight">
@@ -250,11 +372,11 @@
 <h3>Exemplos</h3>
 <div class="code-block">
 <p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ RSI Divergência, BTCUSDT.P, título contém "Bull", Formando, principal 5m, sub 1m</p>
+<p class="desc">→ Divergência RSI, BTCUSDT.P, título contém "Bull", Formando, principal 5m, secundário 1m</p>
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ RSI Divergência, ETHUSDT.P, título contém "Bear", Completo, 15m, sem sub timeframe</p>
+<p class="desc">→ Divergência RSI, ETHUSDT.P, título contém "Bear", Completo, 15m, sem timeframe secundário</p>
 </div>
 <img alt="Exemplo de palavra-chave" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
@@ -277,7 +399,7 @@
 <img alt="Configurações de alerta de combinação" src="../images/image%205_tv.png"/>
 <div>
 <p>Defina condições que precisam ser atendidas dentro de uma janela de tempo para os alarmes dispararem.</p>
-<p><strong>Exemplo:</strong><br/> Em 1 hora e 30 minutos:<br/> • 'Alerta com palavra-chave A' E<br/> • 'Alerta com palavra-chave B' chegam, OU<br/> • 'Alerta com palavra-chave C' chega</p>
+<p><strong>Exemplo:</strong><br/> Dentro de 1 hora e 30 minutos:<br/> • "Alerta com palavra-chave A" E<br/> • "Alerta com palavra-chave B" chegam, OU<br/> • "Alerta com palavra-chave C" chega</p>
 <p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
@@ -285,9 +407,31 @@
 <p><strong>&amp;</strong> = "E" (as duas condições precisam ser atendidas)</p>
 <p><strong>|</strong> = "OU" (qualquer uma das condições pode ser atendida)</p>
 <p>Mesmo que alarmes individuais por palavra-chave estejam desativados, a combinação ainda pode disparar quando as condições forem atendidas.</p>
-<p><strong>Auto-ordens também são possíveis com alertas de combinação!</strong></p>
+<p><strong>Ordens automáticas também são possíveis com alertas de combinação!</strong></p>
 </div>
 </div>
 </div>
+<script>
+    (function () {
+      var buttons = document.querySelectorAll('.video-toggle-btn');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var btn = this;
+          var panelId = btn.getAttribute('aria-controls');
+          var panel = panelId ? document.getElementById(panelId) : null;
+          if (!panel) return;
+
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+
+          if (expanded) {
+            panel.setAttribute('hidden', '');
+          } else {
+            panel.removeAttribute('hidden');
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

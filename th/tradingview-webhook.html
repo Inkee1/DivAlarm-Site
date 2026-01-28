@@ -41,8 +41,8 @@
       font-weight: 700;
       margin-bottom: 2rem;
       background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
-      -webkit-background-clip: text;
       background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
@@ -176,34 +176,156 @@
       min-width: 300px;
     }
     
+    /* Quick Summary (collapsible video embeds) */
+    #quick-summary h2 { margin-top: 0; }
+    .video-toggle {
+      margin: 1.25rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.22);
+      border-radius: 12px;
+      background: rgba(12, 12, 24, 0.75);
+      overflow: hidden;
+    }
+    .video-toggle h3 { margin: 0; }
+    .video-toggle-btn {
+      width: 100%;
+      text-align: left;
+      padding: 1.1rem 1.25rem;
+      background: transparent;
+      border: none;
+      color: #f97316;
+      font: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .video-toggle-btn::after {
+      content: "▸";
+      color: rgba(248, 250, 252, 0.65);
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+      transform: rotate(0deg);
+      flex: 0 0 auto;
+    }
+    .video-toggle-btn[aria-expanded="true"]::after { transform: rotate(90deg); }
+    .video-toggle-btn:focus-visible {
+      outline: 2px solid rgba(0, 212, 255, 0.8);
+      outline-offset: -2px;
+    }
+    .video-toggle-panel {
+      padding: 0 1.25rem 1.25rem 1.25rem;
+      border-top: 1px solid rgba(0, 212, 255, 0.18);
+    }
+    .video-embed {
+      width: 100%;
+      max-width: 435px;
+      margin: 1rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      background: #000;
+    }
+    .video-embed iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9/16;
+      min-height: 500px; /* Fallback */
+      border: 0;
+      display: block;
+    }
+    .video-links a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    .video-links a:hover { opacity: 0.85; }
+
     @media (max-width: 768px) {
       .manual-container { padding: 30px 20px; }
       .manual-title { font-size: 2.2rem; }
       .manual-section h2 { font-size: 1.8rem; }
       .manual-section h3 { font-size: 1.4rem; }
       .manual-section p, .manual-section li { font-size: 1.1rem; }
-      /* Override any inline max-width (e.g., style="max-width: 680px") on mobile */
-      .manual-section img { max-width: 100% !important; }
       .image-row img { max-width: 100%; min-width: auto; }
       .code-block p { font-size: 0.95rem; }
+      .video-toggle-btn { padding: 1rem 1.1rem; }
     }
   </style>
-<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
-<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="manual-container">
 <a class="back-link" href="user-manual.html">← กลับไปที่คู่มือผู้ใช้</a>
-<h1 class="manual-title">🔗 คู่มือ Webhook ของ TradingView</h1>
+<h1 class="manual-title">🔗 TradingView คู่มือ Webhook</h1>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 สารบัญ</h3>
 <ul>
+<li><a href="#quick-summary">สรุปย่อ</a></li>
 <li><a href="#keyword">แจ้งเตือนด้วยคีย์เวิร์ด</a></li>
 <li><a href="#auto-order">สั่งออเดอร์อัตโนมัติด้วย TradingView</a></li>
 <li><a href="#divalarm-keywords">คีย์เวิร์ดสัญญาณของ DivAlarm</a></li>
-<li><a href="#combination">แจ้งเตือนแบบผสมสัญญาณ</a></li>
+<li><a href="#combination">แจ้งเตือนการผสมสัญญาณ</a></li>
 </ul>
+</div>
+<!-- Quick Summary Section -->
+<div class="manual-section" id="quick-summary">
+<h2>DivAlarm × TradingView – สรุปย่อ</h2>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">เชื่อมต่อ TradingView เข้ากับแอป</button>
+</h3>
+<div class="video-toggle-panel" id="qs-connect-tv">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="เชื่อมต่อ TradingView เข้ากับแอป" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">เปิดบน YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">ตั้งค่า Force Alarm สำหรับ TradingView</button>
+</h3>
+<div class="video-toggle-panel" id="qs-force-alarm">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="ตั้งค่า Force Alarm สำหรับ TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">เปิดบน YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">สั่งออเดอร์อัตโนมัติจากสัญญาณ TradingView</button>
+</h3>
+<div class="video-toggle-panel" id="qs-auto-order">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="สั่งออเดอร์อัตโนมัติจากสัญญาณ TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">เปิดบน YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">ตั้งค่า API Key ของเอ็กซ์เชนจ์</button>
+</h3>
+<div class="video-toggle-panel" id="qs-exchange-api">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="ตั้งค่า API Key ของเอ็กซ์เชนจ์" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" rel="noopener noreferrer" target="_blank">เปิดบน YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">สร้างชุดผสมอินดิเคเตอร์แบบกำหนดเองจาก TradingView</button>
+</h3>
+<div class="video-toggle-panel" id="qs-custom-indicators">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="สร้างชุดผสมอินดิเคเตอร์แบบกำหนดเองจาก TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">เปิดบน YouTube</a></p>
+</div>
+</div>
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
@@ -213,35 +335,35 @@
 <p>คลิกขวาที่อินดิเคเตอร์ที่ต้องการรับสัญญาณใน TradingView แล้วคลิก "Add Alert on ~"</p>
 <img alt="ตั้งค่า Webhook URL" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="ตั้งค่าการแจ้งเตือน" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>ในส่วน "Notifications" ให้ติ๊ก "Webhook URL" แล้ววางที่อยู่ที่คัดลอกจากแอปลงในช่องกรอกด้านล่าง</p>
-<p>เมื่อตั้งค่าแล้ว รายการนี้จะถูกติ๊ก/กรอกให้อัตโนมัติสำหรับการแจ้งเตือนอื่น ๆ</p>
+<p>ในส่วน "Notifications" ให้ติ๊ก "Webhook URL" แล้ววางที่อยู่ที่คัดลอกจากแอปลงในช่องด้านล่าง</p>
+<p>เมื่อตั้งค่าแล้ว ระบบจะติ๊ก/กรอกให้อัตโนมัติสำหรับการแจ้งเตือนอื่นๆ</p>
 <img alt="ตั้งค่าข้อความ" src="../images/image%201_tv.png" style="max-width: 680px;"/>
 <p>ในส่วน "Messages" ใต้ "Message" ให้ใส่คีย์เวิร์ดที่ต้องการ (เช่น "AAA")</p>
 <p>คลิก "Create" เพื่อสร้างการแจ้งเตือน TradingView</p>
 <h3>การรับการแจ้งเตือน TradingView ในแอป</h3>
 <img alt="ตั้งค่าคีย์เวิร์ดในแอป" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>เพิ่มคีย์เวิร์ด (เช่น "AAA") ในส่วน 'Keyword Include' ของแอป เมื่อ "Message" ของการแจ้งเตือน TradingView มีคีย์เวิร์ดนั้น ระบบจะส่งเสียงเตือนตามที่ตั้งค่าไว้</p>
+<p>เพิ่มคีย์เวิร์ด (เช่น "AAA") ในส่วน 'Keyword Include' ภายในแอป เมื่อ "Message" ของการแจ้งเตือน TradingView มีคีย์เวิร์ดนั้น ระบบจะส่งเสียงเตือนตามที่ตั้งค่าไว้</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
 <h2>🤖 สั่งออเดอร์อัตโนมัติด้วยการแจ้งเตือน TradingView</h2>
 <img alt="ตั้งค่าออเดอร์อัตโนมัติ" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>คุณสามารถตั้งค่า 'Auto-Orders' เพื่อส่งคำสั่งไปยังเอ็กซ์เชนจ์เมื่อได้รับการแจ้งเตือนด้วยคีย์เวิร์ด</p>
-<img alt="ตั้งค่า API ของเอ็กซ์เชนจ์" src="../images/image%202_tv.png" style="max-width: 500px;"/>
+<p>คุณสามารถตั้งค่า 'Auto-Orders' ให้ส่งไปยังเอ็กซ์เชนจ์เมื่อได้รับการแจ้งเตือนแบบคีย์เวิร์ด</p>
+<img alt="ตั้งค่า Exchange API" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
 <p>เอ็กซ์เชนจ์ที่รองรับสำหรับออเดอร์อัตโนมัติ: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>คุณต้องกรอก API key ในหน้า Settings ของแอป</p>
+<p>คุณต้องกรอก API keys ในหน้า Settings ของแอป</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
 <h2>📝 ลงทะเบียนสัญญาณ DivAlarm เป็นคีย์เวิร์ด</h2>
 <img alt="คีย์เวิร์ดสัญญาณของ DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>การแจ้งเตือนของ DivAlarm เองก็สามารถเพิ่มเข้าไปใน 'Keyword Combinations' ได้เช่นกัน (สำหรับการแจ้งเตือนแบบผสมหรือออเดอร์อัตโนมัติ)</p>
+<p>การแจ้งเตือนของ DivAlarm เองก็สามารถเพิ่มเข้าไปใน 'Keyword Combinations' ได้ (สำหรับการแจ้งเตือนแบบผสมหรือออเดอร์อัตโนมัติ)</p>
 <div class="highlight">
-<p><strong>รูปแบบ:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(ถ้ามี)</p>
+<p><strong>รูปแบบ:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
 </div>
-<p><strong>ประเภทการแจ้งเตือน:</strong></p>
+<p><strong>ประเภทการเตือน:</strong></p>
 <ul>
 <li><code>@D</code> — RSI Divergence filters</li>
 <li><code>@E</code> — Extra Indicators</li>
@@ -271,23 +393,45 @@
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 การแจ้งเตือนแบบผสานสัญญาณ</h2>
-<p>รวมหลายสัญญาณ TradingView เพื่อสร้างสัญญาณใหม่หรือกรองสัญญาณ</p>
+<h2>🔀 การแจ้งเตือนสัญญาณแบบผสม</h2>
+<p>รวมหลายสัญญาณ TradingView เพื่อสร้างสัญญาณใหม่หรือสัญญาณที่ผ่านการกรอง</p>
 <div class="image-row">
-<img alt="ตั้งค่าการแจ้งเตือนแบบผสาน" src="../images/image%205_tv.png"/>
+<img alt="ตั้งค่าการเตือนแบบผสม" src="../images/image%205_tv.png"/>
 <div>
-<p>ตั้งเงื่อนไขที่ต้องเกิดภายในช่วงเวลา เพื่อให้ทริกเกอร์การแจ้งเตือน</p>
-<p><strong>ตัวอย่าง:</strong><br/> ภายใน 1 ชั่วโมง 30 นาที:<br/> • 'แจ้งเตือนที่มีคีย์เวิร์ด A' และ<br/> • 'แจ้งเตือนที่มีคีย์เวิร์ด B' เข้ามาทั้งคู่, หรือ<br/> • 'แจ้งเตือนที่มีคีย์เวิร์ด C' เข้ามา</p>
+<p>ตั้งเงื่อนไขที่ต้องเกิดขึ้นภายในช่วงเวลา เพื่อให้ระบบทริกเกอร์การเตือน</p>
+<p><strong>ตัวอย่าง:</strong><br/> ภายใน 1 ชั่วโมง 30 นาที:<br/> • 'การแจ้งเตือนที่มีคีย์เวิร์ด A' และ<br/> • 'การแจ้งเตือนที่มีคีย์เวิร์ด B' เข้ามาทั้งคู่ หรือ<br/> • 'การแจ้งเตือนที่มีคีย์เวิร์ด C' เข้ามา</p>
 <p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
 <p><strong>&amp;</strong> = "AND" (ต้องเป็นไปตามทั้งสองเงื่อนไข)</p>
 <p><strong>|</strong> = "OR" (เป็นไปตามเงื่อนไขใดเงื่อนไขหนึ่งก็ได้)</p>
-<p>แม้จะปิดการแจ้งเตือนคีย์เวิร์ดรายตัวไว้ แต่การผสานยังสามารถทริกเกอร์ได้เมื่อเข้าเงื่อนไข</p>
-<p><strong>การสั่งออเดอร์อัตโนมัติก็ทำได้ด้วยการแจ้งเตือนแบบผสาน!</strong></p>
+<p>แม้จะปิดการเตือนคีย์เวิร์ดรายตัวไว้ แต่การเตือนแบบผสมยังสามารถทริกเกอร์ได้เมื่อเข้าเงื่อนไข</p>
+<p><strong>การแจ้งเตือนแบบผสมก็ทำออเดอร์อัตโนมัติได้เช่นกัน!</strong></p>
 </div>
 </div>
 </div>
+<script>
+    (function () {
+      var buttons = document.querySelectorAll('.video-toggle-btn');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var btn = this;
+          var panelId = btn.getAttribute('aria-controls');
+          var panel = panelId ? document.getElementById(panelId) : null;
+          if (!panel) return;
+
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+
+          if (expanded) {
+            panel.setAttribute('hidden', '');
+          } else {
+            panel.removeAttribute('hidden');
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

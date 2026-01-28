@@ -85,6 +85,12 @@
       margin-top: 2rem;
       margin-bottom: 1rem;
     }
+    .manual-section h4 {
+      font-size: 1.3rem;
+      color: #a78bfa;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
     .manual-section p {
       font-size: 1.2rem;
       line-height: 1.9;
@@ -181,9 +187,10 @@
 <ul>
 <li><a href="#menu">Resumen del menú</a></li>
 <li><a href="#divlog">Ver notificaciones de señales (DivLog)</a></li>
-<li><a href="#div">RSI Configuración de alertas de divergencia (Div)</a></li>
+<li><a href="#signal-details">Ver detalles de la señal</a></li>
+<li><a href="#div">RSI Ajustes de alertas de divergencia (Div)</a></li>
 <li><a href="#ei">Alertas de indicadores adicionales (EI)</a></li>
-<li><a href="#webhook">TradingView Webhook y orden automática</a></li>
+<li><a href="#webhook">TradingView Webhook y auto-orden</a></li>
 <li><a href="#settings">Página de ajustes</a></li>
 <li><a href="#referral">Recompensas por referidos</a></li>
 </ul>
@@ -191,31 +198,54 @@
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
 <h2>📌 Resumen del menú</h2>
-<p><strong>"DivLog"</strong> — Donde recibes las señales de alerta de divergencia.</p>
+<p><strong>"DivLog"</strong> — Donde recibes las señales de alertas de divergencia.</p>
 <p><strong>"Div"</strong> — Configura las señales 'RSI Divergence Complete' o 'RSI Divergence Forming'.</p>
-<p><strong>"EI"</strong> — Configura alertas adicionales de indicadores: alertas de alcance de precio, alertas de aproximación a soporte/resistencia, alertas de EMA/Bollinger Band/Supertrend. ("Indicadores extra")</p>
-<p><strong>"Webhook"</strong> — Solo visible para usuarios Pro. Recibe webhooks TradingView para alarmas potentes, combinaciones de señales y órdenes automáticas.</p>
+<p><strong>"EI"</strong> — Configura alertas adicionales de indicadores: alertas de alcance de precio, alertas de aproximación a soporte/resistencia, alertas de EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
+<p><strong>"Webhook"</strong> — Solo visible para usuarios Pro. Recibe webhooks TradingView para alarmas potentes, combinaciones de señales y auto-órdenes.</p>
 <p><strong>"Setting"</strong> — Configura tipos de alarma, sonidos, ajustes de recompensas por referidos, anuncios y notificaciones de referidos.</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
 <h2>📊 Ver notificaciones de señales ("DivLog")</h2>
-<p>"DivLog" es donde recibes las señales de alerta de divergencia.</p>
+<p>"DivLog" es donde recibes las señales de alertas de divergencia.</p>
 <ol>
 <li>Se guardan hasta 150 señales. Límpialas periódicamente.</li>
 <li>Muestra alertas sin revisar. Marca la casilla para descartar la alarma. Se muestran como máximo 5 alertas recientes sin revisar.</li>
 <li>Filtra para ver solo las señales que quieras.</li>
 </ol>
 </div>
+<!-- Signal Details Section -->
+<div class="manual-section" id="signal-details">
+<h2>🔍 Ver detalles de la señal</h2>
+<img alt="Vista de detalle de la señal" src="../images/image_detail.png" style="max-width: 500px;"/>
+<p>Al tocar cada alerta, puedes ver información detallada de la señal.</p>
+<p>Para las alertas de divergencia RSI, puedes ver los precios de inicio y fin, los valores de RSI y las marcas de tiempo.</p>
+<p><strong>"DivForming"</strong> muestra divergencias que se están formando en otros marcos temporales en el momento en que se genera la señal.</p>
+<p><strong>"OutsideBB"</strong> muestra qué marcos temporales estaban fuera de las Bandas de Bollinger cuando se generó la señal.</p>
+<ul>
+<li>Para marcos temporales <strong>menores</strong> que el marco temporal de la señal, muestra qué velas estaban fuera de la Banda de Bollinger en el momento de la señal (<em>at now</em>).</li>
+<li>Para marcos temporales <strong>mayores</strong> que el marco temporal de la señal, muestra qué velas estaban fuera de la Banda de Bollinger en el pico de divergencia RSI posterior (<em>at peak</em>).</li>
+</ul>
+<h4>Ejemplo</h4>
+<div class="highlight">
+<p>En el ejemplo anterior, se produce una <strong>señal alcista</strong> en el marco temporal de <strong>15m</strong>.</p>
+<p><strong>"DivForming"</strong> indica que se están formando divergencias bajistas en los marcos temporales de 30m y 1h.</p>
+<p><strong>"OutsideBB"</strong> muestra:</p>
+<ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+<li>En el momento de la señal, el marco temporal de <strong>5m</strong> estaba fuera de la Banda de Bollinger.</li>
+<li>En el pico de divergencia RSI, los marcos temporales de <strong>15m, 30m y 1h</strong> estaban fuera de la Banda de Bollinger.</li>
+</ul>
+</div>
+</div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ Ajustes de alertas de divergencia RSI ("Div")</h2>
+<h2>⚙️ RSI Ajustes de alertas de divergencia ("Div")</h2>
 <img alt="Pantalla de ajustes de Div" src="../images/image_manual.png" style="max-width: 500px;"/>
 <h3>Ajustes generales de divergencia RSI</h3>
 <ol>
 <li>Selecciona qué moneda configurar.</li>
-<li>Elige entre señales 'RSI Divergence Complete' vs 'RSI Divergence Forming'.</li>
-<li>Área de ajustes por lotes — aplica los ajustes a todos los elementos de abajo a la vez.</li>
+<li>Elige entre las señales 'RSI Divergence Complete' y 'RSI Divergence Forming'.</li>
+<li>Área de ajustes por lotes: aplica los ajustes a todos los elementos de abajo a la vez.</li>
 <li>Añade filtros de divergencia con el botón +.</li>
 <li>Restablece los filtros a los ajustes predeterminados recomendados.</li>
 <li>Configura condiciones de precio por lotes.</li>
@@ -223,35 +253,35 @@
 <h3>Ajustes de filtro individuales</h3>
 <ol start="7">
 <li>Configure individual RSI divergence signals to receive:
-          <p><strong>(a)</strong> Selecciona el marco temporal deseado. Para 'RSI Divergence Forming', elige tanto un 'marco temporal principal' como un 'marco temporal secundario'. Las alertas se activan cuando se forma el pico RSI en el marco temporal menor mientras la divergencia se está formando en el marco temporal principal (reversión del precio).</p>
-<p><strong>(b)</strong> Elige señales: "Bull (alcista)" o "Bear (bajista)". Azul = alertas activadas, gris = desactivadas.</p>
-<p><strong>(c)</strong> Define los umbrales de sobreventa/sobrecompra. Alertas alcistas cuando el 'inicio RSI' está por debajo del nivel de sobreventa; bajistas cuando el 'inicio RSI' está por encima del nivel de sobrecompra.</p>
-<p><strong>(d)</strong> Configura el tipo de alarma y el sonido. Ajustes detallados en la página de ajustes:</p>
-<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Alarma forzada (bucle) — suena continuamente hasta detenerla manualmente, ignora el modo silencioso<br/><br/> <span class="alarm-type alarm-type-b">B</span> Alarma forzada (una vez) — suena una vez, ignora el modo silencioso<br/><br/> <span class="alarm-type alarm-type-c">C</span> Seguir ajustes del teléfono — usa los ajustes de sonido normales del dispositivo<br/><br/> <span class="alarm-type alarm-type-d">D</span> Solo vibración — vibración sin sonido<br/><br/> <span class="alarm-type alarm-type-e">E</span> Modo silencioso — sin sonido ni vibración</div>
+          <p><strong>(a)</strong> Selecciona el marco temporal deseado. Para 'RSI Divergence Forming', elige tanto un 'marco temporal principal' como un 'marco temporal secundario'. Las alertas se activan cuando se forma el pico RSI en el marco temporal más pequeño mientras la divergencia se está formando en el marco temporal principal (reversión del precio).</p>
+<p><strong>(b)</strong> Elige señales: "Bull (alcista)" o "Bear (bajista)". Azul = alertas activadas, Gris = desactivadas.</p>
+<p><strong>(c)</strong> Configura los umbrales de sobreventa/sobrecompra. Alertas alcistas cuando el 'RSI inicial' está por debajo del nivel de sobreventa; bajistas cuando el 'RSI inicial' está por encima del nivel de sobrecompra.</p>
+<p><strong>(d)</strong> Configura el tipo de alarma y el sonido. Ajustes detallados en la página de Ajustes:</p>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Forzar alarma (bucle) — suena continuamente hasta detenerla manualmente; ignora el modo silencio<br/><br/> <span class="alarm-type alarm-type-b">B</span> Forzar alarma (una vez) — suena una vez; ignora el modo silencio<br/><br/> <span class="alarm-type alarm-type-c">C</span> Seguir ajustes del teléfono — usa los ajustes de sonido normales del dispositivo<br/><br/> <span class="alarm-type alarm-type-d">D</span> Solo vibración — vibración sin sonido<br/><br/> <span class="alarm-type alarm-type-e">E</span> Modo silencio — sin sonido ni vibración</div>
 <img alt="Ajustes del tipo de alarma" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Establece condiciones adicionales para recibir solo señales útiles: condiciones de precio, condiciones de formación en otro marco temporal RSI, condiciones de Bandas de Bollinger.</p>
+<p><strong>(e)</strong> Configura condiciones adicionales para recibir solo señales útiles: condiciones de precio, condiciones de formación RSI en otro marco temporal, condiciones de Bandas de Bollinger.</p>
 </li>
 </ol>
 <div class="image-row">
 <img alt="Condiciones adicionales 1" src="../images/image%202_manual.png"/>
 <img alt="Condiciones adicionales 2" src="../images/image%203_manual.png"/>
 </div>
-<p><strong>e0)</strong> Cuando se configuran varias condiciones, define la relación: "and" (deben cumplirse todas) u "or" (se cumple cualquiera).</p>
-<p><strong>e1)</strong> Establece condiciones de precio: alerta cuando el precio de inicio/fin de la divergencia esté por encima/por debajo de un precio específico.</p>
-<p><strong>e2)</strong> Alerta cuando la divergencia se esté formando en otro marco temporal.</p>
+<p><strong>e0)</strong> Cuando se configuran varias condiciones, define la relación: "and" (todas deben cumplirse) u "or" (se cumple cualquiera).</p>
+<p><strong>e1)</strong> Configura condiciones de precio: alerta cuando el precio de inicio/fin de la divergencia está por encima/por debajo de un precio específico.</p>
+<p><strong>e2)</strong> Alerta cuando se está formando una divergencia en otro marco temporal.</p>
 <p><strong>e3)</strong> Comprueba si el precio del pico final de la divergencia RSI está fuera de las Bandas de Bollinger.</p>
 <h3>Consejos de estrategia</h3>
 <div class="warning">
 <ul>
 <li>Combínalo siempre con otros indicadores: resistencias, líneas de tendencia, Fibonacci, etc.</li>
-<li>Como todos los indicadores, la divergencia RSI no es 100% precisa: mejora la probabilidad.</li>
-<li>Las divergencias de 1m y 5m suelen ignorarse, pero la fiabilidad aumenta: 15m &lt; 1h &lt; 4h. <strong>La divergencia en 4h es muy fiable: se recomienda configurarla como alarma de grado A.</strong></li>
+<li>Como todos los indicadores, la divergencia de RSI no es 100% precisa; mejora la probabilidad.</li>
+<li>Las divergencias en 1m y 5m suelen ignorarse, pero la fiabilidad aumenta: 15m &lt; 1h &lt; 4h. <strong>La divergencia en 4h es muy fiable; se recomienda configurarla como alarma de grado A.</strong></li>
 </ul>
 </div>
 </div>
 <!-- EI Section -->
 <div class="manual-section" id="ei">
-<h2>📈 Alertas adicionales de indicadores ("EI")</h2>
+<h2>📈 Alertas de indicadores adicionales ("EI")</h2>
 <div class="image-row">
 <img alt="Ajustes de EI 1" src="../images/image%204_manual.png"/>
 <img alt="Ajustes de EI 2" src="../images/image%205_manual.png"/>
@@ -261,7 +291,7 @@
 <li>Configura alertas de precio para la moneda.</li>
 <li>Configura alertas de cruce de EMA (Media Móvil Exponencial).</li>
 <li>Configura alertas de aproximación a soporte/resistencia.</li>
-<li>Configura alertas de ruptura de las Bandas de Bollinger.</li>
+<li>Configura alertas de ruptura de Bandas de Bollinger.</li>
 <li>Configura alertas de cambio de Supertrend.</li>
 </ol>
 <div class="warning">
@@ -270,8 +300,8 @@
 </div>
 <!-- Webhook Section -->
 <div class="manual-section" id="webhook">
-<h2>🔗 Webhook TradingView, combinación de señales y auto-orden</h2>
-<p><strong>"Webhook"</strong>: función Pro para usuarios avanzados.</p>
+<h2>🔗 Webhook de TradingView, combinación de señales y auto-orden</h2>
+<p><strong>"Webhook"</strong> — Función Pro para usuarios avanzados.</p>
 <p>
 <a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Ir a la guía detallada de Webhook</a>
 </p>
@@ -286,22 +316,27 @@
 <ol>
 <li>Configura los tipos de alarma (A, B...) y los sonidos de alarma (1, 2...).</li>
 <li>Para las auto-órdenes, introduce las claves API de cada exchange.</li>
+<li>Puedes probar si las notificaciones están llegando a tu teléfono actual. Enviándote un mensaje de prueba, puedes comprobar si las alertas se entregan según los filtros que configuraste.</li>
+<li>Esta es la página para configurar opciones relacionadas con las recompensas por referidos.</li>
+<li>Aquí es donde recibes los anuncios globales.</li>
+<li>Aquí es donde recibes anuncios exclusivos enviados por el referido que registraste al crear tu cuenta.</li>
+<li>Puedes cambiar toda la app entre modo claro y modo oscuro.</li>
 </ol>
 </div>
 <!-- Referral Section -->
 <div class="manual-section" id="referral">
 <h2>💰 Recompensas por referidos</h2>
 <img alt="Ajustes de referidos" src="../images/image%208_manual.png" style="max-width: 550px;"/>
-<p><strong>(a)</strong> Tu código de referido. Cuando otros se suscriben con este código, pasas a ser su referente.</p>
+<p><strong>(a)</strong> Tu código de referido. Cuando otros se suscriben con este código, te conviertes en su referente.</p>
 <p><strong>(b)</strong> Tu enlace de invitación. Cualquiera que se suscriba a través de este enlace te registra automáticamente como su referente.</p>
-<p><strong>(c)</strong> Introduce la dirección de tu wallet para recibir recompensas por referidos. Debe ser una wallet BEP-20 USDT (se recomiendan wallets de exchanges principales). Puedes probar si los depósitos funcionan correctamente desde "My Info" en el sitio web de DivAlarm.</p>
-<p><strong>(d)</strong> Muestra el estado de tus recompensas por referidos: número actual de referidos, importe potencial, importe confirmado e importe pagado.</p>
-<p>Las recompensas pasan de “potenciales” a “confirmadas” 14 días después del pago de la suscripción del usuario referido (excluida la prueba gratuita). Los pagos se realizan semanalmente los martes a las 00:00 UTC.</p>
+<p><strong>(c)</strong> Introduce la dirección de tu wallet para las recompensas por referidos. Debe ser una wallet BEP-20 de USDT (se recomiendan wallets de exchanges principales). Puedes probar si los depósitos funcionan correctamente desde "My Info" en el sitio web de DivAlarm.</p>
+<p><strong>(d)</strong> Muestra el estado de tus recompensas por referidos: número actual de referidos, importe potencial de recompensa, importe confirmado e importe pagado.</p>
+<p>Las recompensas pasan de "potencial" a "confirmado" 14 días después del pago de suscripción del usuario referido (excluida la prueba gratuita). Los pagos se realizan semanalmente los martes a las 00:00 UTC.</p>
 <h3>Cómo ganar recompensas por referidos</h3>
 <div class="highlight">
-<p><strong>1]</strong> Ve a Ajustes → Recompensas por referidos → Introduce la dirección de tu wallet para recibir recompensas.</p>
-<p><strong>2]</strong> Comparte tu enlace de referido. Los demás serán dirigidos a la página de suscripción con tu código.</p>
-<p><strong>3]</strong> Cuando se suscriban y paguen, se depositarán las recompensas.</p>
+<p><strong>1]</strong> Ve a Ajustes → Recompensas por referidos → Introduce la dirección de tu wallet de recompensas.</p>
+<p><strong>2]</strong> Comparte tu enlace de referidos. Los demás serán dirigidos a la página de suscripción con tu código.</p>
+<p><strong>3]</strong> Cuando se suscriben y pagan, se depositan las recompensas.</p>
 </div>
 </div>
 </div>

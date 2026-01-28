@@ -41,8 +41,8 @@
       font-weight: 700;
       margin-bottom: 2rem;
       background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
-      -webkit-background-clip: text;
       background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
@@ -176,20 +176,82 @@
       min-width: 300px;
     }
     
+    /* Quick Summary (collapsible video embeds) */
+    #quick-summary h2 { margin-top: 0; }
+    .video-toggle {
+      margin: 1.25rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.22);
+      border-radius: 12px;
+      background: rgba(12, 12, 24, 0.75);
+      overflow: hidden;
+    }
+    .video-toggle h3 { margin: 0; }
+    .video-toggle-btn {
+      width: 100%;
+      text-align: left;
+      padding: 1.1rem 1.25rem;
+      background: transparent;
+      border: none;
+      color: #f97316;
+      font: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .video-toggle-btn::after {
+      content: "▸";
+      color: rgba(248, 250, 252, 0.65);
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+      transform: rotate(0deg);
+      flex: 0 0 auto;
+    }
+    .video-toggle-btn[aria-expanded="true"]::after { transform: rotate(90deg); }
+    .video-toggle-btn:focus-visible {
+      outline: 2px solid rgba(0, 212, 255, 0.8);
+      outline-offset: -2px;
+    }
+    .video-toggle-panel {
+      padding: 0 1.25rem 1.25rem 1.25rem;
+      border-top: 1px solid rgba(0, 212, 255, 0.18);
+    }
+    .video-embed {
+      width: 100%;
+      max-width: 435px;
+      margin: 1rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      background: #000;
+    }
+    .video-embed iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9/16;
+      min-height: 500px; /* Fallback */
+      border: 0;
+      display: block;
+    }
+    .video-links a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    .video-links a:hover { opacity: 0.85; }
+
     @media (max-width: 768px) {
       .manual-container { padding: 30px 20px; }
       .manual-title { font-size: 2.2rem; }
       .manual-section h2 { font-size: 1.8rem; }
       .manual-section h3 { font-size: 1.4rem; }
       .manual-section p, .manual-section li { font-size: 1.1rem; }
-      /* Override any inline max-width (e.g., style="max-width: 680px") on mobile */
-      .manual-section img { max-width: 100% !important; }
       .image-row img { max-width: 100%; min-width: auto; }
       .code-block p { font-size: 0.95rem; }
+      .video-toggle-btn { padding: 1rem 1.1rem; }
     }
   </style>
-<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
-<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="manual-container">
@@ -199,49 +261,109 @@
 <div class="toc">
 <h3>📋 目次</h3>
 <ul>
+<li><a href="#quick-summary">クイック概要</a></li>
 <li><a href="#keyword">キーワードアラート</a></li>
 <li><a href="#auto-order">TradingViewで自動発注</a></li>
 <li><a href="#divalarm-keywords">DivAlarm シグナルキーワード</a></li>
 <li><a href="#combination">シグナル組み合わせアラート</a></li>
 </ul>
 </div>
+<!-- Quick Summary Section -->
+<div class="manual-section" id="quick-summary">
+<h2>DivAlarm × TradingView – クイック概要</h2>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">TradingViewをアプリに接続</button>
+</h3>
+<div class="video-toggle-panel" id="qs-connect-tv">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="TradingViewをアプリに接続" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">YouTubeで開く</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">TradingViewの強制アラーム設定</button>
+</h3>
+<div class="video-toggle-panel" id="qs-force-alarm">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="TradingViewの強制アラーム設定" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">YouTubeで開く</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">TradingViewシグナルから自動発注</button>
+</h3>
+<div class="video-toggle-panel" id="qs-auto-order">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="TradingViewシグナルから自動発注" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">YouTubeで開く</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">取引所APIキー設定</button>
+</h3>
+<div class="video-toggle-panel" id="qs-exchange-api">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="取引所APIキー設定" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" rel="noopener noreferrer" target="_blank">YouTubeで開く</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">TradingViewからカスタム指標の組み合わせを作成</button>
+</h3>
+<div class="video-toggle-panel" id="qs-custom-indicators">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="TradingViewからカスタム指標の組み合わせを作成" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">YouTubeで開く</a></p>
+</div>
+</div>
+</div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
 <h2>🔔 キーワードアラート</h2>
 <h3>TradingViewでWebhookを追加</h3>
-<img alt="TradingView アラートを追加" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
+<img alt="TradingView アラート追加" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
 <p>TradingViewでシグナルを受け取りたいインジケーターを右クリックし、「〜にアラートを追加」をクリックします。</p>
 <img alt="Webhook URL設定" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="通知設定" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>「Notifications」セクションで「Webhook URL」にチェックを入れ、アプリでコピーしたアドレスを下の入力欄に貼り付けます。</p>
+<p>「通知」セクションで「Webhook URL」にチェックを入れ、下の入力欄にアプリからコピーしたアドレスを貼り付けます。</p>
 <p>一度設定すると、他のアラートでも自動的にチェック／入力されます。</p>
 <img alt="メッセージ設定" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>「Messages」セクションの「Message」に、任意のキーワード（例：「AAA」）を追加します。</p>
-<p>「Create」をクリックして、TradingView アラートを作成します。</p>
-<h3>アプリでTradingViewアラートを受信する</h3>
+<p>「メッセージ」セクションの「メッセージ」で、任意のキーワード（例：「AAA」）を追加します。</p>
+<p>「作成」をクリックして、TradingViewアラートを設定します。</p>
+<h3>アプリでTradingViewアラートを受信</h3>
 <img alt="アプリのキーワード設定" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>アプリの「Keyword Include」にキーワード（例：「AAA」）を追加します。TradingView アラートの「Message」にそのキーワードが含まれていると、設定どおりにアラームが鳴ります。</p>
+<p>アプリの「キーワード含む」にキーワード（例：「AAA」）を追加してください。TradingView アラートの「メッセージ」にそのキーワードが含まれていると、設定どおりにアラームが鳴ります。</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 TradingViewアラートで自動発注</h2>
+<h2>🤖 TradingView アラートで自動発注</h2>
 <img alt="自動発注設定" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
 <p>キーワードアラートを受信したときに、取引所へ「自動発注」を送るよう設定できます。</p>
 <img alt="取引所API設定" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>自動発注の対応取引所：<strong>Binance、ByBit、OKX、Bitget、Gate</strong></p>
+<p>自動発注対応の取引所：<strong>Binance、ByBit、OKX、Bitget、Gate</strong></p>
 <p>アプリの設定ページでAPIキーを入力する必要があります。</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
-<h2>📝 DivAlarmシグナルをキーワードとして登録</h2>
+<h2>📝 DivAlarm シグナルをキーワードとして登録</h2>
 <img alt="DivAlarm シグナルキーワード" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>DivAlarm独自のアラートも、「Keyword Combinations」（組み合わせアラート／自動発注用）に追加できます。</p>
+<p>DivAlarm 独自のアラートも、「キーワード組み合わせ」（組み合わせアラート／自動発注）に追加できます。</p>
 <div class="highlight">
-<p><strong>形式：</strong>@AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe（ある場合）</p>
+<p><strong>形式：</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe（任意）</p>
 </div>
-<p><strong>アラーム種類：</strong></p>
+<p><strong>アラームタイプ：</strong></p>
 <ul>
 <li><code>@D</code> — RSI Divergence filters</li>
 <li><code>@E</code> — Extra Indicators</li>
@@ -258,25 +380,25 @@
 </div>
 <img alt="キーワード例" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
-<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ 追加インジケーター、BTCコイン、タイトルに「Sell」を含む、30m</span></p>
+<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ 追加インジケーター、BTC、タイトルに「Sell」を含む、30m</span></p>
 <p><code>"@E@BTC@Buy@1h"</code></p>
 <p><code>"@E@ETH@Breakout@15m"</code></p>
 <p><code>"@E@BTC@Breakdown@5m"</code></p>
 <p><code>"@E@BTC@Near Support@1m"</code></p>
 <p><code>"@E@BTC@Near Resistance@5m"</code></p>
 <p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ 価格アラート、BTCコイン、タイトルに「Up」を含む</span></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ 価格アラート、BTC、タイトルに「Up」を含む</span></p>
 <p><code>"@P@ETH@Down"</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
 <h2>🔀 シグナル組み合わせアラート</h2>
-<p>複数のTradingViewシグナルを組み合わせて、新しいシグナルやフィルター済みシグナルを作成できます。</p>
+<p>複数の TradingView シグナルを組み合わせて、新しいシグナルやフィルター済みシグナルを作成できます。</p>
 <div class="image-row">
 <img alt="組み合わせアラート設定" src="../images/image%205_tv.png"/>
 <div>
-<p>指定した時間内に条件を満たした場合にアラームが発火するよう、条件を設定できます。</p>
+<p>指定した時間内に満たすべき条件を設定し、条件成立でアラームを鳴らします。</p>
 <p><strong>例：</strong><br/> 1時間30分以内に：<br/> • 「キーワードAのアラート」AND<br/> • 「キーワードBのアラート」が両方届く、または<br/> • 「キーワードCのアラート」が届く</p>
 <p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
@@ -284,10 +406,32 @@
 <div class="highlight">
 <p><strong>&amp;</strong> = 「AND」（両方の条件を満たす必要があります）</p>
 <p><strong>|</strong> = 「OR」（どちらかの条件を満たせばOK）</p>
-<p>個別のキーワードアラームを無効にしていても、条件を満たせば組み合わせアラートは発火します。</p>
-<p><strong>組み合わせアラートなら自動発注も可能です！</strong></p>
+<p>個別のキーワードアラームを無効にしていても、条件を満たせば組み合わせアラートは発動します。</p>
+<p><strong>組み合わせアラートでも自動発注が可能です！</strong></p>
 </div>
 </div>
 </div>
+<script>
+    (function () {
+      var buttons = document.querySelectorAll('.video-toggle-btn');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var btn = this;
+          var panelId = btn.getAttribute('aria-controls');
+          var panel = panelId ? document.getElementById(panelId) : null;
+          if (!panel) return;
+
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+
+          if (expanded) {
+            panel.setAttribute('hidden', '');
+          } else {
+            panel.removeAttribute('hidden');
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

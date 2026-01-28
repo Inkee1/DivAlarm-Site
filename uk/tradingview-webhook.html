@@ -41,8 +41,8 @@
       font-weight: 700;
       margin-bottom: 2rem;
       background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
-      -webkit-background-clip: text;
       background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
@@ -176,20 +176,82 @@
       min-width: 300px;
     }
     
+    /* Quick Summary (collapsible video embeds) */
+    #quick-summary h2 { margin-top: 0; }
+    .video-toggle {
+      margin: 1.25rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.22);
+      border-radius: 12px;
+      background: rgba(12, 12, 24, 0.75);
+      overflow: hidden;
+    }
+    .video-toggle h3 { margin: 0; }
+    .video-toggle-btn {
+      width: 100%;
+      text-align: left;
+      padding: 1.1rem 1.25rem;
+      background: transparent;
+      border: none;
+      color: #f97316;
+      font: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .video-toggle-btn::after {
+      content: "▸";
+      color: rgba(248, 250, 252, 0.65);
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+      transform: rotate(0deg);
+      flex: 0 0 auto;
+    }
+    .video-toggle-btn[aria-expanded="true"]::after { transform: rotate(90deg); }
+    .video-toggle-btn:focus-visible {
+      outline: 2px solid rgba(0, 212, 255, 0.8);
+      outline-offset: -2px;
+    }
+    .video-toggle-panel {
+      padding: 0 1.25rem 1.25rem 1.25rem;
+      border-top: 1px solid rgba(0, 212, 255, 0.18);
+    }
+    .video-embed {
+      width: 100%;
+      max-width: 435px;
+      margin: 1rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      background: #000;
+    }
+    .video-embed iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9/16;
+      min-height: 500px; /* Fallback */
+      border: 0;
+      display: block;
+    }
+    .video-links a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    .video-links a:hover { opacity: 0.85; }
+
     @media (max-width: 768px) {
       .manual-container { padding: 30px 20px; }
       .manual-title { font-size: 2.2rem; }
       .manual-section h2 { font-size: 1.8rem; }
       .manual-section h3 { font-size: 1.4rem; }
       .manual-section p, .manual-section li { font-size: 1.1rem; }
-      /* Override any inline max-width (e.g., style="max-width: 680px") on mobile */
-      .manual-section img { max-width: 100% !important; }
       .image-row img { max-width: 100%; min-width: auto; }
       .code-block p { font-size: 0.95rem; }
+      .video-toggle-btn { padding: 1rem 1.1rem; }
     }
   </style>
-<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
-<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="manual-container">
@@ -199,49 +261,109 @@
 <div class="toc">
 <h3>📋 Зміст</h3>
 <ul>
+<li><a href="#quick-summary">Коротко</a></li>
 <li><a href="#keyword">Сповіщення за ключовими словами</a></li>
 <li><a href="#auto-order">Автоордери з TradingView</a></li>
 <li><a href="#divalarm-keywords">Ключові слова сигналів DivAlarm</a></li>
-<li><a href="#combination">Сповіщення за комбінаціями сигналів</a></li>
+<li><a href="#combination">Сповіщення про комбінації сигналів</a></li>
 </ul>
+</div>
+<!-- Quick Summary Section -->
+<div class="manual-section" id="quick-summary">
+<h2>DivAlarm × TradingView — Коротко</h2>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">Підключити TradingView до застосунку</button>
+</h3>
+<div class="video-toggle-panel" id="qs-connect-tv">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="Підключити TradingView до застосунку" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">Відкрити на YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">Налаштування примусової тривоги для TradingView</button>
+</h3>
+<div class="video-toggle-panel" id="qs-force-alarm">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="Налаштування примусової тривоги для TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">Відкрити на YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">Автоордери за сигналами TradingView</button>
+</h3>
+<div class="video-toggle-panel" id="qs-auto-order">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="Автоордери за сигналами TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">Відкрити на YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">Налаштування API-ключа біржі</button>
+</h3>
+<div class="video-toggle-panel" id="qs-exchange-api">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="Налаштування API-ключа біржі" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" rel="noopener noreferrer" target="_blank">Відкрити на YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">Створити власні комбінації індикаторів із TradingView</button>
+</h3>
+<div class="video-toggle-panel" id="qs-custom-indicators">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="Створити власні комбінації індикаторів із TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">Відкрити на YouTube</a></p>
+</div>
+</div>
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
 <h2>🔔 Сповіщення за ключовими словами</h2>
 <h3>Додавання Webhook у TradingView</h3>
 <img alt="TradingView Додати сповіщення" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>Клацніть правою кнопкою миші по індикатору, з якого хочете отримувати сигнали в TradingView, і натисніть "Add Alert on ~".</p>
+<p>Клацніть правою кнопкою миші по індикатору, з якого хочете отримувати сигнали в TradingView, і натисніть «Add Alert on ~».</p>
 <img alt="Налаштування URL вебхука" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Налаштування сповіщень" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>У розділі "Notifications" поставте прапорець "Webhook URL" і вставте адресу, скопійовану з застосунку, в поле введення нижче.</p>
+<p>У розділі «Notifications» поставте прапорець «Webhook URL» і вставте адресу, скопійовану із застосунку, в поле введення нижче.</p>
 <p>Після налаштування це буде автоматично позначатися/заповнюватися для інших сповіщень.</p>
 <img alt="Налаштування повідомлення" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>У розділі "Messages" в полі "Message" додайте будь-яке ключове слово (наприклад, "AAA").</p>
-<p>Натисніть "Create", щоб створити сповіщення TradingView.</p>
+<p>У розділі «Messages» в полі «Message» додайте будь-яке ключове слово (наприклад, «AAA»).</p>
+<p>Натисніть «Create», щоб створити сповіщення TradingView.</p>
 <h3>Отримання сповіщень TradingView у застосунку</h3>
 <img alt="Налаштування ключових слів у застосунку" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Додайте ключове слово (наприклад, "AAA") у розділ 'Keyword Include' в застосунку. Коли "Message" сповіщення TradingView міститиме це ключове слово, пролунає сигнал тривоги згідно з налаштуваннями.</p>
+<p>Додайте ключове слово (наприклад, "AAA") у розділ «Включити ключове слово» в застосунку. Коли «Повідомлення» сповіщення TradingView містить це ключове слово, пролунає сигнал тривоги згідно з налаштуваннями.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
 <h2>🤖 Автоордери зі сповіщеннями TradingView</h2>
-<img alt="Налаштування автоордера" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Ви можете налаштувати 'Auto-Orders', щоб надсилати ордери на біржі, коли надходять сповіщення за ключовими словами.</p>
+<img alt="Налаштування автоордерів" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Ви можете налаштувати «Автоордери», щоб надсилати їх на біржі, коли надходять сповіщення за ключовими словами.</p>
 <img alt="Налаштування API біржі" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
 <p>Підтримувані біржі для автоордерів: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Вам потрібно ввести API-ключі на сторінці налаштувань застосунку.</p>
+<p>Ви маєте ввести API-ключі на сторінці «Налаштування» в застосунку.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
 <h2>📝 Реєстрація сигналів DivAlarm як ключових слів</h2>
 <img alt="Ключові слова сигналів DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Власні сповіщення DivAlarm також можна додавати до 'Keyword Combinations' (для сповіщень за комбінаціями або автоордерів).</p>
+<p>Власні сповіщення DivAlarm також можна додати до «Комбінацій ключових слів» (для комбінованих сповіщень або автоордерів).</p>
 <div class="highlight">
-<p><strong>Формат:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(за наявності)</p>
+<p><strong>Формат:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
 </div>
-<p><strong>Типи сповіщень:</strong></p>
+<p><strong>Типи сигналів:</strong></p>
 <ul>
 <li><code>@D</code> — RSI Divergence filters</li>
 <li><code>@E</code> — Extra Indicators</li>
@@ -250,11 +372,11 @@
 <h3>Приклади</h3>
 <div class="code-block">
 <p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ RSI Дивергенція, BTCUSDT.P, заголовок містить "Bull", Формується, основний 5m, додатковий 1m</p>
+<p class="desc">→ Дивергенція RSI, BTCUSDT.P, заголовок містить "Bull", формується, основний 5m, додатковий 1m</p>
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ RSI Дивергенція, ETHUSDT.P, заголовок містить "Bear", Завершено, 15m, без додаткового таймфрейму</p>
+<p class="desc">→ Дивергенція RSI, ETHUSDT.P, заголовок містить "Bear", завершено, 15m, без додаткового таймфрейму</p>
 </div>
 <img alt="Приклад ключового слова" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
@@ -265,29 +387,51 @@
 <p><code>"@E@BTC@Near Support@1m"</code></p>
 <p><code>"@E@BTC@Near Resistance@5m"</code></p>
 <p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ Сповіщення про ціну, монета BTC, заголовок містить "Up"</span></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ Цінове сповіщення, монета BTC, заголовок містить "Up"</span></p>
 <p><code>"@P@ETH@Down"</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 Сповіщення про комбінації сигналів</h2>
+<h2>🔀 Комбіновані сповіщення сигналів</h2>
 <p>Комбінуйте кілька сигналів TradingView, щоб створювати нові або відфільтровані сигнали.</p>
 <div class="image-row">
-<img alt="Налаштування сповіщення-комбінації" src="../images/image%205_tv.png"/>
+<img alt="Налаштування комбінованих сповіщень" src="../images/image%205_tv.png"/>
 <div>
-<p>Задайте умови, які мають виконатися в межах часового вікна, щоб сповіщення спрацювало.</p>
-<p><strong>Приклад:</strong><br/> Протягом 1 години 30 хвилин:<br/> • «Сповіщення з ключовим словом A» І<br/> • «Сповіщення з ключовим словом B» обидва надходять, АБО<br/> • надходить «Сповіщення з ключовим словом C»</p>
+<p>Задайте умови, які мають бути виконані в межах часового вікна, щоб спрацювала тривога.</p>
+<p><strong>Приклад:</strong><br/> Протягом 1 години 30 хвилин:<br/> • одночасно надходять «Сповіщення з ключовим словом A» І<br/> • «Сповіщення з ключовим словом B», АБО<br/> • надходить «Сповіщення з ключовим словом C»</p>
 <p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = «AND» (мають виконатися обидві умови)</p>
-<p><strong>|</strong> = «OR» (може виконатися будь-яка з умов)</p>
-<p>Навіть якщо окремі сповіщення за ключовими словами вимкнені, комбінація все одно може спрацювати, коли умови виконано.</p>
-<p><strong>Автоордери також можливі зі сповіщеннями-комбінаціями!</strong></p>
+<p><strong>&amp;</strong> = "AND" (мають бути виконані обидві умови)</p>
+<p><strong>|</strong> = "OR" (може бути виконана будь-яка умова)</p>
+<p>Навіть якщо окремі тривоги за ключовими словами вимкнені, комбінація все одно може спрацювати, коли умови виконано.</p>
+<p><strong>Автоордери також можливі з комбінованими сповіщеннями!</strong></p>
 </div>
 </div>
 </div>
+<script>
+    (function () {
+      var buttons = document.querySelectorAll('.video-toggle-btn');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var btn = this;
+          var panelId = btn.getAttribute('aria-controls');
+          var panel = panelId ? document.getElementById(panelId) : null;
+          if (!panel) return;
+
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+
+          if (expanded) {
+            panel.setAttribute('hidden', '');
+          } else {
+            panel.removeAttribute('hidden');
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

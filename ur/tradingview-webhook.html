@@ -2,8 +2,8 @@
 <html lang="ur">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView ویب ہُک گائیڈ - DivAlarm</title>
-<meta content="TradingView ویب ہُک گائیڈ - DivAlarm" property="og:title"/>
+<title>TradingView Webhook گائیڈ - DivAlarm</title>
+<meta content="TradingView Webhook گائیڈ - DivAlarm" property="og:title"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -41,8 +41,8 @@
       font-weight: 700;
       margin-bottom: 2rem;
       background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
-      -webkit-background-clip: text;
       background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
@@ -176,51 +176,173 @@
       min-width: 300px;
     }
     
+    /* Quick Summary (collapsible video embeds) */
+    #quick-summary h2 { margin-top: 0; }
+    .video-toggle {
+      margin: 1.25rem 0;
+      border: 1px solid rgba(0, 212, 255, 0.22);
+      border-radius: 12px;
+      background: rgba(12, 12, 24, 0.75);
+      overflow: hidden;
+    }
+    .video-toggle h3 { margin: 0; }
+    .video-toggle-btn {
+      width: 100%;
+      text-align: left;
+      padding: 1.1rem 1.25rem;
+      background: transparent;
+      border: none;
+      color: #f97316;
+      font: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .video-toggle-btn::after {
+      content: "▸";
+      color: rgba(248, 250, 252, 0.65);
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+      transform: rotate(0deg);
+      flex: 0 0 auto;
+    }
+    .video-toggle-btn[aria-expanded="true"]::after { transform: rotate(90deg); }
+    .video-toggle-btn:focus-visible {
+      outline: 2px solid rgba(0, 212, 255, 0.8);
+      outline-offset: -2px;
+    }
+    .video-toggle-panel {
+      padding: 0 1.25rem 1.25rem 1.25rem;
+      border-top: 1px solid rgba(0, 212, 255, 0.18);
+    }
+    .video-embed {
+      width: 100%;
+      max-width: 435px;
+      margin: 1rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      background: #000;
+    }
+    .video-embed iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 9/16;
+      min-height: 500px; /* Fallback */
+      border: 0;
+      display: block;
+    }
+    .video-links a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    .video-links a:hover { opacity: 0.85; }
+
     @media (max-width: 768px) {
       .manual-container { padding: 30px 20px; }
       .manual-title { font-size: 2.2rem; }
       .manual-section h2 { font-size: 1.8rem; }
       .manual-section h3 { font-size: 1.4rem; }
       .manual-section p, .manual-section li { font-size: 1.1rem; }
-      /* Override any inline max-width (e.g., style="max-width: 680px") on mobile */
-      .manual-section img { max-width: 100% !important; }
       .image-row img { max-width: 100%; min-width: auto; }
       .code-block p { font-size: 0.95rem; }
+      .video-toggle-btn { padding: 1rem 1.1rem; }
     }
   </style>
-<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
-<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="manual-container">
 <a class="back-link" href="user-manual.html">← یوزر مینوئل پر واپس جائیں</a>
-<h1 class="manual-title">🔗 TradingView ویب ہُک گائیڈ</h1>
+<h1 class="manual-title">🔗 TradingView Webhook گائیڈ</h1>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 فہرستِ مضامین</h3>
 <ul>
+<li><a href="#quick-summary">فوری خلاصہ</a></li>
 <li><a href="#keyword">کی ورڈ الرٹس</a></li>
 <li><a href="#auto-order">TradingView کے ساتھ آٹو آرڈر</a></li>
 <li><a href="#divalarm-keywords">DivAlarm سگنل کی ورڈز</a></li>
 <li><a href="#combination">سگنل کمبینیشن الرٹس</a></li>
 </ul>
 </div>
+<!-- Quick Summary Section -->
+<div class="manual-section" id="quick-summary">
+<h2>DivAlarm × TradingView – فوری خلاصہ</h2>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">TradingView کو ایپ سے کنیکٹ کریں</button>
+</h3>
+<div class="video-toggle-panel" id="qs-connect-tv">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="TradingView کو ایپ سے کنیکٹ کریں" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">YouTube پر کھولیں</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">TradingView کے لیے فورس الارم سیٹ اپ</button>
+</h3>
+<div class="video-toggle-panel" id="qs-force-alarm">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="TradingView کے لیے فورس الارم سیٹ اپ" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">YouTube پر کھولیں</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">TradingView سگنلز سے آٹو آرڈر</button>
+</h3>
+<div class="video-toggle-panel" id="qs-auto-order">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="TradingView سگنلز سے آٹو آرڈر" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">YouTube پر کھولیں</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">ایکسچینج API کی سیٹ اپ</button>
+</h3>
+<div class="video-toggle-panel" id="qs-exchange-api">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="ایکسچینج API کی سیٹ اپ" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" rel="noopener noreferrer" target="_blank">YouTube پر کھولیں</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">TradingView سے کسٹم انڈیکیٹر کمبینیشنز بنائیں</button>
+</h3>
+<div class="video-toggle-panel" id="qs-custom-indicators">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="TradingView سے کسٹم انڈیکیٹر کمبینیشنز بنائیں" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">YouTube پر کھولیں</a></p>
+</div>
+</div>
+</div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
 <h2>🔔 کی ورڈ الرٹس</h2>
-<h3>TradingView میں ویب ہُک شامل کرنا</h3>
+<h3>TradingView میں Webhook شامل کرنا</h3>
 <img alt="TradingView الرٹ شامل کریں" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
 <p>TradingView میں جس انڈیکیٹر سے آپ سگنلز لینا چاہتے ہیں اس پر رائٹ کلک کریں اور "Add Alert on ~" پر کلک کریں۔</p>
 <img alt="Webhook URL سیٹنگ" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="نوٹیفکیشن سیٹنگز" src="../images/image_tv.png" style="max-width: 600px;"/>
 <p>"Notifications" سیکشن میں "Webhook URL" کو چیک کریں اور ایپ سے کاپی کیا گیا ایڈریس نیچے والے اِن پٹ فیلڈ میں پیسٹ کریں۔</p>
-<p>ایک بار سیٹ ہو جائے تو دیگر الرٹس کے لیے یہ خودکار طور پر چیک/فل ہو جائے گا۔</p>
-<img alt="پیغام کی سیٹنگز" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>"Messages" سیکشن میں "Message" کے تحت اپنی مرضی کا کوئی بھی کی ورڈ شامل کریں (مثلاً "AAA")۔</p>
+<p>سیٹ ہونے کے بعد، یہ دوسرے الرٹس کے لیے خودکار طور پر چیک/فل ہو جائے گا۔</p>
+<img alt="میسج سیٹنگز" src="../images/image%201_tv.png" style="max-width: 680px;"/>
+<p>"Messages" سیکشن میں "Message" کے تحت، اپنی مرضی کا کوئی بھی کی ورڈ شامل کریں (مثلاً "AAA")۔</p>
 <p>TradingView الرٹ شیڈول کرنے کے لیے "Create" پر کلک کریں۔</p>
 <h3>ایپ میں TradingView الرٹس وصول کرنا</h3>
 <img alt="ایپ کی ورڈ سیٹنگز" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>ایپ میں 'Keyword Include' سیکشن میں کی ورڈ (مثلاً "AAA") شامل کریں۔ جب TradingView الرٹ کے "Message" میں وہ کی ورڈ موجود ہوگا تو سیٹنگ کے مطابق الارم بج جائے گا۔</p>
+<p>ایپ میں 'Keyword Include' سیکشن میں کی ورڈ (مثلاً "AAA") شامل کریں۔ جب TradingView الرٹ کے "Message" میں وہ کی ورڈ موجود ہوگا، تو ترتیب کے مطابق الارم بج جائے گا۔</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
@@ -250,11 +372,11 @@
 <h3>مثالیں</h3>
 <div class="code-block">
 <p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ RSI Divergence، BTCUSDT.P، عنوان میں "Bull" شامل ہو، بن رہا ہے، مرکزی 5m، ذیلی 1m</p>
+<p class="desc">→ RSI Divergence, BTCUSDT.P, عنوان میں "Bull" شامل ہو، Forming, مین 5m, سب 1m</p>
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ RSI Divergence، ETHUSDT.P، عنوان میں "Bear" شامل ہو، مکمل، 15m، کوئی ذیلی ٹائم فریم نہیں</p>
+<p class="desc">→ RSI Divergence, ETHUSDT.P, عنوان میں "Bear" شامل ہو، Complete, 15m, کوئی سب ٹائم فریم نہیں</p>
 </div>
 <img alt="کی ورڈ کی مثال" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
@@ -265,29 +387,51 @@
 <p><code>"@E@BTC@Near Support@1m"</code></p>
 <p><code>"@E@BTC@Near Resistance@5m"</code></p>
 <p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ قیمت کا الرٹ، BTC کوائن، عنوان میں "Up" شامل ہو</span></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ پرائس الرٹ، BTC کوائن، عنوان میں "Up" شامل ہو</span></p>
 <p><code>"@P@ETH@Down"</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
 <h2>🔀 سگنل کمبینیشن الرٹس</h2>
-<p>متعدد TradingView سگنلز کو ملا کر نئے یا فلٹر شدہ سگنلز بنائیں۔</p>
+<p>نئے یا فلٹرڈ سگنلز بنانے کے لیے متعدد TradingView سگنلز کو یکجا کریں۔</p>
 <div class="image-row">
 <img alt="کمبینیشن الرٹ سیٹنگز" src="../images/image%205_tv.png"/>
 <div>
-<p>ایسی شرائط سیٹ کریں جو ایک مقررہ وقت کی ونڈو کے اندر پوری ہوں تاکہ الارم ٹرگر ہو سکے۔</p>
-<p><strong>مثال:</strong><br/> 1 گھنٹہ 30 منٹ کے اندر:<br/> • 'کلیدی لفظ A والا الرٹ' AND<br/> • 'کلیدی لفظ B والا الرٹ' دونوں آئیں، OR<br/> • 'کلیدی لفظ C والا الرٹ' آئے</p>
+<p>ایسی شرائط سیٹ کریں جو الارم ٹرگر ہونے کے لیے ایک مقررہ وقت کی ونڈو کے اندر پوری ہونا ضروری ہوں۔</p>
+<p><strong>مثال:</strong><br/> 1 گھنٹہ 30 منٹ کے اندر:<br/> • 'کی ورڈ A والا الرٹ' AND<br/> • 'کی ورڈ B والا الرٹ' دونوں موصول ہوں، OR<br/> • 'کی ورڈ C والا الرٹ' موصول ہو</p>
 <p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
 <p><strong>&amp;</strong> = "AND" (دونوں شرائط پوری ہونا ضروری ہیں)</p>
-<p><strong>|</strong> = "OR" (کسی ایک شرط کا پورا ہونا کافی ہے)</p>
-<p>اگر انفرادی کلیدی لفظ والے الارمز بند بھی ہوں، تب بھی شرائط پوری ہونے پر کمبینیشن الرٹ ٹرگر ہو سکتا ہے۔</p>
+<p><strong>|</strong> = "OR" (کوئی ایک شرط پوری ہو سکتی ہے)</p>
+<p>اگر انفرادی کی ورڈ الارمز بند بھی ہوں، تب بھی شرائط پوری ہونے پر کمبینیشن ٹرگر ہو سکتا ہے۔</p>
 <p><strong>کمبینیشن الرٹس کے ساتھ آٹو آرڈرز بھی ممکن ہیں!</strong></p>
 </div>
 </div>
 </div>
+<script>
+    (function () {
+      var buttons = document.querySelectorAll('.video-toggle-btn');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+          var btn = this;
+          var panelId = btn.getAttribute('aria-controls');
+          var panel = panelId ? document.getElementById(panelId) : null;
+          if (!panel) return;
+
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+
+          if (expanded) {
+            panel.setAttribute('hidden', '');
+          } else {
+            panel.removeAttribute('hidden');
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

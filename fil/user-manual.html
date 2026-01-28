@@ -85,6 +85,12 @@
       margin-top: 2rem;
       margin-bottom: 1rem;
     }
+    .manual-section h4 {
+      font-size: 1.3rem;
+      color: #a78bfa;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
     .manual-section p {
       font-size: 1.2rem;
       line-height: 1.9;
@@ -180,66 +186,90 @@
 <h3>📋 Talaan ng Nilalaman</h3>
 <ul>
 <li><a href="#menu">Pangkalahatang-ideya ng Menu</a></li>
-<li><a href="#divlog">Pagtingin sa mga Notification ng Signal (DivLog)</a></li>
+<li><a href="#divlog">Pagtingin sa Mga Notification ng Signal (DivLog)</a></li>
+<li><a href="#signal-details">Tingnan ang Detalye ng Signal</a></li>
 <li><a href="#div">RSI Mga Setting ng Divergence Alert (Div)</a></li>
-<li><a href="#ei">Mga Alert ng Karagdagang Indicator (EI)</a></li>
+<li><a href="#ei">Mga Karagdagang Alert ng Indicator (EI)</a></li>
 <li><a href="#webhook">TradingView Webhook at Auto-Order</a></li>
 <li><a href="#settings">Pahina ng Settings</a></li>
-<li><a href="#referral">Mga Referral Reward</a></li>
+<li><a href="#referral">Mga Reward sa Referral</a></li>
 </ul>
 </div>
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
-<h2>📌 Overview ng Menu</h2>
+<h2>📌 Pangkalahatang-ideya ng Menu</h2>
 <p><strong>"DivLog"</strong> — Dito mo natatanggap ang mga divergence alert signal.</p>
 <p><strong>"Div"</strong> — I-configure ang mga signal na 'RSI Divergence Complete' o 'RSI Divergence Forming'.</p>
-<p><strong>"EI"</strong> — Mag-set up ng dagdag na indicator alerts: price reach alerts, support/resistance approach alerts, EMA/Bollinger Band/Supertrend alerts. ("Extra Indicators")</p>
-<p><strong>"Webhook"</strong> — Makikita lang ng Pro users. Tumanggap ng TradingView webhooks para sa mas powerful na alarms, kombinasyon ng signals, at auto-orders.</p>
-<p><strong>"Setting"</strong> — I-configure ang mga uri ng alarm, tunog, referral reward settings, announcements, at referral notifications.</p>
+<p><strong>"EI"</strong> — Mag-set up ng mga karagdagang indicator alert: alert kapag naabot ang presyo, alert kapag papalapit sa support/resistance, EMA/Bollinger Band/Supertrend alerts. ("Extra Indicators")</p>
+<p><strong>"Webhook"</strong> — Makikita lang ng Pro users. Tumanggap ng TradingView webhooks para sa mas malalakas na alarm, kombinasyon ng signal, at auto-orders.</p>
+<p><strong>"Setting"</strong> — I-configure ang mga uri ng alarm, tunog, settings ng referral reward, mga anunsyo, at mga notification sa referral.</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
-<h2>📊 Pagtingin sa Signal Notifications ("DivLog")</h2>
+<h2>📊 Pagtingin sa Mga Notification ng Signal ("DivLog")</h2>
 <p>Ang "DivLog" ang lugar kung saan mo natatanggap ang mga divergence alert signal.</p>
 <ol>
-<li>Hanggang 150 signals ang nase-save. Maglinis paminsan-minsan.</li>
-<li>Ipinapakita ang mga alert na hindi pa na-check. I-check ang mark para i-dismiss ang alarm. Max 5 pinakabagong hindi pa na-check na alerts ang ipinapakita.</li>
+<li>Hanggang 150 signal ang nase-save. Maglinis paminsan-minsan.</li>
+<li>Ipinapakita ang mga alert na hindi pa na-check. I-check ang mark para i-dismiss ang alarm. Max na 5 pinakabagong hindi pa na-check na alert ang ipinapakita.</li>
 <li>I-filter para ang makita mo lang ay ang mga signal na gusto mo.</li>
 </ol>
 </div>
+<!-- Signal Details Section -->
+<div class="manual-section" id="signal-details">
+<h2>🔍 Tingnan ang Detalye ng Signal</h2>
+<img alt="View ng Detalye ng Signal" src="../images/image_detail.png" style="max-width: 500px;"/>
+<p>Sa pag-tap sa bawat alert, makikita mo ang detalyadong impormasyon ng signal.</p>
+<p>Para sa mga RSI Divergence alert, makikita mo ang start at end price, mga value ng RSI, at mga timestamp.</p>
+<p><strong>"DivForming"</strong> ipinapakita ang mga divergence na nabubuo sa ibang timeframe sa mismong sandaling lumabas ang signal.</p>
+<p><strong>"OutsideBB"</strong> ipinapakita kung aling mga timeframe ang nasa labas ng Bollinger Bands noong lumabas ang signal.</p>
+<ul>
+<li>Para sa mga timeframe na <strong>mas maliit</strong> kaysa sa timeframe ng signal, ipinapakita nito kung aling mga candle ang nasa labas ng Bollinger Band sa sandali ng signal (<em>at now</em>).</li>
+<li>Para sa mga timeframe na <strong>mas malaki</strong> kaysa sa timeframe ng signal, ipinapakita nito kung aling mga candle ang nasa labas ng Bollinger Band sa mas huling RSI divergence peak (<em>at peak</em>).</li>
+</ul>
+<h4>Halimbawa</h4>
+<div class="highlight">
+<p>Sa halimbawa sa itaas, may <strong>Bullish signal</strong> sa <strong>15m</strong> timeframe.</p>
+<p><strong>"DivForming"</strong> ay nagpapahiwatig na may nabubuong bearish divergences sa 30m at 1h timeframes.</p>
+<p><strong>"OutsideBB"</strong> ay nagpapakita ng:</p>
+<ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+<li>Sa mismong sandali ng signal, ang <strong>5m</strong> timeframe ay nasa labas ng Bollinger Band.</li>
+<li>Sa RSI divergence peak, ang <strong>15m, 30m, at 1h</strong> timeframes ay nasa labas ng Bollinger Band.</li>
+</ul>
+</div>
+</div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ RSI Settings ng Divergence Alert ("Div")</h2>
+<h2>⚙️ RSI Mga Setting ng Divergence Alert ("Div")</h2>
 <img alt="Screen ng Div Settings" src="../images/image_manual.png" style="max-width: 500px;"/>
-<h3>Pangkalahatang RSI Settings ng Divergence</h3>
+<h3>Pangkalahatang RSI Mga Setting ng Divergence</h3>
 <ol>
 <li>Piliin kung aling coin ang iko-configure.</li>
-<li>Pumili sa pagitan ng 'RSI Divergence Complete' vs 'RSI Divergence Forming' signals.</li>
-<li>Batch settings area — i-apply ang settings sa lahat ng items sa ibaba nang sabay-sabay.</li>
+<li>Pumili sa pagitan ng 'RSI Divergence Complete' at 'RSI Divergence Forming' na mga signal.</li>
+<li>Batch settings area — i-apply ang settings sa lahat ng item sa ibaba nang sabay-sabay.</li>
 <li>Magdagdag ng divergence filters gamit ang + button.</li>
 <li>I-reset ang filters sa inirerekomendang default settings.</li>
-<li>I-set ang price conditions nang batch.</li>
+<li>I-set ang mga kondisyon ng presyo nang batch.</li>
 </ol>
-<h3>Settings ng Bawat Filter</h3>
+<h3>Mga Setting ng Bawat Filter</h3>
 <ol start="7">
 <li>Configure individual RSI divergence signals to receive:
-          <p><strong>(a)</strong> Piliin ang gustong timeframe. Para sa 'RSI Divergence Forming', piliin pareho ang 'main timeframe' at 'sub timeframe'. Magti-trigger ang alerts kapag nabuo ang RSI peak sa mas maliit na timeframe habang nabubuo ang divergence sa main timeframe (price reversal).</p>
-<p><strong>(b)</strong> Piliin ang signals: "Bull(bullish)" o "Bear(bearish)". Blue = naka-enable ang alerts, Gray = naka-disable.</p>
-<p><strong>(c)</strong> I-set ang oversold/overbought thresholds. Bullish alert kapag ang 'starting RSI' ay mas mababa sa oversold level; bearish kapag ang 'starting RSI' ay mas mataas sa overbought level.</p>
+          <p><strong>(a)</strong> Piliin ang gustong timeframe. Para sa 'RSI Divergence Forming', piliin ang parehong 'main timeframe' at 'sub timeframe'. Magti-trigger ang alerts kapag nabuo ang RSI peak sa mas maliit na timeframe habang nabubuo ang divergence sa main timeframe (price reversal).</p>
+<p><strong>(b)</strong> Piliin ang signals: "Bull(bullish)" o "Bear(bearish)". Asul = naka-enable ang alerts, Gray = naka-disable.</p>
+<p><strong>(c)</strong> Itakda ang oversold/overbought thresholds. Bullish alerts kapag ang 'starting RSI' ay mas mababa sa oversold level; bearish kapag ang 'starting RSI' ay mas mataas sa overbought level.</p>
 <p><strong>(d)</strong> I-configure ang uri ng alarm at tunog. Nasa Settings page ang detalyadong settings:</p>
-<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Force Alarm (Loop) — tuloy-tuloy na tutunog hanggang i-stop nang manual, hindi pinapansin ang silent mode<br/><br/> <span class="alarm-type alarm-type-b">B</span> Force Alarm (Once) — tutunog nang isang beses, hindi pinapansin ang silent mode<br/><br/> <span class="alarm-type alarm-type-c">C</span> Sundin ang Settings ng Phone — gagamit ng normal na sound settings ng device<br/><br/> <span class="alarm-type alarm-type-d">D</span> Vibrate Lang — vibration lang, walang tunog<br/><br/> <span class="alarm-type alarm-type-e">E</span> Silent Mode — walang tunog o vibration</div>
-<img alt="Mga Setting ng Uri ng Alarm" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Mag-set ng mga dagdag na kondisyon para sa mga kapaki-pakinabang na signal lang: mga kondisyon sa presyo, mga kondisyon sa pagbuo sa ibang timeframe RSI, at mga kondisyon sa Bollinger Band.</p>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Force Alarm (Loop) — tuloy-tuloy na tutunog hanggang manu-manong ihinto, hindi pinapansin ang silent mode<br/><br/> <span class="alarm-type alarm-type-b">B</span> Force Alarm (Once) — tutunog nang isang beses, hindi pinapansin ang silent mode<br/><br/> <span class="alarm-type alarm-type-c">C</span> Sundin ang Settings ng Phone — gagamit ng normal na sound settings ng device<br/><br/> <span class="alarm-type alarm-type-d">D</span> Vibrate Only — vibration lang, walang tunog<br/><br/> <span class="alarm-type alarm-type-e">E</span> Silent Mode — walang tunog o vibration</div>
+<img alt="Settings ng Uri ng Alarm" src="../images/image%201_manual.png" style="max-width: 350px;"/>
+<p><strong>(e)</strong> Magtakda ng dagdag na kondisyon para mga kapaki-pakinabang na signal lang: mga kondisyon ng presyo, ibang timeframe RSI forming conditions, at Bollinger Band conditions.</p>
 </li>
 </ol>
 <div class="image-row">
-<img alt="Karagdagang Kondisyon 1" src="../images/image%202_manual.png"/>
-<img alt="Karagdagang Kondisyon 2" src="../images/image%203_manual.png"/>
+<img alt="Mga Karagdagang Kondisyon 1" src="../images/image%202_manual.png"/>
+<img alt="Mga Karagdagang Kondisyon 2" src="../images/image%203_manual.png"/>
 </div>
 <p><strong>e0)</strong> Kapag maraming kondisyon ang naka-set, i-configure ang relasyon: "and" (lahat dapat matugunan) o "or" (kahit isa lang ang matugunan).</p>
-<p><strong>e1)</strong> Mag-set ng kondisyon sa presyo — mag-alert kapag ang start/end price ng divergence ay mas mataas/mas mababa sa isang partikular na presyo.</p>
+<p><strong>e1)</strong> Itakda ang mga kondisyon ng presyo — mag-alert kapag ang divergence start/end price ay mas mataas/mas mababa sa isang partikular na presyo.</p>
 <p><strong>e2)</strong> Mag-alert kapag nabubuo ang divergence sa ibang timeframe.</p>
-<p><strong>e3)</strong> I-check kung ang final peak price ng RSI divergence ay nasa labas ng Bollinger Bands.</p>
+<p><strong>e3)</strong> I-check kung ang RSI divergence final peak price ay nasa labas ng Bollinger Bands.</p>
 <h3>Mga Tip sa Strategy</h3>
 <div class="warning">
 <ul>
@@ -251,10 +281,10 @@
 </div>
 <!-- EI Section -->
 <div class="manual-section" id="ei">
-<h2>📈 Mga Dagdag na Alert sa Indicator ("EI")</h2>
+<h2>📈 Mga Karagdagang Alert sa Indicator ("EI")</h2>
 <div class="image-row">
-<img alt="Mga Setting ng EI 1" src="../images/image%204_manual.png"/>
-<img alt="Mga Setting ng EI 2" src="../images/image%205_manual.png"/>
+<img alt="EI Settings 1" src="../images/image%204_manual.png"/>
+<img alt="EI Settings 2" src="../images/image%205_manual.png"/>
 </div>
 <ol>
 <li>Piliin kung aling coin ang iko-configure.</li>
@@ -265,7 +295,7 @@
 <li>Mag-set ng alerts sa pagbabago ng Supertrend.</li>
 </ol>
 <div class="warning">
-<p>※ Ang mga dagdag na indicator (3, 4, 5, 6) ay nagre-reset kapag nag-log out ka.</p>
+<p>※ Ang mga karagdagang indicator (3, 4, 5, 6) ay nagre-reset kapag nag-log out ka.</p>
 </div>
 </div>
 <!-- Webhook Section -->
@@ -286,22 +316,27 @@
 <ol>
 <li>I-configure ang mga uri ng alarm (A, B...) at mga tunog ng alarm (1, 2...).</li>
 <li>Para sa auto-orders, ilagay ang API keys ng bawat exchange.</li>
+<li>Puwede mong i-test kung dumarating ang notifications sa kasalukuyan mong phone. Sa pagpapadala ng test message sa sarili mo, mache-check mo kung naide-deliver ang alerts ayon sa mga filter na na-configure mo.</li>
+<li>Page ito para i-set up ang mga opsyon na may kinalaman sa referral rewards.</li>
+<li>Dito mo natatanggap ang mga global announcement.</li>
+<li>Dito mo natatanggap ang mga exclusive announcement na ipinapadala ng referral na ni-register mo noong nag-sign up ka.</li>
+<li>Puwede mong i-switch ang buong app sa pagitan ng Light Mode at Dark Mode.</li>
 </ol>
 </div>
 <!-- Referral Section -->
 <div class="manual-section" id="referral">
-<h2>💰 Mga Referral Reward</h2>
-<img alt="Mga Setting ng Referral" src="../images/image%208_manual.png" style="max-width: 550px;"/>
+<h2>💰 Referral Rewards</h2>
+<img alt="Referral Settings" src="../images/image%208_manual.png" style="max-width: 550px;"/>
 <p><strong>(a)</strong> Ang referral code mo. Kapag may nag-subscribe gamit ang code na ito, ikaw ang magiging referrer nila.</p>
-<p><strong>(b)</strong> Ang invite link mo. Sinumang mag-subscribe gamit ang link na ito ay awtomatikong mare-register ka bilang referrer nila.</p>
-<p><strong>(c)</strong> Ilagay ang wallet address mo para sa referral rewards. Dapat ay BEP-20 USDT wallet (inirerekomenda ang mga wallet ng major exchange). Maaari mong i-test kung tama ang pagpasok ng deposit mula sa 'My Info' sa website ng DivAlarm.</p>
-<p><strong>(d)</strong> Ipinapakita ang status ng referral rewards mo: kasalukuyang bilang ng referrals, posibleng halaga ng reward, confirmed na halaga, at paid na halaga.</p>
-<p>Ang rewards ay lilipat mula sa “potential” papuntang “confirmed” 14 na araw matapos ang bayad sa subscription ng na-refer na user (hindi kasama ang free trial). Ang payouts ay lingguhan tuwing Martes, UTC midnight.</p>
+<p><strong>(b)</strong> Ang invite link mo. Sinumang mag-subscribe gamit ang link na ito ay awtomatikong ire-register ka bilang referrer nila.</p>
+<p><strong>(c)</strong> Ilagay ang wallet address mo para sa referral rewards. Dapat ay BEP-20 USDT wallet (inirerekomenda ang wallets ng major exchanges). Puwede mong i-test kung gumagana nang tama ang deposits mula sa 'My Info' sa DivAlarm website.</p>
+<p><strong>(d)</strong> Ipinapakita ang status ng referral rewards mo: kasalukuyang bilang ng referrals, posibleng reward amount, confirmed amount, at paid amount.</p>
+<p>Lililipat ang rewards mula 'potential' papuntang 'confirmed' pagkalipas ng 14 araw matapos ang subscription payment ng na-refer na user (hindi kasama ang free trial). Lingguhan ang bayad tuwing Martes, UTC midnight.</p>
 <h3>Paano Kumita ng Referral Rewards</h3>
 <div class="highlight">
-<p><strong>1]</strong> Pumunta sa Settings → Referral Rewards → Ilagay ang wallet address mo para sa rewards.</p>
-<p><strong>2]</strong> I-share ang referral link mo. Madadala ang iba sa subscription page gamit ang code mo.</p>
-<p><strong>3]</strong> Kapag nag-subscribe at nagbayad sila, ide-deposit ang rewards.</p>
+<p><strong>1]</strong> Pumunta sa Settings → Referral Rewards → Ilagay ang reward wallet address mo.</p>
+<p><strong>2]</strong> I-share ang referral link mo. Madidirekta ang iba sa page ng subscription gamit ang code mo.</p>
+<p><strong>3]</strong> Kapag nag-subscribe at nagbayad sila, awtomatikong maide-deposit ang rewards.</p>
 </div>
 </div>
 </div>
