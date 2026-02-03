@@ -329,10 +329,12 @@
     document.body.appendChild(backdrop);
     document.body.appendChild(root);
 
-    // If the Webflow navbar exists, place the switcher at the top-right (fixed),
-    // instead of inserting into the navbar DOM (avoids z-index/overlay click issues).
+    // Place the switcher at the top-right when the page has a top navigation
+    // (Webflow) or when it's one of the standalone "manual-style" pages.
+    // This keeps the switcher in a consistent spot across the site.
     var hasWebflowNav = !!document.querySelector(".navbar-wrapper-three");
-    if (hasWebflowNav) {
+    var hasManualLayout = !!document.querySelector(".manual-container");
+    if (hasWebflowNav || hasManualLayout) {
       root.classList.add("is-top");
     }
   }
