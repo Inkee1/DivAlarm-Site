@@ -153,7 +153,7 @@
 <script type="module">
   import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
   //import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
-   import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+   import { getAuth, onAuthStateChanged, signOut, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
     import { getFunctions } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-functions.js";
 import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
   // ✅ Firebase가 이미 실행 중인지 확인 후 초기화 (중복 실행 방지)
@@ -169,6 +169,47 @@ import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/fireb
   const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
   const functions = getFunctions(app);
   const auth = getAuth(app);
+  // App -> Web SSO: If a Firebase custom token is passed via URL, sign in automatically.
+  (async () => {
+    try {
+      const sp = new URLSearchParams(window.location.search || "");
+      const rawHash = window.location.hash || "";
+      const hash = rawHash.startsWith("#") ? rawHash.slice(1) : rawHash;
+      const hp =
+        hash && (hash.includes("=") || hash.includes("&"))
+          ? new URLSearchParams(hash)
+          : null;
+
+      const customToken = (
+        sp.get("ct") ||
+        sp.get("customToken") ||
+        (hp ? hp.get("ct") || hp.get("customToken") : "") ||
+        ""
+      ).trim();
+
+      if (!customToken) return;
+
+      // Remove token from URL (keeps other params)
+      sp.delete("ct");
+      sp.delete("customToken");
+      if (hp) {
+        hp.delete("ct");
+        hp.delete("customToken");
+      }
+      const newSearch = sp.toString();
+      const newHash = hp ? hp.toString() : hash;
+      const cleanUrl =
+        window.location.pathname +
+        (newSearch ? `?${newSearch}` : "") +
+        (newHash ? `#${newHash}` : "");
+      window.history.replaceState(null, "", cleanUrl);
+
+      await signInWithCustomToken(auth, customToken);
+      console.log("✅ App SSO sign-in success");
+    } catch (e) {
+      console.error("❌ App SSO sign-in failed:", e);
+    }
+  })();
   window.app = app;
   window.auth = auth;
   window.functions = functions;
