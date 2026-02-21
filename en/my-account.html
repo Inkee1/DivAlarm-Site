@@ -354,15 +354,16 @@
     <!-- Action Buttons -->
     <div id="box1" style="display:none;">
       <div class="actions-grid">
-        <!-- Test Payout (conditionally shown via JS) -->
-        <a id="sub-btn-test" href="#" class="action-btn btn-test" style="display:none;">
-           Reward Wallet Test (1.11 USDT)
-        </a>
-
         <!-- Subscription Actions -->
         <a id="resub-btn" href="pricing.html" class="action-btn btn-primary" style="display:none;">
           Start Subscription
         </a>
+        
+        <!-- [NEW] Change Subscription -->
+        <a id="change-sub-btn" href="pricing.html" class="action-btn btn-secondary" style="display:none;">
+          Change Subscription
+        </a>
+
         <a id="unsub-btn" href="#" class="action-btn btn-danger" style="display:none;">
           Cancel Subscription
         </a>
@@ -370,6 +371,11 @@
         <!-- Delete Account -->
         <a id="delete-account-btn" href="#" class="action-btn btn-delete">
           Delete Account
+        </a>
+
+        <!-- Test Payout (Moved down) -->
+        <a id="sub-btn-test" href="#" class="action-btn btn-test" style="display:none;">
+           Reward Wallet Test (1.11 USDT)
         </a>
       </div>
     </div>
@@ -387,7 +393,7 @@
   import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
   //import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
    import { getAuth, onAuthStateChanged, signOut, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
-    import { getFunctions } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-functions.js";
+   import { getFunctions } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-functions.js";
 import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
   // ✅ Firebase가 이미 실행 중인지 확인 후 초기화 (중복 실행 방지)
   const firebaseConfig = {
@@ -587,6 +593,7 @@ function renderMembershipInfo() {
   const nextPaymentEl = document.getElementById("info-next");
   const walletEl = document.getElementById("info-wallet");
   const cancelBtn = document.getElementById("unsub-btn");
+  const changeBtn = document.getElementById("change-sub-btn");
   const resubBtn = document.getElementById("resub-btn");
   let rawMembership = localStorage.getItem("membership");
   if (rawMembership === null || rawMembership === "undefined") {
@@ -640,9 +647,11 @@ function renderMembershipInfo() {
     // 버튼 상태 조정 - flex/block 주의
     if ((Number(membership) === 0) || isCanceled) {
       if (cancelBtn) cancelBtn.style.display = "none";
+      if (changeBtn) changeBtn.style.display = "none";
       if (resubBtn) resubBtn.style.display = "flex"; // Changed to flex for centering
     } else {
       if (cancelBtn) cancelBtn.style.display = "flex"; // Changed to flex for centering
+      if (changeBtn) changeBtn.style.display = "flex";
       if (resubBtn) resubBtn.style.display = "none";
     }
   }
