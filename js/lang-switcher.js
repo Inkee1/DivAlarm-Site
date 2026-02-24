@@ -150,7 +150,10 @@
       else if (rel.endsWith("/")) rel = rel + "index.html";
       else {
         var last = suffix[suffix.length - 1] || "";
-        if (last.indexOf(".") === -1) rel = rel + "/index.html";
+        // If the current page is accessed via a "pretty URL" like /ko/my-account,
+        // GitHub Pages resolves it to my-account.html (not a directory). In that case,
+        // switching languages must keep it as a file, not /index.html.
+        if (last.indexOf(".") === -1) rel = rel + ".html";
       }
 
       var prefix = parts.slice(0, found.index);
