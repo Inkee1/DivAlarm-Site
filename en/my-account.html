@@ -139,6 +139,16 @@
     border-color: var(--accent-cyan, #00d4ff);
   }
 
+  .btn-change {
+    background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+    border: none;
+  }
+  .btn-change:hover {
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+  }
+
   .btn-test {
     background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
     color: black;
@@ -360,7 +370,7 @@
         </a>
         
         <!-- [NEW] Change Subscription -->
-        <a id="change-sub-btn" href="pricing.html" class="action-btn btn-secondary" style="display:none;">
+        <a id="change-sub-btn" href="pricing.html" class="action-btn btn-change" style="display:none;">
           Change Subscription
         </a>
 
