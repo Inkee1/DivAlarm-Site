@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>TradingView Webhook Guide - DivAlarm</title>
-  <meta content="TradingView Webhook Guide - DivAlarm" property="og:title">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <style>
+<meta charset="utf-8"/>
+<title>TradingView Webhook Guide - DivAlarm</title>
+<meta content="TradingView Webhook Guide - DivAlarm" property="og:title"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
@@ -252,253 +253,182 @@
       .video-toggle-btn { padding: 1rem 1.1rem; }
     }
   </style>
-  <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css">
-  <script src="../js/lang-switcher.js" type="text/javascript" defer></script>
-</head>
+<link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
+<script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
+<meta content='Right-click on the indicator you want to receive signals from in TradingView and click "Add Alert on ~".' name="description"/><meta content='Right-click on the indicator you want to receive signals from in TradingView and click "Add Alert on ~".' property="og:description"/><meta content='Right-click on the indicator you want to receive signals from in TradingView and click "Add Alert on ~".' name="twitter:description"/><meta content="https://www.divalarm.com/en/tradingview-webhook.html" property="og:url"/><meta content="TradingView Webhook Guide - DivAlarm" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/en/tradingview-webhook.html","name":"TradingView Webhook Guide - DivAlarm","inLanguage":"en","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/en/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-  <div class="manual-container">
-    <a href="user-manual.html" class="back-link">← Back to User Manual</a>
-    <h1 class="manual-title">🔗 TradingView Webhook Guide</h1>
-    
-    <!-- Table of Contents -->
-    <div class="toc">
-      <h3>📋 Table of Contents</h3>
-      <ul>
-        <li><a href="#quick-summary">Quick Summary</a></li>
-        <li><a href="#keyword">Keyword Alerts</a></li>
-        <li><a href="#auto-order">Auto-Order with TradingView</a></li>
-        <li><a href="#divalarm-keywords">DivAlarm Signal Keywords</a></li>
-        <li><a href="#combination">Signal Combination Alerts</a></li>
-      </ul>
-    </div>
-
-    <!-- Quick Summary Section -->
-    <div class="manual-section" id="quick-summary">
-      <h2>DivAlarm × TradingView – Quick Summary</h2>
-
-      <div class="video-toggle">
-        <h3>
-          <button type="button" class="video-toggle-btn" aria-expanded="true" aria-controls="qs-connect-tv">
+<div class="manual-container">
+<a class="back-link" href="user-manual.html">← Back to User Manual</a>
+<h1 class="manual-title">🔗 TradingView Webhook Guide</h1>
+<!-- Table of Contents -->
+<div class="toc">
+<h3>📋 Table of Contents</h3>
+<ul>
+<li><a href="#quick-summary">Quick Summary</a></li>
+<li><a href="#keyword">Keyword Alerts</a></li>
+<li><a href="#auto-order">Auto-Order with TradingView</a></li>
+<li><a href="#divalarm-keywords">DivAlarm Signal Keywords</a></li>
+<li><a href="#combination">Signal Combination Alerts</a></li>
+</ul>
+</div>
+<!-- Quick Summary Section -->
+<div class="manual-section" id="quick-summary">
+<h2>DivAlarm × TradingView – Quick Summary</h2>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">
             Connect TradingView to the App
           </button>
-        </h3>
-        <div id="qs-connect-tv" class="video-toggle-panel">
-          <div class="video-embed">
-            <iframe
-              width="435"
-              height="773"
-              src="https://www.youtube.com/embed/00UnIp_ZYf4"
-              data-src="https://www.youtube.com/embed/00UnIp_ZYf4"
-              title="Connect TradingView to the App"
-              frameborder="0"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" target="_blank" rel="noopener noreferrer">Open on YouTube</a></p>
-        </div>
-      </div>
-
-      <div class="video-toggle">
-        <h3>
-          <button type="button" class="video-toggle-btn" aria-expanded="true" aria-controls="qs-force-alarm">
+</h3>
+<div class="video-toggle-panel" id="qs-connect-tv">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="Connect TradingView to the App" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">Open on YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">
             Force Alarm Setup for TradingView
           </button>
-        </h3>
-        <div id="qs-force-alarm" class="video-toggle-panel">
-          <div class="video-embed">
-            <iframe
-              width="435"
-              height="773"
-              src="https://www.youtube.com/embed/Q3jDFKG8wIo"
-              data-src="https://www.youtube.com/embed/Q3jDFKG8wIo"
-              title="Force Alarm Setup for TradingView"
-              frameborder="0"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" target="_blank" rel="noopener noreferrer">Open on YouTube</a></p>
-        </div>
-      </div>
-
-      <div class="video-toggle">
-        <h3>
-          <button type="button" class="video-toggle-btn" aria-expanded="true" aria-controls="qs-auto-order">
+</h3>
+<div class="video-toggle-panel" id="qs-force-alarm">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="Force Alarm Setup for TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">Open on YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">
             Auto-Order from TradingView Signals
           </button>
-        </h3>
-        <div id="qs-auto-order" class="video-toggle-panel">
-          <div class="video-embed">
-            <iframe
-              width="435"
-              height="773"
-              src="https://www.youtube.com/embed/T4NzR8Pnv9A"
-              data-src="https://www.youtube.com/embed/T4NzR8Pnv9A"
-              title="Auto-Order from TradingView Signals"
-              frameborder="0"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" target="_blank" rel="noopener noreferrer">Open on YouTube</a></p>
-        </div>
-      </div>
-
-      <div class="video-toggle">
-        <h3>
-          <button type="button" class="video-toggle-btn" aria-expanded="true" aria-controls="qs-exchange-api">
+</h3>
+<div class="video-toggle-panel" id="qs-auto-order">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="Auto-Order from TradingView Signals" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">Open on YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">
             Exchange API Key Setup
           </button>
-        </h3>
-        <div id="qs-exchange-api" class="video-toggle-panel">
-          <div class="video-embed">
-            <iframe
-              width="435"
-              height="773"
-              src="https://www.youtube.com/embed/JBv2UXysv3A"
-              data-src="https://www.youtube.com/embed/JBv2UXysv3A"
-              title="Exchange API Key Setup"
-              frameborder="0"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" target="_blank" rel="noopener noreferrer">Open on YouTube</a></p>
-        </div>
-      </div>
-
-      <div class="video-toggle">
-        <h3>
-          <button type="button" class="video-toggle-btn" aria-expanded="true" aria-controls="qs-custom-indicators">
+</h3>
+<div class="video-toggle-panel" id="qs-exchange-api">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="Exchange API Key Setup" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" rel="noopener noreferrer" target="_blank">Open on YouTube</a></p>
+</div>
+</div>
+<div class="video-toggle">
+<h3>
+<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">
             Create Custom Indicator Combinations from TradingView
           </button>
-        </h3>
-        <div id="qs-custom-indicators" class="video-toggle-panel">
-          <div class="video-embed">
-            <iframe
-              width="435"
-              height="773"
-              src="https://www.youtube.com/embed/x57bL0uNVc4"
-              data-src="https://www.youtube.com/embed/x57bL0uNVc4"
-              title="Create Custom Indicator Combinations from TradingView"
-              frameborder="0"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
-          <p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" target="_blank" rel="noopener noreferrer">Open on YouTube</a></p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Keyword Alerts Section -->
-    <div class="manual-section" id="keyword">
-      <h2>🔔 Keyword Alerts</h2>
-      
-      <h3>Adding Webhook in TradingView</h3>
-      <img src="../images/K-146_-_복사본_tv.png" alt="TradingView Add Alert" style="max-width: 600px;">
-      <p>Right-click on the indicator you want to receive signals from in TradingView and click "Add Alert on ~".</p>
-
-      <img src="../images/K-140_-_복사본_tv.png" alt="Webhook URL Setting" style="max-width: 600px;">
-      <img src="../images/image_tv.png" alt="Notification Settings" style="max-width: 600px;">
-      <p>In the "Notifications" section, check "Webhook URL" and paste the address copied from the app in the input field below.</p>
-      <p>Once set, this will be automatically checked/filled for other alerts.</p>
-
-      <img src="../images/image%201_tv.png" alt="Message Settings" style="max-width: 680px;">
-      <p>In the "Messages" section under "Message", add any keyword you want (e.g., "AAA").</p>
-      <p>Click "Create" to schedule the TradingView alert.</p>
-
-      <h3>Receiving TradingView Alerts in the App</h3>
-      <img src="../images/K-143_-_복사본_tv.png" alt="App Keyword Settings" style="max-width: 500px;">
-      <p>Add the keyword (e.g., "AAA") to the 'Keyword Include' section in the app. When the TradingView alert "Message" contains the keyword, the alarm will sound as configured.</p>
-    </div>
-
-    <!-- Auto-Order Section -->
-    <div class="manual-section" id="auto-order">
-      <h2>🤖 Auto-Order with TradingView Alerts</h2>
-      <img src="../images/K-144_-_복사본_tv.png" alt="Auto-Order Settings" style="max-width: 500px;">
-      <p>You can set up 'Auto-Orders' to be sent to exchanges when keyword alerts are received.</p>
-      
-      <img src="../images/image%202_tv.png" alt="Exchange API Settings" style="max-width: 500px;">
-      <div class="highlight">
-        <p>Supported exchanges for auto-orders: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-        <p>You must enter API keys in the app Settings page.</p>
-      </div>
-    </div>
-
-    <!-- DivAlarm Keywords Section -->
-    <div class="manual-section" id="divalarm-keywords">
-      <h2>📝 Registering DivAlarm Signals as Keywords</h2>
-      <img src="../images/image%203_tv.png" alt="DivAlarm Signal Keywords" style="max-width: 500px;">
-      <p>DivAlarm's own alerts can also be added to 'Keyword Combinations' (for combination alerts or auto-orders).</p>
-      
-      <div class="highlight">
-        <p><strong>Format:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
-      </div>
-
-      <p><strong>Alarm Types:</strong></p>
-      <ul>
-        <li><code>@D</code> — RSI Divergence filters</li>
-        <li><code>@E</code> — Extra Indicators</li>
-        <li><code>@P</code> — Price alerts</li>
-      </ul>
-
-      <h3>Examples</h3>
-      <div class="code-block">
-        <p><code>"@D@BTC@Bull@5m@1m"</code></p>
-        <p class="desc">→ RSI Divergence, BTCUSDT.P, title contains "Bull", Forming, main 5m, sub 1m</p>
-      </div>
-
-      <div class="code-block">
-        <p><code>"@D@ETH@Bear@15m@O"</code></p>
-        <p class="desc">→ RSI Divergence, ETHUSDT.P, title contains "Bear", Complete, 15m, no sub timeframe</p>
-      </div>
-
-      <img src="../images/image%204_tv.png" alt="Keyword Example" style="max-width: 500px;">
-
-      <div class="code-block">
-        <p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Extra Indicator, BTC coin, title contains "Sell", 30m</span></p>
-        <p><code>"@E@BTC@Buy@1h"</code></p>
-        <p><code>"@E@ETH@Breakout@15m"</code></p>
-        <p><code>"@E@BTC@Breakdown@5m"</code></p>
-        <p><code>"@E@BTC@Near Support@1m"</code></p>
-        <p><code>"@E@BTC@Near Resistance@5m"</code></p>
-        <p><code>"@E@BTC@EMA50@1h"</code></p>
-        <p><code>"@P@BTC@Up"</code> <span class="desc">→ Price alert, BTC coin, title contains "Up"</span></p>
-        <p><code>"@P@ETH@Down"</code></p>
-      </div>
-    </div>
-
-    <!-- Combination Alerts Section -->
-    <div class="manual-section" id="combination">
-      <h2>🔀 Signal Combination Alerts</h2>
-      <p>Combine multiple TradingView signals to create new or filtered signals.</p>
-      
-      <div class="image-row">
-        <img src="../images/image%205_tv.png" alt="Combination Alert Settings">
-        <div>
-          <p>Set conditions that must be met within a time window for alarms to trigger.</p>
-          <p><strong>Example:</strong><br>
-          Within 1 hour 30 minutes:<br>
-          • 'Alert with keyword A' AND<br>
-          • 'Alert with keyword B' both arrive, OR<br>
+</h3>
+<div class="video-toggle-panel" id="qs-custom-indicators">
+<div class="video-embed">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="Create Custom Indicator Combinations from TradingView" width="435"></iframe>
+</div>
+<p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">Open on YouTube</a></p>
+</div>
+</div>
+</div>
+<!-- Keyword Alerts Section -->
+<div class="manual-section" id="keyword">
+<h2>🔔 Keyword Alerts</h2>
+<h3>Adding Webhook in TradingView</h3>
+<img alt="TradingView Add Alert" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>Right-click on the indicator you want to receive signals from in TradingView and click "Add Alert on ~".</p>
+<img alt="Webhook URL Setting" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
+<img alt="Notification Settings" src="../images/image_tv.png" style="max-width: 600px;"/>
+<p>In the "Notifications" section, check "Webhook URL" and paste the address copied from the app in the input field below.</p>
+<p>Once set, this will be automatically checked/filled for other alerts.</p>
+<img alt="Message Settings" src="../images/image%201_tv.png" style="max-width: 680px;"/>
+<p>In the "Messages" section under "Message", add any keyword you want (e.g., "AAA").</p>
+<p>Click "Create" to schedule the TradingView alert.</p>
+<h3>Receiving TradingView Alerts in the App</h3>
+<img alt="App Keyword Settings" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Add the keyword (e.g., "AAA") to the 'Keyword Include' section in the app. When the TradingView alert "Message" contains the keyword, the alarm will sound as configured.</p>
+</div>
+<!-- Auto-Order Section -->
+<div class="manual-section" id="auto-order">
+<h2>🤖 Auto-Order with TradingView Alerts</h2>
+<img alt="Auto-Order Settings" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>You can set up 'Auto-Orders' to be sent to exchanges when keyword alerts are received.</p>
+<img alt="Exchange API Settings" src="../images/image%202_tv.png" style="max-width: 500px;"/>
+<div class="highlight">
+<p>Supported exchanges for auto-orders: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
+<p>You must enter API keys in the app Settings page.</p>
+</div>
+</div>
+<!-- DivAlarm Keywords Section -->
+<div class="manual-section" id="divalarm-keywords">
+<h2>📝 Registering DivAlarm Signals as Keywords</h2>
+<img alt="DivAlarm Signal Keywords" src="../images/image%203_tv.png" style="max-width: 500px;"/>
+<p>DivAlarm's own alerts can also be added to 'Keyword Combinations' (for combination alerts or auto-orders).</p>
+<div class="highlight">
+<p><strong>Format:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+</div>
+<p><strong>Alarm Types:</strong></p>
+<ul>
+<li><code>@D</code> — RSI Divergence filters</li>
+<li><code>@E</code> — Extra Indicators</li>
+<li><code>@P</code> — Price alerts</li>
+</ul>
+<h3>Examples</h3>
+<div class="code-block">
+<p><code>"@D@BTC@Bull@5m@1m"</code></p>
+<p class="desc">→ RSI Divergence, BTCUSDT.P, title contains "Bull", Forming, main 5m, sub 1m</p>
+</div>
+<div class="code-block">
+<p><code>"@D@ETH@Bear@15m@O"</code></p>
+<p class="desc">→ RSI Divergence, ETHUSDT.P, title contains "Bear", Complete, 15m, no sub timeframe</p>
+</div>
+<img alt="Keyword Example" src="../images/image%204_tv.png" style="max-width: 500px;"/>
+<div class="code-block">
+<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Extra Indicator, BTC coin, title contains "Sell", 30m</span></p>
+<p><code>"@E@BTC@Buy@1h"</code></p>
+<p><code>"@E@ETH@Breakout@15m"</code></p>
+<p><code>"@E@BTC@Breakdown@5m"</code></p>
+<p><code>"@E@BTC@Near Support@1m"</code></p>
+<p><code>"@E@BTC@Near Resistance@5m"</code></p>
+<p><code>"@E@BTC@EMA50@1h"</code></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ Price alert, BTC coin, title contains "Up"</span></p>
+<p><code>"@P@ETH@Down"</code></p>
+</div>
+</div>
+<!-- Combination Alerts Section -->
+<div class="manual-section" id="combination">
+<h2>🔀 Signal Combination Alerts</h2>
+<p>Combine multiple TradingView signals to create new or filtered signals.</p>
+<div class="image-row">
+<img alt="Combination Alert Settings" src="../images/image%205_tv.png"/>
+<div>
+<p>Set conditions that must be met within a time window for alarms to trigger.</p>
+<p><strong>Example:</strong><br/>
+          Within 1 hour 30 minutes:<br/>
+          • 'Alert with keyword A' AND<br/>
+          • 'Alert with keyword B' both arrive, OR<br/>
           • 'Alert with keyword C' arrives</p>
-          <p>Enter <code>(1&2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
-        </div>
-      </div>
-
-      <div class="highlight">
-        <p><strong>&</strong> = "AND" (both conditions must be met)</p>
-        <p><strong>|</strong> = "OR" (either condition can be met)</p>
-        <p>Even if individual keyword alarms are disabled, the combination can still trigger when conditions are met.</p>
-        <p><strong>Auto-orders are also possible with combination alerts!</strong></p>
-      </div>
-    </div>
-
-  </div>
-
-  <script>
+<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
+</div>
+</div>
+<div class="highlight">
+<p><strong>&amp;</strong> = "AND" (both conditions must be met)</p>
+<p><strong>|</strong> = "OR" (either condition can be met)</p>
+<p>Even if individual keyword alarms are disabled, the combination can still trigger when conditions are met.</p>
+<p><strong>Auto-orders are also possible with combination alerts!</strong></p>
+</div>
+</div>
+</div>
+<script>
     (function () {
       var buttons = document.querySelectorAll('.video-toggle-btn');
       for (var i = 0; i < buttons.length; i++) {
