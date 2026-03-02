@@ -470,11 +470,12 @@
 <div class="testimonial-right">
 <div class="heading-small margin-bottom-32px"><span class="text-gradient-unified">Bắt điểm đảo chiều. Bám theo xu hướng.</span><br/><span style="font-size: 0.6em; opacity: 0.7; font-weight: 400; display: block; margin-top: 5px;">Được hỗ trợ bởi DivAlarm.</span></div>
 <div class="testimonial-text-four">
-<div class="free-trial-badge">Dùng thử miễn phí 5 ngày</div>
+<div class="free-trial-badge" id="free-trial-line">Dùng thử miễn phí 5 ngày</div>
+<div id="trial-alt-line" style="display:none; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em; color: rgba(248, 250, 252, 0.78); margin-top: 6px;">Giữ cảnh báo luôn chạy — đăng ký ngay.</div>
 <div style="font-size: 0.8rem; opacity: 0.8; font-weight: 600; letter-spacing: 0.05em; margin-top: 10px; color: #cbd5e1;">TẤT CẢ GÓI • HỦY BẤT CỨ LÚC NÀO</div>
 </div>
 <div class="w-layout-blockcontainer w-container">
-<div class="text-block-8">(Không hoàn tiền sau khi kết thúc thời gian dùng thử miễn phí.)</div>
+<div class="text-block-8" id="refund-note">(Không hoàn tiền sau khi kết thúc thời gian dùng thử miễn phí.)</div>
 </div>
 <!-- Pricing Section Start -->
 <section class="pricing-comparison-2">
@@ -483,7 +484,7 @@
 <!-- Basic Plan Card -->
 <div class="pricing-card-2" id="w-node-_768118f2-2c08-fe81-09f6-4ddb338c971c-4ade9e4f">
 <h2 class="pricing-title-2">Cơ bản</h2>
-<div class="pricing-subtitle-2">Bộ công cụ thiết yếu</div>
+<div class="pricing-subtitle-2">Công cụ thiết yếu</div>
 <div class="pricing-price-2">
 <div class="original-price">$15.8/tháng</div>
 <div class="price-container"><span class="current-price">$9.9</span> <span class="period">/tháng</span></div>
@@ -494,7 +495,7 @@
 <ul class="pricing-features">
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text">Cảnh báo phân kỳ <strong>RSI siêu chính xác</strong> cho <strong>BTC &amp; ETH</strong></div>
+<div class="feature-text">Cảnh báo <strong>phân kỳ RSI siêu chính xác</strong> cho <strong>BTC &amp; ETH</strong></div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
@@ -502,7 +503,7 @@
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text"><strong>Cảnh báo thủ công/ép buộc</strong> &amp; điều chỉnh chi tiết</div>
+<div class="feature-text"><strong>Cảnh báo thủ công/ép buộc</strong> &amp; điều khiển chi tiết</div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
@@ -510,7 +511,7 @@
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text"><strong>Âm thanh cảnh báo tuỳ chỉnh</strong> theo từng tin nhắn</div>
+<div class="feature-text"><strong>Âm thanh cảnh báo tuỳ chỉnh</strong> cho từng tin nhắn</div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
@@ -522,7 +523,7 @@
 </li>
 <li class="feature-item disabled">
 <div class="feature-icon icon-cross"></div>
-<div class="feature-text">Thực thi Auto-Order</div>
+<div class="feature-text">Tự động khớp lệnh (Auto-Order)</div>
 </li>
 </ul>
 </div>
@@ -535,17 +536,17 @@
 <div class="original-price">$25.8/tháng</div>
 <div class="price-container"><span class="current-price">$14.9</span> <span class="period">/tháng</span></div>
 </div>
-<div class="pricing-description">Mở khoá toàn bộ sức mạnh với Webhooks và tự động hoá Auto-Order.</div>
+<div class="pricing-description">Mở khoá toàn bộ sức mạnh với Webhook và tự động hoá Auto-Order.</div>
 <a class="subscribe-btn btn-pro" href="#" id="sub-btn2">Đăng ký Pro</a>
 <div class="pricing-divider"></div>
 <ul class="pricing-features">
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text">Bao gồm <strong>mọi thứ trong gói Basic</strong></div>
+<div class="feature-text"><strong>Bao gồm mọi thứ trong gói Basic</strong></div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text">Tích hợp <strong>TradingView Webhook</strong></div>
+<div class="feature-text">Tích hợp <strong>Webhook TradingView</strong></div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
@@ -561,12 +562,12 @@
 </section>
 <!-- Pricing Section End -->
 <div class="w-form" style="margin-top: 40px; opacity: 0.6;">
-<form data-name="Email Form" data-wf-element-id="befcf342-4a14-ee4c-b702-2ab105cee004" data-wf-page-id="67dc4b17410701784ade9e4f" id="email-form" method="get" name="email-form"><label class="field-label" for="referral">Mã giới thiệu (tuỳ chọn)</label><input class="text-field w-input" data-name="Email" id="referral" maxlength="256" name="email" placeholder="Nhập mã nếu bạn có" required="" type="email"/></form>
+<form data-name="Email Form" data-wf-element-id="befcf342-4a14-ee4c-b702-2ab105cee004" data-wf-page-id="67dc4b17410701784ade9e4f" id="email-form" method="get" name="email-form"><label class="field-label" for="referral">Mã giới thiệu (không bắt buộc)</label><input class="text-field w-input" data-name="Email" id="referral" maxlength="256" name="email" placeholder="Nhập mã nếu bạn có" required="" type="email"/></form>
 <div class="w-form-done">
 <div>Cảm ơn bạn! Thông tin đã được gửi thành công!</div>
 </div>
 <div class="w-form-fail">
-<div>Ôi! Có lỗi xảy ra khi gửi biểu mẫu.</div>
+<div>Ối! Có lỗi xảy ra khi gửi biểu mẫu.</div>
 </div>
 </div>
 </div>
@@ -633,11 +634,14 @@ window.fetchUserMembershipData = async function () {
       localStorage.setItem("membership", userData.membership);
       localStorage.setItem("expired", userData.expired?.seconds);
       localStorage.setItem("isCanceled", userData.isCanceled);
+      localStorage.setItem("hasUsedTrial", userData.hasUsedTrial);
+      localStorage.setItem("grade", userData.grade);
       localStorage.setItem("wallet", userData.wallet);
       console.log(" useremail:", localStorage.getItem("useremail"));
       console.log(" membership:", localStorage.getItem("membership"));
       console.log(" expired:", localStorage.getItem("expired"));
       console.log(" isCanceled:", localStorage.getItem("isCanceled"));
+      console.log(" hasUsedTrial:", localStorage.getItem("hasUsedTrial"));
       console.log("fetch!");
       return userData;
     }
@@ -647,12 +651,94 @@ window.fetchUserMembershipData = async function () {
 };
 document.addEventListener("DOMContentLoaded", () => {
   const authBtn = document.getElementById("sign-btn2");
+  const subBtn = document.getElementById("sub-btn");
+  const subBtn2 = document.getElementById("sub-btn2");
+  const freeTrialLine = document.getElementById("free-trial-line");
+  const trialAltLine = document.getElementById("trial-alt-line");
+  const refundNote = document.getElementById("refund-note");
+
+  const parseBool = (v) => {
+    if (v === true) return true;
+    if (v === false) return false;
+    if (v == null) return false;
+    const s = String(v).trim().toLowerCase();
+    return s === "true" || s === "1" || s === "yes";
+  };
+
+  const setCtaTexts = ({ basicText, proText, showTrialBadge, showTrialAlt }) => {
+    if (subBtn) subBtn.textContent = basicText;
+    if (subBtn2) subBtn2.textContent = proText;
+    if (freeTrialLine) freeTrialLine.style.display = showTrialBadge ? "" : "none";
+    if (trialAltLine) trialAltLine.style.display = showTrialAlt ? "" : "none";
+    if (refundNote) refundNote.style.display = showTrialBadge ? "" : "none";
+  };
+
+  const computeCtaState = () => {
+    const nowSec = Math.floor(Date.now() / 1000);
+    const membership = Number(localStorage.getItem("membership") || 0);
+    const expiredSec = Number(localStorage.getItem("expired") || 0);
+    const isCanceled = parseBool(localStorage.getItem("isCanceled"));
+    const hasUsedTrial = parseBool(localStorage.getItem("hasUsedTrial"));
+
+    const isActiveNow = membership > 0 && expiredSec > nowSec;
+
+    if (isActiveNow) return "active_or_trial";
+    if (isCanceled) return "resubscribe";
+    if (hasUsedTrial) return "trial_ended_unpaid";
+    return "new";
+  };
+
+  const applyCtaByState = () => {
+    const state = computeCtaState();
+    if (state === "new") {
+      setCtaTexts({
+        basicText: "Start Free Trial",
+        proText: "Start Pro Free",
+        showTrialBadge: true,
+        showTrialAlt: false,
+      });
+      return;
+    }
+    if (state === "active_or_trial") {
+      setCtaTexts({
+        basicText: "Manage Plan",
+        proText: "Upgrade to Pro",
+        showTrialBadge: false,
+        showTrialAlt: false,
+      });
+      return;
+    }
+    if (state === "trial_ended_unpaid") {
+      setCtaTexts({
+        basicText: "Start Basic Now",
+        proText: "Go Pro Now",
+        showTrialBadge: false,
+        showTrialAlt: true,
+      });
+      return;
+    }
+    setCtaTexts({
+      basicText: "Resume Basic",
+      proText: "Resume Pro",
+      showTrialBadge: false,
+      showTrialAlt: false,
+    });
+  };
+
   onAuthStateChanged(auth, (user) => {
     if (user) {
       // ✅ 로그인된 경우: 버튼을 Logout으로 바꿈
       authBtn.textContent = "Logout";
       authBtn.classList.remove("login");
       authBtn.classList.add("logout");
+
+      window.maybeCreateUser?.(user).catch(() => {});
+      window.fetchUserMembershipData?.()
+        .catch(() => {})
+        .finally(() => {
+          applyCtaByState();
+        });
+
       // 클릭 시 로그아웃 처리
     authBtn.onclick = async (e) => {
       e.preventDefault();
@@ -671,6 +757,7 @@ document.addEventListener("DOMContentLoaded", () => {
       authBtn.textContent = "Sign In";
       authBtn.classList.remove("logout");
       authBtn.classList.add("login");
+      applyCtaByState();
       // 클릭 시 로그인 페이지로 이동
       authBtn.onclick = (e) => {
         e.preventDefault();

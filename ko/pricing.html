@@ -468,13 +468,14 @@
 <div class="testimonial-left"></div>
 <div class="w-layout-blockcontainer container-14 w-container"><img alt="" class="image-4" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.96875px, 939.9857788085938px" src="../images/pricing-표지.png" srcset="../images/pricing-표지-p-500.png 500w, ../images/pricing-표지-p-800.png 800w, ../images/pricing-표지-p-1080.png 1080w, ../images/pricing-표지.png 1299w"/></div>
 <div class="testimonial-right">
-<div class="heading-small margin-bottom-32px"><span class="text-gradient-unified">반전을 잡고, 추세를 타세요.</span><br/><span style="font-size: 0.6em; opacity: 0.7; font-weight: 400; display: block; margin-top: 5px;">DivAlarm 제공.</span></div>
+<div class="heading-small margin-bottom-32px"><span class="text-gradient-unified">반전은 잡고, 추세는 타세요.</span><br/><span style="font-size: 0.6em; opacity: 0.7; font-weight: 400; display: block; margin-top: 5px;">DivAlarm 기반.</span></div>
 <div class="testimonial-text-four">
-<div class="free-trial-badge">5일 무료 체험</div>
-<div style="font-size: 0.8rem; opacity: 0.8; font-weight: 600; letter-spacing: 0.05em; margin-top: 10px; color: #cbd5e1;">모든 요금제 • 언제든 취소</div>
+<div class="free-trial-badge" id="free-trial-line">5일 무료 체험</div>
+<div id="trial-alt-line" style="display:none; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em; color: rgba(248, 250, 252, 0.78); margin-top: 6px;">알림을 계속 켜두려면 지금 구독하세요.</div>
+<div style="font-size: 0.8rem; opacity: 0.8; font-weight: 600; letter-spacing: 0.05em; margin-top: 10px; color: #cbd5e1;">모든 요금제 • 언제든지 취소 가능</div>
 </div>
 <div class="w-layout-blockcontainer w-container">
-<div class="text-block-8">(무료 체험 종료 후에는 환불이 불가합니다.)</div>
+<div class="text-block-8" id="refund-note">(무료 체험 종료 후에는 환불이 불가합니다.)</div>
 </div>
 <!-- Pricing Section Start -->
 <section class="pricing-comparison-2">
@@ -488,7 +489,7 @@
 <div class="original-price">$15.8/월</div>
 <div class="price-container"><span class="current-price">$9.9</span> <span class="period">/월</span></div>
 </div>
-<div class="pricing-description">필수 다이버전스 알림으로 트레이딩을 시작하기에 딱 좋습니다.</div>
+<div class="pricing-description">핵심 다이버전스 알림으로 시작하기에 딱 좋은 플랜입니다.</div>
 <a class="subscribe-btn btn-basic" href="#" id="sub-btn">지금 구독하기</a>
 <div class="pricing-divider"></div>
 <ul class="pricing-features">
@@ -528,15 +529,15 @@
 </div>
 <!-- Pro Plan Card -->
 <div class="pricing-card-2 pro-plan" id="w-node-_768118f2-2c08-fe81-09f6-4ddb338c9764-4ade9e4f">
-<div class="recommended-badge">가성비 최고</div>
+<div class="recommended-badge">최고의 가성비</div>
 <h2 class="pricing-title-2">프로</h2>
 <div class="pricing-subtitle-2">완전 자동화</div>
 <div class="pricing-price-2">
 <div class="original-price">$25.8/월</div>
 <div class="price-container"><span class="current-price">$14.9</span> <span class="period">/월</span></div>
 </div>
-<div class="pricing-description">웹훅과 자동 주문 자동화로 잠재력을 100% 활용하세요.</div>
-<a class="subscribe-btn btn-pro" href="#" id="sub-btn2">Pro 구독하기</a>
+<div class="pricing-description">웹훅과 자동 주문 자동화로 잠재력을 모두 활용하세요.</div>
+<a class="subscribe-btn btn-pro" href="#" id="sub-btn2">Pro 구독</a>
 <div class="pricing-divider"></div>
 <ul class="pricing-features">
 <li class="feature-item">
@@ -633,11 +634,14 @@ window.fetchUserMembershipData = async function () {
       localStorage.setItem("membership", userData.membership);
       localStorage.setItem("expired", userData.expired?.seconds);
       localStorage.setItem("isCanceled", userData.isCanceled);
+      localStorage.setItem("hasUsedTrial", userData.hasUsedTrial);
+      localStorage.setItem("grade", userData.grade);
       localStorage.setItem("wallet", userData.wallet);
       console.log(" useremail:", localStorage.getItem("useremail"));
       console.log(" membership:", localStorage.getItem("membership"));
       console.log(" expired:", localStorage.getItem("expired"));
       console.log(" isCanceled:", localStorage.getItem("isCanceled"));
+      console.log(" hasUsedTrial:", localStorage.getItem("hasUsedTrial"));
       console.log("fetch!");
       return userData;
     }
@@ -647,12 +651,94 @@ window.fetchUserMembershipData = async function () {
 };
 document.addEventListener("DOMContentLoaded", () => {
   const authBtn = document.getElementById("sign-btn2");
+  const subBtn = document.getElementById("sub-btn");
+  const subBtn2 = document.getElementById("sub-btn2");
+  const freeTrialLine = document.getElementById("free-trial-line");
+  const trialAltLine = document.getElementById("trial-alt-line");
+  const refundNote = document.getElementById("refund-note");
+
+  const parseBool = (v) => {
+    if (v === true) return true;
+    if (v === false) return false;
+    if (v == null) return false;
+    const s = String(v).trim().toLowerCase();
+    return s === "true" || s === "1" || s === "yes";
+  };
+
+  const setCtaTexts = ({ basicText, proText, showTrialBadge, showTrialAlt }) => {
+    if (subBtn) subBtn.textContent = basicText;
+    if (subBtn2) subBtn2.textContent = proText;
+    if (freeTrialLine) freeTrialLine.style.display = showTrialBadge ? "" : "none";
+    if (trialAltLine) trialAltLine.style.display = showTrialAlt ? "" : "none";
+    if (refundNote) refundNote.style.display = showTrialBadge ? "" : "none";
+  };
+
+  const computeCtaState = () => {
+    const nowSec = Math.floor(Date.now() / 1000);
+    const membership = Number(localStorage.getItem("membership") || 0);
+    const expiredSec = Number(localStorage.getItem("expired") || 0);
+    const isCanceled = parseBool(localStorage.getItem("isCanceled"));
+    const hasUsedTrial = parseBool(localStorage.getItem("hasUsedTrial"));
+
+    const isActiveNow = membership > 0 && expiredSec > nowSec;
+
+    if (isActiveNow) return "active_or_trial";
+    if (isCanceled) return "resubscribe";
+    if (hasUsedTrial) return "trial_ended_unpaid";
+    return "new";
+  };
+
+  const applyCtaByState = () => {
+    const state = computeCtaState();
+    if (state === "new") {
+      setCtaTexts({
+        basicText: "Start Free Trial",
+        proText: "Start Pro Free",
+        showTrialBadge: true,
+        showTrialAlt: false,
+      });
+      return;
+    }
+    if (state === "active_or_trial") {
+      setCtaTexts({
+        basicText: "Manage Plan",
+        proText: "Upgrade to Pro",
+        showTrialBadge: false,
+        showTrialAlt: false,
+      });
+      return;
+    }
+    if (state === "trial_ended_unpaid") {
+      setCtaTexts({
+        basicText: "Start Basic Now",
+        proText: "Go Pro Now",
+        showTrialBadge: false,
+        showTrialAlt: true,
+      });
+      return;
+    }
+    setCtaTexts({
+      basicText: "Resume Basic",
+      proText: "Resume Pro",
+      showTrialBadge: false,
+      showTrialAlt: false,
+    });
+  };
+
   onAuthStateChanged(auth, (user) => {
     if (user) {
       // ✅ 로그인된 경우: 버튼을 Logout으로 바꿈
       authBtn.textContent = "Logout";
       authBtn.classList.remove("login");
       authBtn.classList.add("logout");
+
+      window.maybeCreateUser?.(user).catch(() => {});
+      window.fetchUserMembershipData?.()
+        .catch(() => {})
+        .finally(() => {
+          applyCtaByState();
+        });
+
       // 클릭 시 로그아웃 처리
     authBtn.onclick = async (e) => {
       e.preventDefault();
@@ -671,6 +757,7 @@ document.addEventListener("DOMContentLoaded", () => {
       authBtn.textContent = "Sign In";
       authBtn.classList.remove("logout");
       authBtn.classList.add("login");
+      applyCtaByState();
       // 클릭 시 로그인 페이지로 이동
       authBtn.onclick = (e) => {
         e.preventDefault();

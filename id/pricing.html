@@ -470,11 +470,12 @@
 <div class="testimonial-right">
 <div class="heading-small margin-bottom-32px"><span class="text-gradient-unified">Tangkap pembalikan. Ikuti tren.</span><br/><span style="font-size: 0.6em; opacity: 0.7; font-weight: 400; display: block; margin-top: 5px;">Didukung oleh DivAlarm.</span></div>
 <div class="testimonial-text-four">
-<div class="free-trial-badge">Uji Coba Gratis 5 Hari</div>
-<div style="font-size: 0.8rem; opacity: 0.8; font-weight: 600; letter-spacing: 0.05em; margin-top: 10px; color: #cbd5e1;">SEMUA PAKET • BISA DIBATALKAN KAPAN SAJA</div>
+<div class="free-trial-badge" id="free-trial-line">Uji Coba Gratis 5 Hari</div>
+<div id="trial-alt-line" style="display:none; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em; color: rgba(248, 250, 252, 0.78); margin-top: 6px;">Agar alert Anda tetap berjalan — berlangganan sekarang.</div>
+<div style="font-size: 0.8rem; opacity: 0.8; font-weight: 600; letter-spacing: 0.05em; margin-top: 10px; color: #cbd5e1;">SEMUA PAKET • BISA BATAL KAPAN SAJA</div>
 </div>
 <div class="w-layout-blockcontainer w-container">
-<div class="text-block-8">(Refund tidak tersedia setelah masa uji coba gratis berakhir.)</div>
+<div class="text-block-8" id="refund-note">(Refund tidak tersedia setelah masa uji coba gratis berakhir.)</div>
 </div>
 <!-- Pricing Section Start -->
 <section class="pricing-comparison-2">
@@ -488,13 +489,13 @@
 <div class="original-price">$15.8/bln</div>
 <div class="price-container"><span class="current-price">$9.9</span> <span class="period">/bln</span></div>
 </div>
-<div class="pricing-description">Cocok untuk memulai perjalananmu dengan alert divergence yang esensial.</div>
+<div class="pricing-description">Cocok untuk memulai dengan alert divergensi yang esensial.</div>
 <a class="subscribe-btn btn-basic" href="#" id="sub-btn">Langganan Sekarang</a>
 <div class="pricing-divider"></div>
 <ul class="pricing-features">
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text">Alert divergence <strong>RSI super akurat</strong> untuk <strong>BTC &amp; ETH</strong></div>
+<div class="feature-text">Alert divergensi <strong>RSI super akurat</strong> untuk <strong>BTC &amp; ETH</strong></div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
@@ -502,7 +503,7 @@
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text"><strong>Alert Manual/Paksa</strong> &amp; Kontrol yang lebih detail</div>
+<div class="feature-text"><strong>Alert manual/paksa</strong> &amp; kontrol yang lebih detail</div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
@@ -514,7 +515,7 @@
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text"><strong>Filter lanjutan</strong>: Support/Resistance, sentuhan EMA, Supertrend</div>
+<div class="feature-text"><strong>Filter lanjutan</strong>: Support/Resistance, sentuh EMA, Supertrend</div>
 </li>
 <li class="feature-item disabled">
 <div class="feature-icon icon-cross"></div>
@@ -528,20 +529,20 @@
 </div>
 <!-- Pro Plan Card -->
 <div class="pricing-card-2 pro-plan" id="w-node-_768118f2-2c08-fe81-09f6-4ddb338c9764-4ade9e4f">
-<div class="recommended-badge">NILAI TERBAIK</div>
+<div class="recommended-badge">PALING WORTH IT</div>
 <h2 class="pricing-title-2">Pro</h2>
-<div class="pricing-subtitle-2">Otomatis Penuh</div>
+<div class="pricing-subtitle-2">Otomatisasi Penuh</div>
 <div class="pricing-price-2">
 <div class="original-price">$25.8/bln</div>
 <div class="price-container"><span class="current-price">$14.9</span> <span class="period">/bln</span></div>
 </div>
-<div class="pricing-description">Maksimalkan potensi dengan Webhook dan otomasi Auto-Order.</div>
+<div class="pricing-description">Buka potensi penuh dengan Webhook dan otomasi Auto-Order.</div>
 <a class="subscribe-btn btn-pro" href="#" id="sub-btn2">Langganan Pro</a>
 <div class="pricing-divider"></div>
 <ul class="pricing-features">
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text"><strong>Semua fitur di paket Basic</strong> sudah termasuk</div>
+<div class="feature-text"><strong>Semua fitur di paket Basic</strong> termasuk</div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
@@ -553,7 +554,7 @@
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text"><strong>Sinyal Komposit</strong>: Gabungkan beberapa sinyal menjadi satu alert</div>
+<div class="feature-text"><strong>Sinyal Komposit</strong>: Gabungkan beberapa sinyal jadi satu alert</div>
 </li>
 </ul>
 </div>
@@ -561,9 +562,9 @@
 </section>
 <!-- Pricing Section End -->
 <div class="w-form" style="margin-top: 40px; opacity: 0.6;">
-<form data-name="Email Form" data-wf-element-id="befcf342-4a14-ee4c-b702-2ab105cee004" data-wf-page-id="67dc4b17410701784ade9e4f" id="email-form" method="get" name="email-form"><label class="field-label" for="referral">Kode Referral (Opsional)</label><input class="text-field w-input" data-name="Email" id="referral" maxlength="256" name="email" placeholder="Masukkan kode jika kamu punya" required="" type="email"/></form>
+<form data-name="Email Form" data-wf-element-id="befcf342-4a14-ee4c-b702-2ab105cee004" data-wf-page-id="67dc4b17410701784ade9e4f" id="email-form" method="get" name="email-form"><label class="field-label" for="referral">Kode Referral (Opsional)</label><input class="text-field w-input" data-name="Email" id="referral" maxlength="256" name="email" placeholder="Masukkan kode jika Anda punya" required="" type="email"/></form>
 <div class="w-form-done">
-<div>Terima kasih! Kirimanmu sudah kami terima!</div>
+<div>Terima kasih! Kiriman Anda sudah kami terima!</div>
 </div>
 <div class="w-form-fail">
 <div>Ups! Terjadi kesalahan saat mengirim formulir.</div>
@@ -633,11 +634,14 @@ window.fetchUserMembershipData = async function () {
       localStorage.setItem("membership", userData.membership);
       localStorage.setItem("expired", userData.expired?.seconds);
       localStorage.setItem("isCanceled", userData.isCanceled);
+      localStorage.setItem("hasUsedTrial", userData.hasUsedTrial);
+      localStorage.setItem("grade", userData.grade);
       localStorage.setItem("wallet", userData.wallet);
       console.log(" useremail:", localStorage.getItem("useremail"));
       console.log(" membership:", localStorage.getItem("membership"));
       console.log(" expired:", localStorage.getItem("expired"));
       console.log(" isCanceled:", localStorage.getItem("isCanceled"));
+      console.log(" hasUsedTrial:", localStorage.getItem("hasUsedTrial"));
       console.log("fetch!");
       return userData;
     }
@@ -647,12 +651,94 @@ window.fetchUserMembershipData = async function () {
 };
 document.addEventListener("DOMContentLoaded", () => {
   const authBtn = document.getElementById("sign-btn2");
+  const subBtn = document.getElementById("sub-btn");
+  const subBtn2 = document.getElementById("sub-btn2");
+  const freeTrialLine = document.getElementById("free-trial-line");
+  const trialAltLine = document.getElementById("trial-alt-line");
+  const refundNote = document.getElementById("refund-note");
+
+  const parseBool = (v) => {
+    if (v === true) return true;
+    if (v === false) return false;
+    if (v == null) return false;
+    const s = String(v).trim().toLowerCase();
+    return s === "true" || s === "1" || s === "yes";
+  };
+
+  const setCtaTexts = ({ basicText, proText, showTrialBadge, showTrialAlt }) => {
+    if (subBtn) subBtn.textContent = basicText;
+    if (subBtn2) subBtn2.textContent = proText;
+    if (freeTrialLine) freeTrialLine.style.display = showTrialBadge ? "" : "none";
+    if (trialAltLine) trialAltLine.style.display = showTrialAlt ? "" : "none";
+    if (refundNote) refundNote.style.display = showTrialBadge ? "" : "none";
+  };
+
+  const computeCtaState = () => {
+    const nowSec = Math.floor(Date.now() / 1000);
+    const membership = Number(localStorage.getItem("membership") || 0);
+    const expiredSec = Number(localStorage.getItem("expired") || 0);
+    const isCanceled = parseBool(localStorage.getItem("isCanceled"));
+    const hasUsedTrial = parseBool(localStorage.getItem("hasUsedTrial"));
+
+    const isActiveNow = membership > 0 && expiredSec > nowSec;
+
+    if (isActiveNow) return "active_or_trial";
+    if (isCanceled) return "resubscribe";
+    if (hasUsedTrial) return "trial_ended_unpaid";
+    return "new";
+  };
+
+  const applyCtaByState = () => {
+    const state = computeCtaState();
+    if (state === "new") {
+      setCtaTexts({
+        basicText: "Start Free Trial",
+        proText: "Start Pro Free",
+        showTrialBadge: true,
+        showTrialAlt: false,
+      });
+      return;
+    }
+    if (state === "active_or_trial") {
+      setCtaTexts({
+        basicText: "Manage Plan",
+        proText: "Upgrade to Pro",
+        showTrialBadge: false,
+        showTrialAlt: false,
+      });
+      return;
+    }
+    if (state === "trial_ended_unpaid") {
+      setCtaTexts({
+        basicText: "Start Basic Now",
+        proText: "Go Pro Now",
+        showTrialBadge: false,
+        showTrialAlt: true,
+      });
+      return;
+    }
+    setCtaTexts({
+      basicText: "Resume Basic",
+      proText: "Resume Pro",
+      showTrialBadge: false,
+      showTrialAlt: false,
+    });
+  };
+
   onAuthStateChanged(auth, (user) => {
     if (user) {
       // ✅ 로그인된 경우: 버튼을 Logout으로 바꿈
       authBtn.textContent = "Logout";
       authBtn.classList.remove("login");
       authBtn.classList.add("logout");
+
+      window.maybeCreateUser?.(user).catch(() => {});
+      window.fetchUserMembershipData?.()
+        .catch(() => {})
+        .finally(() => {
+          applyCtaByState();
+        });
+
       // 클릭 시 로그아웃 처리
     authBtn.onclick = async (e) => {
       e.preventDefault();
@@ -671,6 +757,7 @@ document.addEventListener("DOMContentLoaded", () => {
       authBtn.textContent = "Sign In";
       authBtn.classList.remove("logout");
       authBtn.classList.add("login");
+      applyCtaByState();
       // 클릭 시 로그인 페이지로 이동
       authBtn.onclick = (e) => {
         e.preventDefault();
