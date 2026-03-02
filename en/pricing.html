@@ -83,6 +83,20 @@
       text-align: center;
       margin-bottom: 10px;
     }
+    
+    .free-trial-badge {
+      display: inline-block;
+      background: rgba(251, 191, 36, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: 0 0 15px rgba(251, 191, 36, 0.1);
+    }
 
     .text-block-8 {
       text-align: center;
@@ -240,20 +254,10 @@
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       text-decoration: none;
       display: inline-block;
       text-align: center;
-    }
-    
-    .trial-under-btn{
-      margin-bottom: 30px;
-      font-size: 0.85rem;
-      line-height: 1.2;
-      color: rgba(248, 250, 252, 0.55);
-      text-align: center;
-      font-weight: 600;
-      letter-spacing: 0.02em;
     }
 
     /* Basic Button */
@@ -466,9 +470,16 @@
       <div class="testimonial-right">
         <div class="heading-small margin-bottom-32px"><span class="text-gradient-unified">Catch the reversal. Ride the trend.</span><br><span style="font-size: 0.6em; opacity: 0.7; font-weight: 400; display: block; margin-top: 5px;">Powered by DivAlarm.</span></div>
         <div class="testimonial-text-four">
+          <div id="free-trial-line" class="free-trial-badge">5-Days Free Trial</div>
+          <div id="trial-alt-line" style="display:none; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em; color: rgba(248, 250, 252, 0.78); margin-top: 6px;">
+            Keep your alerts running — subscribe now.
+          </div>
           <div style="font-size: 0.8rem; opacity: 0.8; font-weight: 600; letter-spacing: 0.05em; margin-top: 10px; color: #cbd5e1;">
             ALL PLANS • CANCEL ANYTIME
           </div>
+        </div>
+        <div class="w-layout-blockcontainer w-container">
+          <div id="refund-note" class="text-block-8">(Refunds are not available once the free trial ends.)</div>
         </div>
         
         <!-- Pricing Section Start -->
@@ -492,7 +503,6 @@
               <div class="pricing-description">Perfect for starting your journey with essential divergence alerts.</div>
               
               <a id="sub-btn" href="#" class="subscribe-btn btn-basic">Subscribe Now</a>
-              <div class="trial-under-btn">5-day free trial</div>
               
               <div class="pricing-divider"></div>
               
@@ -549,7 +559,6 @@
               <div class="pricing-description">Unlock full potential with Webhooks and Auto-Order automation.</div>
               
               <a id="sub-btn2" href="#" class="subscribe-btn btn-pro">Subscribe Pro</a>
-              <div class="trial-under-btn">5-day free trial</div>
               
               <div class="pricing-divider"></div>
               
@@ -651,11 +660,14 @@ window.fetchUserMembershipData = async function () {
       localStorage.setItem("membership", userData.membership);
       localStorage.setItem("expired", userData.expired?.seconds);
       localStorage.setItem("isCanceled", userData.isCanceled);
+      localStorage.setItem("hasUsedTrial", userData.hasUsedTrial);
+      localStorage.setItem("grade", userData.grade);
       localStorage.setItem("wallet", userData.wallet);
       console.log(" useremail:", localStorage.getItem("useremail"));
       console.log(" membership:", localStorage.getItem("membership"));
       console.log(" expired:", localStorage.getItem("expired"));
       console.log(" isCanceled:", localStorage.getItem("isCanceled"));
+      console.log(" hasUsedTrial:", localStorage.getItem("hasUsedTrial"));
       console.log("fetch!");
       return userData;
     }
@@ -665,12 +677,94 @@ window.fetchUserMembershipData = async function () {
 };
 document.addEventListener("DOMContentLoaded", () => {
   const authBtn = document.getElementById("sign-btn2");
+  const subBtn = document.getElementById("sub-btn");
+  const subBtn2 = document.getElementById("sub-btn2");
+  const freeTrialLine = document.getElementById("free-trial-line");
+  const trialAltLine = document.getElementById("trial-alt-line");
+  const refundNote = document.getElementById("refund-note");
+
+  const parseBool = (v) => {
+    if (v === true) return true;
+    if (v === false) return false;
+    if (v == null) return false;
+    const s = String(v).trim().toLowerCase();
+    return s === "true" || s === "1" || s === "yes";
+  };
+
+  const setCtaTexts = ({ basicText, proText, showTrialBadge, showTrialAlt }) => {
+    if (subBtn) subBtn.textContent = basicText;
+    if (subBtn2) subBtn2.textContent = proText;
+    if (freeTrialLine) freeTrialLine.style.display = showTrialBadge ? "" : "none";
+    if (trialAltLine) trialAltLine.style.display = showTrialAlt ? "" : "none";
+    if (refundNote) refundNote.style.display = showTrialBadge ? "" : "none";
+  };
+
+  const computeCtaState = () => {
+    const nowSec = Math.floor(Date.now() / 1000);
+    const membership = Number(localStorage.getItem("membership") || 0);
+    const expiredSec = Number(localStorage.getItem("expired") || 0);
+    const isCanceled = parseBool(localStorage.getItem("isCanceled"));
+    const hasUsedTrial = parseBool(localStorage.getItem("hasUsedTrial"));
+
+    const isActiveNow = membership > 0 && expiredSec > nowSec;
+
+    if (isActiveNow) return "active_or_trial";
+    if (isCanceled) return "resubscribe";
+    if (hasUsedTrial) return "trial_ended_unpaid";
+    return "new";
+  };
+
+  const applyCtaByState = () => {
+    const state = computeCtaState();
+    if (state === "new") {
+      setCtaTexts({
+        basicText: "Start Free Trial",
+        proText: "Start Pro Free",
+        showTrialBadge: true,
+        showTrialAlt: false,
+      });
+      return;
+    }
+    if (state === "active_or_trial") {
+      setCtaTexts({
+        basicText: "Manage Plan",
+        proText: "Upgrade to Pro",
+        showTrialBadge: false,
+        showTrialAlt: false,
+      });
+      return;
+    }
+    if (state === "trial_ended_unpaid") {
+      setCtaTexts({
+        basicText: "Start Basic Now",
+        proText: "Go Pro Now",
+        showTrialBadge: false,
+        showTrialAlt: true,
+      });
+      return;
+    }
+    setCtaTexts({
+      basicText: "Resume Basic",
+      proText: "Resume Pro",
+      showTrialBadge: false,
+      showTrialAlt: false,
+    });
+  };
+
   onAuthStateChanged(auth, (user) => {
     if (user) {
       // ✅ 로그인된 경우: 버튼을 Logout으로 바꿈
       authBtn.textContent = "Logout";
       authBtn.classList.remove("login");
       authBtn.classList.add("logout");
+
+      window.maybeCreateUser?.(user).catch(() => {});
+      window.fetchUserMembershipData?.()
+        .catch(() => {})
+        .finally(() => {
+          applyCtaByState();
+        });
+
       // 클릭 시 로그아웃 처리
     authBtn.onclick = async (e) => {
       e.preventDefault();
@@ -689,6 +783,7 @@ document.addEventListener("DOMContentLoaded", () => {
       authBtn.textContent = "Sign In";
       authBtn.classList.remove("logout");
       authBtn.classList.add("login");
+      applyCtaByState();
       // 클릭 시 로그인 페이지로 이동
       authBtn.onclick = (e) => {
         e.preventDefault();
