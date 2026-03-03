@@ -829,7 +829,15 @@ async function getCurrentPlan(idToken) {
   const res = await fetch("https://asia-northeast1-divergence-alarm.cloudfunctions.net/createCheckoutSession", {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
-    body: JSON.stringify({ referralId: "", isCanceled: "false", mode: "public", plan: "basic" })
+    body: JSON.stringify({
+      referralId: "",
+      isCanceled: "false",
+      mode: "public",
+      plan: "basic",
+      returnUrl: new URL("go-my-account.html", location.href).toString(),
+      cancelUrl: location.href,
+      locale: (location.pathname.split("/").filter(Boolean)[0] || "auto")
+    })
   });
   const data = await res.json();
   if (res.ok && data.currentPlan) return data.currentPlan; // "basic" | "pro" | "unknown"
@@ -858,7 +866,10 @@ subBtn?.addEventListener("click", async () => {
         referralId,
         isCanceled: localStorage.getItem("isCanceled") || "false",
         mode: "public",
-        plan: "basic"
+        plan: "basic",
+        returnUrl: new URL("go-my-account.html", location.href).toString(),
+        cancelUrl: location.href,
+        locale: (location.pathname.split("/").filter(Boolean)[0] || "auto")
       })
     });
     const result = await response.json();
@@ -868,7 +879,7 @@ subBtn?.addEventListener("click", async () => {
     } else if (result.message) {
       if (result.currentPlan === "basic") alert(T("i18n-alert-already-basic", "You are already subscribed to the Basic plan."));
       else if (result.currentPlan === "pro") alert(T("i18n-alert-already-pro", "You are already subscribed to the Pro plan."));
-      else alert(result.message);
+      else alert(T("i18n-alert-already-subscribed", "You are already subscribed.")); // ignore server message
     } else {
       alert(T("i18n-alert-checkout-failed", "Failed to create a checkout session. Please contact support."));
     }
@@ -945,7 +956,10 @@ subBtn2?.addEventListener("click", async () => {
         referralId,
         isCanceled: localStorage.getItem("isCanceled") || "false",
         mode: "public",
-        plan: "pro"
+        plan: "pro",
+        returnUrl: new URL("go-my-account.html", location.href).toString(),
+        cancelUrl: location.href,
+        locale: (location.pathname.split("/").filter(Boolean)[0] || "auto")
       })
     });
     const result = await response.json();
@@ -955,7 +969,7 @@ subBtn2?.addEventListener("click", async () => {
     } else if (result.message) {
       if (result.currentPlan === "basic") alert(T("i18n-alert-already-basic", "You are already subscribed to the Basic plan."));
       else if (result.currentPlan === "pro") alert(T("i18n-alert-already-pro", "You are already subscribed to the Pro plan."));
-      else alert(result.message);
+      else alert(T("i18n-alert-already-subscribed", "You are already subscribed.")); // ignore server message
     } else {
       alert(T("i18n-alert-checkout-failed", "Failed to create a checkout session. Please contact support."));
     }
