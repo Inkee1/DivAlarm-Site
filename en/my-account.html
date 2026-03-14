@@ -325,69 +325,233 @@
 </div>
 </div>
 </div>
-<div class="account-page-wrapper">
-<!-- User Status Section -->
-<div class="status-card" id="status" style="display:none;">
-<div class="status-header">My Account</div>
-<div class="status-grid">
-<div class="status-item">
-<div class="status-label">Email</div>
-<div class="status-value" id="info-email">-</div>
-</div>
-<div class="status-item">
-<div class="status-label">Verified</div>
-<div class="status-value" id="info-verified">-</div>
-</div>
-<div class="status-item">
-<div class="status-label">Membership</div>
-<div class="status-value" id="info-membership">-</div>
-</div>
-<div class="status-item">
-<div class="status-label">Expiration</div>
-<div class="status-value" id="info-expire">-</div>
-</div>
-<div class="status-item">
-<div class="status-label">Next Payment</div>
-<div class="status-value" id="info-next">-</div>
-</div>
-<div class="status-item">
-<div class="status-label">Reward Wallet</div>
-<div class="status-value" id="info-wallet">-</div>
-</div>
-</div>
-</div>
-<!-- Login Required Message -->
-<div class="status-card login-required-msg" id="asklogin" style="display:none;">
-<div>This page is only available after logging in.<br/><br/>Please sign in to continue.</div>
-</div>
-<!-- Action Buttons -->
-<div id="box1" style="display:none;">
-<div class="actions-grid">
-<!-- Subscription Actions -->
-<a class="action-btn btn-primary" href="pricing.html" id="resub-btn" style="display:none;">
+<style>
+  .account-hero {
+    padding: 6rem 1rem 4rem;
+    min-height: calc(100vh - 100px);
+    background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .account-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.08) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .account-page-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .status-card {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  .status-header {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: transparent;
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    letter-spacing: -0.02em;
+  }
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .status-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .status-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+  }
+  .status-value {
+    font-size: 1.1rem;
+    color: #f8fafc;
+    font-weight: 600;
+    word-break: break-all;
+    line-height: 1.4;
+  }
+  .actions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .action-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #38bdf8 0%, #3b82f6 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+  }
+  .btn-change {
+    background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+  }
+  .btn-change:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+  }
+  .btn-test {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);
+  }
+  .btn-test:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+  }
+  .btn-danger {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+  }
+  .btn-danger:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.5);
+    transform: translateY(-2px);
+  }
+  .btn-delete {
+    background: transparent;
+    color: #64748b;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    text-decoration: underline;
+  }
+  .btn-delete:hover {
+    color: #ef4444;
+  }
+  .login-required-msg {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #94a3b8;
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+  @media screen and (max-width: 767px) {
+    .status-card {
+      padding: 2rem 1.5rem;
+    }
+    .status-item {
+      padding: 1rem;
+    }
+  }
+</style>
+
+<div class="account-hero">
+  <div class="account-page-wrapper">
+    <!-- User Status Section -->
+    <div class="status-card" id="status" style="display:none;">
+      <div class="status-header">My Account</div>
+      <div class="status-grid">
+        <div class="status-item">
+          <div class="status-label">Email</div>
+          <div class="status-value" id="info-email">-</div>
+        </div>
+        <div class="status-item">
+          <div class="status-label">Verified</div>
+          <div class="status-value" id="info-verified">-</div>
+        </div>
+        <div class="status-item">
+          <div class="status-label">Membership</div>
+          <div class="status-value" id="info-membership">-</div>
+        </div>
+        <div class="status-item">
+          <div class="status-label">Expiration</div>
+          <div class="status-value" id="info-expire">-</div>
+        </div>
+        <div class="status-item">
+          <div class="status-label">Next Payment</div>
+          <div class="status-value" id="info-next">-</div>
+        </div>
+        <div class="status-item">
+          <div class="status-label">Reward Wallet</div>
+          <div class="status-value" id="info-wallet">-</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Login Required Message -->
+    <div class="status-card login-required-msg" id="asklogin" style="display:none;">
+      <div>This page is only available after logging in.<br/><br/>Please sign in to continue.</div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div id="box1" style="display:none;">
+      <div class="actions-grid">
+        <!-- Subscription Actions -->
+        <a class="action-btn btn-primary" href="pricing.html" id="resub-btn" style="display:none;">
           Start Subscription
         </a>
-<!-- [NEW] Change Subscription -->
-<a class="action-btn btn-change" href="pricing.html" id="change-sub-btn" style="display:none;">
+        <!-- [NEW] Change Subscription -->
+        <a class="action-btn btn-change" href="pricing.html" id="change-sub-btn" style="display:none;">
           Change Subscription
         </a>
-<a class="action-btn btn-danger" href="#" id="unsub-btn" style="display:none;">
+        <a class="action-btn btn-danger" href="#" id="unsub-btn" style="display:none;">
           Cancel Subscription
         </a>
-<!-- Delete Account -->
-<a class="action-btn btn-delete" href="#" id="delete-account-btn">
+        <!-- Test Payout -->
+        <a class="action-btn btn-test" href="#" id="sub-btn-test" style="display:none;">
+          Reward Wallet Test (1.11 USDT)
+        </a>
+        <!-- Delete Account -->
+        <a class="action-btn btn-delete" href="#" id="delete-account-btn">
           Delete Account
         </a>
-<!-- Test Payout (Moved down) -->
-<a class="action-btn btn-test" href="#" id="sub-btn-test" style="display:none;">
-           Reward Wallet Test (1.11 USDT)
-        </a>
-</div>
-</div>
-<!-- Original box2 logic is merged into box1/actions-grid. 
-         Keeping empty div if strict ID check exists in other scripts, 
-         though current script handles null check gracefully. -->
-<div id="box2" style="display:none;"></div>
+      </div>
+    </div>
+    
+    <!-- Original box2 logic is merged into box1/actions-grid. -->
+    <div id="box2" style="display:none;"></div>
+  </div>
 </div>
 <!-- i18n strings for JS-driven UI labels/alerts (translated by HTML locale generator) -->
 <div id="i18n-my-account" style="display:none">
