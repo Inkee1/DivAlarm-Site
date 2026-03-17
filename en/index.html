@@ -111,150 +111,199 @@
 <div class="container-copy"></div>
 </section>
 <style>
-  .hero-new {
-    padding: 6rem 1rem 4rem;
+  .hero-ultimate {
+    padding: 8rem 1rem 6rem;
     text-align: center;
-    background: radial-gradient(circle at top, #f8fafc 0%, #ffffff 100%);
+    background-color: #020617;
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  .hero-new::before {
+  .hero-ultimate::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+    top: -20%;
+    left: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 60%);
     pointer-events: none;
     z-index: 0;
+    filter: blur(60px);
+    animation: drift 15s ease-in-out infinite alternate;
   }
-  .hero-new > .container {
+  .hero-ultimate::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    right: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+    animation: drift 12s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes drift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, -30px); }
+  }
+  .hero-ultimate > .container {
     position: relative;
-    z-index: 1;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
   }
-  .hero-new-badge {
-    display: inline-block;
-    background: #eff6ff;
-    color: #2563eb;
-    padding: 0.5rem 1rem;
+  .premium-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    color: #cbd5e1;
+    padding: 0.5rem 1.25rem;
     border-radius: 9999px;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
-    border: 1px solid #bfdbfe;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   }
-  .hero-new-title {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    color: #0f172a;
+  .premium-pill .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+  }
+  .mega-title {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: #f8fafc;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
   }
-  .hero-new-title span {
+  .mega-title span {
     color: transparent;
-    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
     -webkit-background-clip: text;
     background-clip: text;
   }
-  .hero-new-subtitle {
-    font-size: clamp(1.125rem, 2vw, 1.35rem);
+  .mega-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
     line-height: 1.6;
-    color: #475569;
-    max-width: 650px;
-    margin: 0 auto 2.5rem;
+    color: #94a3b8;
+    max-width: 700px;
+    margin: 0 auto 3rem;
   }
-  .hero-new-actions {
+  .action-group {
     display: flex;
     gap: 1rem;
     justify-content: center;
     margin-bottom: 5rem;
     flex-wrap: wrap;
   }
-  .btn-primary {
-    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  .btn-cyber {
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
     color: white !important;
-    padding: 1rem 2.5rem;
+    padding: 1.25rem 3rem;
     border-radius: 50px;
-    font-weight: 600;
-    font-size: 1.125rem;
+    font-weight: 700;
+    font-size: 1.15rem;
     text-decoration: none;
-    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+    border: none;
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.5);
+  .btn-cyber:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.6);
   }
-  .btn-secondary {
-    background-color: white;
-    color: #334155 !important;
-    padding: 1rem 2.5rem;
+  .btn-glass {
+    background: rgba(255, 255, 255, 0.05);
+    color: #f8fafc !important;
+    padding: 1.25rem 3rem;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 1.125rem;
+    font-size: 1.15rem;
     text-decoration: none;
-    border: 1px solid #cbd5e1;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
-  .btn-secondary:hover {
-    background-color: #f8fafc;
-    border-color: #94a3b8;
+  .btn-glass:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
-  .hero-image-container {
+  .showcase-container {
     max-width: 1000px;
     margin: 0 auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
-    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 24px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(56, 189, 248, 0.1);
     position: relative;
-    transform: perspective(1000px) rotateX(2deg);
-    transition: transform 0.5s ease;
+    transform: perspective(1200px) rotateX(4deg) translateY(0);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
-  .hero-image-container:hover {
-    transform: perspective(1000px) rotateX(0deg);
+  .showcase-container:hover {
+    transform: perspective(1200px) rotateX(0deg) translateY(-10px);
   }
-  .hero-image-container img {
+  .showcase-container img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  .hero-image-caption {
+  .showcase-caption {
     margin-top: 1.5rem;
     font-size: 0.875rem;
     color: #64748b;
   }
 </style>
-<section class="hero-new">
+<section class="hero-ultimate">
   <div class="container">
     <div style="max-width: 800px; margin: 0 auto;">
-      <div class="hero-new-badge">DivAlarm Alerts</div>
-      <h1 class="hero-new-title">Still watching the <span>charts</span> all day?</h1>
-      <p class="hero-new-subtitle">Get alerts at chart reversal points.<br/>The RSI divergence indicator trusted by traders worldwide.</p>
+      <div class="premium-pill"><span class="dot"></span>DivAlarm System Online</div>
+      <h1 class="mega-title">Still watching the <span>charts</span> all day?</h1>
+      <p class="mega-subtitle">The RSI divergence indicator trusted by traders worldwide.<br/>Get alerts at chart reversal points.</p>
       
-      <div class="hero-new-actions">
-        <a href="features.html" class="btn-primary">Learn more now</a>
-        <a href="https://play.google.com/store/apps/details?id=com.flutterflow.divalarm2" target="_blank" class="btn-secondary">
-          Try for Free 
+      <div class="action-group">
+        <a href="features.html" class="btn-cyber">Explore Features</a>
+        <a href="https://play.google.com/store/apps/details?id=com.flutterflow.divalarm2" target="_blank" class="btn-glass">
+          Get the App
           <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
         </a>
       </div>
     </div>
     
-    <div class="hero-image-container">
+    <div class="showcase-container">
       <img alt="DivAlarm Screenshot" loading="lazy" sizes="(max-width: 1815px) 100vw, 1815px" src="../images/DIvAlarm--표지2.png" srcset="../images/DIvAlarm--표지2-p-500.png 500w, ../images/DIvAlarm--표지2-p-800.png 800w, ../images/DIvAlarm--표지2-p-1080.png 1080w, ../images/DIvAlarm--표지2-p-1600.png 1600w, ../images/DIvAlarm--표지2.png 1815w"/>
     </div>
-    <p class="hero-image-caption">(Bitcoin chart screenshot. Divergence signals detected by DivAlarm using two timeframes are highlighted.)</p>
+    <p class="showcase-caption" style="margin-bottom: 2rem;">Live Bitcoin Analysis. Divergence signals precisely detected and isolated.</p>
+    
+    <div style="margin-top: 1.5rem; text-align: center;">
+      <p style="font-size: 1.15rem; color: #38bdf8; font-weight: 500; font-style: italic; letter-spacing: 0.02em;">
+        DivAlarm doesn't just find trades. <span style="color: #f8fafc; font-weight: 700;">It finds the absolute best opportunities.</span>
+      </p>
+    </div>
   </div>
 </section>
 <div class="page-wrapper">
