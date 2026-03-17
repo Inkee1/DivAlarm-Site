@@ -470,24 +470,6 @@ margin: 0rem !important;
     position: relative;
     box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.2);
   }
-  
-  .dark-layout-wrapper::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #3b82f6, #a855f7, #3b82f6);
-    background-size: 200% auto;
-    animation: gradientFlow 3s linear infinite;
-    z-index: 10;
-  }
-
-  @keyframes gradientFlow {
-    0% { background-position: 0% center; }
-    100% { background-position: 200% center; }
-  }
 
   .feature-section-dark {
     padding: 4rem 1rem;
@@ -710,7 +692,7 @@ margin: 0rem !important;
   <section class="feature-section-dark" style="padding-bottom: 8rem;">
     <div class="container" style="position: relative; z-index: 2; padding: 0 1rem;">
       <div class="cta-glass-card">
-        <img alt="Rewards" loading="lazy" src="../images/big-reward22.png" style="width: 220px; margin: -80px auto 2rem; position: relative; z-index: 10; display: block; filter: drop-shadow(0 20px 20px rgba(0,0,0,0.5));"/>
+        <img alt="Rewards" loading="lazy" src="../images/big-reward22.png" style="width: 220px; margin: 0 auto 2rem; position: relative; z-index: 10; display: block; filter: drop-shadow(0 20px 20px rgba(0,0,0,0.5));"/>
         
         <h2 class="feature-heading" style="text-align: center; margin-bottom: 1rem;">Earn money every month just by <span>inviting others</span>.</h2>
         
