@@ -1,7 +1,11 @@
 (() => {
-  const DEFAULT_MANIFEST_URLS = [
+  const DEFAULT_MANIFEST_JSON_URLS = [
     "../data/performance/btcusdt/manifest.json",
     "https://cdn.jsdelivr.net/gh/Inkee1/DivAlarm-Site@main/data/performance/btcusdt/manifest.json",
+  ];
+  const DEFAULT_MANIFEST_SCRIPT_URLS = [
+    "../data/performance/btcusdt/manifest.js",
+    "https://cdn.jsdelivr.net/gh/Inkee1/DivAlarm-Site@main/data/performance/btcusdt/manifest.js",
   ];
 
   const state = {
@@ -72,35 +76,82 @@
     }).format(new Date(Date.UTC(year, month - 1, 1)));
   }
 
-  function resolveManifestCandidates() {
-    const configured = window.DIVALARM_PERFORMANCE_MANIFEST_URLS;
+  function resolveManifestCandidates(kind) {
+    const configured =
+      kind === "script"
+        ? window.DIVALARM_PERFORMANCE_MANIFEST_SCRIPT_URLS
+        : window.DIVALARM_PERFORMANCE_MANIFEST_URLS;
     if (Array.isArray(configured) && configured.length > 0) {
       return configured;
     }
-    return DEFAULT_MANIFEST_URLS;
+    return kind === "script" ? DEFAULT_MANIFEST_SCRIPT_URLS : DEFAULT_MANIFEST_JSON_URLS;
+  }
+
+  async function loadManifestViaFetch(candidate) {
+    const requestUrl = new URL(candidate, window.location.href);
+    requestUrl.searchParams.set("ts", String(Date.now()));
+    const response = await fetch(requestUrl.toString(), { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const payload = await response.json();
+    const manifestUrl = new URL(candidate, window.location.href);
+    return {
+      payload,
+      manifestUrl,
+      manifestBaseUrl: new URL("./", manifestUrl),
+    };
+  }
+
+  async function loadManifestViaScript(candidate) {
+    const scriptUrl = new URL(candidate, window.location.href);
+    scriptUrl.searchParams.set("ts", String(Date.now()));
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = scriptUrl.toString();
+      script.async = true;
+      script.onload = () => {
+        const payload = window.DIVALARM_PERFORMANCE_MANIFEST;
+        if (!payload) {
+          reject(new Error("Manifest script loaded but no manifest payload was found."));
+          return;
+        }
+        resolve({
+          payload,
+          manifestUrl: scriptUrl,
+          manifestBaseUrl: new URL("./", scriptUrl),
+        });
+      };
+      script.onerror = () => reject(new Error(`Could not load ${scriptUrl}`));
+      document.head.appendChild(script);
+    });
+  }
+
+  function describeManifestSource(manifestUrl) {
+    if (!manifestUrl) {
+      return "unknown";
+    }
+    if (manifestUrl.protocol === "file:") {
+      return "local files";
+    }
+    return manifestUrl.hostname || manifestUrl.href;
   }
 
   async function loadManifest() {
-    const candidates = resolveManifestCandidates();
+    const strategies = window.location.protocol === "file:" ? ["script", "json"] : ["json", "script"];
     let lastError = new Error("No manifest sources configured");
 
-    for (const candidate of candidates) {
-      try {
-        const requestUrl = new URL(candidate, window.location.href);
-        requestUrl.searchParams.set("ts", String(Date.now()));
-        const response = await fetch(requestUrl.toString(), { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
+    for (const strategy of strategies) {
+      const candidates = resolveManifestCandidates(strategy);
+      for (const candidate of candidates) {
+        try {
+          if (strategy === "script") {
+            return await loadManifestViaScript(candidate);
+          }
+          return await loadManifestViaFetch(candidate);
+        } catch (error) {
+          lastError = error instanceof Error ? error : new Error(String(error));
         }
-        const payload = await response.json();
-        const manifestUrl = new URL(candidate, window.location.href);
-        return {
-          payload,
-          manifestUrl,
-          manifestBaseUrl: new URL("./", manifestUrl),
-        };
-      } catch (error) {
-        lastError = error instanceof Error ? error : new Error(String(error));
       }
     }
 
@@ -417,7 +468,7 @@
       bindEvents();
       setCurrentIndex(state.currentIndex);
       showStatus(
-        `Loaded ${weeks.length} weekly performance snapshots. Source: ${manifest.manifestUrl.hostname}`,
+        `Loaded ${weeks.length} weekly performance snapshots. Source: ${describeManifestSource(manifest.manifestUrl)}`,
         "success"
       );
     } catch (error) {
