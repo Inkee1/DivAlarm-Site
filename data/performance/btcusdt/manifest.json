@@ -1,7 +1,8 @@
 {
   "schema_version": 1,
   "symbol": "BTCUSDT",
-  "generated_at": "2026-03-21T01:38:03Z",
+  "image_format": "webp",
+  "generated_at": "2026-03-21T02:23:49Z",
   "week_count": 26,
   "weeks": [
     {
@@ -13,7 +14,7 @@
       "year": 2025,
       "month": 9,
       "month_key": "2025-09",
-      "image": "images/20250914.png",
+      "image": "images/20250914.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-09-14",
       "range": {
         "low_time_utc": "2025-09-06T16:00:00Z",
@@ -94,7 +95,7 @@
       "year": 2025,
       "month": 9,
       "month_key": "2025-09",
-      "image": "images/20250921.png",
+      "image": "images/20250921.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-09-21",
       "range": {
         "low_time_utc": "2025-09-15T12:00:00Z",
@@ -197,7 +198,7 @@
       "year": 2025,
       "month": 9,
       "month_key": "2025-09",
-      "image": "images/20250928.png",
+      "image": "images/20250928.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-09-28",
       "range": {
         "low_time_utc": "2025-09-26T08:00:00Z",
@@ -313,7 +314,7 @@
       "year": 2025,
       "month": 10,
       "month_key": "2025-10",
-      "image": "images/20251005.png",
+      "image": "images/20251005.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-10-05",
       "range": {
         "low_time_utc": "2025-09-28T12:00:00Z",
@@ -378,7 +379,7 @@
       "year": 2025,
       "month": 10,
       "month_key": "2025-10",
-      "image": "images/20251012.png",
+      "image": "images/20251012.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-10-12",
       "range": {
         "low_time_utc": "2025-10-10T20:00:00Z",
@@ -494,7 +495,7 @@
       "year": 2025,
       "month": 10,
       "month_key": "2025-10",
-      "image": "images/20251019.png",
+      "image": "images/20251019.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-10-19",
       "range": {
         "low_time_utc": "2025-10-17T08:00:00Z",
@@ -611,7 +612,7 @@
       "year": 2025,
       "month": 10,
       "month_key": "2025-10",
-      "image": "images/20251026.png",
+      "image": "images/20251026.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-10-26",
       "range": {
         "low_time_utc": "2025-10-19T08:00:00Z",
@@ -720,7 +721,7 @@
       "year": 2025,
       "month": 11,
       "month_key": "2025-11",
-      "image": "images/20251102.png",
+      "image": "images/20251102.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-11-02",
       "range": {
         "low_time_utc": "2025-10-30T16:00:00Z",
@@ -818,7 +819,7 @@
       "year": 2025,
       "month": 11,
       "month_key": "2025-11",
-      "image": "images/20251109.png",
+      "image": "images/20251109.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-11-09",
       "range": {
         "low_time_utc": "2025-11-04T20:00:00Z",
@@ -920,7 +921,7 @@
       "year": 2025,
       "month": 11,
       "month_key": "2025-11",
-      "image": "images/20251116.png",
+      "image": "images/20251116.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-11-16",
       "range": {
         "low_time_utc": "2025-11-14T20:00:00Z",
@@ -1056,7 +1057,7 @@
       "year": 2025,
       "month": 11,
       "month_key": "2025-11",
-      "image": "images/20251123.png",
+      "image": "images/20251123.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-11-23",
       "range": {
         "low_time_utc": "2025-11-21T12:00:00Z",
@@ -1160,7 +1161,7 @@
       "year": 2025,
       "month": 11,
       "month_key": "2025-11",
-      "image": "images/20251130.png",
+      "image": "images/20251130.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-11-30",
       "range": {
         "low_time_utc": "2025-11-24T12:00:00Z",
@@ -1288,7 +1289,7 @@
       "year": 2025,
       "month": 12,
       "month_key": "2025-12",
-      "image": "images/20251207.png",
+      "image": "images/20251207.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-12-07",
       "range": {
         "low_time_utc": "2025-12-01T12:00:00Z",
@@ -1387,7 +1388,7 @@
       "year": 2025,
       "month": 12,
       "month_key": "2025-12",
-      "image": "images/20251214.png",
+      "image": "images/20251214.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-12-14",
       "range": {
         "low_time_utc": "2025-12-07T12:00:00Z",
@@ -1510,7 +1511,7 @@
       "year": 2025,
       "month": 12,
       "month_key": "2025-12",
-      "image": "images/20251221.png",
+      "image": "images/20251221.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-12-21",
       "range": {
         "low_time_utc": "2025-12-18T20:00:00Z",
@@ -1614,7 +1615,7 @@
       "year": 2025,
       "month": 12,
       "month_key": "2025-12",
-      "image": "images/20251228.png",
+      "image": "images/20251228.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2025-12-28",
       "range": {
         "low_time_utc": "2025-12-24T12:00:00Z",
@@ -1739,7 +1740,7 @@
       "year": 2026,
       "month": 1,
       "month_key": "2026-01",
-      "image": "images/20260104.png",
+      "image": "images/20260104.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-01-04",
       "range": {
         "low_time_utc": "2025-12-29T12:00:00Z",
@@ -1842,7 +1843,7 @@
       "year": 2026,
       "month": 1,
       "month_key": "2026-01",
-      "image": "images/20260111.png",
+      "image": "images/20260111.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-01-11",
       "range": {
         "low_time_utc": "2026-01-08T12:00:00Z",
@@ -1886,7 +1887,7 @@
       "year": 2026,
       "month": 1,
       "month_key": "2026-01",
-      "image": "images/20260118.png",
+      "image": "images/20260118.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-01-18",
       "range": {
         "low_time_utc": "2026-01-12T12:00:00Z",
@@ -1989,7 +1990,7 @@
       "year": 2026,
       "month": 1,
       "month_key": "2026-01",
-      "image": "images/20260125.png",
+      "image": "images/20260125.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-01-25",
       "range": {
         "low_time_utc": "2026-01-21T16:00:00Z",
@@ -2095,7 +2096,7 @@
       "year": 2026,
       "month": 2,
       "month_key": "2026-02",
-      "image": "images/20260201.png",
+      "image": "images/20260201.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-02-01",
       "range": {
         "low_time_utc": "2026-01-31T16:00:00Z",
@@ -2230,7 +2231,7 @@
       "year": 2026,
       "month": 2,
       "month_key": "2026-02",
-      "image": "images/20260208.png",
+      "image": "images/20260208.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-02-08",
       "range": {
         "low_time_utc": "2026-02-06T00:00:00Z",
@@ -2339,7 +2340,7 @@
       "year": 2026,
       "month": 2,
       "month_key": "2026-02",
-      "image": "images/20260215.png",
+      "image": "images/20260215.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-02-15",
       "range": {
         "low_time_utc": "2026-02-12T16:00:00Z",
@@ -2441,7 +2442,7 @@
       "year": 2026,
       "month": 2,
       "month_key": "2026-02",
-      "image": "images/20260222.png",
+      "image": "images/20260222.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-02-22",
       "range": {
         "low_time_utc": "2026-02-19T12:00:00Z",
@@ -2545,7 +2546,7 @@
       "year": 2026,
       "month": 3,
       "month_key": "2026-03",
-      "image": "images/20260301.png",
+      "image": "images/20260301.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-03-01",
       "range": {
         "low_time_utc": "2026-02-24T12:00:00Z",
@@ -2620,7 +2621,7 @@
       "year": 2026,
       "month": 3,
       "month_key": "2026-03",
-      "image": "images/20260308.png",
+      "image": "images/20260308.webp",
       "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-03-08",
       "range": {
         "low_time_utc": "2026-03-01T20:00:00Z",
@@ -2727,7 +2728,7 @@
           ]
         }
       ],
-      "raw_summary": "[div_daily] inserted rows: 38\n\n== 7일 최저/최고 피크 ==\n- 최저점: 2026-03-01T20:00:00Z  low=65011.00\n- 최고점: 2026-03-04T16:00:00Z high=74046.50\n- 퍼센트 차이: +13.90%  |  (x10) 수익률: +138.98%\n- Note: (%) = stop-loss / % is low-based\n- 최저점 공유 bullish 다이버전스: 1h RSI14 (+1.02%), 1h RSI7 (+1.02%), 30m RSI14 (+1.02%), 30m RSI7 (+1.02%), 15m RSI14 (+1.02%), 15m RSI7 (+1.02%)\n- 최고점 공유 bearish 다이버전스: 15m RSI14 (-0.14%), 15m RSI7 (-0.14%), 30m RSI14 (-0.67%), 30m RSI7 (-0.67%)\n\n== (4H) 피크→다음 피크 (좌/우 5개 비교) TOP 3 ==\n[1] Low→High: +12.06% | (x10) 수익률: +120.56%\n  - A: 2026-03-03T12:00:00Z  low=66080.00\n  - B: 2026-03-04T16:00:00Z  high=74046.50\n  - A 공유 다이버전스: 1h RSI14 (+0.80%), 1h RSI7 (+0.80%), 30m RSI14 (+0.80%), 30m RSI7 (+0.80%)\n  - B 공유 다이버전스: 15m RSI14 (-0.14%), 15m RSI7 (-0.14%), 30m RSI14 (-0.67%), 30m RSI7 (-0.67%)\n[2] Low→High: +7.83% | (x10) 수익률: +78.28%\n  - A: 2026-03-01T20:00:00Z  low=65011.00\n  - B: 2026-03-02T16:00:00Z  high=70100.00\n  - A 공유 다이버전스: 1h RSI14 (+1.02%), 1h RSI7 (+1.02%), 30m RSI14 (+1.02%), 30m RSI7 (+1.02%), 15m RSI14 (+1.02%), 15m RSI7 (+1.02%)\n[3] High→Low: +6.08% | (x10) 수익률: +60.84%\n  - A: 2026-03-02T16:00:00Z  high=70100.00\n  - B: 2026-03-03T12:00:00Z  low=66080.00\n  - B 공유 다이버전스: 1h RSI14 (+0.80%), 1h RSI7 (+0.80%), 30m RSI14 (+0.80%), 30m RSI7 (+0.80%)",
+      "raw_summary": "[div_daily] inserted rows: 0\n\n== 7일 최저/최고 피크 ==\n- 최저점: 2026-03-01T20:00:00Z  low=65011.00\n- 최고점: 2026-03-04T16:00:00Z high=74046.50\n- 퍼센트 차이: +13.90%  |  (x10) 수익률: +138.98%\n- Note: (%) = stop-loss / % is low-based\n- 최저점 공유 bullish 다이버전스: 1h RSI14 (+1.02%), 1h RSI7 (+1.02%), 30m RSI14 (+1.02%), 30m RSI7 (+1.02%), 15m RSI14 (+1.02%), 15m RSI7 (+1.02%)\n- 최고점 공유 bearish 다이버전스: 15m RSI14 (-0.14%), 15m RSI7 (-0.14%), 30m RSI14 (-0.67%), 30m RSI7 (-0.67%)\n\n== (4H) 피크→다음 피크 (좌/우 5개 비교) TOP 3 ==\n[1] Low→High: +12.06% | (x10) 수익률: +120.56%\n  - A: 2026-03-03T12:00:00Z  low=66080.00\n  - B: 2026-03-04T16:00:00Z  high=74046.50\n  - A 공유 다이버전스: 1h RSI14 (+0.80%), 1h RSI7 (+0.80%), 30m RSI14 (+0.80%), 30m RSI7 (+0.80%)\n  - B 공유 다이버전스: 15m RSI14 (-0.14%), 15m RSI7 (-0.14%), 30m RSI14 (-0.67%), 30m RSI7 (-0.67%)\n[2] Low→High: +7.83% | (x10) 수익률: +78.28%\n  - A: 2026-03-01T20:00:00Z  low=65011.00\n  - B: 2026-03-02T16:00:00Z  high=70100.00\n  - A 공유 다이버전스: 1h RSI14 (+1.02%), 1h RSI7 (+1.02%), 30m RSI14 (+1.02%), 30m RSI7 (+1.02%), 15m RSI14 (+1.02%), 15m RSI7 (+1.02%)\n[3] High→Low: +6.08% | (x10) 수익률: +60.84%\n  - A: 2026-03-02T16:00:00Z  high=70100.00\n  - B: 2026-03-03T12:00:00Z  low=66080.00\n  - B 공유 다이버전스: 1h RSI14 (+0.80%), 1h RSI7 (+0.80%), 30m RSI14 (+0.80%), 30m RSI7 (+0.80%)",
       "headline": "Low→High +12.06% (x10 +120.56%)"
     }
   ]
