@@ -183,7 +183,7 @@
           <div class="performance-move-head">
             <span class="performance-rank">#${escapeHtml(move.rank)}</span>
             <strong>Same as 7D range</strong>
-            <span class="performance-move-change">${escapeHtml(formatPct(move.x10_pct))} x10</span>
+            <span class="performance-move-change performance-move-change-highlight">${escapeHtml(formatPct(move.x10_pct))} x10</span>
           </div>
         </article>
       `;
@@ -196,7 +196,7 @@
         <div class="performance-move-head">
           <span class="performance-rank">#${escapeHtml(move.rank)}</span>
           <strong>${escapeHtml(move.direction)}</strong>
-          <span class="performance-move-change">${escapeHtml(formatPct(move.x10_pct))} x10</span>
+          <span class="performance-move-change performance-move-change-highlight">${escapeHtml(formatPct(move.x10_pct))} x10</span>
         </div>
         <div class="performance-move-body">
           <div class="performance-move-points">
@@ -263,25 +263,41 @@
         </div>
         <div class="performance-card-body">
           <div class="performance-chart-panel">
+            <div class="performance-mobile-arrows">
+              <button class="performance-overlay-arrow left-arrow" aria-label="Previous week">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="performance-overlay-arrow right-arrow" aria-label="Next week">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
             <img alt="${escapeHtml(week.image_alt || `${week.symbol} performance chart`)}" loading="lazy" src="${escapeHtml(resolveImageUrl(week))}"/>
           </div>
           <div class="performance-details-panel">
             <div class="performance-stat-grid">
-              <article class="performance-stat-card performance-stat-card-accent">
-                <span class="performance-mini-label">7D Range</span>
-                <strong>${escapeHtml(formatPct(week.range.change_pct))}</strong>
-                <span class="performance-muted">x10 ${escapeHtml(formatPct(week.range.x10_pct))}</span>
+              <article class="performance-stat-card performance-stat-card-accent performance-hero-stat">
+                <div class="performance-hero-stat-left">
+                  <span class="performance-mini-label performance-hero-label">x10 수익률 (Leveraged Return)</span>
+                  <div class="performance-x10-highlight">${escapeHtml(formatPct(week.range.x10_pct))}</div>
+                </div>
+                <div class="performance-hero-stat-right">
+                  <span class="performance-mini-label">Base Move</span>
+                  <div class="performance-base-move">${escapeHtml(formatPct(week.range.change_pct))}</div>
+                </div>
               </article>
-              <article class="performance-stat-card">
-                <span class="performance-mini-label">Low</span>
-                <strong>${escapeHtml(typeof week.range.low === "number" ? week.range.low.toLocaleString("en-US") : "N/A")}</strong>
-                <span class="performance-muted">${escapeHtml(formatUtcDateTime(week.range.low_time_utc))}${week.range.low_time_utc ? " UTC" : ""}</span>
-              </article>
-              <article class="performance-stat-card">
-                <span class="performance-mini-label">High</span>
-                <strong>${escapeHtml(typeof week.range.high === "number" ? week.range.high.toLocaleString("en-US") : "N/A")}</strong>
-                <span class="performance-muted">${escapeHtml(formatUtcDateTime(week.range.high_time_utc))}${week.range.high_time_utc ? " UTC" : ""}</span>
-              </article>
+              <div class="performance-controls-slot"></div>
+              <div class="performance-stat-grid-duo">
+                <article class="performance-stat-card">
+                  <span class="performance-mini-label">Low</span>
+                  <strong>${escapeHtml(typeof week.range.low === "number" ? week.range.low.toLocaleString("en-US") : "N/A")}</strong>
+                  <span class="performance-muted">${escapeHtml(formatUtcDateTime(week.range.low_time_utc))}${week.range.low_time_utc ? " UTC" : ""}</span>
+                </article>
+                <article class="performance-stat-card">
+                  <span class="performance-mini-label">High</span>
+                  <strong>${escapeHtml(typeof week.range.high === "number" ? week.range.high.toLocaleString("en-US") : "N/A")}</strong>
+                  <span class="performance-muted">${escapeHtml(formatUtcDateTime(week.range.high_time_utc))}${week.range.high_time_utc ? " UTC" : ""}</span>
+                </article>
+              </div>
             </div>
             <div class="performance-div-grid performance-div-grid-range">
               <div>
@@ -328,6 +344,11 @@
     const activeCard = cards[state.currentIndex];
     if (!activeCard) {
       return;
+    }
+
+    const slot = activeCard.querySelector('.performance-controls-slot');
+    if (elements.controls && slot) {
+      slot.appendChild(elements.controls);
     }
 
     const centerOffset =
@@ -422,17 +443,58 @@
     }
   }
 
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  function handleTouchStart(e) {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }
+
+  function handleTouchEnd(e) {
+    if (!touchStartX || !touchStartY) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
+    const diffX = touchStartX - touchEndX;
+    const diffY = touchStartY - touchEndY;
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX > 40) {
+        setCurrentIndex(state.currentIndex + 1);
+      } else if (diffX < -40) {
+        setCurrentIndex(state.currentIndex - 1);
+      }
+    }
+    touchStartX = 0;
+    touchStartY = 0;
+  }
+
   function bindEvents() {
     elements.prev.addEventListener("click", () => setCurrentIndex(state.currentIndex - 1));
     elements.next.addEventListener("click", () => setCurrentIndex(state.currentIndex + 1));
     elements.year.addEventListener("change", handleYearChange);
     elements.month.addEventListener("change", handleMonthChange);
     elements.update.addEventListener("change", () => jumpToWeekById(elements.update.value));
+    
+    // Swipe Mechanics
+    elements.carouselWindow.addEventListener("touchstart", handleTouchStart, { passive: true });
+    elements.carouselWindow.addEventListener("touchend", handleTouchEnd, { passive: true });
+    
+    // Overlay Arrow Mechanics
+    elements.carouselWindow.addEventListener("click", (e) => {
+      const btn = e.target.closest(".performance-overlay-arrow");
+      if (btn) {
+        if (btn.classList.contains("left-arrow")) setCurrentIndex(state.currentIndex - 1);
+        else if (btn.classList.contains("right-arrow")) setCurrentIndex(state.currentIndex + 1);
+      }
+    });
+
     window.addEventListener("resize", () => window.requestAnimationFrame(updateTrackPosition));
   }
 
   function collectElements() {
     elements.status = document.getElementById("performance-status");
+    elements.controls = document.querySelector(".performance-controls");
     elements.year = document.getElementById("performance-year");
     elements.month = document.getElementById("performance-month");
     elements.update = document.getElementById("performance-update");
