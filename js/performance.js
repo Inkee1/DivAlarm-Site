@@ -167,6 +167,58 @@
     elements.status.hidden = !message;
   }
 
+  window.openLightbox = function(imgSrc) {
+    let overlay = document.getElementById("img-lightbox");
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.id = "img-lightbox";
+      overlay.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background: rgba(0,0,0,0.95); z-index: 99999;
+        display: flex; align-items: center; justify-content: center;
+        overflow: auto;
+      `;
+      overlay.innerHTML = `
+        <div style="position: absolute; top: 15px; right: 20px; color: white; font-size: 35px; cursor: pointer; z-index: 100000;" id="lightbox-close">&times;</div>
+        <img id="lightbox-img" src="" style="margin: auto; display: block; max-width: 100%; max-height: 100%; transition: transform 0.25s;" />
+      `;
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener("click", (e) => {
+        if (e.target.id === "img-lightbox" || e.target.id === "lightbox-close") {
+          overlay.style.display = "none";
+          document.body.style.overflow = "";
+        }
+      });
+
+      const img = overlay.querySelector("#lightbox-img");
+      let scale = 1;
+      img.addEventListener("click", (e) => {
+        e.stopPropagation();
+        scale = scale === 1 ? 2.5 : 1;
+        img.style.transform = `scale(${scale})`;
+        img.style.cursor = scale === 1 ? "zoom-out" : "zoom-in";
+        if(scale > 1) {
+            img.style.transformOrigin = `${e.offsetX}px ${e.offsetY}px`;
+            overlay.style.alignItems = "flex-start";
+            overlay.style.justifyContent = "flex-start";
+        } else {
+            overlay.style.alignItems = "center";
+            overlay.style.justifyContent = "center";
+        }
+      });
+    }
+
+    const img = overlay.querySelector("#lightbox-img");
+    img.src = imgSrc;
+    img.style.transform = "scale(1)";
+    img.style.cursor = "zoom-in";
+    overlay.style.alignItems = "center";
+    overlay.style.justifyContent = "center";
+    overlay.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  };
+
   function createListHtml(items, emptyLabel) {
     if (!Array.isArray(items) || items.length === 0) {
       return `<span class="performance-muted">${escapeHtml(emptyLabel)}</span>`;
@@ -271,13 +323,13 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </button>
             </div>
-            <img alt="${escapeHtml(week.image_alt || `${week.symbol} performance chart`)}" loading="lazy" src="${escapeHtml(resolveImageUrl(week))}"/>
+            <img alt="${escapeHtml(week.image_alt || `${week.symbol} performance chart`)}" loading="lazy" src="${escapeHtml(resolveImageUrl(week))}" style="cursor: pointer;" onclick="window.openLightbox && window.openLightbox(this.src)"/>
           </div>
           <div class="performance-details-panel">
             <div class="performance-stat-grid">
               <article class="performance-stat-card performance-stat-card-accent performance-hero-stat">
                 <div class="performance-hero-stat-left">
-                  <span class="performance-mini-label performance-hero-label">x10 수익률 (Leveraged Return)</span>
+                  <span class="performance-mini-label performance-hero-label">x10 Leveraged Return</span>
                   <div class="performance-x10-highlight">${escapeHtml(formatPct(week.range.x10_pct))}</div>
                 </div>
                 <div class="performance-hero-stat-right">
@@ -330,8 +382,27 @@
   }
 
   function updateButtons() {
-    elements.prev.disabled = state.currentIndex <= 0;
-    elements.next.disabled = state.currentIndex >= state.weeks.length - 1;
+    if (elements.prev) elements.prev.disabled = state.currentIndex <= 0;
+    if (elements.next) elements.next.disabled = state.currentIndex >= state.weeks.length - 1;
+
+    const activeCard = elements.track.children[state.currentIndex];
+    if (activeCard) {
+      const leftBtn = activeCard.querySelector('.left-arrow');
+      const rightBtn = activeCard.querySelector('.right-arrow');
+      const isStart = state.currentIndex <= 0;
+      const isEnd = state.currentIndex >= state.weeks.length - 1;
+
+      if (leftBtn) {
+        leftBtn.disabled = isStart;
+        leftBtn.style.opacity = isStart ? "0.4" : "1";
+        leftBtn.style.cursor = isStart ? "not-allowed" : "pointer";
+      }
+      if (rightBtn) {
+        rightBtn.disabled = isEnd;
+        rightBtn.style.opacity = isEnd ? "0.4" : "1";
+        rightBtn.style.cursor = isEnd ? "not-allowed" : "pointer";
+      }
+    }
   }
 
   function updateTrackPosition() {
@@ -470,8 +541,8 @@
   }
 
   function bindEvents() {
-    elements.prev.addEventListener("click", () => setCurrentIndex(state.currentIndex - 1));
-    elements.next.addEventListener("click", () => setCurrentIndex(state.currentIndex + 1));
+    if (elements.prev) elements.prev.addEventListener("click", () => setCurrentIndex(state.currentIndex - 1));
+    if (elements.next) elements.next.addEventListener("click", () => setCurrentIndex(state.currentIndex + 1));
     elements.year.addEventListener("change", handleYearChange);
     elements.month.addEventListener("change", handleMonthChange);
     elements.update.addEventListener("change", () => jumpToWeekById(elements.update.value));
@@ -483,7 +554,7 @@
     // Overlay Arrow Mechanics
     elements.carouselWindow.addEventListener("click", (e) => {
       const btn = e.target.closest(".performance-overlay-arrow");
-      if (btn) {
+      if (btn && !btn.disabled) {
         if (btn.classList.contains("left-arrow")) setCurrentIndex(state.currentIndex - 1);
         else if (btn.classList.contains("right-arrow")) setCurrentIndex(state.currentIndex + 1);
       }
