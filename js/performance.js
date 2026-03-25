@@ -370,10 +370,7 @@
                 ${week.top_moves.length ? week.top_moves.map(createMoveMarkup).join("") : '<p class="performance-empty">No move entries for this week.</p>'}
               </div>
             </div>
-            <details class="performance-raw-summary">
-              <summary>Raw summary</summary>
-              <pre>${escapeHtml(week.raw_summary || "")}</pre>
-            </details>
+
           </div>
         </div>
       `;
@@ -600,10 +597,7 @@
       renderCards();
       bindEvents();
       setCurrentIndex(state.currentIndex);
-      showStatus(
-        `Loaded ${weeks.length} weekly performance snapshots. Source: ${describeManifestSource(manifest.manifestUrl)}`,
-        "success"
-      );
+      showStatus("");
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       showStatus(`Could not load performance data. ${message}`, "error");
