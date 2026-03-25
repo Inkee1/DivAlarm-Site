@@ -416,6 +416,34 @@
       .image-4 {
         margin-bottom: 30px;
       }
+      
+      .scroll-indicator {
+        display: block !important;
+      }
+    }
+    
+    @keyframes bounce-scroll {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+    
+    .scroll-indicator {
+      display: none;
+      margin: 0 auto 2rem;
+      color: rgba(248, 250, 252, 0.6);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      animation: bounce-scroll 2s infinite;
+      cursor: pointer;
+    }
+    .scroll-indicator svg {
+      width: 24px;
+      height: 24px;
+      margin: 5px auto 0;
+      display: block;
+      color: #38bdf8;
     }
   </style>
 <meta content="Advanced filters : Support/Resistance, EMA touch, Supertrend" name="description"/><meta content="Advanced filters : Support/Resistance, EMA touch, Supertrend" property="og:description"/><meta content="Advanced filters : Support/Resistance, EMA touch, Supertrend" name="twitter:description"/><meta content="https://www.divalarm.com/en/pricing.html" property="og:url"/><meta content="Pricing" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/en/pricing.html","name":"Pricing","inLanguage":"en","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/en/pricing.html" rel="canonical"/><link href="https://www.divalarm.com/en/pricing.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/pricing.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/pricing.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/pricing.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/pricing.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/pricing.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/pricing.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/pricing.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/pricing.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/pricing.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/pricing.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/pricing.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/pricing.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/pricing.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/pricing.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/pricing.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/pricing.html" hreflang="x-default" rel="alternate"/></head>
@@ -558,6 +586,11 @@
     
     <div id="refund-note" style="color: #475569; font-size: 0.85rem; margin-top: -1rem; margin-bottom: 3rem;">
       (Refunds are not available once the free trial ends.)
+    </div>
+    
+    <div class="scroll-indicator" onclick="document.querySelector('.pricing-comparison-2').scrollIntoView({behavior: 'smooth'})">
+      Scroll for Plans
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
     </div>
   </div>
 </section>
