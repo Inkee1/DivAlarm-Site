@@ -3,8 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView Webhook Guide - DivAlarm</title>
-<meta content="TradingView Webhook Guide - DivAlarm" property="og:title"/>
+<title>TradingView Webhook Setup Guide for DivAlarm</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -255,11 +254,123 @@
   </style>
 <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
 <script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
-<meta content='Right-click on the indicator you want to receive signals from in TradingView and click "Add Alert on ~".' name="description"/><meta content='Right-click on the indicator you want to receive signals from in TradingView and click "Add Alert on ~".' property="og:description"/><meta content='Right-click on the indicator you want to receive signals from in TradingView and click "Add Alert on ~".' name="twitter:description"/><meta content="https://www.divalarm.com/en/tradingview-webhook.html" property="og:url"/><meta content="TradingView Webhook Guide - DivAlarm" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/en/tradingview-webhook.html","name":"TradingView Webhook Guide - DivAlarm","inLanguage":"en","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/en/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/></head>
+<meta content="Learn how to connect TradingView alerts to DivAlarm webhooks, keyword alerts, signal combinations, and auto-order workflows." name="description"/>
+<meta content="TradingView Webhook Setup Guide for DivAlarm" property="og:title"/>
+<meta content="Learn how to connect TradingView alerts to DivAlarm webhooks, keyword alerts, signal combinations, and auto-order workflows." property="og:description"/>
+<meta content="TradingView Webhook Setup Guide for DivAlarm" name="twitter:title"/>
+<meta content="Learn how to connect TradingView alerts to DivAlarm webhooks, keyword alerts, signal combinations, and auto-order workflows." name="twitter:description"/>
+<meta content="https://www.divalarm.com/en/tradingview-webhook.html" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="summary" name="twitter:card"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.divalarm.com/#organization",
+      "name": "DivAlarm",
+      "url": "https://www.divalarm.com"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.divalarm.com/#website",
+      "url": "https://www.divalarm.com",
+      "name": "DivAlarm",
+      "publisher": {
+        "@id": "https://www.divalarm.com/#organization"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to connect TradingView webhooks to DivAlarm",
+      "description": "Connect TradingView alerts to DivAlarm for keyword alarms, signal combinations, and auto-order workflows.",
+      "url": "https://www.divalarm.com/en/tradingview-webhook.html",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Create a TradingView alert",
+          "text": "Right-click the indicator in TradingView and choose Add Alert on the indicator you want to use."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Paste the webhook URL",
+          "text": "Enable Webhook URL in TradingView notifications and paste the URL copied from the DivAlarm app."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Add a message keyword",
+          "text": "Enter a keyword in the alert message so DivAlarm can match the incoming TradingView signal."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Register the keyword in DivAlarm",
+          "text": "Add the same keyword in the app's Keyword Include section to trigger the alarm."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Extend the workflow",
+          "text": "Use signal combinations or auto-orders after the basic webhook flow is working correctly."
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://www.divalarm.com/en/tradingview-webhook.html",
+      "name": "TradingView Webhook Setup Guide for DivAlarm",
+      "description": "Learn how to connect TradingView alerts to DivAlarm webhooks, keyword alerts, signal combinations, and auto-order workflows.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://www.divalarm.com/#website"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.divalarm.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "TradingView Webhook Guide",
+          "item": "https://www.divalarm.com/en/tradingview-webhook.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link href="https://www.divalarm.com/en/tradingview-webhook.html" rel="canonical"/>
+<link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/>
+<link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/>
+<link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/>
+<link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/>
+<link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/>
+<link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/>
+<link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/>
+<link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/>
+<link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/>
+<link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/>
+<link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/>
+<link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/>
+<link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/>
+<link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/>
+<link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/>
+<link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/>
+<link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/>
+</head>
 <body>
-<div class="manual-container">
+<main class="manual-container">
 <a class="back-link" href="user-manual.html">← Back to User Manual</a>
-<h1 class="manual-title">🔗 TradingView Webhook Guide</h1>
+<h1 class="manual-title">TradingView Webhook Guide for DivAlarm</h1>
+<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">Connect TradingView alerts to DivAlarm for keyword alarms, webhook automation, signal combinations, and exchange auto-orders.</p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Table of Contents</h3>
@@ -427,7 +538,7 @@
 <p><strong>Auto-orders are also possible with combination alerts!</strong></p>
 </div>
 </div>
-</div>
+</main>
 <script>
     (function () {
       var buttons = document.querySelectorAll('.video-toggle-btn');
