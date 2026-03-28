@@ -483,17 +483,32 @@
   }
   @media screen and (max-width: 767px) {
     .account-hero {
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
     }
     .status-card {
-      padding: 1.5rem 1rem;
+      padding: 1.25rem 0.75rem;
+    }
+    .status-grid {
+      gap: 0.875rem;
     }
     .status-item {
-      padding: 0.875rem;
+      padding: 0.875rem 0.5rem;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .status-label,
+    .status-value {
+      width: 100%;
+      max-width: none;
+      text-align: center;
     }
     .status-value {
-      font-size: 1.05rem;
+      font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+    }
+    #info-membership {
+      white-space: nowrap;
     }
   }
 </style>
