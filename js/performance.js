@@ -228,7 +228,8 @@
       .join("");
   }
 
-  function createMoveMarkup(move) {
+  function createMoveMarkup(move, options = {}) {
+    const showDivergences = options.showDivergences !== false;
     if (move.same_as_range) {
       return `
         <article class="performance-move-card performance-move-card-muted">
@@ -243,6 +244,20 @@
 
     const start = move.start || {};
     const end = move.end || {};
+    const divergenceMarkup = showDivergences
+      ? `
+          <div class="performance-div-grid">
+            <div>
+              <span class="performance-mini-label">A divergence</span>
+              <div class="performance-pill-list">${createListHtml(move.a_divergences, "No A divergence")}</div>
+            </div>
+            <div>
+              <span class="performance-mini-label">B divergence</span>
+              <div class="performance-pill-list">${createListHtml(move.b_divergences, "No B divergence")}</div>
+            </div>
+          </div>
+        `
+      : "";
     return `
       <article class="performance-move-card">
         <div class="performance-move-head">
@@ -275,23 +290,118 @@
               <strong>${escapeHtml(formatPct(move.x10_pct))}</strong>
             </div>
           </div>
-          <div class="performance-div-grid">
-            <div>
-              <span class="performance-mini-label">A divergence</span>
-              <div class="performance-pill-list">${createListHtml(move.a_divergences, "No A divergence")}</div>
-            </div>
-            <div>
-              <span class="performance-mini-label">B divergence</span>
-              <div class="performance-pill-list">${createListHtml(move.b_divergences, "No B divergence")}</div>
-            </div>
-          </div>
+          ${divergenceMarkup}
         </div>
       </article>
     `;
   }
 
-  function resolveImageUrl(week) {
-    return new URL(week.image, state.manifest.manifestBaseUrl).toString();
+  function resolveAssetUrl(assetPath) {
+    return new URL(assetPath, state.manifest.manifestBaseUrl).toString();
+  }
+
+  function createTrailingWindowMarkup(trailing) {
+    if (!trailing || !trailing.image) {
+      return "";
+    }
+
+    const topMoves = Array.isArray(trailing.top_moves) ? trailing.top_moves : [];
+    const range = trailing.range || {};
+    const showDivergences = trailing.divergence_status !== "unavailable";
+    const bestX10Value =
+      typeof range.x10_pct === "number"
+        ? range.x10_pct
+        : topMoves.length > 0 && typeof topMoves[0]?.x10_pct === "number"
+          ? topMoves[0].x10_pct
+          : null;
+    const rangeCaption = `${formatUtcDate(trailing.window_start_utc)} - ${formatUtcDate(trailing.window_end_utc)} UTC`;
+
+    return `
+      <section class="performance-trailing-window">
+        <div class="performance-card-header performance-trailing-header">
+          <div>
+            <p class="performance-eyebrow">Trailing 30-day archive</p>
+            <h2>Previous 30 Days Best</h2>
+            <p class="performance-headline">${escapeHtml(rangeCaption)} · ${escapeHtml(String(trailing.interval || "12H"))} candles</p>
+          </div>
+          <div class="performance-card-badges">
+            <span class="performance-badge performance-badge-primary">${escapeHtml(trailing.headline || "Previous 30 days best")}</span>
+            <span class="performance-badge">Window ${escapeHtml(String(trailing.window_days || 30))}D</span>
+          </div>
+        </div>
+        <div class="performance-card-body performance-card-body-subsection performance-trailing-grid">
+          <div class="performance-trailing-visual">
+            <div class="performance-chart-panel performance-chart-panel-secondary">
+              <div class="performance-mobile-arrows">
+                <button class="performance-overlay-arrow left-arrow" aria-label="Previous week">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button class="performance-overlay-arrow right-arrow" aria-label="Next week">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+              <img alt="${escapeHtml(trailing.image_alt || "Previous 30 days best chart")}" loading="lazy" src="${escapeHtml(resolveAssetUrl(trailing.image))}" style="cursor: pointer;" onclick="window.openLightbox && window.openLightbox(this.src)"/>
+            </div>
+            <p class="performance-trailing-hint">Tap the chart to zoom in.</p>
+          </div>
+          <div class="performance-details-panel performance-trailing-details">
+            <div class="performance-stat-grid">
+              <article class="performance-stat-card performance-stat-card-accent performance-hero-stat">
+                <div class="performance-hero-stat-left">
+                  <span class="performance-mini-label performance-hero-label">Best x10 Return</span>
+                  <div class="performance-x10-highlight">${escapeHtml(formatPct(bestX10Value))}</div>
+                </div>
+                <div class="performance-hero-stat-right">
+                  <span class="performance-mini-label">Base Move</span>
+                  <div class="performance-base-move">${escapeHtml(formatPct(range.change_pct))}</div>
+                </div>
+              </article>
+              <div class="performance-stat-grid-duo">
+                <article class="performance-stat-card">
+                  <span class="performance-mini-label">Low</span>
+                  <strong>${escapeHtml(typeof range.low === "number" ? range.low.toLocaleString("en-US") : "N/A")}</strong>
+                  <span class="performance-muted">${escapeHtml(formatUtcDateTime(range.low_time_utc))}${range.low_time_utc ? " UTC" : ""}</span>
+                </article>
+                <article class="performance-stat-card">
+                  <span class="performance-mini-label">High</span>
+                  <strong>${escapeHtml(typeof range.high === "number" ? range.high.toLocaleString("en-US") : "N/A")}</strong>
+                  <span class="performance-muted">${escapeHtml(formatUtcDateTime(range.high_time_utc))}${range.high_time_utc ? " UTC" : ""}</span>
+                </article>
+              </div>
+            </div>
+            ${
+              showDivergences
+                ? `
+                  <div class="performance-div-grid performance-div-grid-range">
+                    <div>
+                      <span class="performance-mini-label">Bullish divergence on low</span>
+                      <div class="performance-pill-list">${createListHtml(trailing.range_divergences?.bullish, "No bullish divergence")}</div>
+                    </div>
+                    <div>
+                      <span class="performance-mini-label">Bearish divergence on high</span>
+                      <div class="performance-pill-list">${createListHtml(trailing.range_divergences?.bearish, "No bearish divergence")}</div>
+                    </div>
+                  </div>
+                `
+                : `<p class="performance-trailing-note">Historical divergence labels are not available for this 30-day view.</p>`
+            }
+            <div class="performance-section performance-section-nested">
+              <div class="performance-section-head">
+                <h3>Top 30D moves</h3>
+                <span>${escapeHtml(String(topMoves.length))} entries</span>
+              </div>
+              <div class="performance-move-list">
+                ${
+                  topMoves.length
+                    ? topMoves.map((move) => createMoveMarkup(move, { showDivergences })).join("")
+                    : '<p class="performance-empty">No move entries for this 30-day window.</p>'
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
   }
 
   function renderCards() {
@@ -323,7 +433,7 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </button>
             </div>
-            <img alt="${escapeHtml(week.image_alt || `${week.symbol} performance chart`)}" loading="lazy" src="${escapeHtml(resolveImageUrl(week))}" style="cursor: pointer;" onclick="window.openLightbox && window.openLightbox(this.src)"/>
+            <img alt="${escapeHtml(week.image_alt || `${week.symbol} performance chart`)}" loading="lazy" src="${escapeHtml(resolveAssetUrl(week.image))}" style="cursor: pointer;" onclick="window.openLightbox && window.openLightbox(this.src)"/>
           </div>
           <div class="performance-details-panel">
             <div class="performance-stat-grid">
@@ -370,9 +480,9 @@
                 ${week.top_moves.length ? week.top_moves.map(createMoveMarkup).join("") : '<p class="performance-empty">No move entries for this week.</p>'}
               </div>
             </div>
-
           </div>
         </div>
+        ${createTrailingWindowMarkup(week.trailing_30d)}
       `;
       elements.track.appendChild(card);
     });
@@ -384,21 +494,21 @@
 
     const activeCard = elements.track.children[state.currentIndex];
     if (activeCard) {
-      const leftBtn = activeCard.querySelector('.left-arrow');
-      const rightBtn = activeCard.querySelector('.right-arrow');
+      const leftBtns = activeCard.querySelectorAll('.left-arrow');
+      const rightBtns = activeCard.querySelectorAll('.right-arrow');
       const isStart = state.currentIndex <= 0;
       const isEnd = state.currentIndex >= state.weeks.length - 1;
 
-      if (leftBtn) {
+      leftBtns.forEach((leftBtn) => {
         leftBtn.disabled = isStart;
         leftBtn.style.opacity = isStart ? "0.4" : "1";
         leftBtn.style.cursor = isStart ? "not-allowed" : "pointer";
-      }
-      if (rightBtn) {
+      });
+      rightBtns.forEach((rightBtn) => {
         rightBtn.disabled = isEnd;
         rightBtn.style.opacity = isEnd ? "0.4" : "1";
         rightBtn.style.cursor = isEnd ? "not-allowed" : "pointer";
-      }
+      });
     }
   }
 
@@ -580,7 +690,7 @@
       return;
     }
 
-    showStatus("Loading weekly performance history…");
+    showStatus("Loading performance history…");
 
     try {
       const manifest = await loadManifest();

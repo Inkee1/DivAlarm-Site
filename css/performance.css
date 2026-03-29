@@ -148,6 +148,14 @@
   align-items: center;
 }
 
+#performance-month-updated {
+  display: block;
+  white-space: normal;
+  text-overflow: clip;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
 .performance-jump-hint {
   margin: 0;
   color: rgba(148, 163, 184, 0.92);
@@ -412,11 +420,72 @@
   border: 1px solid rgba(148, 163, 184, 0.12);
 }
 
+.performance-card-badges-start {
+  justify-content: flex-start;
+}
+
 .performance-section {
   padding: 1rem;
   border-radius: 1.05rem;
   border: 1px solid rgba(148, 163, 184, 0.12);
   background: rgba(2, 6, 23, 0.42);
+}
+
+.performance-section-nested {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.performance-trailing-window {
+  margin-top: 1.35rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.performance-trailing-header {
+  margin-bottom: 0.95rem;
+}
+
+.performance-card-body-subsection {
+  margin-top: 0.95rem;
+}
+
+.performance-trailing-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+  align-items: start;
+}
+
+.performance-trailing-visual {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.performance-chart-panel-secondary {
+  background: rgba(2, 6, 23, 0.28);
+}
+
+.performance-trailing-details {
+  gap: 0.95rem;
+}
+
+.performance-trailing-hint {
+  margin: 0;
+  text-align: center;
+  color: rgba(148, 163, 184, 0.9);
+  font-size: 0.86rem;
+  display: none;
+}
+
+.performance-trailing-note {
+  margin: 0;
+  padding: 0.95rem 1rem;
+  border-radius: 0.95rem;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  background: rgba(2, 6, 23, 0.42);
+  color: rgba(148, 163, 184, 0.94);
 }
 
 .performance-section-head {
@@ -427,9 +496,20 @@
   margin-bottom: 0.9rem;
 }
 
+.performance-section-head-wrap {
+  flex-wrap: wrap;
+}
+
 .performance-section-head h3 {
   margin: 0;
   color: #f8fafc;
+}
+
+.performance-section-caption {
+  margin: 0.35rem 0 0;
+  color: rgba(148, 163, 184, 0.92);
+  font-size: 0.92rem;
+  line-height: 1.55;
 }
 
 .performance-section-head span,
@@ -604,6 +684,7 @@
 @media screen and (max-width: 991px) {
   .performance-hero-grid,
   .performance-card-body,
+  .performance-trailing-grid,
   .performance-stat-grid-duo,
   .performance-div-grid,
   .performance-move-points,
@@ -612,6 +693,10 @@
   }
   .performance-filter-grid {
     grid-template-columns: 1fr;
+  }
+
+  #performance-month-updated {
+    font-size: 0.92rem;
   }
 
   .performance-card-body {
@@ -668,5 +753,82 @@
 
   .performance-card-badges {
     justify-content: flex-start;
+  }
+
+  .performance-trailing-window {
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
+  .performance-trailing-grid {
+    gap: 0.9rem;
+  }
+
+  .performance-trailing-window .performance-card-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.7rem;
+  }
+
+  .performance-trailing-window .performance-card-badges {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .performance-trailing-window .performance-badge {
+    min-height: 2rem;
+    padding: 0.35rem 0.72rem;
+    font-size: 0.8rem;
+  }
+
+  .performance-trailing-window .performance-chart-panel {
+    padding: 0.75rem;
+  }
+
+  .performance-trailing-hint {
+    display: block;
+  }
+
+  .performance-trailing-window .performance-hero-stat {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem !important;
+  }
+
+  .performance-trailing-window .performance-hero-stat-right {
+    align-items: flex-start;
+  }
+
+  .performance-trailing-window .performance-stat-grid {
+    gap: 0.75rem;
+  }
+
+  .performance-trailing-window .performance-stat-grid-duo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .performance-trailing-window .performance-stat-card {
+    padding: 0.9rem;
+  }
+
+  .performance-trailing-window .performance-stat-card strong {
+    font-size: 1.05rem;
+  }
+
+  .performance-trailing-window .performance-div-grid-range {
+    padding: 0.9rem;
+  }
+
+  .performance-trailing-window .performance-move-head {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .performance-trailing-window .performance-stat-grid-duo {
+    grid-template-columns: 1fr;
   }
 }
