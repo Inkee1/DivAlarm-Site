@@ -3,8 +3,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8"/>
-<title>Руководство пользователя — DivAlarm</title>
-<meta content="Руководство пользователя — DivAlarm" property="og:title"/>
+<title>Руководство пользователя DivAlarm | Настройка, уведомления и параметры</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -14,11 +13,13 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
-      color: #f8fafc;
+      font-family: 'Exo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000;
+      color: #e2e8f0;
       line-height: 1.8;
       min-height: 100vh;
+      font-size: 1.125rem;
+      letter-spacing: 0.01em;
     }
     
     .manual-container {
@@ -29,112 +30,132 @@
     
     .back-link {
       display: inline-block;
-      color: #00d4ff;
+      color: #38bdf8;
       text-decoration: none;
       margin-bottom: 1.5rem;
       font-size: 1.1rem;
-      transition: opacity 0.2s;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+      transition: all 0.2s ease;
     }
-    .back-link:hover { opacity: 0.8; }
+    .back-link:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-title {
       font-size: 3rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 2rem;
-      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
     }
     
     .toc {
-      background: rgba(12, 12, 24, 0.9);
+      background: rgba(15, 23, 42, 0.6);
       padding: 2rem 2.5rem;
       border-radius: 16px;
       margin-bottom: 3rem;
-      border: 1px solid rgba(0, 212, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .toc h3 {
-      color: #00d4ff;
-      font-size: 1.5rem;
+      color: #38bdf8;
+      font-size: 1.35rem;
       margin-bottom: 1rem;
+      font-weight: 600;
     }
-    .toc ul { list-style: none; }
-    .toc li { margin: 0.8rem 0; }
+    .toc ul { list-style: none; padding-left: 0; }
+    .toc li { margin: 0.8rem 0; color: #cbd5e1; }
     .toc a {
-      color: rgba(248, 250, 252, 0.85);
+      color: #38bdf8;
       text-decoration: none;
       font-size: 1.15rem;
-      transition: color 0.2s;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
     }
-    .toc a:hover { color: #00d4ff; }
+    .toc a:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-section {
       margin-bottom: 4rem;
     }
     .manual-section h2 {
-      font-size: 2.2rem;
-      color: #00d4ff;
-      margin-top: 2.5rem;
+      font-size: 2.25rem;
+      color: #f8fafc;
+      margin-top: 3rem;
       margin-bottom: 1.5rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
     }
     .manual-section h3 {
-      font-size: 1.6rem;
-      color: #f97316;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      color: #e2e8f0;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
     }
     .manual-section h4 {
-      font-size: 1.3rem;
-      color: #a78bfa;
-      margin-top: 1.5rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.35rem;
+      color: #38bdf8;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
     .manual-section p {
-      font-size: 1.2rem;
-      line-height: 1.9;
-      margin-bottom: 1.2rem;
-      color: rgba(248, 250, 252, 0.9);
+      margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section ol, .manual-section ul {
-      margin-left: 2rem;
+      margin-left: 1.5rem;
       margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section li {
-      font-size: 1.15rem;
-      margin-bottom: 0.8rem;
-      line-height: 1.8;
+      margin-bottom: 0.75rem;
     }
     .manual-section img {
       max-width: 100%;
       height: auto !important;
       object-fit: contain !important;
       border-radius: 12px;
-      margin: 2rem 0;
-      border: 1px solid rgba(0, 212, 255, 0.25);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      margin: 3rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     }
     .manual-section strong {
-      color: #00d4ff;
+      color: #f8fafc;
+      font-weight: 700;
     }
     
     .highlight {
-      background: rgba(0, 212, 255, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #00d4ff;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #3b82f6;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .warning {
-      background: rgba(249, 115, 22, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #f97316;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #f59e0b;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     
     .alarm-type {
@@ -177,11 +198,24 @@
   </style>
 <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
 <script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
-<meta content="«DivLog» — место, где вы получаете сигналы алертов дивергенции." name="description"/><meta content="«DivLog» — место, где вы получаете сигналы алертов дивергенции." property="og:description"/><meta content="«DivLog» — место, где вы получаете сигналы алертов дивергенции." name="twitter:description"/><meta content="https://www.divalarm.com/ru/user-manual.html" property="og:url"/><meta content="Руководство пользователя — DivAlarm" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/ru/user-manual.html","name":"Руководство пользователя — DivAlarm","inLanguage":"ru","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/ru/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
+<meta content="Узнайте, как пользоваться DivAlarm, настраивать алерты дивергенции RSI, конфигурировать параметры webhook и управлять настройками в приложении." name="description"/>
+<meta content="Руководство пользователя DivAlarm | Настройка, уведомления и параметры" property="og:title"/>
+<meta content="Узнайте, как пользоваться DivAlarm, настраивать алерты дивергенции RSI, конфигурировать параметры webhook и управлять настройками в приложении." property="og:description"/>
+<meta content="Руководство пользователя DivAlarm | Настройка, уведомления и параметры" name="twitter:title"/>
+<meta content="Узнайте, как пользоваться DivAlarm, настраивать алерты дивергенции RSI, конфигурировать параметры webhook и управлять настройками в приложении." name="twitter:description"/>
+<meta content="https://www.divalarm.com/ru/user-manual.html" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="ru_RU" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="summary" name="twitter:card"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"TechArticle","headline":"Руководство пользователя DivAlarm","url":"https://www.divalarm.com/ru/user-manual.html","description":"Узнайте, как пользоваться DivAlarm, настраивать алерты дивергенции RSI, конфигурировать параметры webhook и управлять настройками в приложении.","inLanguage":"ru","author":{"@id":"https://www.divalarm.com/#organization"},"publisher":{"@id":"https://www.divalarm.com/#organization"},"articleSection":["Обзор меню","Уведомления о сигналах","Настройки алертов дивергенции RSI","TradingView Webhook и авто-ордера","Реферальные награды"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.divalarm.com/ru/user-manual.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.divalarm.com/ru/"},{"@type":"ListItem","position":2,"name":"Руководство пользователя","item":"https://www.divalarm.com/ru/user-manual.html"}]}]}</script>
+<link href="https://www.divalarm.com/ru/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-<div class="manual-container">
-<a class="back-link" href="index.html">← На главную</a>
-<h1 class="manual-title">📱 Руководство пользователя</h1>
+<main class="manual-container">
+<a class="back-link" href="index.html">← Назад на главную</a>
+<h1 class="manual-title">Руководство пользователя DivAlarm</h1>
+<p style="margin-bottom: 2rem; color: #cbd5e1;">Используйте это руководство, чтобы настроить уведомления о дивергенции RSI, функции вебхуков, дополнительные индикаторы, реферальные награды и основные настройки приложения.</p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Содержание</h3>
@@ -189,9 +223,9 @@
 <li><a href="#menu">Обзор меню</a></li>
 <li><a href="#divlog">Просмотр уведомлений о сигналах (DivLog)</a></li>
 <li><a href="#signal-details">Просмотр деталей сигнала</a></li>
-<li><a href="#div">RSI Настройки алертов дивергенции (Div)</a></li>
-<li><a href="#ei">Дополнительные алерты индикаторов (EI)</a></li>
-<li><a href="#webhook">TradingView Webhook и авто-ордер</a></li>
+<li><a href="#div">Настройки уведомлений о дивергенции RSI (Div)</a></li>
+<li><a href="#ei">Уведомления по дополнительным индикаторам (EI)</a></li>
+<li><a href="#webhook">TradingView Вебхук и авто-ордер</a></li>
 <li><a href="#settings">Страница настроек</a></li>
 <li><a href="#referral">Реферальные награды</a></li>
 </ul>
@@ -199,68 +233,68 @@
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
 <h2>📌 Обзор меню</h2>
-<p><strong>«DivLog»</strong> — место, где вы получаете сигналы алертов дивергенции.</p>
+<p><strong>«DivLog»</strong> — место, где вы получаете сигналы уведомлений о дивергенции.</p>
 <p><strong>«Div»</strong> — настройка сигналов «RSI Divergence Complete» или «RSI Divergence Forming».</p>
-<p><strong>«EI»</strong> — настройка дополнительных алертов индикаторов: достижение цены, приближение к поддержке/сопротивлению, алерты EMA/Bollinger Band/Supertrend. («Extra Indicators»)</p>
-<p><strong>«Webhook»</strong> — видно только Pro-пользователям. Получайте вебхуки TradingView для мощных алертов, комбинаций сигналов и авто-ордеров.</p>
-<p><strong>«Setting»</strong> — настройка типов алертов, звуков, реферальных наград, объявлений и реферальных уведомлений.</p>
+<p><strong>«EI»</strong> — настройка дополнительных уведомлений по индикаторам: уведомления о достижении цены, о подходе к поддержке/сопротивлению, уведомления EMA/Bollinger Band/Supertrend. («Extra Indicators»)</p>
+<p><strong>«Webhook»</strong> — виден только пользователям Pro. Получайте вебхуки TradingView для мощных тревог, комбинаций сигналов и авто-ордеров.</p>
+<p><strong>«Настройки»</strong> — настройка типов сигналов, звуков, параметров реферальных наград, объявлений и реферальных уведомлений.</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
 <h2>📊 Просмотр уведомлений о сигналах («DivLog»)</h2>
-<p>«DivLog» — место, где вы получаете сигналы алертов дивергенции.</p>
+<p>«DivLog» — это раздел, где вы получаете сигналы оповещений о дивергенции.</p>
 <ol>
 <li>Хранится до 150 сигналов. Периодически очищайте список.</li>
-<li>Показывает непроверенные алерты. Отметьте галочкой, чтобы отключить сигнал. Отображается максимум 5 последних непроверенных алертов.</li>
+<li>Показывает непроверенные оповещения. Отметьте галочкой, чтобы закрыть сигнал. Отображается максимум 5 последних непроверенных оповещений.</li>
 <li>Фильтр — чтобы видеть только нужные сигналы.</li>
 </ol>
 </div>
 <!-- Signal Details Section -->
 <div class="manual-section" id="signal-details">
 <h2>🔍 Просмотр деталей сигнала</h2>
-<img alt="Просмотр деталей сигнала" src="../images/image_detail.png" style="max-width: 500px;"/>
-<p>Нажмите на любой алерт, чтобы посмотреть подробную информацию о сигнале.</p>
-<p>Для алертов RSI Divergence вы можете увидеть цены начала и конца, значения RSI и временные метки.</p>
+<img alt="Экран деталей сигнала" src="../images/image_detail.png" style="max-width: 500px;"/>
+<p>Нажмите на любое оповещение, чтобы посмотреть подробную информацию о сигнале.</p>
+<p>Для оповещений о дивергенции RSI вы можете увидеть цены начала и конца, значения RSI и временные метки.</p>
 <p><strong>«DivForming»</strong> показывает дивергенции, которые формируются на других таймфреймах в момент появления сигнала.</p>
-<p><strong>«OutsideBB»</strong> показывает, на каких таймфреймах цена была вне полос Боллинджера в момент появления сигнала.</p>
+<p><strong>«OutsideBB»</strong> показывает, на каких таймфреймах цена была за пределами полос Боллинджера в момент появления сигнала.</p>
 <ul>
-<li>Для таймфреймов <strong>меньше</strong>, чем таймфрейм сигнала, показывает, какие свечи были вне полос Боллинджера в момент сигнала (<em>at now</em>).</li>
-<li>Для таймфреймов <strong>больше</strong>, чем таймфрейм сигнала, показывает, какие свечи были вне полос Боллинджера на более позднем пике дивергенции RSI (<em>at peak</em>).</li>
+<li>Для таймфреймов <strong>меньше</strong>, чем таймфрейм сигнала, показывает, какие свечи были за пределами полос Боллинджера в момент сигнала (<em>at now</em>).</li>
+<li>Для таймфреймов <strong>больше</strong>, чем таймфрейм сигнала, показывает, какие свечи были за пределами полос Боллинджера на более позднем пике дивергенции RSI (<em>at peak</em>).</li>
 </ul>
 <h4>Пример</h4>
 <div class="highlight">
 <p>В примере выше <strong>бычий сигнал</strong> появляется на таймфрейме <strong>15m</strong>.</p>
-<p><strong>"DivForming"</strong> означает, что на таймфреймах 30m и 1h формируются медвежьи дивергенции.</p>
-<p><strong>"OutsideBB"</strong> показывает:</p>
+<p><strong>«DivForming»</strong> показывает, что на таймфреймах 30m и 1h формируются медвежьи дивергенции.</p>
+<p><strong>«OutsideBB»</strong> показывает:</p>
 <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-<li>В момент сигнала таймфрейм <strong>5m</strong> находился за пределами полос Боллинджера.</li>
-<li>На пике дивергенции RSI таймфреймы <strong>15m, 30m и 1h</strong> находились за пределами полос Боллинджера.</li>
+<li>В момент сигнала таймфрейм <strong>5m</strong> был за пределами полос Боллинджера.</li>
+<li>На пике дивергенции RSI таймфреймы <strong>15m, 30m и 1h</strong> были за пределами полос Боллинджера.</li>
 </ul>
 </div>
 </div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ RSI Настройки уведомлений о дивергенции ("Div")</h2>
+<h2>⚙️ Настройки оповещений о дивергенции RSI («Div»)</h2>
 <img alt="Экран настроек дивергенции" src="../images/image_manual.png" style="max-width: 500px;"/>
-<h3>Общие RSI настройки дивергенции</h3>
+<h3>Общие настройки дивергенции RSI</h3>
 <ol>
 <li>Выберите монету для настройки.</li>
-<li>Выберите тип сигнала: «RSI Divergence Complete» или «RSI Divergence Forming».</li>
-<li>Область пакетных настроек — применяйте параметры ко всем элементам ниже сразу.</li>
+<li>Выберите тип сигналов: «RSI Divergence Complete» или «RSI Divergence Forming».</li>
+<li>Область пакетных настроек — применяет параметры ко всем пунктам ниже сразу.</li>
 <li>Добавляйте фильтры дивергенции кнопкой +.</li>
-<li>Сбросить фильтры к рекомендуемым настройкам по умолчанию.</li>
+<li>Сбросить фильтры к рекомендованным настройкам по умолчанию.</li>
 <li>Задайте ценовые условия пакетно.</li>
 </ol>
 <h3>Настройки отдельных фильтров</h3>
 <ol start="7">
 <li>Configure individual RSI divergence signals to receive:
-          <p><strong>(a)</strong> Выберите нужный таймфрейм. Для «RSI Divergence Forming» выберите и «основной таймфрейм», и «подтаймфрейм». Уведомления срабатывают, когда на меньшем таймфрейме формируется пик RSI, а на основном таймфрейме при этом формируется дивергенция (разворот цены).</p>
-<p><strong>(b)</strong> Выберите сигналы: «Bull (бычий)» или «Bear (медвежий)». Синий — уведомления включены, серый — выключены.</p>
-<p><strong>(c)</strong> Задайте пороги перепроданности/перекупленности. Бычьи уведомления — когда «starting RSI» ниже уровня перепроданности; медвежьи — когда «starting RSI» выше уровня перекупленности.</p>
+          <p><strong>(a)</strong> Выберите нужный таймфрейм. Для «RSI Divergence Forming» выберите и «основной таймфрейм», и «дополнительный таймфрейм». Оповещение срабатывает, когда на меньшем таймфрейме формируется пик RSI, пока на основном таймфрейме формируется дивергенция (разворот цены).</p>
+<p><strong>(b)</strong> Выберите сигналы: «Bull (бычий)» или «Bear (медвежий)». Синий — оповещения включены, серый — выключены.</p>
+<p><strong>(c)</strong> Задайте уровни перепроданности/перекупленности. Бычьи уведомления — когда «starting RSI» ниже уровня перепроданности; медвежьи — когда «starting RSI» выше уровня перекупленности.</p>
 <p><strong>(d)</strong> Настройте тип и звук будильника. Подробные параметры — на странице «Настройки»:</p>
-<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Принудительный сигнал (цикл) — звучит непрерывно, пока не остановите вручную; игнорирует беззвучный режим<br/><br/> <span class="alarm-type alarm-type-b">B</span> Принудительный сигнал (один раз) — звучит один раз; игнорирует беззвучный режим<br/><br/> <span class="alarm-type alarm-type-c">C</span> Следовать настройкам телефона — использует обычные настройки звука устройства<br/><br/> <span class="alarm-type alarm-type-d">D</span> Только вибрация — вибрация без звука<br/><br/> <span class="alarm-type alarm-type-e">E</span> Беззвучный режим — без звука и вибрации</div>
-<img alt="Настройки типа уведомления" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Задайте дополнительные условия, чтобы получать только полезные сигналы: ценовые условия, условия формирования RSI на другом таймфрейме, условия по полосам Боллинджера.</p>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Принудительный сигнал (повтор) — звучит непрерывно, пока не остановите вручную; игнорирует беззвучный режим<br/><br/> <span class="alarm-type alarm-type-b">B</span> Принудительный сигнал (один раз) — звучит один раз; игнорирует беззвучный режим<br/><br/> <span class="alarm-type alarm-type-c">C</span> Следовать настройкам телефона — использует обычные настройки звука устройства<br/><br/> <span class="alarm-type alarm-type-d">D</span> Только вибрация — вибрация без звука<br/><br/> <span class="alarm-type alarm-type-e">E</span> Беззвучный режим — без звука и вибрации</div>
+<img alt="Настройки типа алерта" src="../images/image%201_manual.png" style="max-width: 350px;"/>
+<p><strong>(e)</strong> Задайте дополнительные условия, чтобы получать только полезные сигналы: ценовые условия, условия формирования на другом таймфрейме RSI, условия по полосам Боллинджера.</p>
 </li>
 </ol>
 <div class="image-row">
@@ -270,19 +304,19 @@
 <p><strong>e0)</strong> Если задано несколько условий, настройте связь: «and» (должны выполняться все) или «or» (достаточно любого одного).</p>
 <p><strong>e1)</strong> Задайте ценовые условия — уведомление, когда цена начала/конца дивергенции выше/ниже заданной цены.</p>
 <p><strong>e2)</strong> Уведомлять, когда дивергенция формируется на другом таймфрейме.</p>
-<p><strong>e3)</strong> Проверять, находится ли цена финального пика дивергенции RSI за пределами полос Боллинджера.</p>
+<p><strong>e3)</strong> Проверять, находится ли финальная цена пика дивергенции RSI за пределами полос Боллинджера.</p>
 <h3>Советы по стратегии</h3>
 <div class="warning">
 <ul>
-<li>Всегда сочетайте с другими индикаторами: сопротивление, трендовые линии, Фибоначчи и т. д.</li>
-<li>Как и у любых индикаторов, дивергенция RSI не даёт 100% точности — она повышает вероятность.</li>
-<li>Дивергенции на 1m и 5m часто игнорируют, но надёжность растёт: 15m &lt; 1h &lt; 4h. <strong>Дивергенция на 4h очень надёжна — рекомендуем поставить её как сигнал класса A.</strong></li>
+<li>Всегда сочетайте с другими индикаторами: уровни сопротивления, трендовые линии, Фибоначчи и т. д.</li>
+<li>Как и любые индикаторы, дивергенция RSI не даёт 100% точности — она повышает вероятность.</li>
+<li>Дивергенции на 1m и 5m часто игнорируют, но надёжность растёт: 15m &lt; 1h &lt; 4h. <strong>Дивергенция на 4h очень надёжна — рекомендуем настроить её как сигнал класса A.</strong></li>
 </ul>
 </div>
 </div>
 <!-- EI Section -->
 <div class="manual-section" id="ei">
-<h2>📈 Уведомления по дополнительным индикаторам ("EI")</h2>
+<h2>📈 Уведомления по дополнительным индикаторам («EI»)</h2>
 <div class="image-row">
 <img alt="Настройки EI 1" src="../images/image%204_manual.png"/>
 <img alt="Настройки EI 2" src="../images/image%205_manual.png"/>
@@ -301,10 +335,10 @@
 </div>
 <!-- Webhook Section -->
 <div class="manual-section" id="webhook">
-<h2>🔗 TradingView Webhook, комбинирование сигналов и авто-ордер</h2>
-<p><strong>"Webhook"</strong> — Pro-функция для продвинутых пользователей.</p>
+<h2>🔗 Вебхук TradingView, комбинирование сигналов и авто-ордер</h2>
+<p><strong>«Webhook»</strong> — Pro-функция для продвинутых пользователей.</p>
 <p>
-<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Перейти к подробному руководству по Webhook</a>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Перейти к подробному руководству по вебхукам</a>
 </p>
 </div>
 <!-- Settings Section -->
@@ -315,13 +349,13 @@
 <img alt="Настройки 2" src="../images/image%207_manual.png"/>
 </div>
 <ol>
-<li>Настройте типы сигналов (A, B...) и звуки сигналов (1, 2...).</li>
+<li>Настройте типы сигналов (A, B...) и звуки (1, 2...).</li>
 <li>Для авто-ордеров введите API-ключи каждой биржи.</li>
-<li>Вы можете проверить, приходят ли уведомления на текущий телефон. Отправив себе тестовое сообщение, вы убедитесь, что сигналы доставляются согласно настроенным фильтрам.</li>
-<li>Здесь настраиваются параметры, связанные с реферальными вознаграждениями.</li>
+<li>Вы можете проверить, приходят ли уведомления на ваш текущий телефон. Отправив себе тестовое сообщение, вы убедитесь, что алерты доставляются в соответствии с настроенными фильтрами.</li>
+<li>Это страница для настройки параметров, связанных с реферальными вознаграждениями.</li>
 <li>Здесь вы получаете общие объявления.</li>
-<li>Здесь вы получаете эксклюзивные объявления, отправленные реферером, которого вы указали при регистрации.</li>
-<li>Вы можете переключать всё приложение между светлой и тёмной темой.</li>
+<li>Здесь вы получаете эксклюзивные объявления, отправленные рефералом, которого вы указали при регистрации.</li>
+<li>Вы можете переключать приложение целиком между светлой и тёмной темой.</li>
 </ol>
 </div>
 <!-- Referral Section -->
@@ -330,16 +364,16 @@
 <img alt="Реферальные настройки" src="../images/image%208_manual.png" style="max-width: 550px;"/>
 <p><strong>(a)</strong> Ваш реферальный код. Когда другие оформляют подписку с этим кодом, вы становитесь их реферером.</p>
 <p><strong>(b)</strong> Ваша ссылка-приглашение. Любой, кто оформит подписку по этой ссылке, автоматически закрепит вас как реферера.</p>
-<p><strong>(c)</strong> Введите адрес кошелька для реферальных вознаграждений. Нужен кошелёк BEP-20 USDT (рекомендуются кошельки крупных бирж). Вы можете проверить, корректно ли работают депозиты, в разделе «My Info» на сайте DivAlarm.</p>
+<p><strong>(c)</strong> Введите адрес кошелька для реферальных вознаграждений. Должен быть кошелёк BEP-20 USDT (рекомендуются кошельки крупных бирж). Вы можете проверить, корректно ли работают депозиты, в разделе «My Info» на сайте DivAlarm.</p>
 <p><strong>(d)</strong> Показывает статус ваших реферальных вознаграждений: текущее число рефералов, потенциальную сумму, подтверждённую сумму и выплаченную сумму.</p>
-<p>Вознаграждения переходят из «потенциальных» в «подтверждённые» через 14 дней после оплаты подписки приглашённым пользователем (бесплатный пробный период не учитывается). Выплаты производятся еженедельно по вторникам в 00:00 UTC.</p>
+<p>Вознаграждения переходят из «потенциальных» в «подтверждённые» через 14 дней после оплаты подписки приглашённым пользователем (бесплатный пробный период не учитывается). Выплаты выполняются еженедельно по вторникам в 00:00 UTC.</p>
 <h3>Как получать реферальные вознаграждения</h3>
 <div class="highlight">
-<p><strong>1]</strong> Перейдите в Настройки → Реферальные вознаграждения → Введите адрес кошелька для выплат.</p>
-<p><strong>2]</strong> Поделитесь своей реферальной ссылкой. Другие пользователи будут перенаправлены на страницу подписки с вашим кодом.</p>
-<p><strong>3]</strong> Когда они оформят подписку и оплатят, вознаграждения будут зачислены.</p>
+<p><strong>1]</strong> Перейдите в Settings → Referral Rewards → введите адрес кошелька для выплат.</p>
+<p><strong>2]</strong> Поделитесь своей реферальной ссылкой. Другие перейдут на страницу подписки с вашим кодом.</p>
+<p><strong>3]</strong> Когда они оформят подписку и оплатят её, вознаграждение будет зачислено.</p>
 </div>
 </div>
-</div>
+</main>
 <footer id="wisesignal-legal-footer" style="margin-top: 4rem;padding: 3rem 5% 2.5rem;color: rgba(148,163,184,0.90);font-size: 0.82rem;line-height: 1.7;text-align: center;"><div style="max-width: 1100px; margin: 0 auto;"><div style="height: 1px; background: rgba(148,163,184,0.22); margin: 0 0 1.5rem;"></div><div>© 2026 WiseSignal Ltd.</div><div>WiseSignal Ltd is registered in England and Wales (No. 16253236).</div><div>Registered Office: 71-75 Shelton Street, London, WC2H 9JQ, UK.</div><div>Contact: <a href="mailto:info@wise-signal.com" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">info@wise-signal.com</a></div></div></footer></body>
 </html>

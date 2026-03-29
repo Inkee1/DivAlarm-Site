@@ -3,8 +3,7 @@
 <html lang="id">
 <head>
 <meta charset="utf-8"/>
-<title>Panduan Webhook TradingView - DivAlarm</title>
-<meta content="Panduan Webhook TradingView - DivAlarm" property="og:title"/>
+<title>TradingView Panduan Setup Webhook untuk DivAlarm</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -255,19 +254,32 @@
   </style>
 <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
 <script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
-<meta content='Klik kanan pada indikator yang ingin kamu terima sinyalnya di TradingView, lalu klik "Add Alert on ~".' name="description"/><meta content='Klik kanan pada indikator yang ingin kamu terima sinyalnya di TradingView, lalu klik "Add Alert on ~".' property="og:description"/><meta content='Klik kanan pada indikator yang ingin kamu terima sinyalnya di TradingView, lalu klik "Add Alert on ~".' name="twitter:description"/><meta content="https://www.divalarm.com/id/tradingview-webhook.html" property="og:url"/><meta content="Panduan Webhook TradingView - DivAlarm" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/id/tradingview-webhook.html","name":"Panduan Webhook TradingView - DivAlarm","inLanguage":"id","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/id/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/></head>
+<meta content="Pelajari cara menghubungkan alert TradingView ke webhook DivAlarm, alert keyword, kombinasi sinyal, dan alur kerja auto-order." name="description"/>
+<meta content="TradingView Panduan Setup Webhook untuk DivAlarm" property="og:title"/>
+<meta content="Pelajari cara menghubungkan alert TradingView ke webhook DivAlarm, alert keyword, kombinasi sinyal, dan alur kerja auto-order." property="og:description"/>
+<meta content="TradingView Panduan Setup Webhook untuk DivAlarm" name="twitter:title"/>
+<meta content="Pelajari cara menghubungkan alert TradingView ke webhook DivAlarm, alert keyword, kombinasi sinyal, dan alur kerja auto-order." name="twitter:description"/>
+<meta content="https://www.divalarm.com/id/tradingview-webhook.html" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="id_ID" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="summary" name="twitter:card"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"HowTo","name":"Cara menghubungkan webhook TradingView ke DivAlarm","description":"Hubungkan alert TradingView ke DivAlarm untuk alarm berbasis kata kunci, kombinasi sinyal, dan alur kerja auto-order.","url":"https://www.divalarm.com/id/tradingview-webhook.html","step":[{"@type":"HowToStep","name":"Buat alert TradingView","text":"Klik kanan indikator di TradingView lalu pilih Add Alert pada indikator yang ingin Anda gunakan."},{"@type":"HowToStep","name":"Tempel URL webhook","text":"Aktifkan Webhook URL di notifikasi TradingView lalu tempel URL yang disalin dari aplikasi DivAlarm."},{"@type":"HowToStep","name":"Tambahkan kata kunci pesan","text":"Masukkan kata kunci di pesan alert agar DivAlarm bisa mencocokkan sinyal TradingView yang masuk."},{"@type":"HowToStep","name":"Daftarkan kata kunci di DivAlarm","text":"Tambahkan kata kunci yang sama di bagian Keyword Include pada aplikasi untuk memicu alarm."},{"@type":"HowToStep","name":"Perluas alur kerja","text":"Gunakan kombinasi sinyal atau auto-order setelah alur webhook dasar berjalan dengan benar."}]},{"@type":"WebPage","url":"https://www.divalarm.com/id/tradingview-webhook.html","name":"TradingView Panduan Setup Webhook untuk DivAlarm","description":"Pelajari cara menghubungkan alert TradingView ke webhook DivAlarm, alert keyword, kombinasi sinyal, dan alur kerja auto-order.","inLanguage":"id","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Beranda","item":"https://www.divalarm.com/id/"},{"@type":"ListItem","position":2,"name":"Panduan Webhook TradingView","item":"https://www.divalarm.com/id/tradingview-webhook.html"}]}]}</script>
+<link href="https://www.divalarm.com/id/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-<div class="manual-container">
+<main class="manual-container">
 <a class="back-link" href="user-manual.html">← Kembali ke Manual Pengguna</a>
-<h1 class="manual-title">🔗 Panduan Webhook TradingView</h1>
+<h1 class="manual-title">TradingView Panduan Webhook untuk DivAlarm</h1>
+<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">Hubungkan alert TradingView ke DivAlarm untuk alarm berbasis keyword, otomasi webhook, kombinasi sinyal, dan auto-order di exchange.</p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Daftar Isi</h3>
 <ul>
 <li><a href="#quick-summary">Ringkasan Cepat</a></li>
-<li><a href="#keyword">Alert Kata Kunci</a></li>
+<li><a href="#keyword">Alert Keyword</a></li>
 <li><a href="#auto-order">Auto-Order dengan TradingView</a></li>
-<li><a href="#divalarm-keywords">Kata Kunci Sinyal DivAlarm</a></li>
+<li><a href="#divalarm-keywords">Keyword Sinyal DivAlarm</a></li>
 <li><a href="#combination">Alert Kombinasi Sinyal</a></li>
 </ul>
 </div>
@@ -332,39 +344,39 @@
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
-<h2>🔔 Alert Kata Kunci</h2>
+<h2>🔔 Alert Keyword</h2>
 <h3>Menambahkan Webhook di TradingView</h3>
 <img alt="TradingView Tambah Alert" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>Klik kanan pada indikator yang ingin kamu terima sinyalnya di TradingView, lalu klik "Add Alert on ~".</p>
+<p>Klik kanan pada indikator yang ingin Anda terima sinyalnya di TradingView, lalu klik "Add Alert on ~".</p>
 <img alt="Pengaturan URL Webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Pengaturan Notifikasi" src="../images/image_tv.png" style="max-width: 600px;"/>
 <p>Di bagian "Notifications", centang "Webhook URL" lalu tempel alamat yang disalin dari aplikasi ke kolom input di bawah.</p>
-<p>Setelah diatur, ini akan otomatis dicentang/diisi untuk alert lainnya.</p>
+<p>Setelah diatur, opsi ini akan otomatis dicentang/terisi untuk alert lainnya.</p>
 <img alt="Pengaturan Pesan" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>Di bagian "Messages" pada "Message", tambahkan kata kunci apa pun yang kamu mau (misalnya, "AAA").</p>
+<p>Di bagian "Messages" pada "Message", tambahkan keyword apa pun yang Anda inginkan (misalnya, "AAA").</p>
 <p>Klik "Create" untuk menjadwalkan alert TradingView.</p>
 <h3>Menerima Alert TradingView di Aplikasi</h3>
-<img alt="Pengaturan Kata Kunci Aplikasi" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Tambahkan kata kunci (misalnya, "AAA") ke bagian 'Keyword Include' di aplikasi. Saat "Message" alert TradingView berisi kata kunci tersebut, alarm akan berbunyi sesuai pengaturan.</p>
+<img alt="Pengaturan Keyword Aplikasi" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Tambahkan keyword (misalnya, "AAA") ke bagian 'Keyword Include' di aplikasi. Saat "Message" pada alert TradingView berisi keyword tersebut, alarm akan berbunyi sesuai pengaturan.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
 <h2>🤖 Auto-Order dengan Alert TradingView</h2>
 <img alt="Pengaturan Auto-Order" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Anda bisa mengatur 'Auto-Order' untuk dikirim ke exchange saat alert kata kunci diterima.</p>
+<p>Anda bisa menyiapkan "Auto-Order" untuk dikirim ke exchange saat alert keyword diterima.</p>
 <img alt="Pengaturan API Exchange" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
 <p>Exchange yang didukung untuk auto-order: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Anda harus memasukkan API key di halaman Settings aplikasi.</p>
+<p>Anda harus memasukkan API key di halaman Pengaturan aplikasi.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
-<h2>📝 Mendaftarkan Sinyal DivAlarm sebagai Kata Kunci</h2>
-<img alt="Kata Kunci Sinyal DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Alert bawaan DivAlarm juga bisa ditambahkan ke 'Keyword Combinations' (untuk alert kombinasi atau auto-order).</p>
+<h2>📝 Mendaftarkan Sinyal DivAlarm sebagai Keyword</h2>
+<img alt="Keyword Sinyal DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
+<p>Alert bawaan DivAlarm juga bisa ditambahkan ke "Kombinasi Keyword" (untuk alert kombinasi atau auto-order).</p>
 <div class="highlight">
-<p><strong>Format:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(jika ada)</p>
+<p><strong>Format:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
 </div>
 <p><strong>Jenis Alarm:</strong></p>
 <ul>
@@ -381,7 +393,7 @@
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
 <p class="desc">→ Divergence RSI, ETHUSDT.P, judul berisi "Bear", Complete, 15m, tanpa timeframe sub</p>
 </div>
-<img alt="Contoh Kata Kunci" src="../images/image%204_tv.png" style="max-width: 500px;"/>
+<img alt="Contoh Keyword" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
 <p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Indikator tambahan, koin BTC, judul berisi "Sell", 30m</span></p>
 <p><code>"@E@BTC@Buy@1h"</code></p>
@@ -397,23 +409,23 @@
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
 <h2>🔀 Alert Kombinasi Sinyal</h2>
-<p>Gabungkan beberapa sinyal TradingView untuk membuat sinyal baru atau sinyal yang terfilter.</p>
+<p>Gabungkan beberapa sinyal TradingView untuk membuat sinyal baru atau sinyal yang sudah difilter.</p>
 <div class="image-row">
 <img alt="Pengaturan Alert Kombinasi" src="../images/image%205_tv.png"/>
 <div>
 <p>Atur kondisi yang harus terpenuhi dalam rentang waktu tertentu agar alarm terpicu.</p>
-<p><strong>Contoh:</strong><br/> Dalam 1 jam 30 menit:<br/> • 'Alert dengan kata kunci A' DAN<br/> • 'Alert dengan kata kunci B' keduanya masuk, ATAU<br/> • 'Alert dengan kata kunci C' masuk</p>
+<p><strong>Contoh:</strong><br/> Dalam 1 jam 30 menit:<br/> • "Alert dengan keyword A" DAN<br/> • "Alert dengan keyword B" keduanya masuk, ATAU<br/> • "Alert dengan keyword C" masuk</p>
 <p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
 <p><strong>&amp;</strong> = "AND" (kedua kondisi harus terpenuhi)</p>
 <p><strong>|</strong> = "OR" (salah satu kondisi bisa terpenuhi)</p>
-<p>Meski alarm kata kunci individual dinonaktifkan, kombinasi tetap bisa terpicu saat kondisinya terpenuhi.</p>
-<p><strong>Auto-order juga bisa dengan alert kombinasi!</strong></p>
+<p>Meski alarm keyword individual dinonaktifkan, kombinasi tetap bisa terpicu saat kondisinya terpenuhi.</p>
+<p><strong>Auto-order juga bisa dilakukan dengan alert kombinasi!</strong></p>
 </div>
 </div>
-</div>
+</main>
 <script>
     (function () {
       var buttons = document.querySelectorAll('.video-toggle-btn');

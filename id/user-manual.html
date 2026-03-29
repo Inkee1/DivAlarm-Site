@@ -3,8 +3,7 @@
 <html lang="id">
 <head>
 <meta charset="utf-8"/>
-<title>Panduan Pengguna - DivAlarm</title>
-<meta content="Panduan Pengguna - DivAlarm" property="og:title"/>
+<title>Manual Pengguna DivAlarm | Panduan Setup, Alert, dan Pengaturan</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -14,11 +13,13 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
-      color: #f8fafc;
+      font-family: 'Exo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000;
+      color: #e2e8f0;
       line-height: 1.8;
       min-height: 100vh;
+      font-size: 1.125rem;
+      letter-spacing: 0.01em;
     }
     
     .manual-container {
@@ -29,112 +30,132 @@
     
     .back-link {
       display: inline-block;
-      color: #00d4ff;
+      color: #38bdf8;
       text-decoration: none;
       margin-bottom: 1.5rem;
       font-size: 1.1rem;
-      transition: opacity 0.2s;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+      transition: all 0.2s ease;
     }
-    .back-link:hover { opacity: 0.8; }
+    .back-link:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-title {
       font-size: 3rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 2rem;
-      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
     }
     
     .toc {
-      background: rgba(12, 12, 24, 0.9);
+      background: rgba(15, 23, 42, 0.6);
       padding: 2rem 2.5rem;
       border-radius: 16px;
       margin-bottom: 3rem;
-      border: 1px solid rgba(0, 212, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .toc h3 {
-      color: #00d4ff;
-      font-size: 1.5rem;
+      color: #38bdf8;
+      font-size: 1.35rem;
       margin-bottom: 1rem;
+      font-weight: 600;
     }
-    .toc ul { list-style: none; }
-    .toc li { margin: 0.8rem 0; }
+    .toc ul { list-style: none; padding-left: 0; }
+    .toc li { margin: 0.8rem 0; color: #cbd5e1; }
     .toc a {
-      color: rgba(248, 250, 252, 0.85);
+      color: #38bdf8;
       text-decoration: none;
       font-size: 1.15rem;
-      transition: color 0.2s;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
     }
-    .toc a:hover { color: #00d4ff; }
+    .toc a:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-section {
       margin-bottom: 4rem;
     }
     .manual-section h2 {
-      font-size: 2.2rem;
-      color: #00d4ff;
-      margin-top: 2.5rem;
+      font-size: 2.25rem;
+      color: #f8fafc;
+      margin-top: 3rem;
       margin-bottom: 1.5rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
     }
     .manual-section h3 {
-      font-size: 1.6rem;
-      color: #f97316;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      color: #e2e8f0;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
     }
     .manual-section h4 {
-      font-size: 1.3rem;
-      color: #a78bfa;
-      margin-top: 1.5rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.35rem;
+      color: #38bdf8;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
     .manual-section p {
-      font-size: 1.2rem;
-      line-height: 1.9;
-      margin-bottom: 1.2rem;
-      color: rgba(248, 250, 252, 0.9);
+      margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section ol, .manual-section ul {
-      margin-left: 2rem;
+      margin-left: 1.5rem;
       margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section li {
-      font-size: 1.15rem;
-      margin-bottom: 0.8rem;
-      line-height: 1.8;
+      margin-bottom: 0.75rem;
     }
     .manual-section img {
       max-width: 100%;
       height: auto !important;
       object-fit: contain !important;
       border-radius: 12px;
-      margin: 2rem 0;
-      border: 1px solid rgba(0, 212, 255, 0.25);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      margin: 3rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     }
     .manual-section strong {
-      color: #00d4ff;
+      color: #f8fafc;
+      font-weight: 700;
     }
     
     .highlight {
-      background: rgba(0, 212, 255, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #00d4ff;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #3b82f6;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .warning {
-      background: rgba(249, 115, 22, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #f97316;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #f59e0b;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     
     .alarm-type {
@@ -177,11 +198,24 @@
   </style>
 <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
 <script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
-<meta content="&quot;Div&quot; — Atur sinyal 'RSI Divergence Complete' atau 'RSI Divergence Forming'." name="description"/><meta content="&quot;Div&quot; — Atur sinyal 'RSI Divergence Complete' atau 'RSI Divergence Forming'." property="og:description"/><meta content="&quot;Div&quot; — Atur sinyal 'RSI Divergence Complete' atau 'RSI Divergence Forming'." name="twitter:description"/><meta content="https://www.divalarm.com/id/user-manual.html" property="og:url"/><meta content="Panduan Pengguna - DivAlarm" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/id/user-manual.html","name":"Panduan Pengguna - DivAlarm","inLanguage":"id","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/id/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
+<meta content="Pelajari cara menggunakan DivAlarm, menyiapkan alert divergensi RSI, mengonfigurasi opsi webhook, dan mengelola pengaturan dari aplikasi." name="description"/>
+<meta content="Manual Pengguna DivAlarm | Panduan Setup, Alert, dan Pengaturan" property="og:title"/>
+<meta content="Pelajari cara menggunakan DivAlarm, menyiapkan alert divergensi RSI, mengonfigurasi opsi webhook, dan mengelola pengaturan dari aplikasi." property="og:description"/>
+<meta content="Manual Pengguna DivAlarm | Panduan Setup, Alert, dan Pengaturan" name="twitter:title"/>
+<meta content="Pelajari cara menggunakan DivAlarm, menyiapkan alert divergensi RSI, mengonfigurasi opsi webhook, dan mengelola pengaturan dari aplikasi." name="twitter:description"/>
+<meta content="https://www.divalarm.com/id/user-manual.html" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="id_ID" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="summary" name="twitter:card"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"TechArticle","headline":"Panduan Pengguna DivAlarm","url":"https://www.divalarm.com/id/user-manual.html","description":"Pelajari cara menggunakan DivAlarm, menyiapkan alert divergensi RSI, mengonfigurasi opsi webhook, dan mengelola pengaturan dari aplikasi.","inLanguage":"id","author":{"@id":"https://www.divalarm.com/#organization"},"publisher":{"@id":"https://www.divalarm.com/#organization"},"articleSection":["Ringkasan Menu","Notifikasi Sinyal","Pengaturan Alert Divergensi RSI","TradingView Webhook dan Auto-Order","Reward Referral"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.divalarm.com/id/user-manual.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Beranda","item":"https://www.divalarm.com/id/"},{"@type":"ListItem","position":2,"name":"Panduan Pengguna","item":"https://www.divalarm.com/id/user-manual.html"}]}]}</script>
+<link href="https://www.divalarm.com/id/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-<div class="manual-container">
+<main class="manual-container">
 <a class="back-link" href="index.html">← Kembali ke Beranda</a>
-<h1 class="manual-title">📱 Panduan Pengguna</h1>
+<h1 class="manual-title">Panduan Pengguna DivAlarm</h1>
+<p style="margin-bottom: 2rem; color: #cbd5e1;">Gunakan panduan ini untuk mengatur alert divergensi RSI, fitur webhook, indikator tambahan, reward referral, dan pengaturan inti aplikasi.</p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Daftar Isi</h3>
@@ -189,7 +223,7 @@
 <li><a href="#menu">Ringkasan Menu</a></li>
 <li><a href="#divlog">Melihat Notifikasi Sinyal (DivLog)</a></li>
 <li><a href="#signal-details">Lihat Detail Sinyal</a></li>
-<li><a href="#div">Pengaturan Alert Divergence RSI (Div)</a></li>
+<li><a href="#div">Pengaturan Alert Divergensi RSI (Div)</a></li>
 <li><a href="#ei">Alert Indikator Tambahan (EI)</a></li>
 <li><a href="#webhook">TradingView Webhook &amp; Auto-Order</a></li>
 <li><a href="#settings">Halaman Pengaturan</a></li>
@@ -199,68 +233,68 @@
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
 <h2>📌 Ringkasan Menu</h2>
-<p><strong>"DivLog"</strong> — Tempat kamu menerima sinyal alert divergence.</p>
+<p><strong>"DivLog"</strong> — Tempat Anda menerima sinyal alert divergensi.</p>
 <p><strong>"Div"</strong> — Atur sinyal 'RSI Divergence Complete' atau 'RSI Divergence Forming'.</p>
-<p><strong>"EI"</strong> — Siapkan alert indikator tambahan: alert harga tercapai, alert mendekati support/resistance, alert EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
+<p><strong>"EI"</strong> — Atur alert indikator tambahan: alert harga menyentuh level, alert mendekati support/resistance, alert EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
 <p><strong>"Webhook"</strong> — Hanya terlihat untuk pengguna Pro. Terima webhook TradingView untuk alarm yang lebih powerful, kombinasi sinyal, dan auto-order.</p>
 <p><strong>"Setting"</strong> — Atur jenis alarm, suara, pengaturan reward referral, pengumuman, dan notifikasi referral.</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
 <h2>📊 Melihat Notifikasi Sinyal ("DivLog")</h2>
-<p>"DivLog" adalah tempat kamu menerima sinyal alert divergence.</p>
+<p>"DivLog" adalah tempat Anda menerima sinyal alert divergence.</p>
 <ol>
 <li>Hingga 150 sinyal disimpan. Bersihkan secara berkala.</li>
-<li>Menampilkan alert yang belum dicek. Centang untuk menutup alarm. Maksimal 5 alert terbaru yang belum dicek ditampilkan.</li>
-<li>Gunakan filter untuk melihat hanya sinyal yang kamu inginkan.</li>
+<li>Menampilkan alert yang belum dicek. Centang tanda untuk menutup alarm. Maksimal 5 alert terbaru yang belum dicek ditampilkan.</li>
+<li>Filter untuk melihat hanya sinyal yang Anda inginkan.</li>
 </ol>
 </div>
 <!-- Signal Details Section -->
 <div class="manual-section" id="signal-details">
 <h2>🔍 Lihat Detail Sinyal</h2>
 <img alt="Tampilan Detail Sinyal" src="../images/image_detail.png" style="max-width: 500px;"/>
-<p>Dengan mengetuk tiap alert, kamu bisa melihat informasi sinyal secara detail.</p>
-<p>Untuk alert RSI Divergence, kamu bisa melihat harga awal dan akhir, nilai RSI, serta timestamp.</p>
+<p>Dengan mengetuk tiap alert, Anda bisa melihat informasi sinyal secara detail.</p>
+<p>Untuk alert Divergence RSI, Anda bisa melihat harga awal dan akhir, nilai RSI, serta timestamp.</p>
 <p><strong>"DivForming"</strong> menampilkan divergence yang sedang terbentuk di timeframe lain pada saat sinyal muncul.</p>
-<p><strong>"OutsideBB"</strong> menampilkan timeframe mana saja yang berada di luar Bollinger Bands saat sinyal muncul.</p>
+<p><strong>"OutsideBB"</strong> menampilkan timeframe mana yang berada di luar Bollinger Bands saat sinyal muncul.</p>
 <ul>
 <li>Untuk timeframe yang <strong>lebih kecil</strong> dari timeframe sinyal, ini menampilkan candle mana yang berada di luar Bollinger Band pada momen sinyal (<em>saat ini</em>).</li>
-<li>Untuk timeframe yang <strong>lebih besar</strong> dari timeframe sinyal, ini menampilkan candle mana yang berada di luar Bollinger Band pada puncak divergence RSI berikutnya (<em>saat puncak</em>).</li>
+<li>Untuk timeframe yang <strong>lebih besar</strong> dari timeframe sinyal, ini menampilkan candle mana yang berada di luar Bollinger Band pada puncak divergence RSI yang terjadi setelahnya (<em>saat puncak</em>).</li>
 </ul>
 <h4>Contoh</h4>
 <div class="highlight">
-<p>Pada contoh di atas, <strong>sinyal Bullish</strong> muncul pada timeframe <strong>15m</strong>.</p>
-<p><strong>"DivForming"</strong> menunjukkan bahwa divergensi bearish sedang terbentuk pada timeframe 30m dan 1h.</p>
-<p><strong>"OutsideBB"</strong> menunjukkan:</p>
+<p>Pada contoh di atas, sinyal <strong>Bullish</strong> muncul di timeframe <strong>15m</strong>.</p>
+<p><strong>"DivForming"</strong> menunjukkan bahwa divergence bearish sedang terbentuk di timeframe 30m dan 1h.</p>
+<p><strong>"OutsideBB"</strong> menampilkan:</p>
 <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-<li>Pada saat sinyal, timeframe <strong>5m</strong> berada di luar Bollinger Band.</li>
-<li>Pada puncak divergensi RSI, timeframe <strong>15m, 30m, dan 1h</strong> berada di luar Bollinger Band.</li>
+<li>Pada momen sinyal, timeframe <strong>5m</strong> berada di luar Bollinger Band.</li>
+<li>Pada puncak divergence RSI, timeframe <strong>15m, 30m, dan 1h</strong> berada di luar Bollinger Band.</li>
 </ul>
 </div>
 </div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ Pengaturan Alert Divergensi RSI ("Div")</h2>
+<h2>⚙️ Pengaturan Alert Divergence RSI ("Div")</h2>
 <img alt="Layar Pengaturan Div" src="../images/image_manual.png" style="max-width: 500px;"/>
-<h3>Pengaturan Divergensi RSI (Umum)</h3>
+<h3>Pengaturan Divergence RSI Secara Umum</h3>
 <ol>
 <li>Pilih koin yang ingin dikonfigurasi.</li>
 <li>Pilih antara sinyal 'RSI Divergence Complete' vs 'RSI Divergence Forming'.</li>
 <li>Area pengaturan massal — terapkan pengaturan ke semua item di bawah sekaligus.</li>
-<li>Tambahkan filter divergensi dengan tombol +.</li>
+<li>Tambahkan filter divergence dengan tombol +.</li>
 <li>Reset filter ke pengaturan default yang direkomendasikan.</li>
 <li>Atur kondisi harga secara massal.</li>
 </ol>
 <h3>Pengaturan Filter Per Item</h3>
 <ol start="7">
 <li>Configure individual RSI divergence signals to receive:
-          <p><strong>(a)</strong> Pilih timeframe yang diinginkan. Untuk 'RSI Divergence Forming', pilih 'timeframe utama' dan 'sub timeframe'. Alert akan terpicu saat puncak RSI terbentuk di timeframe yang lebih kecil sementara divergensi sedang terbentuk di timeframe utama (pembalikan harga).</p>
+          <p><strong>(a)</strong> Pilih timeframe yang diinginkan. Untuk 'RSI Divergence Forming', pilih 'timeframe utama' dan 'timeframe sub'. Alert akan terpicu saat puncak RSI terbentuk di timeframe yang lebih kecil, sementara divergence sedang terbentuk di timeframe utama (pembalikan harga).</p>
 <p><strong>(b)</strong> Pilih sinyal: "Bull (bullish)" atau "Bear (bearish)". Biru = alert aktif, Abu-abu = nonaktif.</p>
 <p><strong>(c)</strong> Atur ambang oversold/overbought. Alert bullish saat 'starting RSI' berada di bawah level oversold; bearish saat 'starting RSI' berada di atas level overbought.</p>
-<p><strong>(d)</strong> Atur jenis alarm dan suaranya. Pengaturan detail ada di halaman Settings:</p>
-<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Paksa Alarm (Loop) — bunyi terus-menerus sampai dihentikan manual, mengabaikan mode senyap<br/><br/> <span class="alarm-type alarm-type-b">B</span> Paksa Alarm (Sekali) — bunyi sekali, mengabaikan mode senyap<br/><br/> <span class="alarm-type alarm-type-c">C</span> Ikuti Pengaturan Ponsel — menggunakan pengaturan suara normal perangkat<br/><br/> <span class="alarm-type alarm-type-d">D</span> Hanya Getar — getar tanpa suara<br/><br/> <span class="alarm-type alarm-type-e">E</span> Mode Senyap — tanpa suara maupun getar</div>
+<p><strong>(d)</strong> Atur jenis alarm dan suara. Pengaturan detail ada di halaman Settings:</p>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Paksa Alarm (Loop) — bunyi terus-menerus sampai dihentikan manual, mengabaikan mode senyap<br/><br/> <span class="alarm-type alarm-type-b">B</span> Paksa Alarm (Sekali) — bunyi sekali, mengabaikan mode senyap<br/><br/> <span class="alarm-type alarm-type-c">C</span> Ikuti Pengaturan Ponsel — memakai pengaturan suara normal perangkat<br/><br/> <span class="alarm-type alarm-type-d">D</span> Hanya Getar — getar tanpa suara<br/><br/> <span class="alarm-type alarm-type-e">E</span> Mode Senyap — tanpa suara maupun getar</div>
 <img alt="Pengaturan Jenis Alarm" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Atur kondisi tambahan agar hanya sinyal yang berguna: kondisi harga, kondisi pembentukan RSI di timeframe lain, kondisi Bollinger Band.</p>
+<p><strong>(e)</strong> Atur kondisi tambahan agar hanya dapat sinyal yang berguna: kondisi harga, kondisi pembentukan timeframe lain RSI, kondisi Bollinger Band.</p>
 </li>
 </ol>
 <div class="image-row">
@@ -268,15 +302,15 @@
 <img alt="Kondisi Tambahan 2" src="../images/image%203_manual.png"/>
 </div>
 <p><strong>e0)</strong> Jika beberapa kondisi diaktifkan, atur relasinya: "and" (semua harus terpenuhi) atau "or" (cukup salah satu terpenuhi).</p>
-<p><strong>e1)</strong> Atur kondisi harga — alert saat harga awal/akhir divergensi berada di atas/di bawah harga tertentu.</p>
-<p><strong>e2)</strong> Alert saat divergensi sedang terbentuk di timeframe lain.</p>
-<p><strong>e3)</strong> Cek apakah harga puncak akhir divergensi RSI berada di luar Bollinger Bands.</p>
+<p><strong>e1)</strong> Atur kondisi harga — alert saat harga start/end divergence berada di atas/di bawah harga tertentu.</p>
+<p><strong>e2)</strong> Alert saat divergence sedang terbentuk di timeframe lain.</p>
+<p><strong>e3)</strong> Cek apakah harga puncak final divergence RSI berada di luar Bollinger Bands.</p>
 <h3>Tips Strategi</h3>
 <div class="warning">
 <ul>
 <li>Selalu kombinasikan dengan indikator lain: resistance, trendline, Fibonacci, dll.</li>
-<li>Seperti semua indikator, divergence RSI tidak 100% akurat — tapi meningkatkan probabilitas.</li>
-<li>Divergence 1m, 5m sering diabaikan, tetapi reliabilitas meningkat: 15m &lt; 1h &lt; 4h. <strong>Divergence 4h sangat andal — direkomendasikan untuk disetel sebagai alarm grade A.</strong></li>
+<li>Seperti semua indikator, divergence RSI tidak 100% akurat — ini meningkatkan probabilitas.</li>
+<li>Divergence 1m, 5m sering diabaikan, tapi reliabilitas meningkat: 15m &lt; 1h &lt; 4h. <strong>Divergence 4h sangat andal — disarankan diset sebagai alarm grade A.</strong></li>
 </ul>
 </div>
 </div>
@@ -290,9 +324,9 @@
 <ol>
 <li>Pilih koin yang ingin dikonfigurasi.</li>
 <li>Atur alert harga untuk koin.</li>
-<li>Konfigurasikan alert cross EMA (Exponential Moving Average).</li>
+<li>Atur alert cross EMA (Exponential Moving Average).</li>
 <li>Atur alert saat mendekati support/resistance.</li>
-<li>Konfigurasikan alert breakout Bollinger Band.</li>
+<li>Atur alert breakout Bollinger Band.</li>
 <li>Atur alert perubahan Supertrend.</li>
 </ol>
 <div class="warning">
@@ -309,7 +343,7 @@
 </div>
 <!-- Settings Section -->
 <div class="manual-section" id="settings">
-<h2>⚙️ Halaman Pengaturan</h2>
+<h2>⚙️ Halaman Settings</h2>
 <div class="image-row">
 <img alt="Pengaturan 1" src="../images/image%206_manual.png"/>
 <img alt="Pengaturan 2" src="../images/image%207_manual.png"/>
@@ -317,10 +351,10 @@
 <ol>
 <li>Atur jenis alarm (A, B...) dan suara alarm (1, 2...).</li>
 <li>Untuk auto-order, masukkan API key tiap exchange.</li>
-<li>Anda bisa mengetes apakah notifikasi masuk ke ponsel yang sedang digunakan. Dengan mengirim pesan tes ke diri sendiri, Anda dapat mengecek apakah alert terkirim sesuai filter yang Anda atur.</li>
-<li>Halaman ini untuk mengatur opsi terkait reward referral.</li>
+<li>Anda bisa menguji apakah notifikasi masuk ke ponsel yang sedang Anda gunakan. Dengan mengirim pesan uji ke diri sendiri, Anda dapat mengecek apakah alert terkirim sesuai filter yang Anda atur.</li>
+<li>Ini adalah halaman untuk mengatur opsi terkait reward referral.</li>
 <li>Di sini Anda menerima pengumuman global.</li>
-<li>Di sini Anda menerima pengumuman eksklusif yang dikirim oleh referrer yang Anda daftarkan saat mendaftar.</li>
+<li>Di sini Anda menerima pengumuman eksklusif yang dikirim oleh referral yang Anda daftarkan saat mendaftar.</li>
 <li>Anda bisa mengganti seluruh aplikasi antara Mode Terang dan Mode Gelap.</li>
 </ol>
 </div>
@@ -329,17 +363,17 @@
 <h2>💰 Reward Referral</h2>
 <img alt="Pengaturan Referral" src="../images/image%208_manual.png" style="max-width: 550px;"/>
 <p><strong>(a)</strong> Kode referral Anda. Saat orang lain berlangganan dengan kode ini, Anda menjadi referrer mereka.</p>
-<p><strong>(b)</strong> Link undangan Anda. Siapa pun yang berlangganan lewat link ini akan otomatis mendaftarkan Anda sebagai referrer mereka.</p>
-<p><strong>(c)</strong> Masukkan alamat wallet Anda untuk reward referral. Harus wallet USDT BEP-20 (disarankan wallet dari exchange besar). Anda bisa mengetes apakah deposit berjalan dengan benar dari 'My Info' di website DivAlarm.</p>
-<p><strong>(d)</strong> Menampilkan status reward referral Anda: jumlah referral saat ini, estimasi reward, jumlah terkonfirmasi, dan jumlah yang sudah dibayar.</p>
-<p>Reward berpindah dari 'potential' ke 'confirmed' 14 hari setelah pembayaran langganan pengguna yang Anda referensikan (tidak termasuk free trial). Pembayaran dilakukan mingguan setiap hari Selasa pukul 00:00 UTC.</p>
+<p><strong>(b)</strong> Tautan undangan Anda. Siapa pun yang berlangganan melalui tautan ini akan otomatis mendaftarkan Anda sebagai referrer mereka.</p>
+<p><strong>(c)</strong> Masukkan alamat wallet Anda untuk menerima reward referral. Harus wallet BEP-20 USDT (disarankan wallet dari exchange besar). Anda bisa menguji apakah deposit berfungsi dengan benar dari menu 'My Info' di website DivAlarm.</p>
+<p><strong>(d)</strong> Menampilkan status reward referral Anda: jumlah referral saat ini, estimasi jumlah reward, jumlah terkonfirmasi, dan jumlah yang sudah dibayar.</p>
+<p>Reward berpindah dari 'potensial' ke 'terkonfirmasi' 14 hari setelah pembayaran langganan pengguna yang direferensikan (tidak termasuk uji coba gratis). Pembayaran dilakukan mingguan setiap hari Selasa pukul 00:00 UTC.</p>
 <h3>Cara Mendapatkan Reward Referral</h3>
 <div class="highlight">
-<p><strong>1]</strong> Buka Pengaturan → Reward Referral → Masukkan alamat wallet reward Anda.</p>
-<p><strong>2]</strong> Bagikan link referral Anda. Orang lain akan diarahkan ke halaman langganan dengan kode Anda.</p>
-<p><strong>3]</strong> Saat mereka berlangganan dan membayar, reward akan masuk.</p>
+<p><strong>1]</strong> Buka Pengaturan → Reward Referral → Masukkan alamat wallet penerima reward Anda.</p>
+<p><strong>2]</strong> Bagikan tautan referral Anda. Orang lain akan diarahkan ke halaman langganan dengan kode Anda.</p>
+<p><strong>3]</strong> Saat mereka berlangganan dan membayar, reward akan didepositkan.</p>
 </div>
 </div>
-</div>
+</main>
 <footer id="wisesignal-legal-footer" style="margin-top: 4rem;padding: 3rem 5% 2.5rem;color: rgba(148,163,184,0.90);font-size: 0.82rem;line-height: 1.7;text-align: center;"><div style="max-width: 1100px; margin: 0 auto;"><div style="height: 1px; background: rgba(148,163,184,0.22); margin: 0 0 1.5rem;"></div><div>© 2026 WiseSignal Ltd.</div><div>WiseSignal Ltd is registered in England and Wales (No. 16253236).</div><div>Registered Office: 71-75 Shelton Street, London, WC2H 9JQ, UK.</div><div>Contact: <a href="mailto:info@wise-signal.com" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">info@wise-signal.com</a></div></div></footer></body>
 </html>

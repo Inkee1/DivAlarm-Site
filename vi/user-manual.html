@@ -3,8 +3,7 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8"/>
-<title>Hướng dẫn sử dụng - DivAlarm</title>
-<meta content="Hướng dẫn sử dụng - DivAlarm" property="og:title"/>
+<title>Hướng dẫn sử dụng DivAlarm | Hướng dẫn cài đặt, cảnh báo và cài đặt</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -14,11 +13,13 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
-      color: #f8fafc;
+      font-family: 'Exo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000;
+      color: #e2e8f0;
       line-height: 1.8;
       min-height: 100vh;
+      font-size: 1.125rem;
+      letter-spacing: 0.01em;
     }
     
     .manual-container {
@@ -29,112 +30,132 @@
     
     .back-link {
       display: inline-block;
-      color: #00d4ff;
+      color: #38bdf8;
       text-decoration: none;
       margin-bottom: 1.5rem;
       font-size: 1.1rem;
-      transition: opacity 0.2s;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+      transition: all 0.2s ease;
     }
-    .back-link:hover { opacity: 0.8; }
+    .back-link:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-title {
       font-size: 3rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 2rem;
-      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
     }
     
     .toc {
-      background: rgba(12, 12, 24, 0.9);
+      background: rgba(15, 23, 42, 0.6);
       padding: 2rem 2.5rem;
       border-radius: 16px;
       margin-bottom: 3rem;
-      border: 1px solid rgba(0, 212, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .toc h3 {
-      color: #00d4ff;
-      font-size: 1.5rem;
+      color: #38bdf8;
+      font-size: 1.35rem;
       margin-bottom: 1rem;
+      font-weight: 600;
     }
-    .toc ul { list-style: none; }
-    .toc li { margin: 0.8rem 0; }
+    .toc ul { list-style: none; padding-left: 0; }
+    .toc li { margin: 0.8rem 0; color: #cbd5e1; }
     .toc a {
-      color: rgba(248, 250, 252, 0.85);
+      color: #38bdf8;
       text-decoration: none;
       font-size: 1.15rem;
-      transition: color 0.2s;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
     }
-    .toc a:hover { color: #00d4ff; }
+    .toc a:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-section {
       margin-bottom: 4rem;
     }
     .manual-section h2 {
-      font-size: 2.2rem;
-      color: #00d4ff;
-      margin-top: 2.5rem;
+      font-size: 2.25rem;
+      color: #f8fafc;
+      margin-top: 3rem;
       margin-bottom: 1.5rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
     }
     .manual-section h3 {
-      font-size: 1.6rem;
-      color: #f97316;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      color: #e2e8f0;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
     }
     .manual-section h4 {
-      font-size: 1.3rem;
-      color: #a78bfa;
-      margin-top: 1.5rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.35rem;
+      color: #38bdf8;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
     .manual-section p {
-      font-size: 1.2rem;
-      line-height: 1.9;
-      margin-bottom: 1.2rem;
-      color: rgba(248, 250, 252, 0.9);
+      margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section ol, .manual-section ul {
-      margin-left: 2rem;
+      margin-left: 1.5rem;
       margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section li {
-      font-size: 1.15rem;
-      margin-bottom: 0.8rem;
-      line-height: 1.8;
+      margin-bottom: 0.75rem;
     }
     .manual-section img {
       max-width: 100%;
       height: auto !important;
       object-fit: contain !important;
       border-radius: 12px;
-      margin: 2rem 0;
-      border: 1px solid rgba(0, 212, 255, 0.25);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      margin: 3rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     }
     .manual-section strong {
-      color: #00d4ff;
+      color: #f8fafc;
+      font-weight: 700;
     }
     
     .highlight {
-      background: rgba(0, 212, 255, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #00d4ff;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #3b82f6;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .warning {
-      background: rgba(249, 115, 22, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #f97316;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #f59e0b;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     
     .alarm-type {
@@ -177,11 +198,24 @@
   </style>
 <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
 <script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
-<meta content="&quot;Div&quot; — Cấu hình tín hiệu 'RSI Divergence Complete' hoặc 'RSI Divergence Forming'." name="description"/><meta content="&quot;Div&quot; — Cấu hình tín hiệu 'RSI Divergence Complete' hoặc 'RSI Divergence Forming'." property="og:description"/><meta content="&quot;Div&quot; — Cấu hình tín hiệu 'RSI Divergence Complete' hoặc 'RSI Divergence Forming'." name="twitter:description"/><meta content="https://www.divalarm.com/vi/user-manual.html" property="og:url"/><meta content="Hướng dẫn sử dụng - DivAlarm" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/vi/user-manual.html","name":"Hướng dẫn sử dụng - DivAlarm","inLanguage":"vi","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/vi/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
+<meta content="Tìm hiểu cách dùng DivAlarm, thiết lập cảnh báo phân kỳ RSI, cấu hình tuỳ chọn webhook và quản lý cài đặt ngay trong app." name="description"/>
+<meta content="Hướng dẫn sử dụng DivAlarm | Hướng dẫn cài đặt, cảnh báo và cài đặt" property="og:title"/>
+<meta content="Tìm hiểu cách dùng DivAlarm, thiết lập cảnh báo phân kỳ RSI, cấu hình tuỳ chọn webhook và quản lý cài đặt ngay trong app." property="og:description"/>
+<meta content="Hướng dẫn sử dụng DivAlarm | Hướng dẫn cài đặt, cảnh báo và cài đặt" name="twitter:title"/>
+<meta content="Tìm hiểu cách dùng DivAlarm, thiết lập cảnh báo phân kỳ RSI, cấu hình tuỳ chọn webhook và quản lý cài đặt ngay trong app." name="twitter:description"/>
+<meta content="https://www.divalarm.com/vi/user-manual.html" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="vi_VN" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="summary" name="twitter:card"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"TechArticle","headline":"Hướng dẫn sử dụng DivAlarm","url":"https://www.divalarm.com/vi/user-manual.html","description":"Tìm hiểu cách dùng DivAlarm, thiết lập cảnh báo phân kỳ RSI, cấu hình tuỳ chọn webhook và quản lý cài đặt ngay trong app.","inLanguage":"vi","author":{"@id":"https://www.divalarm.com/#organization"},"publisher":{"@id":"https://www.divalarm.com/#organization"},"articleSection":["Tổng quan menu","Thông báo tín hiệu","Cài đặt cảnh báo phân kỳ RSI","TradingView Webhook và đặt lệnh tự động","Thưởng giới thiệu"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.divalarm.com/vi/user-manual.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://www.divalarm.com/vi/"},{"@type":"ListItem","position":2,"name":"Hướng dẫn sử dụng","item":"https://www.divalarm.com/vi/user-manual.html"}]}]}</script>
+<link href="https://www.divalarm.com/vi/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-<div class="manual-container">
+<main class="manual-container">
 <a class="back-link" href="index.html">← Về Trang chủ</a>
-<h1 class="manual-title">📱 Hướng dẫn sử dụng</h1>
+<h1 class="manual-title">Hướng dẫn sử dụng DivAlarm</h1>
+<p style="margin-bottom: 2rem; color: #cbd5e1;">Dùng hướng dẫn này để cấu hình cảnh báo phân kỳ RSI, tính năng webhook, indicator bổ sung, thưởng giới thiệu và các cài đặt chính của app.</p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Mục lục</h3>
@@ -190,7 +224,7 @@
 <li><a href="#divlog">Xem thông báo tín hiệu (DivLog)</a></li>
 <li><a href="#signal-details">Xem chi tiết tín hiệu</a></li>
 <li><a href="#div">Cài đặt cảnh báo phân kỳ RSI (Div)</a></li>
-<li><a href="#ei">Cảnh báo chỉ báo bổ sung (EI)</a></li>
+<li><a href="#ei">Cảnh báo indicator bổ sung (EI)</a></li>
 <li><a href="#webhook">TradingView Webhook &amp; Tự động đặt lệnh</a></li>
 <li><a href="#settings">Trang cài đặt</a></li>
 <li><a href="#referral">Thưởng giới thiệu</a></li>
@@ -199,11 +233,11 @@
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
 <h2>📌 Tổng quan menu</h2>
-<p><strong>"DivLog"</strong> — Nơi bạn nhận các tín hiệu cảnh báo phân kỳ.</p>
+<p><strong>"DivLog"</strong> — Nơi bạn nhận tín hiệu cảnh báo phân kỳ.</p>
 <p><strong>"Div"</strong> — Cấu hình tín hiệu 'RSI Divergence Complete' hoặc 'RSI Divergence Forming'.</p>
-<p><strong>"EI"</strong> — Thiết lập cảnh báo chỉ báo bổ sung: cảnh báo chạm giá, cảnh báo tiến gần hỗ trợ/kháng cự, cảnh báo EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
-<p><strong>"Webhook"</strong> — Chỉ hiển thị với người dùng Pro. Nhận webhook TradingView để tạo cảnh báo mạnh mẽ, kết hợp tín hiệu và tự động đặt lệnh.</p>
-<p><strong>"Setting"</strong> — Cấu hình loại cảnh báo, âm thanh, cài đặt thưởng giới thiệu, thông báo và thông báo giới thiệu.</p>
+<p><strong>"EI"</strong> — Thiết lập cảnh báo indicator bổ sung: cảnh báo chạm giá, cảnh báo tiến gần hỗ trợ/kháng cự, cảnh báo EMA/Bollinger Band/Supertrend. ("Extra Indicators")</p>
+<p><strong>"Webhook"</strong> — Chỉ hiển thị cho người dùng Pro. Nhận webhook TradingView để tạo báo động mạnh mẽ, kết hợp tín hiệu và tự động đặt lệnh.</p>
+<p><strong>"Cài đặt"</strong> — Thiết lập loại cảnh báo, âm thanh, cài đặt thưởng giới thiệu, thông báo và thông báo giới thiệu.</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
@@ -212,7 +246,7 @@
 <ol>
 <li>Lưu tối đa 150 tín hiệu. Hãy dọn dẹp định kỳ.</li>
 <li>Hiển thị các cảnh báo chưa kiểm tra. Tích dấu để tắt cảnh báo. Hiển thị tối đa 5 cảnh báo chưa kiểm tra gần nhất.</li>
-<li>Lọc để chỉ xem các tín hiệu bạn muốn.</li>
+<li>Lọc để chỉ xem những tín hiệu bạn muốn.</li>
 </ol>
 </div>
 <!-- Signal Details Section -->
@@ -224,17 +258,17 @@
 <p><strong>"DivForming"</strong> hiển thị các phân kỳ đang hình thành ở các khung thời gian khác tại thời điểm tín hiệu xuất hiện.</p>
 <p><strong>"OutsideBB"</strong> hiển thị những khung thời gian nào nằm ngoài Bollinger Bands khi tín hiệu xuất hiện.</p>
 <ul>
-<li>Với các khung thời gian <strong>nhỏ hơn</strong> khung thời gian của tín hiệu, mục này hiển thị nến nào nằm ngoài Bollinger Band tại thời điểm tín hiệu (<em>at now</em>).</li>
-<li>Với các khung thời gian <strong>lớn hơn</strong> khung thời gian của tín hiệu, mục này hiển thị nến nào nằm ngoài Bollinger Band tại đỉnh phân kỳ RSI về sau (<em>at peak</em>).</li>
+<li>Với các khung thời gian <strong>nhỏ hơn</strong> khung của tín hiệu, mục này hiển thị những nến nào nằm ngoài Bollinger Band tại thời điểm tín hiệu (<em>at now</em>).</li>
+<li>Với các khung thời gian <strong>lớn hơn</strong> khung của tín hiệu, mục này hiển thị những nến nào nằm ngoài Bollinger Band tại đỉnh phân kỳ RSI xuất hiện sau đó (<em>at peak</em>).</li>
 </ul>
 <h4>Ví dụ</h4>
 <div class="highlight">
-<p>Trong ví dụ ở trên, một <strong>tín hiệu Bullish</strong> xuất hiện trên khung thời gian <strong>15m</strong>.</p>
-<p><strong>"DivForming"</strong> cho biết đang hình thành phân kỳ bearish trên các khung thời gian 30m và 1h.</p>
+<p>Trong ví dụ trên, một <strong>tín hiệu Bullish</strong> xuất hiện ở khung <strong>15m</strong>.</p>
+<p><strong>"DivForming"</strong> cho biết phân kỳ giảm đang hình thành ở khung 30m và 1h.</p>
 <p><strong>"OutsideBB"</strong> hiển thị:</p>
 <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-<li>Tại thời điểm có tín hiệu, khung <strong>5m</strong> nằm ngoài dải Bollinger Band.</li>
-<li>Tại đỉnh phân kỳ RSI, các khung <strong>15m, 30m và 1h</strong> nằm ngoài dải Bollinger Band.</li>
+<li>Tại thời điểm tín hiệu, khung <strong>5m</strong> nằm ngoài Bollinger Band.</li>
+<li>Tại đỉnh phân kỳ RSI, các khung <strong>15m, 30m và 1h</strong> nằm ngoài Bollinger Band.</li>
 </ul>
 </div>
 </div>
@@ -248,29 +282,29 @@
 <li>Chọn giữa tín hiệu 'RSI Divergence Complete' và 'RSI Divergence Forming'.</li>
 <li>Khu vực cài đặt hàng loạt — áp dụng cài đặt cho tất cả mục bên dưới cùng lúc.</li>
 <li>Thêm bộ lọc phân kỳ bằng nút +.</li>
-<li>Đặt lại bộ lọc về cài đặt mặc định khuyến nghị.</li>
+<li>Đặt lại bộ lọc về cài đặt mặc định được khuyến nghị.</li>
 <li>Thiết lập điều kiện giá theo lô.</li>
 </ol>
 <h3>Cài đặt bộ lọc riêng lẻ</h3>
 <ol start="7">
 <li>Configure individual RSI divergence signals to receive:
           <p><strong>(a)</strong> Chọn khung thời gian mong muốn. Với 'RSI Divergence Forming', hãy chọn cả 'khung chính' và 'khung phụ'. Cảnh báo sẽ kích hoạt khi đỉnh RSI hình thành trên khung nhỏ hơn trong lúc phân kỳ đang hình thành trên khung chính (đảo chiều giá).</p>
-<p><strong>(b)</strong> Chọn tín hiệu: "Bull(bullish)" hoặc "Bear(bearish)". Màu xanh = bật cảnh báo, Màu xám = tắt.</p>
-<p><strong>(c)</strong> Đặt ngưỡng quá bán/quá mua. Cảnh báo bullish khi 'starting RSI' thấp hơn mức quá bán; bearish khi 'starting RSI' cao hơn mức quá mua.</p>
-<p><strong>(d)</strong> Cấu hình kiểu báo động và âm thanh. Cài đặt chi tiết trong trang Settings:</p>
-<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Báo động cưỡng bức (Lặp) — phát liên tục cho đến khi dừng thủ công, bỏ qua chế độ im lặng<br/><br/> <span class="alarm-type alarm-type-b">B</span> Báo động cưỡng bức (Một lần) — phát một lần, bỏ qua chế độ im lặng<br/><br/> <span class="alarm-type alarm-type-c">C</span> Theo cài đặt điện thoại — dùng cài đặt âm thanh bình thường của thiết bị<br/><br/> <span class="alarm-type alarm-type-d">D</span> Chỉ rung — rung không có âm thanh<br/><br/> <span class="alarm-type alarm-type-e">E</span> Chế độ im lặng — không âm thanh, không rung</div>
+<p><strong>(b)</strong> Chọn tín hiệu: "Bull (tăng)" hoặc "Bear (giảm)". Xanh dương = bật cảnh báo, Xám = tắt.</p>
+<p><strong>(c)</strong> Đặt ngưỡng quá bán/quá mua. Cảnh báo bullish khi “bắt đầu RSI” thấp hơn mức quá bán; bearish khi “bắt đầu RSI” cao hơn mức quá mua.</p>
+<p><strong>(d)</strong> Chọn kiểu báo động và âm thanh. Cài đặt chi tiết trong trang Cài đặt:</p>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Báo động cưỡng bức (Lặp) — phát liên tục đến khi dừng thủ công, bỏ qua chế độ im lặng<br/><br/> <span class="alarm-type alarm-type-b">B</span> Báo động cưỡng bức (Một lần) — phát một lần, bỏ qua chế độ im lặng<br/><br/> <span class="alarm-type alarm-type-c">C</span> Theo cài đặt điện thoại — dùng cài đặt âm thanh bình thường của thiết bị<br/><br/> <span class="alarm-type alarm-type-d">D</span> Chỉ rung — rung không có âm thanh<br/><br/> <span class="alarm-type alarm-type-e">E</span> Chế độ im lặng — không âm thanh, không rung</div>
 <img alt="Cài đặt loại cảnh báo" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Đặt thêm điều kiện để chỉ lấy tín hiệu hữu ích: điều kiện giá, điều kiện hình thành RSI ở khung thời gian khác, điều kiện Bollinger Band.</p>
+<p><strong>(e)</strong> Đặt điều kiện bổ sung để chỉ lấy tín hiệu hữu ích: điều kiện giá, điều kiện đang hình thành ở khung thời gian khác RSI, điều kiện Bollinger Band.</p>
 </li>
 </ol>
 <div class="image-row">
 <img alt="Điều kiện bổ sung 1" src="../images/image%202_manual.png"/>
 <img alt="Điều kiện bổ sung 2" src="../images/image%203_manual.png"/>
 </div>
-<p><strong>e0)</strong> Khi đặt nhiều điều kiện, hãy cấu hình mối quan hệ: "and" (phải thỏa tất cả) hoặc "or" (chỉ cần thỏa một).</p>
+<p><strong>e0)</strong> Khi đặt nhiều điều kiện, chọn mối quan hệ: “and” (phải thỏa tất cả) hoặc “or” (chỉ cần thỏa một).</p>
 <p><strong>e1)</strong> Đặt điều kiện giá — cảnh báo khi giá bắt đầu/kết thúc phân kỳ cao hơn/thấp hơn một mức giá cụ thể.</p>
 <p><strong>e2)</strong> Cảnh báo khi phân kỳ đang hình thành ở một khung thời gian khác.</p>
-<p><strong>e3)</strong> Kiểm tra xem giá tại đỉnh cuối cùng của phân kỳ RSI có nằm ngoài dải Bollinger Bands hay không.</p>
+<p><strong>e3)</strong> Kiểm tra xem giá đỉnh cuối của phân kỳ RSI có nằm ngoài Bollinger Bands hay không.</p>
 <h3>Mẹo chiến lược</h3>
 <div class="warning">
 <ul>
@@ -282,7 +316,7 @@
 </div>
 <!-- EI Section -->
 <div class="manual-section" id="ei">
-<h2>📈 Cảnh báo chỉ báo bổ sung ("EI")</h2>
+<h2>📈 Cảnh báo chỉ báo bổ sung (“EI”)</h2>
 <div class="image-row">
 <img alt="Cài đặt EI 1" src="../images/image%204_manual.png"/>
 <img alt="Cài đặt EI 2" src="../images/image%205_manual.png"/>
@@ -301,27 +335,27 @@
 </div>
 <!-- Webhook Section -->
 <div class="manual-section" id="webhook">
-<h2>🔗 TradingView Webhook, Kết hợp tín hiệu &amp; Tự động đặt lệnh</h2>
-<p><strong>"Webhook"</strong> — tính năng Pro dành cho người dùng nâng cao.</p>
+<h2>🔗 Webhook TradingView, Kết hợp tín hiệu &amp; Tự động đặt lệnh</h2>
+<p><strong>“Webhook”</strong> — tính năng Pro dành cho người dùng nâng cao.</p>
 <p>
 <a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Xem hướng dẫn Webhook chi tiết</a>
 </p>
 </div>
 <!-- Settings Section -->
 <div class="manual-section" id="settings">
-<h2>⚙️ Trang cài đặt</h2>
+<h2>⚙️ Trang Cài đặt</h2>
 <div class="image-row">
 <img alt="Cài đặt 1" src="../images/image%206_manual.png"/>
 <img alt="Cài đặt 2" src="../images/image%207_manual.png"/>
 </div>
 <ol>
-<li>Cấu hình loại báo động (A, B...) và âm báo (1, 2...).</li>
+<li>Cấu hình kiểu báo động (A, B...) và âm báo (1, 2...).</li>
 <li>Để tự động đặt lệnh, hãy nhập API key của từng sàn.</li>
-<li>Bạn có thể kiểm tra xem thông báo có đến điện thoại hiện tại hay không. Bằng cách tự gửi một tin nhắn test cho chính mình, bạn có thể kiểm tra cảnh báo có được gửi theo các bộ lọc bạn đã cấu hình hay không.</li>
-<li>Đây là trang để cài đặt các tuỳ chọn liên quan đến thưởng giới thiệu.</li>
+<li>Bạn có thể kiểm tra xem thông báo có đang đến trên điện thoại hiện tại của mình không. Bằng cách tự gửi một tin nhắn thử, bạn có thể xác nhận cảnh báo có được gửi đúng theo các bộ lọc bạn đã cấu hình hay không.</li>
+<li>Đây là trang để thiết lập các tuỳ chọn liên quan đến thưởng giới thiệu.</li>
 <li>Đây là nơi bạn nhận các thông báo chung.</li>
-<li>Đây là nơi bạn nhận các thông báo độc quyền do người giới thiệu bạn đã đăng ký khi tạo tài khoản gửi.</li>
-<li>Bạn có thể chuyển toàn bộ app giữa Chế độ Sáng và Chế độ Tối.</li>
+<li>Đây là nơi bạn nhận các thông báo riêng được gửi bởi người giới thiệu mà bạn đã đăng ký khi tạo tài khoản.</li>
+<li>Bạn có thể chuyển toàn bộ ứng dụng giữa Chế độ Sáng và Chế độ Tối.</li>
 </ol>
 </div>
 <!-- Referral Section -->
@@ -329,17 +363,17 @@
 <h2>💰 Thưởng giới thiệu</h2>
 <img alt="Cài đặt giới thiệu" src="../images/image%208_manual.png" style="max-width: 550px;"/>
 <p><strong>(a)</strong> Mã giới thiệu của bạn. Khi người khác đăng ký bằng mã này, bạn sẽ trở thành người giới thiệu của họ.</p>
-<p><strong>(b)</strong> Link mời của bạn. Bất kỳ ai đăng ký qua link này sẽ tự động ghi nhận bạn là người giới thiệu.</p>
-<p><strong>(c)</strong> Nhập địa chỉ ví để nhận thưởng giới thiệu. Phải là ví BEP-20 USDT (khuyến nghị dùng ví của các sàn lớn). Bạn có thể test xem nạp tiền có hoạt động đúng không trong mục 'My Info' trên website DivAlarm.</p>
+<p><strong>(b)</strong> Link mời của bạn. Bất kỳ ai đăng ký qua link này sẽ tự động ghi nhận bạn là người giới thiệu của họ.</p>
+<p><strong>(c)</strong> Nhập địa chỉ ví để nhận thưởng giới thiệu. Phải là ví BEP-20 USDT (khuyến nghị dùng ví của các sàn lớn). Bạn có thể kiểm tra việc nạp tiền có hoạt động đúng không trong mục 'My Info' trên website DivAlarm.</p>
 <p><strong>(d)</strong> Hiển thị trạng thái thưởng giới thiệu của bạn: số lượt giới thiệu hiện tại, số tiền thưởng tiềm năng, số tiền đã xác nhận và số tiền đã chi trả.</p>
-<p>Thưởng sẽ chuyển từ 'tiềm năng' sang 'đã xác nhận' sau 14 ngày kể từ khi người được giới thiệu thanh toán gói đăng ký (không tính dùng thử miễn phí). Tiền sẽ được chi trả hàng tuần vào thứ Ba lúc 00:00 UTC.</p>
+<p>Thưởng sẽ chuyển từ 'tiềm năng' sang 'đã xác nhận' sau 14 ngày kể từ khi người được giới thiệu thanh toán gói đăng ký (không tính dùng thử miễn phí). Thanh toán được thực hiện hàng tuần vào 00:00 UTC thứ Ba.</p>
 <h3>Cách kiếm thưởng giới thiệu</h3>
 <div class="highlight">
-<p><strong>1]</strong> Vào Cài đặt → Thưởng giới thiệu → Nhập địa chỉ ví nhận thưởng của bạn.</p>
-<p><strong>2]</strong> Chia sẻ link giới thiệu của bạn. Người khác sẽ được chuyển đến trang đăng ký kèm mã của bạn.</p>
-<p><strong>3]</strong> Khi họ đăng ký và thanh toán, phần thưởng sẽ được ghi có.</p>
+<p><strong>1]</strong> Vào Cài đặt → Thưởng giới thiệu → Nhập địa chỉ ví nhận thưởng.</p>
+<p><strong>2]</strong> Chia sẻ link giới thiệu của bạn. Người khác sẽ được chuyển đến trang đăng ký kèm theo mã của bạn.</p>
+<p><strong>3]</strong> Khi họ đăng ký và thanh toán, thưởng sẽ được chuyển vào ví.</p>
 </div>
 </div>
-</div>
+</main>
 <footer id="wisesignal-legal-footer" style="margin-top: 4rem;padding: 3rem 5% 2.5rem;color: rgba(148,163,184,0.90);font-size: 0.82rem;line-height: 1.7;text-align: center;"><div style="max-width: 1100px; margin: 0 auto;"><div style="height: 1px; background: rgba(148,163,184,0.22); margin: 0 0 1.5rem;"></div><div>© 2026 WiseSignal Ltd.</div><div>WiseSignal Ltd is registered in England and Wales (No. 16253236).</div><div>Registered Office: 71-75 Shelton Street, London, WC2H 9JQ, UK.</div><div>Contact: <a href="mailto:info@wise-signal.com" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">info@wise-signal.com</a></div></div></footer></body>
 </html>

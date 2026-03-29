@@ -3,8 +3,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
-<title>ユーザーマニュアル - DivAlarm</title>
-<meta content="ユーザーマニュアル - DivAlarm" property="og:title"/>
+<title>DivAlarm ユーザーマニュアル｜セットアップ・アラート・設定ガイド</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -14,11 +13,13 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
-      color: #f8fafc;
+      font-family: 'Exo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000;
+      color: #e2e8f0;
       line-height: 1.8;
       min-height: 100vh;
+      font-size: 1.125rem;
+      letter-spacing: 0.01em;
     }
     
     .manual-container {
@@ -29,112 +30,132 @@
     
     .back-link {
       display: inline-block;
-      color: #00d4ff;
+      color: #38bdf8;
       text-decoration: none;
       margin-bottom: 1.5rem;
       font-size: 1.1rem;
-      transition: opacity 0.2s;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+      transition: all 0.2s ease;
     }
-    .back-link:hover { opacity: 0.8; }
+    .back-link:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-title {
       font-size: 3rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 2rem;
-      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
     }
     
     .toc {
-      background: rgba(12, 12, 24, 0.9);
+      background: rgba(15, 23, 42, 0.6);
       padding: 2rem 2.5rem;
       border-radius: 16px;
       margin-bottom: 3rem;
-      border: 1px solid rgba(0, 212, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .toc h3 {
-      color: #00d4ff;
-      font-size: 1.5rem;
+      color: #38bdf8;
+      font-size: 1.35rem;
       margin-bottom: 1rem;
+      font-weight: 600;
     }
-    .toc ul { list-style: none; }
-    .toc li { margin: 0.8rem 0; }
+    .toc ul { list-style: none; padding-left: 0; }
+    .toc li { margin: 0.8rem 0; color: #cbd5e1; }
     .toc a {
-      color: rgba(248, 250, 252, 0.85);
+      color: #38bdf8;
       text-decoration: none;
       font-size: 1.15rem;
-      transition: color 0.2s;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
     }
-    .toc a:hover { color: #00d4ff; }
+    .toc a:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-section {
       margin-bottom: 4rem;
     }
     .manual-section h2 {
-      font-size: 2.2rem;
-      color: #00d4ff;
-      margin-top: 2.5rem;
+      font-size: 2.25rem;
+      color: #f8fafc;
+      margin-top: 3rem;
       margin-bottom: 1.5rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
     }
     .manual-section h3 {
-      font-size: 1.6rem;
-      color: #f97316;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      color: #e2e8f0;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
     }
     .manual-section h4 {
-      font-size: 1.3rem;
-      color: #a78bfa;
-      margin-top: 1.5rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.35rem;
+      color: #38bdf8;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
     .manual-section p {
-      font-size: 1.2rem;
-      line-height: 1.9;
-      margin-bottom: 1.2rem;
-      color: rgba(248, 250, 252, 0.9);
+      margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section ol, .manual-section ul {
-      margin-left: 2rem;
+      margin-left: 1.5rem;
       margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section li {
-      font-size: 1.15rem;
-      margin-bottom: 0.8rem;
-      line-height: 1.8;
+      margin-bottom: 0.75rem;
     }
     .manual-section img {
       max-width: 100%;
       height: auto !important;
       object-fit: contain !important;
       border-radius: 12px;
-      margin: 2rem 0;
-      border: 1px solid rgba(0, 212, 255, 0.25);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      margin: 3rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     }
     .manual-section strong {
-      color: #00d4ff;
+      color: #f8fafc;
+      font-weight: 700;
     }
     
     .highlight {
-      background: rgba(0, 212, 255, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #00d4ff;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #3b82f6;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .warning {
-      background: rgba(249, 115, 22, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #f97316;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #f59e0b;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     
     .alarm-type {
@@ -177,11 +198,24 @@
   </style>
 <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
 <script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
-<meta content='"Div" — 「RSI Divergence Complete」または「RSI Divergence Forming」シグナルを設定します。' name="description"/><meta content='"Div" — 「RSI Divergence Complete」または「RSI Divergence Forming」シグナルを設定します。' property="og:description"/><meta content='"Div" — 「RSI Divergence Complete」または「RSI Divergence Forming」シグナルを設定します。' name="twitter:description"/><meta content="https://www.divalarm.com/ja/user-manual.html" property="og:url"/><meta content="ユーザーマニュアル - DivAlarm" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/ja/user-manual.html","name":"ユーザーマニュアル - DivAlarm","inLanguage":"ja","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/ja/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
+<meta content="DivAlarm の使い方、RSI のダイバージェンスアラート設定、Webhookオプションの設定、アプリ内の各種設定管理について学べます。" name="description"/>
+<meta content="DivAlarm ユーザーマニュアル｜セットアップ・アラート・設定ガイド" property="og:title"/>
+<meta content="DivAlarm の使い方、RSI のダイバージェンスアラート設定、Webhookオプションの設定、アプリ内の各種設定管理について学べます。" property="og:description"/>
+<meta content="DivAlarm ユーザーマニュアル｜セットアップ・アラート・設定ガイド" name="twitter:title"/>
+<meta content="DivAlarm の使い方、RSI のダイバージェンスアラート設定、Webhookオプションの設定、アプリ内の各種設定管理について学べます。" name="twitter:description"/>
+<meta content="https://www.divalarm.com/ja/user-manual.html" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="ja_JP" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="summary" name="twitter:card"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"TechArticle","headline":"DivAlarm ユーザーマニュアル","url":"https://www.divalarm.com/ja/user-manual.html","description":"DivAlarm の使い方、RSI のダイバージェンスアラート設定、Webhookオプションの設定、アプリ内の各種設定管理について学べます。","inLanguage":"ja","author":{"@id":"https://www.divalarm.com/#organization"},"publisher":{"@id":"https://www.divalarm.com/#organization"},"articleSection":["メニュー概要","シグナル通知","RSI ダイバージェンスアラート設定","TradingView Webhookと自動注文","紹介報酬"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.divalarm.com/ja/user-manual.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.divalarm.com/ja/"},{"@type":"ListItem","position":2,"name":"ユーザーマニュアル","item":"https://www.divalarm.com/ja/user-manual.html"}]}]}</script>
+<link href="https://www.divalarm.com/ja/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-<div class="manual-container">
+<main class="manual-container">
 <a class="back-link" href="index.html">← ホームに戻る</a>
-<h1 class="manual-title">📱 ユーザーマニュアル</h1>
+<h1 class="manual-title">DivAlarm ユーザーマニュアル</h1>
+<p style="margin-bottom: 2rem; color: #cbd5e1;">このガイドでは、RSI のダイバージェンスアラート、webhook機能、追加インジケーター、紹介報酬、アプリの基本設定を行えます。</p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 目次</h3>
@@ -199,19 +233,19 @@
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
 <h2>📌 メニュー概要</h2>
-<p><strong>"DivLog"</strong> — ダイバージェンスアラートのシグナルを受け取る場所です。</p>
-<p><strong>"Div"</strong> — 「RSI Divergence Complete」または「RSI Divergence Forming」シグナルを設定します。</p>
-<p><strong>"EI"</strong> — 追加インジケーターのアラートを設定：価格到達アラート、サポート／レジスタンス接近アラート、EMA/Bollinger Band/Supertrend アラート。（"Extra Indicators"）</p>
-<p><strong>"Webhook"</strong> — Proユーザーのみ表示。強力なアラーム、シグナルの組み合わせ、自動注文のための TradingView webhook を受け取れます。</p>
-<p><strong>"Setting"</strong> — アラーム種類、サウンド、紹介報酬の設定、お知らせ、紹介通知を設定します。</p>
+<p><strong>「DivLog」</strong> — ダイバージェンスアラートのシグナルを受け取る場所です。</p>
+<p><strong>「Div」</strong> — 「RSI Divergence Complete」または「RSI Divergence Forming」シグナルを設定します。</p>
+<p><strong>「EI」</strong> — 追加インジケーターのアラートを設定します：価格到達アラート、サポート／レジスタンス接近アラート、EMA/Bollinger Band/Supertrend アラート。（「Extra Indicators」）</p>
+<p><strong>「Webhook」</strong> — Proユーザーのみ表示。TradingView のwebhookを受信して、強力なアラーム、シグナルの組み合わせ、自動注文を実現します。</p>
+<p><strong>「Setting」</strong> — アラーム種別、サウンド、紹介報酬の設定、お知らせ、紹介通知を設定します。</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
-<h2>📊 シグナル通知の確認（"DivLog"）</h2>
-<p>「DivLog」は、ダイバージェンスアラートのシグナルを受け取る場所です。</p>
+<h2>📊 シグナル通知（「DivLog」）の確認</h2>
+<p>「DivLog」は、ダイバージェンスのアラートシグナルを受け取る場所です。</p>
 <ol>
-<li>最大150件のシグナルが保存されます。定期的に整理してください。</li>
-<li>未確認のアラートを表示します。チェックマークでアラームを解除できます。直近の未確認アラートは最大5件まで表示されます。</li>
+<li>最大150件のシグナルを保存します。定期的に整理してください。</li>
+<li>未確認のアラートを表示します。チェックを付けるとアラームを解除できます。未確認の最新5件まで表示されます。</li>
 <li>見たいシグナルだけに絞り込めます。</li>
 </ol>
 </div>
@@ -220,80 +254,80 @@
 <h2>🔍 シグナル詳細を見る</h2>
 <img alt="シグナル詳細画面" src="../images/image_detail.png" style="max-width: 500px;"/>
 <p>各アラートをタップすると、シグナルの詳細情報を確認できます。</p>
-<p>RSI ダイバージェンスアラートでは、開始・終了価格、RSI の値、タイムスタンプを確認できます。</p>
-<p><strong>"DivForming"</strong> は、シグナル発生時点で他の時間足に形成中のダイバージェンスを表示します。</p>
-<p><strong>"OutsideBB"</strong> は、シグナル発生時にどの時間足がボリンジャーバンドの外側だったかを表示します。</p>
+<p>RSI のダイバージェンスアラートでは、開始・終了価格、RSI の値、タイムスタンプを確認できます。</p>
+<p><strong>「DivForming」</strong>は、シグナル発生時点で他の時間足に形成中のダイバージェンスを表示します。</p>
+<p><strong>「OutsideBB」</strong>は、シグナル発生時にどの時間足がボリンジャーバンドの外側だったかを表示します。</p>
 <ul>
 <li>シグナルの時間足より<strong>小さい</strong>時間足では、シグナル時点（<em>at now</em>）でボリンジャーバンドの外側だったローソク足を表示します。</li>
-<li>シグナルの時間足より<strong>大きい</strong>時間足では、後の RSI ダイバージェンスのピーク時点（<em>at peak</em>）でボリンジャーバンドの外側だったローソク足を表示します。</li>
+<li>シグナルの時間足より<strong>大きい</strong>時間足では、後から確定する RSI ダイバージェンスのピーク（<em>at peak</em>）時点でボリンジャーバンドの外側だったローソク足を表示します。</li>
 </ul>
 <h4>例</h4>
 <div class="highlight">
 <p>上の例では、<strong>15m</strong>の時間足で<strong>強気シグナル</strong>が発生しています。</p>
-<p><strong>"DivForming"</strong>は、30mと1hの時間足で弱気ダイバージェンスが形成中であることを示します。</p>
-<p><strong>"OutsideBB"</strong>の意味：</p>
+<p><strong>「DivForming」</strong>は、30mと1hの時間足で弱気ダイバージェンスが形成中であることを示します。</p>
+<p><strong>「OutsideBB」</strong>の表示：</p>
 <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-<li>シグナル発生時点で、<strong>5m</strong>の時間足がボリンジャーバンドの外側でした。</li>
-<li>RSI のダイバージェンスピーク時点で、<strong>15m、30m、1h</strong>の時間足がボリンジャーバンドの外側でした。</li>
+<li>シグナル時点では、<strong>5m</strong>の時間足がボリンジャーバンドの外側でした。</li>
+<li>RSI のダイバージェンスピーク時点では、<strong>15m、30m、1h</strong>の時間足がボリンジャーバンドの外側でした。</li>
 </ul>
 </div>
 </div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ RSI ダイバージェンスアラート設定（"Div"）</h2>
-<img alt="ダイバージェンス設定画面" src="../images/image_manual.png" style="max-width: 500px;"/>
+<h2>⚙️ RSI ダイバージェンスアラート設定（「Div」）</h2>
+<img alt="Div設定画面" src="../images/image_manual.png" style="max-width: 500px;"/>
 <h3>RSI ダイバージェンスの全体設定</h3>
 <ol>
-<li>設定するコインを選択します。</li>
-<li>「RSI Divergence Complete」と「RSI Divergence Forming」のどちらのシグナルにするか選びます。</li>
-<li>一括設定エリア — 下の全項目にまとめて適用します。</li>
-<li>+ボタンでダイバージェンスフィルターを追加します。</li>
-<li>フィルターを推奨デフォルトにリセットします。</li>
+<li>設定する銘柄を選択します。</li>
+<li>「RSI Divergence Complete」と「RSI Divergence Forming」のどちらのシグナルにするかを選びます。</li>
+<li>一括設定エリア — 下の項目すべてに設定をまとめて適用します。</li>
+<li>+ボタンでダイバージェンスのフィルターを追加します。</li>
+<li>フィルターを推奨デフォルト設定にリセットします。</li>
 <li>価格条件を一括で設定します。</li>
 </ol>
 <h3>フィルター個別設定</h3>
 <ol start="7">
 <li>Configure individual RSI divergence signals to receive:
-          <p><strong>(a)</strong> 希望の時間足を選択します。「RSI Divergence Forming」の場合は、「メイン時間足」と「サブ時間足」の両方を選びます。メイン時間足でダイバージェンスが形成中（価格反転）で、より小さい時間足でRSIのピークが形成されるとアラートが鳴ります。</p>
-<p><strong>(b)</strong> シグナルを選択します：「Bull（強気）」または「Bear（弱気）」。青＝アラート有効、グレー＝無効。</p>
-<p><strong>(c)</strong> 売られすぎ／買われすぎのしきい値を設定します。強気は「開始RSI」が売られすぎ水準より下のとき、弱気は「開始RSI」が買われすぎ水準より上のときにアラートします。</p>
-<p><strong>(d)</strong> アラームの種類と音を設定します。詳細は設定ページで行います：</p>
-<div class="highlight"><span class="alarm-type alarm-type-a">A</span> 強制アラーム（ループ）— 手動で停止するまで鳴り続け、サイレントモードを無視<br/><br/> <span class="alarm-type alarm-type-b">B</span> 強制アラーム（1回）— 1回だけ鳴り、サイレントモードを無視<br/><br/> <span class="alarm-type alarm-type-c">C</span> 端末設定に従う — 端末の通常のサウンド設定を使用<br/><br/> <span class="alarm-type alarm-type-d">D</span> バイブのみ — 音なしで振動のみ<br/><br/> <span class="alarm-type alarm-type-e">E</span> サイレント — 音も振動もなし</div>
+          <p><strong>(a)</strong> 希望の時間足を選択します。「RSI Divergence Forming」の場合は、「メイン時間足」と「サブ時間足」の両方を選びます。メイン時間足でダイバージェンスが形成中の状態で、小さい時間足に RSI のピークが出たタイミング（価格反転）でアラートが鳴ります。</p>
+<p><strong>(b)</strong> シグナルを選択：「Bull（強気）」または「Bear（弱気）」。青＝アラートON、グレー＝OFF。</p>
+<p><strong>(c)</strong> 売られすぎ／買われすぎのしきい値を設定します。「starting RSI」が売られすぎ水準を下回ると強気アラート、「starting RSI」が買われすぎ水準を上回ると弱気アラートになります。</p>
+<p><strong>(d)</strong> アラームの種類と音を設定します。詳細は設定ページで行えます：</p>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> 強制アラーム（ループ）— 手動で停止するまで鳴り続けます。サイレントモードを無視します<br/><br/> <span class="alarm-type alarm-type-b">B</span> 強制アラーム（1回）— 1回だけ鳴ります。サイレントモードを無視します<br/><br/> <span class="alarm-type alarm-type-c">C</span> 端末設定に従う — 端末の通常のサウンド設定を使用します<br/><br/> <span class="alarm-type alarm-type-d">D</span> バイブのみ — 音なしで振動します<br/><br/> <span class="alarm-type alarm-type-e">E</span> サイレント — 音も振動もありません</div>
 <img alt="アラーム種別設定" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> 有用なシグナルだけに絞るための追加条件を設定します：価格条件、他の時間足のRSI形成条件、ボリンジャーバンド条件。</p>
+<p><strong>(e)</strong> 有用なシグナルだけに絞るため、追加条件を設定します：価格条件、別時間足のRSI形成条件、ボリンジャーバンド条件。</p>
 </li>
 </ol>
 <div class="image-row">
 <img alt="追加条件 1" src="../images/image%202_manual.png"/>
 <img alt="追加条件 2" src="../images/image%203_manual.png"/>
 </div>
-<p><strong>e0)</strong> 条件を複数設定した場合、関係を指定します：「and」（すべて満たす）または「or」（いずれか1つ満たす）。</p>
+<p><strong>e0)</strong> 条件を複数設定した場合は、関係を設定します：「and」（すべて満たす）または「or」（いずれか1つ満たす）。</p>
 <p><strong>e1)</strong> 価格条件を設定 — ダイバージェンスの開始／終了価格が、指定価格より上／下のときにアラートします。</p>
 <p><strong>e2)</strong> 別の時間足でダイバージェンスが形成中のときにアラートします。</p>
-<p><strong>e3)</strong> RSI ダイバージェンスの最終ピーク価格がボリンジャーバンドの外側かどうかを確認します。</p>
+<p><strong>e3)</strong> RSI ダイバージェンスの最終ピーク価格が、ボリンジャーバンドの外側かどうかを確認します。</p>
 <h3>戦略のヒント</h3>
 <div class="warning">
 <ul>
-<li>必ず他の指標（レジスタンス、トレンドライン、フィボナッチなど）と組み合わせて使いましょう。</li>
-<li>他の指標と同様に、RSI のダイバージェンスは100%正確ではありません。あくまで確率を高めるものです。</li>
-<li>1m、5mのダイバージェンスは見送られがちですが、信頼度は 15m ＜ 1h ＜ 4h の順に上がります。<strong>4hのダイバージェンスは信頼度が高いので、A級アラームに設定するのがおすすめです。</strong></li>
+<li>レジスタンス、トレンドライン、フィボナッチなど、他の指標と必ず組み合わせましょう。</li>
+<li>他の指標と同様に、RSI ダイバージェンスは100%正確ではありませんが、勝率を高めます。</li>
+<li>1分・5分のダイバージェンスは見送られがちですが、信頼度は 15分 ＜ 1時間 ＜ 4時間 の順に上がります。<strong>4時間足のダイバージェンスは信頼度が高く、A級アラームに設定するのがおすすめです。</strong></li>
 </ul>
 </div>
 </div>
 <!-- EI Section -->
 <div class="manual-section" id="ei">
-<h2>📈 追加インジケーターアラート（"EI"）</h2>
+<h2>📈 追加インジケーターアラート（「EI」）</h2>
 <div class="image-row">
-<img alt="EI 設定 1" src="../images/image%204_manual.png"/>
-<img alt="EI 設定 2" src="../images/image%205_manual.png"/>
+<img alt="EI設定 1" src="../images/image%204_manual.png"/>
+<img alt="EI設定 2" src="../images/image%205_manual.png"/>
 </div>
 <ol>
-<li>設定するコインを選択します。</li>
-<li>コインの価格アラートを設定します。</li>
-<li>EMA（Exponential Moving Average）クロスのアラートを設定します。</li>
-<li>サポート／レジスタンス接近アラートを設定します。</li>
+<li>設定する銘柄を選択します。</li>
+<li>銘柄の価格アラートを設定します。</li>
+<li>EMA（指数移動平均）クロスのアラートを設定します。</li>
+<li>サポート／レジスタンスへの接近アラートを設定します。</li>
 <li>ボリンジャーバンドのブレイクアウトアラートを設定します。</li>
-<li>スーパートレンドの転換アラートを設定します。</li>
+<li>Supertrendの転換アラートを設定します。</li>
 </ol>
 <div class="warning">
 <p>※ 追加インジケーター（3、4、5、6）はログアウトするとリセットされます。</p>
@@ -301,8 +335,8 @@
 </div>
 <!-- Webhook Section -->
 <div class="manual-section" id="webhook">
-<h2>🔗 TradingView Webhook、シグナル組み合わせ＆自動注文</h2>
-<p><strong>"Webhook"</strong> — 上級者向けのPro機能です。</p>
+<h2>🔗 TradingView Webhook、シグナル合成＆自動発注</h2>
+<p><strong>「Webhook」</strong> — 上級者向けのPro機能です。</p>
 <p>
 <a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Webhookの詳細ガイドへ</a>
 </p>
@@ -315,12 +349,12 @@
 <img alt="設定 2" src="../images/image%207_manual.png"/>
 </div>
 <ol>
-<li>アラーム種別（A、B…）とアラーム音（1、2…）を設定します。</li>
-<li>自動注文を使う場合は、各取引所のAPIキーを入力します。</li>
-<li>現在お使いのスマホに通知が届いているかテストできます。自分宛にテストメッセージを送ることで、設定したフィルターどおりにアラートが配信されるか確認できます。</li>
-<li>紹介報酬に関する各種設定を行うページです。</li>
-<li>全体向けのお知らせを受け取るページです。</li>
-<li>登録時に設定した紹介者からの限定お知らせを受け取るページです。</li>
+<li>アラーム種類（A、B…）とアラーム音（1、2…）を設定します。</li>
+<li>自動発注を使う場合は、各取引所のAPIキーを入力します。</li>
+<li>現在お使いのスマホに通知が届いているかをテストできます。自分宛てにテストメッセージを送ることで、設定したフィルターどおりにアラートが配信されているか確認できます。</li>
+<li>紹介報酬に関するオプションを設定するページです。</li>
+<li>全体向けのお知らせを受け取る場所です。</li>
+<li>登録時に設定した紹介者からの限定お知らせを受け取る場所です。</li>
 <li>アプリ全体をライトモード／ダークモードに切り替えできます。</li>
 </ol>
 </div>
@@ -330,16 +364,16 @@
 <img alt="紹介設定" src="../images/image%208_manual.png" style="max-width: 550px;"/>
 <p><strong>(a)</strong> あなたの紹介コード。このコードで他の人が購読すると、あなたが紹介者になります。</p>
 <p><strong>(b)</strong> あなたの招待リンク。このリンク経由で購読した人は、自動的にあなたが紹介者として登録されます。</p>
-<p><strong>(c)</strong> 紹介報酬の受取用ウォレットアドレスを入力します。BEP-20 USDT のウォレットが必要です（主要取引所のウォレット推奨）。入金が正しく行えるかは、DivAlarm のサイトの「My Info」からテストできます。</p>
+<p><strong>(c)</strong> 紹介報酬の受取用ウォレットアドレスを入力します。BEP-20 USDT ウォレットが必要です（主要取引所のウォレット推奨）。入金が正しく行えるかは、DivAlarm のWebサイトの「My Info」からテストできます。</p>
 <p><strong>(d)</strong> 紹介報酬の状況を表示します：現在の紹介人数、見込み報酬額、確定額、支払済み額。</p>
 <p>報酬は、紹介されたユーザーの購読支払い（無料トライアルを除く）から14日後に「見込み」から「確定」へ移行します。支払いは毎週火曜日のUTC 0:00に行われます。</p>
 <h3>紹介報酬の獲得方法</h3>
 <div class="highlight">
-<p><strong>1]</strong> 設定 → 紹介報酬 → 報酬受取用ウォレットアドレスを入力</p>
-<p><strong>2]</strong> 紹介リンクを共有します。相手はあなたのコード付きで購読ページに移動します。</p>
-<p><strong>3]</strong> 相手が購読して支払いが完了すると、報酬が入金されます。</p>
+<p><strong>1]</strong> 設定 → 紹介報酬 → 報酬受取ウォレットアドレスを入力します。</p>
+<p><strong>2]</strong> 紹介リンクを共有します。相手はあなたのコード付きで購読ページへ移動します。</p>
+<p><strong>3]</strong> 相手が購読して支払いを行うと、報酬が入金されます。</p>
 </div>
 </div>
-</div>
+</main>
 <footer id="wisesignal-legal-footer" style="margin-top: 4rem;padding: 3rem 5% 2.5rem;color: rgba(148,163,184,0.90);font-size: 0.82rem;line-height: 1.7;text-align: center;"><div style="max-width: 1100px; margin: 0 auto;"><div style="height: 1px; background: rgba(148,163,184,0.22); margin: 0 0 1.5rem;"></div><div>© 2026 WiseSignal Ltd.</div><div>WiseSignal Ltd is registered in England and Wales (No. 16253236).</div><div>Registered Office: 71-75 Shelton Street, London, WC2H 9JQ, UK.</div><div>Contact: <a href="mailto:info@wise-signal.com" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">info@wise-signal.com</a></div></div></footer></body>
 </html>

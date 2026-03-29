@@ -3,8 +3,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
-<title>Benutzerhandbuch – DivAlarm</title>
-<meta content="Benutzerhandbuch – DivAlarm" property="og:title"/>
+<title>DivAlarm Benutzerhandbuch | Einrichtung, Alarme und Einstellungen</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -14,11 +13,13 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
-      color: #f8fafc;
+      font-family: 'Exo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000;
+      color: #e2e8f0;
       line-height: 1.8;
       min-height: 100vh;
+      font-size: 1.125rem;
+      letter-spacing: 0.01em;
     }
     
     .manual-container {
@@ -29,112 +30,132 @@
     
     .back-link {
       display: inline-block;
-      color: #00d4ff;
+      color: #38bdf8;
       text-decoration: none;
       margin-bottom: 1.5rem;
       font-size: 1.1rem;
-      transition: opacity 0.2s;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+      transition: all 0.2s ease;
     }
-    .back-link:hover { opacity: 0.8; }
+    .back-link:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-title {
       font-size: 3rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 2rem;
-      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
     }
     
     .toc {
-      background: rgba(12, 12, 24, 0.9);
+      background: rgba(15, 23, 42, 0.6);
       padding: 2rem 2.5rem;
       border-radius: 16px;
       margin-bottom: 3rem;
-      border: 1px solid rgba(0, 212, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .toc h3 {
-      color: #00d4ff;
-      font-size: 1.5rem;
+      color: #38bdf8;
+      font-size: 1.35rem;
       margin-bottom: 1rem;
+      font-weight: 600;
     }
-    .toc ul { list-style: none; }
-    .toc li { margin: 0.8rem 0; }
+    .toc ul { list-style: none; padding-left: 0; }
+    .toc li { margin: 0.8rem 0; color: #cbd5e1; }
     .toc a {
-      color: rgba(248, 250, 252, 0.85);
+      color: #38bdf8;
       text-decoration: none;
       font-size: 1.15rem;
-      transition: color 0.2s;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
     }
-    .toc a:hover { color: #00d4ff; }
+    .toc a:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-section {
       margin-bottom: 4rem;
     }
     .manual-section h2 {
-      font-size: 2.2rem;
-      color: #00d4ff;
-      margin-top: 2.5rem;
+      font-size: 2.25rem;
+      color: #f8fafc;
+      margin-top: 3rem;
       margin-bottom: 1.5rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
     }
     .manual-section h3 {
-      font-size: 1.6rem;
-      color: #f97316;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      color: #e2e8f0;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
     }
     .manual-section h4 {
-      font-size: 1.3rem;
-      color: #a78bfa;
-      margin-top: 1.5rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.35rem;
+      color: #38bdf8;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
     .manual-section p {
-      font-size: 1.2rem;
-      line-height: 1.9;
-      margin-bottom: 1.2rem;
-      color: rgba(248, 250, 252, 0.9);
+      margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section ol, .manual-section ul {
-      margin-left: 2rem;
+      margin-left: 1.5rem;
       margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section li {
-      font-size: 1.15rem;
-      margin-bottom: 0.8rem;
-      line-height: 1.8;
+      margin-bottom: 0.75rem;
     }
     .manual-section img {
       max-width: 100%;
       height: auto !important;
       object-fit: contain !important;
       border-radius: 12px;
-      margin: 2rem 0;
-      border: 1px solid rgba(0, 212, 255, 0.25);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      margin: 3rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     }
     .manual-section strong {
-      color: #00d4ff;
+      color: #f8fafc;
+      font-weight: 700;
     }
     
     .highlight {
-      background: rgba(0, 212, 255, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #00d4ff;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #3b82f6;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .warning {
-      background: rgba(249, 115, 22, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #f97316;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #f59e0b;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     
     .alarm-type {
@@ -177,11 +198,24 @@
   </style>
 <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
 <script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
-<meta content="„Div“ — Konfiguriere „RSI Divergence Complete“- oder „RSI Divergence Forming“-Signale." name="description"/><meta content="„Div“ — Konfiguriere „RSI Divergence Complete“- oder „RSI Divergence Forming“-Signale." property="og:description"/><meta content="„Div“ — Konfiguriere „RSI Divergence Complete“- oder „RSI Divergence Forming“-Signale." name="twitter:description"/><meta content="https://www.divalarm.com/de/user-manual.html" property="og:url"/><meta content="Benutzerhandbuch – DivAlarm" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/de/user-manual.html","name":"Benutzerhandbuch – DivAlarm","inLanguage":"de","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/de/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
+<meta content="Erfahre, wie du DivAlarm nutzt, RSI Divergenz-Alarme einrichtest, Webhook-Optionen konfigurierst und Einstellungen in der App verwaltest." name="description"/>
+<meta content="DivAlarm Benutzerhandbuch | Einrichtung, Alarme und Einstellungen" property="og:title"/>
+<meta content="Erfahre, wie du DivAlarm nutzt, RSI Divergenz-Alarme einrichtest, Webhook-Optionen konfigurierst und Einstellungen in der App verwaltest." property="og:description"/>
+<meta content="DivAlarm Benutzerhandbuch | Einrichtung, Alarme und Einstellungen" name="twitter:title"/>
+<meta content="Erfahre, wie du DivAlarm nutzt, RSI Divergenz-Alarme einrichtest, Webhook-Optionen konfigurierst und Einstellungen in der App verwaltest." name="twitter:description"/>
+<meta content="https://www.divalarm.com/de/user-manual.html" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="de_DE" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="summary" name="twitter:card"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"TechArticle","headline":"DivAlarm Benutzerhandbuch","url":"https://www.divalarm.com/de/user-manual.html","description":"Erfahre, wie du DivAlarm nutzt, RSI Divergenz-Alarme einrichtest, Webhook-Optionen konfigurierst und Einstellungen in der App verwaltest.","inLanguage":"de","author":{"@id":"https://www.divalarm.com/#organization"},"publisher":{"@id":"https://www.divalarm.com/#organization"},"articleSection":["Menü-Übersicht","Signalbenachrichtigungen","RSI Divergenz-Alarm-Einstellungen","TradingView Webhook und Auto-Order","Empfehlungsprämien"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.divalarm.com/de/user-manual.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://www.divalarm.com/de/"},{"@type":"ListItem","position":2,"name":"Benutzerhandbuch","item":"https://www.divalarm.com/de/user-manual.html"}]}]}</script>
+<link href="https://www.divalarm.com/de/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-<div class="manual-container">
+<main class="manual-container">
 <a class="back-link" href="index.html">← Zurück zur Startseite</a>
-<h1 class="manual-title">📱 Benutzerhandbuch</h1>
+<h1 class="manual-title">DivAlarm Benutzerhandbuch</h1>
+<p style="margin-bottom: 2rem; color: #cbd5e1;">Nutze diesen Leitfaden, um RSI-Divergenz-Alerts, Webhook-Funktionen, zusätzliche Indikatoren, Empfehlungsprämien und die wichtigsten App-Einstellungen zu konfigurieren.</p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Inhaltsverzeichnis</h3>
@@ -189,8 +223,8 @@
 <li><a href="#menu">Menü-Übersicht</a></li>
 <li><a href="#divlog">Signalbenachrichtigungen ansehen (DivLog)</a></li>
 <li><a href="#signal-details">Signaldetails ansehen</a></li>
-<li><a href="#div">RSI Einstellungen für Divergenz-Alarme (Div)</a></li>
-<li><a href="#ei">Zusätzliche Indikator-Alarme (EI)</a></li>
+<li><a href="#div">RSI Divergenz-Alert-Einstellungen (Div)</a></li>
+<li><a href="#ei">Zusätzliche Indikator-Alerts (EI)</a></li>
 <li><a href="#webhook">TradingView Webhook &amp; Auto-Order</a></li>
 <li><a href="#settings">Einstellungsseite</a></li>
 <li><a href="#referral">Empfehlungsprämien</a></li>
@@ -199,18 +233,18 @@
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
 <h2>📌 Menü-Übersicht</h2>
-<p><strong>„DivLog“</strong> — Hier erhältst du Divergenz-Alarm-Signale.</p>
-<p><strong>„Div“</strong> — Konfiguriere „RSI Divergence Complete“- oder „RSI Divergence Forming“-Signale.</p>
-<p><strong>„EI“</strong> — Richte zusätzliche Indikator-Alarme ein: Kursziel-Alarme, Annäherungsalarme an Support/Resistance, EMA/Bollinger Band/Supertrend-Alarme. („Extra Indicators“)</p>
-<p><strong>„Webhook“</strong> — Nur für Pro-Nutzer sichtbar. Erhalte TradingView Webhooks für leistungsstarke Alarme, Signalkombinationen und Auto-Orders.</p>
-<p><strong>„Setting“</strong> — Konfiguriere Alarmtypen, Sounds, Einstellungen für Empfehlungsprämien, Ankündigungen und Empfehlungsbenachrichtigungen.</p>
+<p><strong>„DivLog“</strong> — Hier erhältst du Divergenz-Alert-Signale.</p>
+<p><strong>„Div“</strong> — Konfiguriere die Signale „RSI Divergence Complete“ oder „RSI Divergence Forming“.</p>
+<p><strong>„EI“</strong> — Richte zusätzliche Indikator-Alerts ein: Kursziel-Alerts, Alerts bei Annäherung an Support/Resistance, EMA/Bollinger Band/Supertrend-Alerts. („Extra Indicators“)</p>
+<p><strong>„Webhook“</strong> — Nur für Pro-Nutzer sichtbar. Empfange TradingView-Webhooks für leistungsstarke Alarme, Signalkombinationen und Auto-Orders.</p>
+<p><strong>„Setting“</strong> — Alarmtypen, Sounds, Referral-Belohnungseinstellungen, Ankündigungen und Referral-Benachrichtigungen konfigurieren.</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
-<h2>📊 Signalbenachrichtigungen ansehen („DivLog“)</h2>
+<h2>📊 Signal-Benachrichtigungen ansehen („DivLog“)</h2>
 <p>„DivLog“ ist der Bereich, in dem du Divergenz-Alarm-Signale erhältst.</p>
 <ol>
-<li>Bis zu 150 Signale werden gespeichert. Bitte regelmäßig aufräumen.</li>
+<li>Bis zu 150 Signale werden gespeichert. Regelmäßig aufräumen.</li>
 <li>Zeigt ungeprüfte Alarme. Setze das Häkchen, um den Alarm zu schließen. Maximal 5 aktuelle ungeprüfte Alarme werden angezeigt.</li>
 <li>Filtere, um nur die gewünschten Signale zu sehen.</li>
 </ol>
@@ -218,35 +252,35 @@
 <!-- Signal Details Section -->
 <div class="manual-section" id="signal-details">
 <h2>🔍 Signaldetails ansehen</h2>
-<img alt="Detailansicht des Signals" src="../images/image_detail.png" style="max-width: 500px;"/>
-<p>Wenn du auf eine Benachrichtigung tippst, kannst du detaillierte Signalinformationen ansehen.</p>
-<p>Bei RSI Divergence-Alarmen siehst du Start- und Endpreise, RSI-Werte und Zeitstempel.</p>
-<p><strong>„DivForming“</strong> zeigt Divergenzen, die zum Zeitpunkt des Signals in anderen Zeitrahmen gerade entstehen.</p>
-<p><strong>„OutsideBB“</strong> zeigt, welche Zeitrahmen beim Auftreten des Signals außerhalb der Bollinger Bänder lagen.</p>
+<img alt="Signal-Detailansicht" src="../images/image_detail.png" style="max-width: 500px;"/>
+<p>Tippe auf eine Meldung, um detaillierte Signalinformationen zu sehen.</p>
+<p>Bei RSI-Divergenz-Alarmen siehst du Start- und Endpreise, RSI-Werte und Zeitstempel.</p>
+<p><strong>„DivForming“</strong> zeigt Divergenzen, die zum Zeitpunkt des Signals auf anderen Zeitrahmen gerade entstehen.</p>
+<p><strong>„OutsideBB“</strong> zeigt, welche Zeitrahmen beim Auftreten des Signals außerhalb der Bollinger-Bänder lagen.</p>
 <ul>
-<li>Für Zeitrahmen, die <strong>kleiner</strong> sind als der Zeitrahmen des Signals, wird angezeigt, welche Kerzen zum Signalzeitpunkt außerhalb des Bollinger Bands lagen (<em>at now</em>).</li>
-<li>Für Zeitrahmen, die <strong>größer</strong> sind als der Zeitrahmen des Signals, wird angezeigt, welche Kerzen beim späteren RSI Divergenz-Peak außerhalb des Bollinger Bands lagen (<em>at peak</em>).</li>
+<li>Für Zeitrahmen, die <strong>kleiner</strong> als der Zeitrahmen des Signals sind, wird angezeigt, welche Kerzen zum Signalzeitpunkt außerhalb des Bollinger-Bands lagen (<em>at now</em>).</li>
+<li>Für Zeitrahmen, die <strong>größer</strong> als der Zeitrahmen des Signals sind, wird angezeigt, welche Kerzen beim späteren RSI-Divergenz-Peak außerhalb des Bollinger-Bands lagen (<em>at peak</em>).</li>
 </ul>
 <h4>Beispiel</h4>
 <div class="highlight">
 <p>Im obigen Beispiel tritt ein <strong>bullisches Signal</strong> im <strong>15m</strong>-Zeitrahmen auf.</p>
-<p><strong>"DivForming"</strong> zeigt an, dass sich bärische Divergenzen in den Zeitrahmen 30m und 1h bilden.</p>
-<p><strong>"OutsideBB"</strong> zeigt:</p>
+<p><strong>„DivForming“</strong> zeigt an, dass sich in den Zeitrahmen 30m und 1h bärische Divergenzen bilden.</p>
+<p><strong>„OutsideBB“</strong> zeigt:</p>
 <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
 <li>Zum Signalzeitpunkt lag der <strong>5m</strong>-Zeitrahmen außerhalb des Bollinger-Bands.</li>
-<li>Am Divergenz-Peak RSI lagen die Zeitrahmen <strong>15m, 30m und 1h</strong> außerhalb des Bollinger-Bands.</li>
+<li>Am RSI-Divergenz-Peak lagen die Zeitrahmen <strong>15m, 30m und 1h</strong> außerhalb des Bollinger-Bands.</li>
 </ul>
 </div>
 </div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ RSI Divergenz-Alarm-Einstellungen ("Div")</h2>
+<h2>⚙️ RSI Divergenz-Alarm-Einstellungen („Div“)</h2>
 <img alt="Div-Einstellungsbildschirm" src="../images/image_manual.png" style="max-width: 500px;"/>
 <h3>Allgemeine RSI Divergenz-Einstellungen</h3>
 <ol>
 <li>Wähle die Coin aus, die du konfigurieren möchtest.</li>
-<li>Wähle zwischen den Signalen „RSI Divergence Complete“ und „RSI Divergence Forming“.</li>
-<li>Bereich für Sammel-Einstellungen — wende die Einstellungen auf alle untenstehenden Elemente gleichzeitig an.</li>
+<li>Wähle zwischen „RSI Divergence Complete“ und „RSI Divergence Forming“-Signalen.</li>
+<li>Bereich für Sammel-Einstellungen — Einstellungen auf alle untenstehenden Elemente gleichzeitig anwenden.</li>
 <li>Füge Divergenz-Filter mit der + Taste hinzu.</li>
 <li>Filter auf die empfohlenen Standardwerte zurücksetzen.</li>
 <li>Preisbedingungen gesammelt festlegen.</li>
@@ -256,27 +290,27 @@
 <li>Configure individual RSI divergence signals to receive:
           <p><strong>(a)</strong> Wähle den gewünschten Zeitrahmen. Für „RSI Divergence Forming“ wähle sowohl einen „Hauptzeitrahmen“ als auch einen „Unterzeitrahmen“. Alarme werden ausgelöst, wenn sich der RSI-Peak im kleineren Zeitrahmen bildet, während sich im Hauptzeitrahmen eine Divergenz bildet (Preisumkehr).</p>
 <p><strong>(b)</strong> Wähle Signale: „Bull (bullisch)“ oder „Bear (bärisch)“. Blau = Alarme aktiviert, Grau = deaktiviert.</p>
-<p><strong>(c)</strong> Lege Schwellen für überverkauft/überkauft fest. Bullische Alarme, wenn „starting RSI“ unter dem Überverkauft-Level liegt; bärische, wenn „starting RSI“ über dem Überkauft-Level liegt.</p>
+<p><strong>(c)</strong> Lege Überverkauft-/Überkauft-Schwellen fest. Bullische Alarme, wenn „Start RSI“ unter dem Überverkauft-Level liegt; bärische, wenn „Start RSI“ über dem Überkauft-Level liegt.</p>
 <p><strong>(d)</strong> Alarmtyp und Sound konfigurieren. Detaillierte Einstellungen auf der Seite „Einstellungen“:</p>
-<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Zwangsalarm (Schleife) — spielt kontinuierlich, bis er manuell gestoppt wird; ignoriert den Lautlosmodus<br/><br/> <span class="alarm-type alarm-type-b">B</span> Zwangsalarm (einmal) — spielt einmal; ignoriert den Lautlosmodus<br/><br/> <span class="alarm-type alarm-type-c">C</span> Telefon-Einstellungen folgen — nutzt die normalen Sound-Einstellungen des Geräts<br/><br/> <span class="alarm-type alarm-type-d">D</span> Nur Vibration — Vibration ohne Ton<br/><br/> <span class="alarm-type alarm-type-e">E</span> Lautlosmodus — kein Ton und keine Vibration</div>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Alarm erzwingen (Schleife) — spielt dauerhaft, bis manuell gestoppt; ignoriert den Lautlosmodus<br/><br/> <span class="alarm-type alarm-type-b">B</span> Alarm erzwingen (einmal) — spielt einmal; ignoriert den Lautlosmodus<br/><br/> <span class="alarm-type alarm-type-c">C</span> Telefonesinstellungen folgen — nutzt die normalen Sound-Einstellungen des Geräts<br/><br/> <span class="alarm-type alarm-type-d">D</span> Nur Vibration — Vibration ohne Ton<br/><br/> <span class="alarm-type alarm-type-e">E</span> Lautlosmodus — kein Ton und keine Vibration</div>
 <img alt="Einstellungen für Alarmtyp" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Lege zusätzliche Bedingungen fest, damit nur nützliche Signale kommen: Preisbedingungen, RSI-Forming-Bedingungen in anderen Zeitrahmen, Bollinger-Band-Bedingungen.</p>
+<p><strong>(e)</strong> Lege zusätzliche Bedingungen fest, damit nur nützliche Signale kommen: Preisbedingungen, Bedingungen zur Bildung in einem anderen Zeitrahmen RSI, Bollinger-Band-Bedingungen.</p>
 </li>
 </ol>
 <div class="image-row">
 <img alt="Zusätzliche Bedingungen 1" src="../images/image%202_manual.png"/>
 <img alt="Zusätzliche Bedingungen 2" src="../images/image%203_manual.png"/>
 </div>
-<p><strong>e0)</strong> Wenn mehrere Bedingungen gesetzt sind, lege die Verknüpfung fest: „and“ (alle müssen erfüllt sein) oder „or“ (eine reicht).</p>
+<p><strong>e0)</strong> Wenn mehrere Bedingungen gesetzt sind, lege die Verknüpfung fest: „und“ (alle müssen erfüllt sein) oder „oder“ (eine reicht).</p>
 <p><strong>e1)</strong> Preisbedingungen festlegen — Alarm, wenn der Start-/Endpreis der Divergenz über/unter einem bestimmten Preis liegt.</p>
-<p><strong>e2)</strong> Alarm, wenn sich in einem anderen Zeitrahmen eine Divergenz bildet.</p>
-<p><strong>e3)</strong> Prüfe, ob der finale Peak-Preis der RSI-Divergenz außerhalb der Bollinger-Bänder liegt.</p>
+<p><strong>e2)</strong> Alarm, wenn sich die Divergenz in einem anderen Zeitrahmen bildet.</p>
+<p><strong>e3)</strong> Prüfen, ob der finale Peak-Preis der RSI-Divergenz außerhalb der Bollinger-Bänder liegt.</p>
 <h3>Strategie-Tipps</h3>
 <div class="warning">
 <ul>
 <li>Immer mit anderen Indikatoren kombinieren: Widerstände, Trendlinien, Fibonacci usw.</li>
-<li>Wie alle Indikatoren ist die RSI-Divergenz nicht zu 100 % genau — sie erhöht die Wahrscheinlichkeit.</li>
-<li>1m- und 5m-Divergenzen werden oft ignoriert, aber die Zuverlässigkeit steigt: 15m &lt; 1h &lt; 4h. <strong>4h-Divergenzen sind sehr zuverlässig — empfohlen, als Alarm der Stufe A zu setzen.</strong></li>
+<li>Wie alle Indikatoren ist RSI-Divergenz nicht zu 100% genau — sie erhöht die Wahrscheinlichkeit.</li>
+<li>1m- und 5m-Divergenzen werden oft ignoriert, aber die Zuverlässigkeit steigt: 15m &lt; 1h &lt; 4h. <strong>4h-Divergenzen sind sehr zuverlässig — empfohlen als Alarm der Stufe A.</strong></li>
 </ul>
 </div>
 </div>
@@ -290,8 +324,8 @@
 <ol>
 <li>Wähle die Coin aus, die du konfigurieren möchtest.</li>
 <li>Preisalarme für die Coin festlegen.</li>
-<li>EMA- (Exponential Moving Average) Kreuzungsalarme konfigurieren.</li>
-<li>Alarme bei Annäherung an Support/Widerstand festlegen.</li>
+<li>EMA-Kreuzungsalarme (Exponential Moving Average) konfigurieren.</li>
+<li>Alarme beim Annähern an Support/Widerstand festlegen.</li>
 <li>Bollinger-Band-Ausbruchalarme konfigurieren.</li>
 <li>Supertrend-Wechselalarme festlegen.</li>
 </ol>
@@ -302,44 +336,44 @@
 <!-- Webhook Section -->
 <div class="manual-section" id="webhook">
 <h2>🔗 TradingView Webhook, Signal-Kombination &amp; Auto-Order</h2>
-<p><strong>„Webhook“</strong> — Pro-Funktion für fortgeschrittene Nutzer.</p>
+<p><strong>„Webhook“</strong> — Pro-Feature für fortgeschrittene Nutzer.</p>
 <p>
-<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Zum detaillierten Webhook-Leitfaden</a>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Zum ausführlichen Webhook-Guide</a>
 </p>
 </div>
 <!-- Settings Section -->
 <div class="manual-section" id="settings">
-<h2>⚙️ Einstellungsseite</h2>
+<h2>⚙️ Seite „Einstellungen“</h2>
 <div class="image-row">
 <img alt="Einstellungen 1" src="../images/image%206_manual.png"/>
 <img alt="Einstellungen 2" src="../images/image%207_manual.png"/>
 </div>
 <ol>
-<li>Alarmtypen (A, B ...) und Alarmsounds (1, 2 ...) konfigurieren.</li>
-<li>Für Auto-Orders die API-Keys der jeweiligen Börse eingeben.</li>
-<li>Du kannst testen, ob Benachrichtigungen auf deinem aktuellen Smartphone ankommen. Indem du dir selbst eine Testnachricht sendest, prüfst du, ob Alarme gemäß deinen konfigurierten Filtern zugestellt werden.</li>
-<li>Hier stellst du Optionen rund um die Empfehlungsprämien ein.</li>
+<li>Alarmtypen (A, B ...) und Alarm-Sounds (1, 2 ...) konfigurieren.</li>
+<li>Für Auto-Orders die API-Keys jeder Börse eingeben.</li>
+<li>Du kannst testen, ob Benachrichtigungen auf deinem aktuellen Smartphone ankommen. Wenn du dir selbst eine Testnachricht sendest, kannst du prüfen, ob Alarme gemäß deinen konfigurierten Filtern zugestellt werden.</li>
+<li>Auf dieser Seite richtest du Optionen rund um Empfehlungsprämien ein.</li>
 <li>Hier erhältst du globale Ankündigungen.</li>
 <li>Hier erhältst du exklusive Ankündigungen, die von der Empfehlung gesendet werden, die du bei der Registrierung angegeben hast.</li>
-<li>Du kannst die gesamte App zwischen Light Mode und Dark Mode umschalten.</li>
+<li>Du kannst die gesamte App zwischen hellem und dunklem Modus umschalten.</li>
 </ol>
 </div>
 <!-- Referral Section -->
 <div class="manual-section" id="referral">
 <h2>💰 Empfehlungsprämien</h2>
 <img alt="Empfehlungs-Einstellungen" src="../images/image%208_manual.png" style="max-width: 550px;"/>
-<p><strong>(a)</strong> Dein Empfehlungscode. Wenn andere mit diesem Code abonnieren, wirst du ihr Referrer.</p>
+<p><strong>(a)</strong> Dein Empfehlungscode. Wenn andere mit diesem Code abonnieren, wirst du als ihr Referrer registriert.</p>
 <p><strong>(b)</strong> Dein Einladungslink. Wer über diesen Link abonniert, registriert dich automatisch als Referrer.</p>
-<p><strong>(c)</strong> Gib deine Wallet-Adresse für Empfehlungsprämien ein. Es muss eine BEP-20-USDT-Wallet sein (Wallets großer Börsen empfohlen). Du kannst auf der DivAlarm-Website unter „My Info“ testen, ob Einzahlungen korrekt funktionieren.</p>
-<p><strong>(d)</strong> Zeigt deinen Status der Empfehlungsprämien: aktuelle Anzahl an Empfehlungen, potenzieller Prämienbetrag, bestätigter Betrag und ausgezahlter Betrag.</p>
-<p>Prämien wechseln 14 Tage nach der Abo-Zahlung des geworbenen Nutzers (ohne kostenlose Testphase) von „potenziell“ zu „bestätigt“. Auszahlungen erfolgen wöchentlich am Dienstag um 00:00 Uhr UTC.</p>
+<p><strong>(c)</strong> Gib deine Wallet-Adresse für Empfehlungsprämien ein. Es muss eine BEP-20 USDT-Wallet sein (Wallets großer Börsen empfohlen). Du kannst auf der DivAlarm-Website unter „My Info“ testen, ob Einzahlungen korrekt funktionieren.</p>
+<p><strong>(d)</strong> Zeigt deinen Status bei Empfehlungsprämien: aktuelle Anzahl an Empfehlungen, potenzieller Prämienbetrag, bestätigter Betrag und ausgezahlter Betrag.</p>
+<p>Prämien wechseln 14 Tage nach der Abo-Zahlung des geworbenen Nutzers (ohne kostenlose Testphase) von „potenziell“ zu „bestätigt“. Auszahlungen erfolgen wöchentlich dienstags um 00:00 Uhr UTC.</p>
 <h3>So verdienst du Empfehlungsprämien</h3>
 <div class="highlight">
 <p><strong>1]</strong> Gehe zu Einstellungen → Empfehlungsprämien → Gib deine Prämien-Wallet-Adresse ein.</p>
 <p><strong>2]</strong> Teile deinen Empfehlungslink. Andere werden mit deinem Code zur Abo-Seite weitergeleitet.</p>
-<p><strong>3]</strong> Wenn sie abonnieren und bezahlen, werden die Prämien gutgeschrieben.</p>
+<p><strong>3]</strong> Wenn sie abonnieren und bezahlen, werden die Prämien eingezahlt.</p>
 </div>
 </div>
-</div>
+</main>
 <footer id="wisesignal-legal-footer" style="margin-top: 4rem;padding: 3rem 5% 2.5rem;color: rgba(148,163,184,0.90);font-size: 0.82rem;line-height: 1.7;text-align: center;"><div style="max-width: 1100px; margin: 0 auto;"><div style="height: 1px; background: rgba(148,163,184,0.22); margin: 0 0 1.5rem;"></div><div>© 2026 WiseSignal Ltd.</div><div>WiseSignal Ltd is registered in England and Wales (No. 16253236).</div><div>Registered Office: 71-75 Shelton Street, London, WC2H 9JQ, UK.</div><div>Contact: <a href="mailto:info@wise-signal.com" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">info@wise-signal.com</a></div></div></footer></body>
 </html>

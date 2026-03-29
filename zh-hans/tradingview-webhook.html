@@ -3,8 +3,7 @@
 <html lang="zh-Hans">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView Webhook 指南 - DivAlarm</title>
-<meta content="TradingView Webhook 指南 - DivAlarm" property="og:title"/>
+<title>TradingView 的 DivAlarm Webhook 设置指南</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -255,11 +254,24 @@
   </style>
 <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
 <script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
-<meta content="在应用中将关键词（例如“AAA”）添加到“Keyword Include”部分。当 TradingView 警报的“Message”包含该关键词时，将按配置触发响铃。" name="description"/><meta content="在应用中将关键词（例如“AAA”）添加到“Keyword Include”部分。当 TradingView 警报的“Message”包含该关键词时，将按配置触发响铃。" property="og:description"/><meta content="在应用中将关键词（例如“AAA”）添加到“Keyword Include”部分。当 TradingView 警报的“Message”包含该关键词时，将按配置触发响铃。" name="twitter:description"/><meta content="https://www.divalarm.com/zh-hans/tradingview-webhook.html" property="og:url"/><meta content="TradingView Webhook 指南 - DivAlarm" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/zh-hans/tradingview-webhook.html","name":"TradingView Webhook 指南 - DivAlarm","inLanguage":"zh-Hans","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/></head>
+<meta content="了解如何将 TradingView 提醒连接到 DivAlarm Webhook、关键词提醒、信号组合以及自动下单流程。" name="description"/>
+<meta content="TradingView 的 DivAlarm Webhook 设置指南" property="og:title"/>
+<meta content="了解如何将 TradingView 提醒连接到 DivAlarm Webhook、关键词提醒、信号组合以及自动下单流程。" property="og:description"/>
+<meta content="TradingView 的 DivAlarm Webhook 设置指南" name="twitter:title"/>
+<meta content="了解如何将 TradingView 提醒连接到 DivAlarm Webhook、关键词提醒、信号组合以及自动下单流程。" name="twitter:description"/>
+<meta content="https://www.divalarm.com/zh-hans/tradingview-webhook.html" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="zh_CN" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="summary" name="twitter:card"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"HowTo","name":"如何将 TradingView Webhook 连接到 DivAlarm","description":"将 TradingView 警报连接到 DivAlarm，实现关键词报警、信号组合与自动下单流程。","url":"https://www.divalarm.com/zh-hans/tradingview-webhook.html","step":[{"@type":"HowToStep","name":"创建一个 TradingView 警报","text":"在 TradingView 中右键点击指标，并在要使用的指标上选择“添加警报”。"},{"@type":"HowToStep","name":"粘贴 Webhook URL","text":"在 TradingView 通知中启用 Webhook URL，并粘贴从 DivAlarm 应用复制的链接。"},{"@type":"HowToStep","name":"添加消息关键词","text":"在警报消息中输入一个关键词，让 DivAlarm 能匹配收到的 TradingView 信号。"},{"@type":"HowToStep","name":"在 DivAlarm 中登记该关键词","text":"在应用的“关键词包含”中添加相同关键词，以触发报警。"},{"@type":"HowToStep","name":"扩展流程","text":"基础 Webhook 流程正常运行后，可进一步使用信号组合或自动下单。"}]},{"@type":"WebPage","url":"https://www.divalarm.com/zh-hans/tradingview-webhook.html","name":"TradingView 的 DivAlarm Webhook 设置指南","description":"了解如何将 TradingView 提醒连接到 DivAlarm Webhook、关键词提醒、信号组合以及自动下单流程。","inLanguage":"zh-Hans","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.divalarm.com/zh-hans/"},{"@type":"ListItem","position":2,"name":"TradingView Webhook 指南","item":"https://www.divalarm.com/zh-hans/tradingview-webhook.html"}]}]}</script>
+<link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-<div class="manual-container">
+<main class="manual-container">
 <a class="back-link" href="user-manual.html">← 返回用户手册</a>
-<h1 class="manual-title">🔗 TradingView Webhook 指南</h1>
+<h1 class="manual-title">TradingView 的 Webhook 指南（适用于 DivAlarm）</h1>
+<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">将 TradingView 警报连接到 DivAlarm，实现关键词提醒、Webhook 自动化、信号组合以及交易所自动下单。</p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 目录</h3>
@@ -276,22 +288,22 @@
 <h2>DivAlarm × TradingView – 快速概览</h2>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">将 TradingView 连接到应用</button>
+<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">将 TradingView 连接到 App</button>
 </h3>
 <div class="video-toggle-panel" id="qs-connect-tv">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="将 TradingView 连接到应用" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="将 TradingView 连接到 App" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">在 YouTube 上打开</a></p>
 </div>
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">为 TradingView 设置强制报警</button>
+<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">TradingView 的强制提醒设置</button>
 </h3>
 <div class="video-toggle-panel" id="qs-force-alarm">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="为 TradingView 设置强制报警" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="TradingView 的强制提醒设置" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">在 YouTube 上打开</a></p>
 </div>
@@ -334,39 +346,39 @@
 <div class="manual-section" id="keyword">
 <h2>🔔 关键词提醒</h2>
 <h3>在 TradingView 中添加 Webhook</h3>
-<img alt="TradingView 添加警报" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>在 TradingView 中，右键点击你想接收信号的指标，然后点击“在 ~ 上添加提醒”。</p>
+<img alt="TradingView 添加提醒" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>在 TradingView 中右键点击你想接收信号的指标，然后点击“在 ~ 上添加提醒”。</p>
 <img alt="Webhook URL 设置" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="通知设置" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>在“通知”部分，勾选“Webhook URL”，并将从应用复制的地址粘贴到下方输入框中。</p>
-<p>设置完成后，其他提醒会自动勾选/填入该项。</p>
+<p>在“通知”部分，勾选“Webhook URL”，并将从 App 复制的地址粘贴到下方输入框中。</p>
+<p>设置完成后，其他提醒会自动勾选/填充该项。</p>
 <img alt="消息设置" src="../images/image%201_tv.png" style="max-width: 680px;"/>
 <p>在“消息”部分的“消息”下，添加任意你想要的关键词（例如“AAA”）。</p>
 <p>点击“创建”以设置 TradingView 提醒。</p>
-<h3>在应用中接收 TradingView 提醒</h3>
+<h3>在 App 中接收 TradingView 提醒</h3>
 <img alt="应用关键词设置" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>在应用中将关键词（例如“AAA”）添加到“Keyword Include”部分。当 TradingView 警报的“Message”包含该关键词时，将按配置触发响铃。</p>
+<p>在 App 的“包含关键词”中添加该关键词（例如“AAA”）。当 TradingView 提醒的“消息”包含该关键词时，将按配置触发报警。</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 使用 TradingView 警报自动下单</h2>
+<h2>🤖 使用 TradingView 提醒自动下单</h2>
 <img alt="自动下单设置" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>你可以设置“自动下单”，在收到关键词警报时将订单发送到交易所。</p>
+<p>你可以设置在收到关键词提醒时，将“自动下单”发送到交易所。</p>
 <img alt="交易所 API 设置" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
 <p>支持自动下单的交易所：<strong>Binance、ByBit、OKX、Bitget、Gate</strong></p>
-<p>你必须在应用的设置页面中填写 API Key。</p>
+<p>你必须在应用的“设置”页面中填写 API Key。</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
 <h2>📝 将 DivAlarm 信号注册为关键词</h2>
 <img alt="DivAlarm 信号关键词" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>DivAlarm 自带的警报也可以添加到“Keyword Combinations”（用于组合警报或自动下单）。</p>
+<p>DivAlarm 自身的提醒也可以添加到“关键词组合”（用于组合提醒或自动下单）。</p>
 <div class="highlight">
 <p><strong>格式：</strong>@AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe（如有）</p>
 </div>
-<p><strong>警报类型：</strong></p>
+<p><strong>提醒类型：</strong></p>
 <ul>
 <li><code>@D</code> — RSI Divergence filters</li>
 <li><code>@E</code> — Extra Indicators</li>
@@ -375,7 +387,7 @@
 <h3>示例</h3>
 <div class="code-block">
 <p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ RSI 背离，BTCUSDT.P，标题包含“Bull”，形成中，主 5m，副 1m</p>
+<p class="desc">→ RSI 背离，BTCUSDT.P，标题包含“Bull”，形成中，主周期 5m，副周期 1m</p>
 </div>
 <div class="code-block">
 <p><code>"@D@ETH@Bear@15m@O"</code></p>
@@ -390,30 +402,30 @@
 <p><code>"@E@BTC@Near Support@1m"</code></p>
 <p><code>"@E@BTC@Near Resistance@5m"</code></p>
 <p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ 价格警报，BTC 币种，标题包含“Up”</span></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ 价格提醒，BTC 币种，标题包含“Up”</span></p>
 <p><code>"@P@ETH@Down"</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 信号组合警报</h2>
+<h2>🔀 信号组合提醒</h2>
 <p>组合多个 TradingView 信号，生成新的或筛选后的信号。</p>
 <div class="image-row">
-<img alt="组合警报设置" src="../images/image%205_tv.png"/>
+<img alt="组合提醒设置" src="../images/image%205_tv.png"/>
 <div>
-<p>设置在时间窗口内必须满足的条件，满足后才会触发警报。</p>
-<p><strong>示例：</strong><br/>在 1 小时 30 分钟内：<br/> • “包含关键词 A 的警报” AND<br/> • “包含关键词 B 的警报”同时到达，或<br/> • “包含关键词 C 的警报”到达</p>
+<p>设置在时间窗口内必须满足的条件，满足后才会触发提醒。</p>
+<p><strong>示例：</strong><br/>在 1 小时 30 分钟内：<br/> • “包含关键词 A 的提醒”和<br/> • “包含关键词 B 的提醒”同时到达，或<br/> • “包含关键词 C 的提醒”到达</p>
 <p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = “AND”（必须同时满足）</p>
-<p><strong>|</strong> = “OR”（满足其一即可）</p>
-<p>即使单个关键词警报被禁用，只要满足条件，组合仍可触发。</p>
-<p><strong>组合警报也支持自动下单！</strong></p>
+<p><strong>&amp;</strong> = “AND”（必须同时满足两个条件）</p>
+<p><strong>|</strong> = “OR”（满足任一条件即可）</p>
+<p>即使单个关键词提醒被禁用，只要满足条件，组合仍然可以触发。</p>
+<p><strong>组合提醒也支持自动下单！</strong></p>
 </div>
 </div>
-</div>
+</main>
 <script>
     (function () {
       var buttons = document.querySelectorAll('.video-toggle-btn');

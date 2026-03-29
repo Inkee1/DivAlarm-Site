@@ -3,8 +3,7 @@
 <html lang="ur">
 <head>
 <meta charset="utf-8"/>
-<title>یوزر مینوئل - DivAlarm</title>
-<meta content="یوزر مینوئل - DivAlarm" property="og:title"/>
+<title>DivAlarm یوزر مینوئل | سیٹ اپ، الرٹس اور سیٹنگز گائیڈ</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -14,11 +13,13 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
-      color: #f8fafc;
+      font-family: 'Exo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000;
+      color: #e2e8f0;
       line-height: 1.8;
       min-height: 100vh;
+      font-size: 1.125rem;
+      letter-spacing: 0.01em;
     }
     
     .manual-container {
@@ -29,112 +30,132 @@
     
     .back-link {
       display: inline-block;
-      color: #00d4ff;
+      color: #38bdf8;
       text-decoration: none;
       margin-bottom: 1.5rem;
       font-size: 1.1rem;
-      transition: opacity 0.2s;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+      transition: all 0.2s ease;
     }
-    .back-link:hover { opacity: 0.8; }
+    .back-link:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-title {
       font-size: 3rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 2rem;
-      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
     }
     
     .toc {
-      background: rgba(12, 12, 24, 0.9);
+      background: rgba(15, 23, 42, 0.6);
       padding: 2rem 2.5rem;
       border-radius: 16px;
       margin-bottom: 3rem;
-      border: 1px solid rgba(0, 212, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .toc h3 {
-      color: #00d4ff;
-      font-size: 1.5rem;
+      color: #38bdf8;
+      font-size: 1.35rem;
       margin-bottom: 1rem;
+      font-weight: 600;
     }
-    .toc ul { list-style: none; }
-    .toc li { margin: 0.8rem 0; }
+    .toc ul { list-style: none; padding-left: 0; }
+    .toc li { margin: 0.8rem 0; color: #cbd5e1; }
     .toc a {
-      color: rgba(248, 250, 252, 0.85);
+      color: #38bdf8;
       text-decoration: none;
       font-size: 1.15rem;
-      transition: color 0.2s;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
     }
-    .toc a:hover { color: #00d4ff; }
+    .toc a:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-section {
       margin-bottom: 4rem;
     }
     .manual-section h2 {
-      font-size: 2.2rem;
-      color: #00d4ff;
-      margin-top: 2.5rem;
+      font-size: 2.25rem;
+      color: #f8fafc;
+      margin-top: 3rem;
       margin-bottom: 1.5rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
     }
     .manual-section h3 {
-      font-size: 1.6rem;
-      color: #f97316;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      color: #e2e8f0;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
     }
     .manual-section h4 {
-      font-size: 1.3rem;
-      color: #a78bfa;
-      margin-top: 1.5rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.35rem;
+      color: #38bdf8;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
     .manual-section p {
-      font-size: 1.2rem;
-      line-height: 1.9;
-      margin-bottom: 1.2rem;
-      color: rgba(248, 250, 252, 0.9);
+      margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section ol, .manual-section ul {
-      margin-left: 2rem;
+      margin-left: 1.5rem;
       margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section li {
-      font-size: 1.15rem;
-      margin-bottom: 0.8rem;
-      line-height: 1.8;
+      margin-bottom: 0.75rem;
     }
     .manual-section img {
       max-width: 100%;
       height: auto !important;
       object-fit: contain !important;
       border-radius: 12px;
-      margin: 2rem 0;
-      border: 1px solid rgba(0, 212, 255, 0.25);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      margin: 3rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     }
     .manual-section strong {
-      color: #00d4ff;
+      color: #f8fafc;
+      font-weight: 700;
     }
     
     .highlight {
-      background: rgba(0, 212, 255, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #00d4ff;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #3b82f6;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .warning {
-      background: rgba(249, 115, 22, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #f97316;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #f59e0b;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     
     .alarm-type {
@@ -177,11 +198,24 @@
   </style>
 <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
 <script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
-<meta content="&quot;Div&quot; — 'RSI Divergence Complete' یا 'RSI Divergence Forming' سگنلز کنفیگر کریں۔" name="description"/><meta content="&quot;Div&quot; — 'RSI Divergence Complete' یا 'RSI Divergence Forming' سگنلز کنفیگر کریں۔" property="og:description"/><meta content="&quot;Div&quot; — 'RSI Divergence Complete' یا 'RSI Divergence Forming' سگنلز کنفیگر کریں۔" name="twitter:description"/><meta content="https://www.divalarm.com/ur/user-manual.html" property="og:url"/><meta content="یوزر مینوئل - DivAlarm" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/ur/user-manual.html","name":"یوزر مینوئل - DivAlarm","inLanguage":"ur","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/ur/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
+<meta content="DivAlarm استعمال کرنے کا طریقہ سیکھیں، RSI ڈائیورجنس الرٹس سیٹ کریں، webhook آپشنز کنفیگر کریں، اور ایپ سے سیٹنگز مینیج کریں۔" name="description"/>
+<meta content="DivAlarm یوزر مینوئل | سیٹ اپ، الرٹس اور سیٹنگز گائیڈ" property="og:title"/>
+<meta content="DivAlarm استعمال کرنے کا طریقہ سیکھیں، RSI ڈائیورجنس الرٹس سیٹ کریں، webhook آپشنز کنفیگر کریں، اور ایپ سے سیٹنگز مینیج کریں۔" property="og:description"/>
+<meta content="DivAlarm یوزر مینوئل | سیٹ اپ، الرٹس اور سیٹنگز گائیڈ" name="twitter:title"/>
+<meta content="DivAlarm استعمال کرنے کا طریقہ سیکھیں، RSI ڈائیورجنس الرٹس سیٹ کریں، webhook آپشنز کنفیگر کریں، اور ایپ سے سیٹنگز مینیج کریں۔" name="twitter:description"/>
+<meta content="https://www.divalarm.com/ur/user-manual.html" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="ur_PK" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="summary" name="twitter:card"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"TechArticle","headline":"DivAlarm یوزر مینوئل","url":"https://www.divalarm.com/ur/user-manual.html","description":"DivAlarm استعمال کرنے کا طریقہ سیکھیں، RSI ڈائیورجنس الرٹس سیٹ کریں، webhook آپشنز کنفیگر کریں، اور ایپ سے سیٹنگز مینیج کریں۔","inLanguage":"ur","author":{"@id":"https://www.divalarm.com/#organization"},"publisher":{"@id":"https://www.divalarm.com/#organization"},"articleSection":["مینو کا جائزہ","سگنل نوٹیفکیشنز","RSI ڈائیورجنس الرٹ سیٹنگز","TradingView Webhook اور آٹو آرڈر","ریفرل ریوارڈز"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.divalarm.com/ur/user-manual.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ہوم","item":"https://www.divalarm.com/ur/"},{"@type":"ListItem","position":2,"name":"یوزر مینوئل","item":"https://www.divalarm.com/ur/user-manual.html"}]}]}</script>
+<link href="https://www.divalarm.com/ur/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-<div class="manual-container">
+<main class="manual-container">
 <a class="back-link" href="index.html">← ہوم پر واپس جائیں</a>
-<h1 class="manual-title">📱 یوزر مینوئل</h1>
+<h1 class="manual-title">DivAlarm یوزر مینوئل</h1>
+<p style="margin-bottom: 2rem; color: #cbd5e1;">RSI ڈائیورجنس الرٹس، ویب ہُک فیچرز، اضافی انڈیکیٹرز، ریفرل ریوارڈز، اور ایپ کی بنیادی سیٹنگز کنفیگر کرنے کے لیے یہ گائیڈ استعمال کریں۔</p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 فہرستِ مضامین</h3>
@@ -192,18 +226,18 @@
 <li><a href="#div">RSI ڈائیورجنس الرٹ سیٹنگز (Div)</a></li>
 <li><a href="#ei">اضافی انڈیکیٹر الرٹس (EI)</a></li>
 <li><a href="#webhook">TradingView ویب ہُک اور آٹو آرڈر</a></li>
-<li><a href="#settings">سیٹنگز پیج</a></li>
+<li><a href="#settings">سیٹنگز صفحہ</a></li>
 <li><a href="#referral">ریفرل ریوارڈز</a></li>
 </ul>
 </div>
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
 <h2>📌 مینو کا جائزہ</h2>
-<p><strong>"DivLog"</strong> — جہاں آپ کو ڈائیورجنس الرٹ سگنلز ملتے ہیں۔</p>
+<p><strong>"DivLog"</strong> — جہاں آپ کو ڈائیورجنس الرٹ سگنلز موصول ہوتے ہیں۔</p>
 <p><strong>"Div"</strong> — 'RSI Divergence Complete' یا 'RSI Divergence Forming' سگنلز کنفیگر کریں۔</p>
 <p><strong>"EI"</strong> — اضافی انڈیکیٹر الرٹس سیٹ کریں: پرائس ریچ الرٹس، سپورٹ/ریزسٹنس کے قریب آنے کے الرٹس، EMA/Bollinger Band/Supertrend الرٹس۔ ("Extra Indicators")</p>
-<p><strong>"Webhook"</strong> — صرف Pro یوزرز کو نظر آتا ہے۔ طاقتور الارمز، سگنل کمبینیشنز، اور آٹو آرڈرز کے لیے TradingView ویب ہُکس وصول کریں۔</p>
-<p><strong>"Setting"</strong> — الارم کی اقسام، آوازیں، ریفرل ریوارڈ سیٹنگز، اعلانات، اور ریفرل نوٹیفکیشنز کنفیگر کریں۔</p>
+<p><strong>"Webhook"</strong> — صرف Pro صارفین کو نظر آتا ہے۔ طاقتور الارمز، سگنل کمبینیشنز، اور آٹو آرڈرز کے لیے TradingView ویب ہُکس وصول کریں۔</p>
+<p><strong>"Setting"</strong> — الارم کی اقسام، آوازیں، ریفرل انعام کی سیٹنگز، اعلانات، اور ریفرل نوٹیفکیشنز ترتیب دیں۔</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
@@ -211,72 +245,72 @@
 <p>"DivLog" وہ جگہ ہے جہاں آپ کو ڈائیورجنس الرٹ سگنلز ملتے ہیں۔</p>
 <ol>
 <li>زیادہ سے زیادہ 150 سگنلز محفوظ ہوتے ہیں۔ وقتاً فوقتاً صفائی کریں۔</li>
-<li>غیر چیک شدہ الرٹس دکھاتا ہے۔ الارم ختم کرنے کے لیے نشان پر چیک کریں۔ زیادہ سے زیادہ 5 تازہ غیر چیک شدہ الرٹس دکھائے جاتے ہیں۔</li>
-<li>صرف وہی سگنلز دیکھنے کے لیے فلٹر کریں جو آپ چاہتے ہیں۔</li>
+<li>غیر چیک شدہ الرٹس دکھاتا ہے۔ الارم ختم کرنے کے لیے نشان پر ٹک کریں۔ زیادہ سے زیادہ 5 تازہ غیر چیک شدہ الرٹس دکھائے جاتے ہیں۔</li>
+<li>فلٹر لگا کر صرف وہی سگنلز دیکھیں جو آپ چاہتے ہیں۔</li>
 </ol>
 </div>
 <!-- Signal Details Section -->
 <div class="manual-section" id="signal-details">
 <h2>🔍 سگنل کی تفصیلات دیکھیں</h2>
-<img alt="سگنل کی تفصیل کا منظر" src="../images/image_detail.png" style="max-width: 500px;"/>
-<p>ہر الرٹ پر ٹیپ کر کے آپ تفصیلی سگنل معلومات دیکھ سکتے ہیں۔</p>
-<p>RSI Divergence الرٹس کے لیے، آپ آغاز اور اختتام کی قیمتیں، RSI ویلیوز، اور ٹائم اسٹیمپس دیکھ سکتے ہیں۔</p>
-<p><strong>"DivForming"</strong> وہ ڈائیورجنسز دکھاتا ہے جو سگنل آنے کے وقت دوسرے ٹائم فریمز پر بن رہی ہوتی ہیں۔</p>
-<p><strong>"OutsideBB"</strong> دکھاتا ہے کہ سگنل آنے کے وقت کون سے ٹائم فریمز Bollinger Bands سے باہر تھے۔</p>
+<img alt="سگنل کی تفصیل کا ویو" src="../images/image_detail.png" style="max-width: 500px;"/>
+<p>ہر الرٹ پر ٹیپ کر کے آپ سگنل کی تفصیلی معلومات دیکھ سکتے ہیں۔</p>
+<p>RSI ڈائیورجنس الرٹس کے لیے آپ آغاز اور اختتام کی قیمتیں، RSI ویلیوز، اور ٹائم اسٹیمپس دیکھ سکتے ہیں۔</p>
+<p><strong>"DivForming"</strong> یہ دکھاتا ہے کہ سگنل آنے کے وقت دوسرے ٹائم فریمز پر کون سی ڈائیورجنس بن رہی ہوتی ہے۔</p>
+<p><strong>"OutsideBB"</strong> یہ دکھاتا ہے کہ سگنل آنے کے وقت کون سے ٹائم فریمز بولنجر بینڈز سے باہر تھے۔</p>
 <ul>
-<li>سگنل کے ٹائم فریم سے <strong>چھوٹے</strong> ٹائم فریمز کے لیے، یہ دکھاتا ہے کہ سگنل کے لمحے میں کون سی کینڈلز Bollinger Band سے باہر تھیں (<em>at now</em>)۔</li>
-<li>سگنل کے ٹائم فریم سے <strong>بڑے</strong> ٹائم فریمز کے لیے، یہ دکھاتا ہے کہ بعد میں آنے والی RSI ڈائیورجنس پیک پر کون سی کینڈلز Bollinger Band سے باہر تھیں (<em>at peak</em>)۔</li>
+<li>سگنل کے ٹائم فریم سے <strong>چھوٹے</strong> ٹائم فریمز کے لیے، یہ دکھاتا ہے کہ سگنل کے لمحے (یعنی <em>at now</em>) کون سی کینڈلز بولنجر بینڈ سے باہر تھیں۔</li>
+<li>سگنل کے ٹائم فریم سے <strong>بڑے</strong> ٹائم فریمز کے لیے، یہ دکھاتا ہے کہ بعد میں آنے والی RSI ڈائیورجنس پیک (یعنی <em>at peak</em>) پر کون سی کینڈلز بولنجر بینڈ سے باہر تھیں۔</li>
 </ul>
 <h4>مثال</h4>
 <div class="highlight">
-<p>اوپر والے مثال میں، <strong>15m</strong> ٹائم فریم پر <strong>Bullish سگنل</strong> بنتا ہے۔</p>
-<p><strong>"DivForming"</strong> یہ ظاہر کرتا ہے کہ 30m اور 1h ٹائم فریمز پر bearish divergences بن رہی ہیں۔</p>
+<p>اوپر والی مثال میں <strong>Bullish سگنل</strong> <strong>15m</strong> ٹائم فریم پر آتا ہے۔</p>
+<p><strong>"DivForming"</strong> بتاتا ہے کہ 30m اور 1h ٹائم فریمز پر bearish ڈائیورجنس بن رہی ہے۔</p>
 <p><strong>"OutsideBB"</strong> یہ دکھاتا ہے:</p>
 <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-<li>سگنل کے وقت، <strong>5m</strong> ٹائم فریم Bollinger Band سے باہر تھا۔</li>
-<li>RSI divergence peak پر، <strong>15m، 30m، اور 1h</strong> ٹائم فریمز Bollinger Band سے باہر تھے۔</li>
+<li>سگنل کے لمحے پر <strong>5m</strong> ٹائم فریم بولنجر بینڈ سے باہر تھا۔</li>
+<li>RSI ڈائیورجنس پیک پر <strong>15m، 30m، اور 1h</strong> ٹائم فریمز بولنجر بینڈ سے باہر تھے۔</li>
 </ul>
 </div>
 </div>
 <!-- Div Section -->
 <div class="manual-section" id="div">
-<h2>⚙️ RSI Divergence الرٹ سیٹنگز ("Div")</h2>
+<h2>⚙️ RSI ڈائیورجنس الرٹ سیٹنگز ("Div")</h2>
 <img alt="Div سیٹنگز اسکرین" src="../images/image_manual.png" style="max-width: 500px;"/>
-<h3>مجموعی RSI Divergence سیٹنگز</h3>
+<h3>مجموعی RSI ڈائیورجنس سیٹنگز</h3>
 <ol>
-<li>جس کوائن کی سیٹنگ کرنی ہو، منتخب کریں۔</li>
+<li>جس کوائن کی سیٹنگ کرنی ہے منتخب کریں۔</li>
 <li>'RSI Divergence Complete' اور 'RSI Divergence Forming' سگنلز میں سے انتخاب کریں۔</li>
 <li>بیچ سیٹنگز ایریا — نیچے موجود تمام آئٹمز پر ایک ساتھ سیٹنگز لاگو کریں۔</li>
-<li>+ بٹن سے divergence فلٹرز شامل کریں۔</li>
+<li>+ بٹن سے ڈائیورجنس فلٹرز شامل کریں۔</li>
 <li>فلٹرز کو تجویز کردہ ڈیفالٹ سیٹنگز پر ری سیٹ کریں۔</li>
-<li>بیچ میں قیمت کی شرائط سیٹ کریں۔</li>
+<li>قیمت کی شرائط بیچ میں سیٹ کریں۔</li>
 </ol>
 <h3>انفرادی فلٹر سیٹنگز</h3>
 <ol start="7">
 <li>Configure individual RSI divergence signals to receive:
-          <p><strong>(a)</strong> مطلوبہ ٹائم فریم منتخب کریں۔ 'RSI Divergence Forming' کے لیے 'main timeframe' اور 'sub timeframe' دونوں منتخب کریں۔ جب چھوٹے ٹائم فریم پر RSI peak بنتا ہے اور اسی دوران main timeframe پر divergence بن رہی ہوتی ہے (price reversal)، تو الرٹس ٹرگر ہوتے ہیں۔</p>
+          <p><strong>(a)</strong> مطلوبہ ٹائم فریم منتخب کریں۔ 'RSI Divergence Forming' کے لیے 'main timeframe' اور 'sub timeframe' دونوں منتخب کریں۔ جب چھوٹے ٹائم فریم پر RSI پیک بنتا ہے اور اسی دوران مین ٹائم فریم پر ڈائیورجنس بن رہی ہوتی ہے (قیمت کا پلٹاؤ)، تو الرٹس ٹرگر ہوتے ہیں۔</p>
 <p><strong>(b)</strong> سگنلز منتخب کریں: "Bull(bullish)" یا "Bear(bearish)"۔ نیلا = الرٹس فعال، سرمئی = غیر فعال۔</p>
-<p><strong>(c)</strong> oversold/overbought تھریش ہولڈز سیٹ کریں۔ Bullish الرٹ تب جب 'starting RSI' oversold لیول سے نیچے ہو؛ bearish تب جب 'starting RSI' overbought لیول سے اوپر ہو۔</p>
+<p><strong>(c)</strong> اوور سولڈ/اوور باٹ تھریش ہولڈز سیٹ کریں۔ جب 'starting RSI' اوور سولڈ لیول سے نیچے ہو تو بُلش الرٹس؛ اور جب 'starting RSI' اوور باٹ لیول سے اوپر ہو تو بیئرش الرٹس۔</p>
 <p><strong>(d)</strong> الارم کی قسم اور آواز کنفیگر کریں۔ تفصیلی سیٹنگز Settings صفحے میں ہیں:</p>
 <div class="highlight"><span class="alarm-type alarm-type-a">A</span> فورس الارم (لوپ) — دستی طور پر بند کرنے تک مسلسل چلتا رہے گا، سائلنٹ موڈ کو نظر انداز کرتا ہے<br/><br/> <span class="alarm-type alarm-type-b">B</span> فورس الارم (ایک بار) — ایک بار چلے گا، سائلنٹ موڈ کو نظر انداز کرتا ہے<br/><br/> <span class="alarm-type alarm-type-c">C</span> فون سیٹنگز کے مطابق — ڈیوائس کی نارمل ساؤنڈ سیٹنگز استعمال کرتا ہے<br/><br/> <span class="alarm-type alarm-type-d">D</span> صرف وائبریٹ — آواز کے بغیر وائبریشن<br/><br/> <span class="alarm-type alarm-type-e">E</span> سائلنٹ موڈ — نہ آواز نہ وائبریشن</div>
 <img alt="الارم ٹائپ سیٹنگز" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> صرف مفید سگنلز کے لیے اضافی شرائط سیٹ کریں: قیمت کی شرائط، دوسرے ٹائم فریم کی RSI forming شرائط، Bollinger Band کی شرائط۔</p>
+<p><strong>(e)</strong> صرف مفید سگنلز کے لیے اضافی شرائط سیٹ کریں: قیمت کی شرائط، دوسرے ٹائم فریم RSI کی فارم ہونے کی شرائط، بولنجر بینڈ کی شرائط۔</p>
 </li>
 </ol>
 <div class="image-row">
 <img alt="اضافی شرائط 1" src="../images/image%202_manual.png"/>
 <img alt="اضافی شرائط 2" src="../images/image%203_manual.png"/>
 </div>
-<p><strong>e0)</strong> جب متعدد شرائط سیٹ ہوں تو ان کا تعلق کنفیگر کریں: "and" (سب پوری ہونا ضروری) یا "or" (کوئی ایک پوری ہو جائے)۔</p>
-<p><strong>e1)</strong> قیمت کی شرائط سیٹ کریں — جب divergence کے start/end کی قیمت کسی مخصوص قیمت سے اوپر/نیچے ہو تو الرٹ دیں۔</p>
-<p><strong>e2)</strong> جب کسی دوسرے ٹائم فریم پر divergence بن رہی ہو تو الرٹ دیں۔</p>
-<p><strong>e3)</strong> چیک کریں کہ RSI divergence کی آخری peak کی قیمت Bollinger Bands سے باہر ہے یا نہیں۔</p>
+<p><strong>e0)</strong> جب متعدد شرائط سیٹ ہوں تو ان کا تعلق منتخب کریں: "and" (سب پوری ہونا ضروری) یا "or" (کوئی ایک پوری ہو)۔</p>
+<p><strong>e1)</strong> قیمت کی شرائط سیٹ کریں — جب ڈائیورجنس کے شروع/اختتام کی قیمت کسی مخصوص قیمت سے اوپر/نیچے ہو تو الرٹ دیں۔</p>
+<p><strong>e2)</strong> جب ڈائیورجنس کسی دوسرے ٹائم فریم پر بن رہی ہو تو الرٹ دیں۔</p>
+<p><strong>e3)</strong> چیک کریں کہ RSI ڈائیورجنس کی آخری پیک قیمت بولنجر بینڈز سے باہر ہے یا نہیں۔</p>
 <h3>اسٹریٹجی ٹپس</h3>
 <div class="warning">
 <ul>
 <li>ہمیشہ دوسرے انڈیکیٹرز کے ساتھ ملا کر استعمال کریں: ریزسٹنس، ٹرینڈ لائنز، فبوناچی وغیرہ۔</li>
-<li>تمام انڈیکیٹرز کی طرح، RSI ڈائیورجنس 100% درست نہیں ہوتی — یہ صرف امکان بہتر کرتی ہے۔</li>
-<li>1m، 5m ڈائیورجنس کو اکثر نظر انداز کیا جاتا ہے، لیکن قابلِ اعتمادیت بڑھتی ہے: 15m &lt; 1h &lt; 4h۔ <strong>4h ڈائیورجنس بہت زیادہ قابلِ اعتماد ہے — اسے A-گریڈ الارم کے طور پر سیٹ کرنے کی سفارش کی جاتی ہے۔</strong></li>
+<li>تمام انڈیکیٹرز کی طرح، RSI ڈائیورجنس 100% درست نہیں — یہ امکان بہتر بناتا ہے۔</li>
+<li>1m، 5m ڈائیورجنسز کو اکثر نظر انداز کیا جاتا ہے، مگر قابلِ اعتمادیت بڑھتی ہے: 15m &lt; 1h &lt; 4h۔ <strong>4h ڈائیورجنس بہت زیادہ قابلِ اعتماد ہے — اسے A-گریڈ الارم کے طور پر سیٹ کرنے کی سفارش ہے۔</strong></li>
 </ul>
 </div>
 </div>
@@ -288,7 +322,7 @@
 <img alt="EI سیٹنگز 2" src="../images/image%205_manual.png"/>
 </div>
 <ol>
-<li>جس کوائن کی سیٹنگ کرنی ہو، منتخب کریں۔</li>
+<li>جس کوائن کی سیٹنگ کرنی ہے منتخب کریں۔</li>
 <li>کوائن کے لیے پرائس الرٹس سیٹ کریں۔</li>
 <li>EMA (Exponential Moving Average) کراس الرٹس کنفیگر کریں۔</li>
 <li>سپورٹ/ریزسٹنس کے قریب آنے کے الرٹس سیٹ کریں۔</li>
@@ -309,19 +343,19 @@
 </div>
 <!-- Settings Section -->
 <div class="manual-section" id="settings">
-<h2>⚙️ سیٹنگز پیج</h2>
+<h2>⚙️ سیٹنگز صفحہ</h2>
 <div class="image-row">
 <img alt="سیٹنگز 1" src="../images/image%206_manual.png"/>
 <img alt="سیٹنگز 2" src="../images/image%207_manual.png"/>
 </div>
 <ol>
-<li>الارم کی اقسام (A، B...) اور الارم ساؤنڈز (1، 2...) کنفیگر کریں۔</li>
+<li>الارم کی اقسام (A، B...) اور الارم کی آوازیں (1، 2...) کنفیگر کریں۔</li>
 <li>آٹو-آرڈرز کے لیے ہر ایکسچینج کی API keys درج کریں۔</li>
-<li>آپ ٹیسٹ کر سکتے ہیں کہ آپ کے موجودہ فون پر نوٹیفکیشنز پہنچ رہے ہیں یا نہیں۔ خود کو ٹیسٹ میسج بھیج کر آپ چیک کر سکتے ہیں کہ الرٹس آپ کے سیٹ کیے گئے فلٹرز کے مطابق ڈیلیور ہو رہے ہیں یا نہیں۔</li>
+<li>آپ اپنے موجودہ فون پر نوٹیفکیشنز کے پہنچنے کی جانچ کر سکتے ہیں۔ خود کو ایک ٹیسٹ پیغام بھیج کر آپ دیکھ سکتے ہیں کہ الرٹس آپ کے سیٹ کیے گئے فلٹرز کے مطابق ڈیلیور ہو رہے ہیں یا نہیں۔</li>
 <li>یہ ریفرل ریوارڈ سے متعلق آپشنز سیٹ کرنے کا صفحہ ہے۔</li>
-<li>یہ وہ جگہ ہے جہاں آپ کو عالمی اعلانات موصول ہوتے ہیں۔</li>
-<li>یہ وہ جگہ ہے جہاں آپ کو اس ریفرر کی طرف سے بھیجے گئے خصوصی اعلانات موصول ہوتے ہیں جسے آپ نے سائن اپ کے وقت رجسٹر کیا تھا۔</li>
-<li>آپ پوری ایپ کو لائٹ موڈ اور ڈارک موڈ کے درمیان سوئچ کر سکتے ہیں۔</li>
+<li>یہ وہ جگہ ہے جہاں آپ کو عمومی اعلانات موصول ہوتے ہیں۔</li>
+<li>یہ وہ جگہ ہے جہاں آپ کو اس ریفرل کی جانب سے بھیجے گئے خصوصی اعلانات موصول ہوتے ہیں جسے آپ نے سائن اپ کے وقت رجسٹر کیا تھا۔</li>
+<li>آپ پوری ایپ کو لائٹ موڈ اور ڈارک موڈ کے درمیان تبدیل کر سکتے ہیں۔</li>
 </ol>
 </div>
 <!-- Referral Section -->
@@ -330,16 +364,16 @@
 <img alt="ریفرل سیٹنگز" src="../images/image%208_manual.png" style="max-width: 550px;"/>
 <p><strong>(a)</strong> آپ کا ریفرل کوڈ۔ جب دوسرے لوگ اس کوڈ کے ساتھ سبسکرائب کرتے ہیں تو آپ ان کے ریفرر بن جاتے ہیں۔</p>
 <p><strong>(b)</strong> آپ کا انوائٹ لنک۔ جو بھی اس لنک کے ذریعے سبسکرائب کرے گا، وہ خودکار طور پر آپ کو اپنا ریفرر رجسٹر کر لے گا۔</p>
-<p><strong>(c)</strong> ریفرل ریوارڈز کے لیے اپنا والیٹ ایڈریس درج کریں۔ یہ BEP-20 USDT والیٹ ہونا چاہیے (بڑی ایکسچینجز کے والیٹس تجویز کیے جاتے ہیں)۔ آپ DivAlarm ویب سائٹ پر 'My Info' سے ٹیسٹ کر سکتے ہیں کہ ڈپازٹس درست طریقے سے کام کر رہے ہیں یا نہیں۔</p>
+<p><strong>(c)</strong> ریفرل ریوارڈز کے لیے اپنا والیٹ ایڈریس درج کریں۔ یہ BEP-20 USDT والیٹ ہونا چاہیے (بڑے ایکسچینج کے والیٹس تجویز کیے جاتے ہیں)۔ آپ DivAlarm ویب سائٹ پر 'My Info' سے یہ ٹیسٹ کر سکتے ہیں کہ ڈپازٹس درست طریقے سے کام کر رہے ہیں یا نہیں۔</p>
 <p><strong>(d)</strong> آپ کے ریفرل ریوارڈ کی صورتحال دکھاتا ہے: موجودہ ریفرل کاؤنٹ، ممکنہ ریوارڈ رقم، کنفرمڈ رقم، اور ادا کی گئی رقم۔</p>
 <p>ریفر کیے گئے صارف کی سبسکرپشن ادائیگی کے 14 دن بعد (فری ٹرائل کے علاوہ) ریوارڈز 'potential' سے 'confirmed' میں منتقل ہو جاتے ہیں۔ ادائیگیاں ہر ہفتے منگل کو UTC آدھی رات میں کی جاتی ہیں۔</p>
 <h3>ریفرل ریوارڈز کیسے کمائیں</h3>
 <div class="highlight">
-<p><strong>1]</strong> سیٹنگز → ریفرل ریوارڈز پر جائیں → اپنا ریوارڈ والیٹ ایڈریس درج کریں۔</p>
-<p><strong>2]</strong> اپنا ریفرل لنک شیئر کریں۔ دوسرے لوگ آپ کے کوڈ کے ساتھ سبسکرپشن صفحے پر بھیج دیے جائیں گے۔</p>
-<p><strong>3]</strong> جب وہ سبسکرائب کریں اور ادائیگی کریں، تو انعامات جمع کر دیے جاتے ہیں۔</p>
+<p><strong>1]</strong> Settings → Referral Rewards پر جائیں → اپنا ریوارڈ والیٹ ایڈریس درج کریں۔</p>
+<p><strong>2]</strong> اپنا ریفرل لنک شیئر کریں۔ دوسرے لوگ آپ کے کوڈ کے ساتھ سبسکرپشن پیج پر چلے جائیں گے۔</p>
+<p><strong>3]</strong> جب وہ سبسکرائب کر کے ادائیگی کریں گے تو ریوارڈز ڈپازٹ ہو جائیں گے۔</p>
 </div>
 </div>
-</div>
+</main>
 <footer id="wisesignal-legal-footer" style="margin-top: 4rem;padding: 3rem 5% 2.5rem;color: rgba(148,163,184,0.90);font-size: 0.82rem;line-height: 1.7;text-align: center;"><div style="max-width: 1100px; margin: 0 auto;"><div style="height: 1px; background: rgba(148,163,184,0.22); margin: 0 0 1.5rem;"></div><div>© 2026 WiseSignal Ltd.</div><div>WiseSignal Ltd is registered in England and Wales (No. 16253236).</div><div>Registered Office: 71-75 Shelton Street, London, WC2H 9JQ, UK.</div><div>Contact: <a href="mailto:info@wise-signal.com" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">info@wise-signal.com</a></div></div></footer></body>
 </html>

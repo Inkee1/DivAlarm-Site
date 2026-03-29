@@ -3,8 +3,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView Руководство по Webhook — DivAlarm</title>
-<meta content="TradingView Руководство по Webhook — DivAlarm" property="og:title"/>
+<title>TradingView Руководство по настройке вебхука для DivAlarm</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -255,20 +254,33 @@
   </style>
 <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
 <script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
-<meta content="В TradingView нажмите правой кнопкой мыши на индикаторе, от которого хотите получать сигналы, и выберите «Add Alert on ~»." name="description"/><meta content="В TradingView нажмите правой кнопкой мыши на индикаторе, от которого хотите получать сигналы, и выберите «Add Alert on ~»." property="og:description"/><meta content="В TradingView нажмите правой кнопкой мыши на индикаторе, от которого хотите получать сигналы, и выберите «Add Alert on ~»." name="twitter:description"/><meta content="https://www.divalarm.com/ru/tradingview-webhook.html" property="og:url"/><meta content="TradingView Руководство по Webhook — DivAlarm" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/ru/tradingview-webhook.html","name":"TradingView Руководство по Webhook — DivAlarm","inLanguage":"ru","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/ru/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/></head>
+<meta content="Узнайте, как подключить алерты TradingView к вебхукам DivAlarm, алертам по ключевым словам, комбинациям сигналов и сценариям авто-ордеров." name="description"/>
+<meta content="TradingView Руководство по настройке вебхука для DivAlarm" property="og:title"/>
+<meta content="Узнайте, как подключить алерты TradingView к вебхукам DivAlarm, алертам по ключевым словам, комбинациям сигналов и сценариям авто-ордеров." property="og:description"/>
+<meta content="TradingView Руководство по настройке вебхука для DivAlarm" name="twitter:title"/>
+<meta content="Узнайте, как подключить алерты TradingView к вебхукам DivAlarm, алертам по ключевым словам, комбинациям сигналов и сценариям авто-ордеров." name="twitter:description"/>
+<meta content="https://www.divalarm.com/ru/tradingview-webhook.html" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="ru_RU" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="summary" name="twitter:card"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"HowTo","name":"Как подключить вебхуки TradingView к DivAlarm","description":"Подключите уведомления TradingView к DivAlarm для тревог по ключевым словам, комбинаций сигналов и сценариев авто-ордеров.","url":"https://www.divalarm.com/ru/tradingview-webhook.html","step":[{"@type":"HowToStep","name":"Создайте уведомление TradingView","text":"Щёлкните правой кнопкой мыши по индикатору в TradingView и выберите «Добавить уведомление» для нужного индикатора."},{"@type":"HowToStep","name":"Вставьте URL вебхука","text":"Включите Webhook URL в уведомлениях TradingView и вставьте URL, скопированный из приложения DivAlarm."},{"@type":"HowToStep","name":"Добавьте ключевое слово в сообщение","text":"Введите ключевое слово в сообщение уведомления, чтобы DivAlarm мог сопоставить входящий сигнал TradingView."},{"@type":"HowToStep","name":"Зарегистрируйте ключевое слово в DivAlarm","text":"Добавьте то же ключевое слово в разделе Keyword Include в приложении, чтобы сработала тревога."},{"@type":"HowToStep","name":"Расширьте сценарий","text":"Используйте комбинации сигналов или авто-ордера после того, как базовый сценарий с вебхуком работает корректно."}]},{"@type":"WebPage","url":"https://www.divalarm.com/ru/tradingview-webhook.html","name":"TradingView Руководство по настройке вебхука для DivAlarm","description":"Узнайте, как подключить алерты TradingView к вебхукам DivAlarm, алертам по ключевым словам, комбинациям сигналов и сценариям авто-ордеров.","inLanguage":"ru","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.divalarm.com/ru/"},{"@type":"ListItem","position":2,"name":"Руководство по вебхукам TradingView","item":"https://www.divalarm.com/ru/tradingview-webhook.html"}]}]}</script>
+<link href="https://www.divalarm.com/ru/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-<div class="manual-container">
+<main class="manual-container">
 <a class="back-link" href="user-manual.html">← Назад к руководству пользователя</a>
-<h1 class="manual-title">🔗 TradingView Руководство по Webhook</h1>
+<h1 class="manual-title">TradingView Руководство по вебхукам для DivAlarm</h1>
+<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">Подключите алерты TradingView к DivAlarm для сигналов по ключевым словам, автоматизации через вебхуки, комбинаций сигналов и авто-ордеров на бирже.</p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Содержание</h3>
 <ul>
 <li><a href="#quick-summary">Кратко</a></li>
-<li><a href="#keyword">Уведомления по ключевым словам</a></li>
+<li><a href="#keyword">Алерты по ключевым словам</a></li>
 <li><a href="#auto-order">Авто-ордер через TradingView</a></li>
 <li><a href="#divalarm-keywords">Ключевые слова сигналов DivAlarm</a></li>
-<li><a href="#combination">Уведомления по комбинациям сигналов</a></li>
+<li><a href="#combination">Алерты по комбинациям сигналов</a></li>
 </ul>
 </div>
 <!-- Quick Summary Section -->
@@ -320,11 +332,11 @@
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">Создать пользовательские комбинации индикаторов из TradingView</button>
+<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">Создание пользовательских комбинаций индикаторов из TradingView</button>
 </h3>
 <div class="video-toggle-panel" id="qs-custom-indicators">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="Создать пользовательские комбинации индикаторов из TradingView" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="Создание пользовательских комбинаций индикаторов из TradingView" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">Открыть на YouTube</a></p>
 </div>
@@ -332,20 +344,20 @@
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
-<h2>🔔 Уведомления по ключевым словам</h2>
-<h3>Добавление Webhook в TradingView</h3>
+<h2>🔔 Алерты по ключевым словам</h2>
+<h3>Добавление вебхука в TradingView</h3>
 <img alt="TradingView Добавить алерт" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>В TradingView нажмите правой кнопкой мыши на индикаторе, от которого хотите получать сигналы, и выберите «Add Alert on ~».</p>
+<p>Щёлкните правой кнопкой по индикатору, от которого хотите получать сигналы в TradingView, и нажмите «Add Alert on ~».</p>
 <img alt="Настройка URL вебхука" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Настройки уведомлений" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>В разделе «Notifications» отметьте «Webhook URL» и вставьте в поле ниже адрес, скопированный из приложения.</p>
-<p>После настройки это будет автоматически отмечаться/заполняться для других уведомлений.</p>
+<p>В разделе «Notifications» отметьте «Webhook URL» и вставьте адрес, скопированный из приложения, в поле ввода ниже.</p>
+<p>После настройки это будет автоматически отмечаться/заполняться для других алертов.</p>
 <img alt="Настройки сообщения" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>В разделе «Messages» в поле «Message» добавьте любое нужное ключевое слово (например, «AAA»).</p>
-<p>Нажмите «Create», чтобы создать уведомление TradingView.</p>
-<h3>Получение уведомлений TradingView в приложении</h3>
+<p>В разделе «Messages» в поле «Message» добавьте любое ключевое слово (например, «AAA»).</p>
+<p>Нажмите «Create», чтобы создать алерт TradingView.</p>
+<h3>Получение алертов TradingView в приложении</h3>
 <img alt="Настройки ключевых слов в приложении" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Добавьте ключевое слово (например, «AAA») в разделе «Keyword Include» в приложении. Когда поле «Message» в алерте TradingView содержит это ключевое слово, сработает сигнал тревоги согласно настройкам.</p>
+<p>Добавьте ключевое слово (например, «AAA») в разделе приложения «Keyword Include». Когда в поле «Message» алерта TradingView будет содержаться это ключевое слово, сработает тревога согласно настройкам.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
@@ -362,11 +374,11 @@
 <div class="manual-section" id="divalarm-keywords">
 <h2>📝 Регистрация сигналов DivAlarm как ключевых слов</h2>
 <img alt="Ключевые слова сигналов DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Собственные алерты DivAlarm также можно добавить в «Keyword Combinations» (для комбинированных алертов или авто-ордеров).</p>
+<p>Собственные алерты DivAlarm также можно добавить в «Комбинации ключевых слов» (для комбинированных алертов или авто-ордеров).</p>
 <div class="highlight">
 <p><strong>Формат:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
 </div>
-<p><strong>Типы сигналов:</strong></p>
+<p><strong>Типы алертов:</strong></p>
 <ul>
 <li><code>@D</code> — RSI Divergence filters</li>
 <li><code>@E</code> — Extra Indicators</li>
@@ -383,37 +395,37 @@
 </div>
 <img alt="Пример ключевого слова" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
-<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Дополнительный индикатор, монета BTC, заголовок содержит «Sell», 30m</span></p>
+<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Доп. индикатор, монета BTC, заголовок содержит «Sell», 30m</span></p>
 <p><code>"@E@BTC@Buy@1h"</code></p>
 <p><code>"@E@ETH@Breakout@15m"</code></p>
 <p><code>"@E@BTC@Breakdown@5m"</code></p>
 <p><code>"@E@BTC@Near Support@1m"</code></p>
 <p><code>"@E@BTC@Near Resistance@5m"</code></p>
 <p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ Ценовой алерт, монета BTC, заголовок содержит «Up»</span></p>
+<p><code>"@P@BTC@Up"</code> <span class="desc">→ Алерт по цене, монета BTC, заголовок содержит «Up»</span></p>
 <p><code>"@P@ETH@Down"</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 Комбинированные алерты по сигналам</h2>
+<h2>🔀 Алерты по комбинациям сигналов</h2>
 <p>Комбинируйте несколько сигналов TradingView, чтобы создавать новые или отфильтрованные сигналы.</p>
 <div class="image-row">
 <img alt="Настройки комбинированного алерта" src="../images/image%205_tv.png"/>
 <div>
-<p>Задайте условия, которые должны выполниться в заданном временном окне, чтобы сработал сигнал.</p>
-<p><strong>Пример:</strong><br/> В течение 1 часа 30 минут:<br/> • «Алерт с ключевым словом A» И<br/> • «Алерт с ключевым словом B» приходят оба, ИЛИ<br/> • приходит «Алерт с ключевым словом C»</p>
+<p>Задайте условия, которые должны выполниться в заданном окне времени, чтобы сработал сигнал.</p>
+<p><strong>Пример:</strong><br/> В течение 1 часа 30 минут:<br/> • приходят и «Алерт с ключевым словом A», и<br/> • «Алерт с ключевым словом B», ИЛИ<br/> • приходит «Алерт с ключевым словом C»</p>
 <p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
 </div>
 </div>
 <div class="highlight">
 <p><strong>&amp;</strong> = «AND» (должны выполниться оба условия)</p>
 <p><strong>|</strong> = «OR» (может выполниться любое из условий)</p>
-<p>Даже если отдельные сигналы по ключевым словам отключены, комбинация всё равно может сработать при выполнении условий.</p>
+<p>Даже если отдельные алерты по ключевым словам отключены, комбинация всё равно может сработать при выполнении условий.</p>
 <p><strong>Авто-ордера также возможны с комбинированными алертами!</strong></p>
 </div>
 </div>
-</div>
+</main>
 <script>
     (function () {
       var buttons = document.querySelectorAll('.video-toggle-btn');

@@ -4,9 +4,9 @@
 <html data-wf-page="67dc4b17410701784ade9e4f" data-wf-site="67d93880609042a66e2a6f90" lang="uk">
 <head>
 <meta charset="utf-8"/>
-<title>Ціни</title>
-<meta content="Ціни" property="og:title"/>
-<meta content="Ціни" property="twitter:title"/>
+<title>Тарифи</title>
+<meta content="Тарифи" property="og:title"/>
+<meta content="Тарифи" property="twitter:title"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="Webflow" name="generator"/>
 <link href="../css/normalize.css" rel="stylesheet" type="text/css"/>
@@ -53,32 +53,46 @@
     
     /* Global Section Override */
     .testimonial-image-left {
-      background: linear-gradient(180deg, #040408 0%, #080810 100%) !important;
+      background-color: #020617 !important;
       padding-top: 60px !important;
       padding-bottom: 80px !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonial-image-left::before {
+      content: '';
+      position: absolute;
+      top: -30%; left: 30%; width: 40%; height: 60%;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+      pointer-events: none; z-index: 0; filter: blur(60px);
     }
 
     /* Top Heading Styles */
     .heading-small {
-      font-family: 'Exo', sans-serif !important;
-      font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 4rem) !important;
+      font-weight: 900 !important;
+      line-height: 1.1 !important;
       color: #f8fafc;
       text-align: center;
-      line-height: 1.3;
       margin-bottom: 20px !important;
+      letter-spacing: -0.03em;
+      position: relative;
+      z-index: 10;
     }
 
     .highlight-text {
-      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
     }
 
     /* Gradient Text Styles */
     .text-gradient-unified {
-      background: linear-gradient(90deg, #26c502 0%, #00d4ff 50%, #a855f7 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
     }
 
     .testimonial-text-four {
@@ -402,9 +416,36 @@
       .image-4 {
         margin-bottom: 30px;
       }
+      
+      .scroll-indicator {
+        display: block !important;
+      }
+    }
+    
+    @keyframes bounce-scroll {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+    
+    .scroll-indicator {
+      display: none;
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 999;
+      animation: bounce-scroll 2s infinite;
+    }
+    .scroll-indicator svg {
+      width: 32px;
+      height: 32px;
+      display: block;
+      color: #38bdf8;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
     }
   </style>
-<meta content="Розширені фільтри: підтримка/опір, EMA торкання, Supertrend" name="description"/><meta content="Розширені фільтри: підтримка/опір, EMA торкання, Supertrend" property="og:description"/><meta content="Розширені фільтри: підтримка/опір, EMA торкання, Supertrend" name="twitter:description"/><meta content="https://www.divalarm.com/en/pricing.html" property="og:url"/><meta content="Ціни" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/en/pricing.html","name":"Pricing","inLanguage":"en","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/uk/pricing.html" rel="canonical"/><link href="https://www.divalarm.com/en/pricing.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/pricing.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/pricing.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/pricing.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/pricing.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/pricing.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/pricing.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/pricing.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/pricing.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/pricing.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/pricing.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/pricing.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/pricing.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/pricing.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/pricing.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/pricing.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/pricing.html" hreflang="x-default" rel="alternate"/></head>
+<meta content="Розширені фільтри: підтримка/опір, EMA торкання, Supertrend" name="description"/><meta content="Розширені фільтри: підтримка/опір, EMA торкання, Supertrend" property="og:description"/><meta content="Розширені фільтри: підтримка/опір, EMA торкання, Supertrend" name="twitter:description"/><meta content="https://www.divalarm.com/uk/pricing.html" property="og:url"/><meta content="Тарифи" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/uk/pricing.html","name":"Тарифи","inLanguage":"uk","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/><link href="https://www.divalarm.com/uk/pricing.html" rel="canonical"/><meta content="DivAlarm" property="og:site_name"/><meta content="uk_UA" property="og:locale"/><link href="https://www.divalarm.com/en/pricing.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/pricing.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/pricing.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/pricing.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/pricing.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/pricing.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/pricing.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/pricing.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/pricing.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/pricing.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/pricing.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/pricing.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/pricing.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/pricing.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/pricing.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/pricing.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/pricing.html" hreflang="x-default" rel="alternate"/></head>
 <body>
 <div class="navbar-logo-center">
 <div class="navbar-logo-center-container shadow-three w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner">
@@ -416,6 +457,9 @@
 <ul class="nav-menu-block w-list-unstyled" role="list">
 <li>
 <a class="nav-link" href="features.html">Функції</a>
+</li>
+<li>
+<a class="nav-link" href="performance.html">Продуктивність</a>
 </li>
 <li>
 <a class="nav-link" href="downlaods.html"><strong>Завантаження</strong></a>
@@ -433,7 +477,7 @@
 </div>
 </li>
 <li>
-<a aria-current="page" class="nav-link w--current" href="pricing.html">Ціни</a>
+<a aria-current="page" class="nav-link w--current" href="pricing.html">Тарифи</a>
 </li>
 <li>
 <div class="nav-dropdown w-dropdown" data-delay="0" data-hover="false">
@@ -442,7 +486,7 @@
 <div class="text-block-10">Допомога</div>
 </div>
 <nav class="nav-dropdown-list shadow-three mobile-shadow-hide w-dropdown-list">
-<a class="nav-dropdown-link w-dropdown-link" href="qna.html">Питання та відповіді</a>
+<a class="nav-dropdown-link w-dropdown-link" href="qna.html">Питання й відповіді</a>
 <a class="nav-dropdown-link w-dropdown-link" href="mailto:info@wise-signal.com">Контакти</a>
 </nav>
 </div>
@@ -465,20 +509,75 @@
 </div>
 </div>
 </div>
-<section class="testimonial-image-left">
-<div class="container-4">
-<div class="testimonial-left"></div>
-<div class="w-layout-blockcontainer container-14 w-container"><img alt="" class="image-4" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 727.96875px, 939.9857788085938px" src="../images/pricing-표지.png" srcset="../images/pricing-표지-p-500.png 500w, ../images/pricing-표지-p-800.png 800w, ../images/pricing-표지-p-1080.png 1080w, ../images/pricing-표지.png 1299w"/></div>
-<div class="testimonial-right">
-<div class="heading-small margin-bottom-32px"><span class="text-gradient-unified">Лови розворот. Їдь за трендом.</span><br/><span style="font-size: 0.6em; opacity: 0.7; font-weight: 400; display: block; margin-top: 5px;">Працює на DivAlarm.</span></div>
-<div class="testimonial-text-four">
-<div class="free-trial-badge" id="free-trial-line">5 днів безкоштовного пробного періоду</div>
-<div id="trial-alt-line" style="display:none; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.04em; color: rgba(248, 250, 252, 0.78); margin-top: 6px;">Нехай ваші сповіщення працюють безперервно — оформіть підписку зараз.</div>
-<div style="font-size: 0.8rem; opacity: 0.8; font-weight: 600; letter-spacing: 0.05em; margin-top: 10px; color: #cbd5e1;">УСІ ПЛАНИ • СКАСУВАННЯ В БУДЬ-ЯКИЙ ЧАС</div>
+<style>
+  .pricing-hero-new {
+    padding: 6rem 1rem 4rem;
+    text-align: center;
+    background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .pricing-hero-new::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse 40% 35% at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .pricing-hero-new > .container {
+    position: relative;
+    z-index: 1;
+  }
+  .hero-new-title-dark {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #f8fafc;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+  }
+  .hero-new-title-dark span {
+    color: transparent;
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .premium-badge {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+</style>
+<section class="pricing-hero-new">
+<div class="container" style="max-width: 800px; margin: 0 auto;">
+<div class="premium-badge">Гнучкі плани</div>
+<h1 class="hero-new-title-dark">Лови розворот. <span>Їдь за трендом.</span></h1>
+<p style="font-size: 1.25rem; color: #94a3b8; margin-bottom: 2.5rem; line-height: 1.6;">Працює на DivAlarm. Не пропускай можливості, поки ти спиш.</p>
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem;">
+<div class="free-trial-badge" id="free-trial-line" style="display: inline-block; background: linear-gradient(135deg, rgba(234,179,8,0.2) 0%, rgba(245,158,11,0.2) 100%); color: #facc15; border: 1px solid rgba(250,204,21,0.3); padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.05em; text-transform: uppercase; box-shadow: 0 0 20px rgba(250,204,21,0.1);">5 днів безкоштовного пробного періоду</div>
+<div id="trial-alt-line" style="display:none; font-size: 1rem; font-weight: 600; color: #cbd5e1;">Нехай твої сповіщення працюють безперервно — оформлюй підписку зараз.</div>
+<div style="font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; color: #64748b; margin-top: 0.5rem;">УСІ ПЛАНИ • СКАСУВАННЯ В БУДЬ-ЯКИЙ ЧАС</div>
 </div>
-<div class="w-layout-blockcontainer w-container">
-<div class="text-block-8" id="refund-note">(Після завершення безкоштовного пробного періоду повернення коштів недоступне.)</div>
+<div id="refund-note" style="color: #475569; font-size: 0.85rem; margin-top: -1rem; margin-bottom: 3rem;">(Після завершення пробного періоду повернення коштів недоступне.)</div>
+<div aria-label="Прокрутити до планів" class="scroll-indicator" onclick="document.querySelector('.pricing-comparison-2').scrollIntoView({behavior: 'smooth'})">
+<svg fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </div>
+</div>
+</section>
 <!-- Pricing Section Start -->
 <section class="pricing-comparison-2">
 <div class="container-15"></div>
@@ -486,13 +585,13 @@
 <!-- Basic Plan Card -->
 <div class="pricing-card-2" id="w-node-_768118f2-2c08-fe81-09f6-4ddb338c971c-4ade9e4f">
 <h2 class="pricing-title-2">Базовий</h2>
-<div class="pricing-subtitle-2">Необхідні інструменти</div>
+<div class="pricing-subtitle-2">Базові інструменти</div>
 <div class="pricing-price-2">
 <div class="original-price">$15.8/міс</div>
 <div class="price-container"><span class="current-price">$9.9</span> <span class="period">/міс</span></div>
 </div>
 <div class="pricing-description">Ідеально, щоб почати з базових сповіщень про дивергенцію.</div>
-<a class="subscribe-btn btn-basic" href="#" id="sub-btn">Оформити підписку</a>
+<a class="subscribe-btn btn-basic" href="#" id="sub-btn">Підписатися</a>
 <div class="pricing-divider"></div>
 <ul class="pricing-features">
 <li class="feature-item">
@@ -501,15 +600,15 @@
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text"><strong>Ранні сповіщення</strong> під час формування дивергенції</div>
+<div class="feature-text"><strong>Ранні сповіщення</strong>, поки формується дивергенція</div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text"><strong>Ручні/примусові сповіщення</strong> та детальні налаштування</div>
+<div class="feature-text"><strong>Ручні/примусові сповіщення</strong> та точні налаштування</div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text"><strong>Смуги Боллінджера</strong> та фільтри умов ціни</div>
+<div class="feature-text"><strong>Смуги Боллінджера</strong> та фільтри цінових умов</div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
@@ -517,11 +616,11 @@
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text"><strong>Розширені фільтри</strong>: підтримка/опір, дотик EMA, Supertrend</div>
+<div class="feature-text"><strong>Розширені фільтри</strong>: підтримка/опір, торкання EMA, Supertrend</div>
 </li>
 <li class="feature-item disabled">
 <div class="feature-icon icon-cross"></div>
-<div class="feature-text">Інтеграція вебхуків TradingView</div>
+<div class="feature-text">Інтеграція webhook TradingView</div>
 </li>
 <li class="feature-item disabled">
 <div class="feature-icon icon-cross"></div>
@@ -531,24 +630,24 @@
 </div>
 <!-- Pro Plan Card -->
 <div class="pricing-card-2 pro-plan" id="w-node-_768118f2-2c08-fe81-09f6-4ddb338c9764-4ade9e4f">
-<div class="recommended-badge">НАЙКРАЩА ПРОПОЗИЦІЯ</div>
+<div class="recommended-badge">НАЙКРАЩА ЦІННІСТЬ</div>
 <h2 class="pricing-title-2">Про</h2>
 <div class="pricing-subtitle-2">Повна автоматизація</div>
 <div class="pricing-price-2">
 <div class="original-price">$25.8/міс</div>
 <div class="price-container"><span class="current-price">$14.9</span> <span class="period">/міс</span></div>
 </div>
-<div class="pricing-description">Розкрийте повний потенціал із вебхуками та автоматизацією Auto-Order.</div>
-<a class="subscribe-btn btn-pro" href="#" id="sub-btn2">Підписатися на Pro</a>
+<div class="pricing-description">Розкрийте повний потенціал із Webhooks та автоматизацією Auto-Order.</div>
+<a class="subscribe-btn btn-pro" href="#" id="sub-btn2">Оформити Pro</a>
 <div class="pricing-divider"></div>
 <ul class="pricing-features">
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text"><strong>Усе з плану Basic</strong> включено</div>
+<div class="feature-text">Усе з плану <strong>Basic</strong> включено</div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
-<div class="feature-text">Інтеграція <strong>вебхука TradingView</strong></div>
+<div class="feature-text">Інтеграція <strong>TradingView Webhook</strong></div>
 </li>
 <li class="feature-item">
 <div class="feature-icon icon-check"></div>
@@ -563,20 +662,22 @@
 </div>
 </section>
 <!-- Pricing Section End -->
-<div class="w-form" style="margin-top: 40px; opacity: 0.6;">
-<form data-name="Email Form" data-wf-element-id="befcf342-4a14-ee4c-b702-2ab105cee004" data-wf-page-id="67dc4b17410701784ade9e4f" id="email-form" method="get" name="email-form"><label class="field-label" for="referral">Реферальний код (необов’язково)</label><input class="text-field w-input" data-name="Email" id="referral" maxlength="256" name="email" placeholder="Введіть код, якщо він у вас є" required="" type="email"/></form>
+<div style="max-width: 600px; margin: 0 auto; padding: 0 24px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center;">
+<div class="w-form" style="margin-top: 40px; opacity: 0.9; width: 100%; max-width: 400px;">
+<form data-name="Email Form" data-wf-element-id="befcf342-4a14-ee4c-b702-2ab105cee004" data-wf-page-id="67dc4b17410701784ade9e4f" id="email-form" method="get" name="email-form" style="display: flex; flex-direction: column; align-items: center;">
+<label class="field-label" for="referral" style="color: #fff; font-weight: 600; margin-bottom: 12px; display: block; text-align: center;">Реферальний код (необов’язково)</label>
+<input class="text-field w-input" data-name="Email" id="referral" maxlength="256" name="email" placeholder="Введіть код, якщо він у вас є" required="" style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(148, 163, 184, 0.3); color: #fff; border-radius: 8px; padding: 12px 16px; width: 100%; text-align: center; margin: 0 auto;" type="email"/>
+</form>
 <div class="w-form-done">
 <div>Дякуємо! Вашу заявку отримано!</div>
 </div>
 <div class="w-form-fail">
-<div>От халепа! Під час надсилання форми сталася помилка.</div>
+<div>Ой! Під час надсилання форми сталася помилка.</div>
 </div>
 </div>
 </div>
-</div>
-</section>
 <!-- i18n strings for JS-driven CTA labels (translated by HTML locale generator) -->
-<div id="i18n-pricing-cta" style="display:none"><span id="i18n-cta-basic-new">Почати безкоштовний пробний період</span> <span id="i18n-cta-pro-new">Спробувати Pro безкоштовно</span> <span id="i18n-cta-basic-active">Керувати планом</span> <span id="i18n-cta-pro-active">Оновити до Pro</span> <span id="i18n-cta-basic-trial-ended">Почати Basic зараз</span> <span id="i18n-cta-pro-trial-ended">Перейти на Pro зараз</span> <span id="i18n-cta-basic-resubscribe">Відновити Basic</span> <span id="i18n-cta-pro-resubscribe">Відновити Pro</span> <span id="i18n-auth-logout">Вийти</span> <span id="i18n-auth-signin">Увійти</span> <span id="i18n-alert-logged-out">Ви вийшли з облікового запису.</span> <span id="i18n-alert-logout-error">Під час виходу сталася помилка.</span> <span id="i18n-alert-login-first">Будь ласка, спочатку увійдіть.</span> <span id="i18n-alert-verify-email">Будь ласка, підтвердьте адресу електронної пошти перед продовженням.</span> <span id="i18n-btn-processing">Обробка...</span> <span id="i18n-alert-already-basic">Ви вже підписані на план Basic.</span> <span id="i18n-alert-already-pro">Ви вже підписані на план Pro.</span> <span id="i18n-alert-already-subscribed">Ви вже підписані.</span> <span id="i18n-alert-checkout-failed">Не вдалося створити сесію оплати. Будь ласка, зверніться до підтримки.</span> <span id="i18n-alert-checkout-redirect-error">Під час перенаправлення на сторінку оплати сталася помилка.</span> <span id="i18n-alert-upgrade-cancelled">Оновлення скасовано.</span> <span id="i18n-alert-upgrade-success">Успішно оновлено до Pro!</span> <span id="i18n-alert-processing-error">Під час обробки запиту сталася помилка.</span> <span id="i18n-upgrade-prompt-template">Оновлення до Pro набуде чинності негайно.\nСписання зараз (оцінка): {0} (проміжний підсумок {1} + податок {2})\nЩомісячне списання (до податків): {3} — податок окремо ({4})\n\nВведіть '{5}', щоб продовжити.</span></div>
+<div id="i18n-pricing-cta" style="display:none"><span id="i18n-cta-basic-new">Почати безкоштовний пробний період</span> <span id="i18n-cta-pro-new">Спробувати Pro безкоштовно</span> <span id="i18n-cta-basic-active">Керувати планом</span> <span id="i18n-cta-pro-active">Оновити до Pro</span> <span id="i18n-cta-basic-trial-ended">Почати Basic зараз</span> <span id="i18n-cta-pro-trial-ended">Перейти на Pro зараз</span> <span id="i18n-cta-basic-resubscribe">Відновити Basic</span> <span id="i18n-cta-pro-resubscribe">Відновити Pro</span> <span id="i18n-auth-logout">Вийти</span> <span id="i18n-auth-signin">Увійти</span> <span id="i18n-alert-logged-out">Ви вийшли з облікового запису.</span> <span id="i18n-alert-logout-error">Під час виходу сталася помилка.</span> <span id="i18n-alert-login-first">Будь ласка, спочатку увійдіть.</span> <span id="i18n-alert-verify-email">Будь ласка, підтвердьте адресу електронної пошти перед продовженням.</span> <span id="i18n-btn-processing">Обробка...</span> <span id="i18n-alert-already-basic">Ви вже підписані на план Basic.</span> <span id="i18n-alert-already-pro">Ви вже підписані на план Pro.</span> <span id="i18n-alert-already-subscribed">Ви вже підписані.</span> <span id="i18n-alert-checkout-failed">Не вдалося створити сесію оплати. Будь ласка, зверніться до підтримки.</span> <span id="i18n-alert-checkout-redirect-error">Під час переходу на сторінку оплати сталася помилка.</span> <span id="i18n-alert-upgrade-cancelled">Оновлення було скасовано.</span> <span id="i18n-alert-upgrade-success">Успішно оновлено до Pro!</span> <span id="i18n-alert-processing-error">Під час обробки запиту сталася помилка.</span> <span id="i18n-upgrade-prompt-template">Оновлення до Pro набуде чинності негайно.\nСписання зараз (орієнтовно): {0} (проміжний підсумок {1} + податок {2})\nЩомісячне списання (до податків): {3} — податок окремо ({4})\n\nВведіть '{5}', щоб продовжити.</span></div>
 <script crossorigin="anonymous" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67d93880609042a66e2a6f90" type="text/javascript"></script>
 <script src="../js/webflow.js" type="text/javascript"></script>
 <script type="module">
@@ -879,7 +980,7 @@ subBtn?.addEventListener("click", async () => {
     } else if (result.message) {
       if (result.currentPlan === "basic") alert(T("i18n-alert-already-basic", "You are already subscribed to the Basic plan."));
       else if (result.currentPlan === "pro") alert(T("i18n-alert-already-pro", "You are already subscribed to the Pro plan."));
-      else alert(T("i18n-alert-already-subscribed", "You are already subscribed.")); // ignore server message
+      else alert(T("i18n-alert-already-subscribed", "You are already subscribed.")); // 서버 영어 message 무시
     } else {
       alert(T("i18n-alert-checkout-failed", "Failed to create a checkout session. Please contact support."));
     }

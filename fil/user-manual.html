@@ -3,8 +3,7 @@
 <html lang="fil">
 <head>
 <meta charset="utf-8"/>
-<title>Manwal ng User - DivAlarm</title>
-<meta content="Manwal ng User - DivAlarm" property="og:title"/>
+<title>DivAlarm Manwal ng User | Gabay sa Setup, Alerts, at Settings</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -14,11 +13,13 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
-      color: #f8fafc;
+      font-family: 'Exo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000;
+      color: #e2e8f0;
       line-height: 1.8;
       min-height: 100vh;
+      font-size: 1.125rem;
+      letter-spacing: 0.01em;
     }
     
     .manual-container {
@@ -29,112 +30,132 @@
     
     .back-link {
       display: inline-block;
-      color: #00d4ff;
+      color: #38bdf8;
       text-decoration: none;
       margin-bottom: 1.5rem;
       font-size: 1.1rem;
-      transition: opacity 0.2s;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+      transition: all 0.2s ease;
     }
-    .back-link:hover { opacity: 0.8; }
+    .back-link:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-title {
       font-size: 3rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 2rem;
-      background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
     }
     
     .toc {
-      background: rgba(12, 12, 24, 0.9);
+      background: rgba(15, 23, 42, 0.6);
       padding: 2rem 2.5rem;
       border-radius: 16px;
       margin-bottom: 3rem;
-      border: 1px solid rgba(0, 212, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .toc h3 {
-      color: #00d4ff;
-      font-size: 1.5rem;
+      color: #38bdf8;
+      font-size: 1.35rem;
       margin-bottom: 1rem;
+      font-weight: 600;
     }
-    .toc ul { list-style: none; }
-    .toc li { margin: 0.8rem 0; }
+    .toc ul { list-style: none; padding-left: 0; }
+    .toc li { margin: 0.8rem 0; color: #cbd5e1; }
     .toc a {
-      color: rgba(248, 250, 252, 0.85);
+      color: #38bdf8;
       text-decoration: none;
       font-size: 1.15rem;
-      transition: color 0.2s;
+      transition: all 0.2s ease;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
     }
-    .toc a:hover { color: #00d4ff; }
+    .toc a:hover {
+      color: #e0f2fe;
+      border-bottom-color: #38bdf8;
+    }
     
     .manual-section {
       margin-bottom: 4rem;
     }
     .manual-section h2 {
-      font-size: 2.2rem;
-      color: #00d4ff;
-      margin-top: 2.5rem;
+      font-size: 2.25rem;
+      color: #f8fafc;
+      margin-top: 3rem;
       margin-bottom: 1.5rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 3px solid rgba(0, 212, 255, 0.35);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
     }
     .manual-section h3 {
-      font-size: 1.6rem;
-      color: #f97316;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
+      font-size: 1.75rem;
+      color: #e2e8f0;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
     }
     .manual-section h4 {
-      font-size: 1.3rem;
-      color: #a78bfa;
-      margin-top: 1.5rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.35rem;
+      color: #38bdf8;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
     .manual-section p {
-      font-size: 1.2rem;
-      line-height: 1.9;
-      margin-bottom: 1.2rem;
-      color: rgba(248, 250, 252, 0.9);
+      margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section ol, .manual-section ul {
-      margin-left: 2rem;
+      margin-left: 1.5rem;
       margin-bottom: 1.5rem;
+      color: #cbd5e1;
     }
     .manual-section li {
-      font-size: 1.15rem;
-      margin-bottom: 0.8rem;
-      line-height: 1.8;
+      margin-bottom: 0.75rem;
     }
     .manual-section img {
       max-width: 100%;
       height: auto !important;
       object-fit: contain !important;
       border-radius: 12px;
-      margin: 2rem 0;
-      border: 1px solid rgba(0, 212, 255, 0.25);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      margin: 3rem 0;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     }
     .manual-section strong {
-      color: #00d4ff;
+      color: #f8fafc;
+      font-weight: 700;
     }
     
     .highlight {
-      background: rgba(0, 212, 255, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #00d4ff;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #3b82f6;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     .warning {
-      background: rgba(249, 115, 22, 0.12);
+      background: rgba(15, 23, 42, 0.6);
       padding: 1.5rem 2rem;
-      border-radius: 12px;
-      border-left: 5px solid #f97316;
-      margin: 1.5rem 0;
-      font-size: 1.15rem;
+      border-radius: 0 12px 12px 0;
+      border-left: 4px solid #f59e0b;
+      margin: 2.5rem 0;
+      color: #e2e8f0;
+      font-size: 1.2rem;
+      font-style: italic;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
     }
     
     .alarm-type {
@@ -177,63 +198,76 @@
   </style>
 <link href="../css/lang-switcher.css" rel="stylesheet" type="text/css"/>
 <script defer="" src="../js/lang-switcher.js" type="text/javascript"></script>
-<meta content='"DivLog" — Dito mo natatanggap ang mga divergence alert signal.' name="description"/><meta content='"DivLog" — Dito mo natatanggap ang mga divergence alert signal.' property="og:description"/><meta content='"DivLog" — Dito mo natatanggap ang mga divergence alert signal.' name="twitter:description"/><meta content="https://www.divalarm.com/fil/user-manual.html" property="og:url"/><meta content="Manwal ng User - DivAlarm" name="twitter:title"/><meta content="website" property="og:type"/><meta content="summary" name="twitter:card"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"WebPage","url":"https://www.divalarm.com/fil/user-manual.html","name":"Manwal ng User - DivAlarm","inLanguage":"fil","isPartOf":{"@id":"https://www.divalarm.com/#website"}}]}</script><link href="https://www.divalarm.com/fil/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
+<meta content="Alamin kung paano gamitin ang DivAlarm, mag-set up ng RSI divergence alerts, i-configure ang webhook options, at i-manage ang settings mula sa app." name="description"/>
+<meta content="DivAlarm Manwal ng User | Gabay sa Setup, Alerts, at Settings" property="og:title"/>
+<meta content="Alamin kung paano gamitin ang DivAlarm, mag-set up ng RSI divergence alerts, i-configure ang webhook options, at i-manage ang settings mula sa app." property="og:description"/>
+<meta content="DivAlarm Manwal ng User | Gabay sa Setup, Alerts, at Settings" name="twitter:title"/>
+<meta content="Alamin kung paano gamitin ang DivAlarm, mag-set up ng RSI divergence alerts, i-configure ang webhook options, at i-manage ang settings mula sa app." name="twitter:description"/>
+<meta content="https://www.divalarm.com/fil/user-manual.html" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="fil_PH" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="summary" name="twitter:card"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"TechArticle","headline":"DivAlarm User Manual","url":"https://www.divalarm.com/fil/user-manual.html","description":"Alamin kung paano gamitin ang DivAlarm, mag-set up ng RSI divergence alerts, i-configure ang webhook options, at i-manage ang settings mula sa app.","inLanguage":"fil","author":{"@id":"https://www.divalarm.com/#organization"},"publisher":{"@id":"https://www.divalarm.com/#organization"},"articleSection":["Pangkalahatang-ideya ng Menu","Mga Notification ng Signal","RSI Mga Setting ng Divergence Alert","TradingView Webhook at Auto-Order","Referral Rewards"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.divalarm.com/fil/user-manual.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.divalarm.com/fil/"},{"@type":"ListItem","position":2,"name":"Manwal ng User","item":"https://www.divalarm.com/fil/user-manual.html"}]}]}</script>
+<link href="https://www.divalarm.com/fil/user-manual.html" rel="canonical"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/user-manual.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/user-manual.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/user-manual.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/user-manual.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/user-manual.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/user-manual.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/user-manual.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/user-manual.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/user-manual.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/user-manual.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/user-manual.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/user-manual.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/user-manual.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/user-manual.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/user-manual.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/user-manual.html" hreflang="x-default" rel="alternate"/></head>
 <body>
-<div class="manual-container">
+<main class="manual-container">
 <a class="back-link" href="index.html">← Bumalik sa Home</a>
-<h1 class="manual-title">📱 Manwal ng User</h1>
+<h1 class="manual-title">DivAlarm User Manual</h1>
+<p style="margin-bottom: 2rem; color: #cbd5e1;">Gamitin ang gabay na ito para i-configure ang RSI divergence alerts, mga webhook feature, mga dagdag na indicator, referral rewards, at mga pangunahing setting ng app.</p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Talaan ng Nilalaman</h3>
 <ul>
 <li><a href="#menu">Pangkalahatang-ideya ng Menu</a></li>
-<li><a href="#divlog">Pagtingin sa Mga Notification ng Signal (DivLog)</a></li>
+<li><a href="#divlog">Pagtingin sa Signal Notifications (DivLog)</a></li>
 <li><a href="#signal-details">Tingnan ang Detalye ng Signal</a></li>
 <li><a href="#div">RSI Mga Setting ng Divergence Alert (Div)</a></li>
-<li><a href="#ei">Mga Karagdagang Alert ng Indicator (EI)</a></li>
+<li><a href="#ei">Mga Alert ng Dagdag na Indicator (EI)</a></li>
 <li><a href="#webhook">TradingView Webhook at Auto-Order</a></li>
-<li><a href="#settings">Pahina ng Settings</a></li>
-<li><a href="#referral">Mga Reward sa Referral</a></li>
+<li><a href="#settings">Page ng Settings</a></li>
+<li><a href="#referral">Referral Rewards</a></li>
 </ul>
 </div>
 <!-- Menu Section -->
 <div class="manual-section" id="menu">
 <h2>📌 Pangkalahatang-ideya ng Menu</h2>
 <p><strong>"DivLog"</strong> — Dito mo natatanggap ang mga divergence alert signal.</p>
-<p><strong>"Div"</strong> — I-configure ang mga signal na 'RSI Divergence Complete' o 'RSI Divergence Forming'.</p>
-<p><strong>"EI"</strong> — Mag-set up ng mga karagdagang indicator alert: alert kapag naabot ang presyo, alert kapag papalapit sa support/resistance, EMA/Bollinger Band/Supertrend alerts. ("Extra Indicators")</p>
-<p><strong>"Webhook"</strong> — Makikita lang ng Pro users. Tumanggap ng TradingView webhooks para sa mas malalakas na alarm, kombinasyon ng signal, at auto-orders.</p>
-<p><strong>"Setting"</strong> — I-configure ang mga uri ng alarm, tunog, settings ng referral reward, mga anunsyo, at mga notification sa referral.</p>
+<p><strong>"Div"</strong> — I-configure ang 'RSI Divergence Complete' o 'RSI Divergence Forming' na mga signal.</p>
+<p><strong>"EI"</strong> — Mag-set up ng mga dagdag na indicator alert: mga alert kapag naabot ang presyo, mga alert kapag papalapit sa support/resistance, EMA/Bollinger Band/Supertrend alerts. ("Extra Indicators")</p>
+<p><strong>"Webhook"</strong> — Makikita lang ng mga Pro user. Tumanggap ng TradingView webhooks para sa mas malalakas na alarm, kombinasyon ng signal, at auto-orders.</p>
+<p><strong>"Setting"</strong> — I-configure ang mga uri ng alarm, tunog, settings ng referral reward, mga anunsyo, at mga notification ng referral.</p>
 </div>
 <!-- DivLog Section -->
 <div class="manual-section" id="divlog">
-<h2>📊 Pagtingin sa Mga Notification ng Signal ("DivLog")</h2>
-<p>Ang "DivLog" ang lugar kung saan mo natatanggap ang mga divergence alert signal.</p>
+<h2>📊 Pagtingin sa mga Notification ng Signal ("DivLog")</h2>
+<p>Sa "DivLog" mo natatanggap ang mga divergence alert signal.</p>
 <ol>
 <li>Hanggang 150 signal ang nase-save. Maglinis paminsan-minsan.</li>
 <li>Ipinapakita ang mga alert na hindi pa na-check. I-check ang mark para i-dismiss ang alarm. Max na 5 pinakabagong hindi pa na-check na alert ang ipinapakita.</li>
-<li>I-filter para ang makita mo lang ay ang mga signal na gusto mo.</li>
+<li>I-filter para ang mga signal na gusto mo lang ang makita.</li>
 </ol>
 </div>
 <!-- Signal Details Section -->
 <div class="manual-section" id="signal-details">
 <h2>🔍 Tingnan ang Detalye ng Signal</h2>
-<img alt="View ng Detalye ng Signal" src="../images/image_detail.png" style="max-width: 500px;"/>
-<p>Sa pag-tap sa bawat alert, makikita mo ang detalyadong impormasyon ng signal.</p>
-<p>Para sa mga RSI Divergence alert, makikita mo ang start at end price, mga value ng RSI, at mga timestamp.</p>
-<p><strong>"DivForming"</strong> ipinapakita ang mga divergence na nabubuo sa ibang timeframe sa mismong sandaling lumabas ang signal.</p>
+<img alt="Detalye ng Signal" src="../images/image_detail.png" style="max-width: 500px;"/>
+<p>Kapag tinap mo ang bawat alert, makikita mo ang detalyadong impormasyon ng signal.</p>
+<p>Para sa RSI Divergence alerts, makikita mo ang start at end price, mga value ng RSI, at mga timestamp.</p>
+<p><strong>"DivForming"</strong> ipinapakita ang mga divergence na nabubuo sa ibang timeframe sa mismong oras na lumabas ang signal.</p>
 <p><strong>"OutsideBB"</strong> ipinapakita kung aling mga timeframe ang nasa labas ng Bollinger Bands noong lumabas ang signal.</p>
 <ul>
-<li>Para sa mga timeframe na <strong>mas maliit</strong> kaysa sa timeframe ng signal, ipinapakita nito kung aling mga candle ang nasa labas ng Bollinger Band sa sandali ng signal (<em>at now</em>).</li>
-<li>Para sa mga timeframe na <strong>mas malaki</strong> kaysa sa timeframe ng signal, ipinapakita nito kung aling mga candle ang nasa labas ng Bollinger Band sa mas huling RSI divergence peak (<em>at peak</em>).</li>
+<li>Para sa mga timeframe na <strong>mas maliit</strong> kaysa timeframe ng signal, ipinapakita nito kung aling mga candle ang nasa labas ng Bollinger Band sa oras ng signal (<em>at now</em>).</li>
+<li>Para sa mga timeframe na <strong>mas malaki</strong> kaysa timeframe ng signal, ipinapakita nito kung aling mga candle ang nasa labas ng Bollinger Band sa mas huling RSI divergence peak (<em>at peak</em>).</li>
 </ul>
 <h4>Halimbawa</h4>
 <div class="highlight">
-<p>Sa halimbawa sa itaas, may <strong>Bullish signal</strong> sa <strong>15m</strong> timeframe.</p>
-<p><strong>"DivForming"</strong> ay nagpapahiwatig na may nabubuong bearish divergences sa 30m at 1h timeframes.</p>
-<p><strong>"OutsideBB"</strong> ay nagpapakita ng:</p>
+<p>Sa halimbawa sa itaas, may lumalabas na <strong>Bullish signal</strong> sa <strong>15m</strong> timeframe.</p>
+<p><strong>"DivForming"</strong> ipinapahiwatig na may nabubuong bearish divergences sa 30m at 1h timeframes.</p>
+<p><strong>"OutsideBB"</strong> ipinapakita:</p>
 <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-<li>Sa mismong sandali ng signal, ang <strong>5m</strong> timeframe ay nasa labas ng Bollinger Band.</li>
+<li>Sa oras ng signal, ang <strong>5m</strong> timeframe ay nasa labas ng Bollinger Band.</li>
 <li>Sa RSI divergence peak, ang <strong>15m, 30m, at 1h</strong> timeframes ay nasa labas ng Bollinger Band.</li>
 </ul>
 </div>
@@ -245,58 +279,58 @@
 <h3>Pangkalahatang RSI Mga Setting ng Divergence</h3>
 <ol>
 <li>Piliin kung aling coin ang iko-configure.</li>
-<li>Pumili sa pagitan ng 'RSI Divergence Complete' at 'RSI Divergence Forming' na mga signal.</li>
+<li>Pumili sa pagitan ng 'RSI Divergence Complete' vs 'RSI Divergence Forming' na mga signal.</li>
 <li>Batch settings area — i-apply ang settings sa lahat ng item sa ibaba nang sabay-sabay.</li>
 <li>Magdagdag ng divergence filters gamit ang + button.</li>
 <li>I-reset ang filters sa inirerekomendang default settings.</li>
-<li>I-set ang mga kondisyon ng presyo nang batch.</li>
+<li>I-set nang batch ang mga kondisyon sa presyo.</li>
 </ol>
-<h3>Mga Setting ng Bawat Filter</h3>
+<h3>Mga Setting ng Indibidwal na Filter</h3>
 <ol start="7">
 <li>Configure individual RSI divergence signals to receive:
-          <p><strong>(a)</strong> Piliin ang gustong timeframe. Para sa 'RSI Divergence Forming', piliin ang parehong 'main timeframe' at 'sub timeframe'. Magti-trigger ang alerts kapag nabuo ang RSI peak sa mas maliit na timeframe habang nabubuo ang divergence sa main timeframe (price reversal).</p>
-<p><strong>(b)</strong> Piliin ang signals: "Bull(bullish)" o "Bear(bearish)". Asul = naka-enable ang alerts, Gray = naka-disable.</p>
-<p><strong>(c)</strong> Itakda ang oversold/overbought thresholds. Bullish alerts kapag ang 'starting RSI' ay mas mababa sa oversold level; bearish kapag ang 'starting RSI' ay mas mataas sa overbought level.</p>
-<p><strong>(d)</strong> I-configure ang uri ng alarm at tunog. Nasa Settings page ang detalyadong settings:</p>
-<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Force Alarm (Loop) — tuloy-tuloy na tutunog hanggang manu-manong ihinto, hindi pinapansin ang silent mode<br/><br/> <span class="alarm-type alarm-type-b">B</span> Force Alarm (Once) — tutunog nang isang beses, hindi pinapansin ang silent mode<br/><br/> <span class="alarm-type alarm-type-c">C</span> Sundin ang Settings ng Phone — gagamit ng normal na sound settings ng device<br/><br/> <span class="alarm-type alarm-type-d">D</span> Vibrate Only — vibration lang, walang tunog<br/><br/> <span class="alarm-type alarm-type-e">E</span> Silent Mode — walang tunog o vibration</div>
+          <p><strong>(a)</strong> Piliin ang gusto mong timeframe. Para sa 'RSI Divergence Forming', piliin ang parehong 'main timeframe' at 'sub timeframe'. Magti-trigger ang alert kapag nabuo ang RSI peak sa mas maliit na timeframe habang nabubuo ang divergence sa main timeframe (price reversal).</p>
+<p><strong>(b)</strong> Piliin ang mga signal: "Bull(bullish)" o "Bear(bearish)". Blue = naka-enable ang alerts, Gray = naka-disable.</p>
+<p><strong>(c)</strong> Itakda ang oversold/overbought thresholds. Bullish alert kapag ang 'starting RSI' ay mas mababa sa oversold level; bearish kapag ang 'starting RSI' ay mas mataas sa overbought level.</p>
+<p><strong>(d)</strong> I-configure ang uri ng alarm at tunog. Nasa Settings page ang detalyadong options:</p>
+<div class="highlight"><span class="alarm-type alarm-type-a">A</span> Force Alarm (Loop) — tuloy-tuloy na tutunog hanggang manu-manong ihinto, hindi sinusunod ang silent mode<br/><br/> <span class="alarm-type alarm-type-b">B</span> Force Alarm (Once) — tutunog nang isang beses, hindi sinusunod ang silent mode<br/><br/> <span class="alarm-type alarm-type-c">C</span> Sundin ang Settings ng Phone — ginagamit ang normal na sound settings ng device<br/><br/> <span class="alarm-type alarm-type-d">D</span> Vibrate Lang — vibration lang, walang tunog<br/><br/> <span class="alarm-type alarm-type-e">E</span> Silent Mode — walang tunog o vibration</div>
 <img alt="Settings ng Uri ng Alarm" src="../images/image%201_manual.png" style="max-width: 350px;"/>
-<p><strong>(e)</strong> Magtakda ng dagdag na kondisyon para mga kapaki-pakinabang na signal lang: mga kondisyon ng presyo, ibang timeframe RSI forming conditions, at Bollinger Band conditions.</p>
+<p><strong>(e)</strong> Magtakda ng dagdag na kondisyon para signals na kapaki-pakinabang lang: mga kondisyon sa presyo, ibang timeframe RSI forming conditions, at mga kondisyon sa Bollinger Band.</p>
 </li>
 </ol>
 <div class="image-row">
-<img alt="Mga Karagdagang Kondisyon 1" src="../images/image%202_manual.png"/>
-<img alt="Mga Karagdagang Kondisyon 2" src="../images/image%203_manual.png"/>
+<img alt="Karagdagang Kondisyon 1" src="../images/image%202_manual.png"/>
+<img alt="Karagdagang Kondisyon 2" src="../images/image%203_manual.png"/>
 </div>
-<p><strong>e0)</strong> Kapag maraming kondisyon ang naka-set, i-configure ang relasyon: "and" (lahat dapat matugunan) o "or" (kahit isa lang ang matugunan).</p>
-<p><strong>e1)</strong> Itakda ang mga kondisyon ng presyo — mag-alert kapag ang divergence start/end price ay mas mataas/mas mababa sa isang partikular na presyo.</p>
+<p><strong>e0)</strong> Kapag maraming kondisyon ang naka-set, piliin ang relasyon: "and" (lahat dapat pumasa) o "or" (kahit isa lang ang pumasa).</p>
+<p><strong>e1)</strong> Magtakda ng kondisyon sa presyo — mag-alert kapag ang divergence start/end price ay mas mataas/mas mababa sa isang partikular na presyo.</p>
 <p><strong>e2)</strong> Mag-alert kapag nabubuo ang divergence sa ibang timeframe.</p>
-<p><strong>e3)</strong> I-check kung ang RSI divergence final peak price ay nasa labas ng Bollinger Bands.</p>
+<p><strong>e3)</strong> I-check kung ang final peak price ng RSI divergence ay nasa labas ng Bollinger Bands.</p>
 <h3>Mga Tip sa Strategy</h3>
 <div class="warning">
 <ul>
 <li>Laging i-combine sa ibang indicators: resistance, trendlines, Fibonacci, atbp.</li>
 <li>Gaya ng lahat ng indicators, hindi 100% accurate ang RSI divergence — pinapataas lang nito ang probability.</li>
-<li>Madalas binabalewala ang 1m, 5m divergences, pero tumataas ang reliability: 15m &lt; 1h &lt; 4h. <strong>Napaka-reliable ng 4h divergence — inirerekomendang i-set bilang A-grade alarm.</strong></li>
+<li>Madalas hindi pinapansin ang 1m, 5m divergences, pero tumataas ang reliability: 15m &lt; 1h &lt; 4h. <strong>Napaka-reliable ng 4h divergence — inirerekomendang i-set bilang A-grade alarm.</strong></li>
 </ul>
 </div>
 </div>
 <!-- EI Section -->
 <div class="manual-section" id="ei">
-<h2>📈 Mga Karagdagang Alert sa Indicator ("EI")</h2>
+<h2>📈 Mga Dagdag na Indicator Alerts ("EI")</h2>
 <div class="image-row">
 <img alt="EI Settings 1" src="../images/image%204_manual.png"/>
 <img alt="EI Settings 2" src="../images/image%205_manual.png"/>
 </div>
 <ol>
 <li>Piliin kung aling coin ang iko-configure.</li>
-<li>Mag-set ng price alerts para sa coin.</li>
+<li>Magtakda ng price alerts para sa coin.</li>
 <li>I-configure ang EMA (Exponential Moving Average) cross alerts.</li>
-<li>Mag-set ng alerts kapag lumalapit sa support/resistance.</li>
+<li>Magtakda ng alerts kapag lumalapit sa support/resistance.</li>
 <li>I-configure ang Bollinger Band breakout alerts.</li>
-<li>Mag-set ng alerts sa pagbabago ng Supertrend.</li>
+<li>Magtakda ng alerts kapag nagbago ang Supertrend.</li>
 </ol>
 <div class="warning">
-<p>※ Ang mga karagdagang indicator (3, 4, 5, 6) ay nagre-reset kapag nag-log out ka.</p>
+<p>※ Ang mga dagdag na indicators (3, 4, 5, 6) ay nagre-reset kapag nag-log out ka.</p>
 </div>
 </div>
 <!-- Webhook Section -->
@@ -304,12 +338,12 @@
 <h2>🔗 TradingView Webhook, Pagsasama ng Signal at Auto-Order</h2>
 <p><strong>"Webhook"</strong> — Pro feature para sa advanced users.</p>
 <p>
-<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Pumunta sa Detalyadong Gabay sa Webhook</a>
+<a href="tradingview-webhook.html" style="display: inline-block; background: linear-gradient(135deg, #00d4ff 0%, #6366f1 100%); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.2rem; margin: 1rem 0;">📖 Pumunta sa Detalyadong Webhook Guide</a>
 </p>
 </div>
 <!-- Settings Section -->
 <div class="manual-section" id="settings">
-<h2>⚙️ Page ng Settings</h2>
+<h2>⚙️ Settings Page</h2>
 <div class="image-row">
 <img alt="Settings 1" src="../images/image%206_manual.png"/>
 <img alt="Settings 2" src="../images/image%207_manual.png"/>
@@ -317,11 +351,11 @@
 <ol>
 <li>I-configure ang mga uri ng alarm (A, B...) at mga tunog ng alarm (1, 2...).</li>
 <li>Para sa auto-orders, ilagay ang API keys ng bawat exchange.</li>
-<li>Puwede mong i-test kung dumarating ang notifications sa kasalukuyan mong phone. Sa pagpapadala ng test message sa sarili mo, mache-check mo kung naide-deliver ang alerts ayon sa mga filter na na-configure mo.</li>
-<li>Page ito para i-set up ang mga opsyon na may kinalaman sa referral rewards.</li>
-<li>Dito mo natatanggap ang mga global announcement.</li>
-<li>Dito mo natatanggap ang mga exclusive announcement na ipinapadala ng referral na ni-register mo noong nag-sign up ka.</li>
-<li>Puwede mong i-switch ang buong app sa pagitan ng Light Mode at Dark Mode.</li>
+<li>Puwede mong i-test kung dumarating ang notifications sa kasalukuyan mong phone. Sa pagpapadala ng test message sa sarili mo, mache-check mo kung naihahatid ang alerts ayon sa mga filter na na-set up mo.</li>
+<li>Ito ang page para i-set up ang mga opsyon na may kinalaman sa referral rewards.</li>
+<li>Dito mo matatanggap ang mga pangkalahatang anunsyo.</li>
+<li>Dito mo matatanggap ang mga eksklusibong anunsyo na ipinapadala ng referral na nirehistro mo noong nag-sign up ka.</li>
+<li>Puwede mong ilipat ang buong app sa pagitan ng Light Mode at Dark Mode.</li>
 </ol>
 </div>
 <!-- Referral Section -->
@@ -329,17 +363,17 @@
 <h2>💰 Referral Rewards</h2>
 <img alt="Referral Settings" src="../images/image%208_manual.png" style="max-width: 550px;"/>
 <p><strong>(a)</strong> Ang referral code mo. Kapag may nag-subscribe gamit ang code na ito, ikaw ang magiging referrer nila.</p>
-<p><strong>(b)</strong> Ang invite link mo. Sinumang mag-subscribe gamit ang link na ito ay awtomatikong ire-register ka bilang referrer nila.</p>
-<p><strong>(c)</strong> Ilagay ang wallet address mo para sa referral rewards. Dapat ay BEP-20 USDT wallet (inirerekomenda ang wallets ng major exchanges). Puwede mong i-test kung gumagana nang tama ang deposits mula sa 'My Info' sa DivAlarm website.</p>
+<p><strong>(b)</strong> Ang invite link mo. Sinumang mag-subscribe gamit ang link na ito ay awtomatikong irerehistro ka bilang referrer nila.</p>
+<p><strong>(c)</strong> Ilagay ang wallet address mo para sa referral rewards. Dapat ay BEP-20 USDT wallet (inirerekomenda ang wallets mula sa mga major exchange). Puwede mong i-test kung gumagana nang tama ang deposits mula sa 'My Info' sa DivAlarm website.</p>
 <p><strong>(d)</strong> Ipinapakita ang status ng referral rewards mo: kasalukuyang bilang ng referrals, posibleng reward amount, confirmed amount, at paid amount.</p>
-<p>Lililipat ang rewards mula 'potential' papuntang 'confirmed' pagkalipas ng 14 araw matapos ang subscription payment ng na-refer na user (hindi kasama ang free trial). Lingguhan ang bayad tuwing Martes, UTC midnight.</p>
+<p>Lililipat ang rewards mula 'potential' papuntang 'confirmed' pagkalipas ng 14 araw matapos ang bayad sa subscription ng na-refer na user (hindi kasama ang free trial). Lingguhan ang payout tuwing Martes sa UTC midnight.</p>
 <h3>Paano Kumita ng Referral Rewards</h3>
 <div class="highlight">
 <p><strong>1]</strong> Pumunta sa Settings → Referral Rewards → Ilagay ang reward wallet address mo.</p>
-<p><strong>2]</strong> I-share ang referral link mo. Madidirekta ang iba sa page ng subscription gamit ang code mo.</p>
-<p><strong>3]</strong> Kapag nag-subscribe at nagbayad sila, awtomatikong maide-deposit ang rewards.</p>
+<p><strong>2]</strong> I-share ang referral link mo. Madidirekta ang iba sa subscription page kasama ang code mo.</p>
+<p><strong>3]</strong> Kapag nag-subscribe sila at nagbayad, ide-deposit ang rewards.</p>
 </div>
 </div>
-</div>
+</main>
 <footer id="wisesignal-legal-footer" style="margin-top: 4rem;padding: 3rem 5% 2.5rem;color: rgba(148,163,184,0.90);font-size: 0.82rem;line-height: 1.7;text-align: center;"><div style="max-width: 1100px; margin: 0 auto;"><div style="height: 1px; background: rgba(148,163,184,0.22); margin: 0 0 1.5rem;"></div><div>© 2026 WiseSignal Ltd.</div><div>WiseSignal Ltd is registered in England and Wales (No. 16253236).</div><div>Registered Office: 71-75 Shelton Street, London, WC2H 9JQ, UK.</div><div>Contact: <a href="mailto:info@wise-signal.com" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">info@wise-signal.com</a></div></div></footer></body>
 </html>
