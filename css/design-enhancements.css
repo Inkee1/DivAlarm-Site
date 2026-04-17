@@ -2136,3 +2136,17 @@ code, pre, kbd, samp {
     margin-bottom: 22px !important;
   }
 }
+
+/* ============================================
+   Referral crypto reward promo toggle
+   To show it again site-wide, change `none` to `block` below.
+   ============================================ */
+
+:root {
+  --referral-crypto-reward-section-display: none;
+}
+
+.feature-section-dark[style*="padding-bottom: 8rem"],
+section[style*="padding: 2rem 1rem"] .feature-grid + .container {
+  display: var(--referral-crypto-reward-section-display) !important;
+}
