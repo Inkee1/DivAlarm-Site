@@ -2,8 +2,8 @@
   "schema_version": 2,
   "symbol": "BTCUSDT",
   "image_format": "webp",
-  "generated_at": "2026-04-19T00:00:10Z",
-  "week_count": 31,
+  "generated_at": "2026-05-03T00:00:10Z",
+  "week_count": 33,
   "weeks": [
     {
       "id": "20250914",
@@ -92,79 +92,21 @@
         "window_end_utc": "2025-09-14T00:00:00Z",
         "image": "images/trailing_30d/20250914.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-09-14",
-        "headline": "High→Low +11.17% (x10 +111.67%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-09-01T00:00:00Z",
-          "low": 107211.5,
-          "high_time_utc": "2025-08-15T00:00:00Z",
-          "high": 119184.0,
-          "change_pct": 11.167178894055208,
-          "x10_pct": 111.67178894055209
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 8.140866269895733,
-            "x10_pct": 81.40866269895733,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-08-22T12:00:00Z",
-              "kind": "high",
-              "price": 117397.4
-            },
-            "end": {
-              "time_utc": "2025-08-26T00:00:00Z",
-              "kind": "low",
-              "price": 108559.7
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 6.210117902744798,
-            "x10_pct": 62.101179027447984,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-08-17T12:00:00Z",
-              "kind": "high",
-              "price": 118558.0
-            },
-            "end": {
-              "time_utc": "2025-08-22T12:00:00Z",
-              "kind": "low",
-              "price": 111625.9
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 5.730744493433133,
-            "x10_pct": 57.30744493433133,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-08-28T12:00:00Z",
-              "kind": "high",
-              "price": 113429.0
-            },
-            "end": {
-              "time_utc": "2025-08-30T00:00:00Z",
-              "kind": "low",
-              "price": 107281.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -276,79 +218,21 @@
         "window_end_utc": "2025-09-21T00:00:00Z",
         "image": "images/trailing_30d/20250921.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-09-21",
-        "headline": "Low→High +9.95% (x10 +99.46%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-09-01T00:00:00Z",
-          "low": 107211.5,
-          "high_time_utc": "2025-09-18T12:00:00Z",
-          "high": 117875.2,
-          "change_pct": 9.946414330552225,
-          "x10_pct": 99.46414330552224
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 8.140866269895733,
-            "x10_pct": 81.40866269895733,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-08-22T12:00:00Z",
-              "kind": "high",
-              "price": 117397.4
-            },
-            "end": {
-              "time_utc": "2025-08-26T00:00:00Z",
-              "kind": "low",
-              "price": 108559.7
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 5.730744493433133,
-            "x10_pct": 57.30744493433133,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-08-28T12:00:00Z",
-              "kind": "high",
-              "price": 113429.0
-            },
-            "end": {
-              "time_utc": "2025-08-30T00:00:00Z",
-              "kind": "low",
-              "price": 107281.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "Low→High",
-            "change_pct": 5.320693059380448,
-            "x10_pct": 53.20693059380447,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-09T12:00:00Z",
-              "kind": "low",
-              "price": 110714.9
-            },
-            "end": {
-              "time_utc": "2025-09-12T12:00:00Z",
-              "kind": "high",
-              "price": 116605.7
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -473,79 +357,21 @@
         "window_end_utc": "2025-09-28T00:00:00Z",
         "image": "images/trailing_30d/20250928.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-09-28",
-        "headline": "Low→High +9.95% (x10 +99.46%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-09-01T00:00:00Z",
-          "low": 107211.5,
-          "high_time_utc": "2025-09-18T12:00:00Z",
-          "high": 117875.2,
-          "change_pct": 9.946414330552225,
-          "x10_pct": 99.46414330552224
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 5.320693059380448,
-            "x10_pct": 53.20693059380447,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-09T12:00:00Z",
-              "kind": "low",
-              "price": 110714.9
-            },
-            "end": {
-              "time_utc": "2025-09-12T12:00:00Z",
-              "kind": "high",
-              "price": 116605.7
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 4.971201783390772,
-            "x10_pct": 49.712017833907716,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-01T00:00:00Z",
-              "kind": "low",
-              "price": 107211.5
-            },
-            "end": {
-              "time_utc": "2025-09-03T12:00:00Z",
-              "kind": "high",
-              "price": 112541.2
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 4.909271779378446,
-            "x10_pct": 49.09271779378446,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-24T12:00:00Z",
-              "kind": "high",
-              "price": 113895.8
-            },
-            "end": {
-              "time_utc": "2025-09-26T00:00:00Z",
-              "kind": "low",
-              "price": 108566.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -619,79 +445,21 @@
         "window_end_utc": "2025-10-05T00:00:00Z",
         "image": "images/trailing_30d/20251005.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-10-05",
-        "headline": "Low→High +15.95% (x10 +159.45%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-09-26T00:00:00Z",
-          "low": 108566.0,
-          "high_time_utc": "2025-10-05T00:00:00Z",
-          "high": 125877.3,
-          "change_pct": 15.945415691837225,
-          "x10_pct": 159.45415691837223
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 14.124127258994529,
-            "x10_pct": 141.24127258994528,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-26T00:00:00Z",
-              "kind": "low",
-              "price": 108566.0
-            },
-            "end": {
-              "time_utc": "2025-10-03T12:00:00Z",
-              "kind": "high",
-              "price": 123900.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 13.527554942663544,
-            "x10_pct": 135.27554942663545,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-28T12:00:00Z",
-              "kind": "low",
-              "price": 109136.5
-            },
-            "end": {
-              "time_utc": "2025-10-03T12:00:00Z",
-              "kind": "high",
-              "price": 123900.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "Low→High",
-            "change_pct": 5.320693059380448,
-            "x10_pct": 53.20693059380447,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-09T12:00:00Z",
-              "kind": "low",
-              "price": 110714.9
-            },
-            "end": {
-              "time_utc": "2025-09-12T12:00:00Z",
-              "kind": "high",
-              "price": 116605.7
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -816,79 +584,21 @@
         "window_end_utc": "2025-10-12T00:00:00Z",
         "image": "images/trailing_30d/20251012.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-10-12",
-        "headline": "High→Low +24.32% (x10 +243.23%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-10-10T12:00:00Z",
-          "low": 101516.5,
-          "high_time_utc": "2025-10-06T12:00:00Z",
-          "high": 126208.5,
-          "change_pct": 24.32313958814577,
-          "x10_pct": 243.23139588145773
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 14.124127258994529,
-            "x10_pct": 141.24127258994528,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-26T00:00:00Z",
-              "kind": "low",
-              "price": 108566.0
-            },
-            "end": {
-              "time_utc": "2025-10-03T12:00:00Z",
-              "kind": "high",
-              "price": 123900.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 13.527554942663544,
-            "x10_pct": 135.27554942663545,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-28T12:00:00Z",
-              "kind": "low",
-              "price": 109136.5
-            },
-            "end": {
-              "time_utc": "2025-10-03T12:00:00Z",
-              "kind": "high",
-              "price": 123900.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 4.909271779378446,
-            "x10_pct": 49.09271779378446,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-24T12:00:00Z",
-              "kind": "high",
-              "price": 113895.8
-            },
-            "end": {
-              "time_utc": "2025-09-26T00:00:00Z",
-              "kind": "low",
-              "price": 108566.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -1014,79 +724,21 @@
         "window_end_utc": "2025-10-19T00:00:00Z",
         "image": "images/trailing_30d/20251019.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-10-19",
-        "headline": "High→Low +24.32% (x10 +243.23%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-10-10T12:00:00Z",
-          "low": 101516.5,
-          "high_time_utc": "2025-10-06T12:00:00Z",
-          "high": 126208.5,
-          "change_pct": 24.32313958814577,
-          "x10_pct": 243.23139588145773
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 14.180453423827654,
-            "x10_pct": 141.80453423827655,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-10-10T12:00:00Z",
-              "kind": "low",
-              "price": 101516.5
-            },
-            "end": {
-              "time_utc": "2025-10-13T00:00:00Z",
-              "kind": "high",
-              "price": 115912.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 14.124127258994529,
-            "x10_pct": 141.24127258994528,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-26T00:00:00Z",
-              "kind": "low",
-              "price": 108566.0
-            },
-            "end": {
-              "time_utc": "2025-10-03T12:00:00Z",
-              "kind": "high",
-              "price": 123900.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "Low→High",
-            "change_pct": 13.527554942663544,
-            "x10_pct": 135.27554942663545,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-28T12:00:00Z",
-              "kind": "low",
-              "price": 109136.5
-            },
-            "end": {
-              "time_utc": "2025-10-03T12:00:00Z",
-              "kind": "high",
-              "price": 123900.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -1204,79 +856,21 @@
         "window_end_utc": "2025-10-26T00:00:00Z",
         "image": "images/trailing_30d/20251026.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-10-26",
-        "headline": "High→Low +24.32% (x10 +243.23%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-10-10T12:00:00Z",
-          "low": 101516.5,
-          "high_time_utc": "2025-10-06T12:00:00Z",
-          "high": 126208.5,
-          "change_pct": 24.32313958814577,
-          "x10_pct": 243.23139588145773
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 14.180453423827654,
-            "x10_pct": 141.80453423827655,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-10-10T12:00:00Z",
-              "kind": "low",
-              "price": 101516.5
-            },
-            "end": {
-              "time_utc": "2025-10-13T00:00:00Z",
-              "kind": "high",
-              "price": 115912.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 14.124127258994529,
-            "x10_pct": 141.24127258994528,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-26T00:00:00Z",
-              "kind": "low",
-              "price": 108566.0
-            },
-            "end": {
-              "time_utc": "2025-10-03T12:00:00Z",
-              "kind": "high",
-              "price": 123900.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "Low→High",
-            "change_pct": 13.527554942663544,
-            "x10_pct": 135.27554942663545,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-09-28T12:00:00Z",
-              "kind": "low",
-              "price": 109136.5
-            },
-            "end": {
-              "time_utc": "2025-10-03T12:00:00Z",
-              "kind": "high",
-              "price": 123900.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -1383,79 +977,21 @@
         "window_end_utc": "2025-11-02T00:00:00Z",
         "image": "images/trailing_30d/20251102.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-11-02",
-        "headline": "High→Low +24.32% (x10 +243.23%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-10-10T12:00:00Z",
-          "low": 101516.5,
-          "high_time_utc": "2025-10-06T12:00:00Z",
-          "high": 126208.5,
-          "change_pct": 24.32313958814577,
-          "x10_pct": 243.23139588145773
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 14.180453423827654,
-            "x10_pct": 141.80453423827655,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-10-10T12:00:00Z",
-              "kind": "low",
-              "price": 101516.5
-            },
-            "end": {
-              "time_utc": "2025-10-13T00:00:00Z",
-              "kind": "high",
-              "price": 115912.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 9.585875706214686,
-            "x10_pct": 95.85875706214686,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-10-27T00:00:00Z",
-              "kind": "high",
-              "price": 116380.2
-            },
-            "end": {
-              "time_utc": "2025-10-30T12:00:00Z",
-              "kind": "low",
-              "price": 106200.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 9.297834274952923,
-            "x10_pct": 92.97834274952922,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-10-28T12:00:00Z",
-              "kind": "high",
-              "price": 116074.3
-            },
-            "end": {
-              "time_utc": "2025-10-30T12:00:00Z",
-              "kind": "low",
-              "price": 106200.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -1566,79 +1102,21 @@
         "window_end_utc": "2025-11-09T00:00:00Z",
         "image": "images/trailing_30d/20251109.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-11-09",
-        "headline": "High→Low +23.87% (x10 +238.73%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-11-04T12:00:00Z",
-          "low": 98888.8,
-          "high_time_utc": "2025-10-10T12:00:00Z",
-          "high": 122497.0,
-          "change_pct": 23.873482133467082,
-          "x10_pct": 238.7348213346708
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 14.180453423827654,
-            "x10_pct": 141.80453423827655,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-10-10T12:00:00Z",
-              "kind": "low",
-              "price": 101516.5
-            },
-            "end": {
-              "time_utc": "2025-10-13T00:00:00Z",
-              "kind": "high",
-              "price": 115912.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 12.482910096997838,
-            "x10_pct": 124.82910096997838,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-10-31T12:00:00Z",
-              "kind": "high",
-              "price": 111233.0
-            },
-            "end": {
-              "time_utc": "2025-11-04T12:00:00Z",
-              "kind": "low",
-              "price": 98888.8
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 12.465719070309273,
-            "x10_pct": 124.65719070309274,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-02T12:00:00Z",
-              "kind": "high",
-              "price": 111216.0
-            },
-            "end": {
-              "time_utc": "2025-11-04T12:00:00Z",
-              "kind": "low",
-              "price": 98888.8
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -1783,79 +1261,21 @@
         "window_end_utc": "2025-11-16T00:00:00Z",
         "image": "images/trailing_30d/20251116.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-11-16",
-        "headline": "High→Low +23.87% (x10 +238.68%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-11-14T12:00:00Z",
-          "low": 93955.0,
-          "high_time_utc": "2025-10-27T00:00:00Z",
-          "high": 116380.2,
-          "change_pct": 23.86802192538981,
-          "x10_pct": 238.68021925389812
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 14.388483848650946,
-            "x10_pct": 143.88483848650947,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-11T00:00:00Z",
-              "kind": "high",
-              "price": 107473.7
-            },
-            "end": {
-              "time_utc": "2025-11-14T12:00:00Z",
-              "kind": "low",
-              "price": 93955.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 12.482910096997838,
-            "x10_pct": 124.82910096997838,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-10-31T12:00:00Z",
-              "kind": "high",
-              "price": 111233.0
-            },
-            "end": {
-              "time_utc": "2025-11-04T12:00:00Z",
-              "kind": "low",
-              "price": 98888.8
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 12.465719070309273,
-            "x10_pct": 124.65719070309274,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-02T12:00:00Z",
-              "kind": "high",
-              "price": 111216.0
-            },
-            "end": {
-              "time_utc": "2025-11-04T12:00:00Z",
-              "kind": "low",
-              "price": 98888.8
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -1968,79 +1388,21 @@
         "window_end_utc": "2025-11-23T00:00:00Z",
         "image": "images/trailing_30d/20251123.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-11-23",
-        "headline": "High→Low +44.39% (x10 +443.92%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-11-21T12:00:00Z",
-          "low": 80600.0,
-          "high_time_utc": "2025-10-27T00:00:00Z",
-          "high": 116380.2,
-          "change_pct": 44.39230769230769,
-          "x10_pct": 443.9230769230769
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 15.570719602977668,
-            "x10_pct": 155.7071960297767,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-20T00:00:00Z",
-              "kind": "high",
-              "price": 93150.0
-            },
-            "end": {
-              "time_utc": "2025-11-21T12:00:00Z",
-              "kind": "low",
-              "price": 80600.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 14.388483848650946,
-            "x10_pct": 143.88483848650947,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-11T00:00:00Z",
-              "kind": "high",
-              "price": 107473.7
-            },
-            "end": {
-              "time_utc": "2025-11-14T12:00:00Z",
-              "kind": "low",
-              "price": 93955.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 12.482910096997838,
-            "x10_pct": 124.82910096997838,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-10-31T12:00:00Z",
-              "kind": "high",
-              "price": 111233.0
-            },
-            "end": {
-              "time_utc": "2025-11-04T12:00:00Z",
-              "kind": "low",
-              "price": 98888.8
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -2177,79 +1539,21 @@
         "window_end_utc": "2025-11-30T00:00:00Z",
         "image": "images/trailing_30d/20251130.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-11-30",
-        "headline": "High→Low +38.01% (x10 +380.06%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-11-21T12:00:00Z",
-          "low": 80600.0,
-          "high_time_utc": "2025-10-31T12:00:00Z",
-          "high": 111233.0,
-          "change_pct": 38.00620347394541,
-          "x10_pct": 380.06203473945413
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 15.570719602977668,
-            "x10_pct": 155.7071960297767,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-20T00:00:00Z",
-              "kind": "high",
-              "price": 93150.0
-            },
-            "end": {
-              "time_utc": "2025-11-21T12:00:00Z",
-              "kind": "low",
-              "price": 80600.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 14.388483848650946,
-            "x10_pct": 143.88483848650947,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-11T00:00:00Z",
-              "kind": "high",
-              "price": 107473.7
-            },
-            "end": {
-              "time_utc": "2025-11-14T12:00:00Z",
-              "kind": "low",
-              "price": 93955.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 12.482910096997838,
-            "x10_pct": 124.82910096997838,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-10-31T12:00:00Z",
-              "kind": "high",
-              "price": 111233.0
-            },
-            "end": {
-              "time_utc": "2025-11-04T12:00:00Z",
-              "kind": "low",
-              "price": 98888.8
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -2357,79 +1661,21 @@
         "window_end_utc": "2025-12-07T00:00:00Z",
         "image": "images/trailing_30d/20251207.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-12-07",
-        "headline": "High→Low +33.34% (x10 +333.42%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-11-21T12:00:00Z",
-          "low": 80600.0,
-          "high_time_utc": "2025-11-11T00:00:00Z",
-          "high": 107473.7,
-          "change_pct": 33.34205955334987,
-          "x10_pct": 333.4205955334987
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 15.570719602977668,
-            "x10_pct": 155.7071960297767,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-20T00:00:00Z",
-              "kind": "high",
-              "price": 93150.0
-            },
-            "end": {
-              "time_utc": "2025-11-21T12:00:00Z",
-              "kind": "low",
-              "price": 80600.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 14.388483848650946,
-            "x10_pct": 143.88483848650947,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-11T00:00:00Z",
-              "kind": "high",
-              "price": 107473.7
-            },
-            "end": {
-              "time_utc": "2025-11-14T12:00:00Z",
-              "kind": "low",
-              "price": 93955.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "Low→High",
-            "change_pct": 12.411381376363593,
-            "x10_pct": 124.11381376363593,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-12-01T12:00:00Z",
-              "kind": "low",
-              "price": 83786.0
-            },
-            "end": {
-              "time_utc": "2025-12-03T12:00:00Z",
-              "kind": "high",
-              "price": 94185.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -2561,79 +1807,21 @@
         "window_end_utc": "2025-12-14T00:00:00Z",
         "image": "images/trailing_30d/20251214.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-12-14",
-        "headline": "High→Low +23.90% (x10 +238.99%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-11-21T12:00:00Z",
-          "low": 80600.0,
-          "high_time_utc": "2025-11-14T00:00:00Z",
-          "high": 99862.8,
-          "change_pct": 23.899255583126553,
-          "x10_pct": 238.99255583126552
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 15.570719602977668,
-            "x10_pct": 155.7071960297767,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-20T00:00:00Z",
-              "kind": "high",
-              "price": 93150.0
-            },
-            "end": {
-              "time_utc": "2025-11-21T12:00:00Z",
-              "kind": "low",
-              "price": 80600.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 12.411381376363593,
-            "x10_pct": 124.11381376363593,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-12-01T12:00:00Z",
-              "kind": "low",
-              "price": 83786.0
-            },
-            "end": {
-              "time_utc": "2025-12-03T12:00:00Z",
-              "kind": "high",
-              "price": 94185.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "Low→High",
-            "change_pct": 10.641811414392063,
-            "x10_pct": 106.41811414392063,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-21T12:00:00Z",
-              "kind": "low",
-              "price": 80600.0
-            },
-            "end": {
-              "time_utc": "2025-11-24T12:00:00Z",
-              "kind": "high",
-              "price": 89177.3
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -2746,79 +1934,21 @@
         "window_end_utc": "2025-12-21T00:00:00Z",
         "image": "images/trailing_30d/20251221.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-12-21",
-        "headline": "Low→High +17.31% (x10 +173.14%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-11-21T12:00:00Z",
-          "low": 80600.0,
-          "high_time_utc": "2025-12-09T12:00:00Z",
-          "high": 94555.0,
-          "change_pct": 17.31389578163772,
-          "x10_pct": 173.13895781637717
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 12.411381376363593,
-            "x10_pct": 124.11381376363593,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-12-01T12:00:00Z",
-              "kind": "low",
-              "price": 83786.0
-            },
-            "end": {
-              "time_utc": "2025-12-03T12:00:00Z",
-              "kind": "high",
-              "price": 94185.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 10.641811414392063,
-            "x10_pct": 106.41811414392063,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-21T12:00:00Z",
-              "kind": "low",
-              "price": 80600.0
-            },
-            "end": {
-              "time_utc": "2025-11-24T12:00:00Z",
-              "kind": "high",
-              "price": 89177.3
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 9.725252428806714,
-            "x10_pct": 97.25252428806714,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-30T12:00:00Z",
-              "kind": "high",
-              "price": 91934.4
-            },
-            "end": {
-              "time_utc": "2025-12-01T12:00:00Z",
-              "kind": "low",
-              "price": 83786.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -2952,79 +2082,21 @@
         "window_end_utc": "2025-12-28T00:00:00Z",
         "image": "images/trailing_30d/20251228.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-12-28",
-        "headline": "Low→High +12.85% (x10 +128.53%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-12-01T12:00:00Z",
-          "low": 83786.0,
-          "high_time_utc": "2025-12-09T12:00:00Z",
-          "high": 94555.0,
-          "change_pct": 12.852982598524813,
-          "x10_pct": 128.52982598524812
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 12.411381376363593,
-            "x10_pct": 124.11381376363593,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-12-01T12:00:00Z",
-              "kind": "low",
-              "price": 83786.0
-            },
-            "end": {
-              "time_utc": "2025-12-03T12:00:00Z",
-              "kind": "high",
-              "price": 94185.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 9.725252428806714,
-            "x10_pct": 97.25252428806714,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-11-30T12:00:00Z",
-              "kind": "high",
-              "price": 91934.4
-            },
-            "end": {
-              "time_utc": "2025-12-01T12:00:00Z",
-              "kind": "low",
-              "price": 83786.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "Low→High",
-            "change_pct": 7.3338498683783335,
-            "x10_pct": 73.33849868378334,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-12-18T12:00:00Z",
-              "kind": "low",
-              "price": 84408.6
-            },
-            "end": {
-              "time_utc": "2025-12-22T12:00:00Z",
-              "kind": "high",
-              "price": 90599.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -3136,79 +2208,21 @@
         "window_end_utc": "2026-01-04T00:00:00Z",
         "image": "images/trailing_30d/20260104.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-01-04",
-        "headline": "High→Low +12.02% (x10 +120.21%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-12-18T12:00:00Z",
-          "low": 84408.6,
-          "high_time_utc": "2025-12-09T12:00:00Z",
-          "high": 94555.0,
-          "change_pct": 12.02057610243505,
-          "x10_pct": 120.20576102435051
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 7.3338498683783335,
-            "x10_pct": 73.33849868378334,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-12-18T12:00:00Z",
-              "kind": "low",
-              "price": 84408.6
-            },
-            "end": {
-              "time_utc": "2025-12-22T12:00:00Z",
-              "kind": "high",
-              "price": 90599.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 7.054494447248255,
-            "x10_pct": 70.54494447248256,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-12-17T12:00:00Z",
-              "kind": "high",
-              "price": 90363.2
-            },
-            "end": {
-              "time_utc": "2025-12-18T12:00:00Z",
-              "kind": "low",
-              "price": 84408.6
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "Low→High",
-            "change_pct": 6.218424176883379,
-            "x10_pct": 62.184241768833786,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-12-15T12:00:00Z",
-              "kind": "low",
-              "price": 85073.0
-            },
-            "end": {
-              "time_utc": "2025-12-17T12:00:00Z",
-              "kind": "high",
-              "price": 90363.2
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -3261,79 +2275,21 @@
         "window_end_utc": "2026-01-11T00:00:00Z",
         "image": "images/trailing_30d/20260111.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-01-11",
-        "headline": "Low→High +12.26% (x10 +122.64%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-12-18T12:00:00Z",
-          "low": 84408.6,
-          "high_time_utc": "2026-01-05T12:00:00Z",
-          "high": 94760.3,
-          "change_pct": 12.26379776468274,
-          "x10_pct": 122.63797764682741
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 7.3338498683783335,
-            "x10_pct": 73.33849868378334,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-12-18T12:00:00Z",
-              "kind": "low",
-              "price": 84408.6
-            },
-            "end": {
-              "time_utc": "2025-12-22T12:00:00Z",
-              "kind": "high",
-              "price": 90599.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 7.054494447248255,
-            "x10_pct": 70.54494447248256,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-12-17T12:00:00Z",
-              "kind": "high",
-              "price": 90363.2
-            },
-            "end": {
-              "time_utc": "2025-12-18T12:00:00Z",
-              "kind": "low",
-              "price": 84408.6
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "Low→High",
-            "change_pct": 6.218424176883379,
-            "x10_pct": 62.184241768833786,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-12-15T12:00:00Z",
-              "kind": "low",
-              "price": 85073.0
-            },
-            "end": {
-              "time_utc": "2025-12-17T12:00:00Z",
-              "kind": "high",
-              "price": 90363.2
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -3445,79 +2401,21 @@
         "window_end_utc": "2026-01-18T00:00:00Z",
         "image": "images/trailing_30d/20260118.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-01-18",
-        "headline": "Low→High +15.13% (x10 +151.29%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-12-19T00:00:00Z",
-          "low": 85062.7,
-          "high_time_utc": "2026-01-14T12:00:00Z",
-          "high": 97932.1,
-          "change_pct": 15.12931049684528,
-          "x10_pct": 151.2931049684528
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 8.733706393089518,
-            "x10_pct": 87.33706393089518,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-01-12T12:00:00Z",
-              "kind": "low",
-              "price": 90066.0
-            },
-            "end": {
-              "time_utc": "2026-01-14T12:00:00Z",
-              "kind": "high",
-              "price": 97932.1
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 6.183523453082632,
-            "x10_pct": 61.83523453082632,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-01-05T12:00:00Z",
-              "kind": "high",
-              "price": 94760.3
-            },
-            "end": {
-              "time_utc": "2026-01-08T12:00:00Z",
-              "kind": "low",
-              "price": 89242.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 4.9145967228301775,
-            "x10_pct": 49.14596722830177,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2025-12-22T12:00:00Z",
-              "kind": "high",
-              "price": 90599.0
-            },
-            "end": {
-              "time_utc": "2025-12-24T12:00:00Z",
-              "kind": "low",
-              "price": 86355.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -3632,79 +2530,21 @@
         "window_end_utc": "2026-01-25T00:00:00Z",
         "image": "images/trailing_30d/20260125.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-01-25",
-        "headline": "Low→High +13.06% (x10 +130.60%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2025-12-26T12:00:00Z",
-          "low": 86619.9,
-          "high_time_utc": "2026-01-14T12:00:00Z",
-          "high": 97932.1,
-          "change_pct": 13.059585614852953,
-          "x10_pct": 130.59585614852952
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "Low→High",
-            "change_pct": 8.733706393089518,
-            "x10_pct": 87.33706393089518,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-01-12T12:00:00Z",
-              "kind": "low",
-              "price": 90066.0
-            },
-            "end": {
-              "time_utc": "2026-01-14T12:00:00Z",
-              "kind": "high",
-              "price": 97932.1
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 6.183523453082632,
-            "x10_pct": 61.83523453082632,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-01-05T12:00:00Z",
-              "kind": "high",
-              "price": 94760.3
-            },
-            "end": {
-              "time_utc": "2026-01-08T12:00:00Z",
-              "kind": "low",
-              "price": 89242.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "Low→High",
-            "change_pct": 4.574826129085895,
-            "x10_pct": 45.74826129085895,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-01-21T12:00:00Z",
-              "kind": "low",
-              "price": 87205.5
-            },
-            "end": {
-              "time_utc": "2026-01-23T12:00:00Z",
-              "kind": "high",
-              "price": 91195.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -3848,79 +2688,21 @@
         "window_end_utc": "2026-02-01T00:00:00Z",
         "image": "images/trailing_30d/20260201.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-02-01",
-        "headline": "High→Low +29.71% (x10 +297.11%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2026-01-31T12:00:00Z",
-          "low": 75500.0,
-          "high_time_utc": "2026-01-14T12:00:00Z",
-          "high": 97932.1,
-          "change_pct": 29.71139072847683,
-          "x10_pct": 297.1139072847683
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 11.842839506172837,
-            "x10_pct": 118.42839506172837,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-01-28T12:00:00Z",
-              "kind": "high",
-              "price": 90592.7
-            },
-            "end": {
-              "time_utc": "2026-01-30T00:00:00Z",
-              "kind": "low",
-              "price": 81000.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 8.733706393089518,
-            "x10_pct": 87.33706393089518,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-01-12T12:00:00Z",
-              "kind": "low",
-              "price": 90066.0
-            },
-            "end": {
-              "time_utc": "2026-01-14T12:00:00Z",
-              "kind": "high",
-              "price": 97932.1
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 6.183523453082632,
-            "x10_pct": 61.83523453082632,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-01-05T12:00:00Z",
-              "kind": "high",
-              "price": 94760.3
-            },
-            "end": {
-              "time_utc": "2026-01-08T12:00:00Z",
-              "kind": "low",
-              "price": 89242.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -4038,79 +2820,21 @@
         "window_end_utc": "2026-02-08T00:00:00Z",
         "image": "images/trailing_30d/20260208.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-02-08",
-        "headline": "High→Low +63.77% (x10 +637.66%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2026-02-06T00:00:00Z",
-          "low": 59800.0,
-          "high_time_utc": "2026-01-14T12:00:00Z",
-          "high": 97932.1,
-          "change_pct": 63.7660535117057,
-          "x10_pct": 637.660535117057
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 32.62709030100334,
-            "x10_pct": 326.2709030100334,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-02T12:00:00Z",
-              "kind": "high",
-              "price": 79311.0
-            },
-            "end": {
-              "time_utc": "2026-02-06T00:00:00Z",
-              "kind": "low",
-              "price": 59800.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 19.923745819397983,
-            "x10_pct": 199.23745819397982,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-06T00:00:00Z",
-              "kind": "low",
-              "price": 59800.0
-            },
-            "end": {
-              "time_utc": "2026-02-06T12:00:00Z",
-              "kind": "high",
-              "price": 71714.4
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 11.842839506172837,
-            "x10_pct": 118.42839506172837,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-01-28T12:00:00Z",
-              "kind": "high",
-              "price": 90592.7
-            },
-            "end": {
-              "time_utc": "2026-01-30T00:00:00Z",
-              "kind": "low",
-              "price": 81000.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -4221,79 +2945,21 @@
         "window_end_utc": "2026-02-15T00:00:00Z",
         "image": "images/trailing_30d/20260215.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-02-15",
-        "headline": "High→Low +60.24% (x10 +602.42%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2026-02-06T00:00:00Z",
-          "low": 59800.0,
-          "high_time_utc": "2026-01-16T00:00:00Z",
-          "high": 95825.0,
-          "change_pct": 60.242474916387955,
-          "x10_pct": 602.4247491638796
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 32.62709030100334,
-            "x10_pct": 326.2709030100334,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-02T12:00:00Z",
-              "kind": "high",
-              "price": 79311.0
-            },
-            "end": {
-              "time_utc": "2026-02-06T00:00:00Z",
-              "kind": "low",
-              "price": 59800.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 19.923745819397983,
-            "x10_pct": 199.23745819397982,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-06T00:00:00Z",
-              "kind": "low",
-              "price": 59800.0
-            },
-            "end": {
-              "time_utc": "2026-02-06T12:00:00Z",
-              "kind": "high",
-              "price": 71714.4
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 11.842839506172837,
-            "x10_pct": 118.42839506172837,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-01-28T12:00:00Z",
-              "kind": "high",
-              "price": 90592.7
-            },
-            "end": {
-              "time_utc": "2026-01-30T00:00:00Z",
-              "kind": "low",
-              "price": 81000.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -4406,79 +3072,21 @@
         "window_end_utc": "2026-02-22T00:00:00Z",
         "image": "images/trailing_30d/20260222.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-02-22",
-        "headline": "High→Low +52.50% (x10 +525.00%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2026-02-06T00:00:00Z",
-          "low": 59800.0,
-          "high_time_utc": "2026-01-23T12:00:00Z",
-          "high": 91195.0,
-          "change_pct": 52.5,
-          "x10_pct": 525.0
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 32.62709030100334,
-            "x10_pct": 326.2709030100334,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-02T12:00:00Z",
-              "kind": "high",
-              "price": 79311.0
-            },
-            "end": {
-              "time_utc": "2026-02-06T00:00:00Z",
-              "kind": "low",
-              "price": 59800.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 19.923745819397983,
-            "x10_pct": 199.23745819397982,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-06T00:00:00Z",
-              "kind": "low",
-              "price": 59800.0
-            },
-            "end": {
-              "time_utc": "2026-02-06T12:00:00Z",
-              "kind": "high",
-              "price": 71714.4
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 11.842839506172837,
-            "x10_pct": 118.42839506172837,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-01-28T12:00:00Z",
-              "kind": "high",
-              "price": 90592.7
-            },
-            "end": {
-              "time_utc": "2026-01-30T00:00:00Z",
-              "kind": "low",
-              "price": 81000.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -4562,79 +3170,21 @@
         "window_end_utc": "2026-03-01T00:00:00Z",
         "image": "images/trailing_30d/20260301.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-03-01",
-        "headline": "High→Low +41.63% (x10 +416.34%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2026-02-06T00:00:00Z",
-          "low": 59800.0,
-          "high_time_utc": "2026-01-30T00:00:00Z",
-          "high": 84697.2,
-          "change_pct": 41.63411371237458,
-          "x10_pct": 416.3411371237458
+          "low_time_utc": "",
+          "low": null,
+          "high_time_utc": "",
+          "high": null,
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
           "bearish": []
         },
-        "top_moves": [
-          {
-            "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 32.62709030100334,
-            "x10_pct": 326.2709030100334,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-02T12:00:00Z",
-              "kind": "high",
-              "price": 79311.0
-            },
-            "end": {
-              "time_utc": "2026-02-06T00:00:00Z",
-              "kind": "low",
-              "price": 59800.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 19.923745819397983,
-            "x10_pct": 199.23745819397982,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-06T00:00:00Z",
-              "kind": "low",
-              "price": 59800.0
-            },
-            "end": {
-              "time_utc": "2026-02-06T12:00:00Z",
-              "kind": "high",
-              "price": 71714.4
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "Low→High",
-            "change_pct": 12.17482857037549,
-            "x10_pct": 121.7482857037549,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-24T12:00:00Z",
-              "kind": "low",
-              "price": 62401.7
-            },
-            "end": {
-              "time_utc": "2026-02-25T12:00:00Z",
-              "kind": "high",
-              "price": 69999.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          }
-        ]
+        "top_moves": []
       }
     },
     {
@@ -4762,15 +3312,15 @@
         "window_end_utc": "2026-03-08T00:00:00Z",
         "image": "images/trailing_30d/20260308.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-03-08",
-        "headline": "Low→High +23.82% (x10 +238.24%)",
+        "headline": "Previous 30 days best",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2026-02-06T00:00:00Z",
-          "low": 59800.0,
+          "low_time_utc": "",
+          "low": null,
           "high_time_utc": "2026-03-04T12:00:00Z",
           "high": 74046.5,
-          "change_pct": 23.823578595317727,
-          "x10_pct": 238.23578595317727
+          "change_pct": null,
+          "x10_pct": null
         },
         "range_divergences": {
           "bullish": [],
@@ -4785,59 +3335,26 @@
           {
             "rank": 1,
             "direction": "Low→High",
-            "change_pct": 19.923745819397983,
-            "x10_pct": 199.23745819397982,
+            "change_pct": 17.572384664851263,
+            "x10_pct": 175.72384664851262,
             "same_as_range": false,
             "start": {
-              "time_utc": "2026-02-06T00:00:00Z",
-              "kind": "low",
-              "price": 59800.0
-            },
-            "end": {
-              "time_utc": "2026-02-06T12:00:00Z",
-              "kind": "high",
-              "price": 71714.4
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 12.17482857037549,
-            "x10_pct": 121.7482857037549,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-24T12:00:00Z",
-              "kind": "low",
-              "price": 62401.7
-            },
-            "end": {
-              "time_utc": "2026-02-25T12:00:00Z",
-              "kind": "high",
-              "price": 69999.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 11.145690264292348,
-            "x10_pct": 111.45690264292348,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-25T12:00:00Z",
-              "kind": "high",
-              "price": 69999.0
-            },
-            "end": {
               "time_utc": "2026-02-28T00:00:00Z",
               "kind": "low",
               "price": 62979.5
             },
+            "end": {
+              "time_utc": "2026-03-04T12:00:00Z",
+              "kind": "high",
+              "price": 74046.5
+            },
             "a_divergences": [],
-            "b_divergences": []
+            "b_divergences": [
+              "15m RSI14 (-0.14%)",
+              "15m RSI7 (-0.14%)",
+              "30m RSI14 (-0.67%)",
+              "30m RSI7 (-0.67%)"
+            ]
           }
         ]
       }
@@ -4967,18 +3484,26 @@
         "window_end_utc": "2026-03-24T00:00:00Z",
         "image": "images/trailing_30d/20260324.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-03-24",
-        "headline": "Low→High +21.79% (x10 +217.90%)",
+        "headline": "Low→High +15.91% (x10 +159.06%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2026-02-24T12:00:00Z",
-          "low": 62401.7,
+          "low_time_utc": "2026-03-08T12:00:00Z",
+          "low": 65569.2,
           "high_time_utc": "2026-03-17T00:00:00Z",
           "high": 75998.9,
-          "change_pct": 21.789790983258463,
-          "x10_pct": 217.89790983258462
+          "change_pct": 15.906401176161975,
+          "x10_pct": 159.06401176161975
         },
         "range_divergences": {
-          "bullish": [],
+          "bullish": [
+            "4h RSI7 (+0.81%)",
+            "30m RSI14 (+0.69%)",
+            "30m RSI7 (+0.69%)",
+            "15m RSI14 (+0.69%)",
+            "15m RSI7 (+0.69%)",
+            "1h RSI14 (+0.81%)",
+            "1h RSI7 (+0.81%)"
+          ],
           "bearish": [
             "1h RSI14 (-0.58%)"
           ]
@@ -4986,6 +3511,59 @@
         "top_moves": [
           {
             "rank": 1,
+            "direction": "Low→High",
+            "change_pct": 17.572384664851263,
+            "x10_pct": 175.72384664851262,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-02-28T00:00:00Z",
+              "kind": "low",
+              "price": 62979.5
+            },
+            "end": {
+              "time_utc": "2026-03-04T12:00:00Z",
+              "kind": "high",
+              "price": 74046.5
+            },
+            "a_divergences": [],
+            "b_divergences": [
+              "15m RSI14 (-0.14%)",
+              "15m RSI7 (-0.14%)",
+              "30m RSI14 (-0.67%)",
+              "30m RSI7 (-0.67%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 15.906401176161975,
+            "x10_pct": 159.06401176161975,
+            "same_as_range": true,
+            "start": {
+              "time_utc": "2026-03-08T12:00:00Z",
+              "kind": "low",
+              "price": 65569.2
+            },
+            "end": {
+              "time_utc": "2026-03-17T00:00:00Z",
+              "kind": "high",
+              "price": 75998.9
+            },
+            "a_divergences": [
+              "4h RSI7 (+0.81%)",
+              "30m RSI14 (+0.69%)",
+              "30m RSI7 (+0.69%)",
+              "15m RSI14 (+0.69%)",
+              "15m RSI7 (+0.69%)",
+              "1h RSI14 (+0.81%)",
+              "1h RSI7 (+0.81%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-0.58%)"
+            ]
+          },
+          {
+            "rank": 3,
             "direction": "High→Low",
             "change_pct": 12.928783636219448,
             "x10_pct": 129.28783636219447,
@@ -5015,44 +3593,6 @@
               "1h RSI14 (+0.81%)",
               "1h RSI7 (+0.81%)"
             ]
-          },
-          {
-            "rank": 2,
-            "direction": "Low→High",
-            "change_pct": 12.17482857037549,
-            "x10_pct": 121.7482857037549,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-24T12:00:00Z",
-              "kind": "low",
-              "price": 62401.7
-            },
-            "end": {
-              "time_utc": "2026-02-25T12:00:00Z",
-              "kind": "high",
-              "price": 69999.0
-            },
-            "a_divergences": [],
-            "b_divergences": []
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 11.145690264292348,
-            "x10_pct": 111.45690264292348,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-02-25T12:00:00Z",
-              "kind": "high",
-              "price": 69999.0
-            },
-            "end": {
-              "time_utc": "2026-02-28T00:00:00Z",
-              "kind": "low",
-              "price": 62979.5
-            },
-            "a_divergences": [],
-            "b_divergences": []
           }
         ]
       }
@@ -5146,18 +3686,26 @@
         "window_end_utc": "2026-03-29T00:00:00Z",
         "image": "images/trailing_30d/20260329.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-03-29",
-        "headline": "Low→High +20.67% (x10 +206.72%)",
+        "headline": "Low→High +15.91% (x10 +159.06%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2026-02-28T00:00:00Z",
-          "low": 62979.5,
+          "low_time_utc": "2026-03-08T12:00:00Z",
+          "low": 65569.2,
           "high_time_utc": "2026-03-17T00:00:00Z",
           "high": 75998.9,
-          "change_pct": 20.672441032399423,
-          "x10_pct": 206.72441032399422
+          "change_pct": 15.906401176161975,
+          "x10_pct": 159.06401176161975
         },
         "range_divergences": {
-          "bullish": [],
+          "bullish": [
+            "4h RSI7 (+0.81%)",
+            "30m RSI14 (+0.69%)",
+            "30m RSI7 (+0.69%)",
+            "15m RSI14 (+0.69%)",
+            "15m RSI7 (+0.69%)",
+            "1h RSI14 (+0.81%)",
+            "1h RSI7 (+0.81%)"
+          ],
           "bearish": [
             "1h RSI14 (-0.58%)"
           ]
@@ -5165,6 +3713,59 @@
         "top_moves": [
           {
             "rank": 1,
+            "direction": "Low→High",
+            "change_pct": 17.572384664851263,
+            "x10_pct": 175.72384664851262,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-02-28T00:00:00Z",
+              "kind": "low",
+              "price": 62979.5
+            },
+            "end": {
+              "time_utc": "2026-03-04T12:00:00Z",
+              "kind": "high",
+              "price": 74046.5
+            },
+            "a_divergences": [],
+            "b_divergences": [
+              "15m RSI14 (-0.14%)",
+              "15m RSI7 (-0.14%)",
+              "30m RSI14 (-0.67%)",
+              "30m RSI7 (-0.67%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 15.906401176161975,
+            "x10_pct": 159.06401176161975,
+            "same_as_range": true,
+            "start": {
+              "time_utc": "2026-03-08T12:00:00Z",
+              "kind": "low",
+              "price": 65569.2
+            },
+            "end": {
+              "time_utc": "2026-03-17T00:00:00Z",
+              "kind": "high",
+              "price": 75998.9
+            },
+            "a_divergences": [
+              "4h RSI7 (+0.81%)",
+              "30m RSI14 (+0.69%)",
+              "30m RSI7 (+0.69%)",
+              "15m RSI14 (+0.69%)",
+              "15m RSI7 (+0.69%)",
+              "1h RSI14 (+0.81%)",
+              "1h RSI7 (+0.81%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-0.58%)"
+            ]
+          },
+          {
+            "rank": 3,
             "direction": "High→Low",
             "change_pct": 12.928783636219448,
             "x10_pct": 129.28783636219447,
@@ -5193,56 +3794,6 @@
               "15m RSI7 (+0.69%)",
               "1h RSI14 (+0.81%)",
               "1h RSI7 (+0.81%)"
-            ]
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 10.543854545454536,
-            "x10_pct": 105.43854545454536,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-03-17T00:00:00Z",
-              "kind": "high",
-              "price": 75998.9
-            },
-            "end": {
-              "time_utc": "2026-03-19T12:00:00Z",
-              "kind": "low",
-              "price": 68750.0
-            },
-            "a_divergences": [
-              "1h RSI14 (-0.58%)"
-            ],
-            "b_divergences": [
-              "1h RSI14 (+0.85%)",
-              "1h RSI7 (+0.85%)",
-              "15m RSI14 (+0.79%)",
-              "15m RSI7 (+0.79%)"
-            ]
-          },
-          {
-            "rank": 3,
-            "direction": "High→Low",
-            "change_pct": 9.921833254454121,
-            "x10_pct": 99.21833254454121,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-03-25T00:00:00Z",
-              "kind": "high",
-              "price": 71999.9
-            },
-            "end": {
-              "time_utc": "2026-03-27T12:00:00Z",
-              "kind": "low",
-              "price": 65501.0
-            },
-            "a_divergences": [],
-            "b_divergences": [
-              "15m RSI14 (+0.35%)",
-              "15m RSI7 (+0.35%)",
-              "5m RSI14 (+0.11%)",
-              "5m RSI7 (+0.11%)"
             ]
           }
         ]
@@ -5382,59 +3933,9 @@
         "top_moves": [
           {
             "rank": 1,
-            "direction": "High→Low",
-            "change_pct": 10.543854545454536,
-            "x10_pct": 105.43854545454536,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-03-17T00:00:00Z",
-              "kind": "high",
-              "price": 75998.9
-            },
-            "end": {
-              "time_utc": "2026-03-19T12:00:00Z",
-              "kind": "low",
-              "price": 68750.0
-            },
-            "a_divergences": [
-              "1h RSI14 (-0.58%)"
-            ],
-            "b_divergences": [
-              "1h RSI14 (+0.85%)",
-              "1h RSI7 (+0.85%)",
-              "15m RSI14 (+0.79%)",
-              "15m RSI7 (+0.79%)"
-            ]
-          },
-          {
-            "rank": 2,
-            "direction": "High→Low",
-            "change_pct": 9.921833254454121,
-            "x10_pct": 99.21833254454121,
-            "same_as_range": false,
-            "start": {
-              "time_utc": "2026-03-25T00:00:00Z",
-              "kind": "high",
-              "price": 71999.9
-            },
-            "end": {
-              "time_utc": "2026-03-27T12:00:00Z",
-              "kind": "low",
-              "price": 65501.0
-            },
-            "a_divergences": [],
-            "b_divergences": [
-              "15m RSI14 (+0.35%)",
-              "15m RSI7 (+0.35%)",
-              "5m RSI14 (+0.11%)",
-              "5m RSI7 (+0.11%)"
-            ]
-          },
-          {
-            "rank": 3,
             "direction": "Low→High",
-            "change_pct": 9.423479316508375,
-            "x10_pct": 94.23479316508376,
+            "change_pct": 15.906401176161975,
+            "x10_pct": 159.06401176161975,
             "same_as_range": false,
             "start": {
               "time_utc": "2026-03-08T12:00:00Z",
@@ -5442,9 +3943,9 @@
               "price": 65569.2
             },
             "end": {
-              "time_utc": "2026-03-10T12:00:00Z",
+              "time_utc": "2026-03-17T00:00:00Z",
               "kind": "high",
-              "price": 71748.1
+              "price": 75998.9
             },
             "a_divergences": [
               "4h RSI7 (+0.81%)",
@@ -5456,8 +3957,62 @@
               "1h RSI7 (+0.81%)"
             ],
             "b_divergences": [
-              "15m RSI14 (-0.71%)",
-              "15m RSI7 (-0.71%)"
+              "1h RSI14 (-0.58%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "High→Low",
+            "change_pct": 12.925557206537883,
+            "x10_pct": 129.25557206537883,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-03-17T00:00:00Z",
+              "kind": "high",
+              "price": 75998.9
+            },
+            "end": {
+              "time_utc": "2026-03-22T12:00:00Z",
+              "kind": "low",
+              "price": 67300.0
+            },
+            "a_divergences": [
+              "1h RSI14 (-0.58%)"
+            ],
+            "b_divergences": [
+              "4h RSI14 (+0.93%)",
+              "4h RSI7 (+0.93%)",
+              "30m RSI14 (+0.58%)",
+              "1h RSI14 (+0.87%)",
+              "30m RSI7 (+0.58%)",
+              "1h RSI7 (+0.87%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "High→Low",
+            "change_pct": 10.908651194888334,
+            "x10_pct": 109.08651194888334,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-03-25T00:00:00Z",
+              "kind": "high",
+              "price": 71999.9
+            },
+            "end": {
+              "time_utc": "2026-03-29T12:00:00Z",
+              "kind": "low",
+              "price": 64918.2
+            },
+            "a_divergences": [],
+            "b_divergences": [
+              "12h RSI14 (+1.63%)",
+              "12h RSI7 (+1.63%)",
+              "4h RSI14 (+1.63%)",
+              "4h RSI7 (+1.63%)",
+              "1h RSI14 (+1.39%)",
+              "1h RSI7 (+1.39%)",
+              "30m RSI7 (+1.41%)"
             ]
           }
         ]
@@ -5608,8 +4163,8 @@
           {
             "rank": 1,
             "direction": "High→Low",
-            "change_pct": 10.543854545454536,
-            "x10_pct": 105.43854545454536,
+            "change_pct": 12.925557206537883,
+            "x10_pct": 129.25557206537883,
             "same_as_range": false,
             "start": {
               "time_utc": "2026-03-17T00:00:00Z",
@@ -5617,25 +4172,27 @@
               "price": 75998.9
             },
             "end": {
-              "time_utc": "2026-03-19T12:00:00Z",
+              "time_utc": "2026-03-22T12:00:00Z",
               "kind": "low",
-              "price": 68750.0
+              "price": 67300.0
             },
             "a_divergences": [
               "1h RSI14 (-0.58%)"
             ],
             "b_divergences": [
-              "1h RSI14 (+0.85%)",
-              "1h RSI7 (+0.85%)",
-              "15m RSI14 (+0.79%)",
-              "15m RSI7 (+0.79%)"
+              "4h RSI14 (+0.93%)",
+              "4h RSI7 (+0.93%)",
+              "30m RSI14 (+0.58%)",
+              "1h RSI14 (+0.87%)",
+              "30m RSI7 (+0.58%)",
+              "1h RSI7 (+0.87%)"
             ]
           },
           {
             "rank": 2,
             "direction": "High→Low",
-            "change_pct": 9.921833254454121,
-            "x10_pct": 99.21833254454121,
+            "change_pct": 10.908651194888334,
+            "x10_pct": 109.08651194888334,
             "same_as_range": false,
             "start": {
               "time_utc": "2026-03-25T00:00:00Z",
@@ -5643,41 +4200,46 @@
               "price": 71999.9
             },
             "end": {
-              "time_utc": "2026-03-27T12:00:00Z",
+              "time_utc": "2026-03-29T12:00:00Z",
               "kind": "low",
-              "price": 65501.0
+              "price": 64918.2
             },
             "a_divergences": [],
             "b_divergences": [
-              "15m RSI14 (+0.35%)",
-              "15m RSI7 (+0.35%)",
-              "5m RSI14 (+0.11%)",
-              "5m RSI7 (+0.11%)"
+              "12h RSI14 (+1.63%)",
+              "12h RSI7 (+1.63%)",
+              "4h RSI14 (+1.63%)",
+              "4h RSI7 (+1.63%)",
+              "1h RSI14 (+1.39%)",
+              "1h RSI7 (+1.39%)",
+              "30m RSI7 (+1.41%)"
             ]
           },
           {
             "rank": 3,
             "direction": "Low→High",
-            "change_pct": 8.174248462764739,
-            "x10_pct": 81.74248462764739,
+            "change_pct": 6.983506686478445,
+            "x10_pct": 69.83506686478445,
             "same_as_range": false,
             "start": {
-              "time_utc": "2026-03-14T00:00:00Z",
+              "time_utc": "2026-03-22T12:00:00Z",
               "kind": "low",
-              "price": 70256.0
+              "price": 67300.0
             },
             "end": {
-              "time_utc": "2026-03-17T00:00:00Z",
+              "time_utc": "2026-03-25T00:00:00Z",
               "kind": "high",
-              "price": 75998.9
+              "price": 71999.9
             },
             "a_divergences": [
-              "30m RSI14 (+0.52%)",
-              "30m RSI7 (+0.52%)"
+              "4h RSI14 (+0.93%)",
+              "4h RSI7 (+0.93%)",
+              "30m RSI14 (+0.58%)",
+              "1h RSI14 (+0.87%)",
+              "30m RSI7 (+0.58%)",
+              "1h RSI7 (+0.87%)"
             ],
-            "b_divergences": [
-              "1h RSI14 (-0.58%)"
-            ]
+            "b_divergences": []
           }
         ]
       }
@@ -5848,8 +4410,8 @@
           {
             "rank": 1,
             "direction": "Low→High",
-            "change_pct": 12.329142564799048,
-            "x10_pct": 123.29142564799048,
+            "change_pct": 19.22145194370554,
+            "x10_pct": 192.2145194370554,
             "same_as_range": false,
             "start": {
               "time_utc": "2026-04-02T12:00:00Z",
@@ -5857,37 +4419,59 @@
               "price": 65676.1
             },
             "end": {
-              "time_utc": "2026-04-11T12:00:00Z",
+              "time_utc": "2026-04-17T12:00:00Z",
               "kind": "high",
-              "price": 73773.4
+              "price": 78300.0
             },
             "a_divergences": [],
-            "b_divergences": []
+            "b_divergences": [
+              "30m RSI14 (-0.25%)",
+              "30m RSI7 (-0.25%)",
+              "15m RSI14 (-0.25%)",
+              "15m RSI7 (-0.25%)",
+              "5m RSI14 (-0.25%)",
+              "5m RSI7 (-0.25%)"
+            ]
           },
           {
             "rank": 2,
             "direction": "Low→High",
-            "change_pct": 10.811634910740429,
-            "x10_pct": 108.11634910740429,
+            "change_pct": 11.129719464874213,
+            "x10_pct": 111.29719464874213,
             "same_as_range": false,
             "start": {
-              "time_utc": "2026-04-05T00:00:00Z",
+              "time_utc": "2026-04-12T12:00:00Z",
               "kind": "low",
-              "price": 66575.5
+              "price": 70458.2
             },
             "end": {
-              "time_utc": "2026-04-11T12:00:00Z",
+              "time_utc": "2026-04-17T12:00:00Z",
               "kind": "high",
-              "price": 73773.4
+              "price": 78300.0
             },
-            "a_divergences": [],
-            "b_divergences": []
+            "a_divergences": [
+              "4h RSI7 (+0.36%)",
+              "30m RSI14 (+0.59%)",
+              "30m RSI7 (+0.59%)",
+              "1h RSI14 (+0.59%)",
+              "1h RSI7 (+0.59%)",
+              "1h RSI14 (+0.36%)",
+              "1h RSI7 (+0.36%)"
+            ],
+            "b_divergences": [
+              "30m RSI14 (-0.25%)",
+              "30m RSI7 (-0.25%)",
+              "15m RSI14 (-0.25%)",
+              "15m RSI7 (-0.25%)",
+              "5m RSI14 (-0.25%)",
+              "5m RSI7 (-0.25%)"
+            ]
           },
           {
             "rank": 3,
             "direction": "High→Low",
-            "change_pct": 9.921833254454121,
-            "x10_pct": 99.21833254454121,
+            "change_pct": 10.908651194888334,
+            "x10_pct": 109.08651194888334,
             "same_as_range": false,
             "start": {
               "time_utc": "2026-03-25T00:00:00Z",
@@ -5895,17 +4479,367 @@
               "price": 71999.9
             },
             "end": {
-              "time_utc": "2026-03-27T12:00:00Z",
+              "time_utc": "2026-03-29T12:00:00Z",
               "kind": "low",
-              "price": 65501.0
+              "price": 64918.2
             },
             "a_divergences": [],
             "b_divergences": [
-              "15m RSI14 (+0.35%)",
-              "15m RSI7 (+0.35%)",
-              "5m RSI14 (+0.11%)",
-              "5m RSI7 (+0.11%)"
+              "12h RSI14 (+1.63%)",
+              "12h RSI7 (+1.63%)",
+              "4h RSI14 (+1.63%)",
+              "4h RSI7 (+1.63%)",
+              "1h RSI14 (+1.39%)",
+              "1h RSI7 (+1.39%)",
+              "30m RSI7 (+1.41%)"
             ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "20260426",
+      "symbol": "BTCUSDT",
+      "week_end_utc": "2026-04-26T00:00:00Z",
+      "week_start_utc": "2026-04-19T00:00:00Z",
+      "published_at": "2026-04-26T00:00:10Z",
+      "year": 2026,
+      "month": 4,
+      "month_key": "2026-04",
+      "image": "images/20260426.webp",
+      "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-04-26",
+      "range": {
+        "low_time_utc": "",
+        "low": null,
+        "high_time_utc": "",
+        "high": null,
+        "change_pct": null,
+        "x10_pct": null
+      },
+      "range_divergences": {
+        "bullish": [],
+        "bearish": []
+      },
+      "top_moves": [
+        {
+          "rank": 1,
+          "direction": "Low→High",
+          "change_pct": 6.24,
+          "x10_pct": 62.4,
+          "same_as_range": false,
+          "start": {
+            "time_utc": "2026-04-21T16:00:00Z",
+            "kind": "low",
+            "price": 74777.9
+          },
+          "end": {
+            "time_utc": "2026-04-22T16:00:00Z",
+            "kind": "high",
+            "price": 79444.0
+          },
+          "a_divergences": [
+            "15m RSI7 (+0.06%)"
+          ],
+          "b_divergences": []
+        },
+        {
+          "rank": 2,
+          "direction": "High→Low",
+          "change_pct": 3.84,
+          "x10_pct": 38.42,
+          "same_as_range": false,
+          "start": {
+            "time_utc": "2026-04-22T16:00:00Z",
+            "kind": "high",
+            "price": 79444.0
+          },
+          "end": {
+            "time_utc": "2026-04-23T08:00:00Z",
+            "kind": "low",
+            "price": 76504.6
+          },
+          "a_divergences": [],
+          "b_divergences": [
+            "5m RSI7 (+0.86%)"
+          ]
+        }
+      ],
+      "raw_summary": "[div_daily] inserted rows: 45\n\n== 7일 최저/최고 피크 ==\n- 없음 (공유 다이버전스 조건으로 필터됨)\n- Note: (%) = stop-loss / % is low-based\n\n== (4H) 피크→다음 피크 (좌/우 5개 비교) TOP 3 ==\n[1] Low→High: +6.24% | (x10) 수익률: +62.40%\n  - A: 2026-04-21T16:00:00Z  low=74777.90\n  - B: 2026-04-22T16:00:00Z  high=79444.00\n  - A 공유 다이버전스: 15m RSI7 (+0.06%)\n[2] High→Low: +3.84% | (x10) 수익률: +38.42%\n  - A: 2026-04-22T16:00:00Z  high=79444.00\n  - B: 2026-04-23T08:00:00Z  low=76504.60\n  - B 공유 다이버전스: 5m RSI7 (+0.86%)",
+      "headline": "Low→High +6.24% (x10 +62.40%)",
+      "trailing_30d": {
+        "window_days": 30,
+        "interval": "12H",
+        "window_start_utc": "2026-03-27T00:00:00Z",
+        "window_end_utc": "2026-04-26T00:00:00Z",
+        "image": "images/trailing_30d/20260426.webp",
+        "image_alt": "BTCUSDT previous 30 days best chart ending 2026-04-26",
+        "headline": "Low→High +20.61% (x10 +206.13%)",
+        "divergence_status": "available",
+        "range": {
+          "low_time_utc": "2026-03-29T12:00:00Z",
+          "low": 64918.2,
+          "high_time_utc": "2026-04-17T12:00:00Z",
+          "high": 78300.0,
+          "change_pct": 20.613325692948976,
+          "x10_pct": 206.13325692948976
+        },
+        "range_divergences": {
+          "bullish": [
+            "12h RSI14 (+1.63%)",
+            "12h RSI7 (+1.63%)",
+            "4h RSI14 (+1.63%)",
+            "4h RSI7 (+1.63%)",
+            "1h RSI14 (+1.39%)",
+            "1h RSI7 (+1.39%)",
+            "30m RSI7 (+1.41%)"
+          ],
+          "bearish": [
+            "30m RSI14 (-0.25%)",
+            "30m RSI7 (-0.25%)",
+            "15m RSI14 (-0.25%)",
+            "15m RSI7 (-0.25%)",
+            "5m RSI14 (-0.25%)",
+            "5m RSI7 (-0.25%)"
+          ]
+        },
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "Low→High",
+            "change_pct": 19.22145194370554,
+            "x10_pct": 192.2145194370554,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-04-02T12:00:00Z",
+              "kind": "low",
+              "price": 65676.1
+            },
+            "end": {
+              "time_utc": "2026-04-17T12:00:00Z",
+              "kind": "high",
+              "price": 78300.0
+            },
+            "a_divergences": [],
+            "b_divergences": [
+              "30m RSI14 (-0.25%)",
+              "30m RSI7 (-0.25%)",
+              "15m RSI14 (-0.25%)",
+              "15m RSI7 (-0.25%)",
+              "5m RSI14 (-0.25%)",
+              "5m RSI7 (-0.25%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 11.129719464874213,
+            "x10_pct": 111.29719464874213,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-04-12T12:00:00Z",
+              "kind": "low",
+              "price": 70458.2
+            },
+            "end": {
+              "time_utc": "2026-04-17T12:00:00Z",
+              "kind": "high",
+              "price": 78300.0
+            },
+            "a_divergences": [
+              "4h RSI7 (+0.36%)",
+              "30m RSI14 (+0.59%)",
+              "30m RSI7 (+0.59%)",
+              "1h RSI14 (+0.59%)",
+              "1h RSI7 (+0.59%)",
+              "1h RSI14 (+0.36%)",
+              "1h RSI7 (+0.36%)"
+            ],
+            "b_divergences": [
+              "30m RSI14 (-0.25%)",
+              "30m RSI7 (-0.25%)",
+              "15m RSI14 (-0.25%)",
+              "15m RSI7 (-0.25%)",
+              "5m RSI14 (-0.25%)",
+              "5m RSI7 (-0.25%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 6.884275589433332,
+            "x10_pct": 68.84275589433332,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-04-16T12:00:00Z",
+              "kind": "low",
+              "price": 73256.8
+            },
+            "end": {
+              "time_utc": "2026-04-17T12:00:00Z",
+              "kind": "high",
+              "price": 78300.0
+            },
+            "a_divergences": [],
+            "b_divergences": [
+              "30m RSI14 (-0.25%)",
+              "30m RSI7 (-0.25%)",
+              "15m RSI14 (-0.25%)",
+              "15m RSI7 (-0.25%)",
+              "5m RSI14 (-0.25%)",
+              "5m RSI7 (-0.25%)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "20260503",
+      "symbol": "BTCUSDT",
+      "week_end_utc": "2026-05-03T00:00:00Z",
+      "week_start_utc": "2026-04-26T00:00:00Z",
+      "published_at": "2026-05-03T00:00:10Z",
+      "year": 2026,
+      "month": 5,
+      "month_key": "2026-05",
+      "image": "images/20260503.webp",
+      "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-05-03",
+      "range": {
+        "low_time_utc": "",
+        "low": null,
+        "high_time_utc": "",
+        "high": null,
+        "change_pct": null,
+        "x10_pct": null
+      },
+      "range_divergences": {
+        "bullish": [],
+        "bearish": []
+      },
+      "top_moves": [],
+      "raw_summary": "[div_daily] inserted rows: 32\n\n== 7일 최저/최고 피크 ==\n- 없음 (공유 다이버전스 조건으로 필터됨)\n- Note: (%) = stop-loss / % is low-based\n\n== (4H) 피크→다음 피크 (좌/우 5개 비교) TOP 3 ==\n- 없음 (공유 다이버전스 조건으로 필터됨)",
+      "headline": "Weekly performance",
+      "trailing_30d": {
+        "window_days": 30,
+        "interval": "12H",
+        "window_start_utc": "2026-04-03T00:00:00Z",
+        "window_end_utc": "2026-05-03T00:00:00Z",
+        "image": "images/trailing_30d/20260503.webp",
+        "image_alt": "BTCUSDT previous 30 days best chart ending 2026-05-03",
+        "headline": "Low→High +11.13% (x10 +111.30%)",
+        "divergence_status": "available",
+        "range": {
+          "low_time_utc": "2026-04-12T12:00:00Z",
+          "low": 70458.2,
+          "high_time_utc": "2026-04-17T12:00:00Z",
+          "high": 78300.0,
+          "change_pct": 11.129719464874213,
+          "x10_pct": 111.29719464874213
+        },
+        "range_divergences": {
+          "bullish": [
+            "4h RSI7 (+0.36%)",
+            "30m RSI14 (+0.59%)",
+            "30m RSI7 (+0.59%)",
+            "1h RSI14 (+0.59%)",
+            "1h RSI7 (+0.59%)",
+            "1h RSI14 (+0.36%)",
+            "1h RSI7 (+0.36%)"
+          ],
+          "bearish": [
+            "30m RSI14 (-0.25%)",
+            "30m RSI7 (-0.25%)",
+            "15m RSI14 (-0.25%)",
+            "15m RSI7 (-0.25%)",
+            "5m RSI14 (-0.25%)",
+            "5m RSI7 (-0.25%)"
+          ]
+        },
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "Low→High",
+            "change_pct": 11.129719464874213,
+            "x10_pct": 111.29719464874213,
+            "same_as_range": true,
+            "start": {
+              "time_utc": "2026-04-12T12:00:00Z",
+              "kind": "low",
+              "price": 70458.2
+            },
+            "end": {
+              "time_utc": "2026-04-17T12:00:00Z",
+              "kind": "high",
+              "price": 78300.0
+            },
+            "a_divergences": [
+              "4h RSI7 (+0.36%)",
+              "30m RSI14 (+0.59%)",
+              "30m RSI7 (+0.59%)",
+              "1h RSI14 (+0.59%)",
+              "1h RSI7 (+0.59%)",
+              "1h RSI14 (+0.36%)",
+              "1h RSI7 (+0.36%)"
+            ],
+            "b_divergences": [
+              "30m RSI14 (-0.25%)",
+              "30m RSI7 (-0.25%)",
+              "15m RSI14 (-0.25%)",
+              "15m RSI7 (-0.25%)",
+              "5m RSI14 (-0.25%)",
+              "5m RSI7 (-0.25%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 6.884275589433332,
+            "x10_pct": 68.84275589433332,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-04-16T12:00:00Z",
+              "kind": "low",
+              "price": 73256.8
+            },
+            "end": {
+              "time_utc": "2026-04-17T12:00:00Z",
+              "kind": "high",
+              "price": 78300.0
+            },
+            "a_divergences": [],
+            "b_divergences": [
+              "30m RSI14 (-0.25%)",
+              "30m RSI7 (-0.25%)",
+              "15m RSI14 (-0.25%)",
+              "15m RSI7 (-0.25%)",
+              "5m RSI14 (-0.25%)",
+              "5m RSI7 (-0.25%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "High→Low",
+            "change_pct": 6.286226228128521,
+            "x10_pct": 62.862262281285204,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-04-17T12:00:00Z",
+              "kind": "high",
+              "price": 78300.0
+            },
+            "end": {
+              "time_utc": "2026-04-20T00:00:00Z",
+              "kind": "low",
+              "price": 73669.0
+            },
+            "a_divergences": [
+              "30m RSI14 (-0.25%)",
+              "30m RSI7 (-0.25%)",
+              "15m RSI14 (-0.25%)",
+              "15m RSI7 (-0.25%)",
+              "5m RSI14 (-0.25%)",
+              "5m RSI7 (-0.25%)"
+            ],
+            "b_divergences": []
           }
         ]
       }
