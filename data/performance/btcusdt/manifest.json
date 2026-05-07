@@ -3312,18 +3312,23 @@
         "window_end_utc": "2026-03-08T00:00:00Z",
         "image": "images/trailing_30d/20260308.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-03-08",
-        "headline": "Previous 30 days best",
+        "headline": "Low→High +12.06% (x10 +120.56%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
+          "low_time_utc": "2026-03-03T12:00:00Z",
+          "low": 66080.0,
           "high_time_utc": "2026-03-04T12:00:00Z",
           "high": 74046.5,
-          "change_pct": null,
-          "x10_pct": null
+          "change_pct": 12.055841404358352,
+          "x10_pct": 120.55841404358353
         },
         "range_divergences": {
-          "bullish": [],
+          "bullish": [
+            "1h RSI14 (+0.80%)",
+            "1h RSI7 (+0.80%)",
+            "30m RSI14 (+0.80%)",
+            "30m RSI7 (+0.80%)"
+          ],
           "bearish": [
             "15m RSI14 (-0.14%)",
             "15m RSI7 (-0.14%)",
@@ -3686,25 +3691,22 @@
         "window_end_utc": "2026-03-29T00:00:00Z",
         "image": "images/trailing_30d/20260329.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-03-29",
-        "headline": "Low→High +15.91% (x10 +159.06%)",
+        "headline": "High→Low +16.03% (x10 +160.27%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2026-03-08T12:00:00Z",
-          "low": 65569.2,
+          "low_time_utc": "2026-03-27T12:00:00Z",
+          "low": 65501.0,
           "high_time_utc": "2026-03-17T00:00:00Z",
           "high": 75998.9,
-          "change_pct": 15.906401176161975,
-          "x10_pct": 159.06401176161975
+          "change_pct": 16.027083555976233,
+          "x10_pct": 160.27083555976233
         },
         "range_divergences": {
           "bullish": [
-            "4h RSI7 (+0.81%)",
-            "30m RSI14 (+0.69%)",
-            "30m RSI7 (+0.69%)",
-            "15m RSI14 (+0.69%)",
-            "15m RSI7 (+0.69%)",
-            "1h RSI14 (+0.81%)",
-            "1h RSI7 (+0.81%)"
+            "15m RSI14 (+0.35%)",
+            "15m RSI7 (+0.35%)",
+            "5m RSI14 (+0.11%)",
+            "5m RSI7 (+0.11%)"
           ],
           "bearish": [
             "1h RSI14 (-0.58%)"
@@ -3740,7 +3742,7 @@
             "direction": "Low→High",
             "change_pct": 15.906401176161975,
             "x10_pct": 159.06401176161975,
-            "same_as_range": true,
+            "same_as_range": false,
             "start": {
               "time_utc": "2026-03-08T12:00:00Z",
               "kind": "low",
@@ -4573,15 +4575,15 @@
         "window_end_utc": "2026-04-26T00:00:00Z",
         "image": "images/trailing_30d/20260426.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-04-26",
-        "headline": "Low→High +20.61% (x10 +206.13%)",
+        "headline": "Low→High +20.99% (x10 +209.92%)",
         "divergence_status": "available",
         "range": {
           "low_time_utc": "2026-03-29T12:00:00Z",
           "low": 64918.2,
-          "high_time_utc": "2026-04-17T12:00:00Z",
-          "high": 78300.0,
-          "change_pct": 20.613325692948976,
-          "x10_pct": 206.13325692948976
+          "high_time_utc": "2026-04-24T00:00:00Z",
+          "high": 78546.0,
+          "change_pct": 20.99226411083487,
+          "x10_pct": 209.9226411083487
         },
         "range_divergences": {
           "bullish": [
@@ -4594,12 +4596,8 @@
             "30m RSI7 (+1.41%)"
           ],
           "bearish": [
-            "30m RSI14 (-0.25%)",
-            "30m RSI7 (-0.25%)",
-            "15m RSI14 (-0.25%)",
-            "15m RSI7 (-0.25%)",
-            "5m RSI14 (-0.25%)",
-            "5m RSI7 (-0.25%)"
+            "5m RSI14 (-0.22%)",
+            "5m RSI7 (-0.22%)"
           ]
         },
         "top_moves": [
@@ -4725,33 +4723,31 @@
         "window_end_utc": "2026-05-03T00:00:00Z",
         "image": "images/trailing_30d/20260503.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-05-03",
-        "headline": "Low→High +11.13% (x10 +111.30%)",
+        "headline": "Low→High +16.00% (x10 +160.02%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "2026-04-12T12:00:00Z",
-          "low": 70458.2,
-          "high_time_utc": "2026-04-17T12:00:00Z",
-          "high": 78300.0,
-          "change_pct": 11.129719464874213,
-          "x10_pct": 111.29719464874213
+          "low_time_utc": "2026-04-07T12:00:00Z",
+          "low": 67711.0,
+          "high_time_utc": "2026-04-24T00:00:00Z",
+          "high": 78546.0,
+          "change_pct": 16.00183131248985,
+          "x10_pct": 160.0183131248985
         },
         "range_divergences": {
           "bullish": [
-            "4h RSI7 (+0.36%)",
-            "30m RSI14 (+0.59%)",
-            "30m RSI7 (+0.59%)",
-            "1h RSI14 (+0.59%)",
-            "1h RSI7 (+0.59%)",
-            "1h RSI14 (+0.36%)",
-            "1h RSI7 (+0.36%)"
+            "1h RSI7 (+0.63%)",
+            "30m RSI14 (+0.66%)",
+            "30m RSI7 (+0.66%)",
+            "15m RSI14 (+0.23%)",
+            "15m RSI7 (+0.23%)",
+            "5m RSI14 (+0.22%)",
+            "5m RSI7 (+0.22%)",
+            "30m RSI14 (+0.63%)",
+            "30m RSI7 (+0.63%)"
           ],
           "bearish": [
-            "30m RSI14 (-0.25%)",
-            "30m RSI7 (-0.25%)",
-            "15m RSI14 (-0.25%)",
-            "15m RSI7 (-0.25%)",
-            "5m RSI14 (-0.25%)",
-            "5m RSI7 (-0.25%)"
+            "5m RSI14 (-0.22%)",
+            "5m RSI7 (-0.22%)"
           ]
         },
         "top_moves": [
@@ -4760,7 +4756,7 @@
             "direction": "Low→High",
             "change_pct": 11.129719464874213,
             "x10_pct": 111.29719464874213,
-            "same_as_range": true,
+            "same_as_range": false,
             "start": {
               "time_utc": "2026-04-12T12:00:00Z",
               "kind": "low",
