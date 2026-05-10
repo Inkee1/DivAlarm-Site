@@ -68,6 +68,28 @@
     }).format(date);
   }
 
+  function divergenceLabelForKind(kind) {
+    const normalized = String(kind || "").toLowerCase();
+    if (normalized === "low") {
+      return "Bullish divergence";
+    }
+    if (normalized === "high") {
+      return "Bearish divergence";
+    }
+    return "Divergence";
+  }
+
+  function emptyDivergenceLabelForKind(kind) {
+    const normalized = String(kind || "").toLowerCase();
+    if (normalized === "low") {
+      return "No bullish divergence";
+    }
+    if (normalized === "high") {
+      return "No bearish divergence";
+    }
+    return "No divergence";
+  }
+
   function monthLabel(year, month) {
     return new Intl.DateTimeFormat("en-US", {
       year: "numeric",
@@ -244,16 +266,18 @@
 
     const start = move.start || {};
     const end = move.end || {};
+    const startDivergenceLabel = divergenceLabelForKind(start.kind);
+    const endDivergenceLabel = divergenceLabelForKind(end.kind);
     const divergenceMarkup = showDivergences
       ? `
           <div class="performance-div-grid">
             <div>
-              <span class="performance-mini-label">A divergence</span>
-              <div class="performance-pill-list">${createListHtml(move.a_divergences, "No A divergence")}</div>
+              <span class="performance-mini-label">${escapeHtml(startDivergenceLabel)}</span>
+              <div class="performance-pill-list">${createListHtml(move.a_divergences, emptyDivergenceLabelForKind(start.kind))}</div>
             </div>
             <div>
-              <span class="performance-mini-label">B divergence</span>
-              <div class="performance-pill-list">${createListHtml(move.b_divergences, "No B divergence")}</div>
+              <span class="performance-mini-label">${escapeHtml(endDivergenceLabel)}</span>
+              <div class="performance-pill-list">${createListHtml(move.b_divergences, emptyDivergenceLabelForKind(end.kind))}</div>
             </div>
           </div>
         `
