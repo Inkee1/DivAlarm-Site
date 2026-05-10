@@ -2143,7 +2143,7 @@ code, pre, kbd, samp {
    ============================================ */
 
 :root {
-  --referral-crypto-reward-section-display: none;
+  --referral-crypto-reward-section-display: block;
 }
 
 .feature-section-dark[style*="padding-bottom: 8rem"],
