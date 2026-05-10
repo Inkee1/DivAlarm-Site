@@ -92,21 +92,158 @@
         "window_end_utc": "2025-09-14T00:00:00Z",
         "image": "images/trailing_30d/20250914.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-09-14",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +11.17% (x10 +111.67%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-09-01T00:00:00Z",
+          "low": 107211.5,
+          "high_time_utc": "2025-08-15T00:00:00Z",
+          "high": 119184.0,
+          "change_pct": 11.167178894055208,
+          "x10_pct": 111.67178894055209
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "1h RSI14 (+0.58%)",
+            "1h RSI7 (+0.58%)",
+            "30m RSI14 (+0.41%)",
+            "30m RSI7 (+0.41%)",
+            "15m RSI14 (+0.41%)",
+            "15m RSI7 (+0.41%)",
+            "5m RSI14 (+0.15%)",
+            "5m RSI7 (+0.15%)",
+            "4h RSI14 (+1.42%)",
+            "4h RSI7 (+1.42%)"
+          ],
+          "bearish": [
+            "30m RSI14 (-0.15%)",
+            "30m RSI7 (-0.15%)",
+            "15m RSI14 (-0.15%)",
+            "15m RSI7 (-0.15%)",
+            "5m RSI14 (-0.09%)",
+            "5m RSI7 (-0.09%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 8.140866269895733,
+            "x10_pct": 81.40866269895733,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-08-22T12:00:00Z",
+              "kind": "high",
+              "price": 117397.4
+            },
+            "end": {
+              "time_utc": "2025-08-26T00:00:00Z",
+              "kind": "low",
+              "price": 108559.7
+            },
+            "a_divergences": [
+              "1h RSI7 (-0.59%)",
+              "30m RSI14 (-0.41%)",
+              "30m RSI7 (-0.41%)",
+              "15m RSI14 (-0.04%)",
+              "15m RSI7 (-0.04%)",
+              "5m RSI14 (-0.04%)",
+              "5m RSI7 (-0.04%)"
+            ],
+            "b_divergences": [
+              "4h RSI14 (+1.20%)",
+              "4h RSI7 (+1.20%)",
+              "12h RSI14 (+1.17%)",
+              "12h RSI7 (+1.17%)",
+              "30m RSI14 (+1.11%)",
+              "30m RSI7 (+1.11%)",
+              "15m RSI14 (+0.71%)",
+              "15m RSI7 (+0.71%)",
+              "5m RSI14 (+0.71%)",
+              "5m RSI7 (+0.71%)",
+              "1h RSI14 (+1.03%)",
+              "1h RSI7 (+1.03%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "High→Low",
+            "change_pct": 5.7992845916716025,
+            "x10_pct": 57.99284591671602,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-08-28T12:00:00Z",
+              "kind": "high",
+              "price": 113429.0
+            },
+            "end": {
+              "time_utc": "2025-09-01T00:00:00Z",
+              "kind": "low",
+              "price": 107211.5
+            },
+            "a_divergences": [
+              "30m RSI14 (-0.27%)",
+              "30m RSI7 (-0.27%)",
+              "5m RSI14 (-0.26%)",
+              "5m RSI7 (-0.26%)",
+              "1h RSI14 (-0.33%)",
+              "1h RSI7 (-0.33%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.58%)",
+              "1h RSI7 (+0.58%)",
+              "30m RSI14 (+0.41%)",
+              "30m RSI7 (+0.41%)",
+              "15m RSI14 (+0.41%)",
+              "15m RSI7 (+0.41%)",
+              "5m RSI14 (+0.15%)",
+              "5m RSI7 (+0.15%)",
+              "4h RSI14 (+1.42%)",
+              "4h RSI7 (+1.42%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 5.720281872746863,
+            "x10_pct": 57.20281872746863,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-09-01T00:00:00Z",
+              "kind": "low",
+              "price": 107211.5
+            },
+            "end": {
+              "time_utc": "2025-09-05T12:00:00Z",
+              "kind": "high",
+              "price": 113344.3
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.58%)",
+              "1h RSI7 (+0.58%)",
+              "30m RSI14 (+0.41%)",
+              "30m RSI7 (+0.41%)",
+              "15m RSI14 (+0.41%)",
+              "15m RSI7 (+0.41%)",
+              "5m RSI14 (+0.15%)",
+              "5m RSI7 (+0.15%)",
+              "4h RSI14 (+1.42%)",
+              "4h RSI7 (+1.42%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-0.19%)",
+              "1h RSI7 (-0.19%)",
+              "30m RSI14 (-0.19%)",
+              "30m RSI7 (-0.19%)",
+              "15m RSI14 (-0.19%)",
+              "15m RSI7 (-0.19%)",
+              "5m RSI14 (-0.19%)",
+              "5m RSI7 (-0.19%)",
+              "4h RSI14 (-1.56%)",
+              "4h RSI7 (-1.56%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -218,21 +355,162 @@
         "window_end_utc": "2025-09-21T00:00:00Z",
         "image": "images/trailing_30d/20250921.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-09-21",
-        "headline": "Previous 30 days best",
+        "headline": "Low→High +9.95% (x10 +99.46%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-09-01T00:00:00Z",
+          "low": 107211.5,
+          "high_time_utc": "2025-09-18T12:00:00Z",
+          "high": 117875.2,
+          "change_pct": 9.946414330552225,
+          "x10_pct": 99.46414330552224
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "1h RSI14 (+0.58%)",
+            "1h RSI7 (+0.58%)",
+            "30m RSI14 (+0.41%)",
+            "30m RSI7 (+0.41%)",
+            "15m RSI14 (+0.41%)",
+            "15m RSI7 (+0.41%)",
+            "5m RSI14 (+0.15%)",
+            "5m RSI7 (+0.15%)",
+            "4h RSI14 (+1.42%)",
+            "4h RSI7 (+1.42%)"
+          ],
+          "bearish": [
+            "4h RSI14 (-0.42%)",
+            "4h RSI7 (-0.42%)",
+            "12h RSI14 (-0.68%)",
+            "12h RSI7 (-0.68%)",
+            "1h RSI14 (-0.14%)",
+            "1h RSI7 (-0.14%)",
+            "5m RSI14 (-0.12%)",
+            "5m RSI7 (-0.12%)",
+            "30m RSI14 (-0.14%)",
+            "30m RSI7 (-0.14%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 8.140866269895733,
+            "x10_pct": 81.40866269895733,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-08-22T12:00:00Z",
+              "kind": "high",
+              "price": 117397.4
+            },
+            "end": {
+              "time_utc": "2025-08-26T00:00:00Z",
+              "kind": "low",
+              "price": 108559.7
+            },
+            "a_divergences": [
+              "1h RSI7 (-0.59%)",
+              "30m RSI14 (-0.41%)",
+              "30m RSI7 (-0.41%)",
+              "15m RSI14 (-0.04%)",
+              "15m RSI7 (-0.04%)",
+              "5m RSI14 (-0.04%)",
+              "5m RSI7 (-0.04%)"
+            ],
+            "b_divergences": [
+              "4h RSI14 (+1.20%)",
+              "4h RSI7 (+1.20%)",
+              "12h RSI14 (+1.17%)",
+              "12h RSI7 (+1.17%)",
+              "30m RSI14 (+1.11%)",
+              "30m RSI7 (+1.11%)",
+              "15m RSI14 (+0.71%)",
+              "15m RSI7 (+0.71%)",
+              "5m RSI14 (+0.71%)",
+              "5m RSI7 (+0.71%)",
+              "1h RSI14 (+1.03%)",
+              "1h RSI7 (+1.03%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "High→Low",
+            "change_pct": 5.7992845916716025,
+            "x10_pct": 57.99284591671602,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-08-28T12:00:00Z",
+              "kind": "high",
+              "price": 113429.0
+            },
+            "end": {
+              "time_utc": "2025-09-01T00:00:00Z",
+              "kind": "low",
+              "price": 107211.5
+            },
+            "a_divergences": [
+              "30m RSI14 (-0.27%)",
+              "30m RSI7 (-0.27%)",
+              "5m RSI14 (-0.26%)",
+              "5m RSI7 (-0.26%)",
+              "1h RSI14 (-0.33%)",
+              "1h RSI7 (-0.33%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.58%)",
+              "1h RSI7 (+0.58%)",
+              "30m RSI14 (+0.41%)",
+              "30m RSI7 (+0.41%)",
+              "15m RSI14 (+0.41%)",
+              "15m RSI7 (+0.41%)",
+              "5m RSI14 (+0.15%)",
+              "5m RSI7 (+0.15%)",
+              "4h RSI14 (+1.42%)",
+              "4h RSI7 (+1.42%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 5.720281872746863,
+            "x10_pct": 57.20281872746863,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-09-01T00:00:00Z",
+              "kind": "low",
+              "price": 107211.5
+            },
+            "end": {
+              "time_utc": "2025-09-05T12:00:00Z",
+              "kind": "high",
+              "price": 113344.3
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.58%)",
+              "1h RSI7 (+0.58%)",
+              "30m RSI14 (+0.41%)",
+              "30m RSI7 (+0.41%)",
+              "15m RSI14 (+0.41%)",
+              "15m RSI7 (+0.41%)",
+              "5m RSI14 (+0.15%)",
+              "5m RSI7 (+0.15%)",
+              "4h RSI14 (+1.42%)",
+              "4h RSI7 (+1.42%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-0.19%)",
+              "1h RSI7 (-0.19%)",
+              "30m RSI14 (-0.19%)",
+              "30m RSI7 (-0.19%)",
+              "15m RSI14 (-0.19%)",
+              "15m RSI7 (-0.19%)",
+              "5m RSI14 (-0.19%)",
+              "5m RSI7 (-0.19%)",
+              "4h RSI14 (-1.56%)",
+              "4h RSI7 (-1.56%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -357,21 +635,162 @@
         "window_end_utc": "2025-09-28T00:00:00Z",
         "image": "images/trailing_30d/20250928.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-09-28",
-        "headline": "Previous 30 days best",
+        "headline": "Low→High +9.95% (x10 +99.46%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-09-01T00:00:00Z",
+          "low": 107211.5,
+          "high_time_utc": "2025-09-18T12:00:00Z",
+          "high": 117875.2,
+          "change_pct": 9.946414330552225,
+          "x10_pct": 99.46414330552224
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "1h RSI14 (+0.58%)",
+            "1h RSI7 (+0.58%)",
+            "30m RSI14 (+0.41%)",
+            "30m RSI7 (+0.41%)",
+            "15m RSI14 (+0.41%)",
+            "15m RSI7 (+0.41%)",
+            "5m RSI14 (+0.15%)",
+            "5m RSI7 (+0.15%)",
+            "4h RSI14 (+1.42%)",
+            "4h RSI7 (+1.42%)"
+          ],
+          "bearish": [
+            "4h RSI14 (-0.42%)",
+            "4h RSI7 (-0.42%)",
+            "12h RSI14 (-0.68%)",
+            "12h RSI7 (-0.68%)",
+            "1h RSI14 (-0.14%)",
+            "1h RSI7 (-0.14%)",
+            "5m RSI14 (-0.12%)",
+            "5m RSI7 (-0.12%)",
+            "30m RSI14 (-0.14%)",
+            "30m RSI7 (-0.14%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 8.574691892489358,
+            "x10_pct": 85.74691892489358,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-09-18T12:00:00Z",
+              "kind": "high",
+              "price": 117875.2
+            },
+            "end": {
+              "time_utc": "2025-09-26T00:00:00Z",
+              "kind": "low",
+              "price": 108566.0
+            },
+            "a_divergences": [
+              "4h RSI14 (-0.42%)",
+              "4h RSI7 (-0.42%)",
+              "12h RSI14 (-0.68%)",
+              "12h RSI7 (-0.68%)",
+              "1h RSI14 (-0.14%)",
+              "1h RSI7 (-0.14%)",
+              "5m RSI14 (-0.12%)",
+              "5m RSI7 (-0.12%)",
+              "30m RSI14 (-0.14%)",
+              "30m RSI7 (-0.14%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.44%)",
+              "1h RSI7 (+0.44%)",
+              "30m RSI14 (+0.15%)",
+              "30m RSI7 (+0.15%)",
+              "15m RSI14 (+0.15%)",
+              "15m RSI7 (+0.15%)",
+              "5m RSI7 (+0.08%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 5.720281872746863,
+            "x10_pct": 57.20281872746863,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-09-01T00:00:00Z",
+              "kind": "low",
+              "price": 107211.5
+            },
+            "end": {
+              "time_utc": "2025-09-05T12:00:00Z",
+              "kind": "high",
+              "price": 113344.3
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.58%)",
+              "1h RSI7 (+0.58%)",
+              "30m RSI14 (+0.41%)",
+              "30m RSI7 (+0.41%)",
+              "15m RSI14 (+0.41%)",
+              "15m RSI7 (+0.41%)",
+              "5m RSI14 (+0.15%)",
+              "5m RSI7 (+0.15%)",
+              "4h RSI14 (+1.42%)",
+              "4h RSI7 (+1.42%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-0.19%)",
+              "1h RSI7 (-0.19%)",
+              "30m RSI14 (-0.19%)",
+              "30m RSI7 (-0.19%)",
+              "15m RSI14 (-0.19%)",
+              "15m RSI7 (-0.19%)",
+              "5m RSI14 (-0.19%)",
+              "5m RSI7 (-0.19%)",
+              "4h RSI14 (-1.56%)",
+              "4h RSI7 (-1.56%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 3.093183835715876,
+            "x10_pct": 30.93183835715876,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-09-15T12:00:00Z",
+              "kind": "low",
+              "price": 114338.5
+            },
+            "end": {
+              "time_utc": "2025-09-18T12:00:00Z",
+              "kind": "high",
+              "price": 117875.2
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.18%)",
+              "1h RSI7 (+0.18%)",
+              "15m RSI14 (+0.15%)",
+              "15m RSI7 (+0.15%)",
+              "30m RSI14 (+0.18%)",
+              "30m RSI7 (+0.18%)",
+              "5m RSI14 (+0.15%)",
+              "5m RSI7 (+0.15%)"
+            ],
+            "b_divergences": [
+              "4h RSI14 (-0.42%)",
+              "4h RSI7 (-0.42%)",
+              "12h RSI14 (-0.68%)",
+              "12h RSI7 (-0.68%)",
+              "1h RSI14 (-0.14%)",
+              "1h RSI7 (-0.14%)",
+              "5m RSI14 (-0.12%)",
+              "5m RSI7 (-0.12%)",
+              "30m RSI14 (-0.14%)",
+              "30m RSI7 (-0.14%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -445,21 +864,155 @@
         "window_end_utc": "2025-10-05T00:00:00Z",
         "image": "images/trailing_30d/20251005.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-10-05",
-        "headline": "Previous 30 days best",
+        "headline": "Low→High +15.95% (x10 +159.45%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-09-26T00:00:00Z",
+          "low": 108566.0,
+          "high_time_utc": "2025-10-05T00:00:00Z",
+          "high": 125877.3,
+          "change_pct": 15.945415691837225,
+          "x10_pct": 159.45415691837223
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "1h RSI14 (+0.44%)",
+            "1h RSI7 (+0.44%)",
+            "30m RSI14 (+0.15%)",
+            "30m RSI7 (+0.15%)",
+            "15m RSI14 (+0.15%)",
+            "15m RSI7 (+0.15%)",
+            "5m RSI7 (+0.08%)"
+          ],
+          "bearish": [
+            "1h RSI14 (-0.47%)",
+            "1h RSI7 (-0.47%)",
+            "4h RSI14 (-0.93%)",
+            "4h RSI7 (-0.93%)",
+            "5m RSI14 (-0.48%)",
+            "5m RSI7 (-0.48%)",
+            "30m RSI14 (-0.42%)",
+            "30m RSI7 (-0.42%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 8.574691892489358,
+            "x10_pct": 85.74691892489358,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-09-18T12:00:00Z",
+              "kind": "high",
+              "price": 117875.2
+            },
+            "end": {
+              "time_utc": "2025-09-26T00:00:00Z",
+              "kind": "low",
+              "price": 108566.0
+            },
+            "a_divergences": [
+              "4h RSI14 (-0.42%)",
+              "4h RSI7 (-0.42%)",
+              "12h RSI14 (-0.68%)",
+              "12h RSI7 (-0.68%)",
+              "1h RSI14 (-0.14%)",
+              "1h RSI7 (-0.14%)",
+              "5m RSI14 (-0.12%)",
+              "5m RSI7 (-0.12%)",
+              "30m RSI14 (-0.14%)",
+              "30m RSI7 (-0.14%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.44%)",
+              "1h RSI7 (+0.44%)",
+              "30m RSI14 (+0.15%)",
+              "30m RSI7 (+0.15%)",
+              "15m RSI14 (+0.15%)",
+              "15m RSI7 (+0.15%)",
+              "5m RSI7 (+0.08%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 3.093183835715876,
+            "x10_pct": 30.93183835715876,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-09-15T12:00:00Z",
+              "kind": "low",
+              "price": 114338.5
+            },
+            "end": {
+              "time_utc": "2025-09-18T12:00:00Z",
+              "kind": "high",
+              "price": 117875.2
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.18%)",
+              "1h RSI7 (+0.18%)",
+              "15m RSI14 (+0.15%)",
+              "15m RSI7 (+0.15%)",
+              "30m RSI14 (+0.18%)",
+              "30m RSI7 (+0.18%)",
+              "5m RSI14 (+0.15%)",
+              "5m RSI7 (+0.15%)"
+            ],
+            "b_divergences": [
+              "4h RSI14 (-0.42%)",
+              "4h RSI7 (-0.42%)",
+              "12h RSI14 (-0.68%)",
+              "12h RSI7 (-0.68%)",
+              "1h RSI14 (-0.14%)",
+              "1h RSI7 (-0.14%)",
+              "5m RSI14 (-0.12%)",
+              "5m RSI7 (-0.12%)",
+              "30m RSI14 (-0.14%)",
+              "30m RSI7 (-0.14%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "High→Low",
+            "change_pct": -0.8695233888847563,
+            "x10_pct": -8.695233888847563,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-09-05T12:00:00Z",
+              "kind": "high",
+              "price": 113344.3
+            },
+            "end": {
+              "time_utc": "2025-09-15T12:00:00Z",
+              "kind": "low",
+              "price": 114338.5
+            },
+            "a_divergences": [
+              "1h RSI14 (-0.19%)",
+              "1h RSI7 (-0.19%)",
+              "30m RSI14 (-0.19%)",
+              "30m RSI7 (-0.19%)",
+              "15m RSI14 (-0.19%)",
+              "15m RSI7 (-0.19%)",
+              "5m RSI14 (-0.19%)",
+              "5m RSI7 (-0.19%)",
+              "4h RSI14 (-1.56%)",
+              "4h RSI7 (-1.56%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.18%)",
+              "1h RSI7 (+0.18%)",
+              "15m RSI14 (+0.15%)",
+              "15m RSI7 (+0.15%)",
+              "30m RSI14 (+0.18%)",
+              "30m RSI7 (+0.18%)",
+              "5m RSI14 (+0.15%)",
+              "5m RSI7 (+0.15%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -584,21 +1137,137 @@
         "window_end_utc": "2025-10-12T00:00:00Z",
         "image": "images/trailing_30d/20251012.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-10-12",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +24.32% (x10 +243.23%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-10-10T12:00:00Z",
+          "low": 101516.5,
+          "high_time_utc": "2025-10-06T12:00:00Z",
+          "high": 126208.5,
+          "change_pct": 24.32313958814577,
+          "x10_pct": 243.23139588145773
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "30m RSI7 (+7.62%)"
+          ],
+          "bearish": [
+            "4h RSI14 (-0.69%)",
+            "4h RSI7 (-0.69%)",
+            "1h RSI14 (-0.11%)",
+            "1h RSI7 (-0.11%)",
+            "30m RSI14 (-0.11%)",
+            "30m RSI7 (-0.11%)",
+            "15m RSI14 (-0.11%)",
+            "15m RSI7 (-0.11%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 24.32313958814577,
+            "x10_pct": 243.23139588145773,
+            "same_as_range": true,
+            "start": {
+              "time_utc": "2025-10-06T12:00:00Z",
+              "kind": "high",
+              "price": 126208.5
+            },
+            "end": {
+              "time_utc": "2025-10-10T12:00:00Z",
+              "kind": "low",
+              "price": 101516.5
+            },
+            "a_divergences": [
+              "4h RSI14 (-0.69%)",
+              "4h RSI7 (-0.69%)",
+              "1h RSI14 (-0.11%)",
+              "1h RSI7 (-0.11%)",
+              "30m RSI14 (-0.11%)",
+              "30m RSI7 (-0.11%)",
+              "15m RSI14 (-0.11%)",
+              "15m RSI7 (-0.11%)"
+            ],
+            "b_divergences": [
+              "30m RSI7 (+7.62%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 16.25048357681042,
+            "x10_pct": 162.50483576810421,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-09-26T00:00:00Z",
+              "kind": "low",
+              "price": 108566.0
+            },
+            "end": {
+              "time_utc": "2025-10-06T12:00:00Z",
+              "kind": "high",
+              "price": 126208.5
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.44%)",
+              "1h RSI7 (+0.44%)",
+              "30m RSI14 (+0.15%)",
+              "30m RSI7 (+0.15%)",
+              "15m RSI14 (+0.15%)",
+              "15m RSI7 (+0.15%)",
+              "5m RSI7 (+0.08%)"
+            ],
+            "b_divergences": [
+              "4h RSI14 (-0.69%)",
+              "4h RSI7 (-0.69%)",
+              "1h RSI14 (-0.11%)",
+              "1h RSI7 (-0.11%)",
+              "30m RSI14 (-0.11%)",
+              "30m RSI7 (-0.11%)",
+              "15m RSI14 (-0.11%)",
+              "15m RSI7 (-0.11%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "High→Low",
+            "change_pct": 8.574691892489358,
+            "x10_pct": 85.74691892489358,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-09-18T12:00:00Z",
+              "kind": "high",
+              "price": 117875.2
+            },
+            "end": {
+              "time_utc": "2025-09-26T00:00:00Z",
+              "kind": "low",
+              "price": 108566.0
+            },
+            "a_divergences": [
+              "4h RSI14 (-0.42%)",
+              "4h RSI7 (-0.42%)",
+              "12h RSI14 (-0.68%)",
+              "12h RSI7 (-0.68%)",
+              "1h RSI14 (-0.14%)",
+              "1h RSI7 (-0.14%)",
+              "5m RSI14 (-0.12%)",
+              "5m RSI7 (-0.12%)",
+              "30m RSI14 (-0.14%)",
+              "30m RSI7 (-0.14%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.44%)",
+              "1h RSI7 (+0.44%)",
+              "30m RSI14 (+0.15%)",
+              "30m RSI7 (+0.15%)",
+              "15m RSI14 (+0.15%)",
+              "15m RSI7 (+0.15%)",
+              "5m RSI7 (+0.08%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -724,21 +1393,99 @@
         "window_end_utc": "2025-10-19T00:00:00Z",
         "image": "images/trailing_30d/20251019.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-10-19",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +24.32% (x10 +243.23%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-10-10T12:00:00Z",
+          "low": 101516.5,
+          "high_time_utc": "2025-10-06T12:00:00Z",
+          "high": 126208.5,
+          "change_pct": 24.32313958814577,
+          "x10_pct": 243.23139588145773
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "30m RSI7 (+7.62%)"
+          ],
+          "bearish": [
+            "4h RSI14 (-0.69%)",
+            "4h RSI7 (-0.69%)",
+            "1h RSI14 (-0.11%)",
+            "1h RSI7 (-0.11%)",
+            "30m RSI14 (-0.11%)",
+            "30m RSI7 (-0.11%)",
+            "15m RSI14 (-0.11%)",
+            "15m RSI7 (-0.11%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 24.32313958814577,
+            "x10_pct": 243.23139588145773,
+            "same_as_range": true,
+            "start": {
+              "time_utc": "2025-10-06T12:00:00Z",
+              "kind": "high",
+              "price": 126208.5
+            },
+            "end": {
+              "time_utc": "2025-10-10T12:00:00Z",
+              "kind": "low",
+              "price": 101516.5
+            },
+            "a_divergences": [
+              "4h RSI14 (-0.69%)",
+              "4h RSI7 (-0.69%)",
+              "1h RSI14 (-0.11%)",
+              "1h RSI7 (-0.11%)",
+              "30m RSI14 (-0.11%)",
+              "30m RSI7 (-0.11%)",
+              "15m RSI14 (-0.11%)",
+              "15m RSI7 (-0.11%)"
+            ],
+            "b_divergences": [
+              "30m RSI7 (+7.62%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 16.25048357681042,
+            "x10_pct": 162.50483576810421,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-09-26T00:00:00Z",
+              "kind": "low",
+              "price": 108566.0
+            },
+            "end": {
+              "time_utc": "2025-10-06T12:00:00Z",
+              "kind": "high",
+              "price": 126208.5
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.44%)",
+              "1h RSI7 (+0.44%)",
+              "30m RSI14 (+0.15%)",
+              "30m RSI7 (+0.15%)",
+              "15m RSI14 (+0.15%)",
+              "15m RSI7 (+0.15%)",
+              "5m RSI7 (+0.08%)"
+            ],
+            "b_divergences": [
+              "4h RSI14 (-0.69%)",
+              "4h RSI7 (-0.69%)",
+              "1h RSI14 (-0.11%)",
+              "1h RSI7 (-0.11%)",
+              "30m RSI14 (-0.11%)",
+              "30m RSI7 (-0.11%)",
+              "15m RSI14 (-0.11%)",
+              "15m RSI7 (-0.11%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -856,21 +1603,125 @@
         "window_end_utc": "2025-10-26T00:00:00Z",
         "image": "images/trailing_30d/20251026.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-10-26",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +24.32% (x10 +243.23%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-10-10T12:00:00Z",
+          "low": 101516.5,
+          "high_time_utc": "2025-10-06T12:00:00Z",
+          "high": 126208.5,
+          "change_pct": 24.32313958814577,
+          "x10_pct": 243.23139588145773
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "30m RSI7 (+7.62%)"
+          ],
+          "bearish": [
+            "4h RSI14 (-0.69%)",
+            "4h RSI7 (-0.69%)",
+            "1h RSI14 (-0.11%)",
+            "1h RSI7 (-0.11%)",
+            "30m RSI14 (-0.11%)",
+            "30m RSI7 (-0.11%)",
+            "15m RSI14 (-0.11%)",
+            "15m RSI7 (-0.11%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 24.32313958814577,
+            "x10_pct": 243.23139588145773,
+            "same_as_range": true,
+            "start": {
+              "time_utc": "2025-10-06T12:00:00Z",
+              "kind": "high",
+              "price": 126208.5
+            },
+            "end": {
+              "time_utc": "2025-10-10T12:00:00Z",
+              "kind": "low",
+              "price": 101516.5
+            },
+            "a_divergences": [
+              "4h RSI14 (-0.69%)",
+              "4h RSI7 (-0.69%)",
+              "1h RSI14 (-0.11%)",
+              "1h RSI7 (-0.11%)",
+              "30m RSI14 (-0.11%)",
+              "30m RSI7 (-0.11%)",
+              "15m RSI14 (-0.11%)",
+              "15m RSI7 (-0.11%)"
+            ],
+            "b_divergences": [
+              "30m RSI7 (+7.62%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 16.25048357681042,
+            "x10_pct": 162.50483576810421,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-09-26T00:00:00Z",
+              "kind": "low",
+              "price": 108566.0
+            },
+            "end": {
+              "time_utc": "2025-10-06T12:00:00Z",
+              "kind": "high",
+              "price": 126208.5
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.44%)",
+              "1h RSI7 (+0.44%)",
+              "30m RSI14 (+0.15%)",
+              "30m RSI7 (+0.15%)",
+              "15m RSI14 (+0.15%)",
+              "15m RSI7 (+0.15%)",
+              "5m RSI7 (+0.08%)"
+            ],
+            "b_divergences": [
+              "4h RSI14 (-0.69%)",
+              "4h RSI7 (-0.69%)",
+              "1h RSI14 (-0.11%)",
+              "1h RSI7 (-0.11%)",
+              "30m RSI14 (-0.11%)",
+              "30m RSI7 (-0.11%)",
+              "15m RSI14 (-0.11%)",
+              "15m RSI7 (-0.11%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 12.237912063556172,
+            "x10_pct": 122.37912063556172,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-10-10T12:00:00Z",
+              "kind": "low",
+              "price": 101516.5
+            },
+            "end": {
+              "time_utc": "2025-10-21T12:00:00Z",
+              "kind": "high",
+              "price": 113940.0
+            },
+            "a_divergences": [
+              "30m RSI7 (+7.62%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (-1.98%)",
+              "1h RSI7 (-1.15%)",
+              "5m RSI14 (-0.46%)",
+              "5m RSI7 (-0.46%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -977,21 +1828,125 @@
         "window_end_utc": "2025-11-02T00:00:00Z",
         "image": "images/trailing_30d/20251102.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-11-02",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +24.32% (x10 +243.23%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-10-10T12:00:00Z",
+          "low": 101516.5,
+          "high_time_utc": "2025-10-06T12:00:00Z",
+          "high": 126208.5,
+          "change_pct": 24.32313958814577,
+          "x10_pct": 243.23139588145773
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "30m RSI7 (+7.62%)"
+          ],
+          "bearish": [
+            "4h RSI14 (-0.69%)",
+            "4h RSI7 (-0.69%)",
+            "1h RSI14 (-0.11%)",
+            "1h RSI7 (-0.11%)",
+            "30m RSI14 (-0.11%)",
+            "30m RSI7 (-0.11%)",
+            "15m RSI14 (-0.11%)",
+            "15m RSI7 (-0.11%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 24.32313958814577,
+            "x10_pct": 243.23139588145773,
+            "same_as_range": true,
+            "start": {
+              "time_utc": "2025-10-06T12:00:00Z",
+              "kind": "high",
+              "price": 126208.5
+            },
+            "end": {
+              "time_utc": "2025-10-10T12:00:00Z",
+              "kind": "low",
+              "price": 101516.5
+            },
+            "a_divergences": [
+              "4h RSI14 (-0.69%)",
+              "4h RSI7 (-0.69%)",
+              "1h RSI14 (-0.11%)",
+              "1h RSI7 (-0.11%)",
+              "30m RSI14 (-0.11%)",
+              "30m RSI7 (-0.11%)",
+              "15m RSI14 (-0.11%)",
+              "15m RSI7 (-0.11%)"
+            ],
+            "b_divergences": [
+              "30m RSI7 (+7.62%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 12.237912063556172,
+            "x10_pct": 122.37912063556172,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-10-10T12:00:00Z",
+              "kind": "low",
+              "price": 101516.5
+            },
+            "end": {
+              "time_utc": "2025-10-21T12:00:00Z",
+              "kind": "high",
+              "price": 113940.0
+            },
+            "a_divergences": [
+              "30m RSI7 (+7.62%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (-1.98%)",
+              "1h RSI7 (-1.15%)",
+              "5m RSI14 (-0.46%)",
+              "5m RSI7 (-0.46%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 10.11887503624239,
+            "x10_pct": 101.18875036242389,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-10-17T00:00:00Z",
+              "kind": "low",
+              "price": 103470.0
+            },
+            "end": {
+              "time_utc": "2025-10-21T12:00:00Z",
+              "kind": "high",
+              "price": 113940.0
+            },
+            "a_divergences": [
+              "12h RSI14 (+2.06%)",
+              "12h RSI7 (+2.06%)",
+              "4h RSI14 (+2.06%)",
+              "4h RSI7 (+2.06%)",
+              "1h RSI14 (+1.37%)",
+              "1h RSI7 (+1.37%)",
+              "30m RSI7 (+0.61%)",
+              "15m RSI14 (+0.61%)",
+              "15m RSI7 (+0.61%)",
+              "5m RSI14 (+0.25%)",
+              "5m RSI7 (+0.25%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (-1.98%)",
+              "1h RSI7 (-1.15%)",
+              "5m RSI14 (-0.46%)",
+              "5m RSI7 (-0.46%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1102,21 +2057,138 @@
         "window_end_utc": "2025-11-09T00:00:00Z",
         "image": "images/trailing_30d/20251109.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-11-09",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +23.20% (x10 +232.05%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-11-04T12:00:00Z",
+          "low": 98888.8,
+          "high_time_utc": "2025-10-10T00:00:00Z",
+          "high": 121835.5,
+          "change_pct": 23.204548947909164,
+          "x10_pct": 232.04548947909163
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "12h RSI7 (+2.72%)",
+            "30m RSI14 (+1.42%)",
+            "30m RSI7 (+1.42%)",
+            "1h RSI14 (+1.42%)",
+            "1h RSI7 (+1.42%)",
+            "5m RSI14 (+0.45%)",
+            "5m RSI7 (+0.45%)",
+            "15m RSI14 (+0.79%)",
+            "15m RSI7 (+0.79%)"
+          ],
+          "bearish": [
+            "15m RSI14 (-0.11%)",
+            "15m RSI7 (-0.11%)",
+            "30m RSI14 (-0.07%)",
+            "30m RSI7 (-0.07%)",
+            "5m RSI14 (-0.11%)",
+            "5m RSI7 (-0.11%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "Low→High",
+            "change_pct": 12.237912063556172,
+            "x10_pct": 122.37912063556172,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-10-10T12:00:00Z",
+              "kind": "low",
+              "price": 101516.5
+            },
+            "end": {
+              "time_utc": "2025-10-21T12:00:00Z",
+              "kind": "high",
+              "price": 113940.0
+            },
+            "a_divergences": [
+              "30m RSI7 (+7.62%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (-1.98%)",
+              "1h RSI7 (-1.15%)",
+              "5m RSI14 (-0.46%)",
+              "5m RSI7 (-0.46%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 10.11887503624239,
+            "x10_pct": 101.18875036242389,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-10-17T00:00:00Z",
+              "kind": "low",
+              "price": 103470.0
+            },
+            "end": {
+              "time_utc": "2025-10-21T12:00:00Z",
+              "kind": "high",
+              "price": 113940.0
+            },
+            "a_divergences": [
+              "12h RSI14 (+2.06%)",
+              "12h RSI7 (+2.06%)",
+              "4h RSI14 (+2.06%)",
+              "4h RSI7 (+2.06%)",
+              "1h RSI14 (+1.37%)",
+              "1h RSI7 (+1.37%)",
+              "30m RSI7 (+0.61%)",
+              "15m RSI14 (+0.61%)",
+              "15m RSI7 (+0.61%)",
+              "5m RSI14 (+0.25%)",
+              "5m RSI7 (+0.25%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (-1.98%)",
+              "1h RSI7 (-1.15%)",
+              "5m RSI14 (-0.46%)",
+              "5m RSI7 (-0.46%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "High→Low",
+            "change_pct": 9.585875706214686,
+            "x10_pct": 95.85875706214686,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-10-27T00:00:00Z",
+              "kind": "high",
+              "price": 116380.2
+            },
+            "end": {
+              "time_utc": "2025-10-30T12:00:00Z",
+              "kind": "low",
+              "price": 106200.0
+            },
+            "a_divergences": [
+              "1h RSI14 (-0.75%)",
+              "1h RSI7 (-0.75%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)",
+              "15m RSI14 (-0.40%)",
+              "15m RSI7 (-0.40%)",
+              "5m RSI14 (-0.38%)",
+              "5m RSI7 (-0.38%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.27%)",
+              "1h RSI7 (+0.27%)",
+              "30m RSI14 (+0.27%)",
+              "30m RSI7 (+0.27%)",
+              "5m RSI14 (+0.66%)",
+              "5m RSI7 (+0.66%)",
+              "15m RSI14 (+0.27%)",
+              "15m RSI7 (+0.27%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1261,21 +2333,152 @@
         "window_end_utc": "2025-11-16T00:00:00Z",
         "image": "images/trailing_30d/20251116.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-11-16",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +23.87% (x10 +238.68%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-11-14T12:00:00Z",
+          "low": 93955.0,
+          "high_time_utc": "2025-10-27T00:00:00Z",
+          "high": 116380.2,
+          "change_pct": 23.86802192538981,
+          "x10_pct": 238.68021925389812
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "12h RSI14 (+0.89%)",
+            "12h RSI7 (+0.89%)",
+            "4h RSI14 (+0.89%)",
+            "4h RSI7 (+0.89%)",
+            "30m RSI14 (+0.29%)",
+            "30m RSI7 (+0.29%)",
+            "1h RSI14 (+0.89%)",
+            "1h RSI7 (+0.89%)",
+            "5m RSI14 (+0.57%)",
+            "5m RSI7 (+0.57%)",
+            "15m RSI14 (+0.29%)",
+            "15m RSI7 (+0.29%)"
+          ],
+          "bearish": [
+            "1h RSI14 (-0.75%)",
+            "1h RSI7 (-0.75%)",
+            "30m RSI14 (-0.49%)",
+            "30m RSI7 (-0.49%)",
+            "15m RSI14 (-0.40%)",
+            "15m RSI7 (-0.40%)",
+            "5m RSI14 (-0.38%)",
+            "5m RSI7 (-0.38%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "Low→High",
+            "change_pct": 10.11887503624239,
+            "x10_pct": 101.18875036242389,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-10-17T00:00:00Z",
+              "kind": "low",
+              "price": 103470.0
+            },
+            "end": {
+              "time_utc": "2025-10-21T12:00:00Z",
+              "kind": "high",
+              "price": 113940.0
+            },
+            "a_divergences": [
+              "12h RSI14 (+2.06%)",
+              "12h RSI7 (+2.06%)",
+              "4h RSI14 (+2.06%)",
+              "4h RSI7 (+2.06%)",
+              "1h RSI14 (+1.37%)",
+              "1h RSI7 (+1.37%)",
+              "30m RSI7 (+0.61%)",
+              "15m RSI14 (+0.61%)",
+              "15m RSI7 (+0.61%)",
+              "5m RSI14 (+0.25%)",
+              "5m RSI7 (+0.25%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (-1.98%)",
+              "1h RSI7 (-1.15%)",
+              "5m RSI14 (-0.46%)",
+              "5m RSI7 (-0.46%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "High→Low",
+            "change_pct": 9.585875706214686,
+            "x10_pct": 95.85875706214686,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-10-27T00:00:00Z",
+              "kind": "high",
+              "price": 116380.2
+            },
+            "end": {
+              "time_utc": "2025-10-30T12:00:00Z",
+              "kind": "low",
+              "price": 106200.0
+            },
+            "a_divergences": [
+              "1h RSI14 (-0.75%)",
+              "1h RSI7 (-0.75%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)",
+              "15m RSI14 (-0.40%)",
+              "15m RSI7 (-0.40%)",
+              "5m RSI14 (-0.38%)",
+              "5m RSI7 (-0.38%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.27%)",
+              "1h RSI7 (+0.27%)",
+              "30m RSI14 (+0.27%)",
+              "30m RSI7 (+0.27%)",
+              "5m RSI14 (+0.66%)",
+              "5m RSI7 (+0.66%)",
+              "15m RSI14 (+0.27%)",
+              "15m RSI7 (+0.27%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 9.420714307876148,
+            "x10_pct": 94.20714307876148,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-10-22T00:00:00Z",
+              "kind": "low",
+              "price": 106360.3
+            },
+            "end": {
+              "time_utc": "2025-10-27T00:00:00Z",
+              "kind": "high",
+              "price": 116380.2
+            },
+            "a_divergences": [
+              "4h RSI14 (+1.08%)",
+              "4h RSI7 (+1.08%)",
+              "1h RSI14 (+1.08%)",
+              "1h RSI7 (+1.08%)",
+              "30m RSI14 (+1.08%)",
+              "30m RSI7 (+1.08%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-0.75%)",
+              "1h RSI7 (-0.75%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)",
+              "15m RSI14 (-0.40%)",
+              "15m RSI7 (-0.40%)",
+              "5m RSI14 (-0.38%)",
+              "5m RSI7 (-0.38%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1388,21 +2591,148 @@
         "window_end_utc": "2025-11-23T00:00:00Z",
         "image": "images/trailing_30d/20251123.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-11-23",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +44.39% (x10 +443.92%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-11-21T12:00:00Z",
+          "low": 80600.0,
+          "high_time_utc": "2025-10-27T00:00:00Z",
+          "high": 116380.2,
+          "change_pct": 44.39230769230769,
+          "x10_pct": 443.9230769230769
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "30m RSI14 (+1.04%)",
+            "30m RSI7 (+1.04%)",
+            "15m RSI14 (+1.04%)",
+            "15m RSI7 (+1.04%)",
+            "5m RSI14 (+1.04%)",
+            "5m RSI7 (+1.04%)"
+          ],
+          "bearish": [
+            "1h RSI14 (-0.75%)",
+            "1h RSI7 (-0.75%)",
+            "30m RSI14 (-0.49%)",
+            "30m RSI7 (-0.49%)",
+            "15m RSI14 (-0.40%)",
+            "15m RSI7 (-0.40%)",
+            "5m RSI14 (-0.38%)",
+            "5m RSI7 (-0.38%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 33.34205955334987,
+            "x10_pct": 333.4205955334987,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-11-11T00:00:00Z",
+              "kind": "high",
+              "price": 107473.7
+            },
+            "end": {
+              "time_utc": "2025-11-21T12:00:00Z",
+              "kind": "low",
+              "price": 80600.0
+            },
+            "a_divergences": [
+              "4h RSI14 (-0.98%)",
+              "4h RSI7 (-0.98%)",
+              "30m RSI14 (-0.68%)",
+              "30m RSI7 (-0.68%)",
+              "15m RSI14 (-0.68%)",
+              "15m RSI7 (-0.68%)",
+              "1h RSI14 (-0.78%)",
+              "1h RSI7 (-0.78%)"
+            ],
+            "b_divergences": [
+              "30m RSI14 (+1.04%)",
+              "30m RSI7 (+1.04%)",
+              "15m RSI14 (+1.04%)",
+              "15m RSI7 (+1.04%)",
+              "5m RSI14 (+1.04%)",
+              "5m RSI7 (+1.04%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "High→Low",
+            "change_pct": 9.585875706214686,
+            "x10_pct": 95.85875706214686,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-10-27T00:00:00Z",
+              "kind": "high",
+              "price": 116380.2
+            },
+            "end": {
+              "time_utc": "2025-10-30T12:00:00Z",
+              "kind": "low",
+              "price": 106200.0
+            },
+            "a_divergences": [
+              "1h RSI14 (-0.75%)",
+              "1h RSI7 (-0.75%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)",
+              "15m RSI14 (-0.40%)",
+              "15m RSI7 (-0.40%)",
+              "5m RSI14 (-0.38%)",
+              "5m RSI7 (-0.38%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.27%)",
+              "1h RSI7 (+0.27%)",
+              "30m RSI14 (+0.27%)",
+              "30m RSI7 (+0.27%)",
+              "5m RSI14 (+0.66%)",
+              "5m RSI7 (+0.66%)",
+              "15m RSI14 (+0.27%)",
+              "15m RSI7 (+0.27%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 8.681367354038064,
+            "x10_pct": 86.81367354038065,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-11-04T12:00:00Z",
+              "kind": "low",
+              "price": 98888.8
+            },
+            "end": {
+              "time_utc": "2025-11-11T00:00:00Z",
+              "kind": "high",
+              "price": 107473.7
+            },
+            "a_divergences": [
+              "12h RSI7 (+2.72%)",
+              "30m RSI14 (+1.42%)",
+              "30m RSI7 (+1.42%)",
+              "1h RSI14 (+1.42%)",
+              "1h RSI7 (+1.42%)",
+              "5m RSI14 (+0.45%)",
+              "5m RSI7 (+0.45%)",
+              "15m RSI14 (+0.79%)",
+              "15m RSI7 (+0.79%)"
+            ],
+            "b_divergences": [
+              "4h RSI14 (-0.98%)",
+              "4h RSI7 (-0.98%)",
+              "30m RSI14 (-0.68%)",
+              "30m RSI7 (-0.68%)",
+              "15m RSI14 (-0.68%)",
+              "15m RSI7 (-0.68%)",
+              "1h RSI14 (-0.78%)",
+              "1h RSI7 (-0.78%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1539,21 +2869,144 @@
         "window_end_utc": "2025-11-30T00:00:00Z",
         "image": "images/trailing_30d/20251130.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-11-30",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +38.01% (x10 +380.06%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-11-21T12:00:00Z",
+          "low": 80600.0,
+          "high_time_utc": "2025-10-31T12:00:00Z",
+          "high": 111233.0,
+          "change_pct": 38.00620347394541,
+          "x10_pct": 380.06203473945413
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "30m RSI14 (+1.04%)",
+            "30m RSI7 (+1.04%)",
+            "15m RSI14 (+1.04%)",
+            "15m RSI7 (+1.04%)",
+            "5m RSI14 (+1.04%)",
+            "5m RSI7 (+1.04%)"
+          ],
+          "bearish": [
+            "1h RSI7 (-1.01%)",
+            "30m RSI14 (-0.79%)",
+            "30m RSI7 (-0.79%)",
+            "15m RSI14 (-0.48%)",
+            "15m RSI7 (-0.48%)",
+            "5m RSI14 (-0.27%)",
+            "5m RSI7 (-0.27%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 33.34205955334987,
+            "x10_pct": 333.4205955334987,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-11-11T00:00:00Z",
+              "kind": "high",
+              "price": 107473.7
+            },
+            "end": {
+              "time_utc": "2025-11-21T12:00:00Z",
+              "kind": "low",
+              "price": 80600.0
+            },
+            "a_divergences": [
+              "4h RSI14 (-0.98%)",
+              "4h RSI7 (-0.98%)",
+              "30m RSI14 (-0.68%)",
+              "30m RSI7 (-0.68%)",
+              "15m RSI14 (-0.68%)",
+              "15m RSI7 (-0.68%)",
+              "1h RSI14 (-0.78%)",
+              "1h RSI7 (-0.78%)"
+            ],
+            "b_divergences": [
+              "30m RSI14 (+1.04%)",
+              "30m RSI7 (+1.04%)",
+              "15m RSI14 (+1.04%)",
+              "15m RSI7 (+1.04%)",
+              "5m RSI14 (+1.04%)",
+              "5m RSI7 (+1.04%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 15.483870967741936,
+            "x10_pct": 154.83870967741936,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-11-21T12:00:00Z",
+              "kind": "low",
+              "price": 80600.0
+            },
+            "end": {
+              "time_utc": "2025-11-28T12:00:00Z",
+              "kind": "high",
+              "price": 93080.0
+            },
+            "a_divergences": [
+              "30m RSI14 (+1.04%)",
+              "30m RSI7 (+1.04%)",
+              "15m RSI14 (+1.04%)",
+              "15m RSI7 (+1.04%)",
+              "5m RSI14 (+1.04%)",
+              "5m RSI7 (+1.04%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (-0.88%)",
+              "5m RSI14 (-0.55%)",
+              "5m RSI7 (-0.55%)",
+              "30m RSI14 (-0.53%)",
+              "30m RSI7 (-0.53%)",
+              "1h RSI14 (-0.88%)",
+              "1h RSI7 (-0.88%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 8.681367354038064,
+            "x10_pct": 86.81367354038065,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-11-04T12:00:00Z",
+              "kind": "low",
+              "price": 98888.8
+            },
+            "end": {
+              "time_utc": "2025-11-11T00:00:00Z",
+              "kind": "high",
+              "price": 107473.7
+            },
+            "a_divergences": [
+              "12h RSI7 (+2.72%)",
+              "30m RSI14 (+1.42%)",
+              "30m RSI7 (+1.42%)",
+              "1h RSI14 (+1.42%)",
+              "1h RSI7 (+1.42%)",
+              "5m RSI14 (+0.45%)",
+              "5m RSI7 (+0.45%)",
+              "15m RSI14 (+0.79%)",
+              "15m RSI7 (+0.79%)"
+            ],
+            "b_divergences": [
+              "4h RSI14 (-0.98%)",
+              "4h RSI7 (-0.98%)",
+              "30m RSI14 (-0.68%)",
+              "30m RSI7 (-0.68%)",
+              "15m RSI14 (-0.68%)",
+              "15m RSI7 (-0.68%)",
+              "1h RSI14 (-0.78%)",
+              "1h RSI7 (-0.78%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1661,21 +3114,144 @@
         "window_end_utc": "2025-12-07T00:00:00Z",
         "image": "images/trailing_30d/20251207.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-12-07",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +33.34% (x10 +333.42%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-11-21T12:00:00Z",
+          "low": 80600.0,
+          "high_time_utc": "2025-11-11T00:00:00Z",
+          "high": 107473.7,
+          "change_pct": 33.34205955334987,
+          "x10_pct": 333.4205955334987
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "30m RSI14 (+1.04%)",
+            "30m RSI7 (+1.04%)",
+            "15m RSI14 (+1.04%)",
+            "15m RSI7 (+1.04%)",
+            "5m RSI14 (+1.04%)",
+            "5m RSI7 (+1.04%)"
+          ],
+          "bearish": [
+            "4h RSI14 (-0.98%)",
+            "4h RSI7 (-0.98%)",
+            "30m RSI14 (-0.68%)",
+            "30m RSI7 (-0.68%)",
+            "15m RSI14 (-0.68%)",
+            "15m RSI7 (-0.68%)",
+            "1h RSI14 (-0.78%)",
+            "1h RSI7 (-0.78%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 33.34205955334987,
+            "x10_pct": 333.4205955334987,
+            "same_as_range": true,
+            "start": {
+              "time_utc": "2025-11-11T00:00:00Z",
+              "kind": "high",
+              "price": 107473.7
+            },
+            "end": {
+              "time_utc": "2025-11-21T12:00:00Z",
+              "kind": "low",
+              "price": 80600.0
+            },
+            "a_divergences": [
+              "4h RSI14 (-0.98%)",
+              "4h RSI7 (-0.98%)",
+              "30m RSI14 (-0.68%)",
+              "30m RSI7 (-0.68%)",
+              "15m RSI14 (-0.68%)",
+              "15m RSI7 (-0.68%)",
+              "1h RSI14 (-0.78%)",
+              "1h RSI7 (-0.78%)"
+            ],
+            "b_divergences": [
+              "30m RSI14 (+1.04%)",
+              "30m RSI7 (+1.04%)",
+              "15m RSI14 (+1.04%)",
+              "15m RSI7 (+1.04%)",
+              "5m RSI14 (+1.04%)",
+              "5m RSI7 (+1.04%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 15.483870967741936,
+            "x10_pct": 154.83870967741936,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-11-21T12:00:00Z",
+              "kind": "low",
+              "price": 80600.0
+            },
+            "end": {
+              "time_utc": "2025-11-28T12:00:00Z",
+              "kind": "high",
+              "price": 93080.0
+            },
+            "a_divergences": [
+              "30m RSI14 (+1.04%)",
+              "30m RSI7 (+1.04%)",
+              "15m RSI14 (+1.04%)",
+              "15m RSI7 (+1.04%)",
+              "5m RSI14 (+1.04%)",
+              "5m RSI7 (+1.04%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (-0.88%)",
+              "5m RSI14 (-0.55%)",
+              "5m RSI7 (-0.55%)",
+              "30m RSI14 (-0.53%)",
+              "30m RSI7 (-0.53%)",
+              "1h RSI14 (-0.88%)",
+              "1h RSI7 (-0.88%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 12.411381376363593,
+            "x10_pct": 124.11381376363593,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-01T12:00:00Z",
+              "kind": "low",
+              "price": 83786.0
+            },
+            "end": {
+              "time_utc": "2025-12-03T12:00:00Z",
+              "kind": "high",
+              "price": 94185.0
+            },
+            "a_divergences": [
+              "5m RSI14 (+0.91%)",
+              "5m RSI7 (+0.91%)",
+              "15m RSI14 (+0.39%)",
+              "15m RSI7 (+0.39%)",
+              "30m RSI14 (+0.94%)",
+              "30m RSI7 (+0.94%)",
+              "1h RSI14 (+0.96%)",
+              "1h RSI7 (+0.96%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-0.35%)",
+              "1h RSI7 (-0.35%)",
+              "30m RSI14 (-0.35%)",
+              "30m RSI7 (-0.35%)",
+              "5m RSI14 (-0.34%)",
+              "5m RSI7 (-0.34%)",
+              "15m RSI14 (-0.35%)",
+              "15m RSI7 (-0.35%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1807,21 +3383,139 @@
         "window_end_utc": "2025-12-14T00:00:00Z",
         "image": "images/trailing_30d/20251214.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-12-14",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +20.82% (x10 +208.16%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-11-21T12:00:00Z",
+          "low": 80600.0,
+          "high_time_utc": "2025-11-14T12:00:00Z",
+          "high": 97377.6,
+          "change_pct": 20.815880893300257,
+          "x10_pct": 208.15880893300258
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "30m RSI14 (+1.04%)",
+            "30m RSI7 (+1.04%)",
+            "15m RSI14 (+1.04%)",
+            "15m RSI7 (+1.04%)",
+            "5m RSI14 (+1.04%)",
+            "5m RSI7 (+1.04%)"
+          ],
+          "bearish": [
+            "5m RSI14 (-0.27%)",
+            "5m RSI7 (-0.27%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "Low→High",
+            "change_pct": 15.483870967741936,
+            "x10_pct": 154.83870967741936,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-11-21T12:00:00Z",
+              "kind": "low",
+              "price": 80600.0
+            },
+            "end": {
+              "time_utc": "2025-11-28T12:00:00Z",
+              "kind": "high",
+              "price": 93080.0
+            },
+            "a_divergences": [
+              "30m RSI14 (+1.04%)",
+              "30m RSI7 (+1.04%)",
+              "15m RSI14 (+1.04%)",
+              "15m RSI7 (+1.04%)",
+              "5m RSI14 (+1.04%)",
+              "5m RSI7 (+1.04%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (-0.88%)",
+              "5m RSI14 (-0.55%)",
+              "5m RSI7 (-0.55%)",
+              "30m RSI14 (-0.53%)",
+              "30m RSI7 (-0.53%)",
+              "1h RSI14 (-0.88%)",
+              "1h RSI7 (-0.88%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 12.411381376363593,
+            "x10_pct": 124.11381376363593,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-01T12:00:00Z",
+              "kind": "low",
+              "price": 83786.0
+            },
+            "end": {
+              "time_utc": "2025-12-03T12:00:00Z",
+              "kind": "high",
+              "price": 94185.0
+            },
+            "a_divergences": [
+              "5m RSI14 (+0.91%)",
+              "5m RSI7 (+0.91%)",
+              "15m RSI14 (+0.39%)",
+              "15m RSI7 (+0.39%)",
+              "30m RSI14 (+0.94%)",
+              "30m RSI7 (+0.94%)",
+              "1h RSI14 (+0.96%)",
+              "1h RSI7 (+0.96%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-0.35%)",
+              "1h RSI7 (-0.35%)",
+              "30m RSI14 (-0.35%)",
+              "30m RSI7 (-0.35%)",
+              "5m RSI14 (-0.34%)",
+              "5m RSI7 (-0.34%)",
+              "15m RSI14 (-0.35%)",
+              "15m RSI7 (-0.35%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "High→Low",
+            "change_pct": 11.092545293963193,
+            "x10_pct": 110.92545293963192,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-11-28T12:00:00Z",
+              "kind": "high",
+              "price": 93080.0
+            },
+            "end": {
+              "time_utc": "2025-12-01T12:00:00Z",
+              "kind": "low",
+              "price": 83786.0
+            },
+            "a_divergences": [
+              "4h RSI7 (-0.88%)",
+              "5m RSI14 (-0.55%)",
+              "5m RSI7 (-0.55%)",
+              "30m RSI14 (-0.53%)",
+              "30m RSI7 (-0.53%)",
+              "1h RSI14 (-0.88%)",
+              "1h RSI7 (-0.88%)"
+            ],
+            "b_divergences": [
+              "5m RSI14 (+0.91%)",
+              "5m RSI7 (+0.91%)",
+              "15m RSI14 (+0.39%)",
+              "15m RSI7 (+0.39%)",
+              "30m RSI14 (+0.94%)",
+              "30m RSI7 (+0.94%)",
+              "1h RSI14 (+0.96%)",
+              "1h RSI7 (+0.96%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1934,21 +3628,140 @@
         "window_end_utc": "2025-12-21T00:00:00Z",
         "image": "images/trailing_30d/20251221.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-12-21",
-        "headline": "Previous 30 days best",
+        "headline": "Low→High +17.31% (x10 +173.14%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-11-21T12:00:00Z",
+          "low": 80600.0,
+          "high_time_utc": "2025-12-09T12:00:00Z",
+          "high": 94555.0,
+          "change_pct": 17.31389578163772,
+          "x10_pct": 173.13895781637717
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "30m RSI14 (+1.04%)",
+            "30m RSI7 (+1.04%)",
+            "15m RSI14 (+1.04%)",
+            "15m RSI7 (+1.04%)",
+            "5m RSI14 (+1.04%)",
+            "5m RSI7 (+1.04%)"
+          ],
+          "bearish": [
+            "12h RSI14 (-2.06%)",
+            "12h RSI7 (-2.06%)",
+            "4h RSI14 (-0.93%)",
+            "4h RSI7 (-0.93%)",
+            "5m RSI14 (-0.25%)",
+            "5m RSI7 (-0.25%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "Low→High",
+            "change_pct": 15.483870967741936,
+            "x10_pct": 154.83870967741936,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-11-21T12:00:00Z",
+              "kind": "low",
+              "price": 80600.0
+            },
+            "end": {
+              "time_utc": "2025-11-28T12:00:00Z",
+              "kind": "high",
+              "price": 93080.0
+            },
+            "a_divergences": [
+              "30m RSI14 (+1.04%)",
+              "30m RSI7 (+1.04%)",
+              "15m RSI14 (+1.04%)",
+              "15m RSI7 (+1.04%)",
+              "5m RSI14 (+1.04%)",
+              "5m RSI7 (+1.04%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (-0.88%)",
+              "5m RSI14 (-0.55%)",
+              "5m RSI7 (-0.55%)",
+              "30m RSI14 (-0.53%)",
+              "30m RSI7 (-0.53%)",
+              "1h RSI14 (-0.88%)",
+              "1h RSI7 (-0.88%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 12.411381376363593,
+            "x10_pct": 124.11381376363593,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-01T12:00:00Z",
+              "kind": "low",
+              "price": 83786.0
+            },
+            "end": {
+              "time_utc": "2025-12-03T12:00:00Z",
+              "kind": "high",
+              "price": 94185.0
+            },
+            "a_divergences": [
+              "5m RSI14 (+0.91%)",
+              "5m RSI7 (+0.91%)",
+              "15m RSI14 (+0.39%)",
+              "15m RSI7 (+0.39%)",
+              "30m RSI14 (+0.94%)",
+              "30m RSI7 (+0.94%)",
+              "1h RSI14 (+0.96%)",
+              "1h RSI7 (+0.96%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-0.35%)",
+              "1h RSI7 (-0.35%)",
+              "30m RSI14 (-0.35%)",
+              "30m RSI7 (-0.35%)",
+              "5m RSI14 (-0.34%)",
+              "5m RSI7 (-0.34%)",
+              "15m RSI14 (-0.35%)",
+              "15m RSI7 (-0.35%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "High→Low",
+            "change_pct": 11.145721909418969,
+            "x10_pct": 111.45721909418968,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-09T12:00:00Z",
+              "kind": "high",
+              "price": 94555.0
+            },
+            "end": {
+              "time_utc": "2025-12-15T12:00:00Z",
+              "kind": "low",
+              "price": 85073.0
+            },
+            "a_divergences": [
+              "12h RSI14 (-2.06%)",
+              "12h RSI7 (-2.06%)",
+              "4h RSI14 (-0.93%)",
+              "4h RSI7 (-0.93%)",
+              "5m RSI14 (-0.25%)",
+              "5m RSI7 (-0.25%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (+1.05%)",
+              "15m RSI14 (+0.72%)",
+              "15m RSI7 (+0.72%)",
+              "5m RSI14 (+0.65%)",
+              "5m RSI7 (+0.65%)",
+              "30m RSI7 (+1.22%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2082,21 +3895,144 @@
         "window_end_utc": "2025-12-28T00:00:00Z",
         "image": "images/trailing_30d/20251228.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2025-12-28",
-        "headline": "Previous 30 days best",
+        "headline": "Low→High +12.85% (x10 +128.53%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-12-01T12:00:00Z",
+          "low": 83786.0,
+          "high_time_utc": "2025-12-09T12:00:00Z",
+          "high": 94555.0,
+          "change_pct": 12.852982598524813,
+          "x10_pct": 128.52982598524812
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "5m RSI14 (+0.91%)",
+            "5m RSI7 (+0.91%)",
+            "15m RSI14 (+0.39%)",
+            "15m RSI7 (+0.39%)",
+            "30m RSI14 (+0.94%)",
+            "30m RSI7 (+0.94%)",
+            "1h RSI14 (+0.96%)",
+            "1h RSI7 (+0.96%)"
+          ],
+          "bearish": [
+            "12h RSI14 (-2.06%)",
+            "12h RSI7 (-2.06%)",
+            "4h RSI14 (-0.93%)",
+            "4h RSI7 (-0.93%)",
+            "5m RSI14 (-0.25%)",
+            "5m RSI7 (-0.25%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "Low→High",
+            "change_pct": 12.411381376363593,
+            "x10_pct": 124.11381376363593,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-01T12:00:00Z",
+              "kind": "low",
+              "price": 83786.0
+            },
+            "end": {
+              "time_utc": "2025-12-03T12:00:00Z",
+              "kind": "high",
+              "price": 94185.0
+            },
+            "a_divergences": [
+              "5m RSI14 (+0.91%)",
+              "5m RSI7 (+0.91%)",
+              "15m RSI14 (+0.39%)",
+              "15m RSI7 (+0.39%)",
+              "30m RSI14 (+0.94%)",
+              "30m RSI7 (+0.94%)",
+              "1h RSI14 (+0.96%)",
+              "1h RSI7 (+0.96%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-0.35%)",
+              "1h RSI7 (-0.35%)",
+              "30m RSI14 (-0.35%)",
+              "30m RSI7 (-0.35%)",
+              "5m RSI14 (-0.34%)",
+              "5m RSI7 (-0.34%)",
+              "15m RSI14 (-0.35%)",
+              "15m RSI7 (-0.35%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "High→Low",
+            "change_pct": 11.145721909418969,
+            "x10_pct": 111.45721909418968,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-09T12:00:00Z",
+              "kind": "high",
+              "price": 94555.0
+            },
+            "end": {
+              "time_utc": "2025-12-15T12:00:00Z",
+              "kind": "low",
+              "price": 85073.0
+            },
+            "a_divergences": [
+              "12h RSI14 (-2.06%)",
+              "12h RSI7 (-2.06%)",
+              "4h RSI14 (-0.93%)",
+              "4h RSI7 (-0.93%)",
+              "5m RSI14 (-0.25%)",
+              "5m RSI7 (-0.25%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (+1.05%)",
+              "15m RSI14 (+0.72%)",
+              "15m RSI7 (+0.72%)",
+              "5m RSI14 (+0.65%)",
+              "5m RSI7 (+0.65%)",
+              "30m RSI7 (+1.22%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "High→Low",
+            "change_pct": 11.092545293963193,
+            "x10_pct": 110.92545293963192,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-11-28T12:00:00Z",
+              "kind": "high",
+              "price": 93080.0
+            },
+            "end": {
+              "time_utc": "2025-12-01T12:00:00Z",
+              "kind": "low",
+              "price": 83786.0
+            },
+            "a_divergences": [
+              "4h RSI7 (-0.88%)",
+              "5m RSI14 (-0.55%)",
+              "5m RSI7 (-0.55%)",
+              "30m RSI14 (-0.53%)",
+              "30m RSI7 (-0.53%)",
+              "1h RSI14 (-0.88%)",
+              "1h RSI7 (-0.88%)"
+            ],
+            "b_divergences": [
+              "5m RSI14 (+0.91%)",
+              "5m RSI7 (+0.91%)",
+              "15m RSI14 (+0.39%)",
+              "15m RSI7 (+0.39%)",
+              "30m RSI14 (+0.94%)",
+              "30m RSI7 (+0.94%)",
+              "1h RSI14 (+0.96%)",
+              "1h RSI7 (+0.96%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2208,21 +4144,137 @@
         "window_end_utc": "2026-01-04T00:00:00Z",
         "image": "images/trailing_30d/20260104.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-01-04",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +12.02% (x10 +120.21%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-12-18T12:00:00Z",
+          "low": 84408.6,
+          "high_time_utc": "2025-12-09T12:00:00Z",
+          "high": 94555.0,
+          "change_pct": 12.02057610243505,
+          "x10_pct": 120.20576102435051
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "12h RSI14 (+1.24%)",
+            "12h RSI7 (+1.24%)",
+            "4h RSI14 (+1.24%)",
+            "4h RSI7 (+1.24%)",
+            "1h RSI14 (+0.77%)",
+            "1h RSI7 (+0.77%)",
+            "5m RSI14 (+0.67%)",
+            "5m RSI7 (+0.67%)"
+          ],
+          "bearish": [
+            "12h RSI14 (-2.06%)",
+            "12h RSI7 (-2.06%)",
+            "4h RSI14 (-0.93%)",
+            "4h RSI7 (-0.93%)",
+            "5m RSI14 (-0.25%)",
+            "5m RSI7 (-0.25%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 11.145721909418969,
+            "x10_pct": 111.45721909418968,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-09T12:00:00Z",
+              "kind": "high",
+              "price": 94555.0
+            },
+            "end": {
+              "time_utc": "2025-12-15T12:00:00Z",
+              "kind": "low",
+              "price": 85073.0
+            },
+            "a_divergences": [
+              "12h RSI14 (-2.06%)",
+              "12h RSI7 (-2.06%)",
+              "4h RSI14 (-0.93%)",
+              "4h RSI7 (-0.93%)",
+              "5m RSI14 (-0.25%)",
+              "5m RSI7 (-0.25%)"
+            ],
+            "b_divergences": [
+              "4h RSI7 (+1.05%)",
+              "15m RSI14 (+0.72%)",
+              "15m RSI7 (+0.72%)",
+              "5m RSI14 (+0.65%)",
+              "5m RSI7 (+0.65%)",
+              "30m RSI7 (+1.22%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 7.831174162941338,
+            "x10_pct": 78.31174162941338,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-07T12:00:00Z",
+              "kind": "low",
+              "price": 87688.0
+            },
+            "end": {
+              "time_utc": "2025-12-09T12:00:00Z",
+              "kind": "high",
+              "price": 94555.0
+            },
+            "a_divergences": [
+              "30m RSI14 (+0.57%)",
+              "30m RSI7 (+0.57%)",
+              "1h RSI14 (+0.57%)",
+              "1h RSI7 (+0.57%)"
+            ],
+            "b_divergences": [
+              "12h RSI14 (-2.06%)",
+              "12h RSI7 (-2.06%)",
+              "4h RSI14 (-0.93%)",
+              "4h RSI7 (-0.93%)",
+              "5m RSI14 (-0.25%)",
+              "5m RSI7 (-0.25%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 7.3338498683783335,
+            "x10_pct": 73.33849868378334,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-18T12:00:00Z",
+              "kind": "low",
+              "price": 84408.6
+            },
+            "end": {
+              "time_utc": "2025-12-22T12:00:00Z",
+              "kind": "high",
+              "price": 90599.0
+            },
+            "a_divergences": [
+              "12h RSI14 (+1.24%)",
+              "12h RSI7 (+1.24%)",
+              "4h RSI14 (+1.24%)",
+              "4h RSI7 (+1.24%)",
+              "1h RSI14 (+0.77%)",
+              "1h RSI7 (+0.77%)",
+              "5m RSI14 (+0.67%)",
+              "5m RSI7 (+0.67%)"
+            ],
+            "b_divergences": [
+              "30m RSI14 (-0.45%)",
+              "30m RSI7 (-0.45%)",
+              "5m RSI14 (-0.47%)",
+              "5m RSI7 (-0.47%)",
+              "15m RSI14 (-0.45%)",
+              "15m RSI7 (-0.45%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2275,21 +4327,133 @@
         "window_end_utc": "2026-01-11T00:00:00Z",
         "image": "images/trailing_30d/20260111.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-01-11",
-        "headline": "Previous 30 days best",
+        "headline": "Low→High +12.26% (x10 +122.64%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-12-18T12:00:00Z",
+          "low": 84408.6,
+          "high_time_utc": "2026-01-05T12:00:00Z",
+          "high": 94760.3,
+          "change_pct": 12.26379776468274,
+          "x10_pct": 122.63797764682741
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "12h RSI14 (+1.24%)",
+            "12h RSI7 (+1.24%)",
+            "4h RSI14 (+1.24%)",
+            "4h RSI7 (+1.24%)",
+            "1h RSI14 (+0.77%)",
+            "1h RSI7 (+0.77%)",
+            "5m RSI14 (+0.67%)",
+            "5m RSI7 (+0.67%)"
+          ],
+          "bearish": [
+            "30m RSI14 (-0.19%)",
+            "30m RSI7 (-0.19%)",
+            "15m RSI14 (-0.19%)",
+            "15m RSI7 (-0.19%)",
+            "5m RSI14 (-0.19%)",
+            "5m RSI7 (-0.19%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "Low→High",
+            "change_pct": 9.221184877823884,
+            "x10_pct": 92.21184877823885,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-29T12:00:00Z",
+              "kind": "low",
+              "price": 86760.0
+            },
+            "end": {
+              "time_utc": "2026-01-05T12:00:00Z",
+              "kind": "high",
+              "price": 94760.3
+            },
+            "a_divergences": [
+              "1h RSI7 (+0.67%)",
+              "5m RSI7 (+0.14%)"
+            ],
+            "b_divergences": [
+              "30m RSI14 (-0.19%)",
+              "30m RSI7 (-0.19%)",
+              "15m RSI14 (-0.19%)",
+              "15m RSI7 (-0.19%)",
+              "5m RSI14 (-0.19%)",
+              "5m RSI7 (-0.19%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 7.3338498683783335,
+            "x10_pct": 73.33849868378334,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-18T12:00:00Z",
+              "kind": "low",
+              "price": 84408.6
+            },
+            "end": {
+              "time_utc": "2025-12-22T12:00:00Z",
+              "kind": "high",
+              "price": 90599.0
+            },
+            "a_divergences": [
+              "12h RSI14 (+1.24%)",
+              "12h RSI7 (+1.24%)",
+              "4h RSI14 (+1.24%)",
+              "4h RSI7 (+1.24%)",
+              "1h RSI14 (+0.77%)",
+              "1h RSI7 (+0.77%)",
+              "5m RSI14 (+0.67%)",
+              "5m RSI7 (+0.67%)"
+            ],
+            "b_divergences": [
+              "30m RSI14 (-0.45%)",
+              "30m RSI7 (-0.45%)",
+              "5m RSI14 (-0.47%)",
+              "5m RSI7 (-0.47%)",
+              "15m RSI14 (-0.45%)",
+              "15m RSI7 (-0.45%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "High→Low",
+            "change_pct": 7.054494447248255,
+            "x10_pct": 70.54494447248256,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-17T12:00:00Z",
+              "kind": "high",
+              "price": 90363.2
+            },
+            "end": {
+              "time_utc": "2025-12-18T12:00:00Z",
+              "kind": "low",
+              "price": 84408.6
+            },
+            "a_divergences": [
+              "4h RSI14 (-3.55%)",
+              "4h RSI7 (-3.55%)"
+            ],
+            "b_divergences": [
+              "12h RSI14 (+1.24%)",
+              "12h RSI7 (+1.24%)",
+              "4h RSI14 (+1.24%)",
+              "4h RSI7 (+1.24%)",
+              "1h RSI14 (+0.77%)",
+              "1h RSI7 (+0.77%)",
+              "5m RSI14 (+0.67%)",
+              "5m RSI7 (+0.67%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2401,21 +4565,151 @@
         "window_end_utc": "2026-01-18T00:00:00Z",
         "image": "images/trailing_30d/20260118.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-01-18",
-        "headline": "Previous 30 days best",
+        "headline": "Low→High +13.41% (x10 +134.06%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-12-24T12:00:00Z",
+          "low": 86355.0,
+          "high_time_utc": "2026-01-14T12:00:00Z",
+          "high": 97932.1,
+          "change_pct": 13.406403798274571,
+          "x10_pct": 134.0640379827457
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "1h RSI14 (+0.82%)",
+            "1h RSI7 (+0.82%)",
+            "30m RSI14 (+0.57%)",
+            "30m RSI7 (+0.57%)"
+          ],
+          "bearish": [
+            "12h RSI14 (-1.09%)",
+            "12h RSI7 (-1.09%)",
+            "4h RSI14 (-1.09%)",
+            "4h RSI7 (-1.09%)",
+            "15m RSI14 (-0.47%)",
+            "15m RSI7 (-0.47%)",
+            "1h RSI14 (-0.49%)",
+            "1h RSI7 (-0.49%)",
+            "5m RSI14 (-0.47%)",
+            "5m RSI7 (-0.47%)",
+            "30m RSI14 (-0.49%)",
+            "30m RSI7 (-0.49%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "Low→High",
+            "change_pct": 9.737679567916459,
+            "x10_pct": 97.37679567916459,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-08T12:00:00Z",
+              "kind": "low",
+              "price": 89242.0
+            },
+            "end": {
+              "time_utc": "2026-01-14T12:00:00Z",
+              "kind": "high",
+              "price": 97932.1
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.71%)",
+              "1h RSI7 (+0.71%)",
+              "30m RSI14 (+0.71%)",
+              "30m RSI7 (+0.71%)",
+              "15m RSI14 (+0.71%)",
+              "15m RSI7 (+0.71%)",
+              "5m RSI14 (+0.77%)",
+              "5m RSI7 (+0.77%)"
+            ],
+            "b_divergences": [
+              "12h RSI14 (-1.09%)",
+              "12h RSI7 (-1.09%)",
+              "4h RSI14 (-1.09%)",
+              "4h RSI7 (-1.09%)",
+              "15m RSI14 (-0.47%)",
+              "15m RSI7 (-0.47%)",
+              "1h RSI14 (-0.49%)",
+              "1h RSI7 (-0.49%)",
+              "5m RSI14 (-0.47%)",
+              "5m RSI7 (-0.47%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 9.221184877823884,
+            "x10_pct": 92.21184877823885,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-29T12:00:00Z",
+              "kind": "low",
+              "price": 86760.0
+            },
+            "end": {
+              "time_utc": "2026-01-05T12:00:00Z",
+              "kind": "high",
+              "price": 94760.3
+            },
+            "a_divergences": [
+              "1h RSI7 (+0.67%)",
+              "5m RSI7 (+0.14%)"
+            ],
+            "b_divergences": [
+              "30m RSI14 (-0.19%)",
+              "30m RSI7 (-0.19%)",
+              "15m RSI14 (-0.19%)",
+              "15m RSI7 (-0.19%)",
+              "5m RSI14 (-0.19%)",
+              "5m RSI7 (-0.19%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 8.733706393089518,
+            "x10_pct": 87.33706393089518,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-12T12:00:00Z",
+              "kind": "low",
+              "price": 90066.0
+            },
+            "end": {
+              "time_utc": "2026-01-14T12:00:00Z",
+              "kind": "high",
+              "price": 97932.1
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.83%)",
+              "1h RSI7 (+0.83%)",
+              "30m RSI14 (+0.28%)",
+              "30m RSI7 (+0.28%)",
+              "15m RSI14 (+0.28%)",
+              "15m RSI7 (+0.28%)",
+              "5m RSI14 (+0.17%)",
+              "5m RSI7 (+0.17%)"
+            ],
+            "b_divergences": [
+              "12h RSI14 (-1.09%)",
+              "12h RSI7 (-1.09%)",
+              "4h RSI14 (-1.09%)",
+              "4h RSI7 (-1.09%)",
+              "15m RSI14 (-0.47%)",
+              "15m RSI7 (-0.47%)",
+              "1h RSI14 (-0.49%)",
+              "1h RSI7 (-0.49%)",
+              "5m RSI14 (-0.47%)",
+              "5m RSI7 (-0.47%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2530,21 +4824,150 @@
         "window_end_utc": "2026-01-25T00:00:00Z",
         "image": "images/trailing_30d/20260125.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-01-25",
-        "headline": "Previous 30 days best",
+        "headline": "Low→High +13.06% (x10 +130.60%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2025-12-26T12:00:00Z",
+          "low": 86619.9,
+          "high_time_utc": "2026-01-14T12:00:00Z",
+          "high": 97932.1,
+          "change_pct": 13.059585614852953,
+          "x10_pct": 130.59585614852952
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "1h RSI7 (+0.28%)"
+          ],
+          "bearish": [
+            "12h RSI14 (-1.09%)",
+            "12h RSI7 (-1.09%)",
+            "4h RSI14 (-1.09%)",
+            "4h RSI7 (-1.09%)",
+            "15m RSI14 (-0.47%)",
+            "15m RSI7 (-0.47%)",
+            "1h RSI14 (-0.49%)",
+            "1h RSI7 (-0.49%)",
+            "5m RSI14 (-0.47%)",
+            "5m RSI7 (-0.47%)",
+            "30m RSI14 (-0.49%)",
+            "30m RSI7 (-0.49%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 12.300370962840654,
+            "x10_pct": 123.00370962840654,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-14T12:00:00Z",
+              "kind": "high",
+              "price": 97932.1
+            },
+            "end": {
+              "time_utc": "2026-01-21T12:00:00Z",
+              "kind": "low",
+              "price": 87205.5
+            },
+            "a_divergences": [
+              "12h RSI14 (-1.09%)",
+              "12h RSI7 (-1.09%)",
+              "4h RSI14 (-1.09%)",
+              "4h RSI7 (-1.09%)",
+              "15m RSI14 (-0.47%)",
+              "15m RSI7 (-0.47%)",
+              "1h RSI14 (-0.49%)",
+              "1h RSI7 (-0.49%)",
+              "5m RSI14 (-0.47%)",
+              "5m RSI7 (-0.47%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.72%)",
+              "1h RSI7 (+0.72%)",
+              "30m RSI14 (+0.67%)",
+              "30m RSI7 (+0.67%)",
+              "15m RSI14 (+0.08%)",
+              "15m RSI7 (+0.08%)",
+              "5m RSI14 (+0.08%)",
+              "5m RSI7 (+0.08%)",
+              "4h RSI14 (+2.61%)",
+              "4h RSI7 (+2.61%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 9.737679567916459,
+            "x10_pct": 97.37679567916459,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-08T12:00:00Z",
+              "kind": "low",
+              "price": 89242.0
+            },
+            "end": {
+              "time_utc": "2026-01-14T12:00:00Z",
+              "kind": "high",
+              "price": 97932.1
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.71%)",
+              "1h RSI7 (+0.71%)",
+              "30m RSI14 (+0.71%)",
+              "30m RSI7 (+0.71%)",
+              "15m RSI14 (+0.71%)",
+              "15m RSI7 (+0.71%)",
+              "5m RSI14 (+0.77%)",
+              "5m RSI7 (+0.77%)"
+            ],
+            "b_divergences": [
+              "12h RSI14 (-1.09%)",
+              "12h RSI7 (-1.09%)",
+              "4h RSI14 (-1.09%)",
+              "4h RSI7 (-1.09%)",
+              "15m RSI14 (-0.47%)",
+              "15m RSI7 (-0.47%)",
+              "1h RSI14 (-0.49%)",
+              "1h RSI7 (-0.49%)",
+              "5m RSI14 (-0.47%)",
+              "5m RSI7 (-0.47%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 9.221184877823884,
+            "x10_pct": 92.21184877823885,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2025-12-29T12:00:00Z",
+              "kind": "low",
+              "price": 86760.0
+            },
+            "end": {
+              "time_utc": "2026-01-05T12:00:00Z",
+              "kind": "high",
+              "price": 94760.3
+            },
+            "a_divergences": [
+              "1h RSI7 (+0.67%)",
+              "5m RSI7 (+0.14%)"
+            ],
+            "b_divergences": [
+              "30m RSI14 (-0.19%)",
+              "30m RSI7 (-0.19%)",
+              "15m RSI14 (-0.19%)",
+              "15m RSI7 (-0.19%)",
+              "5m RSI14 (-0.19%)",
+              "5m RSI7 (-0.19%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2688,21 +5111,166 @@
         "window_end_utc": "2026-02-01T00:00:00Z",
         "image": "images/trailing_30d/20260201.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-02-01",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +29.71% (x10 +297.11%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2026-01-31T12:00:00Z",
+          "low": 75500.0,
+          "high_time_utc": "2026-01-14T12:00:00Z",
+          "high": 97932.1,
+          "change_pct": 29.71139072847683,
+          "x10_pct": 297.1139072847683
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "12h RSI7 (+4.17%)",
+            "4h RSI14 (+2.97%)",
+            "4h RSI7 (+2.97%)",
+            "5m RSI14 (+3.13%)",
+            "5m RSI7 (+3.13%)"
+          ],
+          "bearish": [
+            "12h RSI14 (-1.09%)",
+            "12h RSI7 (-1.09%)",
+            "4h RSI14 (-1.09%)",
+            "4h RSI7 (-1.09%)",
+            "15m RSI14 (-0.47%)",
+            "15m RSI7 (-0.47%)",
+            "1h RSI14 (-0.49%)",
+            "1h RSI7 (-0.49%)",
+            "5m RSI14 (-0.47%)",
+            "5m RSI7 (-0.47%)",
+            "30m RSI14 (-0.49%)",
+            "30m RSI7 (-0.49%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 12.300370962840654,
+            "x10_pct": 123.00370962840654,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-14T12:00:00Z",
+              "kind": "high",
+              "price": 97932.1
+            },
+            "end": {
+              "time_utc": "2026-01-21T12:00:00Z",
+              "kind": "low",
+              "price": 87205.5
+            },
+            "a_divergences": [
+              "12h RSI14 (-1.09%)",
+              "12h RSI7 (-1.09%)",
+              "4h RSI14 (-1.09%)",
+              "4h RSI7 (-1.09%)",
+              "15m RSI14 (-0.47%)",
+              "15m RSI7 (-0.47%)",
+              "1h RSI14 (-0.49%)",
+              "1h RSI7 (-0.49%)",
+              "5m RSI14 (-0.47%)",
+              "5m RSI7 (-0.47%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.72%)",
+              "1h RSI7 (+0.72%)",
+              "30m RSI14 (+0.67%)",
+              "30m RSI7 (+0.67%)",
+              "15m RSI14 (+0.08%)",
+              "15m RSI7 (+0.08%)",
+              "5m RSI14 (+0.08%)",
+              "5m RSI7 (+0.08%)",
+              "4h RSI14 (+2.61%)",
+              "4h RSI7 (+2.61%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 9.737679567916459,
+            "x10_pct": 97.37679567916459,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-08T12:00:00Z",
+              "kind": "low",
+              "price": 89242.0
+            },
+            "end": {
+              "time_utc": "2026-01-14T12:00:00Z",
+              "kind": "high",
+              "price": 97932.1
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.71%)",
+              "1h RSI7 (+0.71%)",
+              "30m RSI14 (+0.71%)",
+              "30m RSI7 (+0.71%)",
+              "15m RSI14 (+0.71%)",
+              "15m RSI7 (+0.71%)",
+              "5m RSI14 (+0.77%)",
+              "5m RSI7 (+0.77%)"
+            ],
+            "b_divergences": [
+              "12h RSI14 (-1.09%)",
+              "12h RSI7 (-1.09%)",
+              "4h RSI14 (-1.09%)",
+              "4h RSI7 (-1.09%)",
+              "15m RSI14 (-0.47%)",
+              "15m RSI7 (-0.47%)",
+              "1h RSI14 (-0.49%)",
+              "1h RSI7 (-0.49%)",
+              "5m RSI14 (-0.47%)",
+              "5m RSI7 (-0.47%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 8.733706393089518,
+            "x10_pct": 87.33706393089518,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-12T12:00:00Z",
+              "kind": "low",
+              "price": 90066.0
+            },
+            "end": {
+              "time_utc": "2026-01-14T12:00:00Z",
+              "kind": "high",
+              "price": 97932.1
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.83%)",
+              "1h RSI7 (+0.83%)",
+              "30m RSI14 (+0.28%)",
+              "30m RSI7 (+0.28%)",
+              "15m RSI14 (+0.28%)",
+              "15m RSI7 (+0.28%)",
+              "5m RSI14 (+0.17%)",
+              "5m RSI7 (+0.17%)"
+            ],
+            "b_divergences": [
+              "12h RSI14 (-1.09%)",
+              "12h RSI7 (-1.09%)",
+              "4h RSI14 (-1.09%)",
+              "4h RSI7 (-1.09%)",
+              "15m RSI14 (-0.47%)",
+              "15m RSI7 (-0.47%)",
+              "1h RSI14 (-0.49%)",
+              "1h RSI7 (-0.49%)",
+              "5m RSI14 (-0.47%)",
+              "5m RSI7 (-0.47%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2820,21 +5388,160 @@
         "window_end_utc": "2026-02-08T00:00:00Z",
         "image": "images/trailing_30d/20260208.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-02-08",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +29.71% (x10 +297.11%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2026-01-31T12:00:00Z",
+          "low": 75500.0,
+          "high_time_utc": "2026-01-14T12:00:00Z",
+          "high": 97932.1,
+          "change_pct": 29.71139072847683,
+          "x10_pct": 297.1139072847683
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "12h RSI7 (+4.17%)",
+            "4h RSI14 (+2.97%)",
+            "4h RSI7 (+2.97%)",
+            "5m RSI14 (+3.13%)",
+            "5m RSI7 (+3.13%)"
+          ],
+          "bearish": [
+            "12h RSI14 (-1.09%)",
+            "12h RSI7 (-1.09%)",
+            "4h RSI14 (-1.09%)",
+            "4h RSI7 (-1.09%)",
+            "15m RSI14 (-0.47%)",
+            "15m RSI7 (-0.47%)",
+            "1h RSI14 (-0.49%)",
+            "1h RSI7 (-0.49%)",
+            "5m RSI14 (-0.47%)",
+            "5m RSI7 (-0.47%)",
+            "30m RSI14 (-0.49%)",
+            "30m RSI7 (-0.49%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 12.300370962840654,
+            "x10_pct": 123.00370962840654,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-14T12:00:00Z",
+              "kind": "high",
+              "price": 97932.1
+            },
+            "end": {
+              "time_utc": "2026-01-21T12:00:00Z",
+              "kind": "low",
+              "price": 87205.5
+            },
+            "a_divergences": [
+              "12h RSI14 (-1.09%)",
+              "12h RSI7 (-1.09%)",
+              "4h RSI14 (-1.09%)",
+              "4h RSI7 (-1.09%)",
+              "15m RSI14 (-0.47%)",
+              "15m RSI7 (-0.47%)",
+              "1h RSI14 (-0.49%)",
+              "1h RSI7 (-0.49%)",
+              "5m RSI14 (-0.47%)",
+              "5m RSI7 (-0.47%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.72%)",
+              "1h RSI7 (+0.72%)",
+              "30m RSI14 (+0.67%)",
+              "30m RSI7 (+0.67%)",
+              "15m RSI14 (+0.08%)",
+              "15m RSI7 (+0.08%)",
+              "5m RSI14 (+0.08%)",
+              "5m RSI7 (+0.08%)",
+              "4h RSI14 (+2.61%)",
+              "4h RSI7 (+2.61%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 8.733706393089518,
+            "x10_pct": 87.33706393089518,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-12T12:00:00Z",
+              "kind": "low",
+              "price": 90066.0
+            },
+            "end": {
+              "time_utc": "2026-01-14T12:00:00Z",
+              "kind": "high",
+              "price": 97932.1
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.83%)",
+              "1h RSI7 (+0.83%)",
+              "30m RSI14 (+0.28%)",
+              "30m RSI7 (+0.28%)",
+              "15m RSI14 (+0.28%)",
+              "15m RSI7 (+0.28%)",
+              "5m RSI14 (+0.17%)",
+              "5m RSI7 (+0.17%)"
+            ],
+            "b_divergences": [
+              "12h RSI14 (-1.09%)",
+              "12h RSI7 (-1.09%)",
+              "4h RSI14 (-1.09%)",
+              "4h RSI7 (-1.09%)",
+              "15m RSI14 (-0.47%)",
+              "15m RSI7 (-0.47%)",
+              "1h RSI14 (-0.49%)",
+              "1h RSI7 (-0.49%)",
+              "5m RSI14 (-0.47%)",
+              "5m RSI7 (-0.47%)",
+              "30m RSI14 (-0.49%)",
+              "30m RSI7 (-0.49%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "High→Low",
+            "change_pct": 6.01394764344346,
+            "x10_pct": 60.1394764344346,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-23T12:00:00Z",
+              "kind": "high",
+              "price": 91195.0
+            },
+            "end": {
+              "time_utc": "2026-01-25T12:00:00Z",
+              "kind": "low",
+              "price": 86021.7
+            },
+            "a_divergences": [
+              "12h RSI14 (-1.79%)",
+              "5m RSI14 (-0.41%)",
+              "5m RSI7 (-0.41%)"
+            ],
+            "b_divergences": [
+              "12h RSI7 (+0.70%)",
+              "4h RSI14 (+0.70%)",
+              "4h RSI7 (+0.70%)",
+              "1h RSI14 (+0.70%)",
+              "1h RSI7 (+0.70%)",
+              "15m RSI14 (+0.22%)",
+              "15m RSI7 (+0.22%)",
+              "30m RSI14 (+0.50%)",
+              "30m RSI7 (+0.50%)",
+              "5m RSI14 (+0.40%)",
+              "5m RSI7 (+0.40%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -2945,21 +5652,142 @@
         "window_end_utc": "2026-02-15T00:00:00Z",
         "image": "images/trailing_30d/20260215.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-02-15",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +26.92% (x10 +269.21%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2026-01-31T12:00:00Z",
+          "low": 75500.0,
+          "high_time_utc": "2026-01-16T00:00:00Z",
+          "high": 95825.0,
+          "change_pct": 26.920529801324506,
+          "x10_pct": 269.20529801324506
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "12h RSI7 (+4.17%)",
+            "4h RSI14 (+2.97%)",
+            "4h RSI7 (+2.97%)",
+            "5m RSI14 (+3.13%)",
+            "5m RSI7 (+3.13%)"
+          ],
+          "bearish": [
+            "5m RSI14 (-0.15%)",
+            "5m RSI7 (-0.15%)",
+            "15m RSI14 (-0.30%)",
+            "15m RSI7 (-0.30%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 6.01394764344346,
+            "x10_pct": 60.1394764344346,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-23T12:00:00Z",
+              "kind": "high",
+              "price": 91195.0
+            },
+            "end": {
+              "time_utc": "2026-01-25T12:00:00Z",
+              "kind": "low",
+              "price": 86021.7
+            },
+            "a_divergences": [
+              "12h RSI14 (-1.79%)",
+              "5m RSI14 (-0.41%)",
+              "5m RSI7 (-0.41%)"
+            ],
+            "b_divergences": [
+              "12h RSI7 (+0.70%)",
+              "4h RSI14 (+0.70%)",
+              "4h RSI7 (+0.70%)",
+              "1h RSI14 (+0.70%)",
+              "1h RSI7 (+0.70%)",
+              "15m RSI14 (+0.22%)",
+              "15m RSI7 (+0.22%)",
+              "30m RSI14 (+0.50%)",
+              "30m RSI7 (+0.50%)",
+              "5m RSI14 (+0.40%)",
+              "5m RSI7 (+0.40%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 5.313775477582982,
+            "x10_pct": 53.13775477582982,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-25T12:00:00Z",
+              "kind": "low",
+              "price": 86021.7
+            },
+            "end": {
+              "time_utc": "2026-01-28T12:00:00Z",
+              "kind": "high",
+              "price": 90592.7
+            },
+            "a_divergences": [
+              "12h RSI7 (+0.70%)",
+              "4h RSI14 (+0.70%)",
+              "4h RSI7 (+0.70%)",
+              "1h RSI14 (+0.70%)",
+              "1h RSI7 (+0.70%)",
+              "15m RSI14 (+0.22%)",
+              "15m RSI7 (+0.22%)",
+              "30m RSI14 (+0.50%)",
+              "30m RSI7 (+0.50%)",
+              "5m RSI14 (+0.40%)",
+              "5m RSI7 (+0.40%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-0.81%)",
+              "1h RSI7 (-0.81%)",
+              "30m RSI14 (-0.81%)",
+              "30m RSI7 (-0.81%)",
+              "15m RSI14 (-0.81%)",
+              "15m RSI7 (-0.81%)",
+              "5m RSI14 (-0.38%)",
+              "5m RSI7 (-0.38%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 4.574826129085895,
+            "x10_pct": 45.74826129085895,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-21T12:00:00Z",
+              "kind": "low",
+              "price": 87205.5
+            },
+            "end": {
+              "time_utc": "2026-01-23T12:00:00Z",
+              "kind": "high",
+              "price": 91195.0
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.72%)",
+              "1h RSI7 (+0.72%)",
+              "30m RSI14 (+0.67%)",
+              "30m RSI7 (+0.67%)",
+              "15m RSI14 (+0.08%)",
+              "15m RSI7 (+0.08%)",
+              "5m RSI14 (+0.08%)",
+              "5m RSI7 (+0.08%)",
+              "4h RSI14 (+2.61%)",
+              "4h RSI7 (+2.61%)"
+            ],
+            "b_divergences": [
+              "12h RSI14 (-1.79%)",
+              "5m RSI14 (-0.41%)",
+              "5m RSI7 (-0.41%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -3072,21 +5900,107 @@
         "window_end_utc": "2026-02-22T00:00:00Z",
         "image": "images/trailing_30d/20260222.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-02-22",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +20.79% (x10 +207.88%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2026-01-31T12:00:00Z",
+          "low": 75500.0,
+          "high_time_utc": "2026-01-23T12:00:00Z",
+          "high": 91195.0,
+          "change_pct": 20.788079470198674,
+          "x10_pct": 207.88079470198676
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "12h RSI7 (+4.17%)",
+            "4h RSI14 (+2.97%)",
+            "4h RSI7 (+2.97%)",
+            "5m RSI14 (+3.13%)",
+            "5m RSI7 (+3.13%)"
+          ],
+          "bearish": [
+            "12h RSI14 (-1.79%)",
+            "5m RSI14 (-0.41%)",
+            "5m RSI7 (-0.41%)"
+          ]
         },
-        "top_moves": []
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 6.01394764344346,
+            "x10_pct": 60.1394764344346,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-23T12:00:00Z",
+              "kind": "high",
+              "price": 91195.0
+            },
+            "end": {
+              "time_utc": "2026-01-25T12:00:00Z",
+              "kind": "low",
+              "price": 86021.7
+            },
+            "a_divergences": [
+              "12h RSI14 (-1.79%)",
+              "5m RSI14 (-0.41%)",
+              "5m RSI7 (-0.41%)"
+            ],
+            "b_divergences": [
+              "12h RSI7 (+0.70%)",
+              "4h RSI14 (+0.70%)",
+              "4h RSI7 (+0.70%)",
+              "1h RSI14 (+0.70%)",
+              "1h RSI7 (+0.70%)",
+              "15m RSI14 (+0.22%)",
+              "15m RSI7 (+0.22%)",
+              "30m RSI14 (+0.50%)",
+              "30m RSI7 (+0.50%)",
+              "5m RSI14 (+0.40%)",
+              "5m RSI7 (+0.40%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 5.313775477582982,
+            "x10_pct": 53.13775477582982,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-01-25T12:00:00Z",
+              "kind": "low",
+              "price": 86021.7
+            },
+            "end": {
+              "time_utc": "2026-01-28T12:00:00Z",
+              "kind": "high",
+              "price": 90592.7
+            },
+            "a_divergences": [
+              "12h RSI7 (+0.70%)",
+              "4h RSI14 (+0.70%)",
+              "4h RSI7 (+0.70%)",
+              "1h RSI14 (+0.70%)",
+              "1h RSI7 (+0.70%)",
+              "15m RSI14 (+0.22%)",
+              "15m RSI7 (+0.22%)",
+              "30m RSI14 (+0.50%)",
+              "30m RSI7 (+0.50%)",
+              "5m RSI14 (+0.40%)",
+              "5m RSI7 (+0.40%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-0.81%)",
+              "1h RSI7 (-0.81%)",
+              "30m RSI14 (-0.81%)",
+              "30m RSI7 (-0.81%)",
+              "15m RSI14 (-0.81%)",
+              "15m RSI7 (-0.81%)",
+              "5m RSI14 (-0.38%)",
+              "5m RSI7 (-0.38%)"
+            ]
+          }
+        ]
       }
     },
     {
@@ -3170,19 +6084,28 @@
         "window_end_utc": "2026-03-01T00:00:00Z",
         "image": "images/trailing_30d/20260301.webp",
         "image_alt": "BTCUSDT previous 30 days best chart ending 2026-03-01",
-        "headline": "Previous 30 days best",
+        "headline": "High→Low +12.05% (x10 +120.52%)",
         "divergence_status": "available",
         "range": {
-          "low_time_utc": "",
-          "low": null,
-          "high_time_utc": "",
-          "high": null,
-          "change_pct": null,
-          "x10_pct": null
+          "low_time_utc": "2026-01-31T12:00:00Z",
+          "low": 75500.0,
+          "high_time_utc": "2026-01-30T12:00:00Z",
+          "high": 84599.0,
+          "change_pct": 12.051655629139074,
+          "x10_pct": 120.51655629139074
         },
         "range_divergences": {
-          "bullish": [],
-          "bearish": []
+          "bullish": [
+            "12h RSI7 (+4.17%)",
+            "4h RSI14 (+2.97%)",
+            "4h RSI7 (+2.97%)",
+            "5m RSI14 (+3.13%)",
+            "5m RSI7 (+3.13%)"
+          ],
+          "bearish": [
+            "5m RSI14 (-0.17%)",
+            "5m RSI7 (-0.17%)"
+          ]
         },
         "top_moves": []
       }
