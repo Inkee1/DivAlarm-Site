@@ -571,7 +571,7 @@
     </p>
 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem;">
 <div class="free-trial-badge" id="free-trial-line" style="display: inline-block; background: linear-gradient(135deg, rgba(234,179,8,0.2) 0%, rgba(245,158,11,0.2) 100%); color: #facc15; border: 1px solid rgba(250,204,21,0.3); padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.05em; text-transform: uppercase; box-shadow: 0 0 20px rgba(250,204,21,0.1);">
-        5-Days Free Trial
+        5-Day Premium Trial
       </div>
 <div id="trial-alt-line" style="display:none; font-size: 1rem; font-weight: 600; color: #cbd5e1;">
         Keep your alerts running — subscribe now.
@@ -694,8 +694,8 @@
 </div>
 <!-- i18n strings for JS-driven CTA labels (translated by HTML locale generator) -->
 <div id="i18n-pricing-cta" style="display:none">
-<span id="i18n-cta-basic-new">Start Free Trial</span>
-<span id="i18n-cta-pro-new">Start Pro Free</span>
+<span id="i18n-cta-basic-new">Start Premium Trial</span>
+<span id="i18n-cta-pro-new">Start Pro Trial</span>
 <span id="i18n-cta-basic-active">Manage Plan</span>
 <span id="i18n-cta-pro-active">Upgrade to Pro</span>
 <span id="i18n-cta-basic-trial-ended">Start Basic Now</span>
@@ -844,8 +844,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const state = computeCtaState();
     if (state === "new") {
       setCtaTexts({
-        basicText: t("i18n-cta-basic-new", "Start Free Trial"),
-        proText: t("i18n-cta-pro-new", "Start Pro Free"),
+        basicText: t("i18n-cta-basic-new", "Start Premium Trial"),
+        proText: t("i18n-cta-pro-new", "Start Pro Trial"),
         showTrialBadge: true,
         showTrialAlt: false,
       });

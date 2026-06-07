@@ -568,7 +568,7 @@
 <h1 class="hero-new-title-dark">반전을 잡으세요. <span>추세를 타세요.</span></h1>
 <p style="font-size: 1.25rem; color: #94a3b8; margin-bottom: 2.5rem; line-height: 1.6;">DivAlarm 기반. 잠든 사이에도 기회를 놓치지 마세요.</p>
 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 3rem;">
-<div class="free-trial-badge" id="free-trial-line" style="display: inline-block; background: linear-gradient(135deg, rgba(234,179,8,0.2) 0%, rgba(245,158,11,0.2) 100%); color: #facc15; border: 1px solid rgba(250,204,21,0.3); padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.05em; text-transform: uppercase; box-shadow: 0 0 20px rgba(250,204,21,0.1);">5일 무료 체험</div>
+<div class="free-trial-badge" id="free-trial-line" style="display: inline-block; background: linear-gradient(135deg, rgba(234,179,8,0.2) 0%, rgba(245,158,11,0.2) 100%); color: #facc15; border: 1px solid rgba(250,204,21,0.3); padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 1.1rem; letter-spacing: 0.05em; text-transform: uppercase; box-shadow: 0 0 20px rgba(250,204,21,0.1);">5일 프리미엄 무료체험</div>
 <div id="trial-alt-line" style="display:none; font-size: 1rem; font-weight: 600; color: #cbd5e1;">알림을 계속 켜두세요 — 지금 구독하세요.</div>
 <div style="font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; color: #64748b; margin-top: 0.5rem;">모든 요금제 • 언제든 취소 가능</div>
 </div>
@@ -803,8 +803,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const state = computeCtaState();
     if (state === "new") {
       setCtaTexts({
-        basicText: t("i18n-cta-basic-new", "Start Free Trial"),
-        proText: t("i18n-cta-pro-new", "Start Pro Free"),
+        basicText: t("i18n-cta-basic-new", "Start Premium Trial"),
+        proText: t("i18n-cta-pro-new", "Start Pro Trial"),
         showTrialBadge: true,
         showTrialAlt: false,
       });
