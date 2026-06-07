@@ -7,9 +7,6 @@
     "../data/performance/btcusdt/manifest.js",
     "https://cdn.jsdelivr.net/gh/Inkee1/DivAlarm-Site@main/data/performance/btcusdt/manifest.js",
   ];
-  const CDN_ASSET_BASE_URL =
-    "https://cdn.jsdelivr.net/gh/Inkee1/DivAlarm-Site@main/data/performance/btcusdt/";
-
   const state = {
     manifest: null,
     weeks: [],
@@ -243,27 +240,6 @@
     document.body.style.overflow = "hidden";
   };
 
-  window.handlePerformanceImageError = function(img) {
-    const fallbackSrc = img?.dataset?.fallbackSrc;
-    if (fallbackSrc && img.dataset.fallbackTried !== "true" && img.src !== fallbackSrc) {
-      img.dataset.fallbackTried = "true";
-      img.src = fallbackSrc;
-      return;
-    }
-
-    const panel = img?.closest?.(".performance-chart-panel");
-    if (!panel) {
-      return;
-    }
-    panel.classList.add("is-image-missing");
-    panel.innerHTML = `
-      <div class="performance-image-missing">
-        <strong>Chart image unavailable</strong>
-        <span>The performance data below is current, but this deployment does not include the chart image file.</span>
-      </div>
-    `;
-  };
-
   function createListHtml(items, emptyLabel) {
     if (!Array.isArray(items) || items.length === 0) {
       return `<span class="performance-muted">${escapeHtml(emptyLabel)}</span>`;
@@ -347,10 +323,6 @@
     return new URL(assetPath, state.manifest.manifestBaseUrl).toString();
   }
 
-  function resolveCdnAssetUrl(assetPath) {
-    return new URL(assetPath, CDN_ASSET_BASE_URL).toString();
-  }
-
   function createTrailingWindowMarkup(trailing) {
     if (!trailing || !trailing.image) {
       return "";
@@ -391,7 +363,7 @@
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                 </button>
               </div>
-              <img alt="${escapeHtml(trailing.image_alt || "Previous 30 days best chart")}" loading="lazy" src="${escapeHtml(resolveAssetUrl(trailing.image))}" data-fallback-src="${escapeHtml(resolveCdnAssetUrl(trailing.image))}" style="cursor: pointer;" onclick="window.openLightbox && window.openLightbox(this.src)" onerror="window.handlePerformanceImageError && window.handlePerformanceImageError(this)"/>
+              <img alt="${escapeHtml(trailing.image_alt || "Previous 30 days best chart")}" loading="lazy" src="${escapeHtml(resolveAssetUrl(trailing.image))}" style="cursor: pointer;" onclick="window.openLightbox && window.openLightbox(this.src)"/>
             </div>
             <p class="performance-trailing-hint">Tap the chart to zoom in.</p>
           </div>
@@ -484,7 +456,7 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </button>
             </div>
-            <img alt="${escapeHtml(week.image_alt || `${week.symbol} performance chart`)}" loading="lazy" src="${escapeHtml(resolveAssetUrl(week.image))}" data-fallback-src="${escapeHtml(resolveCdnAssetUrl(week.image))}" style="cursor: pointer;" onclick="window.openLightbox && window.openLightbox(this.src)" onerror="window.handlePerformanceImageError && window.handlePerformanceImageError(this)"/>
+            <img alt="${escapeHtml(week.image_alt || `${week.symbol} performance chart`)}" loading="lazy" src="${escapeHtml(resolveAssetUrl(week.image))}" style="cursor: pointer;" onclick="window.openLightbox && window.openLightbox(this.src)"/>
           </div>
           <div class="performance-details-panel">
             <div class="performance-stat-grid">
