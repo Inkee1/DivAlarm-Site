@@ -117,7 +117,7 @@
 </div>
 <style>
   .features-header-ultimate {
-    padding: 4.5rem 1rem 2.5rem;
+    padding: 5.5rem 1rem 3.5rem;
     text-align: center;
     background-color: #020617;
     position: relative;
@@ -127,272 +127,412 @@
     content: '';
     position: absolute;
     top: -30%;
-    left: 20%;
-    width: 60%;
-    height: 80%;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 60%);
+    left: 10%;
+    width: 80%;
+    height: 90%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(168, 85, 247, 0.05) 40%, transparent 70%);
     pointer-events: none;
     z-index: 0;
-    filter: blur(50px);
+    filter: blur(60px);
   }
   .features-header-ultimate::after {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(148, 163, 184, 0.09) 1px, transparent 1px);
-    background-size: 24px 24px;
-    mask-image: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, transparent 55%);
+    background-image: radial-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    mask-image: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 65%);
+    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 65%);
     pointer-events: none;
     z-index: 1;
   }
   .features-header-ultimate > .container {
     position: relative;
     z-index: 10;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
   }
   .survival-hero-eyebrow {
     display: inline-block;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #94a3b8;
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(148, 163, 184, 0.22);
-    padding: 0.45rem 0.9rem;
+    color: #38bdf8;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 0.5rem 1rem;
     border-radius: 999px;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.15);
   }
   .mega-title {
-    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    font-size: clamp(2.4rem, 6vw, 4rem);
     font-weight: 900;
     line-height: 1.25;
     color: #f8fafc;
-    margin-bottom: 1.75rem;
-    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+  }
+  @keyframes gradientPulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
   .mega-title span {
     color: transparent;
-    background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+    background: linear-gradient(270deg, #ef4444, #f97316, #ef4444);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
+    animation: gradientPulse 4s ease infinite;
+    display: inline-block;
   }
   .mega-subtitle {
-    font-size: clamp(1.1rem, 3.4vw, 1.3rem);
-    line-height: 1.95;
-    color: #ffffff;
+    font-size: clamp(1.15rem, 3.4vw, 1.35rem);
+    line-height: 1.8;
+    color: #cbd5e1;
     max-width: 700px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 2.5rem;
+    word-break: keep-all;
   }
   .mega-subtitle br { line-height: 1; }
   .mega-subtitle .reason-line {
     display: block;
-    margin-top: 0.7rem;
-    color: #f8fafc;
-    font-weight: 700;
-    font-size: clamp(1.25rem, 4vw, 1.5rem);
-    line-height: 1.55;
+    margin-top: 0.8rem;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: clamp(1.5rem, 4.8vw, 1.9rem);
+    line-height: 1.5;
     letter-spacing: -0.01em;
+    word-break: keep-all;
   }
   .mega-subtitle .reason-line:first-of-type {
-    margin-top: 1.85rem;
+    margin-top: 2rem;
   }
   .missed-signal-glass {
-    background: rgba(15, 23, 42, 0.6);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
     backdrop-filter: blur(20px);
-    padding: 1.5rem 1rem;
-    border-radius: 16px;
-    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
-    margin: 2rem auto 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 700px;
+    padding: 1.8rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    margin: 2.5rem auto 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    max-width: 650px;
+  }
+  .missed-signal-glass::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+    transform: skewX(-20deg);
+    animation: glassShine 5s infinite;
+  }
+  @keyframes glassShine {
+    0% { left: -100%; }
+    15% { left: 200%; }
+    100% { left: 200%; }
   }
   .missed-signal-glass p {
     font-size: 1.18rem;
-    color: #f8fafc;
+    color: #e2e8f0;
     margin-bottom: 0;
     text-align: center;
-    line-height: 1.9;
+    line-height: 1.8;
+    word-break: keep-all;
+    position: relative;
+    z-index: 2;
+  }
+  .missed-signal-glass strong {
+    color: #ffffff;
   }
   .missed-signal-glass strong.cta-hint {
     display: inline-block;
-    margin-top: 0.6rem;
+    margin-top: 1rem;
     color: #38bdf8;
-    font-size: 1.3rem;
+    font-size: 1.35rem;
+    font-weight: 800;
     line-height: 1.5;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
   }
   @media (min-width: 768px) {
-    .missed-signal-glass { padding: 2rem; }
+    .missed-signal-glass { padding: 2.2rem 3rem; }
   }
   .survival-weapons {
-    padding: 2rem 1rem 4rem;
+    padding: 2rem 1rem 5rem;
     position: relative;
+    background-color: #020617;
   }
   .survival-weapons::before {
     content: '';
     display: block;
     height: 1px;
-    max-width: 700px;
-    margin: 0 auto 2.5rem;
-    background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.35), transparent);
+    max-width: 800px;
+    margin: 0 auto 3.5rem;
+    background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.3), transparent);
   }
   .survival-weapons-inner {
-    max-width: 700px;
+    max-width: 740px;
     margin: 0 auto;
+    position: relative;
   }
   .survival-weapon-card {
-    margin-bottom: 2.75rem;
-    padding: 2rem 1.6rem;
-    border-radius: 20px;
-    background: linear-gradient(165deg, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.55) 100%);
-    border: 1px solid rgba(148, 163, 184, 0.14);
-    box-shadow: 0 12px 40px -18px rgba(0, 0, 0, 0.65);
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    margin-bottom: 3rem;
+    padding: 2.2rem 1.8rem;
+    border-radius: 24px;
+    background: linear-gradient(165deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    box-shadow: 0 15px 35px -15px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
   }
   .survival-weapon-card:hover {
-    border-color: rgba(148, 163, 184, 0.28);
-    box-shadow: 0 16px 48px -16px rgba(0, 0, 0, 0.55);
+    transform: translateY(-5px);
   }
-  .survival-weapon-card--tg { border-top: 3px solid #229ed9; }
-  .survival-weapon-card--div { border-top: 3px solid #10b981; }
-  .survival-weapon-card--noti { border-top: 3px solid #a855f7; }
+  
+  .survival-weapon-card--tg { 
+    border-top: 2px solid rgba(34, 158, 217, 0.6); 
+    box-shadow: 0 15px 35px -15px rgba(0,0,0,0.7), inset 0 20px 40px -20px rgba(34, 158, 217, 0.15); 
+  }
+  .survival-weapon-card--tg:hover {
+    border-color: rgba(34, 158, 217, 0.5);
+    box-shadow: 0 20px 40px -15px rgba(34, 158, 217, 0.15), inset 0 20px 40px -20px rgba(34, 158, 217, 0.25);
+  }
+  
+  .survival-weapon-card--div { 
+    border-top: 2px solid rgba(16, 185, 129, 0.6); 
+    box-shadow: 0 15px 35px -15px rgba(0,0,0,0.7), inset 0 20px 40px -20px rgba(16, 185, 129, 0.15); 
+  }
+  .survival-weapon-card--div:hover {
+    border-color: rgba(16, 185, 129, 0.5);
+    box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.15), inset 0 20px 40px -20px rgba(16, 185, 129, 0.25);
+  }
+  
+  .survival-weapon-card--noti { 
+    border-top: 2px solid rgba(168, 85, 247, 0.6); 
+    box-shadow: 0 15px 35px -15px rgba(0,0,0,0.7), inset 0 20px 40px -20px rgba(168, 85, 247, 0.15); 
+  }
+  .survival-weapon-card--noti:hover {
+    border-color: rgba(168, 85, 247, 0.5);
+    box-shadow: 0 20px 40px -15px rgba(168, 85, 247, 0.15), inset 0 20px 40px -20px rgba(168, 85, 247, 0.25);
+  }
+
   .survival-weapon-head {
     display: flex;
-    align-items: flex-start;
-    gap: 0.85rem;
-    margin-bottom: 1.85rem;
+    align-items: center;
+    gap: 1.1rem;
+    margin-bottom: 1.7rem;
   }
   .survival-step {
     flex-shrink: 0;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    color: #64748b;
-    background: rgba(30, 41, 59, 0.9);
-    border: 1px solid rgba(100, 116, 139, 0.35);
-    padding: 0.35rem 0.55rem;
-    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    padding: 0.45rem 0.8rem;
+    border-radius: 10px;
     line-height: 1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   }
+  .survival-weapon-card--tg .survival-step {
+    background: linear-gradient(135deg, #229ed9 0%, #168ac4 100%);
+    border: 1px solid rgba(34, 158, 217, 0.4);
+  }
+  .survival-weapon-card--div .survival-step {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+  }
+  .survival-weapon-card--noti .survival-step {
+    background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+    border: 1px solid rgba(168, 85, 247, 0.4);
+  }
+
   .survival-weapon-title {
-    font-size: clamp(1.35rem, 4.4vw, 1.7rem);
+    font-size: clamp(1.4rem, 4.4vw, 1.75rem);
     font-weight: 800;
     color: #f8fafc;
     margin: 0;
-    line-height: 1.45;
-    letter-spacing: -0.01em;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
   }
   .survival-body {
-    font-size: 1.15rem;
+    font-size: 1.18rem;
+    color: #e2e8f0;
+    line-height: 1.85;
+    margin: 0 0 1.5rem;
+    word-break: keep-all;
+  }
+  .survival-body strong {
     color: #ffffff;
-    line-height: 1.95;
-    margin: 0 0 1.25rem;
   }
   .survival-body:last-child { margin-bottom: 0; }
-  .survival-fact {
-    background: rgba(239, 68, 68, 0.06);
-    border-left: 4px solid #ef4444;
-    padding: 1.35rem 1.25rem;
-    margin: 1.5rem 0;
-    border-radius: 0 12px 12px 0;
+  
+  .survival-transition-note {
+    margin: 1.5rem 0 2.5rem;
+    padding: 1.5rem 1.8rem;
+    border-radius: 12px;
+    background: rgba(30, 41, 59, 0.5);
+    border-left: 4px solid #38bdf8;
+    position: relative;
+    text-align: left;
   }
-  .survival-fact p {
-    font-size: 1.1rem;
-    color: #f8fafc;
+  .survival-transition-note::after {
+    content: '';
+    position: absolute;
+    bottom: -1.25rem;
+    left: 0;
+    right: 0;
+    border-bottom: 1px dashed rgba(148, 163, 184, 0.3);
+  }
+  .survival-transition-note p {
     margin: 0;
-    line-height: 1.9;
-  }
-  .survival-fact p strong { display: inline-block; margin-bottom: 0.25rem; }
-  .survival-checklist {
     color: #ffffff;
     font-size: 1.15rem;
-    line-height: 1.85;
+    font-weight: 800;
+    line-height: 1.9;
+    word-break: keep-all;
+  }
+  .survival-transition-note p .label {
+    color: #38bdf8;
+    font-size: 1.30rem;
+    font-weight: 800;
+  }
+  .survival-transition-note p .arrow {
+    color: #64748b;
+    margin: 0 0.3rem;
+  }
+  
+  .survival-fact {
+    background: rgba(239, 68, 68, 0.08);
+    border-left: 4px solid #ef4444;
+    padding: 1.4rem 1.5rem;
+    margin: 1.8rem 0;
+    border-radius: 0 14px 14px 0;
+  }
+  .survival-fact p {
+    font-size: 1.12rem;
+    color: #f8fafc;
+    margin: 0;
+    line-height: 1.8;
+    word-break: keep-all;
+  }
+  .survival-fact p strong { display: inline-block; margin-bottom: 0.3rem; color: #f87171; }
+  
+  .survival-checklist {
+    color: #e2e8f0;
+    font-size: 1.15rem;
+    line-height: 1.8;
     padding-left: 0;
-    margin: 0 0 1.5rem;
+    margin: 0 0 2rem;
     list-style-type: none;
   }
   .survival-checklist li {
-    margin-bottom: 0.95rem;
-    padding-left: 0.15rem;
+    margin-bottom: 1.1rem;
+    padding-left: 0.2rem;
+    word-break: keep-all;
   }
   .survival-checklist li:last-child { margin-bottom: 0; }
-  .survival-checklist li strong { display: inline-block; margin-right: 0.25rem; }
+  .survival-checklist li strong { color: #ffffff; }
+  .survival-checklist li.survival-checklist-separated {
+    border-top: 1px solid rgba(148, 163, 184, 0.15);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+  
   .btn-premium-emerald {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: 1.1rem 1.75rem;
-    border-radius: 14px;
+    padding: 1.15rem 2rem;
+    border-radius: 16px;
     width: 100%;
     box-sizing: border-box;
     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     color: white;
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 800;
     text-decoration: none;
-    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
+    box-shadow: 0 8px 20px -6px rgba(16, 185, 129, 0.5);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 10;
+    letter-spacing: -0.01em;
   }
   .btn-premium-emerald:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 36px rgba(16, 185, 129, 0.5);
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 15px 30px -8px rgba(16, 185, 129, 0.7);
   }
+  
   .survival-weapon-card--tg .btn-premium-emerald {
     background: linear-gradient(135deg, #229ed9 0%, #168ac4 100%);
-    box-shadow: 0 10px 25px rgba(34, 158, 217, 0.35);
+    box-shadow: 0 8px 20px -6px rgba(34, 158, 217, 0.5);
   }
   .survival-weapon-card--tg .btn-premium-emerald:hover {
-    box-shadow: 0 18px 36px rgba(34, 158, 217, 0.45);
+    box-shadow: 0 15px 30px -8px rgba(34, 158, 217, 0.7);
   }
+  
   .survival-weapon-card--noti .btn-premium-emerald {
     background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
-    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.35);
+    box-shadow: 0 8px 20px -6px rgba(168, 85, 247, 0.5);
   }
   .survival-weapon-card--noti .btn-premium-emerald:hover {
-    box-shadow: 0 18px 36px rgba(168, 85, 247, 0.45);
+    box-shadow: 0 15px 30px -8px rgba(168, 85, 247, 0.7);
   }
-  .survival-cta-wrap { margin-top: 1.6rem; }
+  
+  .survival-cta-wrap { margin-top: 2rem; }
+  
   .survival-secondary-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.45rem;
+    gap: 0.5rem;
     width: fit-content;
     box-sizing: border-box;
-    padding: 0.15rem 0 0.12rem;
-    margin: 1.3rem auto 0;
-    border-bottom: 2px solid rgba(56, 189, 248, 0.95);
+    padding: 0.2rem 0;
+    margin: 1.4rem auto 0;
+    border-bottom: 2px solid rgba(56, 189, 248, 0.9);
     color: #38bdf8;
-    font-size: 0.98rem;
-    font-weight: 900;
+    font-size: 1.05rem;
+    font-weight: 800;
     text-decoration: none;
-    transition: color 0.2s ease, border-color 0.2s ease;
+    transition: all 0.2s ease;
   }
   .survival-secondary-link:hover {
-    color: #7dd3fc;
-    border-color: rgba(125, 211, 252, 1);
+    color: #bae6fd;
+    border-color: #bae6fd;
   }
   .survival-secondary-link .arrow {
     transition: transform 0.2s ease;
   }
   .survival-secondary-link:hover .arrow {
-    transform: translateX(3px);
+    transform: translateX(4px);
   }
+  
   @media (prefers-reduced-motion: reduce) {
-    .btn-premium-emerald:hover { transform: none; }
-    .survival-secondary-link:hover { transform: none; }
+    .btn-premium-emerald:hover, .survival-weapon-card:hover { transform: none; }
+    .survival-secondary-link:hover .arrow { transform: none; }
+    .mega-title span, .missed-signal-glass::before { animation: none; }
+  }
+  
+  html[lang="ko"] .survival-hero-eyebrow {
+    text-transform: none;
+    letter-spacing: -0.01em;
+    font-size: 0.9rem;
   }
 </style>
 <div style="background-color: #020617; width: 100%;">
 <section class="features-header-ultimate">
 <div class="container">
-<h1 class="mega-title">🚨 โดนล้างพอร์ตตอนหลับ<span>อีกแล้ว?</span></h1>
+<span class="survival-hero-eyebrow">คู่มือเอาตัวรอด</span>
+<h1 class="mega-title">เหตุผลที่คุณขาดทุนใน<span>Bitcoin Futures</span></h1>
 <p class="mega-subtitle">มาดูข้อเท็จจริงกันดีกว่า คนทำงานประจำจะนั่งเฝ้ากราฟได้ 24/7 จริงเหรอ? <strong>เป็นไปไม่ได้</strong><br/> มีอยู่แค่ 2 เหตุผลที่ทำให้คุณเสียเงินในตลาดฟิวเจอร์ส: <span class="reason-line">1. พลาดจังหวะตัดสินใจสำคัญ</span> <span class="reason-line">2. สภาพจิตใจของคุณ — เทรดตามอารมณ์ชั่ววูบ</span></p>
 <div class="missed-signal-glass">
-<p>แค่เปิดกราฟแบบสุ่ม ๆ เมื่อไหร่ วันนั้นพอร์ตคุณก็แทบจบแล้ว <br/>ป้องกัน 2 เรื่องนี้ได้ โอกาสชนะของคุณจะเพิ่มขึ้นอย่างชัดเจน <br/><br/> <strong class="cta-hint">ติดอาวุธ 3 อย่างนี้ไว้ เพื่อเอาตัวรอดในการเทรด 👇</strong></p>
+<p><strong>เปิดกราฟมั่ว ๆ</strong> เมื่อไหร่ บัญชีของวันนั้นก็แทบจบแล้ว <br/>กันสองอย่างนี้ได้ คุณก็มีโอกาสชนะอย่างชัดเจน <br/><br/> <strong class="cta-hint">3 อาวุธเพื่อเอาตัวรอด 👇</strong></p>
 </div>
 </div>
 </section>
@@ -403,7 +543,7 @@
 <span class="survival-step">01</span>
 <h2 class="survival-weapon-title">1️⃣ Bitcoin Core Signal Telegram (ฟรี)</h2>
 </div>
-<p class="survival-body">ไม่ต้องคอยจ้องกราฟตลอดเวลาอีกต่อไป<br/>เช็กเฉพาะตอนที่มีสัญญาณเตือน RSI divergence ที่มีความน่าจะเป็นสูงเด้งขึ้นมา ก็ช่วยเพิ่มอัตราชนะได้ดีกว่ามาก</p>
+<p class="survival-body">ดูอินดิเคเตอร์ RSI ฟรีที่แม่นกว่า TradingView.<br/>ดูกราฟเฉพาะตอนที่สัญญาณนี้ขึ้นเท่านั้น.<br/>การเช็กเฉพาะตอนที่มี alarm RSI divergence ความน่าจะเป็นสูง จะดีกับ win rate มากกว่า.<br/>ระบบจะแจ้งเตือนทันทีหลังราคาผ่านเส้น support/resistance ขั้นต่ำ.</p>
 <div class="survival-cta-wrap">
 <a class="btn-premium-emerald" href="https://t.me/rsi_divergence_ws">👉 เข้าร่วมฟรี</a>
 </div>
@@ -413,6 +553,9 @@
 <span class="survival-step">02</span>
 <h2 class="survival-weapon-title">2️⃣ DivAlarm — นักล่า Divergence &amp; เทรดอัตโนมัติ</h2>
 </div>
+<div class="survival-transition-note">
+<p><span class="label">จังหวะเข้า</span> <span class="arrow">→</span> ดูกราฟเฉพาะตอนมี RSI divergence<br/><span class="label">เทรดตามอารมณ์</span> <span class="arrow">→</span> เชื่อมกับ TradingView แล้วสั่งอัตโนมัติเมื่อมีสัญญาณ</p>
+</div>
 <p class="survival-body">99% ของการกลับตัวบนกราฟมาจาก <strong>'RSI Divergence'</strong><br/>เลือกเฉพาะจุดที่มีอัตราส่วนความเสี่ยงต่อผลตอบแทนคุ้มที่สุด ราคาเข้าเทรดที่ดีจะช่วยลดระยะ stop-loss และ stop-loss ที่แคบลงนี่แหละคือวิธีเอาตัวรอด</p>
 <div class="survival-fact">
 <p>💡 <strong>เช็กข้อเท็จจริง: stop loss 1% กับ 1.5% ต่างกันแค่ไหน?</strong><br/> เทรด 20 ครั้งด้วยเลเวอเรจ 10x ทำให้อัตราการสูญเสียของพอร์ตต่างกันถึง <strong>318%</strong> เมื่อรวมค่าธรรมเนียมแล้ว stop loss ของคุณต้องแคบกว่าที่คิดมาก</p>
@@ -420,7 +563,7 @@
 <ul class="survival-checklist">
 <li>✅ <strong>บล็อกการเทรดตามอารมณ์:</strong> สัญญาณเตือนจะดังเฉพาะจุดสำคัญจริง ๆ เท่านั้น</li>
 <li>✅ <strong>ป้องกันตอนหลับ:</strong> เสียงเตือนทรงพลังที่ดังทะลุโหมดเงียบ หมดยุคต้องมานั่งเสียดายที่พลาดจังหวะตอนดึก</li>
-<li>✅ <strong>เชื่อมต่อกับ TradingView:</strong> ตั้งแต่สัญญาณแบบกำหนดเองไปจนถึง 'สั่งออเดอร์อัตโนมัติ' ได้ในที่เดียว</li>
+<li class="survival-checklist-separated">✅ <strong>เชื่อมต่อกับ TradingView:</strong> ตั้งแต่สัญญาณแบบกำหนดเองไปจนถึง 'สั่งออเดอร์อัตโนมัติ' ได้ในที่เดียว</li>
 </ul>
 <div class="survival-cta-wrap">
 <a class="btn-premium-emerald" href="https://play.google.com/store/apps/details?id=com.flutterflow.divalarm2">👉 เริ่มทดลองใช้ฟรี DivAlarm</a>
