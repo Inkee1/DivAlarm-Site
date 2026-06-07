@@ -1,3 +1,23 @@
+/* Survival page CTA spacing */
+.survival-cta-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.survival-cta-wrap .survival-secondary-link,
+.survival-cta-wrap .btn-premium-emerald {
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .survival-cta-wrap {
+    gap: 0.75rem;
+  }
+}
 /* ============================================
    HYBRID Design - Enhanced styling + Original fonts
    Colors/effects from Enhanced, Fonts from Original
