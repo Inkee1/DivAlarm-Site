@@ -406,6 +406,46 @@
     color: #64748b;
     margin: 0 0.3rem;
   }
+
+  .rsi-intro-bridge {
+    margin: -0.6rem 0 4.5rem;
+    text-align: center;
+  }
+  .rsi-intro-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.72rem 1.15rem;
+    border: 1px solid rgba(255, 183, 77, 0.75);
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.42) 0%, rgba(255, 193, 7, 0.30) 100%);
+    color: #fff7ed;
+    font-size: clamp(0.96rem, 3vw, 1.06rem);
+    font-weight: 900;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    box-shadow: 0 14px 28px -18px rgba(255, 152, 0, 1), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    word-break: keep-all;
+  }
+  .rsi-intro-button:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 213, 79, 0.95);
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.58) 0%, rgba(255, 193, 7, 0.44) 100%);
+    box-shadow: 0 18px 32px -18px rgba(255, 171, 0, 1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  .rsi-intro-button .arrow {
+    color: #ffd54f;
+    transition: transform 0.25s ease;
+  }
+  .rsi-intro-button:hover .arrow {
+    transform: translateX(4px);
+  }
   
   .survival-fact {
     background: rgba(239, 68, 68, 0.08);
@@ -522,6 +562,7 @@
   @media (prefers-reduced-motion: reduce) {
     .btn-premium-emerald:hover, .survival-weapon-card:hover { transform: none; }
     .survival-secondary-link:hover .arrow { transform: none; }
+    .rsi-intro-button:hover, .rsi-intro-button:hover .arrow { transform: none; }
     .mega-title span, .missed-signal-glass::before { animation: none; }
   }
   
@@ -554,6 +595,9 @@
 <a class="btn-premium-emerald" href="https://t.me/rsi_divergence_ws">👉 Sertai Percuma</a>
 </div>
 </article>
+<div class="rsi-intro-bridge">
+<a class="rsi-intro-button" href="https://www.divalarm.com/ms/rsi-divergence">Sekejap! Apa itu RSI Divergence? <span class="arrow">→</span></a>
+</div>
 <article class="survival-weapon-card survival-weapon-card--div">
 <div class="survival-weapon-head">
 <span class="survival-step">02</span>
