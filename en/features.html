@@ -187,6 +187,61 @@
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
+  .tradingview-video-card {
+    margin-top: 2rem;
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.14), rgba(168, 85, 247, 0.12));
+    border: 1px solid rgba(56, 189, 248, 0.28);
+    box-shadow: 0 20px 45px rgba(2, 6, 23, 0.45);
+    text-align: left;
+  }
+  .tradingview-video-eyebrow {
+    color: #38bdf8;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+  .tradingview-video-title {
+    color: #f8fafc;
+    font-size: clamp(1.55rem, 4vw, 2.15rem);
+    font-weight: 900;
+    line-height: 1.25;
+    margin: 0 0 0.75rem;
+  }
+  .tradingview-video-desc {
+    color: #cbd5e1;
+    font-size: clamp(0.98rem, 2.5vw, 1.08rem);
+    line-height: 1.7;
+    margin: 0 0 1.25rem;
+  }
+  .tradingview-video-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #020617;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
+  }
+  .tradingview-video-frame::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+  }
+  .tradingview-video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  @media (max-width: 479px) {
+    .tradingview-video-card { padding: 1rem; border-radius: 16px; }
+    .tradingview-video-frame { border-radius: 12px; }
+  }
   .feature-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -295,6 +350,14 @@
 <strong style="color: #ef4444; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">Did you know?</strong>
             Most popular indicators on platforms like <strong>TradingView</strong> <strong>frequently miss crucial RSI divergences.</strong> <strong>DivAlarm</strong> is engineered to catch these hidden signals perfectly, giving you a <strong style="color: #f8fafc;">critical edge</strong>.
           </p>
+</div>
+<div class="tradingview-video-card">
+<div class="tradingview-video-eyebrow">TradingView Webhook</div>
+<h2 class="tradingview-video-title">TradingView Automated Order Example</h2>
+<p class="tradingview-video-desc">Watch how a TradingView signal connects with DivAlarm and leads into an automated order workflow.</p>
+<div class="tradingview-video-frame">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="TradingView Automated Order Example"></iframe>
+</div>
 </div>
 </div>
 </div>
