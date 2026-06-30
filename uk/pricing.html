@@ -276,6 +276,56 @@
       text-align: center;
     }
 
+
+
+    .billing-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 6px;
+      margin: 0 auto 28px;
+      border: 1px solid rgba(148, 163, 184, 0.24);
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.72);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24);
+    }
+
+    .billing-toggle button {
+      min-width: 132px;
+      padding: 10px 16px;
+      border: 0;
+      border-radius: 10px;
+      background: transparent;
+      color: rgba(226, 232, 240, 0.72);
+      font-family: 'Exo', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .billing-toggle button.is-active {
+      background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
+      color: #ffffff;
+      box-shadow: 0 8px 22px rgba(56, 189, 248, 0.24);
+    }
+
+    .annual-save-note {
+      color: #facc15;
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-left: 6px;
+    }
+
+    .annual-card-note {
+      margin: -14px 0 24px;
+      color: rgba(148, 163, 184, 0.82);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
     /* Basic Button */
     .btn-basic {
       background: transparent;
@@ -581,14 +631,21 @@
 <!-- Pricing Section Start -->
 <section class="pricing-comparison-2">
 <div class="container-15"></div>
+<div style="display:flex; justify-content:center; padding: 0 24px;">
+<div aria-label="Billing period" class="billing-toggle" id="billing-toggle">
+<button class="is-active" data-billing-period="monthly" type="button">????????</button>
+<button data-billing-period="yearly" type="button">?????? <span class="annual-save-note">-30%</span></button>
+</div>
+</div>
+<div class="annual-card-note">????? ???????? ??????? ??????? ?????? 30%.</div>
 <div class="pricing-wrapper-2">
 <!-- Basic Plan Card -->
 <div class="pricing-card-2" id="w-node-_768118f2-2c08-fe81-09f6-4ddb338c971c-4ade9e4f">
 <h2 class="pricing-title-2">Базовий</h2>
 <div class="pricing-subtitle-2">Базові інструменти</div>
 <div class="pricing-price-2">
-<div class="original-price">$15.8/міс</div>
-<div class="price-container"><span class="current-price">$9.9</span> <span class="period">/міс</span></div>
+<div class="original-price" data-plan-price="basic-original">$15.8/міс</div>
+<div class="price-container"><span class="current-price" data-plan-price="basic-current">$9.9</span> <span class="period" data-plan-price="basic-period">/міс</span></div>
 </div>
 <div class="pricing-description">Ідеально, щоб почати з базових сповіщень про дивергенцію.</div>
 <a class="subscribe-btn btn-basic" href="#" id="sub-btn">Підписатися</a>
@@ -634,8 +691,8 @@
 <h2 class="pricing-title-2">Про</h2>
 <div class="pricing-subtitle-2">Повна автоматизація</div>
 <div class="pricing-price-2">
-<div class="original-price">$25.8/міс</div>
-<div class="price-container"><span class="current-price">$14.9</span> <span class="period">/міс</span></div>
+<div class="original-price" data-plan-price="pro-original">$25.8/міс</div>
+<div class="price-container"><span class="current-price" data-plan-price="pro-current">$14.9</span> <span class="period" data-plan-price="pro-period">/міс</span></div>
 </div>
 <div class="pricing-description">Розкрийте повний потенціал із Webhooks та автоматизацією Auto-Order.</div>
 <a class="subscribe-btn btn-pro" href="#" id="sub-btn2">Оформити Pro</a>
@@ -878,6 +935,64 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });  
 </script>
+<script>
+(function setupCardBillingToggle() {
+  const prices = {
+    basic: {
+      monthly: { original: '$15.8', current: '$9.9', period: '' },
+      yearly: { original: '$189.6', current: '$83.16', period: '/???' }
+    },
+    pro: {
+      monthly: { original: '$25.8', current: '$14.9', period: '' },
+      yearly: { original: '$309.6', current: '$125.16', period: '/???' }
+    }
+  };
+  window.cardBillingPeriod = 'monthly';
+
+  function getMonthlyPeriod(plan) {
+    const el = document.querySelector('[data-plan-price="' + plan + '-period"]');
+    return el?.dataset.monthlyPeriod || el?.textContent || '/mo';
+  }
+
+  function setText(selector, value) {
+    const el = document.querySelector(selector);
+    if (el) el.textContent = value;
+  }
+
+  function rememberMonthlyPeriods() {
+    ['basic', 'pro'].forEach((plan) => {
+      const el = document.querySelector('[data-plan-price="' + plan + '-period"]');
+      if (el && !el.dataset.monthlyPeriod) el.dataset.monthlyPeriod = el.textContent;
+    });
+  }
+
+  window.applyCardBillingPricing = function applyCardBillingPricing() {
+    rememberMonthlyPeriods();
+    const billingPeriod = window.cardBillingPeriod || 'monthly';
+    ['basic', 'pro'].forEach((plan) => {
+      const selected = prices[plan][billingPeriod];
+      const period = billingPeriod === 'monthly' ? getMonthlyPeriod(plan) : selected.period;
+      setText('[data-plan-price="' + plan + '-original"]', selected.original + period);
+      setText('[data-plan-price="' + plan + '-current"]', selected.current);
+      setText('[data-plan-price="' + plan + '-period"]', period);
+    });
+    document.querySelectorAll('#billing-toggle [data-billing-period]').forEach((button) => {
+      button.classList.toggle('is-active', button.dataset.billingPeriod === billingPeriod);
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    rememberMonthlyPeriods();
+    document.querySelectorAll('#billing-toggle [data-billing-period]').forEach((button) => {
+      button.addEventListener('click', () => {
+        window.cardBillingPeriod = button.dataset.billingPeriod === 'yearly' ? 'yearly' : 'monthly';
+        window.applyCardBillingPricing();
+      });
+    });
+    window.applyCardBillingPricing();
+  });
+})();
+</script>
 <script src="https://js.stripe.com/v3/"></script>
 <script type="module">
   (function prefillReferralInput() {
@@ -935,6 +1050,7 @@ async function getCurrentPlan(idToken) {
       isCanceled: "false",
       mode: "public",
       plan: "basic",
+      billingPeriod: window.cardBillingPeriod || "monthly",
       returnUrl: new URL("go-my-account.html", location.href).toString(),
       cancelUrl: location.href,
       locale: (location.pathname.split("/").filter(Boolean)[0] || "auto")
@@ -968,6 +1084,7 @@ subBtn?.addEventListener("click", async () => {
         isCanceled: localStorage.getItem("isCanceled") || "false",
         mode: "public",
         plan: "basic",
+        billingPeriod: window.cardBillingPeriod || "monthly",
         returnUrl: new URL("go-my-account.html", location.href).toString(),
         cancelUrl: location.href,
         locale: (location.pathname.split("/").filter(Boolean)[0] || "auto")
@@ -1058,6 +1175,7 @@ subBtn2?.addEventListener("click", async () => {
         isCanceled: localStorage.getItem("isCanceled") || "false",
         mode: "public",
         plan: "pro",
+        billingPeriod: window.cardBillingPeriod || "monthly",
         returnUrl: new URL("go-my-account.html", location.href).toString(),
         cancelUrl: location.href,
         locale: (location.pathname.split("/").filter(Boolean)[0] || "auto")
