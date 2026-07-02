@@ -20,6 +20,227 @@
 <style>
   .auth-btn.login { background-color: #3498db; color: white; }
   .auth-btn.logout { background-color: #e74c3c; color: white; }
+
+  .survival-weekly-performance {
+    margin: 3rem 0 2.5rem;
+    padding: 1.5rem 1.2rem 1.4rem;
+    border-radius: 24px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    background: linear-gradient(165deg, rgba(15, 23, 42, 0.95) 0%, rgba(2, 6, 23, 0.98) 100%);
+    box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.15) inset;
+    position: relative;
+    overflow: hidden;
+  }
+  .survival-weekly-performance::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    animation: rotateGlow 15s linear infinite;
+  }
+  @keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .survival-weekly-performance-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 2;
+  }
+  .survival-weekly-performance-title {
+    margin: 0;
+    font-size: clamp(1.2rem, 4vw, 1.4rem);
+    font-weight: 900;
+    color: #f8fafc;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .survival-weekly-performance-title::before {
+    content: '🔥';
+    font-size: 1.2em;
+  }
+  .survival-weekly-scroll-hint {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.15);
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    animation: pulseHint 2s infinite;
+  }
+  @keyframes pulseHint {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; transform: translateX(3px); }
+    100% { opacity: 0.7; }
+  }
+  .survival-weekly-viewport {
+    height: clamp(190px, 28vh, 250px);
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(56, 189, 248, 0.6) rgba(15, 23, 42, 0.5);
+    position: relative;
+    z-index: 2;
+    padding-bottom: 0.5rem;
+  }
+  .survival-weekly-viewport::-webkit-scrollbar {
+    height: 6px;
+  }
+  .survival-weekly-viewport::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 999px;
+  }
+  .survival-weekly-viewport::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.6);
+    border-radius: 999px;
+  }
+  .survival-weekly-track {
+    display: flex;
+    gap: 1rem;
+    height: 100%;
+    width: max-content;
+  }
+  .survival-weekly-card {
+    flex: 0 0 min(82vw, 320px);
+    width: min(82vw, 320px);
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 0;
+    scroll-snap-align: center;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 10px 20px -10px rgba(0,0,0,0.5);
+  }
+  .survival-weekly-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 15px 30px -10px rgba(0,0,0,0.7), 0 0 20px rgba(56, 189, 248, 0.2);
+  }
+  .survival-weekly-chart {
+    min-height: 0;
+    overflow: hidden;
+    background: rgba(15, 23, 42, 0.8);
+    position: relative;
+  }
+  .survival-weekly-chart::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, transparent 30%);
+    pointer-events: none;
+  }
+  .survival-weekly-chart img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.5s ease;
+  }
+  .survival-weekly-card:hover .survival-weekly-chart img {
+    transform: scale(1.05);
+  }
+  .survival-weekly-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    background: rgba(15, 23, 42, 0.95);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .survival-weekly-date {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    white-space: nowrap;
+  }
+  .survival-weekly-returns {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    white-space: nowrap;
+  }
+  .survival-weekly-x10 {
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: #4ade80;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 15px rgba(74, 222, 128, 0.4);
+  }
+  .survival-weekly-x10-tag {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #22c55e;
+    opacity: 0.9;
+    background: rgba(34, 197, 94, 0.15);
+    padding: 0.15rem 0.4rem;
+    border-radius: 6px;
+    vertical-align: middle;
+  }
+  .survival-weekly-base {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+  }
+  .survival-weekly-status,
+  .survival-weekly-empty {
+    margin: 0;
+    padding: 1rem 0.2rem;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .survival-weekly-status[data-tone="error"] {
+    color: #fca5a5;
+  }
+  .survival-weekly-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem auto 0;
+    padding: 0.9rem 2rem;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 10px 25px -8px rgba(14, 165, 233, 0.6);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+  }
+  .survival-weekly-more:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 15px 35px -10px rgba(14, 165, 233, 0.8);
+    background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  }
+  .survival-weekly-more-wrap {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
 </style>
 <script>
   (function captureReferralFromQuery() {
@@ -581,6 +802,20 @@
 <div class="missed-signal-glass">
 <p><strong>Kapag basta-basta</strong> mong binuksan ang chart, delikado na ang account mo para sa araw na iyon. <br/>Pigilan ang dalawang ito, at mas malinaw ang chance mong manalo. <br/><br/> <strong class="cta-hint">3 sandata para makasurvive 👇</strong></p>
 </div>
+<section aria-label="Pinakamahusay na Lingguhang Pagganap" class="survival-weekly-performance" data-empty-text="Walang data para sa linggong ito." data-error-text="Nabigong i-load ang data ng pagganap." data-loading-text="Naglo-load..." id="survival-weekly-performance">
+<div class="survival-weekly-performance-head">
+<h3 class="survival-weekly-performance-title">Pinakamahusay na Lingguhang Pagganap</h3>
+<span class="survival-weekly-scroll-hint">← →</span>
+</div>
+<div class="survival-weekly-viewport">
+<div class="survival-weekly-track"></div>
+</div>
+<p class="survival-weekly-status" hidden="">Naglo-load...</p>
+<div class="survival-weekly-more-wrap">
+<a class="survival-weekly-more" href="performance.html">Tingnan Pa <span aria-hidden="true">→</span></a>
+</div>
+</section>
+
 </div>
 </section>
 <section aria-label="Tatlong survival tools" class="survival-weapons">
@@ -634,6 +869,8 @@
 </div>
 </section>
 </div>
+
+<script defer="" src="../js/survival-performance-preview.js" type="text/javascript"></script>
 <script crossorigin="anonymous" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67d93880609042a66e2a6f90" type="text/javascript"></script>
 <script src="../js/webflow.js" type="text/javascript"></script>
 <script type="module">
