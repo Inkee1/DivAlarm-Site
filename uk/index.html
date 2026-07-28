@@ -36,7 +36,7 @@
       if (!raw) return;
       // 필요시 정규화 규칙:
       // const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
-      const safe = raw;
+      const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
       localStorage.setItem("referralId", safe);
     } catch (e) {
       console.warn("referral capture error:", e);
@@ -54,9 +54,9 @@
 <meta content="https://www.divalarm.com/uk/" property="og:url"/>
 <meta content="DivAlarm" property="og:site_name"/>
 <meta content="uk_UA" property="og:locale"/>
-<meta content="website" property="og:type"/>
+<meta content="website" property="og:type"/><meta content="https://www.divalarm.com/images/og-cover.png" property="og:image"/><meta content="1080" property="og:image:width"/><meta content="649" property="og:image:height"/><meta content="https://www.divalarm.com/images/og-cover.png" name="twitter:image"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-<meta content="summary" name="twitter:card"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","inLanguage":"uk","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"SoftwareApplication","name":"DivAlarm","applicationCategory":"FinanceApplication","operatingSystem":"Android","url":"https://www.divalarm.com/uk/","description":"Сповіщення про дивергенцію RSI, нотифікації, готові для webhook, та торгові сигнали тривоги для кількох таймфреймів — для активних трейдерів.","publisher":{"@id":"https://www.divalarm.com/#organization"},"featureList":["Сповіщення про дивергенцію RSI","Мобільні сигнали тривоги, що пробивають беззвучний режим","Webhook-автоматизації TradingView","Моніторинг кількох таймфреймів"]},{"@type":"WebPage","url":"https://www.divalarm.com/uk/","name":"DivAlarm | Сповіщення про дивергенції RSI для трейдерів TradingView","description":"DivAlarm надсилає швидкі сповіщення про дивергенцію RSI, нотифікації, готові для TradingView, та сигнали тривоги, що пробивають беззвучний режим — щоб ви ніколи не пропускали розвороти з високою ймовірністю.","inLanguage":"uk","isPartOf":{"@id":"https://www.divalarm.com/#website"},"about":{"@type":"Thing","name":"Сповіщення про дивергенцію RSI"}}]}</script>
 <link href="https://www.divalarm.com/uk/" rel="canonical"/><link href="https://www.divalarm.com/en/" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/" hreflang="x-default" rel="alternate"/></head>
 <body class="body-3">
@@ -75,7 +75,7 @@
 <a class="nav-link" href="performance.html">Продуктивність</a>
 </li>
 <li>
-<a class="nav-link" href="downlaods.html"><strong>Завантаження</strong></a>
+<a class="nav-link" href="downloads.html"><strong>Завантаження</strong></a>
 </li>
 <li>
 <div class="nav-dropdown w-dropdown" data-delay="0" data-hover="false">

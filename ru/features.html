@@ -36,7 +36,7 @@
       if (!raw) return;
       // 필요시 정규화 규칙:
       // const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
-      const safe = raw;
+      const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
       localStorage.setItem("referralId", safe);
     } catch (e) {
       console.warn("referral capture error:", e);
@@ -54,9 +54,9 @@
 <meta content="https://www.divalarm.com/ru/features.html" property="og:url"/>
 <meta content="DivAlarm" property="og:site_name"/>
 <meta content="ru_RU" property="og:locale"/>
-<meta content="website" property="og:type"/>
+<meta content="website" property="og:type"/><meta content="https://www.divalarm.com/images/og-cover.png" property="og:image"/><meta content="1080" property="og:image:width"/><meta content="649" property="og:image:height"/><meta content="https://www.divalarm.com/images/og-cover.png" name="twitter:image"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-<meta content="summary" name="twitter:card"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"SoftwareApplication","name":"DivAlarm","applicationCategory":"FinanceApplication","operatingSystem":"Android","url":"https://www.divalarm.com/ru/features.html","description":"Уведомления о дивергенциях RSI, мониторинг на нескольких таймфреймах, сценарии вебхуков TradingView и торговые инструменты для активных участников рынка.","publisher":{"@id":"https://www.divalarm.com/#organization"},"featureList":["Раннее выявление дивергенций RSI","Уведомления на нескольких таймфреймах","Поддержка вебхуков TradingView","Реферальные вознаграждения"]},{"@type":"WebPage","url":"https://www.divalarm.com/ru/features.html","name":"DivAlarm Функции | RSI Уведомления о дивергенции, вебхуки и фильтры","description":"Изучите функции DivAlarm, включая раннее выявление дивергенций RSI, уведомления на нескольких таймфреймах, поддержку вебхуков TradingView и реферальные вознаграждения.","inLanguage":"ru","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://www.divalarm.com/ru/"},{"@type":"ListItem","position":2,"name":"Функции","item":"https://www.divalarm.com/ru/features.html"}]}]}</script>
 <link href="https://www.divalarm.com/ru/features.html" rel="canonical"/><link href="https://www.divalarm.com/en/features.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/features.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/features.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/features.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/features.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/features.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/features.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/features.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/features.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/features.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/features.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/features.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/features.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/features.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/features.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/features.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/features.html" hreflang="x-default" rel="alternate"/></head>
 <body>
@@ -75,7 +75,7 @@
 <a class="nav-link" href="performance.html">Производительность</a>
 </li>
 <li>
-<a class="nav-link" href="downlaods.html"><strong>Загрузки</strong></a>
+<a class="nav-link" href="downloads.html"><strong>Загрузки</strong></a>
 </li>
 <li>
 <div class="nav-dropdown w-dropdown" data-delay="0" data-hover="false">
@@ -402,7 +402,7 @@
 <p style="font-size: 1.05rem; color: #cbd5e1; line-height: 1.9; margin: 0;"><strong>Приглашайте людей и получайте вознаграждение —</strong> каждый раз, когда приглашённый вами человек продлевает месячную подписку, вы получаете 1.50–2.50 USDT за человека, с выплатой напрямую на ваш кошелёк. <br/>‍<br/>После регистрации вы получите <strong>свой уникальный реферальный код и ссылку на подписку.</strong><br/>Если кто-то оформит Basic по вашему коду или ссылке, <strong>первый месяц будет стоить всего $7.90</strong>, а затем будет действовать реферальная цена <strong>$9.50 в месяц. <br/><br/>‍</strong>При этом <strong>вы</strong> будете получать <strong>1.50–2.50 USDT за каждый платёж продления</strong>, который они совершают:<br/><strong>1-10 subscribers:</strong> 1.50 USDT per subscriber per month<br/><strong>11-50 subscribers:</strong> 2.00 USDT per subscriber per month<br/><strong>51+ subscribers:</strong> 2.50 USDT per subscriber per month<br/><br/>Пригласите 300 человек — и вы сможете зарабатывать до <strong>750 USDT каждый месяц!</strong><br/><br/>Это новый источник дохода, который продолжает поступать — даже когда вы не работаете. По мере роста числа рефералов вы также получите возможность отправлять эксклюзивные объявления с любым контентом на ваш выбор — только приглашённым пользователям.<br/><strong>Реферал с годовой подпиской: 25 USDT за каждого успешного реферала.</strong></p>
 </div>
 <div style="text-align: center; margin-top: 2rem;">
-<a class="btn-premium-emerald" href="downlaods.html"><strong>Попробовать бесплатно</strong></a>
+<a class="btn-premium-emerald" href="downloads.html"><strong>Попробовать бесплатно</strong></a>
 </div>
 </div>
 </div>

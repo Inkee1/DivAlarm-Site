@@ -36,7 +36,7 @@
       if (!raw) return;
       // 필요시 정규화 규칙:
       // const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
-      const safe = raw;
+      const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
       localStorage.setItem("referralId", safe);
     } catch (e) {
       console.warn("referral capture error:", e);
@@ -54,9 +54,9 @@
 <meta content="https://www.divalarm.com/tr/features.html" property="og:url"/>
 <meta content="DivAlarm" property="og:site_name"/>
 <meta content="tr_TR" property="og:locale"/>
-<meta content="website" property="og:type"/>
+<meta content="website" property="og:type"/><meta content="https://www.divalarm.com/images/og-cover.png" property="og:image"/><meta content="1080" property="og:image:width"/><meta content="649" property="og:image:height"/><meta content="https://www.divalarm.com/images/og-cover.png" name="twitter:image"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-<meta content="summary" name="twitter:card"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"SoftwareApplication","name":"DivAlarm","applicationCategory":"FinanceApplication","operatingSystem":"Android","url":"https://www.divalarm.com/tr/features.html","description":"RSI uyumsuzluk alarmları, çoklu zaman dilimi takibi, TradingView webhook iş akışları ve aktif piyasa katılımcıları için alım-satım araçları.","publisher":{"@id":"https://www.divalarm.com/#organization"},"featureList":["Erken RSI uyumsuzluk tespiti","Çoklu zaman dilimi alarmları","TradingView webhook desteği","Referans ödülleri"]},{"@type":"WebPage","url":"https://www.divalarm.com/tr/features.html","name":"DivAlarm Özellikler | RSI Uyumsuzluk Uyarıları, Webhook’lar ve Filtreler","description":"Erken RSI uyumsuzluk tespiti, çoklu zaman dilimi uyarıları, TradingView webhook desteği ve referans ödülleri dahil DivAlarm özelliklerini keşfedin.","inLanguage":"tr","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://www.divalarm.com/tr/"},{"@type":"ListItem","position":2,"name":"Özellikler","item":"https://www.divalarm.com/tr/features.html"}]}]}</script>
 <link href="https://www.divalarm.com/tr/features.html" rel="canonical"/><link href="https://www.divalarm.com/en/features.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/features.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/features.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/features.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/features.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/features.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/features.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/features.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/features.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/features.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/features.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/features.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/features.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/features.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/features.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/features.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/features.html" hreflang="x-default" rel="alternate"/></head>
 <body>
@@ -75,7 +75,7 @@
 <a class="nav-link" href="performance.html">Performans</a>
 </li>
 <li>
-<a class="nav-link" href="downlaods.html"><strong>İndirmeler</strong></a>
+<a class="nav-link" href="downloads.html"><strong>İndirmeler</strong></a>
 </li>
 <li>
 <div class="nav-dropdown w-dropdown" data-delay="0" data-hover="false">
@@ -402,7 +402,7 @@
 <p style="font-size: 1.05rem; color: #cbd5e1; line-height: 1.9; margin: 0;"><strong>İnsanları davet edin ve ödül kazanın —</strong> davet ettiğiniz biri aylık aboneliğini her yenilediğinde, kişi başı 1.50–2.50 USDT alırsınız; ödeme doğrudan cüzdanınıza yapılır. <br/>‍<br/>Kayıt olduğunuzda <strong>size özel benzersiz bir referans kodu ve abonelik bağlantısı</strong> alırsınız.<br/>Birisi kodunuzu veya bağlantınızı kullanarak Basic'e abone olursa, <strong>ilk ay yalnızca $7.90</strong>, sonraki aylarda ise referans fiyatı <strong>aylık $9.50</strong> olur. <br/><br/>‍Bu arada <strong>siz</strong>, yaptıkları <strong>her yenileme ödemesi için 1.50–2.50 USDT</strong> kazanırsınız:<br/><strong>1-10 subscribers:</strong> 1.50 USDT per subscriber per month<br/><strong>11-50 subscribers:</strong> 2.00 USDT per subscriber per month<br/><strong>51+ subscribers:</strong> 2.50 USDT per subscriber per month<br/><br/>300 kişiyi davet edin, her ay <strong>750 USDT’a kadar</strong> kazanabilirsiniz!<br/><br/>Bu, siz çalışmıyorken bile gelmeye devam eden yeni bir gelir akışı. Davet sayınız arttıkça, yalnızca davet ettiğiniz kullanıcılara, istediğiniz içerikle özel duyurular gönderme imkânı da kazanırsınız.<br/><strong>Yıllık abonelik yönlendirmesi: her başarılı yönlendirme için 25 USDT.</strong></p>
 </div>
 <div style="text-align: center; margin-top: 2rem;">
-<a class="btn-premium-emerald" href="downlaods.html"><strong>Ücretsiz Dene</strong></a>
+<a class="btn-premium-emerald" href="downloads.html"><strong>Ücretsiz Dene</strong></a>
 </div>
 </div>
 </div>

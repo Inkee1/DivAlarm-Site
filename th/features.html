@@ -36,7 +36,7 @@
       if (!raw) return;
       // 필요시 정규화 규칙:
       // const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
-      const safe = raw;
+      const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
       localStorage.setItem("referralId", safe);
     } catch (e) {
       console.warn("referral capture error:", e);
@@ -54,9 +54,9 @@
 <meta content="https://www.divalarm.com/th/features.html" property="og:url"/>
 <meta content="DivAlarm" property="og:site_name"/>
 <meta content="th_TH" property="og:locale"/>
-<meta content="website" property="og:type"/>
+<meta content="website" property="og:type"/><meta content="https://www.divalarm.com/images/og-cover.png" property="og:image"/><meta content="1080" property="og:image:width"/><meta content="649" property="og:image:height"/><meta content="https://www.divalarm.com/images/og-cover.png" name="twitter:image"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-<meta content="summary" name="twitter:card"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"SoftwareApplication","name":"DivAlarm","applicationCategory":"FinanceApplication","operatingSystem":"Android","url":"https://www.divalarm.com/th/features.html","description":"การแจ้งเตือน divergence ของ RSI การมอนิเตอร์หลายไทม์เฟรม เวิร์กโฟลว์ webhook ของ TradingView และเครื่องมือเทรดสำหรับผู้ที่ติดตามตลาดอย่างจริงจัง","publisher":{"@id":"https://www.divalarm.com/#organization"},"featureList":["ตรวจจับ RSI divergence ล่วงหน้า","การแจ้งเตือนหลายไทม์เฟรม","รองรับ webhook ของ TradingView","รางวัลแนะนำเพื่อน"]},{"@type":"WebPage","url":"https://www.divalarm.com/th/features.html","name":"DivAlarm ฟีเจอร์ | RSI แจ้งเตือน Divergence, Webhook และตัวกรอง","description":"สำรวจฟีเจอร์ของ DivAlarm รวมถึงการตรวจจับ RSI divergence ล่วงหน้า การแจ้งเตือนหลายไทม์เฟรม รองรับ webhook ของ TradingView และรางวัลจากการแนะนำเพื่อน","inLanguage":"th","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"หน้าแรก","item":"https://www.divalarm.com/th/"},{"@type":"ListItem","position":2,"name":"ฟีเจอร์","item":"https://www.divalarm.com/th/features.html"}]}]}</script>
 <link href="https://www.divalarm.com/th/features.html" rel="canonical"/><link href="https://www.divalarm.com/en/features.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/features.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/features.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/features.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/features.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/features.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/features.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/features.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/features.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/features.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/features.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/features.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/features.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/features.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/features.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/features.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/features.html" hreflang="x-default" rel="alternate"/></head>
 <body>
@@ -75,7 +75,7 @@
 <a class="nav-link" href="performance.html">ประสิทธิภาพ</a>
 </li>
 <li>
-<a class="nav-link" href="downlaods.html"><strong>ดาวน์โหลด</strong></a>
+<a class="nav-link" href="downloads.html"><strong>ดาวน์โหลด</strong></a>
 </li>
 <li>
 <div class="nav-dropdown w-dropdown" data-delay="0" data-hover="false">
@@ -402,7 +402,7 @@
 <p style="font-size: 1.05rem; color: #cbd5e1; line-height: 1.9; margin: 0;"><strong>ชวนเพื่อนแล้วรับรางวัล —</strong> ทุกครั้งที่คนที่คุณชวนต่ออายุแพ็กเกจรายเดือน คุณจะได้รับ 1.50–2.50 USDT ต่อคน โอนเข้าวอลเล็ตของคุณโดยตรง <br/>‍<br/>เมื่อสมัครใช้งาน คุณจะได้รับ <strong>โค้ดแนะนำและลิงก์สมัครสมาชิกเฉพาะของคุณ</strong><br/>หากมีคนสมัคร Basic ด้วยโค้ดหรือลิงก์ของคุณ <strong>เดือนแรกราคาเพียง $7.90</strong> และหลังจากนั้นราคาแนะนำคือ <strong>$9.50 ต่อเดือน <br/><br/>‍</strong>ขณะเดียวกัน <strong>คุณ</strong> จะได้รับ <strong>1.50–2.50 USDT สำหรับการชำระเงินต่ออายุแต่ละครั้ง</strong> ที่พวกเขาทำ:<br/><strong>1-10 subscribers:</strong> 1.50 USDT per subscriber per month<br/><strong>11-50 subscribers:</strong> 2.00 USDT per subscriber per month<br/><strong>51+ subscribers:</strong> 2.50 USDT per subscriber per month<br/><br/>ชวน 300 คน คุณสามารถทำได้สูงสุด <strong>750 USDT ต่อเดือน!</strong><br/><br/>นี่คือรายได้อีกทางที่เข้ามาเรื่อย ๆ — แม้ตอนที่คุณไม่ได้ทำงาน และเมื่อจำนวนคนที่คุณแนะนำเพิ่มขึ้น คุณยังจะได้รับสิทธิ์ในการส่งประกาศพิเศษแบบเอ็กซ์คลูซีฟ พร้อมเนื้อหาใดก็ได้ที่คุณเลือก ไปยังผู้ใช้ที่คุณเชิญเท่านั้น<br/><strong>การแนะนำแพ็กเกจรายปี: รับ 25 USDT ต่อการแนะนำที่สำเร็จ 1 คน</strong></p>
 </div>
 <div style="text-align: center; margin-top: 2rem;">
-<a class="btn-premium-emerald" href="downlaods.html"><strong>ทดลองใช้ฟรี</strong></a>
+<a class="btn-premium-emerald" href="downloads.html"><strong>ทดลองใช้ฟรี</strong></a>
 </div>
 </div>
 </div>

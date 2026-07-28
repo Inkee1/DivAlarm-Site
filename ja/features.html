@@ -36,7 +36,7 @@
       if (!raw) return;
       // 필요시 정규화 규칙:
       // const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
-      const safe = raw;
+      const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
       localStorage.setItem("referralId", safe);
     } catch (e) {
       console.warn("referral capture error:", e);
@@ -54,9 +54,9 @@
 <meta content="https://www.divalarm.com/ja/features.html" property="og:url"/>
 <meta content="DivAlarm" property="og:site_name"/>
 <meta content="ja_JP" property="og:locale"/>
-<meta content="website" property="og:type"/>
+<meta content="website" property="og:type"/><meta content="https://www.divalarm.com/images/og-cover.png" property="og:image"/><meta content="1080" property="og:image:width"/><meta content="649" property="og:image:height"/><meta content="https://www.divalarm.com/images/og-cover.png" name="twitter:image"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-<meta content="summary" name="twitter:card"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"SoftwareApplication","name":"DivAlarm","applicationCategory":"FinanceApplication","operatingSystem":"Android","url":"https://www.divalarm.com/ja/features.html","description":"RSIダイバージェンスアラート、マルチタイムフレーム監視、TradingView webhookワークフロー、そしてアクティブな市場参加者向けのトレードツール。","publisher":{"@id":"https://www.divalarm.com/#organization"},"featureList":["早期のRSIダイバージェンス検出","マルチタイムフレームアラート","TradingView webhook対応","紹介報酬"]},{"@type":"WebPage","url":"https://www.divalarm.com/ja/features.html","name":"DivAlarm 機能 | RSI ダイバージェンスアラート、Webhook、フィルター","description":"DivAlarmの機能をご紹介します。早期のRSIダイバージェンス検出、マルチタイムフレームアラート、TradingView webhook対応、紹介報酬など。","inLanguage":"ja","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.divalarm.com/ja/"},{"@type":"ListItem","position":2,"name":"機能","item":"https://www.divalarm.com/ja/features.html"}]}]}</script>
 <link href="https://www.divalarm.com/ja/features.html" rel="canonical"/><link href="https://www.divalarm.com/en/features.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/features.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/features.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/features.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/features.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/features.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/features.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/features.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/features.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/features.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/features.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/features.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/features.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/features.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/features.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/features.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/features.html" hreflang="x-default" rel="alternate"/></head>
 <body>
@@ -75,7 +75,7 @@
 <a class="nav-link" href="performance.html">パフォーマンス</a>
 </li>
 <li>
-<a class="nav-link" href="downlaods.html"><strong>ダウンロード</strong></a>
+<a class="nav-link" href="downloads.html"><strong>ダウンロード</strong></a>
 </li>
 <li>
 <div class="nav-dropdown w-dropdown" data-delay="0" data-hover="false">
@@ -402,7 +402,7 @@
 <p style="font-size: 1.05rem; color: #cbd5e1; line-height: 1.9; margin: 0;"><strong>招待して報酬を獲得 —</strong> あなたが招待した人が月額サブスクを更新するたびに、1人あたり1.50〜2.50 USDTを受け取れます。報酬はあなたのウォレットへ直接支払われます。 <br/>‍<br/>登録すると、<strong>あなた専用の紹介コードとサブスク用リンク</strong>が発行されます。<br/>あなたのコードまたはリンクでBasicに登録した人は、<strong>初月が$7.90</strong>、2か月目以降は紹介価格の<strong>月額$9.50</strong>になります。<strong><br/><br/>‍</strong>一方で<strong>あなた</strong>は、相手の更新支払いごとに<strong>1.50〜2.50 USDT</strong>を受け取れます：<br/><strong>1-10 subscribers:</strong> 1.50 USDT per subscriber per month<br/><strong>11-50 subscribers:</strong> 2.00 USDT per subscriber per month<br/><strong>51+ subscribers:</strong> 2.50 USDT per subscriber per month<br/><br/>300人招待すれば、毎月最大<strong>750 USDT</strong>を獲得できます！<br/><br/>働いていないときでも入り続ける、新しい収益源です。紹介人数が増えるほど、招待したユーザーにだけ、好きな内容で限定のお知らせを配信できるようになります。<br/><strong>年間サブスクリプションの紹介：紹介1件につき25 USDTを受け取れます。</strong></p>
 </div>
 <div style="text-align: center; margin-top: 2rem;">
-<a class="btn-premium-emerald" href="downlaods.html"><strong>無料で試す</strong></a>
+<a class="btn-premium-emerald" href="downloads.html"><strong>無料で試す</strong></a>
 </div>
 </div>
 </div>

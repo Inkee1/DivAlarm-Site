@@ -36,7 +36,7 @@
       if (!raw) return;
       // 필요시 정규화 규칙:
       // const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
-      const safe = raw;
+      const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
       localStorage.setItem("referralId", safe);
     } catch (e) {
       console.warn("referral capture error:", e);
@@ -54,9 +54,9 @@
 <meta content="https://www.divalarm.com/zh-hans/features.html" property="og:url"/>
 <meta content="DivAlarm" property="og:site_name"/>
 <meta content="zh_CN" property="og:locale"/>
-<meta content="website" property="og:type"/>
+<meta content="website" property="og:type"/><meta content="https://www.divalarm.com/images/og-cover.png" property="og:image"/><meta content="1080" property="og:image:width"/><meta content="649" property="og:image:height"/><meta content="https://www.divalarm.com/images/og-cover.png" name="twitter:image"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-<meta content="summary" name="twitter:card"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"SoftwareApplication","name":"DivAlarm","applicationCategory":"FinanceApplication","operatingSystem":"Android","url":"https://www.divalarm.com/zh-hans/features.html","description":"RSI 背离提醒、多周期监控、TradingView webhook 工作流，以及面向活跃交易者的交易工具。","publisher":{"@id":"https://www.divalarm.com/#organization"},"featureList":["提前 RSI 背离检测","多周期提醒","TradingView webhook 支持","推荐奖励"]},{"@type":"WebPage","url":"https://www.divalarm.com/zh-hans/features.html","name":"DivAlarm 功能 | RSI 背离提醒、Webhook 与筛选","description":"探索 DivAlarm 的功能，包括提前 RSI 背离检测、多周期提醒、TradingView webhook 支持，以及推荐奖励。","inLanguage":"zh-Hans","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.divalarm.com/zh-hans/"},{"@type":"ListItem","position":2,"name":"功能","item":"https://www.divalarm.com/zh-hans/features.html"}]}]}</script>
 <link href="https://www.divalarm.com/zh-hans/features.html" rel="canonical"/><link href="https://www.divalarm.com/en/features.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/features.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/features.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/features.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/features.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/features.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/features.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/features.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/features.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/features.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/features.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/features.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/features.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/features.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/features.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/features.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/features.html" hreflang="x-default" rel="alternate"/></head>
 <body>
@@ -75,7 +75,7 @@
 <a class="nav-link" href="performance.html">性能</a>
 </li>
 <li>
-<a class="nav-link" href="downlaods.html"><strong>下载</strong></a>
+<a class="nav-link" href="downloads.html"><strong>下载</strong></a>
 </li>
 <li>
 <div class="nav-dropdown w-dropdown" data-delay="0" data-hover="false">
@@ -402,7 +402,7 @@
 <p style="font-size: 1.05rem; color: #cbd5e1; line-height: 1.9; margin: 0;"><strong>邀请好友并获得奖励——</strong>每当你邀请的人续费月度订阅，你将按每人获得 1.50–2.50 USDT，直接发放到你的钱包。 <br/>‍<br/>注册后，你会获得<strong>专属邀请码和订阅链接</strong>。<br/>如果对方使用你的邀请码或链接订阅 Basic，<strong>首月仅需 $7.90</strong>，之后按邀请价<strong>每月 $9.50</strong>订阅。<br/><br/>‍</strong>同时，<strong>你</strong>将从他们的<strong>每次续费</strong>中获得<strong>1.50–2.50 USDT</strong>：<br/><strong>1-10 subscribers:</strong> 1.50 USDT per subscriber per month<br/><strong>11-50 subscribers:</strong> 2.00 USDT per subscriber per month<br/><strong>51+ subscribers:</strong> 2.50 USDT per subscriber per month<br/><br/>邀请 300 人，你每月最高可赚 <strong>750 USDT！</strong><br/><br/>这是一条持续不断的新增收入来源——即使你不工作也会持续进账。随着邀请人数增长，你还将获得向受邀用户发送专属公告的权限，内容可由你自由设置。<br/><strong>年度订阅推荐：每成功推荐一位用户可获得 25 USDT。</strong></p>
 </div>
 <div style="text-align: center; margin-top: 2rem;">
-<a class="btn-premium-emerald" href="downlaods.html"><strong>免费试用</strong></a>
+<a class="btn-premium-emerald" href="downloads.html"><strong>免费试用</strong></a>
 </div>
 </div>
 </div>

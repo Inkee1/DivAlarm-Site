@@ -36,7 +36,7 @@
       if (!raw) return;
       // 필요시 정규화 규칙:
       // const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
-      const safe = raw;
+      const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
       localStorage.setItem("referralId", safe);
     } catch (e) {
       console.warn("referral capture error:", e);
@@ -54,9 +54,9 @@
 <meta content="https://www.divalarm.com/ms/features.html" property="og:url"/>
 <meta content="DivAlarm" property="og:site_name"/>
 <meta content="ms_MY" property="og:locale"/>
-<meta content="website" property="og:type"/>
+<meta content="website" property="og:type"/><meta content="https://www.divalarm.com/images/og-cover.png" property="og:image"/><meta content="1080" property="og:image:width"/><meta content="649" property="og:image:height"/><meta content="https://www.divalarm.com/images/og-cover.png" name="twitter:image"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-<meta content="summary" name="twitter:card"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"SoftwareApplication","name":"DivAlarm","applicationCategory":"FinanceApplication","operatingSystem":"Android","url":"https://www.divalarm.com/ms/features.html","description":"Amaran divergence RSI, pemantauan pelbagai rangka masa, aliran kerja webhook TradingView, dan alat dagangan untuk peserta pasaran yang aktif.","publisher":{"@id":"https://www.divalarm.com/#organization"},"featureList":["Pengesanan divergence RSI lebih awal","Amaran pelbagai rangka masa","Sokongan webhook TradingView","Ganjaran rujukan"]},{"@type":"WebPage","url":"https://www.divalarm.com/ms/features.html","name":"DivAlarm Ciri | RSI Amaran Divergence, Webhook dan Penapis","description":"Terokai ciri DivAlarm termasuk pengesanan divergence RSI lebih awal, amaran pelbagai rangka masa, sokongan webhook TradingView, dan ganjaran rujukan.","inLanguage":"ms","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Laman Utama","item":"https://www.divalarm.com/ms/"},{"@type":"ListItem","position":2,"name":"Ciri-ciri","item":"https://www.divalarm.com/ms/features.html"}]}]}</script>
 <link href="https://www.divalarm.com/ms/features.html" rel="canonical"/><link href="https://www.divalarm.com/en/features.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/features.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/features.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/features.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/features.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/features.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/features.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/features.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/features.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/features.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/features.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/features.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/features.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/features.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/features.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/features.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/features.html" hreflang="x-default" rel="alternate"/></head>
 <body>
@@ -75,7 +75,7 @@
 <a class="nav-link" href="performance.html">Prestasi</a>
 </li>
 <li>
-<a class="nav-link" href="downlaods.html"><strong>Muat turun</strong></a>
+<a class="nav-link" href="downloads.html"><strong>Muat turun</strong></a>
 </li>
 <li>
 <div class="nav-dropdown w-dropdown" data-delay="0" data-hover="false">
@@ -402,7 +402,7 @@
 <p style="font-size: 1.05rem; color: #cbd5e1; line-height: 1.9; margin: 0;"><strong>Jemput orang dan dapatkan ganjaran —</strong> setiap kali seseorang yang anda jemput memperbaharui langganan bulanan mereka, anda akan menerima 1.50–2.50 USDT bagi setiap orang, dibayar terus ke dompet anda. <br/>‍<br/>Apabila anda mendaftar, anda akan mendapat <strong>kod rujukan dan pautan langganan unik anda sendiri.</strong><br/>Jika seseorang melanggan Basic menggunakan kod atau pautan anda, <strong>bulan pertama hanya $7.90</strong> dan harga rujukan selepas itu ialah <strong>$9.50 sebulan. <br/><br/>‍</strong>Sementara itu, <strong>anda</strong> akan menerima <strong>1.50–2.50 USDT bagi setiap bayaran pembaharuan</strong> yang mereka buat:<br/><strong>1-10 subscribers:</strong> 1.50 USDT per subscriber per month<br/><strong>11-50 subscribers:</strong> 2.00 USDT per subscriber per month<br/><strong>51+ subscribers:</strong> 2.50 USDT per subscriber per month<br/><br/>Jemput 300 orang dan anda boleh menjana sehingga <strong>750 USDT setiap bulan!</strong><br/><br/>Ini ialah aliran pendapatan baharu yang terus masuk — walaupun ketika anda tidak bekerja. Apabila jumlah rujukan anda meningkat, anda juga akan mendapat keupayaan untuk menghantar pengumuman eksklusif dengan apa-apa kandungan yang anda pilih, hanya kepada pengguna yang anda jemput.<br/><strong>Rujukan langganan tahunan: 25 USDT bagi setiap rujukan yang berjaya.</strong></p>
 </div>
 <div style="text-align: center; margin-top: 2rem;">
-<a class="btn-premium-emerald" href="downlaods.html"><strong>Cuba Secara Percuma</strong></a>
+<a class="btn-premium-emerald" href="downloads.html"><strong>Cuba Secara Percuma</strong></a>
 </div>
 </div>
 </div>

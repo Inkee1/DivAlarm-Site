@@ -248,7 +248,7 @@
       const sp = new URLSearchParams(location.search);
       const raw = (sp.get("ref") || "").trim();
       if (!raw) return;
-      const safe = raw;
+      const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
       localStorage.setItem("referralId", safe);
     } catch (e) {
       console.warn("referral capture error:", e);
@@ -268,7 +268,7 @@
 <meta content="ms_MY" property="og:locale"/>
 <meta content="website" property="og:type"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-<meta content="summary" name="twitter:card"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <meta content="#020617" name="theme-color"/>
 <meta content="https://www.divalarm.com/images/divblue3-140.png" property="og:image"/>
 <meta content="https://www.divalarm.com/images/divblue3-140.png" name="twitter:image"/>
@@ -289,7 +289,7 @@
 <a class="nav-link" href="performance.html">Prestasi</a>
 </li>
 <li>
-<a class="nav-link" href="downlaods.html"><strong>Muat Turun</strong></a>
+<a class="nav-link" href="downloads.html"><strong>Muat Turun</strong></a>
 </li>
 <li>
 <div class="nav-dropdown w-dropdown" data-delay="0" data-hover="false">

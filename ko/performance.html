@@ -35,7 +35,7 @@
       const sp = new URLSearchParams(location.search);
       const raw = (sp.get("ref") || "").trim();
       if (!raw) return;
-      const safe = raw;
+      const safe = raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64);
       localStorage.setItem("referralId", safe);
     } catch (e) {
       console.warn("referral capture error:", e);
@@ -54,9 +54,9 @@
 <meta content="https://www.divalarm.com/ko/performance.html" property="og:url"/>
 <meta content="DivAlarm" property="og:site_name"/>
 <meta content="ko_KR" property="og:locale"/>
-<meta content="website" property="og:type"/>
+<meta content="website" property="og:type"/><meta content="https://www.divalarm.com/images/og-cover.png" property="og:image"/><meta content="1080" property="og:image:width"/><meta content="649" property="og:image:height"/><meta content="https://www.divalarm.com/images/og-cover.png" name="twitter:image"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
-<meta content="summary" name="twitter:card"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"CollectionPage","url":"https://www.divalarm.com/ko/performance.html","name":"DivAlarm 성과 | 주간 시장 움직임 및 시그널 히스토리","description":"주간 DivAlarm 성과 스냅샷, 포착한 시장 움직임, 과거 업데이트 날짜를 확인하고 앱이 어떻게 트레이딩 기회를 찾아내는지 살펴보세요.","inLanguage":"ko","isPartOf":{"@id":"https://www.divalarm.com/#website"},"about":{"@type":"SoftwareApplication","name":"DivAlarm"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://www.divalarm.com/ko/"},{"@type":"ListItem","position":2,"name":"성능","item":"https://www.divalarm.com/ko/performance.html"}]}]}</script>
 <link href="https://www.divalarm.com/ko/performance.html" rel="canonical"/><link href="https://www.divalarm.com/en/performance.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/performance.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/performance.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/performance.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/performance.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/performance.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/performance.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/performance.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/performance.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/performance.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/performance.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/performance.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/performance.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/performance.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/performance.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/performance.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/performance.html" hreflang="x-default" rel="alternate"/></head>
 <body class="performance-page">
@@ -75,7 +75,7 @@
 <a aria-current="page" class="nav-link w--current" href="performance.html">성능</a>
 </li>
 <li>
-<a class="nav-link" href="downlaods.html"><strong>다운로드</strong></a>
+<a class="nav-link" href="downloads.html"><strong>다운로드</strong></a>
 </li>
 <li>
 <div class="nav-dropdown w-dropdown" data-delay="0" data-hover="false">
