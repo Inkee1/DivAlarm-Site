@@ -2,8 +2,8 @@
   "schema_version": 2,
   "symbol": "BTCUSDT",
   "image_format": "webp",
-  "generated_at": "2026-08-30T00:00:10Z",
-  "week_count": 21,
+  "generated_at": "2026-09-06T00:00:10Z",
+  "week_count": 22,
   "weeks": [
     {
       "id": "20260405",
@@ -4210,6 +4210,237 @@
             "30m RSI7 (-1.27%)",
             "15m RSI14 (-0.85%)",
             "15m RSI7 (-0.85%)"
+          ]
+        },
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "Low→High",
+            "change_pct": 27.320986745449254,
+            "x10_pct": 273.20986745449255,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-08-14T12:00:00Z",
+              "kind": "low",
+              "price": 62484.2
+            },
+            "end": {
+              "time_utc": "2026-08-21T00:00:00Z",
+              "kind": "high",
+              "price": 79555.5
+            },
+            "a_divergences": [
+              "1h RSI14 (+0.62%)",
+              "1h RSI7 (+0.62%)",
+              "30m RSI14 (+0.31%)",
+              "30m RSI7 (+0.31%)",
+              "15m RSI14 (+0.29%)",
+              "15m RSI7 (+0.29%)",
+              "5m RSI14 (+0.20%)",
+              "5m RSI7 (+0.20%)",
+              "4h RSI7 (+0.85%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-2.07%)",
+              "1h RSI7 (-2.07%)",
+              "30m RSI14 (-2.28%)",
+              "30m RSI7 (-2.28%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "Low→High",
+            "change_pct": 26.921033613002965,
+            "x10_pct": 269.21033613002965,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-08-16T12:00:00Z",
+              "kind": "low",
+              "price": 62681.1
+            },
+            "end": {
+              "time_utc": "2026-08-21T00:00:00Z",
+              "kind": "high",
+              "price": 79555.5
+            },
+            "a_divergences": [
+              "30m RSI7 (+0.30%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-2.07%)",
+              "1h RSI7 (-2.07%)",
+              "30m RSI14 (-2.28%)",
+              "30m RSI7 (-2.28%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "Low→High",
+            "change_pct": 25.855855570812952,
+            "x10_pct": 258.5585557081295,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-08-11T12:00:00Z",
+              "kind": "low",
+              "price": 63211.6
+            },
+            "end": {
+              "time_utc": "2026-08-21T00:00:00Z",
+              "kind": "high",
+              "price": 79555.5
+            },
+            "a_divergences": [
+              "4h RSI7 (+0.75%)",
+              "1h RSI14 (+0.47%)",
+              "1h RSI7 (+0.47%)",
+              "15m RSI14 (+0.15%)",
+              "15m RSI7 (+0.15%)",
+              "30m RSI14 (+0.34%)",
+              "30m RSI7 (+0.34%)",
+              "5m RSI14 (+0.10%)",
+              "5m RSI7 (+0.10%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (-2.07%)",
+              "1h RSI7 (-2.07%)",
+              "30m RSI14 (-2.28%)",
+              "30m RSI7 (-2.28%)"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "20260906",
+      "symbol": "BTCUSDT",
+      "week_end_utc": "2026-09-06T00:00:00Z",
+      "week_start_utc": "2026-08-30T00:00:00Z",
+      "published_at": "2026-09-06T00:00:10Z",
+      "year": 2026,
+      "month": 9,
+      "month_key": "2026-09",
+      "image": "images/20260906.webp",
+      "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-09-06",
+      "range": {
+        "low_time_utc": "2026-09-02T08:00:00Z",
+        "low": 76151.9,
+        "high_time_utc": "2026-09-03T20:00:00Z",
+        "high": 82282.8,
+        "change_pct": 8.05,
+        "x10_pct": 80.51
+      },
+      "range_divergences": {
+        "bullish": [
+          "5m RSI14 (+0.42%)",
+          "5m RSI7 (+0.42%)",
+          "30m RSI14 (+0.56%)",
+          "30m RSI7 (+0.56%)"
+        ],
+        "bearish": [
+          "30m RSI14 (-0.85%)",
+          "30m RSI7 (-0.85%)",
+          "1h RSI14 (-1.56%)",
+          "1h RSI7 (-1.56%)",
+          "5m RSI14 (-0.58%)",
+          "5m RSI7 (-0.58%)",
+          "15m RSI14 (-1.03%)",
+          "15m RSI7 (-1.03%)"
+        ]
+      },
+      "top_moves": [
+        {
+          "rank": 1,
+          "direction": "Same as 7D Range",
+          "change_pct": 8.05,
+          "x10_pct": 80.51,
+          "same_as_range": true,
+          "start": null,
+          "end": null,
+          "a_divergences": [],
+          "b_divergences": []
+        },
+        {
+          "rank": 2,
+          "direction": "High→Low",
+          "change_pct": 4.66,
+          "x10_pct": 46.61,
+          "same_as_range": false,
+          "start": {
+            "time_utc": "2026-09-03T20:00:00Z",
+            "kind": "high",
+            "price": 82282.8
+          },
+          "end": {
+            "time_utc": "2026-09-04T12:00:00Z",
+            "kind": "low",
+            "price": 78618.1
+          },
+          "a_divergences": [],
+          "b_divergences": []
+        },
+        {
+          "rank": 3,
+          "direction": "High→Low",
+          "change_pct": 4.04,
+          "x10_pct": 40.4,
+          "same_as_range": false,
+          "start": {
+            "time_utc": "2026-08-31T16:00:00Z",
+            "kind": "high",
+            "price": 79228.5
+          },
+          "end": {
+            "time_utc": "2026-09-02T08:00:00Z",
+            "kind": "low",
+            "price": 76151.9
+          },
+          "a_divergences": [],
+          "b_divergences": []
+        }
+      ],
+      "raw_summary": "[div_daily] inserted rows: 26\n\n== 7일 최저/최고 피크 ==\n- 최저점: 2026-09-02T08:00:00Z  low=76151.90\n- 최고점: 2026-09-03T20:00:00Z high=82282.80\n- 퍼센트 차이: +8.05%  |  (x10) 수익률: +80.51%\n- Note: (%) = stop-loss / % is low-based\n- 최저점 공유 bullish 다이버전스: 5m RSI14 (+0.42%), 5m RSI7 (+0.42%), 30m RSI14 (+0.56%), 30m RSI7 (+0.56%)\n- 최고점 공유 bearish 다이버전스: 30m RSI14 (-0.85%), 30m RSI7 (-0.85%), 1h RSI14 (-1.56%), 1h RSI7 (-1.56%), 5m RSI14 (-0.58%), 5m RSI7 (-0.58%), 15m RSI14 (-1.03%), 15m RSI7 (-1.03%)\n\n== (4H) 피크→다음 피크 (좌/우 5개 비교) TOP 3 ==\n[1] 7일 최저/최고 피크 와 같음\n[2] High→Low: +4.66% | (x10) 수익률: +46.61%\n  - A: 2026-09-03T20:00:00Z  high=82282.80\n  - B: 2026-09-04T12:00:00Z  low=78618.10\n  - High 공유 bearish 다이버전스: 30m RSI14 (-0.85%), 30m RSI7 (-0.85%), 1h RSI14 (-1.56%), 1h RSI7 (-1.56%), 5m RSI14 (-0.58%), 5m RSI7 (-0.58%), 15m RSI14 (-1.03%), 15m RSI7 (-1.03%)\n  - Low 공유 bullish 다이버전스: 5m RSI14 (+0.28%), 5m RSI7 (+0.28%), 15m RSI14 (+0.54%), 15m RSI7 (+0.54%)\n[3] High→Low: +4.04% | (x10) 수익률: +40.40%\n  - A: 2026-08-31T16:00:00Z  high=79228.50\n  - B: 2026-09-02T08:00:00Z  low=76151.90\n  - High 공유 bearish 다이버전스: 1h RSI7 (-0.53%), 15m RSI14 (-0.24%), 15m RSI7 (-0.24%), 30m RSI7 (-0.31%), 5m RSI14 (-0.03%), 5m RSI7 (-0.03%)\n  - Low 공유 bullish 다이버전스: 5m RSI14 (+0.42%), 5m RSI7 (+0.42%), 30m RSI14 (+0.56%), 30m RSI7 (+0.56%)\n\n[telegram] sent (image + caption chunk1)\n[insight-archive] saved weekly best BTCUSDT_20260906 (delete after 2026-09-21T00:00:00+00:00)\n[insight] sent\n\n[stderr]\n/root/BINANCE/best_win.py:402: FutureWarning: The behavior of DatetimeProperties.to_pydatetime is deprecated, in a future version this will return a Series containing python datetime objects instead of an ndarray. To retain the old behavior, call `np.array` on the result\n  xs = mdates.date2num(pd.to_datetime(df[\"open_time\"], utc=True).dt.to_pydatetime())",
+      "headline": "7D Range +8.05% (x10 +80.51%)",
+      "trailing_30d": {
+        "window_days": 30,
+        "interval": "12H",
+        "window_start_utc": "2026-08-07T00:00:00Z",
+        "window_end_utc": "2026-09-06T00:00:00Z",
+        "image": "images/trailing_30d/20260906.webp",
+        "image_alt": "BTCUSDT previous 30 days best chart ending 2026-09-06",
+        "headline": "Low→High +31.69% (x10 +316.86%)",
+        "divergence_status": "available",
+        "range": {
+          "low_time_utc": "2026-08-14T12:00:00Z",
+          "low": 62484.2,
+          "high_time_utc": "2026-09-03T12:00:00Z",
+          "high": 82282.8,
+          "change_pct": 31.685770162697143,
+          "x10_pct": 316.85770162697145
+        },
+        "range_divergences": {
+          "bullish": [
+            "1h RSI14 (+0.62%)",
+            "1h RSI7 (+0.62%)",
+            "30m RSI14 (+0.31%)",
+            "30m RSI7 (+0.31%)",
+            "15m RSI14 (+0.29%)",
+            "15m RSI7 (+0.29%)",
+            "5m RSI14 (+0.20%)",
+            "5m RSI7 (+0.20%)",
+            "4h RSI7 (+0.85%)"
+          ],
+          "bearish": [
+            "12h RSI7 (-1.71%)",
+            "4h RSI14 (-1.28%)",
+            "4h RSI7 (-1.28%)",
+            "30m RSI14 (-0.85%)",
+            "30m RSI7 (-0.85%)",
+            "1h RSI14 (-1.56%)",
+            "1h RSI7 (-1.56%)",
+            "5m RSI14 (-0.58%)",
+            "5m RSI7 (-0.58%)",
+            "15m RSI14 (-1.03%)",
+            "15m RSI7 (-1.03%)"
           ]
         },
         "top_moves": [
