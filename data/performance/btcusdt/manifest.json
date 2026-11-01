@@ -2,8 +2,8 @@
   "schema_version": 2,
   "symbol": "BTCUSDT",
   "image_format": "webp",
-  "generated_at": "2026-10-25T00:00:10Z",
-  "week_count": 28,
+  "generated_at": "2026-11-01T00:00:10Z",
+  "week_count": 29,
   "weeks": [
     {
       "id": "20260405",
@@ -5862,6 +5862,181 @@
               "4h RSI7 (+3.45%)"
             ],
             "b_divergences": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "20261101",
+      "symbol": "BTCUSDT",
+      "week_end_utc": "2026-11-01T00:00:00Z",
+      "week_start_utc": "2026-10-25T00:00:00Z",
+      "published_at": "2026-11-01T00:00:10Z",
+      "year": 2026,
+      "month": 11,
+      "month_key": "2026-11",
+      "image": "images/20261101.webp",
+      "image_alt": "BTCUSDT weekly performance chart for the week ending 2026-11-01",
+      "range": {
+        "low_time_utc": "2026-10-30T16:00:00Z",
+        "low": 76270.0,
+        "high_time_utc": "2026-10-29T16:00:00Z",
+        "high": 81953.7,
+        "change_pct": 7.45,
+        "x10_pct": 74.52
+      },
+      "range_divergences": {
+        "bullish": [
+          "1h RSI14 (+0.81%)",
+          "1h RSI7 (+0.81%)",
+          "5m RSI14 (+0.69%)",
+          "5m RSI7 (+0.69%)",
+          "15m RSI7 (+0.31%)",
+          "30m RSI14 (+0.63%)",
+          "30m RSI7 (+0.63%)"
+        ],
+        "bearish": [
+          "5m RSI14 (-0.24%)",
+          "5m RSI7 (-0.24%)"
+        ]
+      },
+      "top_moves": [
+        {
+          "rank": 1,
+          "direction": "Same as 7D Range",
+          "change_pct": 7.45,
+          "x10_pct": 74.52,
+          "same_as_range": true,
+          "start": null,
+          "end": null,
+          "a_divergences": [],
+          "b_divergences": []
+        }
+      ],
+      "raw_summary": "[div_daily] inserted rows: 35\n\n== 7일 최저/최고 피크 ==\n- 최저점: 2026-10-30T16:00:00Z  low=76270.00\n- 최고점: 2026-10-29T16:00:00Z high=81953.70\n- 퍼센트 차이: +7.45%  |  (x10) 수익률: +74.52%\n- Note: (%) = stop-loss / % is low-based\n- 최저점 공유 bullish 다이버전스: 1h RSI14 (+0.81%), 1h RSI7 (+0.81%), 5m RSI14 (+0.69%), 5m RSI7 (+0.69%), 15m RSI7 (+0.31%), 30m RSI14 (+0.63%), 30m RSI7 (+0.63%)\n- 최고점 공유 bearish 다이버전스: 5m RSI14 (-0.24%), 5m RSI7 (-0.24%)\n\n== (4H) 피크→다음 피크 (좌/우 5개 비교) TOP 3 ==\n[1] 7일 최저/최고 피크 와 같음\n\n[telegram] sent (image + caption chunk1)\n[insight-archive] saved weekly best BTCUSDT_20261101 (delete after 2026-11-16T00:00:00+00:00)\n[insight] sent\n\n[stderr]\n/root/BINANCE/best_win.py:402: FutureWarning: The behavior of DatetimeProperties.to_pydatetime is deprecated, in a future version this will return a Series containing python datetime objects instead of an ndarray. To retain the old behavior, call `np.array` on the result\n  xs = mdates.date2num(pd.to_datetime(df[\"open_time\"], utc=True).dt.to_pydatetime())",
+      "headline": "7D Range +7.45% (x10 +74.52%)",
+      "trailing_30d": {
+        "window_days": 30,
+        "interval": "12H",
+        "window_start_utc": "2026-10-02T00:00:00Z",
+        "window_end_utc": "2026-11-01T00:00:00Z",
+        "image": "images/trailing_30d/20261101.webp",
+        "image_alt": "BTCUSDT previous 30 days best chart ending 2026-11-01",
+        "headline": "High→Low +14.40% (x10 +143.96%)",
+        "divergence_status": "available",
+        "range": {
+          "low_time_utc": "2026-10-30T12:00:00Z",
+          "low": 76270.0,
+          "high_time_utc": "2026-10-02T12:00:00Z",
+          "high": 87249.6,
+          "change_pct": 14.39569948865872,
+          "x10_pct": 143.95699488658718
+        },
+        "range_divergences": {
+          "bullish": [
+            "1h RSI14 (+0.81%)",
+            "1h RSI7 (+0.81%)",
+            "5m RSI14 (+0.69%)",
+            "5m RSI7 (+0.69%)",
+            "15m RSI7 (+0.31%)",
+            "30m RSI14 (+0.63%)",
+            "30m RSI7 (+0.63%)"
+          ],
+          "bearish": []
+        },
+        "top_moves": [
+          {
+            "rank": 1,
+            "direction": "High→Low",
+            "change_pct": 7.452078143437784,
+            "x10_pct": 74.52078143437784,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-10-29T12:00:00Z",
+              "kind": "high",
+              "price": 81953.7
+            },
+            "end": {
+              "time_utc": "2026-10-30T12:00:00Z",
+              "kind": "low",
+              "price": 76270.0
+            },
+            "a_divergences": [
+              "4h RSI14 (-3.52%)",
+              "4h RSI7 (-3.52%)",
+              "1h RSI14 (-0.88%)",
+              "5m RSI14 (-0.24%)",
+              "5m RSI7 (-0.24%)"
+            ],
+            "b_divergences": [
+              "1h RSI14 (+0.81%)",
+              "1h RSI7 (+0.81%)",
+              "5m RSI14 (+0.69%)",
+              "5m RSI7 (+0.69%)",
+              "15m RSI7 (+0.31%)",
+              "30m RSI14 (+0.63%)",
+              "30m RSI7 (+0.63%)"
+            ]
+          },
+          {
+            "rank": 2,
+            "direction": "High→Low",
+            "change_pct": 7.250557230890259,
+            "x10_pct": 72.50557230890259,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-10-28T00:00:00Z",
+              "kind": "high",
+              "price": 81800.0
+            },
+            "end": {
+              "time_utc": "2026-10-30T12:00:00Z",
+              "kind": "low",
+              "price": 76270.0
+            },
+            "a_divergences": [],
+            "b_divergences": [
+              "1h RSI14 (+0.81%)",
+              "1h RSI7 (+0.81%)",
+              "5m RSI14 (+0.69%)",
+              "5m RSI7 (+0.69%)",
+              "15m RSI7 (+0.31%)",
+              "30m RSI14 (+0.63%)",
+              "30m RSI7 (+0.63%)"
+            ]
+          },
+          {
+            "rank": 3,
+            "direction": "High→Low",
+            "change_pct": 7.194620768743058,
+            "x10_pct": 71.94620768743059,
+            "same_as_range": false,
+            "start": {
+              "time_utc": "2026-10-21T12:00:00Z",
+              "kind": "high",
+              "price": 84875.2
+            },
+            "end": {
+              "time_utc": "2026-10-24T12:00:00Z",
+              "kind": "low",
+              "price": 79178.6
+            },
+            "a_divergences": [
+              "30m RSI14 (-0.43%)",
+              "30m RSI7 (-0.43%)",
+              "15m RSI14 (-0.29%)",
+              "15m RSI7 (-0.29%)",
+              "5m RSI14 (-0.05%)",
+              "5m RSI7 (-0.05%)"
+            ],
+            "b_divergences": [
+              "4h RSI14 (+1.35%)",
+              "4h RSI7 (+1.35%)",
+              "1h RSI14 (+1.25%)",
+              "1h RSI7 (+1.25%)",
+              "5m RSI14 (+0.34%)",
+              "5m RSI7 (+0.34%)"
+            ]
           }
         ]
       }
