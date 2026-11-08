@@ -281,6 +281,7 @@
 <li><a href="#quick-summary">TradingView Webhook Examples</a></li>
 <li><a href="#keyword">Keyword Rules and TradingView Webhook Setup</a></li>
 <li><a href="#auto-order">Auto-Order with Keyword Alarms</a></li>
+<li><a href="#bitunix-setup">Bitunix USDT Futures Setup</a></li>
 <li><a href="#divalarm-keywords">DivAlarm Signal Keywords</a></li>
 <li><a href="#combination">Signal Combination Alerts</a></li>
 </ul>
@@ -402,8 +403,20 @@
 <p>With <strong>Pro</strong>, you can attach auto-orders to individual keyword rules or combinations. Matching phone notifications, webhook messages in webhook mode, and eligible DivAlarm signals can trigger the configured orders. The example below uses TradingView webhooks.</p>
 <img alt="Exchange API Settings" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>Supported exchanges for auto-orders: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
+<p>Supported exchanges for auto-orders: <strong>Binance, ByBit, OKX, Bitget, Gate, Bitunix</strong></p>
 <p>You must enter API keys in the app Settings page.</p>
+</div>
+<h3 id="bitunix-setup" style="scroll-margin-top: 4rem;">Bitunix USDT Futures Setup</h3>
+<ol>
+<li>Open <a href="https://www.bitunix.com/account/api-management" rel="noopener noreferrer" target="_blank" style="color: #00d4ff;">Bitunix API Management</a> and create a regular account API key with Futures trading permission.</li>
+<li>In DivAlarm Settings, select <strong>Bitunix</strong> and save the <strong>API Key</strong> and <strong>API Secret</strong>. Bitunix does not use a passphrase.</li>
+<li>In a keyword or combination rule, choose an API-enabled <strong>USDT futures</strong> symbol, such as <strong>BTCUSDT</strong>, and configure the order amount, leverage and order type.</li>
+<li>With <strong>Pro</strong>, enable Auto-Order and the rule's order switch. Keep your Android phone connected so it can receive signals and submit orders.</li>
+</ol>
+<p>Bitunix supports <strong>Market</strong>, <strong>Fast Limit (IOC)</strong> and <strong>Limit (GTC)</strong> orders, optional take-profit/stop-loss, and close or reverse rules. Close rules use the selected position; reverse entries wait for the close to be confirmed filled. DivAlarm follows your account's existing position mode.</p>
+<div class="highlight">
+<p>Use the regular <a href="https://www.bitunix.com/api-docs/futures/common/introduction.html" rel="noopener noreferrer" target="_blank" style="color: #00d4ff;">Bitunix Futures trading API</a>. The Partner API is for referral and commission reporting and is not used for these orders.</p>
+<p><strong>Auto-Order is Pro-only.</strong> The 5 free keyword alarm executions do not include automatic orders.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
