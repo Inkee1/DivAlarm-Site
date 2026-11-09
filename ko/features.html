@@ -55,6 +55,7 @@
   border: 1px solid var(--da-line-2); border-radius: 999px; padding: 6px 14px;
 }
 .fx-index a:hover { color: var(--da-text); border-color: var(--da-blue); }
+.fx-index a.hot { color: var(--da-text); border-color: var(--da-blue); background: rgba(34, 169, 242, .12); }
 
 .fx-intro .da-lead { max-width: 62ch; }
 .fx-split { display: grid; gap: 40px; align-items: start; margin-top: 8px; }
@@ -193,9 +194,9 @@
 
 <section class="fx-head" aria-labelledby="fx-title">
   <div class="da-wrap">
-    <h1 class="da-h1" id="fx-title">DivAlarm이 하는 일, 전부</h1>
-    <p class="da-lead">BTC와 ETH의 다이버전스를 지켜보고, 깨울 만한 신호만 골라 알람을 울리고, 내 TradingView 알림에 맞춰 주문까지 넣어요. 궁금한 기능으로 바로 가 보세요.</p>
-    <nav class="fx-index" aria-label="이 페이지 목차"><a href="#divergence">다이버전스 알림</a><a href="#filters">필터</a><a href="#alarms">알람</a><a href="#indicators">지표 알림</a><a href="#keywords">키워드 알람</a><a href="#auto-order">자동 주문</a><a href="#log">신호 기록</a><a href="#ref-reward">추천 보상</a></nav>
+    <h1 class="da-h1 da-two-tone" id="fx-title"><span class="tv-line">DivAlarm이 하는 일, 전부.</span> <span class="da-line">알림에서 끝나지 않고, 주문까지.</span></h1>
+    <p class="da-lead">BTC와 ETH의 다이버전스를 지켜보다가 깨울 만한 신호에만 알람을 울려요. TradingView 알림이나 내가 만든 규칙이 맞으면 Binance, Bybit, OKX, Bitget, Gate에 선물 주문까지 넣어요. 궁금한 기능으로 바로 가 보세요.</p>
+    <nav class="fx-index" aria-label="이 페이지 목차"><a href="#divergence">다이버전스 알림</a><a href="#filters">필터</a><a href="#alarms">알람</a><a href="#indicators">지표 알림</a><a href="#keywords">키워드 알람</a><a href="#auto-order" class="hot">자동 주문</a><a href="#log">신호 기록</a><a href="#ref-reward">추천 보상</a></nav>
   </div>
 </section>
 

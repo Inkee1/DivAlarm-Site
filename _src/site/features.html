@@ -54,6 +54,7 @@
   border: 1px solid var(--da-line-2); border-radius: 999px; padding: 6px 14px;
 }
 .fx-index a:hover { color: var(--da-text); border-color: var(--da-blue); }
+.fx-index a.hot { color: var(--da-text); border-color: var(--da-blue); background: rgba(34, 169, 242, .12); }
 
 .fx-intro .da-lead { max-width: 62ch; }
 .fx-split { display: grid; gap: 40px; align-items: start; margin-top: 8px; }
@@ -177,7 +178,7 @@
 
 <section class="fx-head" aria-labelledby="fx-title">
   <div class="da-wrap">
-    <h1 class="da-h1" id="fx-title">{{h1}}</h1>
+    <h1 class="da-h1 da-two-tone" id="fx-title"><span class="tv-line">{{h1_a}}</span> <span class="da-line">{{h1_b}}</span></h1>
     <p class="da-lead">{{lead}}</p>
     <nav class="fx-index" aria-label="{{index_label}}">{{index_links}}</nav>
   </div>

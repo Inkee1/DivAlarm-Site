@@ -55,6 +55,7 @@
   border: 1px solid var(--da-line-2); border-radius: 999px; padding: 6px 14px;
 }
 .fx-index a:hover { color: var(--da-text); border-color: var(--da-blue); }
+.fx-index a.hot { color: var(--da-text); border-color: var(--da-blue); background: rgba(34, 169, 242, .12); }
 
 .fx-intro .da-lead { max-width: 62ch; }
 .fx-split { display: grid; gap: 40px; align-items: start; margin-top: 8px; }
@@ -193,9 +194,9 @@
 
 <section class="fx-head" aria-labelledby="fx-title">
   <div class="da-wrap">
-    <h1 class="da-h1" id="fx-title">Everything DivAlarm does</h1>
-    <p class="da-lead">It watches BTC and ETH for divergences, picks the signals worth waking you for, and can act on your own TradingView alerts. Jump to any part:</p>
-    <nav class="fx-index" aria-label="On this page"><a href="#divergence">Divergence alerts</a><a href="#filters">Filters</a><a href="#alarms">Alarms</a><a href="#indicators">Indicator alerts</a><a href="#keywords">Keyword alarms</a><a href="#auto-order">Auto-orders</a><a href="#log">Signal log</a><a href="#ref-reward">Referral rewards</a></nav>
+    <h1 class="da-h1 da-two-tone" id="fx-title"><span class="tv-line">Everything DivAlarm does.</span> <span class="da-line">From the alert to the order.</span></h1>
+    <p class="da-lead">It watches BTC and ETH for divergences and rings only for the signals worth waking you for. When a TradingView alert or your own rule matches, it places the futures order on Binance, Bybit, OKX, Bitget or Gate. Jump to any part:</p>
+    <nav class="fx-index" aria-label="On this page"><a href="#divergence">Divergence alerts</a><a href="#filters">Filters</a><a href="#alarms">Alarms</a><a href="#indicators">Indicator alerts</a><a href="#keywords">Keyword alarms</a><a href="#auto-order" class="hot">Auto-orders</a><a href="#log">Signal log</a><a href="#ref-reward">Referral rewards</a></nav>
   </div>
 </section>
 

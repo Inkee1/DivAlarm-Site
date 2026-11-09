@@ -17,8 +17,8 @@ STRINGS = {
     "en": dict(
         meta_title="DivAlarm Features | RSI Divergence Alarms, Keyword Alarms and Auto-Orders",
         meta_desc="RSI divergence alerts on 9 timeframes, alarms that ring through silent mode, indicator and keyword alarms, and Pro auto-orders on five exchanges.",
-        h1="Everything DivAlarm does",
-        lead="It watches BTC and ETH for divergences, picks the signals worth waking you for, and can act on your own TradingView alerts. Jump to any part:",
+        h1_a="Everything DivAlarm does.", h1_b="From the alert to the order.",
+        lead="It watches BTC and ETH for divergences and rings only for the signals worth waking you for. When a TradingView alert or your own rule matches, it places the futures order on Binance, Bybit, OKX, Bitget or Gate. Jump to any part:",
         index_label="On this page",
         index=["Divergence alerts", "Filters", "Alarms", "Indicator alerts", "Keyword alarms", "Auto-orders", "Signal log", "Referral rewards"],
         div_h2="RSI divergence alerts, early or confirmed",
@@ -107,8 +107,8 @@ STRINGS = {
     "ko": dict(
         meta_title="DivAlarm 기능 | RSI 다이버전스 알람, 키워드 알람, 자동 주문",
         meta_desc="9개 시간대 RSI 다이버전스 알림, 무음을 뚫는 알람, 지표·키워드 알람, 거래소 5곳 Pro 자동 주문까지 한 번에 보세요.",
-        h1="DivAlarm이 하는 일, 전부",
-        lead="BTC와 ETH의 다이버전스를 지켜보고, 깨울 만한 신호만 골라 알람을 울리고, 내 TradingView 알림에 맞춰 주문까지 넣어요. 궁금한 기능으로 바로 가 보세요.",
+        h1_a="DivAlarm이 하는 일, 전부.", h1_b="알림에서 끝나지 않고, 주문까지.",
+        lead="BTC와 ETH의 다이버전스를 지켜보다가 깨울 만한 신호에만 알람을 울려요. TradingView 알림이나 내가 만든 규칙이 맞으면 Binance, Bybit, OKX, Bitget, Gate에 선물 주문까지 넣어요. 궁금한 기능으로 바로 가 보세요.",
         index_label="이 페이지 목차",
         index=["다이버전스 알림", "필터", "알람", "지표 알림", "키워드 알람", "자동 주문", "신호 기록", "추천 보상"],
         div_h2="RSI 다이버전스 알림, 빠르게 또는 확실하게",
@@ -221,7 +221,7 @@ def build(lang):
     vals.update(chrome_vals(lang, "features.html"))
     vals.update(
         lang_v=asset_version("js/lang-switcher.js", "css/lang-switcher.css"),
-        index_links="".join(f'<a href="#{a}">{t}</a>' for a, t in zip(INDEX, L["index"])),
+        index_links="".join(f'<a href="#{a}"{" class=\"hot\"" if a == "auto-order" else ""}>{t}</a>' for a, t in zip(INDEX, L["index"])),
         stages="".join(f'<li class="da-panel"><div class="k">{k}</div><p>{p}</p></li>' for k, p in L["stages"]),
         cases="".join(case_card(cid, L, lang) for cid in GALLERY),
         flt_items=li_items(L["flt_items"]), alm_items=li_items(L["alm_items"]),
