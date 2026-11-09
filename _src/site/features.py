@@ -17,8 +17,8 @@ STRINGS = {
     "en": dict(
         meta_title="DivAlarm Features | RSI Divergence Alarms, Keyword Alarms and Auto-Orders",
         meta_desc="RSI divergence alerts on 9 timeframes, alarms that ring through silent mode, indicator and keyword alarms, and Pro auto-orders on five exchanges.",
-        h1_a="Everything DivAlarm does.", h1_b="From the alert to the order.",
-        lead="It watches BTC and ETH for divergences and rings only for the signals worth waking you for. When a TradingView alert or your own rule matches, it places the futures order on Binance, Bybit, OKX, Bitget or Gate. Jump to any part:",
+        h1_a="Everything DivAlarm does.", h1_b="Turn any indicator signal into an order.",
+        lead="It watches BTC and ETH for divergences and rings only for the signals worth waking you for. Whether it's a DivAlarm divergence or indicator signal or a TradingView alert, when your rule matches it places the futures order on Binance, Bybit, OKX, Bitget or Gate. It never needs withdrawal permission and only orders by the rules you set.",
         index_label="On this page",
         index=["Divergence alerts", "Filters", "Alarms", "Indicator alerts", "Keyword alarms", "Auto-orders", "Signal log", "Referral rewards"],
         div_h2="RSI divergence alerts, early or confirmed",
@@ -107,8 +107,8 @@ STRINGS = {
     "ko": dict(
         meta_title="DivAlarm 기능 | RSI 다이버전스 알람, 키워드 알람, 자동 주문",
         meta_desc="9개 시간대 RSI 다이버전스 알림, 무음을 뚫는 알람, 지표·키워드 알람, 거래소 5곳 Pro 자동 주문까지 한 번에 보세요.",
-        h1_a="DivAlarm이 하는 일, 전부.", h1_b="알림에서 끝나지 않고, 주문까지.",
-        lead="BTC와 ETH의 다이버전스를 지켜보다가 깨울 만한 신호에만 알람을 울려요. TradingView 알림이나 내가 만든 규칙이 맞으면 Binance, Bybit, OKX, Bitget, Gate에 선물 주문까지 넣어요. 궁금한 기능으로 바로 가 보세요.",
+        h1_a="DivAlarm이 하는 일, 전부.", h1_b="어떤 지표 신호든, 자동&nbsp;주문까지.",
+        lead="BTC와 ETH의 다이버전스를 지켜보다가 깨울 만한 신호에만 알람을 울려요. DivAlarm의 다이버전스·지표 신호든 TradingView 알림이든, 내 규칙에 맞으면 Binance, Bybit, OKX, Bitget, Gate에 선물 주문까지 넣어요. 출금 권한은 필요 없고, 정해 둔 규칙대로만 주문해요.",
         index_label="이 페이지 목차",
         index=["다이버전스 알림", "필터", "알람", "지표 알림", "키워드 알람", "자동 주문", "신호 기록", "추천 보상"],
         div_h2="RSI 다이버전스 알림, 빠르게 또는 확실하게",
