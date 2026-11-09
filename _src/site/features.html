@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!-- Built by _src/site/build.py from _src/site/features.html. Edit those, then rebuild. -->
+<html lang="{{lang}}" data-da-built="">
+<head>
+<meta charset="utf-8"/>
+<title>{{meta_title}}</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="theme-color" content="#06122B"/>
+<meta content="{{meta_desc}}" name="description"/>
+<meta content="{{meta_title}}" property="og:title"/>
+<meta content="{{meta_desc}}" property="og:description"/>
+<meta content="{{meta_title}}" name="twitter:title"/>
+<meta content="{{meta_desc}}" name="twitter:description"/>
+<meta content="https://www.divalarm.com/{{lang}}/features.html" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="{{og_locale}}" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.divalarm.com/images/og-home-{{lang}}.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="https://www.divalarm.com/images/og-home-{{lang}}.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="../images/webclip.png" rel="apple-touch-icon"/>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
+{{head_links}}
+<link href="../css/lang-switcher.css?v={{lang_v}}" rel="stylesheet" type="text/css"/>
+<script src="../js/posthog.js"></script>
+<script defer src="../js/lang-switcher.js?v={{lang_v}}"></script>
+<script>
+  (function captureReferralFromQuery() {
+    try {
+      var raw = (new URLSearchParams(location.search).get("ref") || "").trim();
+      if (!raw) return;
+      localStorage.setItem("referralId", raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64));
+    } catch (e) {}
+  })();
+</script>
+<link href="https://www.divalarm.com/{{lang}}/features.html" rel="canonical"/>{{hreflang}}
+<style>
+.fx-head {
+  padding: 72px 0 56px;
+  background:
+    radial-gradient(110% 80% at 90% -20%, #12306A 0%, rgba(18, 48, 106, 0) 60%),
+    radial-gradient(70% 60% at -10% 120%, #0B2A5C 0%, rgba(11, 42, 92, 0) 60%);
+  border-bottom: 1px solid var(--da-line);
+}
+.fx-head .da-lead { max-width: 64ch; }
+.fx-index { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.fx-index a {
+  text-decoration: none; color: var(--da-muted); font-weight: 600; font-size: .92rem;
+  border: 1px solid var(--da-line-2); border-radius: 999px; padding: 6px 14px;
+}
+.fx-index a:hover { color: var(--da-text); border-color: var(--da-blue); }
+
+.fx-intro .da-lead { max-width: 62ch; }
+.fx-split { display: grid; gap: 40px; align-items: start; margin-top: 8px; }
+@media (min-width: 960px) { .fx-split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: center; } }
+@media (min-width: 960px) { .fx-split.flip > :first-child { order: 2; } }
+
+.fx-list { display: grid; gap: 22px; margin-top: 32px; }
+.fx-list li { display: grid; grid-template-columns: 28px 1fr; gap: 4px 12px; }
+.fx-list svg { width: 24px; height: 24px; color: var(--da-blue); grid-row: span 2; margin-top: 2px; }
+.fx-list b { font-weight: 800; letter-spacing: -.015em; font-size: 1.05rem; }
+.fx-list span { color: var(--da-muted); font-size: 1rem; }
+
+/* stages: a real sequence, so numbered */
+.stages { display: grid; gap: 16px; margin-top: 40px; counter-reset: st; }
+@media (min-width: 900px) { .stages { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.stages li { counter-increment: st; padding: 22px; }
+.stages .k { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.1rem; letter-spacing: -.02em; }
+.stages .k::before { content: counter(st); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--da-blue); color: var(--da-blue-hi); font-size: .85rem; flex: none; }
+.stages p { color: var(--da-muted); font-size: .98rem; margin-top: 10px; }
+
+.cases { display: grid; gap: 16px; margin-top: 20px; }
+@media (min-width: 900px) { .cases { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.cases-h { margin-top: 56px; }
+.case { padding: 18px; }
+.case h4 { font-size: 1rem; font-weight: 800; letter-spacing: -.015em; margin-bottom: 8px; }
+.case-chart { width: 100%; height: auto; }
+.case-chart text { font-family: var(--da-sans); }
+.case-chart.narrow { display: none; }
+@media (max-width: 520px) { .case-chart.wide { display: none; } .case-chart.narrow { display: block; } }
+.case dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin-top: 12px; font-size: .92rem; }
+.case dt { color: var(--da-faint); font-weight: 700; }
+.case dd { font-weight: 700; }
+.case dd.da { color: var(--da-blue); }
+.case dd.tv { color: var(--da-muted); font-weight: 600; }
+.cases + .da-fine { margin-top: 16px; max-width: 90ch; }
+
+/* filter mock */
+.mock-filter .row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--da-line); font-weight: 600; }
+.mock-filter .row:last-child { border-bottom: 0; }
+.mock-filter .row span:last-child { color: var(--da-blue-hi); font-family: var(--da-mono); font-size: .85rem; }
+
+/* alarm mock: a phone screen */
+.phone { width: min(320px, 100%); margin: 0 auto; aspect-ratio: 9 / 16; border-radius: 36px; padding: 10px; background: #020814; border: 1px solid var(--da-line-2); box-shadow: 0 40px 80px -30px rgba(0, 8, 30, .95); }
+.phone .screen { height: 100%; border-radius: 28px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 40px 22px 26px; text-align: center;
+  background: radial-gradient(120% 80% at 50% 0%, #1A3F82 0%, #0A1A3B 55%, #06122B 100%); }
+.phone .time { font-size: 3.4rem; font-weight: 300; letter-spacing: -.03em; line-height: 1; }
+.phone .what { font-weight: 800; font-size: 1.1rem; letter-spacing: -.02em; margin-top: 18px; }
+.phone .sub { color: var(--da-muted); font-size: .9rem; margin-top: 6px; }
+.phone .ring { width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 93, 115, .14); box-shadow: 0 0 0 14px rgba(255, 93, 115, .06); }
+.phone .ring svg { width: 40px; height: 40px; color: var(--da-down); }
+.phone .stop { width: 100%; border-radius: 999px; background: var(--da-down); color: #fff; font-weight: 800; padding: 14px; }
+.phone .tags { justify-content: center; margin-top: 12px; }
+
+/* indicator grid */
+.ind { display: grid; gap: 0; margin-top: 40px; border-top: 1px solid var(--da-line); }
+@media (min-width: 720px) { .ind { grid-template-columns: repeat(2, 1fr); column-gap: 48px; } }
+@media (min-width: 1100px) { .ind { grid-template-columns: repeat(3, 1fr); } }
+.ind div { padding: 22px 0; border-bottom: 1px solid var(--da-line); }
+.ind dt { font-weight: 800; font-size: 1.1rem; letter-spacing: -.02em; }
+.ind dd { color: var(--da-muted); margin-top: 6px; font-size: .98rem; }
+
+/* keyword flow: sources -> rule -> actions */
+.flow { display: grid; gap: 16px; margin-top: 40px; align-items: stretch; }
+@media (min-width: 960px) { .flow { grid-template-columns: minmax(0, 1.2fr) auto minmax(0, .8fr) auto minmax(0, .9fr); align-items: center; } }
+.flow-col { display: grid; gap: 10px; }
+.flow-col .da-panel { padding: 14px 16px; }
+.flow-col b { display: block; font-weight: 800; letter-spacing: -.015em; }
+.flow-col span { display: block; color: var(--da-muted); font-size: .9rem; margin-top: 2px; }
+.flow-arrow { color: var(--da-line-2); display: grid; place-items: center; }
+.flow-arrow svg { width: 28px; height: 28px; }
+@media (max-width: 959px) { .flow-arrow svg { rotate: 90deg; } }
+.flow-rule { padding: 18px; display: grid; gap: 10px; border-color: var(--da-blue) !important; }
+.flow-rule code { font-family: var(--da-mono); color: var(--da-blue-hi); font-size: .9rem; }
+.flow-col.out .da-panel { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.flow-col.out svg { width: 20px; height: 20px; color: var(--da-blue); flex: none; }
+.kw-note { margin-top: 24px; color: var(--da-muted); max-width: 72ch; }
+
+/* auto-order */
+.opts { display: grid; gap: 18px; margin-top: 28px; }
+.opts div { display: grid; gap: 4px; }
+.opts dt { font-weight: 800; letter-spacing: -.015em; }
+.opts dd { color: var(--da-muted); font-size: .98rem; }
+.ticket .row { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--da-line); font-size: .9rem; }
+.ticket .row:last-child { border-bottom: 0; }
+.ticket .row span:first-child { color: var(--da-faint); font-weight: 700; }
+.ticket .row span:last-child { font-weight: 700; text-align: end; }
+.video { margin-top: 40px; }
+.video h3 { margin-bottom: 14px; }
+.video .frame { position: relative; aspect-ratio: 16 / 9; border-radius: var(--da-radius); overflow: hidden; border: 1px solid var(--da-line); background: #000; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.auto-risk { margin-top: 28px; }
+
+/* signal log */
+.log-grid { display: grid; gap: 24px; margin-top: 40px; align-items: start; }
+@media (min-width: 960px) { .log-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.log-grid > div { padding: 24px; }
+.log-grid p { color: var(--da-muted); margin-top: 8px; }
+.details { margin-top: 18px; display: grid; grid-template-columns: auto 1fr; gap: 0; font-size: .88rem; border: 1px solid var(--da-line); border-radius: 12px; overflow: hidden; }
+.details span { padding: 8px 12px; border-bottom: 1px solid var(--da-line); }
+.details span:nth-child(odd) { color: var(--da-faint); font-weight: 700; background: rgba(138, 216, 255, .03); }
+.details span:nth-child(even) { font-family: var(--da-mono); }
+.details span:nth-last-child(-n+2) { border-bottom: 0; }
+.tools { margin-top: 18px; }
+
+/* referral */
+.ref { display: grid; gap: 0; margin-top: 36px; border-top: 1px solid var(--da-line-2); }
+.ref div { display: grid; gap: 6px 28px; padding: 18px 0; border-bottom: 1px solid var(--da-line); }
+@media (min-width: 900px) { .ref div { grid-template-columns: minmax(0, .7fr) minmax(0, 2fr); } }
+.ref dt { font-weight: 800; letter-spacing: -.015em; }
+.ref dd { color: var(--da-muted); }
+.ref-note { margin-top: 20px; color: var(--da-muted); }
+
+.closing { background: radial-gradient(80% 120% at 100% 100%, #0F2A62 0%, rgba(15, 42, 98, 0) 60%); }
+.closing .da-h2 { max-width: none; }
+</style>
+</head>
+<body class="da-page">
+{{site_header}}
+
+<main id="main">
+
+<section class="fx-head" aria-labelledby="fx-title">
+  <div class="da-wrap">
+    <h1 class="da-h1" id="fx-title">{{h1}}</h1>
+    <p class="da-lead">{{lead}}</p>
+    <nav class="fx-index" aria-label="{{index_label}}">{{index_links}}</nav>
+  </div>
+</section>
+
+<section class="da-section" id="divergence" aria-labelledby="div-title">
+  <div class="da-wrap">
+    <div class="fx-intro">
+      <h2 class="da-h2" id="div-title">{{div_h2}}</h2>
+      <p class="da-lead">{{div_lead}}</p>
+    </div>
+    <ol class="stages">{{stages}}</ol>
+    <h3 class="da-h3 cases-h">{{cases_h3}}</h3>
+    <div class="cases">{{cases}}</div>
+    <p class="da-fine">{{cases_fine}}</p>
+  </div>
+</section>
+
+<section class="da-section" id="filters" aria-labelledby="filters-title">
+  <div class="da-wrap fx-split">
+    <div>
+      <h2 class="da-h2" id="filters-title">{{flt_h2}}</h2>
+      <p class="da-lead">{{flt_lead}}</p>
+      <ul class="fx-list">{{flt_items}}</ul>
+    </div>
+    <div class="da-mock mock-filter" aria-hidden="true">
+      <div class="lbl">{{mf_title}}</div>
+      <div class="da-chips">{{mf_tfs}}</div>
+      <div class="row"><span>{{mf_rsi}}</span><span>≥ 70 / ≤ 30</span></div>
+      <div class="da-switch">{{mf_bb}}<i class="on"></i></div>
+      <div class="da-switch">{{mf_price}}<i></i></div>
+      <div class="da-switch">{{mf_stage}}<i class="on"></i></div>
+    </div>
+  </div>
+</section>
+
+<section class="da-section" id="alarms" aria-labelledby="alarms-title">
+  <div class="da-wrap fx-split flip">
+    <div>
+      <h2 class="da-h2" id="alarms-title">{{alm_h2}}</h2>
+      <p class="da-lead">{{alm_lead}}</p>
+      <ul class="fx-list">{{alm_items}}</ul>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <div class="screen">
+        <div>
+          <div class="time">03:12</div>
+          <div class="what">{{ph_title}}</div>
+          <div class="sub">{{ph_sub}}</div>
+          <div class="da-tags tags"><span>RSI 14</span><span class="up">{{ph_tag}}</span></div>
+        </div>
+        <div class="ring">{{icon_bell}}</div>
+        <div class="stop">{{ph_stop}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="da-section" id="indicators" aria-labelledby="ind-title">
+  <div class="da-wrap">
+    <h2 class="da-h2" id="ind-title">{{ind_h2}}</h2>
+    <p class="da-lead">{{ind_lead}}</p>
+    <dl class="ind">{{ind_items}}</dl>
+  </div>
+</section>
+
+<section class="da-section" id="keywords" aria-labelledby="kw-title">
+  <div class="da-wrap">
+    <h2 class="da-h2" id="kw-title">{{kw_h2}}</h2>
+    <p class="da-lead">{{kw_lead}}</p>
+    <div class="flow">
+      <div class="flow-col">{{kw_sources}}</div>
+      <div class="flow-arrow" aria-hidden="true">{{icon_arrow}}</div>
+      <div class="da-panel flow-rule">
+        <div class="lbl" style="color:var(--da-faint);font-size:.8rem;font-weight:700">{{kw_rule}}</div>
+        <div style="display:flex;gap:10px;align-items:center"><span class="da-kw">AA</span><span style="color:var(--da-muted);font-size:.9rem">{{kw_rule_kw}}</span></div>
+        <code>(1 &amp; 2) | 3</code>
+        <span style="color:var(--da-muted);font-size:.9rem">{{kw_rule_combo}}</span>
+      </div>
+      <div class="flow-arrow" aria-hidden="true">{{icon_arrow}}</div>
+      <div class="flow-col out">{{kw_actions}}</div>
+    </div>
+    <p class="kw-note">{{kw_note}}</p>
+    <p style="margin-top:20px"><a class="da-link" href="tradingview-webhook.html">{{kw_link}}</a></p>
+  </div>
+</section>
+
+<section class="da-section" id="auto-order" aria-labelledby="ao-title">
+  <div class="da-wrap">
+    <div class="fx-split">
+      <div>
+        <h2 class="da-h2" id="ao-title">{{ao_h2}}</h2>
+        <p class="da-lead">{{ao_lead}}</p>
+        <dl class="opts">{{ao_opts}}</dl>
+      </div>
+      <div class="da-mock ticket" aria-hidden="true">
+        <div style="display:flex;gap:10px;align-items:center;margin-bottom:6px"><span class="da-kw">AA</span><span class="lbl">{{tk_title}}</span></div>
+        {{tk_rows}}
+        <div class="da-toast" style="margin-top:6px"><i></i>{{tk_toast}}</div>
+      </div>
+    </div>
+    <p class="da-risk auto-risk">{{icon_warn}}<span>{{risk_auto}}</span></p>
+    <div class="video">
+      <h3 class="da-h3">{{video_h3}}</h3>
+      <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/T4NzR8Pnv9A" title="{{video_h3}}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<section class="da-section" id="log" aria-labelledby="log-title">
+  <div class="da-wrap">
+    <h2 class="da-h2" id="log-title">{{log_h2}}</h2>
+    <div class="log-grid">
+      <div class="da-panel">
+        <h3 class="da-h3">{{log_h3}}</h3>
+        <p>{{log_p}}</p>
+        <div class="details" aria-hidden="true">{{log_rows}}</div>
+      </div>
+      <div class="da-panel">
+        <h3 class="da-h3">{{chart_h3}}</h3>
+        <p>{{chart_p}}</p>
+        <div class="da-tags tools">{{chart_tools}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="da-section" id="ref-reward" aria-labelledby="ref-title">
+  <div class="da-wrap">
+    <h2 class="da-h2" id="ref-title">{{ref_h2}}</h2>
+    <p class="da-lead">{{ref_lead}}</p>
+    <dl class="ref">{{ref_rows}}</dl>
+    <p class="ref-note">{{ref_note}}</p>
+  </div>
+</section>
+
+<section class="da-section closing" aria-labelledby="closing-title">
+  <div class="da-wrap">
+    <h2 class="da-h2 da-two-tone" id="closing-title"><span class="tv-line">{{close_a}}</span> <span class="da-line">{{close_b}}</span></h2>
+    <div class="da-ctas">
+      <a class="da-btn da-btn-primary" href="{{play_url}}" target="_blank" rel="noopener">{{cta_play}}</a>
+      <a class="da-btn da-btn-ghost" href="pricing.html">{{cta_trial}}</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+{{site_footer}}
+{{body_script}}
+</body>
+</html>

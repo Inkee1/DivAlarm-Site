@@ -346,6 +346,9 @@
     if (slot) {
       slot.appendChild(root);
       root.classList.add("is-top", "is-inline");
+      // The panel now lives inside the sticky header, so the backdrop must sit
+      // below the header or it swallows clicks on the language list.
+      backdrop.classList.add("is-under-header");
     }
   }
 

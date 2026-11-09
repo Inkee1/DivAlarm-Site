@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!-- Built by _src/site/build.py from _src/site/home.html. Edit those, then rebuild. -->
+<html lang="{{lang}}" data-da-built="">
+<head>
+<meta charset="utf-8"/>
+<title>{{meta_title}}</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="theme-color" content="#06122B"/>
+<meta content="{{meta_desc}}" name="description"/>
+<meta content="{{meta_title}}" property="og:title"/>
+<meta content="{{meta_desc}}" property="og:description"/>
+<meta content="{{meta_title}}" name="twitter:title"/>
+<meta content="{{meta_desc}}" name="twitter:description"/>
+<meta content="https://www.divalarm.com/{{lang}}/" property="og:url"/>
+<meta content="DivAlarm" property="og:site_name"/>
+<meta content="{{og_locale}}" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.divalarm.com/images/og-home-{{lang}}.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="https://www.divalarm.com/images/og-home-{{lang}}.png" name="twitter:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="../images/webclip.png" rel="apple-touch-icon"/>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
+{{head_links}}
+<link href="../css/lang-switcher.css?v={{lang_v}}" rel="stylesheet" type="text/css"/>
+<script src="../js/posthog.js"></script>
+<script defer src="../js/lang-switcher.js?v={{lang_v}}"></script>
+<script>
+  (function captureReferralFromQuery() {
+    try {
+      var raw = (new URLSearchParams(location.search).get("ref") || "").trim();
+      if (!raw) return;
+      localStorage.setItem("referralId", raw.replace(/[^A-Za-z0-9_-]/g, "").slice(0, 64));
+    } catch (e) {}
+  })();
+</script>
+<script type="application/ld+json">{{ld_json}}</script>
+<link href="https://www.divalarm.com/{{lang}}/" rel="canonical"/>{{hreflang}}
+<style>
+/* ---------- hero ---------- */
+.hero {
+  position: relative; padding: 72px 0 88px; overflow: hidden;
+  background:
+    radial-gradient(110% 70% at 90% -10%, #12306A 0%, rgba(18, 48, 106, 0) 60%),
+    radial-gradient(80% 60% at -10% 110%, #0B2A5C 0%, rgba(11, 42, 92, 0) 60%);
+}
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .55;
+  background-image: linear-gradient(rgba(138, 216, 255, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(138, 216, 255, .035) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: linear-gradient(#000 40%, transparent); mask-image: linear-gradient(#000 40%, transparent);
+}
+.hero .da-wrap { position: relative; display: grid; gap: 48px; align-items: center; }
+@media (min-width: 1000px) { .hero .da-wrap { grid-template-columns: minmax(0, 11fr) minmax(0, 13fr); gap: 52px; } }
+.hero .da-lead { font-size: clamp(1.05rem, .4vw + 1rem, 1.2rem); margin-top: 24px !important; }
+.hero-note { margin-top: 16px !important; color: var(--da-faint); font-size: .9rem; }
+
+.chart-card {
+  position: relative; background: linear-gradient(180deg, rgba(14, 34, 80, .72), rgba(10, 26, 59, .72));
+  border: 1px solid var(--da-line); border-radius: 22px; padding: 18px 18px 16px;
+  box-shadow: 0 40px 80px -40px rgba(0, 8, 30, .9);
+}
+.chart-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 6px; }
+.chip { display: inline-flex; gap: 8px; align-items: center; border: 1.5px solid var(--da-line-2); border-radius: 999px; padding: 4px 12px; color: var(--da-muted); font-weight: 600; font-size: .85rem; white-space: nowrap; }
+.chip b { color: var(--da-text); }
+.chart-head .live { color: var(--da-faint); font-size: .8rem; }
+.hero-chart { width: 100%; height: auto; }
+.hero-chart text, .proof-chart text { font-family: var(--da-sans); }
+.hero-chart.narrow, .proof-chart.narrow { display: none; }
+@media (max-width: 520px) {
+  .hero-chart.wide, .proof-chart.wide { display: none; }
+  .hero-chart.narrow, .proof-chart.narrow { display: block; }
+}
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; border-top: 1px solid var(--da-line); margin-top: 6px; padding-top: 14px; }
+.stat .k { color: var(--da-muted); font-size: .8rem; font-weight: 600; }
+.stat .v { font-size: clamp(1rem, 1.2vw + .55rem, 1.35rem); font-weight: 800; letter-spacing: -.02em; line-height: 1.2; margin-top: 4px; }
+.stat .s { color: var(--da-faint); font-size: .78rem; margin-top: 2px; }
+.stat .v.da { color: var(--da-blue); }
+.chart-card .da-fine { margin-top: 12px; }
+
+.notif {
+  position: absolute; left: -40px; top: 186px; width: min(320px, 74%);
+  display: flex; gap: 12px; align-items: flex-start;
+  background: #EAF2FF; color: #0A1630; border-radius: 20px; padding: 12px 14px;
+  box-shadow: 0 24px 50px rgba(0, 8, 30, .6), 0 0 0 1px rgba(255, 255, 255, .5) inset;
+}
+.notif img { width: 38px; height: 38px; border-radius: 10px; background: #fff; flex: none; }
+.notif .t1 { display: flex; justify-content: space-between; color: #5A6787; font-size: .75rem; font-weight: 600; }
+.notif .t2 { font-weight: 800; font-size: .92rem; letter-spacing: -.02em; line-height: 1.3; margin-top: 1px; }
+.notif .t3 { color: #33415F; font-size: .8rem; line-height: 1.4; margin-top: 2px; }
+.notif .bell { color: #E2384F; width: 16px; height: 16px; display: inline-block; }
+@media (max-width: 999px) { .notif { left: 12px; top: 96px; } }
+@media (max-width: 520px) {
+  .notif { position: relative; left: auto; top: auto; width: auto; margin: 4px 0 10px; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stats .stat:last-child { display: none; }
+}
+
+/* one orchestrated load sequence: chart draws, the alert lands, the phone rings */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-chart .hc-reveal { animation: reveal 1.25s cubic-bezier(.45, 0, .2, 1) .15s both; }
+  .hero-chart .hc-div { animation: fade .45s ease-out 1.15s both; }
+  .hero-chart .hc-pin { animation: pop .5s cubic-bezier(.3, 1.6, .5, 1) 1.35s both; transform-box: fill-box; transform-origin: center; }
+  .hero-chart .hc-tv { animation: fade .5s ease-out 2.1s both; }
+  .notif { animation: slide-in .55s cubic-bezier(.2, .9, .3, 1) 1.6s both; }
+  .notif .bell { animation: ring .9s ease-in-out 2.1s 1 both; transform-origin: 50% 10%; }
+}
+@keyframes reveal { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pop { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: scale(1); } }
+@keyframes slide-in { from { opacity: 0; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
+@keyframes ring { 0%, 100% { rotate: 0deg; } 15% { rotate: 16deg; } 30% { rotate: -14deg; } 45% { rotate: 10deg; } 60% { rotate: -6deg; } 75% { rotate: 3deg; } }
+
+/* ---------- compare ---------- */
+.compare { border-top: 1px solid var(--da-line); }
+.proof { margin-top: 48px; padding: 28px; }
+@media (max-width: 719px) { .proof { padding: 20px 16px; } }
+.proof-head { display: grid; gap: 20px; }
+@media (min-width: 900px) { .proof-head { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: end; } }
+.proof-head p { color: var(--da-muted); margin-top: 8px; font-size: 1rem; }
+.score { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.score > div { border-left: 3px solid var(--da-blue); padding-left: 14px; }
+.score > div.tv { border-color: var(--da-tv); }
+.score .n { font-size: clamp(2rem, 3vw + 1rem, 3rem); font-weight: 800; letter-spacing: -.04em; line-height: 1; color: var(--da-blue); }
+.score .tv .n { color: var(--da-tv); }
+.score .n small { font-size: .45em; color: var(--da-faint); font-weight: 700; letter-spacing: 0; margin-left: 4px; }
+.score .l { font-weight: 700; font-size: .95rem; margin-top: 6px; }
+.proof-chart { margin-top: 24px; width: 100%; height: auto; }
+.proof .da-fine { margin-top: 16px; max-width: 90ch; }
+
+.table { margin-top: 56px; border-top: 1px solid var(--da-line-2); }
+.table .row { display: grid; gap: 8px 28px; padding: 22px 0; border-bottom: 1px solid var(--da-line); }
+@media (min-width: 900px) { .table .row { grid-template-columns: minmax(0, .8fr) minmax(0, 1fr) minmax(0, 1.25fr); } }
+.table .row.head { padding: 14px 0; color: var(--da-faint); font-size: .85rem; font-weight: 700; }
+@media (max-width: 899px) { .table .row.head { display: none; } }
+.table .q { font-weight: 800; letter-spacing: -.02em; font-size: 1.05rem; }
+.table .a-tv, .table .a-da { font-size: 1rem; }
+.table .a-tv { color: var(--da-muted); }
+.table .a-da { color: var(--da-text); position: relative; padding-left: 26px; }
+.table .a-da::before { content: ""; position: absolute; left: 0; top: .5em; width: 12px; height: 12px; border-radius: 50%; background: var(--da-blue); box-shadow: 0 0 0 4px rgba(34, 169, 242, .18); }
+@media (max-width: 899px) {
+  .table .a-tv::before, .table .a-da .who { display: block; color: var(--da-faint); font-size: .78rem; font-weight: 700; }
+  .table .a-tv::before { content: attr(data-label); }
+}
+@media (min-width: 900px) { .table .a-da .who { display: none; } }
+
+/* ---------- auto-order ---------- */
+.auto { background: linear-gradient(180deg, var(--da-ink) 0%, #081736 100%); }
+.steps { display: grid; gap: 20px; margin-top: 48px; counter-reset: step; }
+@media (min-width: 900px) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.step { counter-increment: step; display: flex; flex-direction: column; }
+.step-n { display: flex; align-items: center; gap: 12px; }
+.step-n::before { content: counter(step); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--da-blue); color: var(--da-blue-hi); font-weight: 800; font-size: .9rem; }
+.step-n::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--da-line-2), transparent); }
+.step h3 { margin-top: 14px; }
+.step p { color: var(--da-muted); margin-top: 8px; font-size: 1rem; }
+.step .da-mock { margin-top: 18px; flex: 1; }
+
+.control { display: grid; gap: 32px; margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--da-line); }
+@media (min-width: 900px) { .control { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 48px; } }
+.control h3 { font-size: clamp(1.5rem, 1.6vw + 1rem, 2rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.2; }
+.control-list { display: grid; gap: 26px 32px; }
+@media (min-width: 640px) { .control-list { grid-template-columns: 1fr 1fr; } }
+.control-list li { display: grid; grid-template-columns: 28px 1fr; gap: 4px 12px; }
+.control-list svg { width: 24px; height: 24px; color: var(--da-blue); grid-row: span 2; margin-top: 2px; }
+.control-list b { font-weight: 800; letter-spacing: -.015em; font-size: 1.05rem; }
+.control-list span { color: var(--da-muted); font-size: .98rem; }
+.auto .da-risk { margin-top: 36px; }
+.auto .after { margin-top: 28px; }
+
+/* ---------- features ---------- */
+.feat-grid { display: grid; margin-top: 48px; border-top: 1px solid var(--da-line); }
+@media (min-width: 720px) { .feat-grid { grid-template-columns: 1fr 1fr; column-gap: 48px; } }
+@media (min-width: 1100px) { .feat-grid { grid-template-columns: repeat(3, 1fr); } }
+.feat { padding: 26px 0; border-bottom: 1px solid var(--da-line); }
+.feat dt { font-weight: 800; font-size: 1.125rem; letter-spacing: -.02em; display: flex; gap: 10px; align-items: center; }
+.feat dt svg { width: 22px; height: 22px; color: var(--da-blue); flex: none; }
+.feat dd { color: var(--da-muted); margin-top: 8px; font-size: 1rem; }
+.feat-links { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 28px; }
+
+/* ---------- pricing ---------- */
+.plans { display: grid; gap: 16px; margin-top: 48px; }
+@media (min-width: 900px) { .plans { grid-template-columns: 1fr 1fr 1.08fr; align-items: stretch; } }
+.plan { border: 1px solid var(--da-line); border-radius: var(--da-radius); padding: 26px 24px; background: var(--da-ink-2); }
+.plan.pro { border-color: var(--da-blue); background: linear-gradient(180deg, rgba(34, 169, 242, .12), rgba(10, 26, 59, 1) 60%); }
+.plan-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.plan h3 { font-size: 1.15rem; font-weight: 800; }
+.plan .tag { color: var(--da-blue-hi); font-size: .8rem; font-weight: 700; }
+.plan .price { font-size: 2.4rem; font-weight: 800; letter-spacing: -.04em; margin-top: 10px; line-height: 1; }
+.plan .price small { font-size: .95rem; color: var(--da-faint); font-weight: 600; letter-spacing: 0; margin-left: 4px; }
+.plan ul { margin-top: 20px; display: grid; gap: 10px; }
+.plan li { position: relative; padding-left: 24px; color: var(--da-muted); font-size: .98rem; }
+.plan li::before { content: ""; position: absolute; left: 2px; top: .45em; width: 10px; height: 6px; border-left: 2px solid var(--da-blue); border-bottom: 2px solid var(--da-blue); rotate: -45deg; }
+.plans-foot { display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; justify-content: space-between; margin-top: 24px; }
+.plans-foot .da-fine { max-width: 72ch; font-size: .85rem; }
+
+/* ---------- closing ---------- */
+.closing { background: radial-gradient(80% 120% at 100% 100%, #0F2A62 0%, rgba(15, 42, 98, 0) 60%); }
+.closing .da-h2 { max-width: none; }
+</style>
+</head>
+<body class="da-page">
+{{site_header}}
+
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="da-wrap">
+    <div>
+      <h1 id="hero-title" class="da-h1 da-two-tone"><span class="tv-line">{{h1_a}}</span> <span class="da-line">{{h1_b}}</span></h1>
+      <p class="da-lead">{{hero_lead}}</p>
+      <div class="da-ctas">
+        <a class="da-btn da-btn-primary" href="{{play_url}}" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.2c-.3.3-.4.7-.4 1.2v17.2c0 .5.1.9.4 1.2l.1.1 9.6-9.6v-.2L3.7 2.1l-.1.1Z"/><path d="m16.5 15.5-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.8 2.2-.1-.1Z" opacity=".75"/><path d="m16.6 15.4-3.3-3.3-9.7 9.7c.4.4 1 .4 1.7.1l11.3-6.5" opacity=".9"/><path d="M16.6 8.8 5.3 2.3c-.7-.4-1.3-.3-1.7.1l9.7 9.7 3.3-3.3Z" opacity=".6"/></svg>
+          {{cta_play}}
+        </a>
+        <a class="da-btn da-btn-ghost" href="pricing.html">{{cta_trial}}</a>
+      </div>
+      <p class="hero-note">{{hero_note}}</p>
+    </div>
+
+    <figure class="chart-card">
+      <div class="chart-head">
+        <span class="chip"><b>{{chip_market}}</b>{{chip_tf}}</span>
+        <span class="live">{{chart_period}}</span>
+      </div>
+      <div class="notif" aria-hidden="true">
+        <img src="../images/divblue3-140.png" alt="" width="38" height="38"/>
+        <div style="flex:1;min-width:0">
+          <div class="t1"><span>DivAlarm</span><span style="display:inline-flex;gap:4px;align-items:center"><svg class="bell" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22Zm7-6V11a7 7 0 0 0-5.5-6.84V3.5a1.5 1.5 0 0 0-3 0v.66A7 7 0 0 0 5 11v5l-2 2v1h18v-1l-2-2Z"/></svg>{{notif_time}}</span></div>
+          <div class="t2">{{notif_title}}</div>
+          <div class="t3">{{notif_body}}</div>
+        </div>
+      </div>
+      {{hero_svg}}
+      <div class="stats">
+        <div class="stat"><div class="k">{{st1_k}}</div><div class="v da">{{st1_v}}</div><div class="s">{{st1_s}}</div></div>
+        <div class="stat"><div class="k">{{st2_k}}</div><div class="v">{{st2_v}}</div><div class="s">{{st2_s}}</div></div>
+        <div class="stat"><div class="k">{{st3_k}}</div><div class="v">{{st3_v}}</div><div class="s">{{st3_s}}</div></div>
+      </div>
+      <figcaption class="da-fine">{{hero_fine}}</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="da-section compare" id="tradingview" aria-labelledby="compare-title">
+  <div class="da-wrap">
+    <h2 class="da-h2" id="compare-title">{{cmp_h2}}</h2>
+    <p class="da-lead">{{cmp_lead}}</p>
+
+    <figure class="proof da-panel">
+      <div class="proof-head">
+        <div>
+          <h3 class="da-h3">{{proof_h3}}</h3>
+          <p>{{proof_p}}</p>
+        </div>
+        <div class="score">
+          <div><div class="n">{{n_da}}<small>/ {{n_total}}</small></div><div class="l">DivAlarm</div></div>
+          <div class="tv"><div class="n">{{n_tv}}<small>/ {{n_total}}</small></div><div class="l">TradingView</div></div>
+        </div>
+      </div>
+      {{proof_svg}}
+      <figcaption class="da-fine">{{proof_fine}}</figcaption>
+    </figure>
+
+    <div class="table" role="table" aria-label="{{tbl_label}}">
+      <div class="row head" role="row"><span role="columnheader"></span><span role="columnheader">{{tbl_tv}}</span><span role="columnheader">{{tbl_da}}</span></div>
+      {{tbl_rows}}
+    </div>
+  </div>
+</section>
+
+<section class="da-section auto" id="auto-order" aria-labelledby="auto-title">
+  <div class="da-wrap">
+    <h2 class="da-h2" id="auto-title">{{auto_h2}}</h2>
+    <p class="da-lead">{{auto_lead}}</p>
+
+    <ol class="steps">
+      <li class="step">
+        <div class="step-n" aria-hidden="true"></div>
+        <h3 class="da-h3">{{s1_h}}</h3>
+        <p>{{s1_p}}</p>
+        <div class="da-mock" aria-hidden="true">
+          <div class="da-chips"><span class="da-chip on">Binance</span><span class="da-chip">Bybit</span><span class="da-chip">OKX</span><span class="da-chip">Bitget</span><span class="da-chip">Gate</span></div>
+          <div class="lbl">API Key</div>
+          <div class="da-field"><span>••••••••••••3F2a</span><b>{{mock_saved}}</b></div>
+          <div class="lbl">{{mock_perm}}</div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-n" aria-hidden="true"></div>
+        <h3 class="da-h3">{{s2_h}}</h3>
+        <p>{{s2_p}}</p>
+        <div class="da-mock" aria-hidden="true">
+          <div style="display:flex;gap:12px;align-items:center"><span class="da-kw">AA</span><span class="lbl" style="font-size:.8rem">{{mock_when}}</span></div>
+          <div class="da-tags"><span class="up">{{mock_long}}</span><span>BTCUSDT</span><span>{{mock_market}}</span><span>10×</span></div>
+          <div class="da-tags"><span>TP 2%</span><span>SL 1%</span></div>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-n" aria-hidden="true"></div>
+        <h3 class="da-h3">{{s3_h}}</h3>
+        <p>{{s3_p}}</p>
+        <div class="da-mock" aria-hidden="true">
+          <div class="lbl">{{mock_msg}}</div>
+          <div class="da-msg"><em>AA</em> {{ticker}} {{close}}</div>
+          <div class="da-toast"><i></i>{{mock_toast}}</div>
+        </div>
+      </li>
+    </ol>
+
+    <div class="control">
+      <div>
+        <h3>{{ctl_h3}}</h3>
+      </div>
+      <div>
+        <ul class="control-list">
+          <li>{{icon_phone}}<b>{{c1_b}}</b><span>{{c1_s}}</span></li>
+          <li>{{icon_keyhole}}<b>{{c2_b}}</b><span>{{c2_s}}</span></li>
+          <li>{{icon_toggle}}<b>{{c3_b}}</b><span>{{c3_s}}</span></li>
+          <li>{{icon_list}}<b>{{c4_b}}</b><span>{{c4_s}}</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="da-risk">{{icon_warn}}<span>{{risk_auto}}</span></p>
+    <p class="after"><a class="da-link" href="tradingview-webhook.html">{{auto_link}}</a></p>
+  </div>
+</section>
+
+<section class="da-section" id="features" aria-labelledby="feat-title">
+  <div class="da-wrap">
+    <h2 class="da-h2" id="feat-title">{{feat_h2}}</h2>
+    <dl class="feat-grid">
+      {{feat_items}}
+    </dl>
+    <div class="feat-links">
+      <a class="da-link" href="features.html">{{feat_link1}}</a>
+      <a class="da-link" href="performance.html">{{feat_link2}}</a>
+      <a class="da-link" href="rsi-divergence.html">{{feat_link3}}</a>
+    </div>
+  </div>
+</section>
+
+<section class="da-section" id="plans" aria-labelledby="plans-title">
+  <div class="da-wrap">
+    <h2 class="da-h2" id="plans-title">{{plans_h2}}</h2>
+    <div class="plans">
+      {{plan_cards}}
+    </div>
+    <div class="plans-foot">
+      <p class="da-fine">{{plans_note}}</p>
+      <a class="da-btn da-btn-ghost" href="pricing.html">{{plans_cta}}</a>
+    </div>
+  </div>
+</section>
+
+<section class="da-section closing" aria-labelledby="closing-title">
+  <div class="da-wrap">
+    <h2 class="da-h2 da-two-tone" id="closing-title"><span class="tv-line">{{close_a}}</span> <span class="da-line">{{close_b}}</span></h2>
+    <div class="da-ctas">
+      <a class="da-btn da-btn-primary" href="{{play_url}}" target="_blank" rel="noopener">{{cta_play}}</a>
+      <a class="da-btn da-btn-ghost" href="pricing.html">{{cta_trial}}</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+{{site_footer}}
+{{body_script}}
+</body>
+</html>

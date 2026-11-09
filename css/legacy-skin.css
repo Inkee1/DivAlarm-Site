@@ -1,0 +1,133 @@
+/* Re-theme the older Webflow pages to match the 2026 design (css/site.css).
+ * Loaded after the Webflow CSS, design-enhancements.css and each page's own <style>
+ * (it is appended last in <head>, and the !important flags beat the in-body styles).
+ * It only touches colors, type and decoration, never page logic or layout.
+ */
+:root {
+  --font-display: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Hiragino Sans", "Malgun Gothic", "Segoe UI", sans-serif;
+  --font-body: var(--font-display);
+  --primary-gradient: linear-gradient(135deg, #22A9F2 0%, #1C8EEA 100%);
+  --premium-gradient: linear-gradient(135deg, #22A9F2 0%, #3D7BFF 100%);
+  --success-gradient: linear-gradient(135deg, #2FBF8A 0%, #3BD69B 100%);
+  --bg-dark: #06122B;
+  --bg-darker: #040D22;
+  --bg-card: rgba(10, 26, 59, .9);
+  --bg-card-hover: rgba(14, 34, 80, .95);
+  --bg-glass: rgba(138, 216, 255, .04);
+  --bg-section-alt: #081736;
+  --bg-section-dark: #06122B;
+  --accent-cyan: #22A9F2;
+  --accent-blue: #22A9F2;
+  --accent-indigo: #3D7BFF;
+  --accent-purple: #3D7BFF;
+  --accent-pink: #8AD8FF;
+  --text-primary: #EEF4FF;
+  --text-secondary: #9DAED2;
+  --text-muted: #6A7FA8;
+  --text-accent: #8AD8FF;
+  --border-subtle: rgba(39, 70, 127, .45);
+  --border-medium: rgba(39, 70, 127, .85);
+  --border-glow: rgba(34, 169, 242, .35);
+  --shadow-glow: 0 0 40px rgba(34, 169, 242, .08);
+  --shadow-glow-strong: 0 0 60px rgba(34, 169, 242, .12);
+}
+
+html body {
+  background: #06122B !important;
+  color: #EEF4FF;
+  -webkit-font-smoothing: antialiased;
+}
+html:lang(ko) body { word-break: keep-all; }
+
+/* one typeface everywhere (Webflow icon font and code excluded) */
+body :not([class*="w-icon"]):not(code):not(pre):not(kbd):not(samp):not(code *):not(pre *) {
+  font-family: var(--font-display) !important;
+}
+
+/* calmer page backdrop: navy glow instead of purple/orange orbs */
+body::before {
+  background:
+    radial-gradient(110% 60% at 85% -10%, rgba(18, 48, 106, .85) 0%, rgba(18, 48, 106, 0) 60%),
+    radial-gradient(80% 50% at -10% 110%, rgba(11, 42, 92, .7) 0%, rgba(11, 42, 92, 0) 60%) !important;
+  animation: none !important;
+}
+body::after { opacity: .6; }
+
+/* gradient headline text becomes solid, like the new pages */
+.qna-title, .manual-title, .status-header, .mega-title, .hero-new-title-dark, .heading-small {
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  color: #EEF4FF !important;
+  letter-spacing: -.03em !important;
+}
+.highlight-text, .text-gradient-unified, .mega-title span, .feature-heading span, .auth-title span, .hero-new-title-dark span {
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  color: #22A9F2 !important;
+}
+.pricing-subtitle-2, .premium-glow-text, .premium-pill { letter-spacing: .02em !important; }
+/* tight headings and sentence-case buttons, as on the new pages */
+body :is(h1, h2, h3, .hero_heading):not(.da-top *):not(.da-foot *) { letter-spacing: -.02em !important; }
+body :is(.w-button, .hero_button, .auth-btn, .btn-cyber, .btn-premium-dark, .subscribe-btn) { text-transform: none !important; letter-spacing: 0 !important; }
+.orange_button { background: #22A9F2 !important; color: #03122B !important; box-shadow: none !important; }
+/* old home pages in other locales (until they are regenerated from en/index.html) */
+.btn-cyber, .btn-premium-dark {
+  background: transparent !important; color: #EEF4FF !important; box-shadow: none !important;
+  border: 1.5px solid #27467F !important; border-radius: 999px !important;
+}
+.btn-cyber[href*="play.google.com"] { background: #22A9F2 !important; color: #03122B !important; border-color: transparent !important; }
+.premium-glow-text { box-shadow: none !important; color: #8AD8FF !important; border-color: rgba(34, 169, 242, .35) !important; }
+
+/* ---------- pricing ---------- */
+.pricing-card-2 { background: rgba(10, 26, 59, .88) !important; border-color: rgba(39, 70, 127, .85) !important; }
+.pricing-card-2.pro-plan, .pricing-card-2.pro-plan:hover {
+  border-color: rgba(34, 169, 242, .55) !important;
+  background: linear-gradient(180deg, rgba(34, 169, 242, .12), rgba(10, 26, 59, .95) 55%) !important;
+  box-shadow: 0 20px 50px rgba(0, 8, 30, .5) !important;
+}
+.pro-plan .pricing-title-2 { background: none !important; -webkit-text-fill-color: currentColor !important; color: #8AD8FF !important; }
+.recommended-badge { background: #22A9F2 !important; color: #03122B !important; }
+.billing-toggle button.is-active { background: #22A9F2 !important; color: #03122B !important; box-shadow: none !important; }
+.btn-pro { background: #22A9F2 !important; color: #03122B !important; box-shadow: none !important; animation: none !important; }
+.btn-pro:hover { background: #8AD8FF !important; transform: none !important; box-shadow: none !important; }
+.subscribe-btn { text-transform: none !important; letter-spacing: 0 !important; border-radius: 999px !important; }
+.testimonial-image-left::before, .pricing-hero-new::before, .features-header-ultimate::before, .auth-hero::before {
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(34, 169, 242, .1) 0%, transparent 60%) !important;
+}
+
+/* ---------- account and sign-in ---------- */
+.btn-change { background: #22A9F2 !important; color: #03122B !important; box-shadow: none !important; }
+.btn-primary { background: #22A9F2 !important; color: #03122B !important; box-shadow: none !important; }
+.auth-btn-primary { background: #22A9F2 !important; color: #03122B !important; box-shadow: none !important; }
+.auth-input:focus { border-color: #22A9F2 !important; box-shadow: 0 0 0 3px rgba(34, 169, 242, .2) !important; }
+.auth-footer a { color: #8AD8FF !important; }
+
+/* ---------- Q&A ---------- */
+.faq-icon { background: #22A9F2 !important; }
+.faq-category.technical { background: rgba(34, 169, 242, .16) !important; color: #8AD8FF !important; }
+.faq-category.features { background: rgba(59, 214, 155, .14) !important; color: #3BD69B !important; }
+
+/* ---------- downloads ---------- */
+.cyber-platform-card::before { background: #22A9F2 !important; }
+.downloads-hero-ultimate { background: transparent !important; }
+.cyber-platform-card { background: rgba(10, 26, 59, .85) !important; border-color: rgba(39, 70, 127, .85) !important; }
+
+/* ---------- guides and the RSI article: navy panels instead of black ---------- */
+.manual-container .toc, .manual-container .code-block, .manual-container .video-toggle,
+.manual-container .warning, .manual-container .highlight {
+  background: rgba(10, 26, 59, .85) !important;
+  border-color: rgba(39, 70, 127, .85) !important;
+}
+.page.sans { background: transparent !important; }
+.page.sans blockquote, .page.sans .code, .page.sans code { background: rgba(10, 26, 59, .85) !important; }
+
+/* ---------- small screens (these overflowed on the old site too) ---------- */
+/* Japanese and Chinese have no spaces, so keep-all would stop lines from wrapping */
+html:lang(ja) body *, html:lang(zh) body * { word-break: normal !important; overflow-wrap: anywhere; }
+/* guide screenshots and long URLs stay inside the column */
+.manual-container img, .manual-container video { max-width: 100% !important; height: auto !important; }
+.manual-container :is(p, li, td, a) { overflow-wrap: anywhere; }
+/* the password reset form had fixed 700-740px widths */
+.container-5 { width: auto !important; max-width: 700px !important; }
+.section_hero .padding-global { width: 100% !important; max-width: 740px !important; }
+.section_hero .div-block, .section_hero .hero_heading, .section_hero .w-form { width: auto !important; max-width: 100% !important; }

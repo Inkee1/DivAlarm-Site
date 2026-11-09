@@ -176,3 +176,45 @@
   right: auto;
   bottom: auto;
 }
+
+/* Keep the backdrop under the sticky header that now holds the panel */
+.div-lang-backdrop.is-under-header {
+  z-index: 990;
+}
+
+@media (max-width: 599px) {
+  .div-lang-switcher.is-inline .div-lang-panel {
+    position: fixed;
+    top: 72px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    max-height: calc(100vh - 90px);
+  }
+}
+
+/* 2026 theme: navy panel to match css/site.css */
+.div-lang-panel {
+  background: rgba(6, 18, 43, 0.97);
+  border-color: #27467F;
+}
+.div-lang-header {
+  border-bottom-color: #1B3366;
+}
+.div-lang-item {
+  background: rgba(138, 216, 255, 0.04);
+  border-color: rgba(39, 70, 127, 0.6);
+}
+.div-lang-item:hover {
+  background: rgba(138, 216, 255, 0.09);
+  border-color: #27467F;
+}
+.div-lang-item[aria-current="true"] {
+  background: rgba(34, 169, 242, 0.16);
+  border-color: #22A9F2;
+}
+.div-lang-trigger:focus-visible,
+.div-lang-item:focus-visible,
+.div-lang-close:focus-visible {
+  outline-color: #8AD8FF;
+}
