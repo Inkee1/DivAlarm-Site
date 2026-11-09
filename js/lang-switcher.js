@@ -340,6 +340,13 @@
     if (hasWebflowNav || hasManualLayout) {
       root.classList.add("is-top");
     }
+
+    // Pages with their own header can reserve a spot: <div data-lang-slot></div>
+    var slot = document.querySelector("[data-lang-slot]");
+    if (slot) {
+      slot.appendChild(root);
+      root.classList.add("is-top", "is-inline");
+    }
   }
 
   if (document.readyState === "loading") {

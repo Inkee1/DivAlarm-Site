@@ -168,3 +168,11 @@
 }
 
 
+
+/* Mounted inside a page header ([data-lang-slot]) instead of floating */
+.div-lang-switcher.is-inline {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+}

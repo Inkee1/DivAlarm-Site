@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="color-scheme" content="light dark"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>TradingView 연결 | DivAlarm</title>
+<meta name="description" content="DivAlarm 웹훅 URL을 TradingView에 넣고, 알림이 폰까지 오는지 확인하세요."/>
+<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="../images/webclip.png" rel="apple-touch-icon"/>
+<script src="../js/posthog.js"></script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    color-scheme: light dark;
+
+    --ink-light: #12202a;      --ink-dark: #e6eef1;
+    --muted-light: #55697a;    --muted-dark: #8fa3ae;
+    --page-light: #eef2f4;     --page-dark: #0f1a22;
+    --panel-light: #ffffff;    --panel-dark: #16242e;
+    --well-light: #f5f8f9;     --well-dark: #0b141a;
+    --rule-light: #d3dde3;     --rule-dark: #24394a;
+    --signal-light: #0a7f9c;   --signal-dark: #2cc6e0;
+    --on-signal-light: #ffffff; --on-signal-dark: #04161c;
+    --up-light: #12804f;       --up-dark: #3cc48a;
+    --down-light: #c4342c;     --down-dark: #f0605a;
+    --wait-light: #9a6300;     --wait-dark: #f3b547;
+
+    --ink: var(--ink-light);   --muted: var(--muted-light);
+    --page: var(--page-light); --panel: var(--panel-light);
+    --well: var(--well-light); --rule: var(--rule-light);
+    --signal: var(--signal-light); --on-signal: var(--on-signal-light);
+    --up: var(--up-light); --down: var(--down-light); --wait: var(--wait-light);
+
+    @media (prefers-color-scheme: dark) {
+      --ink: var(--ink-dark);   --muted: var(--muted-dark);
+      --page: var(--page-dark); --panel: var(--panel-dark);
+      --well: var(--well-dark); --rule: var(--rule-dark);
+      --signal: var(--signal-dark); --on-signal: var(--on-signal-dark);
+      --up: var(--up-dark); --down: var(--down-dark); --wait: var(--wait-dark);
+    }
+
+    --sans: "Pretendard Variable", Pretendard, -apple-system, "Segoe UI", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    --radius-s: 6px;
+    --radius-m: 10px;
+    accent-color: var(--signal);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  a { color: var(--signal); }
+  :focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+  [hidden] { display: none !important; }
+
+  /* ---------- top bar ---------- */
+  .bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    max-width: 1160px; margin: 0 auto; padding: 18px 24px;
+  }
+  .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: -0.01em; }
+  .brand img { width: 28px; height: 28px; }
+  .who { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); min-width: 0; }
+  .who-email { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px; }
+  .linkish { background: none; border: 0; padding: 0; font: inherit; color: var(--signal); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ---------- layout ---------- */
+  main { max-width: 1160px; margin: 0 auto; padding: 24px 24px 96px; }
+  .intro { max-width: 640px; margin-bottom: 40px; }
+  h1 {
+    font-size: clamp(32px, 4.6vw, 52px);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+  .lede { font-size: 18px; color: var(--muted); margin: 0; max-width: 56ch; }
+
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 48px; align-items: start; }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+    .path-col { order: -1; }
+  }
+
+  /* ---------- steps ---------- */
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  .step {
+    counter-increment: step;
+    display: grid; grid-template-columns: 40px minmax(0, 1fr); column-gap: 16px;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .step:first-child { border-top: 0; padding-top: 0; }
+  .step::before {
+    content: counter(step);
+    width: 32px; height: 32px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums;
+    border: 1.5px solid var(--rule); color: var(--muted);
+  }
+  .step h2 { font-size: 20px; line-height: 1.35; letter-spacing: -0.015em; margin: 3px 0 8px; font-weight: 700; }
+  .step p { margin: 0 0 12px; color: var(--muted); max-width: 62ch; }
+  .step p:last-child { margin-bottom: 0; }
+  .step strong { color: var(--ink); font-weight: 600; }
+
+  .copy-row {
+    display: flex; align-items: stretch; margin: 14px 0 10px;
+    border: 1px solid var(--rule); border-radius: var(--radius-m);
+    background: var(--well); overflow: hidden;
+  }
+  .copy-row code {
+    flex: 1; min-width: 0;
+    padding: 13px 14px;
+    font-family: var(--mono); font-size: 14px; line-height: 1.5;
+    overflow-wrap: anywhere; word-break: break-all;
+    color: var(--ink);
+  }
+  .copy-row code.wrap { white-space: pre-wrap; word-break: normal; }
+  p code { font-family: var(--mono); font-size: .88em; padding: 1px 5px; border-radius: 4px; background: var(--well); border: 1px solid var(--rule); color: var(--ink); }
+  .copy-btn {
+    flex: none; min-width: 92px;
+    border: 0; border-left: 1px solid var(--rule);
+    background: var(--panel); color: var(--ink);
+    font: 600 14px/1 var(--sans); padding: 0 16px; cursor: pointer;
+  }
+  .copy-btn:hover:enabled { background: var(--well); }
+  .copy-btn:disabled { color: var(--muted); cursor: default; }
+  .copy-btn[data-done] { color: var(--up); }
+  .skeleton { color: var(--muted); font-family: var(--sans); }
+
+  .note { font-size: 14px; color: var(--muted); }
+  .tv-path { font-weight: 600; color: var(--ink); white-space: nowrap; }
+
+  /* ---------- signal path (the one memorable element) ---------- */
+  .path-col { position: sticky; top: 24px; }
+  @media (max-width: 900px) { .path-col { position: static; } }
+  .path {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .path h2 { font-size: 18px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .path > p { margin: 0 0 22px; font-size: 14px; color: var(--muted); }
+
+  .hops { list-style: none; margin: 0 0 22px; padding: 0; position: relative; }
+  .hop {
+    --dot: var(--rule);
+    position: relative;
+    display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: 14px;
+    padding-bottom: 26px;
+  }
+  .hop:last-child { padding-bottom: 0; }
+  /* wire between hops */
+  .hop:not(:last-child)::after {
+    content: ""; position: absolute; left: 11px; top: 24px; bottom: 0; width: 2px;
+    background: var(--rule);
+  }
+  .hop[data-state="ok"]:not(:last-child)::after { background: var(--up); }
+  .hop .dot {
+    width: 24px; height: 24px; border-radius: 50%;
+    border: 2px solid var(--dot); background: var(--panel);
+    display: grid; place-items: center;
+  }
+  .hop .dot svg { width: 12px; height: 12px; opacity: 0; }
+  .hop[data-state="ok"]   { --dot: var(--up); }
+  .hop[data-state="fail"] { --dot: var(--down); }
+  .hop[data-state="warn"] { --dot: var(--wait); }
+  .hop[data-state="busy"] { --dot: var(--signal); }
+  .hop[data-state="ok"] .dot, .hop[data-state="fail"] .dot, .hop[data-state="warn"] .dot { background: var(--dot); }
+  .hop[data-state="ok"] .dot svg, .hop[data-state="fail"] .dot svg, .hop[data-state="warn"] .dot svg { opacity: 1; }
+  .hop[data-state="busy"] .dot { animation: pulse 1.1s ease-in-out infinite; }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--signal) 45%, transparent); }
+    50% { box-shadow: 0 0 0 7px color-mix(in srgb, var(--signal) 0%, transparent); }
+  }
+  @media (prefers-reduced-motion: reduce) { .hop[data-state="busy"] .dot { animation: none; } }
+  .hop .dot path { display: none; }
+  .hop[data-state="ok"] .i-ok, .hop[data-state="fail"] .i-fail, .hop[data-state="warn"] .i-warn { display: inline; }
+  .hop-name { font-weight: 650; line-height: 24px; }
+  .hop-detail { font-size: 14px; color: var(--muted); margin-top: 2px; }
+  .hop[data-state="fail"] .hop-detail { color: var(--down); }
+  .hop[data-state="warn"] .hop-detail { color: var(--wait); }
+  .hop-detail ul { margin: 6px 0 0; padding-left: 18px; color: var(--muted); }
+  .hop-detail li { margin: 2px 0; }
+
+  .primary {
+    width: 100%;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 48px; padding: 0 20px;
+    border: 0; border-radius: var(--radius-m);
+    background: var(--signal); color: var(--on-signal);
+    font: 700 16px/1 var(--sans); cursor: pointer;
+    text-decoration: none;
+  }
+  .primary:hover { filter: brightness(1.06); }
+  .primary:disabled { opacity: .55; cursor: progress; }
+  .secondary {
+    width: 100%; margin-top: 10px;
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 0 20px;
+    border: 1px solid var(--rule); border-radius: var(--radius-m);
+    background: transparent; color: var(--ink);
+    font: 600 15px/1 var(--sans); cursor: pointer; text-decoration: none;
+  }
+  .last-test { margin: 14px 0 0; font-size: 13px; color: var(--muted); }
+  .safe { margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); }
+
+  /* ---------- signed-out / empty states ---------- */
+  .gate { padding: 4px 0; }
+  .gate p { color: var(--muted); font-size: 15px; margin: 0 0 18px; }
+
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+  @media (max-width: 520px) {
+    .bar, main { padding-left: 16px; padding-right: 16px; }
+    .who-email { display: none; }
+    .lede { font-size: 16px; }
+    .step { grid-template-columns: 32px minmax(0, 1fr); column-gap: 12px; }
+    .step::before { width: 28px; height: 28px; font-size: 14px; }
+    .copy-row { flex-direction: column; }
+    .copy-btn { border-left: 0; border-top: 1px solid var(--rule); min-height: 44px; }
+    .path { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="index.html"><img src="../images/divblue3-140.png" alt="" width="28" height="28"/>DivAlarm</a>
+  <div class="who" id="who" hidden>
+    <span class="who-email" id="who-email"></span>
+    <a href="my-account.html">내 계정</a>
+    <button class="linkish" type="button" id="sign-out">로그아웃</button>
+  </div>
+</header>
+
+<main>
+  <div class="intro">
+    <h1>TradingView 알림을 내 폰으로</h1>
+    <p class="lede">주소 하나를 TradingView에 붙여넣고, 이 페이지에서 테스트를 보내 보세요. 문제가 있으면 신호가 어디서 멈췄는지 바로 보여 드려요.</p>
+  </div>
+
+  <div class="grid">
+    <ol class="steps">
+      <li class="step">
+        <div>
+          <h2>내 웹훅 URL 복사</h2>
+          <p>이 주소는 내 계정 전용이에요. 이 주소를 쓰는 TradingView 알림은 모두 내 폰의 DivAlarm 앱으로 가요.</p>
+          <div class="copy-row">
+            <code id="hook-url"><span class="skeleton" id="hook-url-placeholder">로그인하면 내 URL이 보여요</span></code>
+            <button class="copy-btn" type="button" data-copy="hook-url" disabled>복사</button>
+          </div>
+          <p class="note">다른 사람에게 알려 주지 마세요. 이 URL을 아는 사람은 누구나 내 폰으로 알림을 보낼 수 있어요.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div>
+          <h2>TradingView 알림에 붙여넣기</h2>
+          <p>TradingView 차트에서 마우스 오른쪽 버튼을 누르고 <strong>Add alert(알림 추가)</strong>를 고르세요. <span class="tv-path">Notifications(알림)</span>를 열어 <strong>Webhook URL</strong>을 체크하고, URL을 붙여넣은 뒤 <strong>Apply(적용)</strong>를 누르세요.</p>
+          <p>새 알림에는 보통 마지막 URL이 그대로 남아 있어서 한 번만 붙여넣으면 돼요.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div>
+          <h2>메시지에 키워드 넣기</h2>
+          <p>DivAlarm은 앱의 <strong>키워드 알람 → 웹훅 키워드</strong>에 등록한 키워드에 반응해요. 그중 하나를 알림 <strong>Message(메시지)</strong>에 넣으세요. 키워드가 <strong>AA</strong>라면 이렇게요.</p>
+          <div class="copy-row">
+            <code class="wrap" id="sample-message">AA {{ticker}} {{close}}</code>
+            <button class="copy-btn" type="button" data-copy="sample-message">복사</button>
+          </div>
+          <p class="note">알림이 울릴 때 TradingView가 <code>{{ticker}}</code>와 <code>{{close}}</code>를 종목명과 가격으로 바꿔서 보내요.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div>
+          <h2>알림 만들기</h2>
+          <p><strong>Create(생성)</strong>를 누르세요. 알림이 울리면 그 키워드에 정해 둔 알람이 폰에서 울리고, 연결된 자동주문이 있으면 실행돼요.</p>
+          <p>자동주문을 맡기기 전에 이 페이지에서 테스트를 보내 폰까지 신호가 오는지 꼭 확인하세요.</p>
+        </div>
+      </li>
+    </ol>
+
+    <aside class="path-col" aria-labelledby="path-title">
+      <section class="path">
+        <h2 id="path-title">연결 테스트</h2>
+        <p id="path-intro">TradingView와 똑같은 방식으로 테스트 신호를 보내요. 주문은 실행되지 않아요.</p>
+
+        <div class="gate" id="gate-signin" hidden>
+          <p>DivAlarm 앱에서 쓰는 계정으로 로그인하세요.</p>
+          <button class="primary" type="button" id="google-signin">Google로 로그인</button>
+          <a class="secondary" href="sign-in-page.html">이메일로 로그인</a>
+        </div>
+
+        <div class="gate" id="gate-nohook" hidden>
+          <p>이 계정에는 아직 웹훅 URL이 없어요. 이 계정으로 DivAlarm 앱을 한 번 연 뒤 새로고침하세요.</p>
+          <button class="secondary" type="button" onclick="location.reload()">새로고침</button>
+        </div>
+
+        <div id="tester" hidden>
+          <ol class="hops" aria-label="신호 경로">
+            <li class="hop" id="hop-send" data-state="idle">
+              <span class="dot" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="var(--panel)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="i-ok" d="M2.5 6.2l2.3 2.3 4.7-5"/><path class="i-fail" d="M3.2 3.2l5.6 5.6M8.8 3.2l-5.6 5.6"/><path class="i-warn" d="M6 2.6v4.2M6 9.3v.1"/></svg></span>
+              <div><div class="hop-name">TradingView</div><div class="hop-detail" id="hop-send-detail">테스트에서는 이 페이지가 TradingView 대신 보내요.</div></div>
+            </li>
+            <li class="hop" id="hop-relay" data-state="idle">
+              <span class="dot" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="var(--panel)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="i-ok" d="M2.5 6.2l2.3 2.3 4.7-5"/><path class="i-fail" d="M3.2 3.2l5.6 5.6M8.8 3.2l-5.6 5.6"/><path class="i-warn" d="M6 2.6v4.2M6 9.3v.1"/></svg></span>
+              <div><div class="hop-name">DivAlarm 서버</div><div class="hop-detail" id="hop-relay-detail">URL과 플랜을 확인하고 폰으로 전달해요.</div></div>
+            </li>
+            <li class="hop" id="hop-phone" data-state="idle">
+              <span class="dot" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="var(--panel)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="i-ok" d="M2.5 6.2l2.3 2.3 4.7-5"/><path class="i-fail" d="M3.2 3.2l5.6 5.6M8.8 3.2l-5.6 5.6"/><path class="i-warn" d="M6 2.6v4.2M6 9.3v.1"/></svg></span>
+              <div><div class="hop-name">내 폰</div><div class="hop-detail" id="hop-phone-detail">DivAlarm 앱이 신호를 받았다고 알려 줘요.</div></div>
+            </li>
+          </ol>
+          <button class="primary" type="button" id="run-test">테스트 신호 보내기</button>
+          <p class="last-test" id="last-test" hidden></p>
+          <p class="safe">테스트 신호는 키워드 매칭과 자동주문을 거치지 않고, 무료 체험 횟수도 쓰지 않아요.</p>
+        </div>
+        <p class="sr-only" role="status" aria-live="polite" id="live"></p>
+      </section>
+    </aside>
+  </div>
+</main>
+
+<!-- Strings used by the script. Kept in the document so locale builds translate them. -->
+<div hidden id="i18n">
+  <span data-k="copy">복사</span>
+  <span data-k="copied">복사됨</span>
+  <span data-k="copiedLive">클립보드에 복사했어요.</span>
+  <span data-k="run">테스트 신호 보내기</span>
+  <span data-k="runAgain">다시 테스트하기</span>
+  <span data-k="running">테스트 중…</span>
+  <span data-k="testTitle">DivAlarm 연결 테스트</span>
+  <span data-k="sendBusy">테스트 신호를 보내는 중…</span>
+  <span data-k="sendOk">테스트 신호를 보냈어요.</span>
+  <span data-k="sendFail">DivAlarm 서버에 연결하지 못했어요. 인터넷 연결을 확인하고 다시 시도하세요.</span>
+  <span data-k="relayBusy">서버 응답을 기다리는 중…</span>
+  <span data-k="relayOk">신호를 받아 폰으로 전달했어요.</span>
+  <span data-k="relayStopped">서버가 신호를 폰으로 전달하지 않았어요. 웹훅 알림은 Pro 플랜이나 남은 무료 체험 횟수가 있어야 하고, 앱이 이 계정으로 로그인돼 있어야 해요.</span>
+  <span data-k="relayDaily">오늘 이 계정의 웹훅 한도를 다 썼어요. 오전 9시(한국 시간)에 초기화돼요.</span>
+  <span data-k="relayRate">짧은 시간에 신호가 너무 많았어요. 1분 뒤 다시 시도하세요.</span>
+  <span data-k="relayError">서버 오류가 발생했어요({0}). 1분 뒤 다시 시도하세요.</span>
+  <span data-k="phoneBusy">폰의 응답을 기다리는 중…</span>
+  <span data-k="phoneOk">{0}에서 받았어요. 실제 알림도 이 폰에서 울려요.</span>
+  <span data-k="phoneWarn">{0}에서 받았지만, 아래를 고쳐야 실제 알림이 울려요.</span>
+  <span data-k="phoneTimeout">30초 안에 폰이 응답하지 않았어요. 아래를 확인하세요.</span>
+  <span data-k="tipUpdate">DivAlarm 앱이 최신 버전인지</span>
+  <span data-k="tipLogin">앱이 이 페이지와 같은 계정으로 로그인돼 있는지</span>
+  <span data-k="tipBattery">배터리 절약 설정이 DivAlarm을 제한하지 않는지, 폰이 인터넷에 연결돼 있는지</span>
+  <span data-k="issue_receiving_off">앱이 로그아웃된 상태예요. 폰에서 DivAlarm에 다시 로그인하세요.</span>
+  <span data-k="issue_source_phone">키워드 입력 소스가 '폰 알림 키워드'로 되어 있어요. 앱에서 '웹훅 키워드'로 바꿔 주세요.</span>
+  <span data-k="issue_notifications_off">폰 설정에서 DivAlarm 알림이 차단돼 있어요.</span>
+  <span data-k="lastTest">마지막 확인: {0}, {1}</span>
+  <span data-k="yourPhone">내 폰</span>
+  <span data-k="liveDone">테스트가 끝났어요.</span>
+  <span data-k="plans">요금제 보기</span>
+  <span data-k="signinFailed">로그인하지 못했어요: {0}</span>
+</div>
+
+<script type="module">
+  import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signOut, signInWithCustomToken, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+  import { getFirestore, doc, getDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+  const RELAY = "https://asia-northeast1-divergence-alarm.cloudfunctions.net/hookRelay/hook/";
+  const PHONE_TIMEOUT_MS = 30000;
+
+  const $ = (id) => document.getElementById(id);
+  const T = Object.fromEntries([...document.querySelectorAll("#i18n [data-k]")].map((el) => [el.dataset.k, el.textContent.trim()]));
+  const fmt = (s, ...a) => s.replace(/\{(\d)\}/g, (_, i) => a[i] ?? "");
+  const say = (msg) => { $("live").textContent = msg; };
+
+  // ---------- view helpers ----------
+  function show(view) {
+    $("gate-signin").hidden = view !== "signin";
+    $("gate-nohook").hidden = view !== "nohook";
+    $("tester").hidden = view !== "ready";
+  }
+
+  function setHop(id, state, html) {
+    const hop = $(id);
+    hop.dataset.state = state;
+    if (html != null) $(id + "-detail").innerHTML = html;
+  }
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const list = (items) => "<ul>" + items.map((t) => `<li>${esc(t)}</li>`).join("") + "</ul>";
+
+  function setHookUrl(url) {
+    $("hook-url").textContent = url;
+    document.querySelector('[data-copy="hook-url"]').disabled = false;
+  }
+
+  function showLastTest(data) {
+    if (!data || !data.received_at) return;
+    const when = data.received_at.toDate ? data.received_at.toDate() : new Date(data.received_at);
+    const el = $("last-test");
+    el.textContent = fmt(T.lastTest, when.toLocaleString(), data.device || T.yourPhone);
+    el.hidden = false;
+  }
+
+  // ---------- copy ----------
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest("[data-copy]");
+    if (!btn) return;
+    const text = $(btn.dataset.copy).textContent.trim();
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const range = document.createRange();
+      range.selectNodeContents($(btn.dataset.copy));
+      const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      document.execCommand("copy");
+      sel.removeAllRanges();
+    }
+    btn.textContent = T.copied; btn.dataset.done = "";
+    say(T.copiedLive);
+    clearTimeout(btn._t);
+    btn._t = setTimeout(() => { btn.textContent = T.copy; delete btn.dataset.done; }, 2000);
+  });
+
+  // ---------- connection test ----------
+  // env.send(testId) -> {status, reason}; env.waitForPhone(testId, ms) -> ack | null
+  async function runTest(env) {
+    const btn = $("run-test");
+    btn.disabled = true; btn.textContent = T.running;
+    setHop("hop-send", "busy", esc(T.sendBusy));
+    setHop("hop-relay", "idle", esc(T.relayBusy));
+    setHop("hop-phone", "idle", esc(T.phoneBusy));
+    say(T.sendBusy);
+
+    const testId = "t_" + crypto.randomUUID().replace(/-/g, "").slice(0, 24);
+    const phone = env.waitForPhone(testId, PHONE_TIMEOUT_MS);
+    let res;
+    try {
+      res = await env.send(testId);
+    } catch {
+      setHop("hop-send", "fail", esc(T.sendFail));
+      return finish();
+    }
+    setHop("hop-send", "ok", esc(T.sendOk));
+
+    if (res.status === 204) {
+      const msg = /^qpd_/.test(res.reason || "") ? T.relayDaily : /rate/.test(res.reason || "") ? T.relayRate : T.relayStopped;
+      setHop("hop-relay", "fail", esc(msg) + (msg === T.relayStopped ? ` <a href="pricing.html">${esc(T.plans)}</a>` : ""));
+      phone.cancel();
+      setHop("hop-phone", "idle", "");
+      return finish();
+    }
+    if (res.status === 429) { setHop("hop-relay", "fail", esc(T.relayRate)); phone.cancel(); return finish(); }
+    if (res.status !== 200) { setHop("hop-relay", "fail", esc(fmt(T.relayError, res.status))); phone.cancel(); return finish(); }
+
+    setHop("hop-relay", "ok", esc(T.relayOk));
+    setHop("hop-phone", "busy", esc(T.phoneBusy));
+    say(T.phoneBusy);
+
+    const ack = await phone.result;
+    if (!ack) {
+      setHop("hop-phone", "fail", esc(T.phoneTimeout) + list([T.tipUpdate, T.tipLogin, T.tipBattery]));
+    } else {
+      const device = ack.device || T.yourPhone;
+      const issues = (ack.issues || []).map((k) => T["issue_" + k]).filter(Boolean);
+      if (issues.length) setHop("hop-phone", "warn", esc(fmt(T.phoneWarn, device)) + list(issues));
+      else setHop("hop-phone", "ok", esc(fmt(T.phoneOk, device)));
+      showLastTest({ ...ack, received_at: ack.received_at || new Date() });
+    }
+    return finish();
+
+    function finish() {
+      btn.disabled = false; btn.textContent = T.runAgain;
+      say(T.liveDone);
+    }
+  }
+
+  function firebaseEnv(db, uid, hookId) {
+    return {
+      async send(testId) {
+        const r = await fetch(RELAY + hookId, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ divalarm_test: testId, title: T.testTitle }),
+        });
+        return { status: r.status, reason: r.headers.get("X-Dropped-Reason") };
+      },
+      waitForPhone(testId, ms) {
+        let unsub = () => {}, timer, done;
+        const result = new Promise((resolve) => {
+          done = (v) => { unsub(); clearTimeout(timer); resolve(v); };
+          timer = setTimeout(() => done(null), ms);
+          unsub = onSnapshot(doc(db, "users", uid, "userstate", "webhook_test"), (snap) => {
+            const d = snap.data();
+            if (d && d.test_id === testId && !snap.metadata.hasPendingWrites) done(d);
+          }, () => {});
+        });
+        return { result, cancel: () => done(null) };
+      },
+    };
+  }
+
+  // ---------- local preview (localhost only): ?demo=ok|warn|timeout|stopped|offline|signin|nohook ----------
+  const params = new URLSearchParams(location.search);
+  const demo = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? params.get("demo") : null;
+
+  if (demo) {
+    if (demo === "signin" || demo === "nohook") { show(demo); }
+    else {
+      $("who").hidden = false; $("who-email").textContent = "trader@example.com";
+      setHookUrl(RELAY + "AbCdEfGhIj0123456789");
+      show("ready");
+      const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+      const env = {
+        async send() {
+          await wait(500);
+          if (demo === "offline") throw new TypeError("Failed to fetch");
+          return demo === "stopped" ? { status: 204, reason: null } : { status: 200 };
+        },
+        waitForPhone() {
+          const result = (async () => {
+            await wait(1400);
+            if (demo === "timeout") return null;
+            return { device: "samsung SM-S926N", issues: demo === "warn" ? ["source_phone"] : [], received_at: new Date() };
+          })();
+          return { result, cancel() {} };
+        },
+      };
+      $("run-test").addEventListener("click", () => runTest(env));
+      if (params.has("auto")) runTest(env);
+    }
+  } else {
+    const app = getApps().length ? getApp() : initializeApp({
+      apiKey: "AIzaSyDB0uVFhbk3_2uEoCt8iz0LhE_2OOK_adQ",
+      authDomain: "divergence-alarm.firebaseapp.com",
+      projectId: "divergence-alarm",
+      storageBucket: "divergence-alarm.firebasestorage.app",
+      messagingSenderId: "912910128238",
+      appId: "1:912910128238:web:a42ca6881960fcde76427f",
+      measurementId: "G-NGCZKMQF67",
+    });
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // App -> web sign-in: the app opens this page with #ct=<custom token>.
+    const hash = new URLSearchParams(location.hash.slice(1));
+    const ct = hash.get("ct");
+    if (ct) {
+      history.replaceState(null, "", location.pathname + location.search);
+      signInWithCustomToken(auth, ct).catch((e) => console.error("App sign-in failed", e));
+    }
+
+    $("google-signin").addEventListener("click", async () => {
+      try { await signInWithPopup(auth, new GoogleAuthProvider()); }
+      catch (e) { if (e.code !== "auth/popup-closed-by-user") alert(fmt(T.signinFailed, e.message)); }
+    });
+    $("sign-out").addEventListener("click", () => signOut(auth));
+
+    let env = null;
+    $("run-test").addEventListener("click", () => env && runTest(env));
+
+    onAuthStateChanged(auth, async (user) => {
+      $("who").hidden = !user;
+      if (!user) { show("signin"); return; }
+      $("who-email").textContent = user.email || "";
+      const snap = await getDoc(doc(db, "users", user.uid)).catch(() => null);
+      const hookId = snap && snap.exists() ? String(snap.data().hookid || "") : "";
+      if (!hookId) { show("nohook"); return; }
+      setHookUrl(RELAY + hookId);
+      env = firebaseEnv(db, user.uid, hookId);
+      show("ready");
+      getDoc(doc(db, "users", user.uid, "userstate", "webhook_test"))
+        .then((s) => s.exists() && showLastTest(s.data()))
+        .catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>
