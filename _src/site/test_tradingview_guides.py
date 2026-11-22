@@ -1,11 +1,15 @@
 """Check that each published keyword guide can lead readers through PC setup."""
+import re
 import unittest
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urlsplit
+
+from bs4 import BeautifulSoup
 
 SITE = Path(__file__).resolve().parents[2]
+GUIDE_LOCALES = "en ko ja ru vi tr pt-br es id th de ms fil uk ur zh-hans zh-hant".split()
 
 
 class Page(HTMLParser):
@@ -22,11 +26,38 @@ class Page(HTMLParser):
 
 
 class TradingViewGuidesTest(unittest.TestCase):
-    def test_pc_steps_include_the_manual_videos_and_illustrated_walkthrough(self):
-        for lang in ("en", "ko"):
+    def test_all_diagnostic_states_supply_local_copy_and_format_variables(self):
+        def strings(lang):
+            path = SITE / lang / "tradingview-connect.html"
+            return {el["data-k"]: el.get_text(strip=True)
+                    for el in BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser").select("#i18n [data-k]")}
+        english = strings("en")
+        for lang in GUIDE_LOCALES:
             with self.subTest(lang=lang):
-                setup = Page(SITE / lang / "tradingview-connect.html")
+                translated = strings(lang)
+                self.assertEqual(english.keys(), translated.keys())
+                for key, value in translated.items():
+                    self.assertTrue(value, key)
+                    self.assertEqual(Counter(re.findall(r"\{\d+\}", english[key])),
+                                     Counter(re.findall(r"\{\d+\}", value)), key)
+                    if lang != "en" and len(english[key]) > 50:
+                        self.assertNotEqual(english[key], value, key)
+
+    def test_pc_steps_include_the_manual_videos_and_illustrated_walkthrough(self):
+        for lang in GUIDE_LOCALES:
+            with self.subTest(lang=lang):
+                path = SITE / lang / "tradingview-connect.html"
+                self.assertTrue(path.is_file(), path)
+                setup = Page(path)
                 manual = Page(SITE / lang / "tradingview-webhook.html")
+                for page in (setup, manual):
+                    html = next(a for tag, a in page.tags if tag == "html")
+                    self.assertEqual(lang, html["lang"].lower())
+                    if lang == "ur":
+                        self.assertEqual("rtl", html.get("dir"))
+                manual_ids = {a["id"] for _, a in manual.tags if "id" in a}
+                self.assertTrue({"keyword-source", "keyword", "auto-order", "combination",
+                                 "divalarm-keywords", "exchange-api-setup"} <= manual_ids)
                 def shorts(page):
                     return Counter(urlsplit(url).path for url in page.attrs("a", "href")
                                    if "youtube.com/shorts/" in url)
@@ -49,22 +80,27 @@ class TradingViewGuidesTest(unittest.TestCase):
                     target = urlsplit(url)
                     if not target.netloc and not target.path and target.fragment:
                         self.assertIn(target.fragment, ids)
-                    if target.path.endswith("tradingview-webhook.html") and target.fragment:
-                        self.assertTrue(any(a.get("id") == target.fragment for _, a in manual.tags), url)
+                    if target.path.endswith("tradingview-webhook.html"):
+                        self.assertEqual(lang, parse_qs(target.query).get("lang", [None])[0], url)
+                        self.assertEqual((path.parent / target.path).resolve(),
+                                         SITE / lang / "tradingview-webhook.html")
+                        if target.fragment:
+                            self.assertIn(target.fragment, manual_ids, url)
 
     def test_every_localized_manual_links_to_a_published_setup_page(self):
-        guides = list(SITE.glob("*/tradingview-webhook.html"))
-        self.assertGreaterEqual(len(guides), 16)
-        for guide in guides:
-            with self.subTest(lang=guide.parent.name):
-                links = [urlsplit(url).path for url in Page(guide).attrs("a", "href")
+        for lang in GUIDE_LOCALES:
+            with self.subTest(lang=lang):
+                guide = SITE / lang / "tradingview-webhook.html"
+                self.assertTrue(guide.is_file(), guide)
+                links = [urlsplit(url) for url in Page(guide).attrs("a", "href")
                          if "tradingview-connect.html" in url]
-                self.assertTrue(links)
-                for path in links:
-                    dest = ((SITE / path.lstrip("/")) if path.startswith("/") else (guide.parent / path)).resolve()
-                    self.assertTrue(dest.is_file(), path)
-                    local_setup = guide.with_name("tradingview-connect.html")
-                    self.assertEqual(local_setup if local_setup.is_file() else SITE / "en/tradingview-connect.html", dest)
+                self.assertIn("connection-test", [link.fragment for link in links])
+                for link in links:
+                    dest = ((SITE / link.path.lstrip("/")) if link.path.startswith("/")
+                            else (guide.parent / link.path)).resolve()
+                    self.assertEqual(guide.with_name("tradingview-connect.html"), dest)
+                    self.assertTrue(dest.is_file(), dest)
+                    self.assertEqual(lang, parse_qs(link.query).get("lang", [None])[0])
 
 
 if __name__ == "__main__":

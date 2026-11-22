@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="noindex, nofollow" name="robots"/>
+<title>連接 TradingView | DivAlarm</title>
+<meta content="複製您的DivAlarm Webhook URL，並確認TradingView警報能傳送到手機。每個步驟皆有截圖與影片教學。" name="description"/>
+<link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="../images/webclip.png" rel="apple-touch-icon"/>
+<script src="../js/posthog.js"></script>
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    color-scheme: light dark;
+
+    --ink-light: #12202a;      --ink-dark: #e6eef1;
+    --muted-light: #55697a;    --muted-dark: #8fa3ae;
+    --page-light: #eef2f4;     --page-dark: #0f1a22;
+    --panel-light: #ffffff;    --panel-dark: #16242e;
+    --well-light: #f5f8f9;     --well-dark: #0b141a;
+    --rule-light: #d3dde3;     --rule-dark: #24394a;
+    --signal-light: #0a7f9c;   --signal-dark: #2cc6e0;
+    --on-signal-light: #ffffff; --on-signal-dark: #04161c;
+    --up-light: #12804f;       --up-dark: #3cc48a;
+    --down-light: #c4342c;     --down-dark: #f0605a;
+    --wait-light: #9a6300;     --wait-dark: #f3b547;
+
+    --ink: var(--ink-light);   --muted: var(--muted-light);
+    --page: var(--page-light); --panel: var(--panel-light);
+    --well: var(--well-light); --rule: var(--rule-light);
+    --signal: var(--signal-light); --on-signal: var(--on-signal-light);
+    --up: var(--up-light); --down: var(--down-light); --wait: var(--wait-light);
+
+    @media (prefers-color-scheme: dark) {
+      --ink: var(--ink-dark);   --muted: var(--muted-dark);
+      --page: var(--page-dark); --panel: var(--panel-dark);
+      --well: var(--well-dark); --rule: var(--rule-dark);
+      --signal: var(--signal-dark); --on-signal: var(--on-signal-dark);
+      --up: var(--up-dark); --down: var(--down-dark); --wait: var(--wait-dark);
+    }
+
+    --sans: "Pretendard Variable", Pretendard, -apple-system, "Segoe UI", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    --radius-s: 6px;
+    --radius-m: 10px;
+    accent-color: var(--signal);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  a { color: var(--signal); }
+  :focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; }
+  [hidden] { display: none !important; }
+
+  /* ---------- top bar ---------- */
+  .bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    max-width: 1160px; margin: 0 auto; padding: 18px 24px;
+  }
+  .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: -0.01em; }
+  .brand img { width: 28px; height: 28px; }
+  .who { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--muted); min-width: 0; }
+  .who-email { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px; }
+  .linkish { background: none; border: 0; padding: 0; font: inherit; color: var(--signal); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ---------- layout ---------- */
+  main { max-width: 1160px; margin: 0 auto; padding: 24px 24px 96px; }
+  .intro { max-width: 640px; margin-bottom: 40px; }
+  h1 {
+    font-size: clamp(32px, 4.6vw, 52px);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+  .lede { font-size: 18px; color: var(--muted); margin: 0; max-width: 56ch; }
+
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 48px; align-items: start; }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+    .path-col { order: -1; }
+  }
+
+  /* ---------- steps ---------- */
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  .step {
+    counter-increment: step;
+    display: grid; grid-template-columns: 40px minmax(0, 1fr); column-gap: 16px;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .step:first-child { border-top: 0; padding-top: 0; }
+  .step::before {
+    content: counter(step);
+    width: 32px; height: 32px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums;
+    border: 1.5px solid var(--rule); color: var(--muted);
+  }
+  .step h2 { font-size: 20px; line-height: 1.35; letter-spacing: -0.015em; margin: 3px 0 8px; font-weight: 700; }
+  .step p { margin: 0 0 12px; color: var(--muted); max-width: 62ch; }
+  .step p:last-child { margin-bottom: 0; }
+  .step strong { color: var(--ink); font-weight: 600; }
+
+  .copy-row {
+    display: flex; align-items: stretch; margin: 14px 0 10px;
+    border: 1px solid var(--rule); border-radius: var(--radius-m);
+    background: var(--well); overflow: hidden;
+  }
+  .copy-row code {
+    flex: 1; min-width: 0;
+    padding: 13px 14px;
+    font-family: var(--mono); font-size: 14px; line-height: 1.5;
+    overflow-wrap: anywhere; word-break: break-all;
+    color: var(--ink);
+  }
+  .copy-row code.wrap { white-space: pre-wrap; word-break: normal; }
+  p code { font-family: var(--mono); font-size: .88em; padding: 1px 5px; border-radius: 4px; background: var(--well); border: 1px solid var(--rule); color: var(--ink); }
+  .copy-btn {
+    flex: none; min-width: 92px;
+    border: 0; border-left: 1px solid var(--rule);
+    background: var(--panel); color: var(--ink);
+    font: 600 14px/1 var(--sans); padding: 0 16px; cursor: pointer;
+  }
+  .copy-btn:hover:enabled { background: var(--well); }
+  .copy-btn:disabled { color: var(--muted); cursor: default; }
+  .copy-btn[data-done] { color: var(--up); }
+  .skeleton { color: var(--muted); font-family: var(--sans); }
+
+  .note { font-size: 14px; color: var(--muted); }
+  .tv-path { font-weight: 600; color: var(--ink); white-space: nowrap; }
+
+  /* ---------- signal path (the one memorable element) ---------- */
+  .path-col { position: sticky; top: 24px; }
+  @media (max-width: 900px) { .path-col { position: static; } }
+  .path {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .path h2 { font-size: 18px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .path > p { margin: 0 0 22px; font-size: 14px; color: var(--muted); }
+
+  .hops { list-style: none; margin: 0 0 22px; padding: 0; position: relative; }
+  .hop {
+    --dot: var(--rule);
+    position: relative;
+    display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: 14px;
+    padding-bottom: 26px;
+  }
+  .hop:last-child { padding-bottom: 0; }
+  /* wire between hops */
+  .hop:not(:last-child)::after {
+    content: ""; position: absolute; left: 11px; top: 24px; bottom: 0; width: 2px;
+    background: var(--rule);
+  }
+  .hop[data-state="ok"]:not(:last-child)::after { background: var(--up); }
+  .hop .dot {
+    width: 24px; height: 24px; border-radius: 50%;
+    border: 2px solid var(--dot); background: var(--panel);
+    display: grid; place-items: center;
+  }
+  .hop .dot svg { width: 12px; height: 12px; opacity: 0; }
+  .hop[data-state="ok"]   { --dot: var(--up); }
+  .hop[data-state="fail"] { --dot: var(--down); }
+  .hop[data-state="warn"] { --dot: var(--wait); }
+  .hop[data-state="busy"] { --dot: var(--signal); }
+  .hop[data-state="ok"] .dot, .hop[data-state="fail"] .dot, .hop[data-state="warn"] .dot { background: var(--dot); }
+  .hop[data-state="ok"] .dot svg, .hop[data-state="fail"] .dot svg, .hop[data-state="warn"] .dot svg { opacity: 1; }
+  .hop[data-state="busy"] .dot { animation: pulse 1.1s ease-in-out infinite; }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--signal) 45%, transparent); }
+    50% { box-shadow: 0 0 0 7px color-mix(in srgb, var(--signal) 0%, transparent); }
+  }
+  @media (prefers-reduced-motion: reduce) { .hop[data-state="busy"] .dot { animation: none; } }
+  .hop .dot path { display: none; }
+  .hop[data-state="ok"] .i-ok, .hop[data-state="fail"] .i-fail, .hop[data-state="warn"] .i-warn { display: inline; }
+  .hop-name { font-weight: 650; line-height: 24px; }
+  .hop-detail { font-size: 14px; color: var(--muted); margin-top: 2px; }
+  .hop[data-state="fail"] .hop-detail { color: var(--down); }
+  .hop[data-state="warn"] .hop-detail { color: var(--wait); }
+  .hop-detail ul { margin: 6px 0 0; padding-left: 18px; color: var(--muted); }
+  .hop-detail li { margin: 2px 0; }
+
+  .primary {
+    width: 100%;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 48px; padding: 0 20px;
+    border: 0; border-radius: var(--radius-m);
+    background: var(--signal); color: var(--on-signal);
+    font: 700 16px/1 var(--sans); cursor: pointer;
+    text-decoration: none;
+  }
+  .primary:hover { filter: brightness(1.06); }
+  .primary:disabled { opacity: .55; cursor: progress; }
+  .secondary {
+    width: 100%; margin-top: 10px;
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 0 20px;
+    border: 1px solid var(--rule); border-radius: var(--radius-m);
+    background: transparent; color: var(--ink);
+    font: 600 15px/1 var(--sans); cursor: pointer; text-decoration: none;
+  }
+  .last-test { margin: 14px 0 0; font-size: 13px; color: var(--muted); }
+  .safe { margin: 18px 0 0; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--muted); }
+
+  /* ---------- signed-out / empty states ---------- */
+  .gate { padding: 4px 0; }
+  .gate p { color: var(--muted); font-size: 15px; margin: 0 0 18px; }
+
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+  @media (max-width: 520px) {
+    .bar, main { padding-left: 16px; padding-right: 16px; }
+    .who-email { display: none; }
+    .lede { font-size: 16px; }
+    .step { grid-template-columns: 32px minmax(0, 1fr); column-gap: 12px; }
+    .step::before { width: 28px; height: 28px; font-size: 14px; }
+    .copy-row { flex-direction: column; }
+    .copy-btn { border-left: 0; border-top: 1px solid var(--rule); min-height: 44px; }
+    .path { padding: 20px; }
+  }
+</style>
+<link href="../css/lang-switcher.css?v=dbe2c3bc" rel="stylesheet"/>
+<script defer="" src="../js/lang-switcher.js?v=8721e8dc"></script>
+<link href="../css/tradingview-connect-guide.css" rel="stylesheet"/>
+<script defer="" src="../js/tradingview-connect-guide.js"></script>
+</head>
+<body>
+<header class="bar">
+<a class="brand" href="../zh-hans/index.html"><img alt="" height="28" src="../images/divblue3-140.png" width="28"/>DivAlarm</a>
+<div class="guide-language" data-lang-slot=""></div>
+<div class="who" hidden="" id="who">
+<span class="who-email" id="who-email"></span>
+<a href="../zh-hans/my-account.html">我的帳戶</a>
+<button class="linkish" id="sign-out" type="button">登出</button>
+</div>
+</header>
+<main>
+<div class="intro">
+<h1>設定並測試 TradingView webhook</h1>
+<p class="lede">從本頁發送測試訊號，檢查是否成功傳送到您的 Android 手機。然後，請用 TradingView 發送一則包含關鍵字 AA 的警報，檢查您的警報規則。</p>
+<nav aria-label="Webhook 設定" class="guide-nav">
+<a href="#connection-test">連線測試</a>
+<a href="#pc-setup">TradingView 設定</a>
+<a href="#keyword-options">警報、下單與組合</a>
+<a href="tradingview-webhook.html?lang=zh-hant">完整關鍵字警報指南</a>
+</nav>
+</div>
+<div class="grid">
+<aside aria-labelledby="path-title" class="path-col" id="connection-test">
+<section class="path">
+<h2 id="path-title">連線測試</h2>
+<p id="path-intro">伺服器會發送測試訊號到您的 Android App，並在此顯示結果。此測試絕不會下單。</p>
+<div class="gate" hidden="" id="gate-signin">
+<p>請用您在 DivAlarm App 使用的帳戶登入。</p>
+<button class="primary" id="google-signin" type="button">使用 Google 登入</button>
+<a class="secondary" href="../zh-hans/sign-in-page.html">使用電子郵件登入</a>
+</div>
+<div class="gate" hidden="" id="gate-nohook">
+<p>此帳戶尚未有 Webhook URL。請先用此帳戶開啟一次 DivAlarm App，然後重新載入本頁。</p>
+<button class="secondary" onclick="location.reload()" type="button">重新載入</button>
+</div>
+<div hidden="" id="tester">
+<ol aria-label="訊號流程" class="hops">
+<li class="hop" data-state="idle" id="hop-send">
+<span aria-hidden="true" class="dot"><svg fill="none" stroke="var(--panel)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 12 12"><path class="i-ok" d="M2.5 6.2l2.3 2.3 4.7-5"></path><path class="i-fail" d="M3.2 3.2l5.6 5.6M8.8 3.2l-5.6 5.6"></path><path class="i-warn" d="M6 2.6v4.2M6 9.3v.1"></path></svg></span>
+<div><div class="hop-name">TradingView</div><div class="hop-detail" id="hop-send-detail">本頁於測試時模擬 TradingView。</div></div>
+</li>
+<li class="hop" data-state="idle" id="hop-relay">
+<span aria-hidden="true" class="dot"><svg fill="none" stroke="var(--panel)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 12 12"><path class="i-ok" d="M2.5 6.2l2.3 2.3 4.7-5"></path><path class="i-fail" d="M3.2 3.2l5.6 5.6M8.8 3.2l-5.6 5.6"></path><path class="i-warn" d="M6 2.6v4.2M6 9.3v.1"></path></svg></span>
+<div><div class="hop-name">DivAlarm 伺服器</div><div class="hop-detail" id="hop-relay-detail">檢查您的 URL 與方案，然後轉發到您的手機。</div></div>
+</li>
+<li class="hop" data-state="idle" id="hop-phone">
+<span aria-hidden="true" class="dot"><svg fill="none" stroke="var(--panel)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 12 12"><path class="i-ok" d="M2.5 6.2l2.3 2.3 4.7-5"></path><path class="i-fail" d="M3.2 3.2l5.6 5.6M8.8 3.2l-5.6 5.6"></path><path class="i-warn" d="M6 2.6v4.2M6 9.3v.1"></path></svg></span>
+<div><div class="hop-name">您的手機</div><div class="hop-detail" id="hop-phone-detail">DivAlarm App 確認已收到訊號。</div></div>
+</li>
+</ol>
+<button class="primary" id="run-test" type="button">發送測試訊號</button>
+<p class="last-test" hidden="" id="last-test"></p>
+<p class="safe">測試會略過關鍵字比對與自動下單，也不會消耗您的免費額度。</p>
+<p class="safe">如果手機已確認收到訊號，卻沒有顯示橫幅，請開啟手機上的 DivAlarm 通知設定，允許<strong>Webhook 連線測試</strong>這個類別顯示彈出式通知，並檢查<strong>勿擾模式</strong>。</p>
+</div>
+<p aria-live="polite" class="sr-only" id="live" role="status"></p>
+</section>
+</aside>
+<section aria-labelledby="setup-title" class="setup-col" id="pc-setup">
+<h2 id="setup-title">設定您的 TradingView 警報</h2>
+<ol class="steps">
+<li class="step">
+<div>
+<h3>複製您的 Webhook URL 並啟用 AA</h3>
+<p>在 DivAlarm，開啟 <strong>關鍵字警報·自動下單 → Webhook 關鍵字</strong>，新增 <strong>AA</strong> 並開啟其警報。登入與手機相同帳戶時，複製下方 Webhook URL。</p>
+<div class="copy-row">
+<code id="hook-url"><span class="skeleton" id="hook-url-placeholder">請用您的 App 帳戶登入以查看您的 URL</span></code>
+<button class="copy-btn" data-copy="hook-url" disabled="" type="button">複製</button>
+</div>
+<p class="note">請勿公開此網址。任何取得此網址的人都能向您的帳戶發送訊號。</p>
+<p>若要單獨測試警報，<strong>請關閉所有符合 AA 的關鍵字或組合的自動下單。</strong></p>
+<details class="guide-examples">
+<summary>關鍵字設定截圖</summary>
+<div class="example-grid">
+<figure>
+<a href="../images/tradingview-setup/divalarm_aa_keyword_example.png" rel="noopener noreferrer" target="_blank"><img alt="DivAlarm關鍵字清單中的AA" decoding="async" height="264" loading="lazy" src="../images/tradingview-setup/divalarm_aa_keyword_example.png" width="290"/><span class="sr-only">開啟原尺寸圖片</span></a>
+<figcaption>新增 AA 關鍵字</figcaption>
+</figure>
+</div>
+</details>
+</div>
+</li>
+<li class="step">
+<div>
+<h3>將您的 URL 加入 TradingView 警報</h3>
+<p>在圖表上點右鍵選擇 <strong>新增警報</strong>。開啟 <strong>通知</strong>，勾選 <strong>Webhook URL</strong>，貼上您的網址並按 <strong>套用</strong>。</p>
+<p class="note">其他警報也可用同一網址。若新警報已顯示您的網址，請確認已啟用 Webhook URL。若為現有警報，請檢查其設定。</p>
+<details class="guide-examples">
+<summary>TradingView 警報與 webhook 截圖</summary>
+<div class="example-grid">
+<figure>
+<a href="../images/tradingview-setup/tradingview_create_alert_example.png" rel="noopener noreferrer" target="_blank"><img alt="於TradingView圖表右鍵選單新增警報" decoding="async" height="197" loading="lazy" src="../images/tradingview-setup/tradingview_create_alert_example.png" width="398"/><span class="sr-only">開啟原尺寸圖片</span></a>
+<figcaption>新增警報</figcaption>
+</figure>
+<figure>
+<a href="../images/tradingview-setup/tradingview_notifications_example.png" rel="noopener noreferrer" target="_blank"><img alt="TradingView警報視窗中的通知" decoding="async" height="508" loading="lazy" src="../images/tradingview-setup/tradingview_notifications_example.png" width="452"/><span class="sr-only">開啟原尺寸圖片</span></a>
+<figcaption>開啟通知</figcaption>
+</figure>
+<figure>
+<a href="../images/tradingview-setup/tradingview_webhook_url_example.png" rel="noopener noreferrer" target="_blank"><img alt="選取 Webhook URL 欄位與套用按鈕" decoding="async" height="666" loading="lazy" src="../images/tradingview-setup/tradingview_webhook_url_example.png" width="461"/><span class="sr-only">開啟原尺寸圖片</span></a>
+<figcaption>啟用並套用 Webhook URL</figcaption>
+</figure>
+</div>
+</details>
+<details class="guide-video">
+<summary>影片 · 連接 TradingView 至 DivAlarm</summary>
+<div class="guide-player"></div>
+<a href="https://www.youtube.com/shorts/00UnIp_ZYf4" rel="noopener noreferrer" target="_blank">在 YouTube 上觀看</a>
+</details>
+</div>
+</li>
+<li class="step">
+<div>
+<h3>選擇一次性價格條件</h3>
+<p>快速檢查時，請選 <strong>價格 → 超出區間</strong>。例如現價為 100，請設下限 98、上限 99。選擇 <strong>僅一次</strong>。若為指標警報，請選擇您要用的指標條件。</p>
+<details class="guide-examples">
+<summary>價格條件截圖</summary>
+<div class="example-grid">
+<figure>
+<a href="../images/tradingview-setup/tradingview_outside_channel_example.png" rel="noopener noreferrer" target="_blank"><img alt="價格條件選單中的 Outside Channel" decoding="async" height="586" loading="lazy" src="../images/tradingview-setup/tradingview_outside_channel_example.png" width="475"/><span class="sr-only">開啟原尺寸圖片</span></a>
+<figcaption>選擇超出區間</figcaption>
+</figure>
+</div>
+</details>
+</div>
+</li>
+<li class="step">
+<div>
+<h3>在訊息中包含 AA</h3>
+<p>在 TradingView 開啟 <strong>訊息</strong>，加入您在 App 啟用的 <strong>AA</strong> 關鍵字並按 <strong>套用</strong>。可複製下方範例。若規則比對訊息開頭，請將 AA 放最前面。</p>
+<div class="copy-row">
+<code class="wrap" id="sample-message">AA Webhook test</code>
+<button class="copy-btn" data-copy="sample-message" type="button">複製</button>
+</div>
+<p class="note">如要包含商品代碼與價格，請用 <code>AA {{ticker}} {{close}}</code>。TradingView 會在警報觸發時自動取代。</p>
+<details class="guide-examples">
+<summary>訊息截圖</summary>
+<div class="example-grid">
+<figure>
+<a href="../images/tradingview-setup/tradingview_aa_message_example.png" rel="noopener noreferrer" target="_blank"><img alt="TradingView訊息以AA開頭及套用按鈕" decoding="async" height="496" loading="lazy" src="../images/tradingview-setup/tradingview_aa_message_example.png" width="466"/><span class="sr-only">開啟原尺寸圖片</span></a>
+<figcaption>在訊息中包含 AA</figcaption>
+</figure>
+</div>
+</details>
+</div>
+</li>
+<li class="step">
+<div>
+<h3>建立警報並檢查手機</h3>
+<p>按 <strong>建立</strong> 並等待價格更新。在 <strong>TradingView 警報紀錄</strong> 找到事件，再檢查 <strong>AA 警報於 DivAlarm</strong>。完成後請關閉測試規則與 TradingView 測試警報。</p>
+<details class="troubleshooting">
+<summary>若未收到警報</summary>
+<ul>
+<li>若 TradingView 警報紀錄為空，請確認警報已啟用且價格已達條件。</li>
+<li>若事件顯示傳送失敗，請檢查警報紀錄中的 <strong>Webhook 狀態</strong> 及該警報儲存的 URL。若無法啟用 Webhook URL，請檢查 TradingView 的 <strong>雙重驗證</strong>。</li>
+<li>若 TradingView 已發送警報，請檢查 <strong>Webhook 關鍵字</strong> 模式、AA 規則及其警報開關，以及您手機上 DivAlarm 的通知權限。</li>
+</ul>
+</details>
+</div>
+</li>
+</ol>
+<section aria-labelledby="options-title" class="guide-options" id="keyword-options">
+<h2 id="options-title">警報、自動下單與訊號組合</h2>
+<article>
+<h3>為關鍵字設置強制警報</h3>
+<p>在關鍵字規則上選擇警報類型與聲音。影片示範如何為TradingView訊號設置強制警報。</p>
+<details class="guide-video">
+<summary>影片 · 設定TradingView的強制警報</summary>
+<div class="guide-player"></div>
+<a href="https://www.youtube.com/shorts/Q3jDFKG8wIo" rel="noopener noreferrer" target="_blank">在 YouTube 上觀看</a>
+</details>
+</article>
+<article>
+<h3>連接交易所並設定下單</h3>
+<p>如需 Pro 自動下單，請於 <strong>設定 → 自動下單設定</strong> 中註冊您的交易所 API 金鑰。在 Bitget，請選擇 <strong>Read-write</strong>，並同時啟用 <strong>Futures order</strong> 下單及 <strong>Futures Holdings</strong> 查看持倉。</p>
+<details class="guide-video">
+<summary>影片 · 註冊交易所 API 金鑰</summary>
+<div class="guide-player"></div>
+<a href="https://www.youtube.com/shorts/JBv2UXysv3A" rel="noopener noreferrer" target="_blank">在 YouTube 上觀看</a>
+</details>
+<p>然後點擊<strong>關鍵字列最右側的購物車</strong>，選擇交易所、標的與數量。當有符合的即時訊號且已啟用時，系統會自動下單。</p>
+<details class="guide-examples">
+<summary>自動下單設置截圖</summary>
+<div class="example-grid">
+<figure>
+<a href="../images/tradingview-setup/divalarm_keyword_auto_order_example.png" rel="noopener noreferrer" target="_blank"><img alt="關鍵字列最右側的自動下單購物車" decoding="async" height="285" loading="lazy" src="../images/tradingview-setup/divalarm_keyword_auto_order_example.png" width="691"/><span class="sr-only">開啟原尺寸圖片</span></a>
+<figcaption>在關鍵字列找到購物車</figcaption>
+</figure>
+</div>
+</details>
+<details class="guide-video">
+<summary>影片 · 從 TradingView 設定自動下單</summary>
+<div class="guide-player"></div>
+<a href="https://www.youtube.com/shorts/T4NzR8Pnv9A" rel="noopener noreferrer" target="_blank">在 YouTube 上觀看</a>
+</details>
+<p><a href="tradingview-webhook.html?lang=zh-hant#auto-order">自動下單操作指南</a></p>
+</article>
+<article>
+<h3>組合多個訊號</h3>
+<p>在<strong>警報組合</strong>中輸入<code>(1&amp;2)|3</code>，在時間窗口中輸入<code>1h 30m</code>。當關鍵字1和2在90分鐘內同時出現，或關鍵字3出現時，組合就會觸發。</p>
+<details class="guide-video">
+<summary>影片 · 組合TradingView指標訊號</summary>
+<div class="guide-player"></div>
+<a href="https://www.youtube.com/shorts/x57bL0uNVc4" rel="noopener noreferrer" target="_blank">在 YouTube 上觀看</a>
+</details>
+<p><a href="tradingview-webhook.html?lang=zh-hant#combination">組合規則與範例</a> · <a href="tradingview-webhook.html?lang=zh-hant#divalarm-keywords">DivAlarm訊號關鍵字（@D、@E與@P）</a></p>
+</article>
+<p class="manual-links"><a href="tradingview-webhook.html?lang=zh-hant#keyword-source">選擇手機通知或 Webhook 關鍵字</a></p>
+</section>
+</section>
+</div>
+</main>
+<!-- Strings used by the script. Kept in the document so locale builds translate them. -->
+<div hidden="" id="i18n">
+<span data-k="copy">複製</span>
+<span data-k="copied">已複製</span>
+<span data-k="copiedLive">已複製到剪貼簿。</span>
+<span data-k="run">發送測試訊號</span>
+<span data-k="runAgain">再次發送測試</span>
+<span data-k="running">測試中…</span>
+<span data-k="testTitle">DivAlarm連線測試</span>
+<span data-k="sendBusy">正在發送測試訊號…</span>
+<span data-k="sendOk">測試訊號已發送。</span>
+<span data-k="sendFail">無法連接DivAlarm伺服器。請檢查網路連線後再試一次。</span>
+<span data-k="relayBusy">正在等待伺服器回應…</span>
+<span data-k="relayOk">已接受並轉發至您的手機。</span>
+<span data-k="relayStopped">伺服器未轉發訊號。Webhook 警報需有有效Pro方案或剩餘試用次數，且 APP 必須以此帳號登入。</span>
+<span data-k="relayDaily">本帳號今日 Webhook 警報已用完，將於 00:00 UTC重置。</span>
+<span data-k="relayRate">短時間內訊號過多。請稍候一分鐘再試。</span>
+<span data-k="relayError">伺服器回傳錯誤（{0}）。請稍後再試。</span>
+<span data-k="phoneBusy">正在等待您的手機回應…</span>
+<span data-k="phoneOk">{0}已收到測試訊號。接下來請從TradingView發送AA警報，以檢查您的關鍵字規則。</span>
+<span data-k="phoneWarn">已於{0}收到，但真實警報不會響鈴，請先修正以下問題：</span>
+<span data-k="phoneTimeout">30 秒內未收到手機回應。請確認：</span>
+<span data-k="tipUpdate">DivAlarm APP 已更新至最新版本</span>
+<span data-k="tipLogin">APP 已以同一帳號登入</span>
+<span data-k="tipBattery">省電設定未限制DivAlarm，且手機已連網</span>
+<span data-k="issue_receiving_off">APP 已登出。請重新登入DivAlarm於您的手機。</span>
+<span data-k="issue_source_phone">關鍵字來源設為手機通知關鍵字。請於 APP 內改為 Webhook 關鍵字。</span>
+<span data-k="issue_notifications_off">手機設定已封鎖DivAlarm通知。</span>
+<span data-k="lastTest">最後確認時間：{0} 於 {1}</span>
+<span data-k="yourPhone">您的手機</span>
+<span data-k="liveDone">測試結束。</span>
+<span data-k="plans">查看方案</span>
+<span data-k="signinFailed">登入失敗：{0}</span>
+</div>
+<script src="../js/tradingview-connect.js" type="module"></script>
+</body>
+</html>

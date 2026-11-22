@@ -240,12 +240,15 @@
     .path { padding: 20px; }
   }
 </style>
+<link rel="stylesheet" href="../css/lang-switcher.css?v=dbe2c3bc"/>
+<script defer src="../js/lang-switcher.js?v=8721e8dc"></script>
 <link rel="stylesheet" href="../css/tradingview-connect-guide.css"/>
 <script defer src="../js/tradingview-connect-guide.js"></script>
 </head>
 <body>
 <header class="bar">
   <a class="brand" href="index.html"><img src="../images/divblue3-140.png" alt="" width="28" height="28"/>DivAlarm</a>
+  <div class="guide-language" data-lang-slot></div>
   <div class="who" id="who" hidden>
     <span class="who-email" id="who-email"></span>
     <a href="my-account.html">My account</a>
@@ -300,6 +303,7 @@
           <button class="primary" type="button" id="run-test">Send test signal</button>
           <p class="last-test" id="last-test" hidden></p>
           <p class="safe">The test skips keyword matching and auto-orders, and does not use your free trial alerts.</p>
+          <p class="safe">If your phone confirms receipt but shows no banner, allow pop-ups for <strong>Webhook connection test</strong> in DivAlarm’s notification settings on your phone. Also check <strong>Do Not Disturb</strong>.</p>
         </div>
         <p class="sr-only" role="status" aria-live="polite" id="live"></p>
       </section>
@@ -495,219 +499,6 @@
   <span data-k="signinFailed">Sign-in failed: {0}</span>
 </div>
 
-<script type="module">
-  import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-  import { getAuth, onAuthStateChanged, signOut, signInWithCustomToken, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
-  import { getFirestore, doc, getDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
-
-  const RELAY = "https://asia-northeast1-divergence-alarm.cloudfunctions.net/hookRelay/hook/";
-  const PHONE_TIMEOUT_MS = 30000;
-
-  const $ = (id) => document.getElementById(id);
-  const T = Object.fromEntries([...document.querySelectorAll("#i18n [data-k]")].map((el) => [el.dataset.k, el.textContent.trim()]));
-  const fmt = (s, ...a) => s.replace(/\{(\d)\}/g, (_, i) => a[i] ?? "");
-  const say = (msg) => { $("live").textContent = msg; };
-
-  // ---------- view helpers ----------
-  function show(view) {
-    $("gate-signin").hidden = view !== "signin";
-    $("gate-nohook").hidden = view !== "nohook";
-    $("tester").hidden = view !== "ready";
-  }
-
-  function setHop(id, state, html) {
-    const hop = $(id);
-    hop.dataset.state = state;
-    if (html != null) $(id + "-detail").innerHTML = html;
-  }
-  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const list = (items) => "<ul>" + items.map((t) => `<li>${esc(t)}</li>`).join("") + "</ul>";
-
-  function setHookUrl(url) {
-    $("hook-url").textContent = url;
-    document.querySelector('[data-copy="hook-url"]').disabled = false;
-  }
-
-  function showLastTest(data) {
-    if (!data || !data.received_at) return;
-    const when = data.received_at.toDate ? data.received_at.toDate() : new Date(data.received_at);
-    const el = $("last-test");
-    el.textContent = fmt(T.lastTest, when.toLocaleString(), data.device || T.yourPhone);
-    el.hidden = false;
-  }
-
-  // ---------- copy ----------
-  document.addEventListener("click", async (e) => {
-    const btn = e.target.closest("[data-copy]");
-    if (!btn) return;
-    const text = $(btn.dataset.copy).textContent.trim();
-    try {
-      await navigator.clipboard.writeText(text);
-    } catch {
-      const range = document.createRange();
-      range.selectNodeContents($(btn.dataset.copy));
-      const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
-      document.execCommand("copy");
-      sel.removeAllRanges();
-    }
-    btn.textContent = T.copied; btn.dataset.done = "";
-    say(T.copiedLive);
-    clearTimeout(btn._t);
-    btn._t = setTimeout(() => { btn.textContent = T.copy; delete btn.dataset.done; }, 2000);
-  });
-
-  // ---------- connection test ----------
-  // env.send(testId) -> {status, reason}; env.waitForPhone(testId, ms) -> ack | null
-  async function runTest(env) {
-    const btn = $("run-test");
-    btn.disabled = true; btn.textContent = T.running;
-    setHop("hop-send", "busy", esc(T.sendBusy));
-    setHop("hop-relay", "idle", esc(T.relayBusy));
-    setHop("hop-phone", "idle", esc(T.phoneBusy));
-    say(T.sendBusy);
-
-    const testId = "t_" + crypto.randomUUID().replace(/-/g, "").slice(0, 24);
-    const phone = env.waitForPhone(testId, PHONE_TIMEOUT_MS);
-    let res;
-    try {
-      res = await env.send(testId);
-    } catch {
-      setHop("hop-send", "fail", esc(T.sendFail));
-      return finish();
-    }
-    setHop("hop-send", "ok", esc(T.sendOk));
-
-    if (res.status === 204) {
-      const msg = /^qpd_/.test(res.reason || "") ? T.relayDaily : /rate/.test(res.reason || "") ? T.relayRate : T.relayStopped;
-      setHop("hop-relay", "fail", esc(msg) + (msg === T.relayStopped ? ` <a href="pricing.html">${esc(T.plans)}</a>` : ""));
-      phone.cancel();
-      setHop("hop-phone", "idle", "");
-      return finish();
-    }
-    if (res.status === 429) { setHop("hop-relay", "fail", esc(T.relayRate)); phone.cancel(); return finish(); }
-    if (res.status !== 200) { setHop("hop-relay", "fail", esc(fmt(T.relayError, res.status))); phone.cancel(); return finish(); }
-
-    setHop("hop-relay", "ok", esc(T.relayOk));
-    setHop("hop-phone", "busy", esc(T.phoneBusy));
-    say(T.phoneBusy);
-
-    const ack = await phone.result;
-    if (!ack) {
-      setHop("hop-phone", "fail", esc(T.phoneTimeout) + list([T.tipUpdate, T.tipLogin, T.tipBattery]));
-    } else {
-      const device = ack.device || T.yourPhone;
-      const issues = (ack.issues || []).map((k) => T["issue_" + k]).filter(Boolean);
-      if (issues.length) setHop("hop-phone", "warn", esc(fmt(T.phoneWarn, device)) + list(issues));
-      else setHop("hop-phone", "ok", esc(fmt(T.phoneOk, device)));
-      showLastTest({ ...ack, received_at: ack.received_at || new Date() });
-    }
-    return finish();
-
-    function finish() {
-      btn.disabled = false; btn.textContent = T.runAgain;
-      say(T.liveDone);
-    }
-  }
-
-  function firebaseEnv(db, uid, hookId) {
-    return {
-      async send(testId) {
-        const r = await fetch(RELAY + hookId, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ divalarm_test: testId, title: T.testTitle }),
-        });
-        return { status: r.status, reason: r.headers.get("X-Dropped-Reason") };
-      },
-      waitForPhone(testId, ms) {
-        let unsub = () => {}, timer, done;
-        const result = new Promise((resolve) => {
-          done = (v) => { unsub(); clearTimeout(timer); resolve(v); };
-          timer = setTimeout(() => done(null), ms);
-          unsub = onSnapshot(doc(db, "users", uid, "userstate", "webhook_test"), (snap) => {
-            const d = snap.data();
-            if (d && d.test_id === testId && !snap.metadata.hasPendingWrites) done(d);
-          }, () => {});
-        });
-        return { result, cancel: () => done(null) };
-      },
-    };
-  }
-
-  // ---------- local preview (localhost only): ?demo=ok|warn|timeout|stopped|offline|signin|nohook ----------
-  const params = new URLSearchParams(location.search);
-  const demo = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? params.get("demo") : null;
-
-  if (demo) {
-    if (demo === "signin" || demo === "nohook") { show(demo); }
-    else {
-      $("who").hidden = false; $("who-email").textContent = "trader@example.com";
-      setHookUrl(RELAY + "AbCdEfGhIj0123456789");
-      show("ready");
-      const wait = (ms) => new Promise((r) => setTimeout(r, ms));
-      const env = {
-        async send() {
-          await wait(500);
-          if (demo === "offline") throw new TypeError("Failed to fetch");
-          return demo === "stopped" ? { status: 204, reason: null } : { status: 200 };
-        },
-        waitForPhone() {
-          const result = (async () => {
-            await wait(1400);
-            if (demo === "timeout") return null;
-            return { device: "samsung SM-S926N", issues: demo === "warn" ? ["source_phone"] : [], received_at: new Date() };
-          })();
-          return { result, cancel() {} };
-        },
-      };
-      $("run-test").addEventListener("click", () => runTest(env));
-      if (params.has("auto")) runTest(env);
-    }
-  } else {
-    const app = getApps().length ? getApp() : initializeApp({
-      apiKey: "AIzaSyDB0uVFhbk3_2uEoCt8iz0LhE_2OOK_adQ",
-      authDomain: "divergence-alarm.firebaseapp.com",
-      projectId: "divergence-alarm",
-      storageBucket: "divergence-alarm.firebasestorage.app",
-      messagingSenderId: "912910128238",
-      appId: "1:912910128238:web:a42ca6881960fcde76427f",
-      measurementId: "G-NGCZKMQF67",
-    });
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-
-    // App -> web sign-in: the app opens this page with #ct=<custom token>.
-    const hash = new URLSearchParams(location.hash.slice(1));
-    const ct = hash.get("ct");
-    if (ct) {
-      history.replaceState(null, "", location.pathname + location.search);
-      signInWithCustomToken(auth, ct).catch((e) => console.error("App sign-in failed", e));
-    }
-
-    $("google-signin").addEventListener("click", async () => {
-      try { await signInWithPopup(auth, new GoogleAuthProvider()); }
-      catch (e) { if (e.code !== "auth/popup-closed-by-user") alert(fmt(T.signinFailed, e.message)); }
-    });
-    $("sign-out").addEventListener("click", () => signOut(auth));
-
-    let env = null;
-    $("run-test").addEventListener("click", () => env && runTest(env));
-
-    onAuthStateChanged(auth, async (user) => {
-      $("who").hidden = !user;
-      if (!user) { show("signin"); return; }
-      $("who-email").textContent = user.email || "";
-      const snap = await getDoc(doc(db, "users", user.uid)).catch(() => null);
-      const hookId = snap && snap.exists() ? String(snap.data().hookid || "") : "";
-      if (!hookId) { show("nohook"); return; }
-      setHookUrl(RELAY + hookId);
-      env = firebaseEnv(db, user.uid, hookId);
-      show("ready");
-      getDoc(doc(db, "users", user.uid, "userstate", "webhook_test"))
-        .then((s) => s.exists() && showLastTest(s.data()))
-        .catch(() => {});
-    });
-  }
-</script>
+<script type="module" src="../js/tradingview-connect.js"></script>
 </body>
 </html>

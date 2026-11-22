@@ -4,11 +4,30 @@
   gap: .4rem 1.25rem;
   margin-top: 1rem;
 }
+.bar { flex-wrap: wrap; }
+.bar .guide-language { margin-inline-start: auto; }
+.bar .who { flex-wrap: wrap; }
+.bar .guide-language .div-lang-panel { z-index: 1000; }
+.bar .guide-language:has([aria-expanded="true"]) { position: relative; z-index: 1000; }
+html[dir="rtl"] .hop:not(:last-child)::after { left: auto; right: 11px; }
+html[dir="rtl"] .hop-detail ul { padding-left: 0; padding-right: 18px; }
+html[dir="rtl"] .copy-btn { border-left: 0; border-right: 1px solid var(--rule); }
+html[dir="rtl"] code, html[dir="rtl"] #who-email { direction: ltr; unicode-bidi: isolate; }
+html[dir="rtl"] .skeleton { direction: rtl; unicode-bidi: isolate; }
+@media (max-width: 600px) {
+  .bar .who { width: 100%; }
+}
 .guide-nav a, .guide-options a, .guide-video a {
   text-underline-offset: .2em;
 }
 .grid { grid-template-areas: "setup test"; }
 .path-col { grid-area: test; min-width: 0; }
+#test-quota {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+#run-test:disabled { cursor: default; }
 .setup-col { grid-area: setup; min-width: 0; }
 #pc-setup, #connection-test, #keyword-options { scroll-margin-top: 16px; }
 .setup-col > h2, .guide-options > h2 {

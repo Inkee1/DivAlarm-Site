@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import apply_chrome  # noqa: E402
 import features  # noqa: E402
 import home  # noqa: E402
+import tradingview_guides  # noqa: E402
 
 BUILT_LANGS = sorted(apply_chrome.BUILT_LANGS)
 
@@ -28,3 +29,6 @@ if __name__ == "__main__":
         features.build(lang)
         print(f"{lang}: index.html, features.html")
     apply_chrome.main()
+    for lang in tradingview_guides.LANGS:
+        if lang not in BUILT_LANGS:
+            tradingview_guides.build(lang)

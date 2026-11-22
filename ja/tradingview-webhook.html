@@ -3,7 +3,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView DivAlarm のWebhook設定ガイド</title>
+<title>DivAlarmのキーワードアラームガイド</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -11,7 +11,7 @@
 <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
@@ -19,13 +19,13 @@
       line-height: 1.8;
       min-height: 100vh;
     }
-    
+
     .manual-container {
       max-width: 950px;
       margin: 0 auto;
       padding: 50px 40px;
     }
-    
+
     .back-link {
       display: inline-block;
       color: #00d4ff;
@@ -35,7 +35,7 @@
       transition: opacity 0.2s;
     }
     .back-link:hover { opacity: 0.8; }
-    
+
     .manual-title {
       font-size: 3rem;
       font-weight: 700;
@@ -45,7 +45,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
+
     .toc {
       background: rgba(12, 12, 24, 0.9);
       padding: 2rem 2.5rem;
@@ -67,7 +67,7 @@
       transition: color 0.2s;
     }
     .toc a:hover { color: #00d4ff; }
-    
+
     .manual-section {
       margin-bottom: 4rem;
       scroll-margin-top: 84px;
@@ -93,7 +93,7 @@
       color: rgba(248, 250, 252, 0.9);
     }
     .manual-section ol, .manual-section ul {
-      margin-left: 2rem;
+      margin-inline-start: 2rem;
       margin-bottom: 1.5rem;
     }
     .manual-section li {
@@ -121,12 +121,12 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 1.05rem;
     }
-    
+
     .highlight {
       background: rgba(0, 212, 255, 0.12);
       padding: 1.5rem 2rem;
       border-radius: 12px;
-      border-left: 5px solid #00d4ff;
+      border-inline-start: 5px solid #00d4ff;
       margin: 1.5rem 0;
       font-size: 1.15rem;
     }
@@ -134,11 +134,11 @@
       background: rgba(249, 115, 22, 0.12);
       padding: 1.5rem 2rem;
       border-radius: 12px;
-      border-left: 5px solid #f97316;
+      border-inline-start: 5px solid #f97316;
       margin: 1.5rem 0;
       font-size: 1.15rem;
     }
-    
+
     .code-block {
       background: rgba(12, 12, 24, 0.95);
       padding: 1.5rem 2rem;
@@ -156,9 +156,9 @@
     .code-block .desc {
       color: rgba(248, 250, 252, 0.6);
       font-size: 1rem;
-      margin-left: 1rem;
+      margin-inline-start: 1rem;
     }
-    
+
     .image-row {
       display: flex;
       gap: 1.5rem;
@@ -176,7 +176,7 @@
       flex: 1;
       min-width: 300px;
     }
-    
+
     /* Quick Summary (collapsible video embeds) */
     #quick-summary h2 { margin-top: 0; }
     .video-toggle {
@@ -189,7 +189,7 @@
     .video-toggle h3 { margin: 0; }
     .video-toggle-btn {
       width: 100%;
-      text-align: left;
+      text-align: start;
       padding: 1.1rem 1.25rem;
       background: transparent;
       border: none;
@@ -253,22 +253,22 @@
       .video-toggle-btn { padding: 1rem 1.1rem; }
     }
   </style>
-<link href="../css/lang-switcher.css?v=21ddac23" rel="stylesheet" type="text/css"/>
+<link href="../css/lang-switcher.css?v=dbe2c3bc" rel="stylesheet" type="text/css"/>
 <script src="../js/posthog.js"></script>
-<script defer="" src="../js/lang-switcher.js?v=21ddac23" type="text/javascript"></script>
-<meta content="TradingViewアラートをDivAlarmのWebhook、キーワードアラート、シグナル組み合わせ、自動発注フローに連携する方法を紹介します。" name="description"/>
-<meta content="TradingView DivAlarm のWebhook設定ガイド" property="og:title"/>
-<meta content="TradingViewアラートをDivAlarmのWebhook、キーワードアラート、シグナル組み合わせ、自動発注フローに連携する方法を紹介します。" property="og:description"/>
-<meta content="TradingView DivAlarm のWebhook設定ガイド" name="twitter:title"/>
-<meta content="TradingViewアラートをDivAlarmのWebhook、キーワードアラート、シグナル組み合わせ、自動発注フローに連携する方法を紹介します。" name="twitter:description"/>
+<script defer="" src="../js/lang-switcher.js?v=8721e8dc" type="text/javascript"></script>
+<meta content="Androidスマートフォンの通知やTradingViewのWebhookからDivAlarmのキーワードアラームを設定し、シグナルの組み合わせや自動注文を行えます。" name="description"/>
+<meta content="DivAlarmのキーワードアラームガイド" property="og:title"/>
+<meta content="Androidスマートフォンの通知やTradingViewのWebhookからDivAlarmのキーワードアラームを設定し、シグナルの組み合わせや自動注文を行えます。" property="og:description"/>
+<meta content="DivAlarmのキーワードアラームガイド" name="twitter:title"/>
+<meta content="Androidスマートフォンの通知やTradingViewのWebhookからDivAlarmのキーワードアラームを設定し、シグナルの組み合わせや自動注文を行えます。" name="twitter:description"/>
 <meta content="https://www.divalarm.com/ja/tradingview-webhook.html" property="og:url"/>
 <meta content="DivAlarm" property="og:site_name"/>
 <meta content="ja_JP" property="og:locale"/>
 <meta content="article" property="og:type"/><meta content="https://www.divalarm.com/images/og-cover.png" property="og:image"/><meta content="1080" property="og:image:width"/><meta content="649" property="og:image:height"/><meta content="https://www.divalarm.com/images/og-cover.png" name="twitter:image"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"HowTo","name":"TradingView のwebhookを DivAlarm に接続する方法","description":"TradingView のアラートを DivAlarm に接続して、キーワードアラーム、シグナルの組み合わせ、自動注文ワークフローを実現します。","url":"https://www.divalarm.com/ja/tradingview-webhook.html","step":[{"@type":"HowToStep","name":"TradingView のアラートを作成","text":"TradingView でインジケーターを右クリックし、使いたいインジケーターで「インジケーターにアラートを追加」を選択します。"},{"@type":"HowToStep","name":"Webhook URLを貼り付け","text":"TradingView の通知で「Webhook URL」を有効にし、DivAlarm アプリでコピーしたURLを貼り付けます。"},{"@type":"HowToStep","name":"メッセージにキーワードを追加","text":"アラートメッセージにキーワードを入力し、DivAlarm が受信した TradingView シグナルを照合できるようにします。"},{"@type":"HowToStep","name":"DivAlarm にキーワードを登録","text":"アラームを鳴らすため、アプリの「キーワード含む」セクションにも同じキーワードを追加します。"},{"@type":"HowToStep","name":"ワークフローを拡張","text":"基本のwebhookフローが正しく動作したら、シグナルの組み合わせや自動注文を活用します。"}]},{"@type":"WebPage","url":"https://www.divalarm.com/ja/tradingview-webhook.html","name":"TradingView DivAlarm のWebhook設定ガイド","description":"TradingViewアラートをDivAlarmのWebhook、キーワードアラート、シグナル組み合わせ、自動発注フローに連携する方法を紹介します。","inLanguage":"ja","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.divalarm.com/ja/"},{"@type":"ListItem","position":2,"name":"TradingView Webhookガイド","item":"https://www.divalarm.com/ja/tradingview-webhook.html"}]}]}</script>
-<link href="https://www.divalarm.com/ja/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/><link data-da-chrome="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"HowTo","name":"TradingViewのWebhookをDivAlarmに接続する方法","description":"Webhookキーワードモードを使い、TradingViewのアラートをDivAlarmに接続してキーワードアラーム、シグナルの組み合わせ、自動注文のワークフローを構築します。","url":"https://www.divalarm.com/ja/tradingview-webhook.html","step":[{"@type":"HowToStep","name":"Webhookキーワードを選択","text":"DivAlarmのキーワードアラームを開き、Webhookキーワードを選択すると個人用Webhook URLが表示されます。"},{"@type":"HowToStep","name":"TradingViewでアラートを作成","text":"TradingViewのインジケーターを右クリックし、使用したいインジケーターでアラートを追加を選択します。"},{"@type":"HowToStep","name":"Webhook URLを貼り付け","text":"TradingViewの通知でWebhook URLを有効にし、DivAlarmアプリからコピーしたURLを貼り付けます。"},{"@type":"HowToStep","name":"メッセージキーワードを追加","text":"アラートメッセージにキーワードを入力し、DivAlarmが受信したTradingViewシグナルと一致させます。"},{"@type":"HowToStep","name":"DivAlarmにキーワードを登録","text":"アプリの「キーワードを含める」欄に同じキーワードを追加してアラームを発動させます。"},{"@type":"HowToStep","name":"ワークフローを拡張","text":"基本のWebhookフローが正常に動作したら、シグナルの組み合わせや自動注文を活用してください。"}]},{"@type":"WebPage","url":"https://www.divalarm.com/ja/tradingview-webhook.html","name":"DivAlarmのキーワードアラームガイド","description":"Androidスマートフォンの通知やTradingViewのWebhookからDivAlarmのキーワードアラームを設定し、シグナルの組み合わせや自動注文を行えます。","inLanguage":"ja","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.divalarm.com/ja/"},{"@type":"ListItem","position":2,"name":"キーワードアラームガイド","item":"https://www.divalarm.com/ja/tradingview-webhook.html"}]}]}</script>
+<link href="https://www.divalarm.com/ja/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/zh-hant/tradingview-webhook.html" hreflang="zh-Hant" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/><link data-da-chrome="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"/>
 <link data-da-chrome="" href="../css/site.css?v=75db1564" rel="stylesheet"/>
 <link data-da-chrome="" href="../css/legacy-skin.css?v=75db1564" rel="stylesheet"/>
 </head>
@@ -277,7 +277,7 @@
 <div class="da-wrap da-top-row">
 <a class="da-brand" href="index.html"><img alt="" height="30" src="../images/divblue3-140.png" width="30"/><span>DivAlarm</span></a>
 <nav aria-label="メインメニュー" class="da-nav" id="da-nav">
-<a href="features.html">機能</a><a href="performance.html">パフォーマンス</a><a aria-current="page" href="tradingview-webhook.html">TradingView連携</a><a href="pricing.html">料金</a><a href="qna.html">よくある質問</a>
+<a href="features.html">機能</a><a href="performance.html">パフォーマンス</a><a aria-current="page" href="tradingview-webhook.html?lang=ja">TradingView</a><a href="pricing.html">料金</a><a href="qna.html">よくある質問</a>
 <div class="da-acct"><a href="sign-in-page.html" id="da-signin">ログイン</a><a hidden="" href="my-account.html" id="da-account">マイアカウント</a><button hidden="" id="da-signout" type="button">ログアウト</button></div>
 </nav>
 <div class="da-actions">
@@ -290,62 +290,84 @@
 </header>
 <main class="manual-container" id="main">
 <a class="back-link" href="user-manual.html">← ユーザーマニュアルに戻る</a>
-<h1 class="manual-title">TradingView DivAlarm のWebhookガイド</h1>
-<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">TradingView のアラートを DivAlarm に連携し、キーワードアラーム、Webhook自動化、シグナルの組み合わせ、取引所の自動発注を実現します。<br/>
-<a class="da-link" href="../en/tradingview-connect.html?lang=en" hreflang="en">TradingView の接続テストと PC での設定（英語）</a></p>
+<h1 class="manual-title">DivAlarmのキーワードアラームガイド</h1>
+<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">電話通知またはTradingViewのWebhookメッセージからキーワードを選択します。アラーム、シグナルの組み合わせ、取引所の自動注文に同じルールを使えます。<br/> <a class="da-link" href="tradingview-connect.html?lang=ja" hreflang="ja">TradingView接続テスト＆PC設定</a></p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 目次</h3>
 <ul>
-<li><a href="#quick-summary">概要</a></li>
-<li><a href="#keyword">キーワードアラート</a></li>
-<li><a href="#auto-order">TradingView で自動発注</a></li>
+<li><a href="#keyword-source">キーワードソースを選択</a></li>
+<li><a href="#quick-summary">TradingView Webhookの例</a></li>
+<li><a href="#keyword">キーワードルールとTradingView Webhook設定</a></li>
+<li><a href="#auto-order">キーワードアラームによる自動注文</a></li>
 <li><a href="#divalarm-keywords">DivAlarm シグナルキーワード</a></li>
 <li><a href="#combination">シグナル組み合わせアラート</a></li>
 </ul>
 </div>
+<!-- Keyword Source Section -->
+<div class="manual-section" id="keyword-source">
+<h2>キーワードソースを選択</h2>
+<p><strong>キーワードアラーム・自動注文</strong>を開き、ページ上部で入力を選択してください。選択肢横の<strong>?</strong>をタップするとヘルプが表示されます。両モードは保存済みのキーワード、組み合わせ、アラーム設定を共有します。すべてのアカウントは<strong>カード不要で5つのキーワードアラームを無料で試せます</strong>。<strong>自動注文はPro限定です</strong>。</p>
+<div class="highlight"><p><strong>アカウントごとに5回の無料実行:</strong> スマートフォン通知のキーワード、Webhookキーワード、組み合わせアラームは共通の生涯で5回分の利用枠を共有します。利用は、該当アラームがスマホで正常にスケジュールされた時にカウントされます。未一致メッセージ、重複配信、スケジュール失敗はカウントされません。無料利用の確認にはインターネット接続が必要です。</p><p>利用枠は<strong>一般の7つのアラームとは別</strong>で、再インストール後もリセットされず、自動注文は含まれません。5回使用後もルールは保存されます。続けるには<strong>Pro</strong>を選択してください。</p></div>
+<h3>スマートフォン通知のキーワード (Android)</h3>
+<ol>
+<li><strong>スマートフォン通知のキーワード</strong>を選択してください。</li>
+<li>ページから通知アクセス設定を開き、<strong>DivAlarm</strong>に通知の読み取りを許可してください。</li>
+<li>マッチさせたい通知のタイトルまたは本文に含まれるテキストを<strong>キーワードを含める</strong>に追加します。</li>
+<li>該当通知が届くと、DivAlarmは設定済みのアラーム、組み合わせ、自動注文ルールを適用します。</li>
+</ol>
+<p>他アプリの通知を読み取るには通知アクセスを有効にしたままにしてください。DivAlarmはAndroidが提供するテキストのみをマッチします。グループ化された要約、繰り返しコピー、DivAlarmが生成するアラームや注文結果通知は無視されます。メッセージ通知では最新メッセージのみをチェックします。</p>
+<p>DivAlarm自身の受信シグナルもこのモードでキーワードアラームや注文をトリガー可能です。既存の有効フィルターは引き続き適用されます。<a href="#divalarm-keywords" style="color: #00d4ff;">@D、@E、@Pのシグナルキーワード</a>を使い続けられます。</p>
+<h3>Webhookキーワード</h3>
+<p><strong>Webhookキーワード</strong>を選択すると、個人用Webhook URLに送信されたメッセージ（TradingViewアラート含む）を受信します。URLとコピー用ボタンはこのモードでのみ表示されます。以下の<a href="#keyword" style="color: #00d4ff;">TradingView設定手順</a>に従ってください。</p>
+<div class="highlight">
+<p>モード切替時も保存済みルールは保持されます。スマートフォンモードではWebhookメッセージはこのスマホでキーワードアラームや注文をトリガーしません。既存ユーザーはWebhookモードから開始するため、切替まで現在のWebhook設定が継続されます。</p>
+<p>他アプリの通知読み取りはAndroidの機能であり、iOSやウェブでは利用できません。</p>
+</div>
+</div>
 <!-- Quick Summary Section -->
 <div class="manual-section" id="quick-summary">
-<h2>DivAlarm × TradingView – 概要</h2>
+<h2>DivAlarm × TradingView – Webhookの例</h2>
+<p>これらの動画は<strong>Webhookキーワード</strong>のワークフローを示します。Webhook URL手順を行う前にこのソースを選択してください。</p>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">TradingView をアプリに連携</button>
+<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">TradingViewをアプリに接続</button>
 </h3>
 <div class="video-toggle-panel" id="qs-connect-tv">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="TradingView をアプリに連携" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="TradingViewをアプリに接続" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">YouTubeで開く</a></p>
 </div>
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">TradingView の強制アラーム設定</button>
+<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">TradingViewの強制アラーム設定</button>
 </h3>
 <div class="video-toggle-panel" id="qs-force-alarm">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="TradingView の強制アラーム設定" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="TradingViewの強制アラーム設定" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">YouTubeで開く</a></p>
 </div>
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">TradingView シグナルから自動発注</button>
+<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">TradingViewシグナルからの自動注文</button>
 </h3>
 <div class="video-toggle-panel" id="qs-auto-order">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="TradingView シグナルから自動発注" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="TradingViewシグナルからの自動注文" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">YouTubeで開く</a></p>
 </div>
 </div>
-<div class="video-toggle">
+<div class="video-toggle" id="exchange-api-setup" style="scroll-margin-top: 84px;">
 <h3>
 <button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">取引所APIキー設定</button>
 </h3>
 <div class="video-toggle-panel" id="qs-exchange-api">
-<p>Bitget のキーを作成するときは <strong>Read-write</strong> を選んでください。 注文用の <strong>Futures order</strong> とポジション確認用の <strong>Futures Holdings</strong> を両方有効にしてください。</p>
+<p>Bitgetキー作成時に<strong>Read-write</strong>を選択し、注文発注用の<strong>Futures order</strong>とポジション閲覧用の<strong>Futures Holdings</strong>を両方有効にしてください。</p>
 <div class="video-embed">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="取引所APIキー設定" width="435"></iframe>
 </div>
@@ -354,11 +376,11 @@
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">TradingView からカスタム指標コンボを作成</button>
+<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">TradingViewからカスタムインジケーター組み合わせを作成</button>
 </h3>
 <div class="video-toggle-panel" id="qs-custom-indicators">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="TradingView からカスタム指標コンボを作成" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="TradingViewからカスタムインジケーター組み合わせを作成" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">YouTubeで開く</a></p>
 </div>
@@ -366,85 +388,93 @@
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
-<h2>🔔 キーワードアラート</h2>
-<h3>TradingView でWebhookを追加</h3>
+<h2>🔔 キーワードルールとTradingView Webhook設定</h2>
+<p><strong>キーワードアラーム・自動注文</strong>で、マッチさせたいテキストを<strong>キーワードを含める</strong>に追加します。電話モードは通知のタイトルと本文を、Webhookモードは受信Webhookテキストをチェックします。<a href="#keyword-source" style="color: #00d4ff;">ソースを選択</a>してからルールをテストしてください。</p>
+<h3>TradingViewでWebhookを追加</h3>
+<p><strong>Webhookキーワード</strong>を選択し、<code>AA</code>を<strong>キーワードを含める</strong>に追加してアラームをオンにします。実際のTradingViewアラートをテスト中はAAにマッチするキーワードルールや組み合わせの自動注文はオフにしてください。<strong>Webhook URL</strong>を展開して個人用URLをコピーします。URL見出し横の<strong>?</strong>をタップすると手順の図解が表示されます。</p>
 <img alt="TradingView アラートを追加" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>TradingView でシグナルを受け取りたいインジケーターを右クリックし、「〜にアラートを追加」をクリックします。</p>
-<img alt="Webhook URL設定" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>TradingViewでシグナルを受け取りたいインジケーターを右クリックし、「~にアラートを追加」を選択してください。</p>
+<img alt="Webhook URL 設定" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="通知設定" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>「通知」セクションで「Webhook URL」にチェックを入れ、アプリでコピーしたアドレスを下の入力欄に貼り付けます。</p>
-<p>一度設定すると、他のアラートでも自動でチェック／入力されます。</p>
+<p><strong>通知</strong>を開き、<strong>Webhook URL</strong>を有効にして個人用URLを貼り付け、<strong>適用</strong>を選択します。</p>
+<p>同じURLを他のアラートでも再利用できます。新しいアラートにすでにあなたのURLが設定されている場合は、そのチェックボックスが有効でアドレスが正しいか確認してください。既存のアラートはそれぞれ個別に確認してください。</p>
+<p>一度限りの価格テストには、<strong>Price → Outside Channel</strong> と <strong>Once only</strong> を選択します。両方の境界を現在の価格の片側に設定します。例えば価格が100の場合、下限を98、上限を99に設定します。</p>
 <img alt="メッセージ設定" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>「メッセージ」セクションの「メッセージ」に、任意のキーワード（例：「AAA」）を追加します。</p>
-<p>「作成」をクリックして TradingView アラートを設定します。</p>
-<h3>アプリで TradingView アラートを受信</h3>
+<p>TradingView とアプリのスクリーンショットでは、キーワードの挿入場所を示すために<code>AAA</code>を使用しています。このテストでは、<strong>Message</strong>に<code>AA Webhook test</code>を入力するか、登録済みのキーワード<code>AA</code>を既存のメッセージに追加してから変更を適用してください。</p>
+<p><strong>Create</strong>（作成）を選択します。条件が満たされたら、TradingViewのアラートログとスマホのアラームを確認してください。</p>
+<h3>アプリでTradingViewアラートを受信する</h3>
 <img alt="アプリのキーワード設定" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>アプリの「キーワード含む」にキーワード（例：「AAA」）を追加します。TradingView アラートの「メッセージ」にそのキーワードが含まれると、設定どおりにアラームが鳴ります。</p>
+<p><strong>Webhookキーワード</strong>を選択したままにしてください。<code>AA</code>を含むメッセージは、そのキーワードに対して有効にしたアラームを起動します。テストが終わったらAAのテストルールをオフにしてください。</p>
+<p>サーバーからAndroidのスマホへの配信を確認するには、<a class="da-link" href="tradingview-connect.html?lang=ja#connection-test">接続テストからテスト信号を送信</a>してください。この診断はキーワードルールや取引所注文をスキップし、無料アラーム枠も消費しません。</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 TradingViewアラートで自動発注</h2>
-<img alt="自動発注設定" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>キーワードアラートを受信したときに、取引所へ「自動発注」を送信するよう設定できます。</p>
+<h2>🤖 キーワードアラームによる自動注文</h2>
+<img alt="自動注文設定" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<p><strong>Pro</strong>では、個別のキーワードルールや組み合わせに自動注文を付けられます。アラームのみのルールは自動注文をオフにしてください。有効にすると、選択したソースからの一致や適格なDivAlarmシグナルが取引所で実際の注文を出すことがあります。</p>
 <img alt="取引所API設定" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>自動発注に対応する取引所：<strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>アプリの設定ページでAPIキーを入力する必要があります。</p>
+<p>取引所のAPIキーは<strong>設定 → 自動注文設定</strong>で入力します。AndroidアプリはBinance、Bybit、OKX、Bitget、Gate、Bitunixに対応しています。</p>
+<p>キーワード行の右側にある<strong>カート</strong>をタップして取引所、銘柄、注文設定を選び、そのルールの自動注文を有効にします。Bitgetを使う場合は<a class="da-link" href="#exchange-api-setup">取引所APIキー設定</a>で必要な2つの権限を確認してください。</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
-<h2>📝 DivAlarmシグナルをキーワードとして登録</h2>
+<h2>📝 DivAlarmシグナルをキーワードとして登録する</h2>
 <img alt="DivAlarm シグナルキーワード" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>DivAlarm独自のアラートも、「キーワード組み合わせ」（組み合わせアラート／自動発注用）に追加できます。</p>
+<p>DivAlarmの独自シグナルは<strong>両方の入力モード</strong>でキーワードアラーム、組み合わせ、自動注文を起動できます。以下の形式で登録してください。シグナルの元の有効フィルターはそのまま適用され、キーワード追加で無効なフィルターが有効になることはありません。</p>
 <div class="highlight">
-<p><strong>形式：</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe（任意）</p>
+<p><strong>RSIダイバージェンス（@D）:</strong><br/><code style="overflow-wrap: anywhere;">@D@Kind@Direction@Status@MainTimeframe[@SubTimeframe]</code></p>
+<p>ステータス値は<code>early_completed</code>、<code>early_confirmed</code>、<code>confirmed</code>、<code>forming</code>です。2つ目の時間軸はFormingシグナルに使われます。</p>
+<p><strong>追加インジケーター（@E）:</strong><br/><code style="overflow-wrap: anywhere;">@E@Kind@TitleKeyword@Timeframe</code></p>
+<p><strong>価格アラート（@P）:</strong><br/><code style="overflow-wrap: anywhere;">@P@Kind@TitleKeyword</code></p>
+<p>認識されないステータスの既存@Dルールも引き続きサポートされます。4番目と5番目のフィールドはメインとサブの時間軸の意味を保持します。</p>
 </div>
-<p><strong>アラームタイプ：</strong></p>
+<p><strong>アラームタイプ:</strong></p>
 <ul>
-<li><code>@D</code> — RSI Divergence filters</li>
-<li><code>@E</code> — Extra Indicators</li>
-<li><code>@P</code> — Price alerts</li>
+<li><code>@D</code> — RSIダイバージェンスフィルター</li>
+<li><code>@E</code> — 追加インジケーター</li>
+<li><code>@P</code> — 価格アラート</li>
 </ul>
 <h3>例</h3>
 <div class="code-block">
-<p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ RSI ダイバージェンス、BTCUSDT.P、タイトルに「Bull」を含む、形成中、メイン 5m、サブ 1m</p>
+<p><code>@D@BTC@Bull@forming@5m@1m</code></p>
+<p class="desc">→ RSIダイバージェンス、BTCUSDT.P、タイトルに「Bull」を含む、Forming、メイン5分、サブ1分</p>
 </div>
 <div class="code-block">
-<p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ RSI ダイバージェンス、ETHUSDT.P、タイトルに「Bear」を含む、確定、15m、サブ時間足なし</p>
+<p><code>@D@ETH@Bear@confirmed@15m</code></p>
+<p class="desc">→ RSIダイバージェンス、ETHUSDT.P、タイトルに「Bear」を含む、Confirmed、15分、サブ時間軸なし</p>
 </div>
 <img alt="キーワード例" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
-<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ 追加インジケーター、BTC、タイトルに「Sell」を含む、30m</span></p>
-<p><code>"@E@BTC@Buy@1h"</code></p>
-<p><code>"@E@ETH@Breakout@15m"</code></p>
-<p><code>"@E@BTC@Breakdown@5m"</code></p>
-<p><code>"@E@BTC@Near Support@1m"</code></p>
-<p><code>"@E@BTC@Near Resistance@5m"</code></p>
-<p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ 価格アラート、BTC、タイトルに「Up」を含む</span></p>
-<p><code>"@P@ETH@Down"</code></p>
+<p><code>@E@BTC@Sell@30m</code> <span class="desc">→ 追加インジケーター、BTC銘柄、タイトルに「Sell」を含む、30分</span></p>
+<p><code>@E@BTC@Buy@1h</code></p>
+<p><code>@E@ETH@Breakout@15m</code></p>
+<p><code>@E@BTC@Breakdown@5m</code></p>
+<p><code>@E@BTC@Near Support@1m</code></p>
+<p><code>@E@BTC@Near Resistance@5m</code></p>
+<p><code>@E@BTC@EMA50@1h</code></p>
+<p><code>@P@BTC@Up</code> <span class="desc">→ 価格アラート、BTC銘柄、タイトルに「Up」を含む</span></p>
+<p><code>@P@ETH@Down</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
 <h2>🔀 シグナル組み合わせアラート</h2>
-<p>複数のTradingViewシグナルを組み合わせて、新しいシグナルやフィルター済みシグナルを作成できます。</p>
+<p>選択したソースからの一致したスマホ通知やWebhookメッセージと適格なDivAlarmシグナルを組み合わせて組み合わせアラートを作成します。キーワードルールと時間ウィンドウ設定は両モードで機能します。</p>
 <div class="image-row">
-<img alt="組み合わせアラート設定" src="../images/image%205_tv.png"/>
+<img alt="組み合わせアラーム設定" src="../images/image%205_tv.png"/>
 <div>
-<p>アラームを発火させるために、指定した時間内に満たすべき条件を設定します。</p>
-<p><strong>例：</strong><br/> 1時間30分以内に：<br/> • 「キーワードAのアラート」AND<br/> • 「キーワードBのアラート」が両方届く、または<br/> • 「キーワードCのアラート」が届く</p>
-<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
+<p>アラームが発動するために時間ウィンドウ内で満たすべき条件を設定します。</p>
+<p><strong>例:</strong><br/>1時間30分以内に:<br/> • 「キーワードAのアラート」かつ<br/> • 「キーワードBのアラート」が両方届く、または<br/> • 「キーワードCのアラート」が届く</p>
+<p><strong>アラームの組み合わせ</strong>に<code>(1&amp;2)|3</code>を、<strong>時間ウィンドウ</strong>に<code>1h 30m</code>を入力します。</p>
 </div>
 </div>
 <div class="highlight">
 <p><strong>&amp;</strong> = 「AND」（両方の条件を満たす必要があります）</p>
-<p><strong>|</strong> = 「OR」（どちらかの条件を満たせばOK）</p>
-<p>個別のキーワードアラームを無効にしていても、条件を満たせば組み合わせは発火します。</p>
-<p><strong>組み合わせアラートでも自動発注が可能です！</strong></p>
+<p><strong>|</strong> = 「OR」（どちらかの条件を満たせばよい）</p>
+<p>個別のキーワードアラームが無効でも、条件が満たされれば組み合わせでトリガーされます。</p>
+<p><strong>組み合わせアラームでも自動注文が可能です！</strong></p>
 </div>
 </div>
 </main>
@@ -475,7 +505,7 @@
 <div class="da-foot-grid">
 <div><a class="da-brand" href="index.html"><img alt="" height="30" src="../images/divblue3-140.png" width="30"/><span>DivAlarm</span></a><p class="da-foot-risk">DivAlarmはアラートツールであり、投資助言ではありません。暗号資産の先物取引には大きな損失リスクがあります。過去のシグナルは将来の結果を保証しません。</p></div>
 <div><p class="da-foot-h">製品</p><ul><li><a href="features.html">機能</a></li><li><a href="performance.html">パフォーマンス</a></li><li><a href="pricing.html">料金</a></li><li><a href="downloads.html">ダウンロード</a></li></ul></div>
-<div><p class="da-foot-h">ガイド</p><ul><li><a href="rsi-divergence.html">RSIダイバージェンス</a></li><li><a href="user-manual.html">ユーザーマニュアル</a></li><li><a href="tradingview-webhook.html">TradingView設定</a></li><li><a href="qna.html">よくある質問</a></li></ul></div>
+<div><p class="da-foot-h">ガイド</p><ul><li><a href="rsi-divergence.html">RSIダイバージェンス</a></li><li><a href="user-manual.html">ユーザーマニュアル</a></li><li><a href="tradingview-webhook.html?lang=ja">TradingView設定</a></li><li><a href="qna.html">よくある質問</a></li></ul></div>
 <div><p class="da-foot-h">会社</p><ul><li><a href="features.html#ref-reward">紹介報酬</a></li><li><a href="mailto:info@wise-signal.com">お問い合わせ</a></li></ul></div>
 </div>
 <div class="da-legal" data-keep="1" id="wisesignal-legal-footer">
@@ -486,6 +516,6 @@
 </div>
 </div>
 </footer>
-<script data-da-chrome="" src="../js/site.js?v=78308067" type="module"></script>
+<script data-da-chrome="" src="../js/site.js?v=7b2284da" type="module"></script>
 </body>
 </html>

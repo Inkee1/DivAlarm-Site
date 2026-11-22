@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<html lang="ur">
+<html dir="rtl" lang="ur">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView کے لیے DivAlarm ویب ہُک سیٹ اپ گائیڈ</title>
+<title>DivAlarm کے لیے کلیدی لفظ الارم گائیڈ</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -11,7 +11,7 @@
 <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
@@ -19,13 +19,13 @@
       line-height: 1.8;
       min-height: 100vh;
     }
-    
+
     .manual-container {
       max-width: 950px;
       margin: 0 auto;
       padding: 50px 40px;
     }
-    
+
     .back-link {
       display: inline-block;
       color: #00d4ff;
@@ -35,7 +35,7 @@
       transition: opacity 0.2s;
     }
     .back-link:hover { opacity: 0.8; }
-    
+
     .manual-title {
       font-size: 3rem;
       font-weight: 700;
@@ -45,7 +45,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
+
     .toc {
       background: rgba(12, 12, 24, 0.9);
       padding: 2rem 2.5rem;
@@ -67,7 +67,7 @@
       transition: color 0.2s;
     }
     .toc a:hover { color: #00d4ff; }
-    
+
     .manual-section {
       margin-bottom: 4rem;
       scroll-margin-top: 84px;
@@ -93,7 +93,7 @@
       color: rgba(248, 250, 252, 0.9);
     }
     .manual-section ol, .manual-section ul {
-      margin-left: 2rem;
+      margin-inline-start: 2rem;
       margin-bottom: 1.5rem;
     }
     .manual-section li {
@@ -121,12 +121,12 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 1.05rem;
     }
-    
+
     .highlight {
       background: rgba(0, 212, 255, 0.12);
       padding: 1.5rem 2rem;
       border-radius: 12px;
-      border-left: 5px solid #00d4ff;
+      border-inline-start: 5px solid #00d4ff;
       margin: 1.5rem 0;
       font-size: 1.15rem;
     }
@@ -134,11 +134,11 @@
       background: rgba(249, 115, 22, 0.12);
       padding: 1.5rem 2rem;
       border-radius: 12px;
-      border-left: 5px solid #f97316;
+      border-inline-start: 5px solid #f97316;
       margin: 1.5rem 0;
       font-size: 1.15rem;
     }
-    
+
     .code-block {
       background: rgba(12, 12, 24, 0.95);
       padding: 1.5rem 2rem;
@@ -156,9 +156,9 @@
     .code-block .desc {
       color: rgba(248, 250, 252, 0.6);
       font-size: 1rem;
-      margin-left: 1rem;
+      margin-inline-start: 1rem;
     }
-    
+
     .image-row {
       display: flex;
       gap: 1.5rem;
@@ -176,7 +176,7 @@
       flex: 1;
       min-width: 300px;
     }
-    
+
     /* Quick Summary (collapsible video embeds) */
     #quick-summary h2 { margin-top: 0; }
     .video-toggle {
@@ -189,7 +189,7 @@
     .video-toggle h3 { margin: 0; }
     .video-toggle-btn {
       width: 100%;
-      text-align: left;
+      text-align: start;
       padding: 1.1rem 1.25rem;
       background: transparent;
       border: none;
@@ -253,22 +253,22 @@
       .video-toggle-btn { padding: 1rem 1.1rem; }
     }
   </style>
-<link href="../css/lang-switcher.css?v=21ddac23" rel="stylesheet" type="text/css"/>
+<link href="../css/lang-switcher.css?v=dbe2c3bc" rel="stylesheet" type="text/css"/>
 <script src="../js/posthog.js"></script>
-<script defer="" src="../js/lang-switcher.js?v=21ddac23" type="text/javascript"></script>
-<meta content="جانیں کہ TradingView الرٹس کو DivAlarm ویب ہُکس، کی ورڈ الرٹس، سگنل کمبینیشنز، اور آٹو آرڈر ورک فلو سے کیسے جوڑیں۔" name="description"/>
-<meta content="TradingView کے لیے DivAlarm ویب ہُک سیٹ اپ گائیڈ" property="og:title"/>
-<meta content="جانیں کہ TradingView الرٹس کو DivAlarm ویب ہُکس، کی ورڈ الرٹس، سگنل کمبینیشنز، اور آٹو آرڈر ورک فلو سے کیسے جوڑیں۔" property="og:description"/>
-<meta content="TradingView کے لیے DivAlarm ویب ہُک سیٹ اپ گائیڈ" name="twitter:title"/>
-<meta content="جانیں کہ TradingView الرٹس کو DivAlarm ویب ہُکس، کی ورڈ الرٹس، سگنل کمبینیشنز، اور آٹو آرڈر ورک فلو سے کیسے جوڑیں۔" name="twitter:description"/>
+<script defer="" src="../js/lang-switcher.js?v=8721e8dc" type="text/javascript"></script>
+<meta content="DivAlarm کلیدی لفظ کے الارم کو Android فون نوٹیفکیشنز یا TradingView ویب ہکس سے سیٹ کریں، سگنل مجموعہ اور خودکار آرڈرز کے ساتھ۔" name="description"/>
+<meta content="DivAlarm کے لیے کلیدی لفظ الارم گائیڈ" property="og:title"/>
+<meta content="DivAlarm کلیدی لفظ کے الارم کو Android فون نوٹیفکیشنز یا TradingView ویب ہکس سے سیٹ کریں، سگنل مجموعہ اور خودکار آرڈرز کے ساتھ۔" property="og:description"/>
+<meta content="DivAlarm کے لیے کلیدی لفظ الارم گائیڈ" name="twitter:title"/>
+<meta content="DivAlarm کلیدی لفظ کے الارم کو Android فون نوٹیفکیشنز یا TradingView ویب ہکس سے سیٹ کریں، سگنل مجموعہ اور خودکار آرڈرز کے ساتھ۔" name="twitter:description"/>
 <meta content="https://www.divalarm.com/ur/tradingview-webhook.html" property="og:url"/>
 <meta content="DivAlarm" property="og:site_name"/>
 <meta content="ur_PK" property="og:locale"/>
 <meta content="article" property="og:type"/><meta content="https://www.divalarm.com/images/og-cover.png" property="og:image"/><meta content="1080" property="og:image:width"/><meta content="649" property="og:image:height"/><meta content="https://www.divalarm.com/images/og-cover.png" name="twitter:image"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"HowTo","name":"TradingView ویب ہُکس کو DivAlarm سے کیسے جوڑیں","description":"کی ورڈ الارمز، سگنل کمبینیشنز، اور آٹو آرڈر ورک فلو کے لیے TradingView الرٹس کو DivAlarm سے جوڑیں۔","url":"https://www.divalarm.com/ur/tradingview-webhook.html","step":[{"@type":"HowToStep","name":"TradingView الرٹ بنائیں","text":"TradingView میں انڈیکیٹر پر رائٹ کلک کریں اور جس انڈیکیٹر کو استعمال کرنا چاہتے ہیں اس پر Add Alert منتخب کریں۔"},{"@type":"HowToStep","name":"ویب ہُک URL پیسٹ کریں","text":"TradingView نوٹیفکیشنز میں Webhook URL فعال کریں اور DivAlarm ایپ سے کاپی کیا گیا URL پیسٹ کریں۔"},{"@type":"HowToStep","name":"میسج کی ورڈ شامل کریں","text":"الرٹ میسج میں ایک کی ورڈ درج کریں تاکہ DivAlarm آنے والے TradingView سگنل کو میچ کر سکے۔"},{"@type":"HowToStep","name":"DivAlarm میں کی ورڈ رجسٹر کریں","text":"الارم ٹرگر کرنے کے لیے ایپ کے Keyword Include سیکشن میں وہی کی ورڈ شامل کریں۔"},{"@type":"HowToStep","name":"ورک فلو کو مزید بڑھائیں","text":"بنیادی ویب ہُک فلو درست چلنے لگے تو سگنل کمبینیشنز یا آٹو آرڈرز استعمال کریں۔"}]},{"@type":"WebPage","url":"https://www.divalarm.com/ur/tradingview-webhook.html","name":"TradingView کے لیے DivAlarm ویب ہُک سیٹ اپ گائیڈ","description":"جانیں کہ TradingView الرٹس کو DivAlarm ویب ہُکس، کی ورڈ الرٹس، سگنل کمبینیشنز، اور آٹو آرڈر ورک فلو سے کیسے جوڑیں۔","inLanguage":"ur","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ہوم","item":"https://www.divalarm.com/ur/"},{"@type":"ListItem","position":2,"name":"TradingView ویب ہُک گائیڈ","item":"https://www.divalarm.com/ur/tradingview-webhook.html"}]}]}</script>
-<link href="https://www.divalarm.com/ur/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/><link data-da-chrome="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"HowTo","name":"TradingView ویب ہکس کو DivAlarm سے کیسے جوڑیں","description":"Webhook keywords موڈ استعمال کریں تاکہ TradingView الرٹس کو DivAlarm سے کلیدی لفظ کا الارم، سگنل مجموعہ اور خودکار آرڈر ورک فلو کے لیے جوڑا جا سکے۔","url":"https://www.divalarm.com/ur/tradingview-webhook.html","step":[{"@type":"HowToStep","name":"Webhook keywords منتخب کریں","text":"DivAlarm میں کلیدی لفظ کا الارم کھولیں اور ویب ہک کی ورڈز منتخب کریں تاکہ آپ کا ذاتی ویب ہک یو آر ایل ظاہر ہو۔"},{"@type":"HowToStep","name":"TradingView الرٹ بنائیں","text":"TradingView میں انڈیکیٹر پر رائٹ کلک کریں اور جس انڈیکیٹر پر الرٹ لگانا ہے اس پر Add Alert منتخب کریں۔"},{"@type":"HowToStep","name":"ویب ہک یو آر ایل پیسٹ کریں","text":"TradingView نوٹیفکیشنز میں ویب ہک یو آر ایل فعال کریں اور DivAlarm ایپ سے کاپی کیا گیا یو آر ایل پیسٹ کریں۔"},{"@type":"HowToStep","name":"پیغام میں کلیدی لفظ شامل کریں","text":"الرٹ پیغام میں ایک کلیدی لفظ درج کریں تاکہ DivAlarm آنے والے TradingView سگنل سے میچ کر سکے۔"},{"@type":"HowToStep","name":"کلیدی لفظ کو DivAlarm میں رجسٹر کریں","text":"ایپ کے Keyword Include سیکشن میں وہی کلیدی لفظ شامل کریں تاکہ الارم متحرک ہو سکے۔"},{"@type":"HowToStep","name":"ورک فلو کو بڑھائیں","text":"بنیادی ویب ہک ورک فلو درست کام کرنے کے بعد سگنل مجموعہ یا خودکار آرڈرز استعمال کریں۔"}]},{"@type":"WebPage","url":"https://www.divalarm.com/ur/tradingview-webhook.html","name":"DivAlarm کے لیے کلیدی لفظ الارم گائیڈ","description":"DivAlarm کلیدی لفظ کے الارم کو Android فون نوٹیفکیشنز یا TradingView ویب ہکس سے سیٹ کریں، سگنل مجموعہ اور خودکار آرڈرز کے ساتھ۔","inLanguage":"ur","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ہوم","item":"https://www.divalarm.com/ur/"},{"@type":"ListItem","position":2,"name":"کلیدی لفظ الارم گائیڈ","item":"https://www.divalarm.com/ur/tradingview-webhook.html"}]}]}</script>
+<link href="https://www.divalarm.com/ur/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/zh-hant/tradingview-webhook.html" hreflang="zh-Hant" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/><link data-da-chrome="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"/>
 <link data-da-chrome="" href="../css/site.css?v=75db1564" rel="stylesheet"/>
 <link data-da-chrome="" href="../css/legacy-skin.css?v=75db1564" rel="stylesheet"/>
 </head>
@@ -277,7 +277,7 @@
 <div class="da-wrap da-top-row">
 <a class="da-brand" href="index.html"><img alt="" height="30" src="../images/divblue3-140.png" width="30"/><span>DivAlarm</span></a>
 <nav aria-label="مرکزی مینو" class="da-nav" id="da-nav">
-<a href="features.html">فیچرز</a><a href="performance.html">کارکردگی</a><a aria-current="page" href="tradingview-webhook.html">TradingView</a><a href="pricing.html">قیمتیں</a><a href="qna.html">سوال و جواب</a>
+<a href="features.html">فیچرز</a><a href="performance.html">کارکردگی</a><a aria-current="page" href="tradingview-webhook.html?lang=ur">TradingView</a><a href="pricing.html">قیمتیں</a><a href="qna.html">سوال و جواب</a>
 <div class="da-acct"><a href="sign-in-page.html" id="da-signin">سائن ان</a><a hidden="" href="my-account.html" id="da-account">میرا اکاؤنٹ</a><button hidden="" id="da-signout" type="button">سائن آؤٹ</button></div>
 </nav>
 <div class="da-actions">
@@ -289,76 +289,98 @@
 <a hidden="" href="sign-in-page.html" id="sign-btn2"></a>
 </header>
 <main class="manual-container" id="main">
-<a class="back-link" href="user-manual.html">← یوزر مینوئل پر واپس جائیں</a>
-<h1 class="manual-title">TradingView کے لیے DivAlarm ویب ہُک گائیڈ</h1>
-<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">کی ورڈ الارمز، ویب ہُک آٹومیشن، سگنل کمبینیشنز، اور ایکسچینج آٹو آرڈرز کے لیے TradingView الرٹس کو DivAlarm سے جوڑیں۔<br/>
-<a class="da-link" href="../en/tradingview-connect.html?lang=en" hreflang="en" dir="rtl">TradingView کنکشن ٹیسٹ اور پی سی پر سیٹ اپ (انگریزی میں)</a></p>
+<a class="back-link" href="user-manual.html">← یوزر مینول پر واپس جائیں</a>
+<h1 class="manual-title">DivAlarm کے لیے کلیدی لفظ الارم گائیڈ</h1>
+<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">فون کی اطلاعات یا TradingView ویب ہُک پیغامات سے کلیدی الفاظ منتخب کریں۔ آپ الارمز، سگنل مجموعے اور ایکسچینج خودکار آرڈرز کے لیے یہی اصول استعمال کر سکتے ہیں۔<br/> <a class="da-link" href="tradingview-connect.html?lang=ur" hreflang="ur">TradingView کنکشن ٹیسٹ اور پی سی سیٹ اپ</a></p>
 <!-- Table of Contents -->
 <div class="toc">
-<h3>📋 فہرستِ مضامین</h3>
+<h3>📋 مواد کا جدول</h3>
 <ul>
-<li><a href="#quick-summary">فوری خلاصہ</a></li>
-<li><a href="#keyword">کی ورڈ الرٹس</a></li>
-<li><a href="#auto-order">TradingView کے ساتھ آٹو آرڈر</a></li>
-<li><a href="#divalarm-keywords">DivAlarm سگنل کی ورڈز</a></li>
-<li><a href="#combination">سگنل کمبینیشن الرٹس</a></li>
+<li><a href="#keyword-source">کلیدی لفظ کا ماخذ منتخب کریں</a></li>
+<li><a href="#quick-summary">TradingView ویب ہک مثالیں</a></li>
+<li><a href="#keyword">کلیدی لفظ کے قواعد اور TradingView ویب ہک سیٹ اپ</a></li>
+<li><a href="#auto-order">کلیدی لفظ کا الارم · خودکار آرڈرز کے ساتھ خودکار آرڈر</a></li>
+<li><a href="#divalarm-keywords">DivAlarm سگنل کلیدی الفاظ</a></li>
+<li><a href="#combination">سگنل مجموعہ الرٹس</a></li>
 </ul>
+</div>
+<!-- Keyword Source Section -->
+<div class="manual-section" id="keyword-source">
+<h2>کلیدی لفظ کا ماخذ منتخب کریں</h2>
+<p><strong>کلیدی لفظ کا الارم · خودکار آرڈرز</strong> کھولیں اور صفحے کے اوپر سے ان پٹ منتخب کریں۔ مدد کے لیے سلیکٹر کے ساتھ <strong>؟</strong> پر ٹیپ کریں۔ دونوں موڈز میں آپ کے محفوظ شدہ کلیدی الفاظ، مجموعے اور الارم کی ترتیبات مشترک ہیں۔ ہر اکاؤنٹ <strong>5 کلیدی لفظ کے الارم مفت آزما سکتا ہے، بغیر کسی کارڈ کے</strong>۔ <strong>خودکار آرڈر صرف Pro صارفین کے لیے دستیاب ہے</strong>۔</p>
+<div class="highlight"><p><strong>ہر اکاؤنٹ کے لیے 5 مفت استعمال:</strong> فون کی اطلاعات کے کلیدی الفاظ، ویب ہُک کے کلیدی الفاظ اور مشترکہ الارم ایک ہی لائف ٹائم الاونس شیئر کرتے ہیں۔ ایک استعمال اس وقت شمار ہوگا جب کوئی مماثل الارم آپ کے فون پر کامیابی سے شیڈول ہو جائے۔ غیر مماثل پیغامات، ڈپلیکیٹ ڈیلیوریز اور ناکام شیڈولنگ پر کوئی کریڈٹ استعمال نہیں ہوتا۔ مفت استعمال کی تصدیق کے لیے انٹرنیٹ کنکشن ضروری ہے۔</p><p>یہ الاونس <strong>7 عمومی الارم سے الگ ہے</strong>، دوبارہ انسٹال کرنے کے بعد ری سیٹ نہیں ہوتا، اور اس میں خودکار آرڈرز شامل نہیں ہیں۔ آپ کے قواعد 5 استعمال کے بعد بھی محفوظ رہیں گے؛ جاری رکھنے کے لیے <strong>Pro</strong> منتخب کریں۔</p></div>
+<h3>فون کی اطلاعات کے کلیدی الفاظ (Android)</h3>
+<ol>
+<li><strong>فون کی اطلاعات کے کلیدی الفاظ</strong> منتخب کریں۔</li>
+<li>صفحے سے نوٹیفکیشن ایکسیس سیٹنگز کھولیں اور <strong>DivAlarm</strong> کو نوٹیفکیشن پڑھنے کی اجازت دیں۔</li>
+<li><strong>کی ورڈ شامل کریں</strong> میں وہ عبارت شامل کریں جو آپ مماثل نوٹیفکیشن کے عنوان یا باڈی میں دیکھنا چاہتے ہیں۔</li>
+<li>جب کوئی مماثل نوٹیفکیشن موصول ہو، DivAlarm آپ کے ترتیب دیے گئے الارم، مجموعہ اور خودکار آرڈر کے قواعد لاگو کرے گا۔</li>
+</ol>
+<p>دوسری ایپس کے نوٹیفکیشن پڑھنے کے لیے نوٹیفکیشن ایکسیس فعال رہنا ضروری ہے۔ DivAlarm صرف وہی عبارت میچ کر سکتا ہے جو Android فراہم کرے؛ گروپڈ سمریز، دہرائے گئے پیغامات، اور DivAlarm کے تیار کردہ الارم یا آرڈر-نتیجہ نوٹیفکیشنز کو نظر انداز کیا جاتا ہے۔ میسجنگ نوٹیفکیشنز میں صرف تازہ ترین پیغام چیک کیا جاتا ہے۔</p>
+<p>DivAlarm کے اپنے آنے والے سگنلز بھی اس موڈ میں کلیدی لفظ کے الارم اور آرڈرز کو ٹرگر کر سکتے ہیں۔ ان کے موجودہ فعال فلٹرز لاگو رہیں گے۔ آپ <a href="#divalarm-keywords" style="color: #00d4ff;">@D، @E، اور @P سگنل کلیدی الفاظ</a> استعمال کرتے رہ سکتے ہیں۔</p>
+<h3>ویب ہُک کے کلیدی الفاظ</h3>
+<p><strong>ویب ہُک کے کلیدی الفاظ</strong> منتخب کریں تاکہ آپ کے ذاتی ویب ہک یو آر ایل پر بھیجے گئے پیغامات وصول کیے جا سکیں، جن میں TradingView الرٹس بھی شامل ہیں۔ یو آر ایل اور کاپی بٹن صرف اسی موڈ میں ظاہر ہوں گے۔ نیچے <a href="#keyword" style="color: #00d4ff;">TradingView سیٹ اپ کے مراحل</a> پر عمل کریں۔</p>
+<div class="highlight">
+<p>موڈ تبدیل کرنے سے آپ کے محفوظ شدہ قواعد برقرار رہتے ہیں۔ فون موڈ میں ویب ہک پیغامات اس ڈیوائس پر کلیدی لفظ کے الارم یا آرڈرز کو ٹرگر نہیں کرتے۔ موجودہ صارفین ویب ہک موڈ میں شروع ہوتے ہیں، اس لیے ان کا موجودہ ویب ہک سیٹ اپ اس وقت تک جاری رہتا ہے جب تک وہ موڈ نہ بدلیں۔</p>
+<p>دوسری ایپس کے نوٹیفکیشن پڑھنا Android کی خصوصیت ہے؛ یہ iOS یا ویب پر دستیاب نہیں۔</p>
+</div>
 </div>
 <!-- Quick Summary Section -->
 <div class="manual-section" id="quick-summary">
-<h2>DivAlarm × TradingView – فوری خلاصہ</h2>
+<h2>DivAlarm × TradingView – ویب ہک مثالیں</h2>
+<p>یہ ویڈیوز <strong>ویب ہُک کے کلیدی الفاظ</strong> کے ورک فلو کو دکھاتی ہیں۔ ویب ہک یو آر ایل کے مراحل پر عمل کرنے سے پہلے وہ ماخذ منتخب کریں۔</p>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">TradingView کو ایپ سے جوڑیں</button>
+<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">TradingView کو ایپ سے منسلک کریں</button>
 </h3>
 <div class="video-toggle-panel" id="qs-connect-tv">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="TradingView کو ایپ سے جوڑیں" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="TradingView کو ایپ سے منسلک کریں" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">YouTube پر کھولیں</a></p>
 </div>
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">TradingView کے لیے فورس الارم سیٹ اپ</button>
+<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">TradingView کے لیے الارم سیٹ اپ کو فورس کریں</button>
 </h3>
 <div class="video-toggle-panel" id="qs-force-alarm">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="TradingView کے لیے فورس الارم سیٹ اپ" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="TradingView کے لیے الارم سیٹ اپ کو فورس کریں" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">YouTube پر کھولیں</a></p>
 </div>
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">TradingView سگنلز سے آٹو آرڈر</button>
+<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">TradingView سگنلز سے خودکار آرڈر</button>
 </h3>
 <div class="video-toggle-panel" id="qs-auto-order">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="TradingView سگنلز سے آٹو آرڈر" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="TradingView سگنلز سے خودکار آرڈر" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">YouTube پر کھولیں</a></p>
 </div>
 </div>
-<div class="video-toggle">
+<div class="video-toggle" id="exchange-api-setup" style="scroll-margin-top: 84px;">
 <h3>
-<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">ایکسچینج API کی سیٹ اپ</button>
+<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">ایکسچینج اے پی آئی کی سیٹ اپ</button>
 </h3>
 <div class="video-toggle-panel" id="qs-exchange-api">
-<p>Bitget کی API کلید بناتے وقت <strong>Read-write</strong> منتخب کریں۔ آرڈر دینے کے لیے <strong>Futures order</strong> اور پوزیشنیں دیکھنے کے لیے <strong>Futures Holdings</strong> دونوں فعال کریں۔</p>
+<p>Bitget کی کی تخلیق کرتے وقت <strong>Read-write</strong> منتخب کریں۔ آرڈرز دینے کے لیے <strong>Futures order</strong> اور پوزیشنز دیکھنے کے لیے <strong>Futures Holdings</strong> دونوں کو فعال کریں۔</p>
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="ایکسچینج API کی سیٹ اپ" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="ایکسچینج اے پی آئی کی سیٹ اپ" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" rel="noopener noreferrer" target="_blank">YouTube پر کھولیں</a></p>
 </div>
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">TradingView سے کسٹم انڈیکیٹر کمبینیشنز بنائیں</button>
+<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">TradingView سے اپنی مرضی کے انڈیکیٹر مجموعے بنائیں</button>
 </h3>
 <div class="video-toggle-panel" id="qs-custom-indicators">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="TradingView سے کسٹم انڈیکیٹر کمبینیشنز بنائیں" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="TradingView سے اپنی مرضی کے انڈیکیٹر مجموعے بنائیں" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">YouTube پر کھولیں</a></p>
 </div>
@@ -366,85 +388,93 @@
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
-<h2>🔔 کی ورڈ الرٹس</h2>
-<h3>TradingView میں ویب ہُک شامل کرنا</h3>
+<h2>🔔 کلیدی لفظ کے قواعد اور TradingView ویب ہک سیٹ اپ</h2>
+<p><strong>کلیدی لفظ کا الارم · خودکار آرڈرز</strong> میں وہ عبارت <strong>کی ورڈ شامل کریں</strong> میں شامل کریں جسے آپ میچ کرنا چاہتے ہیں۔ فون موڈ میں نوٹیفکیشن کے عنوان اور باڈی چیک ہوتے ہیں؛ ویب ہک موڈ میں آنے والے ویب ہک کا متن چیک ہوتا ہے۔ <a href="#keyword-source" style="color: #00d4ff;">اپنا ماخذ منتخب کریں</a> اس سے پہلے کہ آپ کوئی قاعدہ آزمائیں۔</p>
+<h3>TradingView میں ویب ہک شامل کرنا</h3>
+<p><strong>ویب ہُک کے کلیدی الفاظ</strong> منتخب کریں، <strong>کی ورڈ شامل کریں</strong> میں <code dir="ltr">AA</code> شامل کریں، اور اس کا الارم آن کریں۔ کسی بھی کلیدی لفظ کے قاعدے یا مجموعے کے لیے خودکار آرڈر بند رکھیں جو AA سے میچ کرتا ہو جب آپ حقیقی TradingView الرٹ کو ٹیسٹ کر رہے ہوں۔ <strong>ویب ہک یو آر ایل</strong> کو پھیلائیں تاکہ آپ اپنی ذاتی یو آر ایل کاپی کر سکیں۔ یو آر ایل ہیڈنگ کے ساتھ <strong>؟</strong> پر ٹیپ کریں تاکہ تصویری مراحل دیکھ سکیں۔</p>
 <img alt="TradingView الرٹ شامل کریں" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>TradingView میں جس انڈیکیٹر سے آپ سگنلز لینا چاہتے ہیں اس پر رائٹ کلک کریں اور "Add Alert on ~" پر کلک کریں۔</p>
-<img alt="Webhook URL سیٹنگ" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
-<img alt="نوٹیفکیشن سیٹنگز" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>"Notifications" سیکشن میں "Webhook URL" کو چیک کریں اور ایپ سے کاپی کیا گیا ایڈریس نیچے والے اِن پٹ فیلڈ میں پیسٹ کریں۔</p>
-<p>ایک بار سیٹ ہو جائے تو، دوسرے الرٹس کے لیے یہ خودکار طور پر چیک/فل ہو جائے گا۔</p>
-<img alt="میسج سیٹنگز" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>"Messages" سیکشن میں "Message" کے تحت، اپنی مرضی کا کوئی بھی کی ورڈ شامل کریں (مثلاً "AAA")۔</p>
-<p>TradingView الرٹ شیڈول کرنے کے لیے "Create" پر کلک کریں۔</p>
+<p>TradingView میں اس انڈیکیٹر پر رائٹ کلک کریں جس سے آپ سگنل وصول کرنا چاہتے ہیں اور "Add Alert on ~" پر کلک کریں۔</p>
+<img alt="ویب ہک یو آر ایل کی سیٹنگ" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
+<img alt="نوٹیفکیشن کی ترتیبات" src="../images/image_tv.png" style="max-width: 600px;"/>
+<p><strong>نوٹیفکیشنز</strong> کھولیں، <strong>ویب ہک یو آر ایل</strong> فعال کریں، اپنی ذاتی یو آر ایل پیسٹ کریں، اور <strong>Apply</strong> منتخب کریں۔</p>
+<p>آپ اسی یو آر ایل کو دیگر الرٹس کے لیے بھی استعمال کر سکتے ہیں۔ اگر کسی نئے الرٹ میں پہلے سے آپ کا یو آر ایل موجود ہے تو چیک کریں کہ باکس فعال ہے اور ایڈریس درست ہے۔ ہر موجودہ الرٹ کو الگ الگ چیک کریں۔</p>
+<p>ایک بار قیمت ٹیسٹ کے لیے <strong>قیمت → چینل سے باہر</strong> اور <strong>صرف ایک بار</strong> منتخب کریں۔ دونوں حدیں موجودہ قیمت کے ایک طرف رکھیں۔ مثال کے طور پر، اگر قیمت 100 ہے تو نچلی حد 98 اور اوپری حد 99 رکھیں۔</p>
+<img alt="پیغام کی ترتیبات" src="../images/image%201_tv.png" style="max-width: 680px;"/>
+<p>TradingView اور ایپ اسکرین شاٹس میں <code dir="ltr">AAA</code> دکھایا گیا ہے کہ کلیدی لفظ کہاں ڈالنا ہے۔ اس ٹیسٹ کے لیے <strong>پیغام</strong> میں <code dir="ltr">AA Webhook test</code> درج کریں یا اپنا رجسٹرڈ کلیدی لفظ <code dir="ltr">AA</code> موجودہ پیغام میں شامل کریں، پھر تبدیلی لاگو کریں۔</p>
+<p><strong>تخلیق کریں</strong> منتخب کریں۔ جب شرط پوری ہو جائے تو TradingView الرٹ لاگ اور اپنے فون پر الارم چیک کریں۔</p>
 <h3>ایپ میں TradingView الرٹس وصول کرنا</h3>
-<img alt="ایپ کی ورڈ سیٹنگز" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>ایپ میں 'Keyword Include' سیکشن میں کی ورڈ (مثلاً "AAA") شامل کریں۔ جب TradingView الرٹ کے "Message" میں وہ کی ورڈ موجود ہوگا تو سیٹنگ کے مطابق الارم بج جائے گا۔</p>
+<img alt="ایپ کلیدی لفظ کی ترتیبات" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
+<p><strong>ویب ہُک کے کلیدی الفاظ</strong> منتخب رکھیں۔ ایسا پیغام جس میں <code dir="ltr">AA</code> ہو، اس کلیدی لفظ کے لیے فعال کیا گیا الارم چلا دے گا۔ جب آپ فارغ ہو جائیں تو AA ٹیسٹ رول بند کر دیں۔</p>
+<p>سرور سے اپنے Android فون تک ترسیل چیک کرنے کے لیے <a class="da-link" href="tradingview-connect.html?lang=ur#connection-test">کنکشن ٹیسٹ سے ٹیسٹ سگنل بھیجیں</a>۔ یہ ڈائیگنوسٹک کلیدی لفظ کے قواعد اور ایکسچینج آرڈرز کو نظر انداز کرتا ہے اور آپ کے مفت الارم کوٹہ میں سے کچھ استعمال نہیں کرتا۔</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 TradingView الرٹس کے ساتھ آٹو آرڈر</h2>
-<img alt="آٹو آرڈر سیٹنگز" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>آپ 'آٹو آرڈرز' سیٹ کر سکتے ہیں تاکہ کی ورڈ الرٹس موصول ہونے پر ایکسچینجز کو بھیجے جائیں۔</p>
-<img alt="ایکسچینج API سیٹنگز" src="../images/image%202_tv.png" style="max-width: 500px;"/>
+<h2>🤖 کلیدی لفظ کے الارم کے ساتھ خودکار آرڈر</h2>
+<img alt="خودکار آرڈر کی ترتیبات" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<p><strong>Pro</strong> کے ساتھ، آپ ہر کلیدی لفظ کے قاعدے یا مجموعے کے ساتھ خودکار آرڈر منسلک کر سکتے ہیں۔ صرف الارم والے قواعد کے لیے خودکار آرڈر بند رکھیں۔ جب فعال ہو، تو منتخب کردہ ماخذ یا اہل DivAlarm سگنل سے میچ ہونے پر آپ کے ایکسچینج پر حقیقی آرڈر لگ سکتا ہے۔</p>
+<img alt="ایکسچینج API کی ترتیبات" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>آٹو آرڈرز کے لیے سپورٹڈ ایکسچینجز: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>آپ کو ایپ کے Settings صفحے میں API keys درج کرنا ہوں گی۔</p>
+<p>اپنے ایکسچینج API کیز <strong>سیٹنگز → خودکار آرڈر کی ترتیبات</strong> میں درج کریں۔ Android ایپ Binance، Bybit، OKX، Bitget، Gate، اور Bitunix کو سپورٹ کرتی ہے۔</p>
+<p>کلیدی لفظ کی قطار کے دائیں جانب <strong>کارٹ</strong> پر ٹیپ کریں تاکہ ایکسچینج، سمبل اور آرڈر کی ترتیبات منتخب کریں، پھر اس قاعدے کے لیے خودکار آرڈر فعال کریں۔ اگر آپ Bitget استعمال کرتے ہیں تو <a class="da-link" href="#exchange-api-setup">ایکسچینج API کی سیٹ اپ</a> میں دو لازمی اجازتیں چیک کریں۔</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
-<h2>📝 DivAlarm سگنلز کو کی ورڈز کے طور پر رجسٹر کرنا</h2>
-<img alt="DivAlarm سگنل کی ورڈز" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>DivAlarm کے اپنے الرٹس کو بھی 'Keyword Combinations' میں شامل کیا جا سکتا ہے (کمبینیشن الرٹس یا آٹو آرڈرز کے لیے)۔</p>
+<h2>📝 DivAlarm سگنلز کو کلیدی الفاظ کے طور پر رجسٹر کرنا</h2>
+<img alt="DivAlarm سگنل کلیدی الفاظ" src="../images/image%203_tv.png" style="max-width: 500px;"/>
+<p>DivAlarm کے اپنے سگنلز <strong>دونوں ان پٹ موڈز</strong> میں کلیدی لفظ کے الارم، مجموعے اور خودکار آرڈر چلا سکتے ہیں۔ انہیں نیچے دیے گئے فارمیٹس کے ساتھ رجسٹر کریں۔ سگنل کے اصل فعال فلٹرز لاگو رہیں گے؛ کلیدی لفظ شامل کرنے سے غیر فعال سگنل فلٹر فعال نہیں ہوتا۔</p>
 <div class="highlight">
-<p><strong>فارمیٹ:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>آر ایس آئی ڈائیورجنس (@D):</strong><br/><code dir="ltr" style="overflow-wrap: anywhere;">@D@Kind@Direction@Status@MainTimeframe[@SubTimeframe]</code></p>
+<p>اسٹیٹس ویلیوز یہ ہیں: <code dir="ltr">early_completed</code>، <code dir="ltr">early_confirmed</code>، <code dir="ltr">confirmed</code>، اور <code dir="ltr">forming</code>۔ فارمِنگ سگنلز کے لیے دوسرا ٹائم فریم استعمال ہوتا ہے۔</p>
+<p><strong>اضافی انڈیکیٹرز (@E):</strong><br/><code dir="ltr" style="overflow-wrap: anywhere;">@E@Kind@TitleKeyword@Timeframe</code></p>
+<p><strong>قیمت کے الرٹس (@P):</strong><br/><code dir="ltr" style="overflow-wrap: anywhere;">@P@Kind@TitleKeyword</code></p>
+<p>موجودہ @D قواعد جن میں پہچانا گیا اسٹیٹس نہیں ہے، اب بھی سپورٹڈ ہیں؛ ان کے چوتھے اور پانچویں فیلڈز میں مین اور سیکنڈری ٹائم فریم ہی رہے گا۔</p>
 </div>
 <p><strong>الارم کی اقسام:</strong></p>
 <ul>
-<li><code>@D</code> — RSI Divergence filters</li>
-<li><code>@E</code> — Extra Indicators</li>
-<li><code>@P</code> — Price alerts</li>
+<li><code dir="ltr">@D</code> — آر ایس آئی ڈائیورجنس فلٹرز</li>
+<li><code dir="ltr">@E</code> — اضافی انڈیکیٹرز</li>
+<li><code dir="ltr">@P</code> — قیمت کے الرٹس</li>
 </ul>
 <h3>مثالیں</h3>
 <div class="code-block">
-<p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ RSI Divergence، BTCUSDT.P، ٹائٹل میں "Bull" شامل ہو، Forming، مین 5m، سب 1m</p>
+<p><code dir="ltr">@D@BTC@Bull@forming@5m@1m</code></p>
+<p class="desc">→ آر ایس آئی ڈائیورجنس، BTCUSDT.P، عنوان میں "Bull" ہو، فارمِنگ، مین 5m، سب 1m</p>
 </div>
 <div class="code-block">
-<p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ RSI Divergence، ETHUSDT.P، ٹائٹل میں "Bear" شامل ہو، Complete، 15m، کوئی سب ٹائم فریم نہیں</p>
+<p><code dir="ltr">@D@ETH@Bear@confirmed@15m</code></p>
+<p class="desc">→ آر ایس آئی ڈائیورجنس، ETHUSDT.P، عنوان میں "Bear" ہو، کنفرمڈ، 15m، کوئی سب ٹائم فریم نہیں</p>
 </div>
-<img alt="کی ورڈ کی مثال" src="../images/image%204_tv.png" style="max-width: 500px;"/>
+<img alt="کلیدی لفظ کی مثال" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
-<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ اضافی انڈیکیٹر، BTC کوائن، ٹائٹل میں "Sell" شامل ہو، 30m</span></p>
-<p><code>"@E@BTC@Buy@1h"</code></p>
-<p><code>"@E@ETH@Breakout@15m"</code></p>
-<p><code>"@E@BTC@Breakdown@5m"</code></p>
-<p><code>"@E@BTC@Near Support@1m"</code></p>
-<p><code>"@E@BTC@Near Resistance@5m"</code></p>
-<p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ پرائس الرٹ، BTC کوائن، ٹائٹل میں "Up" شامل ہو</span></p>
-<p><code>"@P@ETH@Down"</code></p>
+<p><code dir="ltr">@E@BTC@Sell@30m</code> <span class="desc">→ اضافی انڈیکیٹر، BTC کوائن، عنوان میں "Sell" ہو، 30m</span></p>
+<p><code dir="ltr">@E@BTC@Buy@1h</code></p>
+<p><code dir="ltr">@E@ETH@Breakout@15m</code></p>
+<p><code dir="ltr">@E@BTC@Breakdown@5m</code></p>
+<p><code dir="ltr">@E@BTC@Near Support@1m</code></p>
+<p><code dir="ltr">@E@BTC@Near Resistance@5m</code></p>
+<p><code dir="ltr">@E@BTC@EMA50@1h</code></p>
+<p><code dir="ltr">@P@BTC@Up</code> <span class="desc">→ قیمت کا الرٹ، BTC کوائن، عنوان میں "Up" ہو</span></p>
+<p><code dir="ltr">@P@ETH@Down</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 سگنل کمبینیشن الرٹس</h2>
-<p>متعدد TradingView سگنلز کو ملا کر نئے یا فلٹرڈ سگنلز بنائیں۔</p>
+<h2>🔀 سگنل مجموعہ الرٹس</h2>
+<p>منتخب کردہ ماخذ سے میچ ہونے والی فون نوٹیفکیشنز یا ویب ہک پیغامات کو اہل DivAlarm سگنلز کے ساتھ ملا کر مجموعہ الرٹ بنائیں۔ کلیدی لفظ کے قواعد اور وقت کی ونڈو کی ترتیبات دونوں موڈز میں کام کرتی ہیں۔</p>
 <div class="image-row">
-<img alt="کمبینیشن الرٹ سیٹنگز" src="../images/image%205_tv.png"/>
+<img alt="مجموعہ الرٹ کی ترتیبات" src="../images/image%205_tv.png"/>
 <div>
-<p>ایسی شرائط سیٹ کریں جو ایک وقت کی ونڈو کے اندر پوری ہونے پر الارمز ٹرگر ہوں۔</p>
-<p><strong>مثال:</strong><br/> 1 گھنٹہ 30 منٹ کے اندر:<br/> • 'کی ورڈ A والا الرٹ' AND<br/> • 'کی ورڈ B والا الرٹ' دونوں آئیں، OR<br/> • 'کی ورڈ C والا الرٹ' آئے</p>
-<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
+<p>وہ شرائط سیٹ کریں جو الارم کے چلنے کے لیے وقت کی ونڈو میں پوری ہونی چاہئیں۔</p>
+<p><strong>مثال:</strong><br/> 1 گھنٹہ 30 منٹ کے اندر:<br/> • 'کلیدی لفظ A کے ساتھ الرٹ' اور<br/> • 'کلیدی لفظ B کے ساتھ الرٹ' دونوں آئیں، یا<br/> • 'کلیدی لفظ C کے ساتھ الرٹ' آئے</p>
+<p><strong>الارم مجموعہ</strong> میں <code dir="ltr">(1&amp;2)|3</code> اور <strong>وقت کی ونڈو</strong> میں <code dir="ltr">1h 30m</code> درج کریں۔</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = "AND" (دونوں شرائط پوری ہونا ضروری ہیں)</p>
-<p><strong>|</strong> = "OR" (کوئی ایک شرط پوری ہو سکتی ہے)</p>
-<p>اگر انفرادی کی ورڈ الارمز بند بھی ہوں، تب بھی شرائط پوری ہونے پر کمبینیشن ٹرگر ہو سکتا ہے۔</p>
-<p><strong>کمبینیشن الرٹس کے ساتھ آٹو آرڈرز بھی ممکن ہیں!</strong></p>
+<p><strong>&amp;</strong> = "اور" (دونوں شرائط پوری ہونی چاہئیں)</p>
+<p><strong>|</strong> = "یا" (کوئی ایک شرط پوری ہو سکتی ہے)</p>
+<p>اگرچہ انفرادی کلیدی لفظ کے الارم غیر فعال ہوں، پھر بھی مجموعہ شرائط پوری ہونے پر متحرک ہو سکتا ہے۔</p>
+<p><strong>مجموعہ الرٹس کے ساتھ خودکار آرڈرز بھی ممکن ہیں!</strong></p>
 </div>
 </div>
 </main>
@@ -475,7 +505,7 @@
 <div class="da-foot-grid">
 <div><a class="da-brand" href="index.html"><img alt="" height="30" src="../images/divblue3-140.png" width="30"/><span>DivAlarm</span></a><p class="da-foot-risk">DivAlarm ایک الرٹ ٹول ہے، سرمایہ کاری کا مشورہ نہیں۔ کرپٹو فیوچرز ٹریڈنگ میں نقصان کا خطرہ زیادہ ہے۔ ماضی کے سگنل مستقبل کے نتائج کی ضمانت نہیں دیتے۔</p></div>
 <div><p class="da-foot-h">پروڈکٹ</p><ul><li><a href="features.html">فیچرز</a></li><li><a href="performance.html">کارکردگی</a></li><li><a href="pricing.html">قیمتیں</a></li><li><a href="downloads.html">ڈاؤن لوڈز</a></li></ul></div>
-<div><p class="da-foot-h">گائیڈز</p><ul><li><a href="rsi-divergence.html">RSI ڈائیورجنس</a></li><li><a href="user-manual.html">یوزر مینول</a></li><li><a href="tradingview-webhook.html">TradingView سیٹ اپ</a></li><li><a href="qna.html">سوال و جواب</a></li></ul></div>
+<div><p class="da-foot-h">گائیڈز</p><ul><li><a href="rsi-divergence.html">RSI ڈائیورجنس</a></li><li><a href="user-manual.html">یوزر مینول</a></li><li><a href="tradingview-webhook.html?lang=ur">TradingView سیٹ اپ</a></li><li><a href="qna.html">سوال و جواب</a></li></ul></div>
 <div><p class="da-foot-h">کمپنی</p><ul><li><a href="features.html#ref-reward">ریفرل انعامات</a></li><li><a href="mailto:info@wise-signal.com">رابطہ</a></li></ul></div>
 </div>
 <div class="da-legal" data-keep="1" id="wisesignal-legal-footer">
@@ -486,6 +516,6 @@
 </div>
 </div>
 </footer>
-<script data-da-chrome="" src="../js/site.js?v=78308067" type="module"></script>
+<script data-da-chrome="" src="../js/site.js?v=7b2284da" type="module"></script>
 </body>
 </html>

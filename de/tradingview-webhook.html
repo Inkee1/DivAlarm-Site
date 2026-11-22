@@ -3,7 +3,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView Webhook-Einrichtungsanleitung für DivAlarm</title>
+<title>Stichwortalarm-Anleitung für DivAlarm</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -11,7 +11,7 @@
 <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
@@ -19,13 +19,13 @@
       line-height: 1.8;
       min-height: 100vh;
     }
-    
+
     .manual-container {
       max-width: 950px;
       margin: 0 auto;
       padding: 50px 40px;
     }
-    
+
     .back-link {
       display: inline-block;
       color: #00d4ff;
@@ -35,7 +35,7 @@
       transition: opacity 0.2s;
     }
     .back-link:hover { opacity: 0.8; }
-    
+
     .manual-title {
       font-size: 3rem;
       font-weight: 700;
@@ -45,7 +45,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
+
     .toc {
       background: rgba(12, 12, 24, 0.9);
       padding: 2rem 2.5rem;
@@ -67,7 +67,7 @@
       transition: color 0.2s;
     }
     .toc a:hover { color: #00d4ff; }
-    
+
     .manual-section {
       margin-bottom: 4rem;
       scroll-margin-top: 84px;
@@ -93,7 +93,7 @@
       color: rgba(248, 250, 252, 0.9);
     }
     .manual-section ol, .manual-section ul {
-      margin-left: 2rem;
+      margin-inline-start: 2rem;
       margin-bottom: 1.5rem;
     }
     .manual-section li {
@@ -121,12 +121,12 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 1.05rem;
     }
-    
+
     .highlight {
       background: rgba(0, 212, 255, 0.12);
       padding: 1.5rem 2rem;
       border-radius: 12px;
-      border-left: 5px solid #00d4ff;
+      border-inline-start: 5px solid #00d4ff;
       margin: 1.5rem 0;
       font-size: 1.15rem;
     }
@@ -134,11 +134,11 @@
       background: rgba(249, 115, 22, 0.12);
       padding: 1.5rem 2rem;
       border-radius: 12px;
-      border-left: 5px solid #f97316;
+      border-inline-start: 5px solid #f97316;
       margin: 1.5rem 0;
       font-size: 1.15rem;
     }
-    
+
     .code-block {
       background: rgba(12, 12, 24, 0.95);
       padding: 1.5rem 2rem;
@@ -156,9 +156,9 @@
     .code-block .desc {
       color: rgba(248, 250, 252, 0.6);
       font-size: 1rem;
-      margin-left: 1rem;
+      margin-inline-start: 1rem;
     }
-    
+
     .image-row {
       display: flex;
       gap: 1.5rem;
@@ -176,7 +176,7 @@
       flex: 1;
       min-width: 300px;
     }
-    
+
     /* Quick Summary (collapsible video embeds) */
     #quick-summary h2 { margin-top: 0; }
     .video-toggle {
@@ -189,7 +189,7 @@
     .video-toggle h3 { margin: 0; }
     .video-toggle-btn {
       width: 100%;
-      text-align: left;
+      text-align: start;
       padding: 1.1rem 1.25rem;
       background: transparent;
       border: none;
@@ -253,22 +253,22 @@
       .video-toggle-btn { padding: 1rem 1.1rem; }
     }
   </style>
-<link href="../css/lang-switcher.css?v=21ddac23" rel="stylesheet" type="text/css"/>
+<link href="../css/lang-switcher.css?v=dbe2c3bc" rel="stylesheet" type="text/css"/>
 <script src="../js/posthog.js"></script>
-<script defer="" src="../js/lang-switcher.js?v=21ddac23" type="text/javascript"></script>
-<meta content="Erfahre, wie du TradingView Alerts mit DivAlarm Webhooks, Keyword-Alerts, Signal-Kombinationen und Auto-Order-Workflows verbindest." name="description"/>
-<meta content="TradingView Webhook-Einrichtungsanleitung für DivAlarm" property="og:title"/>
-<meta content="Erfahre, wie du TradingView Alerts mit DivAlarm Webhooks, Keyword-Alerts, Signal-Kombinationen und Auto-Order-Workflows verbindest." property="og:description"/>
-<meta content="TradingView Webhook-Einrichtungsanleitung für DivAlarm" name="twitter:title"/>
-<meta content="Erfahre, wie du TradingView Alerts mit DivAlarm Webhooks, Keyword-Alerts, Signal-Kombinationen und Auto-Order-Workflows verbindest." name="twitter:description"/>
+<script defer="" src="../js/lang-switcher.js?v=8721e8dc" type="text/javascript"></script>
+<meta content="Richte DivAlarm Stichwortalarme aus Android-Telefonbenachrichtigungen oder TradingView-Webhooks ein, mit Signalkombinationen und automatischen Orders." name="description"/>
+<meta content="Stichwortalarm-Anleitung für DivAlarm" property="og:title"/>
+<meta content="Richte DivAlarm Stichwortalarme aus Android-Telefonbenachrichtigungen oder TradingView-Webhooks ein, mit Signalkombinationen und automatischen Orders." property="og:description"/>
+<meta content="Stichwortalarm-Anleitung für DivAlarm" name="twitter:title"/>
+<meta content="Richte DivAlarm Stichwortalarme aus Android-Telefonbenachrichtigungen oder TradingView-Webhooks ein, mit Signalkombinationen und automatischen Orders." name="twitter:description"/>
 <meta content="https://www.divalarm.com/de/tradingview-webhook.html" property="og:url"/>
 <meta content="DivAlarm" property="og:site_name"/>
 <meta content="de_DE" property="og:locale"/>
 <meta content="article" property="og:type"/><meta content="https://www.divalarm.com/images/og-cover.png" property="og:image"/><meta content="1080" property="og:image:width"/><meta content="649" property="og:image:height"/><meta content="https://www.divalarm.com/images/og-cover.png" name="twitter:image"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"HowTo","name":"So verbindest du TradingView-Webhooks mit DivAlarm","description":"Verbinde TradingView-Alerts mit DivAlarm für Keyword-Alarme, Signalkombinationen und Auto-Order-Workflows.","url":"https://www.divalarm.com/de/tradingview-webhook.html","step":[{"@type":"HowToStep","name":"Einen TradingView-Alert erstellen","text":"Klicke in TradingView mit der rechten Maustaste auf den Indikator und wähle beim gewünschten Indikator „Alert hinzufügen“."},{"@type":"HowToStep","name":"Webhook-URL einfügen","text":"Aktiviere in den TradingView-Benachrichtigungen „Webhook URL“ und füge die URL ein, die du aus der DivAlarm-App kopiert hast."},{"@type":"HowToStep","name":"Message-Keyword hinzufügen","text":"Gib ein Keyword in die Alert-Nachricht ein, damit DivAlarm das eingehende TradingView-Signal zuordnen kann."},{"@type":"HowToStep","name":"Keyword in DivAlarm registrieren","text":"Füge dasselbe Keyword im Bereich „Keyword Include“ der App hinzu, um den Alarm auszulösen."},{"@type":"HowToStep","name":"Workflow erweitern","text":"Nutze Signalkombinationen oder Auto-Orders, sobald der grundlegende Webhook-Flow korrekt funktioniert."}]},{"@type":"WebPage","url":"https://www.divalarm.com/de/tradingview-webhook.html","name":"TradingView Webhook-Einrichtungsanleitung für DivAlarm","description":"Erfahre, wie du TradingView Alerts mit DivAlarm Webhooks, Keyword-Alerts, Signal-Kombinationen und Auto-Order-Workflows verbindest.","inLanguage":"de","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://www.divalarm.com/de/"},{"@type":"ListItem","position":2,"name":"TradingView Webhook-Leitfaden","item":"https://www.divalarm.com/de/tradingview-webhook.html"}]}]}</script>
-<link href="https://www.divalarm.com/de/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/><link data-da-chrome="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"HowTo","name":"So verbindest du TradingView Webhooks mit DivAlarm","description":"Verwende den Modus Webhook-Stichwörter, um TradingView-Alarme mit DivAlarm für Stichwortalarme, Signalkombinationen und automatische Order-Workflows zu verbinden.","url":"https://www.divalarm.com/de/tradingview-webhook.html","step":[{"@type":"HowToStep","name":"Webhook-Stichwörter wählen","text":"Öffne Stichwortalarm · Automatische Orders in DivAlarm und wähle Webhook-Stichwörter, um deine persönliche Webhook-URL anzuzeigen."},{"@type":"HowToStep","name":"Erstelle einen TradingView-Alarm","text":"Klicke mit der rechten Maustaste auf den Indikator in TradingView und wähle Alarm hinzufügen auf dem gewünschten Indikator."},{"@type":"HowToStep","name":"Füge die Webhook-URL ein","text":"Aktiviere Webhook-URL in den TradingView-Benachrichtigungen und füge die aus der DivAlarm-App kopierte URL ein."},{"@type":"HowToStep","name":"Füge ein Nachrichtenstichwort hinzu","text":"Gib ein Stichwort in die Alarmnachricht ein, damit DivAlarm das eingehende TradingView Signal zuordnen kann."},{"@type":"HowToStep","name":"Registriere das Stichwort in DivAlarm","text":"Füge dasselbe Stichwort im Bereich Stichwort einbeziehen der App hinzu, um den Alarm auszulösen."},{"@type":"HowToStep","name":"Erweitere den Ablauf","text":"Nutze Signalkombinationen oder automatische Orders, nachdem der grundlegende Webhook-Ablauf korrekt funktioniert."}]},{"@type":"WebPage","url":"https://www.divalarm.com/de/tradingview-webhook.html","name":"Stichwortalarm-Anleitung für DivAlarm","description":"Richte DivAlarm Stichwortalarme aus Android-Telefonbenachrichtigungen oder TradingView-Webhooks ein, mit Signalkombinationen und automatischen Orders.","inLanguage":"de","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://www.divalarm.com/de/"},{"@type":"ListItem","position":2,"name":"Stichwortalarm-Anleitung","item":"https://www.divalarm.com/de/tradingview-webhook.html"}]}]}</script>
+<link href="https://www.divalarm.com/de/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/zh-hant/tradingview-webhook.html" hreflang="zh-Hant" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/><link data-da-chrome="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"/>
 <link data-da-chrome="" href="../css/site.css?v=75db1564" rel="stylesheet"/>
 <link data-da-chrome="" href="../css/legacy-skin.css?v=75db1564" rel="stylesheet"/>
 </head>
@@ -277,7 +277,7 @@
 <div class="da-wrap da-top-row">
 <a class="da-brand" href="index.html"><img alt="" height="30" src="../images/divblue3-140.png" width="30"/><span>DivAlarm</span></a>
 <nav aria-label="Hauptmenü" class="da-nav" id="da-nav">
-<a href="features.html">Funktionen</a><a href="performance.html">Performance</a><a aria-current="page" href="tradingview-webhook.html">TradingView</a><a href="pricing.html">Preise</a><a href="qna.html">FAQ</a>
+<a href="features.html">Funktionen</a><a href="performance.html">Performance</a><a aria-current="page" href="tradingview-webhook.html?lang=de">TradingView</a><a href="pricing.html">Preise</a><a href="qna.html">FAQ</a>
 <div class="da-acct"><a href="sign-in-page.html" id="da-signin">Anmelden</a><a hidden="" href="my-account.html" id="da-account">Mein Konto</a><button hidden="" id="da-signout" type="button">Abmelden</button></div>
 </nav>
 <div class="da-actions">
@@ -290,161 +290,191 @@
 </header>
 <main class="manual-container" id="main">
 <a class="back-link" href="user-manual.html">← Zurück zum Benutzerhandbuch</a>
-<h1 class="manual-title">TradingView Webhook-Anleitung für DivAlarm</h1>
-<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">Verbinde TradingView-Alerts mit DivAlarm für Keyword-Alarme, Webhook-Automatisierung, Signal-Kombinationen und automatische Exchange-Orders.<br/>
-<a class="da-link" href="../en/tradingview-connect.html?lang=en" hreflang="en">TradingView-Verbindung testen und am PC einrichten (auf Englisch)</a></p>
+<h1 class="manual-title">Stichwortalarm-Anleitung für DivAlarm</h1>
+<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">Wählen Sie Stichwörter aus Telefonbenachrichtigungen oder TradingView Webhook-Nachrichten. Sie können dieselben Regeln für Alarme, Signal-Kombinationen und automatische Börsenorders verwenden.<br/> <a class="da-link" href="tradingview-connect.html?lang=de" hreflang="de">TradingView Verbindungstest &amp; PC-Einrichtung</a></p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Inhaltsverzeichnis</h3>
 <ul>
-<li><a href="#quick-summary">Kurzüberblick</a></li>
-<li><a href="#keyword">Keyword-Alarme</a></li>
-<li><a href="#auto-order">Auto-Order mit TradingView</a></li>
-<li><a href="#divalarm-keywords">DivAlarm Signal-Keywords</a></li>
-<li><a href="#combination">Alarme für Signal-Kombinationen</a></li>
+<li><a href="#keyword-source">Wähle eine Stichwortquelle</a></li>
+<li><a href="#quick-summary">TradingView Webhook-Beispiele</a></li>
+<li><a href="#keyword">Stichwortregeln und TradingView Webhook-Einrichtung</a></li>
+<li><a href="#auto-order">Automatische Order mit Stichwortalarmen</a></li>
+<li><a href="#divalarm-keywords">DivAlarm Signal-Stichwörter</a></li>
+<li><a href="#combination">Alarmkombinationen für Signale</a></li>
 </ul>
+</div>
+<!-- Keyword Source Section -->
+<div class="manual-section" id="keyword-source">
+<h2>Wähle eine Stichwortquelle</h2>
+<p>Öffne <strong>Stichwortalarm · Automatische Orders</strong> und wähle oben auf der Seite eine Eingabequelle. Tippe auf <strong>?</strong> neben dem Auswahlfeld für Hilfe. Beide Modi teilen sich deine gespeicherten Stichwörter, Kombinationen und Alarmeinstellungen. Jeder Account kann <strong>5 Stichwortalarme kostenlos und ohne Karte ausprobieren</strong>. <strong>Automatische Orders bleiben nur für Pro</strong>.</p>
+<div class="highlight"><p><strong>5 kostenlose Ausführungen pro Account:</strong> Stichwörter aus Telefonbenachrichtigungen, Webhook-Stichwörter und kombinierte Alarme teilen sich ein gemeinsames lebenslanges Kontingent. Ein Verbrauch zählt, wenn ein passender Alarm erfolgreich auf deinem Handy geplant wird. Nicht passende Nachrichten, doppelte Zustellungen und fehlgeschlagene Planungen verbrauchen keinen Credit. Internetzugang ist nötig, um die freien Nutzungen zu prüfen.</p><p>Das Kontingent ist <strong>getrennt von den 7 allgemeinen Alarmen</strong>, wird nicht durch Neuinstallation zurückgesetzt und umfasst keine automatischen Orders. Deine Regeln bleiben nach allen 5 Nutzungen gespeichert; wähle <strong>Pro</strong>, um weiterzumachen.</p></div>
+<h3>Stichwörter aus Telefonbenachrichtigungen (Android)</h3>
+<ol>
+<li>Wähle <strong>Stichwörter aus Telefonbenachrichtigungen</strong>.</li>
+<li>Öffne die Benachrichtigungszugriffs-Einstellungen auf der Seite und erlaube <strong>DivAlarm</strong>, Benachrichtigungen zu lesen.</li>
+<li>Füge Text zu <strong>Keyword einbeziehen</strong> hinzu, der im Titel oder Text einer Benachrichtigung erscheint, die du erkennen möchtest.</li>
+<li>Wenn eine passende Benachrichtigung eintrifft, wendet DivAlarm deine konfigurierten Alarm-, Kombinations- und Auto-Order-Regeln an.</li>
+</ol>
+<p>Der Benachrichtigungszugriff muss aktiviert bleiben, um andere Apps lesen zu können. DivAlarm kann nur den Text verarbeiten, den Android liefert; gruppierte Zusammenfassungen, wiederholte Kopien und von DivAlarm generierte Alarm- oder Order-Ergebnisbenachrichtigungen werden ignoriert. Bei Nachrichtenbenachrichtigungen wird nur die neueste Nachricht geprüft.</p>
+<p>DivAlarm eigene eingehende Signale können in diesem Modus ebenfalls Stichwortalarme und Orders auslösen. Die bereits aktivierten Filter gelten weiterhin. Du kannst weiterhin die <a href="#divalarm-keywords" style="color: #00d4ff;">@D, @E und @P Signal-Stichwörter</a> verwenden.</p>
+<h3>Webhook-Stichwörter</h3>
+<p>Wähle <strong>Webhook-Stichwörter</strong>, um Nachrichten zu empfangen, die an deine persönliche Webhook-URL gesendet werden, einschließlich TradingView-Alarme. Die URL und die Kopieren-Schaltfläche erscheinen nur in diesem Modus. Folge den <a href="#keyword" style="color: #00d4ff;">TradingView Einrichtungsschritten</a> unten.</p>
+<div class="highlight">
+<p>Der Wechsel der Modi behält deine gespeicherten Regeln. Im Telefonmodus lösen Webhook-Nachrichten auf diesem Gerät keine Stichwortalarme oder Orders aus. Bestehende Nutzer starten im Webhook-Modus, sodass ihre aktuelle Webhook-Einrichtung bis zum Wechsel erhalten bleibt.</p>
+<p>Das Lesen von Benachrichtigungen anderer Apps ist eine Android-Funktion; sie ist auf iOS oder im Web nicht verfügbar.</p>
+</div>
 </div>
 <!-- Quick Summary Section -->
 <div class="manual-section" id="quick-summary">
-<h2>DivAlarm × TradingView – Kurzüberblick</h2>
+<h2>DivAlarm × TradingView – Webhook-Beispiele</h2>
+<p>Diese Videos zeigen den Workflow der <strong>Webhook-Stichwörter</strong>. Wähle diese Quelle, bevor du die Webhook-URL-Schritte befolgst.</p>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">TradingView mit der App verbinden</button>
+<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">Verbinde TradingView mit der App</button>
 </h3>
 <div class="video-toggle-panel" id="qs-connect-tv">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="TradingView mit der App verbinden" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="Verbinde TradingView mit der App" width="435"></iframe>
 </div>
-<p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">Auf YouTube öffnen</a></p>
+<p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">Öffne auf YouTube</a></p>
 </div>
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">Force-Alarm einrichten für TradingView</button>
+<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">Erzwinge Alarm-Einrichtung für TradingView</button>
 </h3>
 <div class="video-toggle-panel" id="qs-force-alarm">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="Force-Alarm einrichten für TradingView" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="Erzwinge Alarm-Einrichtung für TradingView" width="435"></iframe>
 </div>
-<p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">Auf YouTube öffnen</a></p>
+<p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">Öffne auf YouTube</a></p>
 </div>
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">Auto-Order aus TradingView-Signalen</button>
+<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">Automatische Order aus TradingView Signalen</button>
 </h3>
 <div class="video-toggle-panel" id="qs-auto-order">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="Auto-Order aus TradingView-Signalen" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="Automatische Order aus TradingView Signalen" width="435"></iframe>
 </div>
-<p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">Auf YouTube öffnen</a></p>
+<p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">Öffne auf YouTube</a></p>
 </div>
 </div>
-<div class="video-toggle">
+<div class="video-toggle" id="exchange-api-setup" style="scroll-margin-top: 84px;">
 <h3>
-<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">Exchange-API-Key einrichten</button>
+<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">Exchange API-Schlüssel Einrichtung</button>
 </h3>
 <div class="video-toggle-panel" id="qs-exchange-api">
-<p>Wähle beim Erstellen eines Bitget-Schlüssels <strong>Read-write</strong>. Aktiviere <strong>Futures order</strong>, um Orders zu platzieren, und <strong>Futures Holdings</strong>, um Positionen abzurufen.</p>
+<p>Beim Erstellen eines Bitget-Schlüssels wähle <strong>Read-write</strong>. Aktiviere sowohl <strong>Futures order</strong> zum Platzieren von Orders als auch <strong>Futures Holdings</strong> zum Anzeigen von Positionen.</p>
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="Exchange-API-Key einrichten" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="Exchange API-Schlüssel Einrichtung" width="435"></iframe>
 </div>
-<p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" rel="noopener noreferrer" target="_blank">Auf YouTube öffnen</a></p>
+<p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" rel="noopener noreferrer" target="_blank">Öffne auf YouTube</a></p>
 </div>
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">Eigene Indikator-Kombinationen aus TradingView erstellen</button>
+<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">Erstelle benutzerdefinierte Indikator-Kombinationen aus TradingView</button>
 </h3>
 <div class="video-toggle-panel" id="qs-custom-indicators">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="Eigene Indikator-Kombinationen aus TradingView erstellen" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="Erstelle benutzerdefinierte Indikator-Kombinationen aus TradingView" width="435"></iframe>
 </div>
-<p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">Auf YouTube öffnen</a></p>
+<p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">Öffne auf YouTube</a></p>
 </div>
 </div>
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
-<h2>🔔 Keyword-Alarme</h2>
-<h3>Webhook in TradingView hinzufügen</h3>
-<img alt="TradingView Alert hinzufügen" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>Klicke in TradingView mit der rechten Maustaste auf den Indikator, von dem du Signale erhalten möchtest, und klicke auf „Alert hinzufügen auf ~“.</p>
+<h2>🔔 Stichwortregeln und TradingView Webhook-Einrichtung</h2>
+<p>Füge im <strong>Stichwortalarm · Automatische Orders</strong> den Text, den du erkennen möchtest, zu <strong>Keyword einbeziehen</strong> hinzu. Im Telefonmodus werden Benachrichtigungstitel und -texte geprüft; im Webhookmodus der eingehende Webhook-Text. <a href="#keyword-source" style="color: #00d4ff;">Wähle deine Quelle</a>, bevor du eine Regel testest.</p>
+<h3>Webhook hinzufügen in TradingView</h3>
+<p>Wähle <strong>Webhook-Stichwörter</strong>, füge <code>AA</code> zu <strong>Keyword einbeziehen</strong> hinzu und aktiviere den Alarm dafür. Lasse automatische Orders für jede Stichwortregel oder Kombination, die AA während eines echten TradingView-Alarms erkennt, ausgeschaltet. Klappe <strong>Webhook-URL</strong> auf, um deine persönliche URL zu kopieren. Tippe auf <strong>?</strong> neben der URL-Überschrift für die bebilderten Schritte.</p>
+<img alt="TradingView Alarm hinzufügen" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>Klicke mit der rechten Maustaste auf den Indikator, von dem du Signale in TradingView erhalten möchtest, und wähle „Alarm auf ~ hinzufügen“.</p>
 <img alt="Webhook-URL-Einstellung" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Benachrichtigungseinstellungen" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>Im Bereich „Benachrichtigungen“ aktiviere „Webhook-URL“ und füge die aus der App kopierte Adresse in das Eingabefeld darunter ein.</p>
-<p>Nach dem Einrichten wird dies bei anderen Alerts automatisch aktiviert/ausgefüllt.</p>
+<p>Öffne <strong>Benachrichtigungen</strong>, aktiviere <strong>Webhook-URL</strong>, füge deine persönliche URL ein und wähle <strong>Anwenden</strong>.</p>
+<p>Du kannst dieselbe URL für andere Alarme wiederverwenden. Wenn ein neuer Alarm bereits deine URL enthält, prüfe, ob das Kontrollkästchen aktiviert ist und die Adresse stimmt. Überprüfe jeden bestehenden Alarm einzeln.</p>
+<p>Für einen einmaligen Preistest wähle <strong>Preis → Außerhalb des Kanals</strong> und <strong>Nur einmal</strong>. Setze beide Grenzen auf eine Seite des aktuellen Preises. Zum Beispiel: Wenn der Preis 100 ist, verwende eine untere Grenze von 98 und eine obere Grenze von 99.</p>
 <img alt="Nachrichteneinstellungen" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>Im Bereich „Nachrichten“ unter „Nachricht“ füge ein beliebiges Keyword hinzu (z. B. „AAA“).</p>
-<p>Klicke auf „Erstellen“, um den TradingView-Alert zu erstellen.</p>
-<h3>TradingView-Alerts in der App empfangen</h3>
-<img alt="Keyword-Einstellungen der App" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Füge das Keyword (z. B. „AAA“) in der App im Bereich „Keyword Include“ hinzu. Wenn die „Nachricht“ des TradingView-Alerts das Keyword enthält, wird der Alarm wie konfiguriert ausgelöst.</p>
+<p>Die TradingView- und App-Screenshots verwenden <code>AAA</code>, um zu zeigen, wo das Stichwort eingefügt wird. Für diesen Test gib <code>AA Webhook test</code> in <strong>Nachricht</strong> ein oder füge dein registriertes Stichwort <code>AA</code> zur bestehenden Nachricht hinzu und übernimm die Änderung.</p>
+<p>Wähle <strong>Erstellen</strong>. Wenn die Bedingung erfüllt ist, prüfe das TradingView-Alarmprotokoll und den Alarm auf deinem Handy.</p>
+<h3>Empfangen von TradingView-Alarmen in der App</h3>
+<img alt="App-Stichworteinstellungen" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Lass <strong>Webhook-Stichwörter</strong> ausgewählt. Eine Nachricht, die <code>AA</code> enthält, löst den Alarm aus, den du für dieses Stichwort aktiviert hast. Schalte die AA-Testregel aus, wenn du fertig bist.</p>
+<p>Um die Zustellung vom Server auf dein Android-Handy zu prüfen, <a class="da-link" href="tradingview-connect.html?lang=de#connection-test">sende ein Testsignal aus dem Verbindungstest</a>. Diese Diagnose überspringt Stichwortregeln und Börsenaufträge und verbraucht keinen deiner fünf kostenlosen Alarmausführungen.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 Auto-Order mit TradingView Alerts</h2>
-<img alt="Auto-Order-Einstellungen" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Du kannst „Auto-Orders“ einrichten, die an Börsen gesendet werden, sobald Keyword-Alerts eingehen.</p>
+<h2>🤖 Auto-Order mit Stichwortalarmen</h2>
+<img alt="Einstellungen für automatische Orders" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Mit <strong>Pro</strong> können Sie Auto-Orders an einzelne Stichwortregeln oder Kombinationen anhängen. Lassen Sie Auto-Orders für reine Alarmregeln ausgeschaltet. Wenn aktiviert, kann eine Übereinstimmung aus Ihrer ausgewählten Quelle oder ein berechtigtes DivAlarm-Signal eine echte Order an Ihrer Börse platzieren.</p>
 <img alt="Exchange-API-Einstellungen" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>Unterstützte Börsen für Auto-Orders: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Du musst die API-Keys in den App-Einstellungen eingeben.</p>
+<p>Gib deine Börsen-API-Schlüssel unter <strong>Einstellungen → Auto-Order-Einstellungen</strong> ein. Die Android-App unterstützt Binance, Bybit, OKX, Bitget, Gate und Bitunix.</p>
+<p>Tippe auf den <strong>Einkaufswagen</strong> rechts in der Stichwortzeile, um Börse, Symbol und Order-Einstellungen auszuwählen, und aktiviere dann Auto-Orders für diese Regel. Wenn du Bitget verwendest, prüfe die zwei erforderlichen Berechtigungen in <a class="da-link" href="#exchange-api-setup">Exchange API Key Setup (Einrichtung des Börsen-API-Schlüssels)</a>.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
-<h2>📝 DivAlarm-Signale als Keywords registrieren</h2>
-<img alt="DivAlarm Signal-Keywords" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Auch die eigenen Alerts von DivAlarm können zu „Keyword-Kombinationen“ hinzugefügt werden (für Kombinations-Alerts oder Auto-Orders).</p>
+<h2>📝 Registrierung von DivAlarm-Signalen als Stichwörter</h2>
+<img alt="DivAlarm Signal-Stichwörter" src="../images/image%203_tv.png" style="max-width: 500px;"/>
+<p>Eigene Signale von DivAlarm können Stichwortalarme, Kombinationen und Auto-Orders in <strong>beiden Eingabemodi</strong> auslösen. Registriere sie mit den untenstehenden Formaten. Die ursprünglich aktivierten Filter des Signals bleiben bestehen; das Hinzufügen eines Stichworts aktiviert keinen deaktivierten Signalfilter.</p>
 <div class="highlight">
-<p><strong>Format:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(if any)</p>
+<p><strong>RSI-Divergenz (@D):</strong><br/><code style="overflow-wrap: anywhere;">@D@Kind@Direction@Status@MainTimeframe[@SubTimeframe]</code></p>
+<p>Statuswerte sind <code>early_completed</code>, <code>early_confirmed</code>, <code>confirmed</code> und <code>forming</code>. Der zweite Zeitrahmen wird für Forming-Signale verwendet.</p>
+<p><strong>Zusätzliche Indikatoren (@E):</strong><br/><code style="overflow-wrap: anywhere;">@E@Kind@TitleKeyword@Timeframe</code></p>
+<p><strong>Preisalarme (@P):</strong><br/><code style="overflow-wrap: anywhere;">@P@Kind@TitleKeyword</code></p>
+<p>Bestehende @D-Regeln ohne erkannten Status bleiben unterstützt; ihre vierte und fünfte Spalte behalten ihre Bedeutung für Haupt- und Nebenzeitrahmen.</p>
 </div>
 <p><strong>Alarmtypen:</strong></p>
 <ul>
-<li><code>@D</code> — RSI Divergence filters</li>
-<li><code>@E</code> — Extra Indicators</li>
-<li><code>@P</code> — Price alerts</li>
+<li><code>@D</code> — RSI-Divergenzfilter</li>
+<li><code>@E</code> — Zusätzliche Indikatoren</li>
+<li><code>@P</code> — Preisalarme</li>
 </ul>
 <h3>Beispiele</h3>
 <div class="code-block">
-<p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ RSI Divergence, BTCUSDT.P, Titel enthält „Bull“, Forming, Haupt 5m, Sub 1m</p>
+<p><code>@D@BTC@Bull@forming@5m@1m</code></p>
+<p class="desc">→ RSI-Divergenz, BTCUSDT.P, Titel enthält „Bull“, Forming, Haupt 5m, Neben 1m</p>
 </div>
 <div class="code-block">
-<p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ RSI Divergence, ETHUSDT.P, Titel enthält „Bear“, Complete, 15m, kein Sub-Timeframe</p>
+<p><code>@D@ETH@Bear@confirmed@15m</code></p>
+<p class="desc">→ RSI-Divergenz, ETHUSDT.P, Titel enthält „Bear“, Bestätigt, 15m, kein Nebenzeitrahmen</p>
 </div>
-<img alt="Keyword-Beispiel" src="../images/image%204_tv.png" style="max-width: 500px;"/>
+<img alt="Stichwortbeispiel" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
-<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Extra Indicator, Coin BTC, Titel enthält „Sell“, 30m</span></p>
-<p><code>"@E@BTC@Buy@1h"</code></p>
-<p><code>"@E@ETH@Breakout@15m"</code></p>
-<p><code>"@E@BTC@Breakdown@5m"</code></p>
-<p><code>"@E@BTC@Near Support@1m"</code></p>
-<p><code>"@E@BTC@Near Resistance@5m"</code></p>
-<p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ Preis-Alert, Coin BTC, Titel enthält „Up“</span></p>
-<p><code>"@P@ETH@Down"</code></p>
+<p><code>@E@BTC@Sell@30m</code> <span class="desc">→ Zusätzlicher Indikator, BTC Coin, Titel enthält „Sell“, 30m</span></p>
+<p><code>@E@BTC@Buy@1h</code></p>
+<p><code>@E@ETH@Breakout@15m</code></p>
+<p><code>@E@BTC@Breakdown@5m</code></p>
+<p><code>@E@BTC@Near Support@1m</code></p>
+<p><code>@E@BTC@Near Resistance@5m</code></p>
+<p><code>@E@BTC@EMA50@1h</code></p>
+<p><code>@P@BTC@Up</code> <span class="desc">→ Preisalarm, BTC Coin, Titel enthält „Up“</span></p>
+<p><code>@P@ETH@Down</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 Signal-Kombinations-Alerts</h2>
-<p>Kombiniere mehrere TradingView-Signale, um neue oder gefilterte Signale zu erstellen.</p>
+<h2>🔀 Signal-Kombinationsalarme</h2>
+<p>Kombiniere passende Telefonbenachrichtigungen oder Webhook-Nachrichten aus der ausgewählten Quelle mit passenden DivAlarm-Signalen, um einen Kombinationsalarm zu erstellen. Die Stichwortregeln und Zeitfenstereinstellungen funktionieren in beiden Modi.</p>
 <div class="image-row">
-<img alt="Kombinations-Alert-Einstellungen" src="../images/image%205_tv.png"/>
+<img alt="Einstellungen für Kombinationsalarme" src="../images/image%205_tv.png"/>
 <div>
-<p>Lege Bedingungen fest, die innerhalb eines Zeitfensters erfüllt sein müssen, damit Alarme auslösen.</p>
-<p><strong>Beispiel:</strong><br/> Innerhalb von 1 Stunde 30 Minuten:<br/> • „Alert mit Keyword A“ UND<br/> • „Alert mit Keyword B“ treffen beide ein, ODER<br/> • „Alert mit Keyword C“ trifft ein</p>
-<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
+<p>Lege Bedingungen fest, die innerhalb eines Zeitfensters erfüllt sein müssen, damit Alarme ausgelöst werden.</p>
+<p><strong>Beispiel:</strong><br/> Innerhalb von 1 Stunde 30 Minuten:<br/> • 'Alarm mit Stichwort A' UND<br/> • 'Alarm mit Stichwort B' treffen beide ein, ODER<br/> • 'Alarm mit Stichwort C' trifft ein</p>
+<p>Gib <code>(1&amp;2)|3</code> in <strong>Alarmkombination</strong> und <code>1h 30m</code> in <strong>Zeitfenster</strong> ein.</p>
 </div>
 </div>
 <div class="highlight">
 <p><strong>&amp;</strong> = „UND“ (beide Bedingungen müssen erfüllt sein)</p>
 <p><strong>|</strong> = „ODER“ (eine der Bedingungen kann erfüllt sein)</p>
-<p>Auch wenn einzelne Keyword-Alarme deaktiviert sind, kann die Kombination trotzdem auslösen, sobald die Bedingungen erfüllt sind.</p>
-<p><strong>Auto-Orders sind auch mit Kombinations-Alerts möglich!</strong></p>
+<p>Auch wenn einzelne Stichwortalarme deaktiviert sind, kann die Kombination trotzdem ausgelöst werden, wenn die Bedingungen erfüllt sind.</p>
+<p><strong>Automatische Orders sind auch mit Kombinationsalarmen möglich!</strong></p>
 </div>
 </div>
 </main>
@@ -475,7 +505,7 @@
 <div class="da-foot-grid">
 <div><a class="da-brand" href="index.html"><img alt="" height="30" src="../images/divblue3-140.png" width="30"/><span>DivAlarm</span></a><p class="da-foot-risk">DivAlarm ist ein Alarm-Tool und keine Anlageberatung. Der Handel mit Krypto-Futures birgt ein hohes Verlustrisiko. Vergangene Signale garantieren keine zukünftigen Ergebnisse.</p></div>
 <div><p class="da-foot-h">Produkt</p><ul><li><a href="features.html">Funktionen</a></li><li><a href="performance.html">Performance</a></li><li><a href="pricing.html">Preise</a></li><li><a href="downloads.html">Downloads</a></li></ul></div>
-<div><p class="da-foot-h">Anleitungen</p><ul><li><a href="rsi-divergence.html">RSI-Divergenz</a></li><li><a href="user-manual.html">Benutzerhandbuch</a></li><li><a href="tradingview-webhook.html">TradingView einrichten</a></li><li><a href="qna.html">FAQ</a></li></ul></div>
+<div><p class="da-foot-h">Anleitungen</p><ul><li><a href="rsi-divergence.html">RSI-Divergenz</a></li><li><a href="user-manual.html">Benutzerhandbuch</a></li><li><a href="tradingview-webhook.html?lang=de">TradingView einrichten</a></li><li><a href="qna.html">FAQ</a></li></ul></div>
 <div><p class="da-foot-h">Unternehmen</p><ul><li><a href="features.html#ref-reward">Empfehlungsprämien</a></li><li><a href="mailto:info@wise-signal.com">Kontakt</a></li></ul></div>
 </div>
 <div class="da-legal" data-keep="1" id="wisesignal-legal-footer">
@@ -486,6 +516,6 @@
 </div>
 </div>
 </footer>
-<script data-da-chrome="" src="../js/site.js?v=78308067" type="module"></script>
+<script data-da-chrome="" src="../js/site.js?v=7b2284da" type="module"></script>
 </body>
 </html>

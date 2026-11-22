@@ -24,6 +24,15 @@ them (from the `Site2` folder), run `python _src/site/build.py` again. It puts t
 header and footer back on every page, including the translated home and features pages.
 The translator keeps the footer's legal block because it carries `data-keep`.
 
+The keyword alarm and PC connection guides are available in all 17 app languages, including
+Traditional Chinese. The English HTML files define their structure, and the Korean pages are
+maintained directly. Edit the other translations in `guide-copy/<locale>.json`. A key is an
+English message. Numbered tags keep its links and emphasis attached to the translated words.
+Keep the contents of code tags, TradingView placeholders, and diagnostic variables such as
+`{0}` intact. Use `python -X utf8 _src/site/tradingview_guides.py --list-strings` to list
+current source messages. Run `python _src/site/tradingview_guides.py` to regenerate just
+these pages, then `python -m unittest discover -s _src/site` to check the guides.
+
 ## Copy rules
 
 From `마케터/projects/divalarm/CLAUDE.md`:

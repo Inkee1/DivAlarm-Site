@@ -51,7 +51,7 @@ async function wireAccount() {
       try {
         await signOut(auth);
         localStorage.clear();
-        location.href = "index.html";
+        location.href = top.querySelector(".da-brand")?.href || "index.html";
       } catch (e) {
         console.error("Sign-out failed", e);
       }

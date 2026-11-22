@@ -60,6 +60,21 @@
     es: "Español",
   };
 
+  var webhookGuide = /\/tradingview-(?:connect|webhook)(?:\.html)?\/?$/.test(window.location.pathname);
+  if (webhookGuide) {
+    SUPPORTED.push("zh-hant");
+    LABELS["zh-hant"] = "中文（繁體）";
+    ["zh-tw", "zh-hk", "zh-mo"].forEach(function (tag) { ALIASES[tag] = "zh-hant"; });
+  }
+  var guideLabels = {
+    en: ["Language", "Close"], ko: ["언어", "닫기"], ja: ["言語", "閉じる"],
+    ru: ["Язык", "Закрыть"], vi: ["Ngôn ngữ", "Đóng"], tr: ["Dil", "Kapat"],
+    "pt-br": ["Idioma", "Fechar"], es: ["Idioma", "Cerrar"], id: ["Bahasa", "Tutup"],
+    th: ["ภาษา", "ปิด"], de: ["Sprache", "Schließen"], ms: ["Bahasa", "Tutup"],
+    fil: ["Wika", "Isara"], uk: ["Мова", "Закрити"], ur: ["زبان", "بند کریں"],
+    "zh-hans": ["语言", "关闭"], "zh-hant": ["語言", "關閉"],
+  };
+
   var supportedSet = new Set(SUPPORTED);
 
   function safeGet(key) {
@@ -174,7 +189,8 @@
     }
 
     // Keep any marketing params etc, but remove language control params
-    url.searchParams.delete("lang");
+    if (webhookGuide) url.searchParams.set("lang", l);
+    else url.searchParams.delete("lang");
     url.searchParams.delete("noredirect");
     return url.toString();
   }
@@ -196,6 +212,8 @@
     if (!currentLang) return;
 
     var url = new URL(window.location.href);
+    // Let the connection page consume an app sign-in token before switching locales.
+    if (webhookGuide && new URLSearchParams(url.hash.slice(1)).has("ct")) return;
     var qsLang = resolve(url.searchParams.get("lang"));
     if (qsLang) {
       safeSet("lang", qsLang);
@@ -237,6 +255,7 @@
 
   function mountSwitcher() {
     var currentLang = getCurrentLang() || resolve(safeGet("lang")) || "en";
+    var words = webhookGuide ? guideLabels[currentLang] : null;
 
     // Root container
     var root = createEl("div", "div-lang-switcher");
@@ -251,7 +270,7 @@
     trigger.type = "button";
     trigger.setAttribute("aria-haspopup", "dialog");
     trigger.setAttribute("aria-expanded", "false");
-    trigger.setAttribute("aria-label", "Change language");
+    trigger.setAttribute("aria-label", words ? words[0] : "Change language");
     trigger.innerHTML =
       '<span class="div-lang-icon" aria-hidden="true">🌐</span>' +
       '<span class="div-lang-code">' +
@@ -263,13 +282,13 @@
     panel.hidden = true;
     panel.setAttribute("role", "dialog");
     panel.setAttribute("aria-modal", "true");
-    panel.setAttribute("aria-label", "Language selection");
+    panel.setAttribute("aria-label", words ? words[0] : "Language selection");
 
     var header = createEl("div", "div-lang-header");
-    var title = createEl("div", "div-lang-title", "Language");
+    var title = createEl("div", "div-lang-title", words ? words[0] : "Language");
     var closeBtn = createEl("button", "div-lang-close", "×");
     closeBtn.type = "button";
-    closeBtn.setAttribute("aria-label", "Close");
+    closeBtn.setAttribute("aria-label", words ? words[1] : "Close");
     header.appendChild(title);
     header.appendChild(closeBtn);
 

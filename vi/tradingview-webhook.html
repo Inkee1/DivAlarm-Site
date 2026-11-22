@@ -3,7 +3,7 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8"/>
-<title>TradingView Hướng dẫn thiết lập webhook cho DivAlarm</title>
+<title>Hướng dẫn Cảnh báo Từ khóa cho DivAlarm</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -11,7 +11,7 @@
 <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: linear-gradient(180deg, #080810 0%, #0c0c18 100%);
@@ -19,13 +19,13 @@
       line-height: 1.8;
       min-height: 100vh;
     }
-    
+
     .manual-container {
       max-width: 950px;
       margin: 0 auto;
       padding: 50px 40px;
     }
-    
+
     .back-link {
       display: inline-block;
       color: #00d4ff;
@@ -35,7 +35,7 @@
       transition: opacity 0.2s;
     }
     .back-link:hover { opacity: 0.8; }
-    
+
     .manual-title {
       font-size: 3rem;
       font-weight: 700;
@@ -45,7 +45,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
+
     .toc {
       background: rgba(12, 12, 24, 0.9);
       padding: 2rem 2.5rem;
@@ -67,7 +67,7 @@
       transition: color 0.2s;
     }
     .toc a:hover { color: #00d4ff; }
-    
+
     .manual-section {
       margin-bottom: 4rem;
       scroll-margin-top: 84px;
@@ -93,7 +93,7 @@
       color: rgba(248, 250, 252, 0.9);
     }
     .manual-section ol, .manual-section ul {
-      margin-left: 2rem;
+      margin-inline-start: 2rem;
       margin-bottom: 1.5rem;
     }
     .manual-section li {
@@ -121,12 +121,12 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 1.05rem;
     }
-    
+
     .highlight {
       background: rgba(0, 212, 255, 0.12);
       padding: 1.5rem 2rem;
       border-radius: 12px;
-      border-left: 5px solid #00d4ff;
+      border-inline-start: 5px solid #00d4ff;
       margin: 1.5rem 0;
       font-size: 1.15rem;
     }
@@ -134,11 +134,11 @@
       background: rgba(249, 115, 22, 0.12);
       padding: 1.5rem 2rem;
       border-radius: 12px;
-      border-left: 5px solid #f97316;
+      border-inline-start: 5px solid #f97316;
       margin: 1.5rem 0;
       font-size: 1.15rem;
     }
-    
+
     .code-block {
       background: rgba(12, 12, 24, 0.95);
       padding: 1.5rem 2rem;
@@ -156,9 +156,9 @@
     .code-block .desc {
       color: rgba(248, 250, 252, 0.6);
       font-size: 1rem;
-      margin-left: 1rem;
+      margin-inline-start: 1rem;
     }
-    
+
     .image-row {
       display: flex;
       gap: 1.5rem;
@@ -176,7 +176,7 @@
       flex: 1;
       min-width: 300px;
     }
-    
+
     /* Quick Summary (collapsible video embeds) */
     #quick-summary h2 { margin-top: 0; }
     .video-toggle {
@@ -189,7 +189,7 @@
     .video-toggle h3 { margin: 0; }
     .video-toggle-btn {
       width: 100%;
-      text-align: left;
+      text-align: start;
       padding: 1.1rem 1.25rem;
       background: transparent;
       border: none;
@@ -253,22 +253,22 @@
       .video-toggle-btn { padding: 1rem 1.1rem; }
     }
   </style>
-<link href="../css/lang-switcher.css?v=21ddac23" rel="stylesheet" type="text/css"/>
+<link href="../css/lang-switcher.css?v=dbe2c3bc" rel="stylesheet" type="text/css"/>
 <script src="../js/posthog.js"></script>
-<script defer="" src="../js/lang-switcher.js?v=21ddac23" type="text/javascript"></script>
-<meta content="Tìm hiểu cách kết nối cảnh báo TradingView với webhook DivAlarm, cảnh báo theo từ khóa, tổ hợp tín hiệu và quy trình tự động đặt lệnh." name="description"/>
-<meta content="TradingView Hướng dẫn thiết lập webhook cho DivAlarm" property="og:title"/>
-<meta content="Tìm hiểu cách kết nối cảnh báo TradingView với webhook DivAlarm, cảnh báo theo từ khóa, tổ hợp tín hiệu và quy trình tự động đặt lệnh." property="og:description"/>
-<meta content="TradingView Hướng dẫn thiết lập webhook cho DivAlarm" name="twitter:title"/>
-<meta content="Tìm hiểu cách kết nối cảnh báo TradingView với webhook DivAlarm, cảnh báo theo từ khóa, tổ hợp tín hiệu và quy trình tự động đặt lệnh." name="twitter:description"/>
+<script defer="" src="../js/lang-switcher.js?v=8721e8dc" type="text/javascript"></script>
+<meta content="Thiết lập DivAlarm cảnh báo từ khóa từ Android thông báo điện thoại hoặc TradingView webhook, với kết hợp tín hiệu và lệnh tự động." name="description"/>
+<meta content="Hướng dẫn Cảnh báo Từ khóa cho DivAlarm" property="og:title"/>
+<meta content="Thiết lập DivAlarm cảnh báo từ khóa từ Android thông báo điện thoại hoặc TradingView webhook, với kết hợp tín hiệu và lệnh tự động." property="og:description"/>
+<meta content="Hướng dẫn Cảnh báo Từ khóa cho DivAlarm" name="twitter:title"/>
+<meta content="Thiết lập DivAlarm cảnh báo từ khóa từ Android thông báo điện thoại hoặc TradingView webhook, với kết hợp tín hiệu và lệnh tự động." name="twitter:description"/>
 <meta content="https://www.divalarm.com/vi/tradingview-webhook.html" property="og:url"/>
 <meta content="DivAlarm" property="og:site_name"/>
 <meta content="vi_VN" property="og:locale"/>
 <meta content="article" property="og:type"/><meta content="https://www.divalarm.com/images/og-cover.png" property="og:image"/><meta content="1080" property="og:image:width"/><meta content="649" property="og:image:height"/><meta content="https://www.divalarm.com/images/og-cover.png" name="twitter:image"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"HowTo","name":"Cách kết nối webhook TradingView với DivAlarm","description":"Kết nối cảnh báo TradingView với DivAlarm để tạo báo động theo từ khóa, kết hợp tín hiệu và quy trình tự động đặt lệnh.","url":"https://www.divalarm.com/vi/tradingview-webhook.html","step":[{"@type":"HowToStep","name":"Tạo cảnh báo TradingView","text":"Nhấp chuột phải vào indicator trong TradingView và chọn Add Alert trên indicator bạn muốn dùng."},{"@type":"HowToStep","name":"Dán URL webhook","text":"Bật Webhook URL trong phần thông báo của TradingView và dán URL đã copy từ app DivAlarm."},{"@type":"HowToStep","name":"Thêm từ khóa cho tin nhắn","text":"Nhập một từ khóa trong nội dung cảnh báo để DivAlarm có thể khớp tín hiệu TradingView gửi vào."},{"@type":"HowToStep","name":"Đăng ký từ khóa trong DivAlarm","text":"Thêm đúng từ khóa đó vào mục Keyword Include của app để kích hoạt báo động."},{"@type":"HowToStep","name":"Mở rộng quy trình","text":"Dùng kết hợp tín hiệu hoặc tự động đặt lệnh sau khi luồng webhook cơ bản chạy ổn định."}]},{"@type":"WebPage","url":"https://www.divalarm.com/vi/tradingview-webhook.html","name":"TradingView Hướng dẫn thiết lập webhook cho DivAlarm","description":"Tìm hiểu cách kết nối cảnh báo TradingView với webhook DivAlarm, cảnh báo theo từ khóa, tổ hợp tín hiệu và quy trình tự động đặt lệnh.","inLanguage":"vi","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://www.divalarm.com/vi/"},{"@type":"ListItem","position":2,"name":"Hướng dẫn Webhook TradingView","item":"https://www.divalarm.com/vi/tradingview-webhook.html"}]}]}</script>
-<link href="https://www.divalarm.com/vi/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/><link data-da-chrome="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.divalarm.com/#organization","name":"DivAlarm","url":"https://www.divalarm.com"},{"@type":"WebSite","@id":"https://www.divalarm.com/#website","url":"https://www.divalarm.com","name":"DivAlarm","publisher":{"@id":"https://www.divalarm.com/#organization"}},{"@type":"HowTo","name":"Cách kết nối webhook TradingView với DivAlarm","description":"Sử dụng chế độ Từ khóa webhook để kết nối cảnh báo TradingView với DivAlarm cho cảnh báo từ khóa, kết hợp tín hiệu và quy trình lệnh tự động.","url":"https://www.divalarm.com/vi/tradingview-webhook.html","step":[{"@type":"HowToStep","name":"Chọn Từ khóa webhook","text":"Mở Cảnh báo từ khóa · Lệnh tự động trong DivAlarm và chọn Từ khóa webhook để hiển thị URL webhook cá nhân của bạn."},{"@type":"HowToStep","name":"Tạo cảnh báo TradingView","text":"Nhấp chuột phải vào chỉ báo trong TradingView và chọn Thêm Cảnh Báo trên chỉ báo bạn muốn sử dụng."},{"@type":"HowToStep","name":"Dán URL webhook","text":"Bật URL Webhook trong thông báo TradingView và dán URL đã sao chép từ ứng dụng DivAlarm."},{"@type":"HowToStep","name":"Thêm từ khóa tin nhắn","text":"Nhập từ khóa trong tin nhắn cảnh báo để DivAlarm có thể khớp tín hiệu TradingView đến."},{"@type":"HowToStep","name":"Đăng ký từ khóa trong DivAlarm","text":"Thêm cùng một từ khóa trong phần Bao gồm Từ khóa của ứng dụng để kích hoạt cảnh báo."},{"@type":"HowToStep","name":"Mở rộng quy trình làm việc","text":"Sử dụng kết hợp tín hiệu hoặc lệnh tự động sau khi quy trình webhook cơ bản hoạt động chính xác."}]},{"@type":"WebPage","url":"https://www.divalarm.com/vi/tradingview-webhook.html","name":"Hướng dẫn Cảnh báo Từ khóa cho DivAlarm","description":"Thiết lập DivAlarm cảnh báo từ khóa từ Android thông báo điện thoại hoặc TradingView webhook, với kết hợp tín hiệu và lệnh tự động.","inLanguage":"vi","isPartOf":{"@id":"https://www.divalarm.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang Chủ","item":"https://www.divalarm.com/vi/"},{"@type":"ListItem","position":2,"name":"Hướng Dẫn Cảnh Báo Từ Khóa","item":"https://www.divalarm.com/vi/tradingview-webhook.html"}]}]}</script>
+<link href="https://www.divalarm.com/vi/tradingview-webhook.html" rel="canonical"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="en" rel="alternate"/><link href="https://www.divalarm.com/ko/tradingview-webhook.html" hreflang="ko" rel="alternate"/><link href="https://www.divalarm.com/ru/tradingview-webhook.html" hreflang="ru" rel="alternate"/><link href="https://www.divalarm.com/vi/tradingview-webhook.html" hreflang="vi" rel="alternate"/><link href="https://www.divalarm.com/tr/tradingview-webhook.html" hreflang="tr" rel="alternate"/><link href="https://www.divalarm.com/pt-br/tradingview-webhook.html" hreflang="pt-BR" rel="alternate"/><link href="https://www.divalarm.com/uk/tradingview-webhook.html" hreflang="uk" rel="alternate"/><link href="https://www.divalarm.com/id/tradingview-webhook.html" hreflang="id" rel="alternate"/><link href="https://www.divalarm.com/ja/tradingview-webhook.html" hreflang="ja" rel="alternate"/><link href="https://www.divalarm.com/de/tradingview-webhook.html" hreflang="de" rel="alternate"/><link href="https://www.divalarm.com/ur/tradingview-webhook.html" hreflang="ur" rel="alternate"/><link href="https://www.divalarm.com/fil/tradingview-webhook.html" hreflang="fil" rel="alternate"/><link href="https://www.divalarm.com/th/tradingview-webhook.html" hreflang="th" rel="alternate"/><link href="https://www.divalarm.com/ms/tradingview-webhook.html" hreflang="ms" rel="alternate"/><link href="https://www.divalarm.com/zh-hans/tradingview-webhook.html" hreflang="zh-Hans" rel="alternate"/><link href="https://www.divalarm.com/es/tradingview-webhook.html" hreflang="es" rel="alternate"/><link href="https://www.divalarm.com/zh-hant/tradingview-webhook.html" hreflang="zh-Hant" rel="alternate"/><link href="https://www.divalarm.com/en/tradingview-webhook.html" hreflang="x-default" rel="alternate"/><link data-da-chrome="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"/>
 <link data-da-chrome="" href="../css/site.css?v=75db1564" rel="stylesheet"/>
 <link data-da-chrome="" href="../css/legacy-skin.css?v=75db1564" rel="stylesheet"/>
 </head>
@@ -277,7 +277,7 @@
 <div class="da-wrap da-top-row">
 <a class="da-brand" href="index.html"><img alt="" height="30" src="../images/divblue3-140.png" width="30"/><span>DivAlarm</span></a>
 <nav aria-label="Menu chính" class="da-nav" id="da-nav">
-<a href="features.html">Tính năng</a><a href="performance.html">Hiệu suất</a><a aria-current="page" href="tradingview-webhook.html">TradingView</a><a href="pricing.html">Bảng giá</a><a href="qna.html">Hỏi &amp; Đáp</a>
+<a href="features.html">Tính năng</a><a href="performance.html">Hiệu suất</a><a aria-current="page" href="tradingview-webhook.html?lang=vi">TradingView</a><a href="pricing.html">Bảng giá</a><a href="qna.html">Hỏi &amp; Đáp</a>
 <div class="da-acct"><a href="sign-in-page.html" id="da-signin">Đăng nhập</a><a hidden="" href="my-account.html" id="da-account">Tài khoản</a><button hidden="" id="da-signout" type="button">Đăng xuất</button></div>
 </nav>
 <div class="da-actions">
@@ -289,76 +289,98 @@
 <a hidden="" href="sign-in-page.html" id="sign-btn2"></a>
 </header>
 <main class="manual-container" id="main">
-<a class="back-link" href="user-manual.html">← Quay lại Sổ tay người dùng</a>
-<h1 class="manual-title">Hướng dẫn Webhook TradingView cho DivAlarm</h1>
-<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">Kết nối cảnh báo TradingView với DivAlarm để dùng báo động theo từ khóa, tự động hóa webhook, kết hợp tín hiệu và tự động đặt lệnh trên sàn.<br/>
-<a class="da-link" href="../en/tradingview-connect.html?lang=en" hreflang="en">Kiểm tra kết nối TradingView và thiết lập trên máy tính (bằng tiếng Anh)</a></p>
+<a class="back-link" href="user-manual.html">← Quay lại Hướng dẫn Sử dụng</a>
+<h1 class="manual-title">Hướng dẫn Cảnh báo Từ khóa cho DivAlarm</h1>
+<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">Chọn từ khóa từ thông báo điện thoại hoặc tin nhắn webhook TradingView. Bạn có thể dùng cùng quy tắc cho cảnh báo, kết hợp tín hiệu và lệnh tự động sàn.<br/> <a class="da-link" href="tradingview-connect.html?lang=vi" hreflang="vi">Kiểm tra kết nối TradingView &amp; cài đặt PC</a></p>
 <!-- Table of Contents -->
 <div class="toc">
-<h3>📋 Mục lục</h3>
+<h3>📋 Mục Lục</h3>
 <ul>
-<li><a href="#quick-summary">Tóm tắt nhanh</a></li>
-<li><a href="#keyword">Cảnh báo từ khóa</a></li>
-<li><a href="#auto-order">Tự động đặt lệnh với TradingView</a></li>
-<li><a href="#divalarm-keywords">Từ khóa tín hiệu DivAlarm</a></li>
-<li><a href="#combination">Cảnh báo kết hợp tín hiệu</a></li>
+<li><a href="#keyword-source">Chọn Nguồn Từ khóa</a></li>
+<li><a href="#quick-summary">Ví dụ Webhook TradingView</a></li>
+<li><a href="#keyword">Quy tắc Từ khóa và Cài đặt Webhook TradingView</a></li>
+<li><a href="#auto-order">Lệnh tự động với Cảnh báo từ khóa</a></li>
+<li><a href="#divalarm-keywords">Từ khóa Tín hiệu DivAlarm</a></li>
+<li><a href="#combination">Cảnh báo Kết hợp Tín hiệu</a></li>
 </ul>
+</div>
+<!-- Keyword Source Section -->
+<div class="manual-section" id="keyword-source">
+<h2>Chọn Nguồn Từ khóa</h2>
+<p>Mở <strong>Cảnh báo từ khóa · Lệnh tự động</strong> và chọn một đầu vào ở đầu trang. Nhấn <strong>?</strong> bên cạnh bộ chọn để được trợ giúp. Hai chế độ này dùng chung các từ khóa, kết hợp và cài đặt cảnh báo đã lưu của bạn. Mỗi tài khoản có thể thử <strong>5 cảnh báo từ khóa miễn phí, không cần thẻ</strong> (tổng cộng cho mọi chế độ, trọn đời, chỉ tính khi lên lịch thành công). <strong>Lệnh tự động chỉ dành cho Pro</strong>.</p>
+<div class="highlight"><p><strong>5 lần thực thi miễn phí mỗi tài khoản:</strong> Từ khóa thông báo điện thoại, từ khóa webhook và cảnh báo kết hợp dùng chung hạn mức trọn đời. Một lần sử dụng được tính khi cảnh báo phù hợp được lên lịch thành công trên điện thoại bạn. Tin nhắn không khớp, gửi trùng và lên lịch thất bại không tính. Cần có kết nối Internet để xác minh lượt dùng miễn phí.</p><p>Hạn mức này <strong>không liên quan đến 7 cảnh báo chung</strong>, không đặt lại sau khi cài lại, và không bao gồm lệnh tự động. Quy tắc của bạn vẫn được lưu sau 5 lần dùng; chọn <strong>Pro</strong> để tiếp tục.</p></div>
+<h3>Từ khóa trong thông báo điện thoại (Android)</h3>
+<ol>
+<li>Chọn <strong>Từ khóa trong thông báo điện thoại</strong>.</li>
+<li>Mở cài đặt truy cập thông báo từ trang và cho phép <strong>DivAlarm</strong> đọc thông báo.</li>
+<li>Thêm văn bản vào <strong>Bao gồm Từ khóa</strong> xuất hiện trong tiêu đề hoặc nội dung thông báo bạn muốn khớp.</li>
+<li>Khi có thông báo khớp, DivAlarm sẽ áp dụng quy tắc cảnh báo, kết hợp và lệnh tự động bạn đã cấu hình.</li>
+</ol>
+<p>Truy cập thông báo phải luôn bật để đọc các ứng dụng khác. DivAlarm chỉ khớp văn bản do Android cung cấp; các bản tóm tắt nhóm, bản sao lặp lại và thông báo cảnh báo hoặc kết quả lệnh do DivAlarm tạo sẽ bị bỏ qua. Với thông báo nhắn tin, chỉ kiểm tra tin mới nhất.</p>
+<p>Tín hiệu đến của DivAlarm cũng có thể kích hoạt cảnh báo từ khóa và lệnh trong chế độ này. Bộ lọc đã bật vẫn áp dụng. Bạn có thể tiếp tục dùng <a href="#divalarm-keywords" style="color: #00d4ff;">từ khóa tín hiệu @D, @E và @P</a>.</p>
+<h3>Từ khóa webhook</h3>
+<p>Chọn <strong>Từ khóa webhook</strong> để nhận tin nhắn gửi đến URL webhook cá nhân của bạn, bao gồm cảnh báo TradingView. URL và nút sao chép chỉ hiện trong chế độ này. Thực hiện theo <a href="#keyword" style="color: #00d4ff;">các bước cài đặt TradingView</a> bên dưới.</p>
+<div class="highlight">
+<p>Chuyển đổi chế độ giữ nguyên quy tắc đã lưu. Ở chế độ điện thoại, tin nhắn webhook không kích hoạt cảnh báo từ khóa hay lệnh trên thiết bị này. Người dùng hiện tại bắt đầu ở chế độ webhook, nên cài đặt webhook hiện tại vẫn tiếp tục cho đến khi họ chuyển đổi.</p>
+<p>Đọc thông báo ứng dụng khác là tính năng của Android; không có trên iOS hoặc web.</p>
+</div>
 </div>
 <!-- Quick Summary Section -->
 <div class="manual-section" id="quick-summary">
-<h2>DivAlarm × TradingView – Tóm tắt nhanh</h2>
+<h2>DivAlarm × TradingView – Ví dụ Webhook</h2>
+<p>Các video này trình bày quy trình <strong>Từ khóa webhook</strong>. Chọn nguồn đó trước khi làm theo các bước URL webhook.</p>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">Kết nối TradingView với ứng dụng</button>
+<button aria-controls="qs-connect-tv" aria-expanded="true" class="video-toggle-btn" type="button">Kết nối TradingView với Ứng dụng</button>
 </h3>
 <div class="video-toggle-panel" id="qs-connect-tv">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="Kết nối TradingView với ứng dụng" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/00UnIp_ZYf4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/00UnIp_ZYf4" title="Kết nối TradingView với Ứng dụng" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/00UnIp_ZYf4?feature=share" rel="noopener noreferrer" target="_blank">Mở trên YouTube</a></p>
 </div>
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">Thiết lập Force Alarm cho TradingView</button>
+<button aria-controls="qs-force-alarm" aria-expanded="true" class="video-toggle-btn" type="button">Cưỡng bức Cài đặt Cảnh báo cho TradingView</button>
 </h3>
 <div class="video-toggle-panel" id="qs-force-alarm">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="Thiết lập Force Alarm cho TradingView" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/Q3jDFKG8wIo" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Q3jDFKG8wIo" title="Cưỡng bức Cài đặt Cảnh báo cho TradingView" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/Q3jDFKG8wIo?feature=share" rel="noopener noreferrer" target="_blank">Mở trên YouTube</a></p>
 </div>
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">Tự động đặt lệnh từ tín hiệu TradingView</button>
+<button aria-controls="qs-auto-order" aria-expanded="true" class="video-toggle-btn" type="button">Lệnh Tự động từ Tín hiệu TradingView</button>
 </h3>
 <div class="video-toggle-panel" id="qs-auto-order">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="Tự động đặt lệnh từ tín hiệu TradingView" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/T4NzR8Pnv9A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T4NzR8Pnv9A" title="Lệnh Tự động từ Tín hiệu TradingView" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">Mở trên YouTube</a></p>
 </div>
 </div>
-<div class="video-toggle">
+<div class="video-toggle" id="exchange-api-setup" style="scroll-margin-top: 84px;">
 <h3>
-<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">Thiết lập API Key sàn</button>
+<button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">Cài đặt API Key Sàn Giao dịch</button>
 </h3>
 <div class="video-toggle-panel" id="qs-exchange-api">
 <p>Khi tạo khóa Bitget, chọn <strong>Read-write</strong>. Bật cả <strong>Futures order</strong> để đặt lệnh và <strong>Futures Holdings</strong> để xem vị thế.</p>
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="Thiết lập API Key sàn" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/JBv2UXysv3A" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JBv2UXysv3A" title="Cài đặt API Key Sàn Giao dịch" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/JBv2UXysv3A?feature=share" rel="noopener noreferrer" target="_blank">Mở trên YouTube</a></p>
 </div>
 </div>
 <div class="video-toggle">
 <h3>
-<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">Tạo tổ hợp indicator tùy chỉnh từ TradingView</button>
+<button aria-controls="qs-custom-indicators" aria-expanded="true" class="video-toggle-btn" type="button">Tạo Kết hợp Chỉ báo Tùy chỉnh từ TradingView</button>
 </h3>
 <div class="video-toggle-panel" id="qs-custom-indicators">
 <div class="video-embed">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="Tạo tổ hợp indicator tùy chỉnh từ TradingView" width="435"></iframe>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" data-src="https://www.youtube.com/embed/x57bL0uNVc4" frameborder="0" height="773" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/x57bL0uNVc4" title="Tạo Kết hợp Chỉ báo Tùy chỉnh từ TradingView" width="435"></iframe>
 </div>
 <p class="video-links"><a href="https://youtube.com/shorts/x57bL0uNVc4?feature=share" rel="noopener noreferrer" target="_blank">Mở trên YouTube</a></p>
 </div>
@@ -366,85 +388,93 @@
 </div>
 <!-- Keyword Alerts Section -->
 <div class="manual-section" id="keyword">
-<h2>🔔 Cảnh báo từ khóa</h2>
+<h2>🔔 Quy tắc Từ khóa và Cài đặt Webhook TradingView</h2>
+<p>Trong <strong>Cảnh báo từ khóa · Lệnh tự động</strong>, thêm văn bản bạn muốn khớp vào <strong>Bao gồm Từ khóa</strong>. Chế độ điện thoại kiểm tra tiêu đề và nội dung thông báo; chế độ webhook kiểm tra văn bản webhook đến. <a href="#keyword-source" style="color: #00d4ff;">Chọn nguồn của bạn</a> trước khi thử quy tắc.</p>
 <h3>Thêm Webhook trong TradingView</h3>
-<img alt="TradingView Thêm cảnh báo" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
-<p>Nhấp chuột phải vào indicator bạn muốn nhận tín hiệu trong TradingView rồi chọn "Add Alert on ~".</p>
-<img alt="Cài đặt URL webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
-<img alt="Cài đặt thông báo" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>Trong mục "Notifications", tick "Webhook URL" và dán địa chỉ đã copy từ app vào ô nhập bên dưới.</p>
-<p>Sau khi thiết lập, mục này sẽ tự động được tick/điền cho các cảnh báo khác.</p>
-<img alt="Cài đặt nội dung tin nhắn" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>Trong mục "Messages", ở phần "Message", thêm bất kỳ từ khóa nào bạn muốn (ví dụ: "AAA").</p>
-<p>Nhấn "Create" để tạo cảnh báo TradingView.</p>
-<h3>Nhận cảnh báo TradingView trong ứng dụng</h3>
-<img alt="Cài đặt từ khóa trong app" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Thêm từ khóa (ví dụ: "AAA") vào mục 'Keyword Include' trong app. Khi phần "Message" của cảnh báo TradingView có chứa từ khóa, báo động sẽ kêu theo cấu hình.</p>
+<p>Chọn <strong>Từ khóa webhook</strong>, thêm <code>AA</code> vào <strong>Bao gồm Từ khóa</strong>, và bật cảnh báo cho nó. Tắt lệnh tự động với bất kỳ quy tắc từ khóa hoặc kết hợp nào khớp AA khi thử cảnh báo TradingView thật. Mở rộng <strong>URL Webhook</strong> để sao chép URL cá nhân. Nhấn <strong>?</strong> bên cạnh tiêu đề URL để xem các bước minh họa.</p>
+<img alt="TradingView Thêm Cảnh Báo" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
+<p>Nhấp chuột phải vào chỉ báo bạn muốn nhận tín hiệu trong TradingView và chọn "Thêm Cảnh báo trên ~".</p>
+<img alt="Cài Đặt URL Webhook" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
+<img alt="Cài Đặt Thông Báo" src="../images/image_tv.png" style="max-width: 600px;"/>
+<p>Mở <strong>Thông báo</strong>, bật <strong>URL Webhook</strong>, dán URL cá nhân của bạn và chọn <strong>Áp dụng</strong>.</p>
+<p>Bạn có thể sử dụng lại cùng một URL cho các cảnh báo khác. Nếu cảnh báo mới đã có URL của bạn, hãy kiểm tra xem hộp đó đã được bật và địa chỉ có chính xác không. Kiểm tra từng cảnh báo hiện có một cách riêng biệt.</p>
+<p>Để kiểm tra giá một lần, chọn <strong>Giá → Ngoài Kênh</strong> và <strong>Chỉ một lần</strong>. Đặt cả hai giới hạn ở một phía của giá hiện tại. Ví dụ, nếu giá là 100, dùng giới hạn dưới là 98 và giới hạn trên là 99.</p>
+<img alt="Cài Đặt Tin Nhắn" src="../images/image%201_tv.png" style="max-width: 680px;"/>
+<p>Ứng dụng TradingView và ảnh chụp màn hình sử dụng <code>AAA</code> để chỉ vị trí từ khóa. Với bài kiểm tra này, nhập <code>AA Webhook test</code> vào <strong>Tin nhắn</strong> hoặc thêm từ khóa đã đăng ký <code>AA</code> vào tin nhắn hiện có, sau đó áp dụng thay đổi.</p>
+<p>Chọn <strong>Tạo</strong>. Khi điều kiện được đáp ứng, kiểm tra nhật ký cảnh báo TradingView và báo động trên điện thoại của bạn.</p>
+<h3>Nhận Cảnh báo TradingView trong Ứng dụng</h3>
+<img alt="Cài Đặt Từ Khóa Ứng Dụng" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Giữ nguyên lựa chọn <strong>Từ khóa webhook</strong>. Tin nhắn chứa <code>AA</code> sẽ kích hoạt báo động bạn đã bật cho từ khóa đó. Tắt quy tắc kiểm tra AA khi bạn hoàn tất.</p>
+<p>Để kiểm tra việc gửi từ máy chủ đến điện thoại Android của bạn, <a class="da-link" href="tradingview-connect.html?lang=vi#connection-test">gửi tín hiệu thử từ kiểm tra kết nối</a>. Chẩn đoán này bỏ qua các quy tắc từ khóa và lệnh trên sàn, không sử dụng hạn mức báo động miễn phí của bạn.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
-<h2>🤖 Tự động đặt lệnh với cảnh báo TradingView</h2>
-<img alt="Cài đặt tự động đặt lệnh" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Bạn có thể thiết lập “Tự động đặt lệnh” để gửi tới sàn khi nhận được cảnh báo theo từ khóa.</p>
-<img alt="Cài đặt API sàn" src="../images/image%202_tv.png" style="max-width: 500px;"/>
+<h2>🤖 Lệnh Tự Động với Cảnh báo Từ khóa</h2>
+<img alt="Cài đặt Lệnh tự động" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
+<p>Với <strong>Pro</strong>, bạn có thể gán lệnh tự động cho từng quy tắc từ khóa hoặc kết hợp. Giữ lệnh tự động tắt cho các quy tắc chỉ báo động. Khi bật, một khớp từ nguồn bạn chọn hoặc tín hiệu DivAlarm đủ điều kiện có thể đặt lệnh thật trên sàn của bạn.</p>
+<img alt="Cài Đặt API Sàn Giao Dịch" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>Các sàn hỗ trợ tự động đặt lệnh: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>Bạn cần nhập API key trong trang Cài đặt của app.</p>
+<p>Nhập khóa API sàn của bạn trong <strong>Cài Đặt → Cài Đặt Đơn Tự Động</strong>. Ứng dụng Android hỗ trợ Binance, Bybit, OKX, Bitget, Gate và Bitunix.</p>
+<p>Chạm vào <strong>giỏ hàng</strong> ở bên phải hàng từ khóa để chọn sàn, ký hiệu và cài đặt lệnh, sau đó bật lệnh tự động cho quy tắc đó. Nếu bạn dùng Bitget, kiểm tra hai quyền cần thiết trong <a class="da-link" href="#exchange-api-setup">Thiết lập Khóa API Sàn</a>.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
 <div class="manual-section" id="divalarm-keywords">
-<h2>📝 Đăng ký tín hiệu DivAlarm thành từ khóa</h2>
-<img alt="Từ khóa tín hiệu DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
-<p>Cảnh báo riêng của DivAlarm cũng có thể được thêm vào “Tổ hợp từ khóa” (để tạo cảnh báo tổ hợp hoặc tự động đặt lệnh).</p>
+<h2>📝 Đăng ký Tín hiệu DivAlarm làm Từ khóa</h2>
+<img alt="Từ khóa Tín hiệu DivAlarm" src="../images/image%203_tv.png" style="max-width: 500px;"/>
+<p>Tín hiệu riêng của DivAlarm có thể kích hoạt cảnh báo từ khóa, kết hợp và lệnh tự động trong <strong>cả hai chế độ nhập</strong>. Đăng ký chúng theo định dạng dưới đây. Bộ lọc tín hiệu gốc đã bật vẫn được áp dụng; thêm từ khóa không bật bộ lọc tín hiệu bị tắt.</p>
 <div class="highlight">
-<p><strong>Định dạng:</strong> @AlarmType@CoinNamePrefix@TitleKeyword@Timeframe@SecondTimeframe(nếu có)</p>
+<p><strong>Phân kỳ RSI (@D):</strong><br/><code style="overflow-wrap: anywhere;">@D@Kind@Direction@Status@MainTimeframe[@SubTimeframe]</code></p>
+<p>Giá trị trạng thái là <code>early_completed</code>, <code>early_confirmed</code>, <code>confirmed</code> và <code>forming</code>. Khung thời gian thứ hai được dùng cho tín hiệu Đang hình thành.</p>
+<p><strong>Chỉ báo bổ sung (@E):</strong><br/><code style="overflow-wrap: anywhere;">@E@Kind@TitleKeyword@Timeframe</code></p>
+<p><strong>Cảnh báo giá (@P):</strong><br/><code style="overflow-wrap: anywhere;">@P@Kind@TitleKeyword</code></p>
+<p>Các quy tắc @D hiện có mà không có trạng thái được nhận dạng vẫn được hỗ trợ; trường thứ tư và thứ năm giữ nguyên ý nghĩa khung thời gian chính và phụ.</p>
 </div>
-<p><strong>Loại cảnh báo:</strong></p>
+<p><strong>Loại Báo động:</strong></p>
 <ul>
-<li><code>@D</code> — RSI Divergence filters</li>
-<li><code>@E</code> — Extra Indicators</li>
-<li><code>@P</code> — Price alerts</li>
+<li><code>@D</code> — Bộ lọc Phân kỳ RSI</li>
+<li><code>@E</code> — Chỉ báo bổ sung</li>
+<li><code>@P</code> — Cảnh báo giá</li>
 </ul>
 <h3>Ví dụ</h3>
 <div class="code-block">
-<p><code>"@D@BTC@Bull@5m@1m"</code></p>
-<p class="desc">→ Phân kỳ RSI, BTCUSDT.P, tiêu đề có chứa "Bull", Đang hình thành, khung chính 5m, khung phụ 1m</p>
+<p><code>@D@BTC@Bull@forming@5m@1m</code></p>
+<p class="desc">→ Phân kỳ RSI, BTCUSDT.P, tiêu đề chứa "Bull", Đang hình thành, chính 5m, phụ 1m</p>
 </div>
 <div class="code-block">
-<p><code>"@D@ETH@Bear@15m@O"</code></p>
-<p class="desc">→ Phân kỳ RSI, ETHUSDT.P, tiêu đề có chứa "Bear", Hoàn tất, 15m, không có khung phụ</p>
+<p><code>@D@ETH@Bear@confirmed@15m</code></p>
+<p class="desc">→ Phân kỳ RSI, ETHUSDT.P, tiêu đề chứa "Bear", Đã xác nhận, 15m, không có khung phụ</p>
 </div>
-<img alt="Ví dụ từ khóa" src="../images/image%204_tv.png" style="max-width: 500px;"/>
+<img alt="Ví Dụ Từ Khóa" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
-<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Indicator bổ sung, coin BTC, tiêu đề có chứa "Sell", 30m</span></p>
-<p><code>"@E@BTC@Buy@1h"</code></p>
-<p><code>"@E@ETH@Breakout@15m"</code></p>
-<p><code>"@E@BTC@Breakdown@5m"</code></p>
-<p><code>"@E@BTC@Near Support@1m"</code></p>
-<p><code>"@E@BTC@Near Resistance@5m"</code></p>
-<p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ Cảnh báo giá, coin BTC, tiêu đề có chứa "Up"</span></p>
-<p><code>"@P@ETH@Down"</code></p>
+<p><code>@E@BTC@Sell@30m</code> <span class="desc">→ Chỉ báo bổ sung, coin BTC, tiêu đề chứa "Sell", 30m</span></p>
+<p><code>@E@BTC@Buy@1h</code></p>
+<p><code>@E@ETH@Breakout@15m</code></p>
+<p><code>@E@BTC@Breakdown@5m</code></p>
+<p><code>@E@BTC@Near Support@1m</code></p>
+<p><code>@E@BTC@Near Resistance@5m</code></p>
+<p><code>@E@BTC@EMA50@1h</code></p>
+<p><code>@P@BTC@Up</code> <span class="desc">→ Cảnh báo giá, coin BTC, tiêu đề chứa "Up"</span></p>
+<p><code>@P@ETH@Down</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
 <div class="manual-section" id="combination">
-<h2>🔀 Cảnh báo tổ hợp tín hiệu</h2>
-<p>Kết hợp nhiều tín hiệu TradingView để tạo tín hiệu mới hoặc lọc tín hiệu.</p>
+<h2>🔀 Cảnh báo Kết hợp Tín hiệu</h2>
+<p>Kết hợp thông báo điện thoại hoặc tin nhắn webhook khớp từ nguồn đã chọn với các tín hiệu DivAlarm đủ điều kiện để tạo cảnh báo kết hợp. Quy tắc từ khóa và cài đặt khung thời gian hoạt động trong cả hai chế độ.</p>
 <div class="image-row">
-<img alt="Cài đặt cảnh báo tổ hợp" src="../images/image%205_tv.png"/>
+<img alt="Cài Đặt Cảnh Báo Kết Hợp" src="../images/image%205_tv.png"/>
 <div>
-<p>Thiết lập các điều kiện phải được thỏa trong một khoảng thời gian để cảnh báo kích hoạt.</p>
-<p><strong>Ví dụ:</strong><br/> Trong vòng 1 giờ 30 phút:<br/> • “Cảnh báo có từ khóa A” VÀ<br/> • “Cảnh báo có từ khóa B” cùng đến, HOẶC<br/> • “Cảnh báo có từ khóa C” đến</p>
-<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
+<p>Đặt điều kiện phải được đáp ứng trong một khung thời gian để báo động kích hoạt.</p>
+<p><strong>Ví dụ:</strong><br/> Trong vòng 1 giờ 30 phút:<br/> • 'Cảnh báo với từ khóa A' VÀ<br/> • 'Cảnh báo với từ khóa B' đều đến, HOẶC<br/> • 'Cảnh báo với từ khóa C' đến</p>
+<p>Nhập <code>(1&amp;2)|3</code> vào <strong>Kết hợp Báo động</strong> và <code>1h 30m</code> vào <strong>Khung Thời Gian</strong>.</p>
 </div>
 </div>
 <div class="highlight">
-<p><strong>&amp;</strong> = "AND" (cần thỏa cả hai điều kiện)</p>
-<p><strong>|</strong> = "OR" (chỉ cần thỏa một điều kiện)</p>
-<p>Ngay cả khi các cảnh báo từ khóa riêng lẻ bị tắt, tổ hợp vẫn có thể kích hoạt khi đủ điều kiện.</p>
-<p><strong>Tự động đặt lệnh cũng làm được với cảnh báo tổ hợp!</strong></p>
+<p><strong>&amp;</strong> = "VÀ" (cả hai điều kiện phải được đáp ứng)</p>
+<p><strong>|</strong> = "HOẶC" (bất kỳ điều kiện nào cũng có thể được đáp ứng)</p>
+<p>Ngay cả khi các cảnh báo từ khóa riêng lẻ bị tắt, kết hợp vẫn có thể kích hoạt khi các điều kiện được đáp ứng.</p>
+<p><strong>Lệnh tự động cũng có thể thực hiện với cảnh báo kết hợp!</strong></p>
 </div>
 </div>
 </main>
@@ -475,7 +505,7 @@
 <div class="da-foot-grid">
 <div><a class="da-brand" href="index.html"><img alt="" height="30" src="../images/divblue3-140.png" width="30"/><span>DivAlarm</span></a><p class="da-foot-risk">DivAlarm là công cụ cảnh báo, không phải lời khuyên đầu tư. Giao dịch hợp đồng tương lai tiền mã hóa có rủi ro thua lỗ cao. Tín hiệu trong quá khứ không đảm bảo kết quả trong tương lai.</p></div>
 <div><p class="da-foot-h">Sản phẩm</p><ul><li><a href="features.html">Tính năng</a></li><li><a href="performance.html">Hiệu suất</a></li><li><a href="pricing.html">Bảng giá</a></li><li><a href="downloads.html">Tải xuống</a></li></ul></div>
-<div><p class="da-foot-h">Hướng dẫn</p><ul><li><a href="rsi-divergence.html">Phân kỳ RSI</a></li><li><a href="user-manual.html">Hướng dẫn sử dụng</a></li><li><a href="tradingview-webhook.html">Thiết lập TradingView</a></li><li><a href="qna.html">Hỏi &amp; Đáp</a></li></ul></div>
+<div><p class="da-foot-h">Hướng dẫn</p><ul><li><a href="rsi-divergence.html">Phân kỳ RSI</a></li><li><a href="user-manual.html">Hướng dẫn sử dụng</a></li><li><a href="tradingview-webhook.html?lang=vi">Thiết lập TradingView</a></li><li><a href="qna.html">Hỏi &amp; Đáp</a></li></ul></div>
 <div><p class="da-foot-h">Công ty</p><ul><li><a href="features.html#ref-reward">Thưởng giới thiệu</a></li><li><a href="mailto:info@wise-signal.com">Liên hệ</a></li></ul></div>
 </div>
 <div class="da-legal" data-keep="1" id="wisesignal-legal-footer">
@@ -486,6 +516,6 @@
 </div>
 </div>
 </footer>
-<script data-da-chrome="" src="../js/site.js?v=78308067" type="module"></script>
+<script data-da-chrome="" src="../js/site.js?v=7b2284da" type="module"></script>
 </body>
 </html>
