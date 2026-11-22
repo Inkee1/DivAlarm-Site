@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light dark"/>
 <meta name="robots" content="noindex, nofollow"/>
 <title>Connect TradingView | DivAlarm</title>
-<meta name="description" content="Copy your DivAlarm webhook URL into TradingView and check that alerts reach your phone."/>
+<meta name="description" content="Copy your DivAlarm webhook URL and check that TradingView alerts reach your phone. Screenshots and videos walk you through each step."/>
 <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <link href="../images/webclip.png" rel="apple-touch-icon"/>
 <script src="../js/posthog.js"></script>
@@ -240,6 +240,8 @@
     .path { padding: 20px; }
   }
 </style>
+<link rel="stylesheet" href="../css/tradingview-connect-guide.css"/>
+<script defer src="../js/tradingview-connect-guide.js"></script>
 </head>
 <body>
 <header class="bar">
@@ -253,54 +255,21 @@
 
 <main>
   <div class="intro">
-    <h1>Send TradingView alerts to your phone</h1>
-    <p class="lede">Paste one address into TradingView, then send a test from this page. You will see exactly where the signal stops if something is wrong.</p>
+    <h1>Set up and test TradingView webhooks</h1>
+    <p class="lede">Send a test from this page to check delivery to your Android phone. Then send one TradingView alert with the keyword AA to check your alert rule.</p>
+    <nav class="guide-nav" aria-label="Webhook setup">
+      <a href="#connection-test">Connection test</a>
+      <a href="#pc-setup">TradingView setup</a>
+      <a href="#keyword-options">Alarms, orders & combinations</a>
+      <a href="tradingview-webhook.html?lang=en">Full keyword alarm guide</a>
+    </nav>
   </div>
 
   <div class="grid">
-    <ol class="steps">
-      <li class="step">
-        <div>
-          <h2>Copy your webhook URL</h2>
-          <p>This address is yours alone. Every TradingView alert that uses it goes to the DivAlarm app on your phone.</p>
-          <div class="copy-row">
-            <code id="hook-url"><span class="skeleton" id="hook-url-placeholder">Sign in to see your URL</span></code>
-            <button class="copy-btn" type="button" data-copy="hook-url" disabled>Copy</button>
-          </div>
-          <p class="note">Keep it private. Anyone with this URL can send alerts to your phone.</p>
-        </div>
-      </li>
-      <li class="step">
-        <div>
-          <h2>Paste it into a TradingView alert</h2>
-          <p>On a TradingView chart, right-click and choose <strong>Add alert</strong>. Open <span class="tv-path">Notifications</span>, check <strong>Webhook URL</strong>, paste your URL and press <strong>Apply</strong>.</p>
-          <p>New alerts usually remember the last URL, so you only paste it once.</p>
-        </div>
-      </li>
-      <li class="step">
-        <div>
-          <h2>Write a message with your keyword</h2>
-          <p>DivAlarm reacts to the keywords you set in the app under <strong>Keyword alarm → Webhook keywords</strong>. Put one of them in the alert <strong>Message</strong>. For example, with the keyword <strong>AA</strong>:</p>
-          <div class="copy-row">
-            <code class="wrap" id="sample-message">AA {{ticker}} {{close}}</code>
-            <button class="copy-btn" type="button" data-copy="sample-message">Copy</button>
-          </div>
-          <p class="note">TradingView replaces <code>{{ticker}}</code> and <code>{{close}}</code> with the symbol and price when the alert fires.</p>
-        </div>
-      </li>
-      <li class="step">
-        <div>
-          <h2>Create the alert</h2>
-          <p>Press <strong>Create</strong>. When the alert fires, your phone rings with the alarm you chose for that keyword, and any auto-order linked to it runs.</p>
-          <p>Before trusting it with orders, send a test from this page to confirm your phone is reachable.</p>
-        </div>
-      </li>
-    </ol>
-
-    <aside class="path-col" aria-labelledby="path-title">
+    <aside class="path-col" id="connection-test" aria-labelledby="path-title">
       <section class="path">
         <h2 id="path-title">Connection test</h2>
-        <p id="path-intro">This page sends a test signal the same way TradingView does. Nothing is ordered.</p>
+        <p id="path-intro">The server sends a test signal to your Android app and shows the result here. This test never places an order.</p>
 
         <div class="gate" id="gate-signin" hidden>
           <p>Sign in with the account you use in the DivAlarm app.</p>
@@ -335,6 +304,159 @@
         <p class="sr-only" role="status" aria-live="polite" id="live"></p>
       </section>
     </aside>
+
+    <section class="setup-col" id="pc-setup" aria-labelledby="setup-title">
+      <h2 id="setup-title">Set up your TradingView alert</h2>
+      <ol class="steps">
+        <li class="step">
+          <div>
+            <h3>Copy your webhook URL and enable AA</h3>
+            <p>In DivAlarm, open <strong>Keyword Alarm → Webhook keywords</strong>, add <strong>AA</strong> and turn on its alarm. Copy the webhook URL below while signed in to the same account as your phone.</p>
+            <div class="copy-row">
+              <code id="hook-url"><span class="skeleton" id="hook-url-placeholder">Sign in with your app account to see your URL</span></code>
+              <button class="copy-btn" type="button" data-copy="hook-url" disabled>Copy</button>
+            </div>
+            <p class="note">Keep this address private. Anyone who has it can send a signal to your account.</p>
+            <p>To test the alarm on its own, <strong>turn off auto-orders for any keyword or combination that matches AA.</strong></p>
+            <details class="guide-examples">
+              <summary>Keyword setup screenshot</summary>
+              <div class="example-grid">
+                <figure>
+                  <a href="../images/tradingview-setup/divalarm_aa_keyword_example.png" target="_blank" rel="noopener noreferrer"><img alt="AA in the DivAlarm keyword list" src="../images/tradingview-setup/divalarm_aa_keyword_example.png" width="290" height="264" loading="lazy" decoding="async"/><span class="sr-only">Open full-size image</span></a>
+                  <figcaption>Add the AA keyword</figcaption>
+                </figure>
+              </div>
+            </details>
+          </div>
+        </li>
+        <li class="step">
+          <div>
+            <h3>Add your URL to a TradingView alert</h3>
+            <p>Right-click the chart and choose <strong>Add alert</strong>. Open <strong>Notifications</strong>, check <strong>Webhook URL</strong>, paste your address and press <strong>Apply</strong>.</p>
+            <p class="note">Use the same URL for other alerts. If a new alert already shows your address, check that Webhook URL is enabled. For an existing alert, check its own settings.</p>
+            <details class="guide-examples">
+              <summary>TradingView alert and webhook screenshots</summary>
+              <div class="example-grid">
+                <figure>
+                  <a href="../images/tradingview-setup/tradingview_create_alert_example.png" target="_blank" rel="noopener noreferrer"><img alt="Add alert in the TradingView chart’s right-click menu" src="../images/tradingview-setup/tradingview_create_alert_example.png" width="398" height="197" loading="lazy" decoding="async"/><span class="sr-only">Open full-size image</span></a>
+                  <figcaption>Add alert</figcaption>
+                </figure>
+                <figure>
+                  <a href="../images/tradingview-setup/tradingview_notifications_example.png" target="_blank" rel="noopener noreferrer"><img alt="Notifications in the TradingView alert window" src="../images/tradingview-setup/tradingview_notifications_example.png" width="452" height="508" loading="lazy" decoding="async"/><span class="sr-only">Open full-size image</span></a>
+                  <figcaption>Open Notifications</figcaption>
+                </figure>
+                <figure>
+                  <a href="../images/tradingview-setup/tradingview_webhook_url_example.png" target="_blank" rel="noopener noreferrer"><img alt="Selected Webhook URL field and Apply button" src="../images/tradingview-setup/tradingview_webhook_url_example.png" width="461" height="666" loading="lazy" decoding="async"/><span class="sr-only">Open full-size image</span></a>
+                  <figcaption>Enable and apply the webhook URL</figcaption>
+                </figure>
+              </div>
+            </details>
+            <details class="guide-video">
+              <summary>Video · Connect TradingView to DivAlarm</summary>
+              <div class="guide-player"></div>
+              <a href="https://www.youtube.com/shorts/00UnIp_ZYf4" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+            </details>
+          </div>
+        </li>
+        <li class="step">
+          <div>
+            <h3>Choose a one-time price condition</h3>
+            <p>For a quick check, select <strong>Price → Outside Channel</strong>. If the current price is 100, for example, set the lower bound to 98 and the upper bound to 99. Select <strong>Once only</strong>. For an indicator alert, choose the indicator condition you want to use.</p>
+            <details class="guide-examples">
+              <summary>Price condition screenshot</summary>
+              <div class="example-grid">
+                <figure>
+                  <a href="../images/tradingview-setup/tradingview_outside_channel_example.png" target="_blank" rel="noopener noreferrer"><img alt="Outside Channel in the Price condition menu" src="../images/tradingview-setup/tradingview_outside_channel_example.png" width="475" height="586" loading="lazy" decoding="async"/><span class="sr-only">Open full-size image</span></a>
+                  <figcaption>Choose Outside Channel</figcaption>
+                </figure>
+              </div>
+            </details>
+          </div>
+        </li>
+        <li class="step">
+          <div>
+            <h3>Include AA in the message</h3>
+            <p>Open <strong>Message</strong> in TradingView, include the same <strong>AA</strong> keyword you enabled in the app and press <strong>Apply</strong>. Copy the example below. If your rule matches the start of the message, put AA first.</p>
+            <div class="copy-row">
+              <code class="wrap" id="sample-message">AA Webhook test</code>
+              <button class="copy-btn" type="button" data-copy="sample-message">Copy</button>
+            </div>
+            <p class="note">To include the symbol and price, use <code>AA {{ticker}} {{close}}</code>. TradingView replaces the placeholders when the alert fires.</p>
+            <details class="guide-examples">
+              <summary>Message screenshot</summary>
+              <div class="example-grid">
+                <figure>
+                  <a href="../images/tradingview-setup/tradingview_aa_message_example.png" target="_blank" rel="noopener noreferrer"><img alt="TradingView message starting with AA and the Apply button" src="../images/tradingview-setup/tradingview_aa_message_example.png" width="466" height="496" loading="lazy" decoding="async"/><span class="sr-only">Open full-size image</span></a>
+                  <figcaption>Include AA in the message</figcaption>
+                </figure>
+              </div>
+            </details>
+          </div>
+        </li>
+        <li class="step">
+          <div>
+            <h3>Create the alert and check your phone</h3>
+            <p>Press <strong>Create</strong> and wait for a price update. Find the event in the <strong>TradingView alert log</strong>, then check for the <strong>AA alarm in DivAlarm</strong>. Turn off the test rule and the TradingView test alert when finished.</p>
+            <details class="troubleshooting">
+              <summary>If the alarm does not arrive</summary>
+              <ul>
+                <li>If the TradingView alert log is empty, check that the alert is active and the price met its condition.</li>
+                <li>If the event shows a delivery failure, check <strong>Webhook status</strong> in the alert log and the URL saved on that alert. If the Webhook URL option is unavailable, check <strong>two-factor authentication</strong> in TradingView.</li>
+                <li>If TradingView sent the alert, check <strong>Webhook keywords</strong> mode, the AA rule and its alarm switch, and DivAlarm’s notification permission on your phone.</li>
+              </ul>
+            </details>
+          </div>
+        </li>
+      </ol>
+      <section class="guide-options" id="keyword-options" aria-labelledby="options-title">
+        <h2 id="options-title">Alarms, auto-orders and signal combinations</h2>
+        <article>
+          <h3>Set a forced alarm for a keyword</h3>
+          <p>Choose an alarm type and sound on the keyword rule. The video shows how to set a forced alarm for a TradingView signal.</p>
+          <details class="guide-video">
+            <summary>Video · Set up a forced alarm for TradingView</summary>
+            <div class="guide-player"></div>
+            <a href="https://www.youtube.com/shorts/Q3jDFKG8wIo" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+          </details>
+        </article>
+        <article>
+          <h3>Connect an exchange and configure an order</h3>
+          <p>For Pro auto-orders, register your exchange API key in <strong>Settings → Auto Order Settings</strong>. On Bitget, select <strong>Read-write</strong> and enable both <strong>Futures order</strong> to place orders and <strong>Futures Holdings</strong> to view positions.</p>
+          <details class="guide-video">
+            <summary>Video · Register an exchange API key</summary>
+            <div class="guide-player"></div>
+            <a href="https://www.youtube.com/shorts/JBv2UXysv3A" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+          </details>
+          <p>Then tap the <strong>cart at the far right of the keyword row</strong> to choose the exchange, symbol and quantity. A matching live signal runs the order when it is enabled.</p>
+          <details class="guide-examples">
+            <summary>Auto-order setup screenshot</summary>
+            <div class="example-grid">
+              <figure>
+                <a href="../images/tradingview-setup/divalarm_keyword_auto_order_example.png" target="_blank" rel="noopener noreferrer"><img alt="Auto-order cart at the far right of a keyword row" src="../images/tradingview-setup/divalarm_keyword_auto_order_example.png" width="691" height="285" loading="lazy" decoding="async"/><span class="sr-only">Open full-size image</span></a>
+                <figcaption>Find the cart on a keyword row</figcaption>
+              </figure>
+            </div>
+          </details>
+          <details class="guide-video">
+            <summary>Video · Set up an auto-order from TradingView</summary>
+            <div class="guide-player"></div>
+            <a href="https://www.youtube.com/shorts/T4NzR8Pnv9A" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+          </details>
+          <p><a href="tradingview-webhook.html?lang=en#auto-order">Auto-order guide</a></p>
+        </article>
+        <article>
+          <h3>Combine several signals</h3>
+          <p>Enter <code>(1&amp;2)|3</code> in <strong>Alarm Combination</strong> and <code>1h 30m</code> for the time window. The combination fires when keywords 1 and 2 both arrive within 90 minutes, or when keyword 3 arrives.</p>
+          <details class="guide-video">
+            <summary>Video · Combine TradingView indicator signals</summary>
+            <div class="guide-player"></div>
+            <a href="https://www.youtube.com/shorts/x57bL0uNVc4" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+          </details>
+          <p><a href="tradingview-webhook.html?lang=en#combination">Combination rules and examples</a> · <a href="tradingview-webhook.html?lang=en#divalarm-keywords">DivAlarm signal keywords (@D, @E and @P)</a></p>
+        </article>
+        <p class="manual-links"><a href="tradingview-webhook.html?lang=en#keyword-source">Choosing phone notification or webhook keywords</a></p>
+      </section>
+    </section>
   </div>
 </main>
 
@@ -357,7 +479,7 @@
   <span data-k="relayRate">Too many signals in a short time. Wait a minute and try again.</span>
   <span data-k="relayError">The server returned an error ({0}). Try again in a minute.</span>
   <span data-k="phoneBusy">Waiting for your phone to answer…</span>
-  <span data-k="phoneOk">Received on {0}. Real alerts will ring on this phone.</span>
+  <span data-k="phoneOk">{0} received the test signal. Send an AA alert from TradingView to check your keyword rule next.</span>
   <span data-k="phoneWarn">Received on {0}, but real alerts will not ring until you fix this:</span>
   <span data-k="phoneTimeout">No answer from your phone within 30 seconds. Check that:</span>
   <span data-k="tipUpdate">the DivAlarm app is updated to the latest version</span>

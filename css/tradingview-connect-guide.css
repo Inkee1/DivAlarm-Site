@@ -1,0 +1,78 @@
+.guide-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.25rem;
+  margin-top: 1rem;
+}
+.guide-nav a, .guide-options a, .guide-video a {
+  text-underline-offset: .2em;
+}
+.grid { grid-template-areas: "setup test"; }
+.path-col { grid-area: test; min-width: 0; }
+.setup-col { grid-area: setup; min-width: 0; }
+#pc-setup, #connection-test, #keyword-options { scroll-margin-top: 16px; }
+.setup-col > h2, .guide-options > h2 {
+  margin: 0 0 24px;
+  font-size: clamp(23px, 3vw, 30px);
+  line-height: 1.25;
+  letter-spacing: -.02em;
+}
+.step h3, .guide-options h3 {
+  margin: 1px 0 8px;
+  font-size: 19px;
+  line-height: 1.35;
+}
+.guide-examples, .guide-video {
+  margin-top: 10px;
+  padding: 0 14px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-m);
+  background: var(--panel);
+}
+.guide-examples summary, .guide-video summary, .troubleshooting summary {
+  padding: 10px 0;
+  color: var(--signal);
+  cursor: pointer;
+  font-weight: 600;
+}
+.guide-examples summary::marker, .guide-video summary::marker, .troubleshooting summary::marker {
+  color: var(--muted);
+}
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: 14px;
+  padding: 6px 0 14px;
+}
+.example-grid figure { margin: 0; min-width: 0; }
+.example-grid a { display: block; }
+.example-grid img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 280px;
+  border-radius: var(--radius-s);
+}
+.example-grid figcaption { margin-top: 5px; font-size: 13px; color: var(--muted); }
+.guide-player:not(:empty) {
+  width: min(100%, 270px);
+  aspect-ratio: 9 / 16;
+  margin: 4px auto 12px;
+}
+.guide-player iframe { display: block; width: 100%; height: 100%; border: 0; }
+.guide-video a { display: inline-block; margin-bottom: 12px; font-size: 14px; }
+.troubleshooting { margin-top: 8px; }
+.troubleshooting ul { margin-top: 0; padding-inline-start: 1.3rem; }
+.troubleshooting li + li { margin-top: 6px; }
+.guide-options {
+  margin-top: 26px;
+  padding-top: 30px;
+  border-top: 1px solid var(--rule);
+}
+.guide-options article + article { margin-top: 26px; }
+.guide-options p { margin: 0 0 10px; }
+.guide-options .manual-links { margin-top: 20px; }
+@media (max-width: 900px) {
+  .grid { grid-template-areas: "test" "setup"; }
+}

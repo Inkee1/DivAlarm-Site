@@ -70,6 +70,7 @@
     
     .manual-section {
       margin-bottom: 4rem;
+      scroll-margin-top: 84px;
     }
     .manual-section h2 {
       font-size: 2.2rem;
@@ -290,7 +291,8 @@
 <main class="manual-container" id="main">
 <a class="back-link" href="user-manual.html">← Back to User Manual</a>
 <h1 class="manual-title">Keyword Alarm Guide for DivAlarm</h1>
-<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">Choose phone notification keywords or webhook keywords, then use your saved rules for alarms, signal combinations, and exchange auto-orders.</p>
+<p style="margin-bottom: 2rem; color: rgba(248, 250, 252, 0.85); font-size: 1.15rem;">Choose keywords from phone notifications or TradingView webhook messages. You can use the same rules for alarms, signal combinations, and exchange auto-orders.<br/>
+<a class="da-link" href="../en/tradingview-connect.html?lang=en" hreflang="en">TradingView connection test &amp; PC setup</a></p>
 <!-- Table of Contents -->
 <div class="toc">
 <h3>📋 Table of Contents</h3>
@@ -306,7 +308,7 @@
 <!-- Keyword Source Section -->
 <div class="manual-section" id="keyword-source">
 <h2>Choose a Keyword Source</h2>
-<p>Open <strong>Keyword Alarm</strong> and choose an input at the top of the page. Tap <strong>?</strong> beside the selector for help. Both modes share your saved keywords, combinations and alarm settings. Every account can try <strong>5 keyword alarms free, without a card</strong>. <strong>Auto-Order remains Pro-only</strong>.</p>
+<p>Open <strong>Keyword Alarm · Auto Orders</strong> and choose an input at the top of the page. Tap <strong>?</strong> beside the selector for help. Both modes share your saved keywords, combinations and alarm settings. Every account can try <strong>5 keyword alarms free, without a card</strong>. <strong>Auto-Order remains Pro-only</strong>.</p>
 <div class="highlight"><p><strong>5 free executions per account:</strong> Phone notification keywords, webhook keywords and combined alarms share one lifetime allowance. A use is counted when a matching alarm is successfully scheduled on your phone. Unmatched messages, duplicate deliveries and failed scheduling do not use a credit. Internet access is needed to verify free uses.</p><p>The allowance is <strong>separate from the 7 general alarms</strong>, does not reset after reinstalling, and does not include automatic orders. Your rules stay saved after all 5 uses; choose <strong>Pro</strong> to continue.</p></div>
 <h3>Phone notification keywords (Android)</h3>
 <ol>
@@ -367,7 +369,7 @@
 <p class="video-links"><a href="https://youtube.com/shorts/T4NzR8Pnv9A?feature=share" rel="noopener noreferrer" target="_blank">Open on YouTube</a></p>
 </div>
 </div>
-<div class="video-toggle">
+<div class="video-toggle" id="exchange-api-setup" style="scroll-margin-top: 84px;">
 <h3>
 <button aria-controls="qs-exchange-api" aria-expanded="true" class="video-toggle-btn" type="button">
             Exchange API Key Setup
@@ -400,29 +402,31 @@
 <h2>🔔 Keyword Rules and TradingView Webhook Setup</h2>
 <p>In <strong>Keyword Alarm</strong>, add the text you want to match to <strong>Keyword Include</strong>. Phone mode checks notification titles and bodies; webhook mode checks incoming webhook text. <a href="#keyword-source" style="color: #00d4ff;">Choose your source</a> before testing a rule.</p>
 <h3>Adding a Webhook in TradingView</h3>
-<p>Select <strong>Webhook keywords</strong> in DivAlarm and copy the webhook URL shown on that page.</p>
+<p>Select <strong>Webhook keywords</strong>, add <code>AA</code> to <strong>Keyword Include</strong>, and turn on its alarm. Leave auto-orders off for any keyword rule or combination that matches AA while testing a real TradingView alert. Expand <strong>Webhook URL</strong> to copy your personal URL. Tap <strong>?</strong> beside the URL heading for the illustrated steps.</p>
 <img alt="TradingView Add Alert" src="../images/K-146_-_복사본_tv.png" style="max-width: 600px;"/>
 <p>Right-click on the indicator you want to receive signals from in TradingView and click "Add Alert on ~".</p>
 <img alt="Webhook URL Setting" src="../images/K-140_-_복사본_tv.png" style="max-width: 600px;"/>
 <img alt="Notification Settings" src="../images/image_tv.png" style="max-width: 600px;"/>
-<p>In the "Notifications" section, check "Webhook URL" and paste the address copied from the app in the input field below.</p>
-<p>Once set, this will be automatically checked/filled for other alerts.</p>
+<p>Open <strong>Notifications</strong>, enable <strong>Webhook URL</strong>, paste your personal URL, and select <strong>Apply</strong>.</p>
+<p>You can reuse the same URL for other alerts. If a new alert already has your URL, check that the box is enabled and the address is correct. Check each existing alert individually.</p>
+<p>For a one-time price test, choose <strong>Price → Outside Channel</strong> and <strong>Once only</strong>. Set both bounds to one side of the current price. For example, if the price is 100, use a lower bound of 98 and an upper bound of 99.</p>
 <img alt="Message Settings" src="../images/image%201_tv.png" style="max-width: 680px;"/>
-<p>In the "Messages" section under "Message", add any keyword you want (e.g., "AAA").</p>
-<p>Click "Create" to schedule the TradingView alert.</p>
+<p>In <strong>Message</strong>, enter <code>AA Webhook test</code> or add <code>AA</code> to your existing message, then apply the change. For your own alerts, use the keyword you registered in DivAlarm.</p>
+<p>Select <strong>Create</strong>. When the condition is met, check the TradingView alert log and the alarm on your phone.</p>
 <h3>Receiving TradingView Alerts in the App</h3>
 <img alt="App Keyword Settings" src="../images/K-143_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>Keep <strong>Webhook keywords</strong> selected and add the keyword (e.g., "AAA") to <strong>Keyword Include</strong>. When the TradingView alert message contains that keyword, DivAlarm applies the rule's configured alarm and order settings.</p>
+<p>Keep <strong>Webhook keywords</strong> selected. A message containing <code>AA</code> triggers the alarm you enabled for that keyword. Turn off the AA test rule when you finish.</p>
+<p>To check delivery from the server to your Android phone, <a class="da-link" href="../en/tradingview-connect.html?lang=en#connection-test">send a test signal from the connection test</a>. This diagnostic skips keyword rules and exchange orders and uses none of your free alarm allowance.</p>
 </div>
 <!-- Auto-Order Section -->
 <div class="manual-section" id="auto-order">
 <h2>🤖 Auto-Order with Keyword Alarms</h2>
 <img alt="Auto-Order Settings" src="../images/K-144_-_복사본_tv.png" style="max-width: 500px;"/>
-<p>With <strong>Pro</strong>, you can attach auto-orders to individual keyword rules or combinations. Matching phone notifications, webhook messages in webhook mode, and eligible DivAlarm signals can trigger the configured orders. The example below uses TradingView webhooks.</p>
+<p>With <strong>Pro</strong>, you can attach auto-orders to individual keyword rules or combinations. Keep auto-orders off for alarm-only rules. When enabled, a match from your selected source or an eligible DivAlarm signal can place a real order on your exchange.</p>
 <img alt="Exchange API Settings" src="../images/image%202_tv.png" style="max-width: 500px;"/>
 <div class="highlight">
-<p>Supported exchanges for auto-orders: <strong>Binance, ByBit, OKX, Bitget, Gate</strong></p>
-<p>You must enter API keys in the app Settings page.</p>
+<p>Enter your exchange API keys under <strong>Settings → Auto Order Settings</strong>. The Android app supports Binance, Bybit, OKX, Bitget, Gate, and Bitunix.</p>
+<p>Tap the <strong>cart</strong> at the right of the keyword row to choose the exchange, symbol, and order settings, then enable auto-orders for that rule. If you use Bitget, check the two required permissions in <a class="da-link" href="#exchange-api-setup">Exchange API Key Setup</a>.</p>
 </div>
 </div>
 <!-- DivAlarm Keywords Section -->
@@ -445,24 +449,24 @@
 </ul>
 <h3>Examples</h3>
 <div class="code-block">
-<p><code>"@D@BTC@Bull@forming@5m@1m"</code></p>
+<p><code>@D@BTC@Bull@forming@5m@1m</code></p>
 <p class="desc">→ RSI Divergence, BTCUSDT.P, title contains "Bull", Forming, main 5m, sub 1m</p>
 </div>
 <div class="code-block">
-<p><code>"@D@ETH@Bear@confirmed@15m"</code></p>
+<p><code>@D@ETH@Bear@confirmed@15m</code></p>
 <p class="desc">→ RSI Divergence, ETHUSDT.P, title contains "Bear", Confirmed, 15m, no sub timeframe</p>
 </div>
 <img alt="Keyword Example" src="../images/image%204_tv.png" style="max-width: 500px;"/>
 <div class="code-block">
-<p><code>"@E@BTC@Sell@30m"</code> <span class="desc">→ Extra Indicator, BTC coin, title contains "Sell", 30m</span></p>
-<p><code>"@E@BTC@Buy@1h"</code></p>
-<p><code>"@E@ETH@Breakout@15m"</code></p>
-<p><code>"@E@BTC@Breakdown@5m"</code></p>
-<p><code>"@E@BTC@Near Support@1m"</code></p>
-<p><code>"@E@BTC@Near Resistance@5m"</code></p>
-<p><code>"@E@BTC@EMA50@1h"</code></p>
-<p><code>"@P@BTC@Up"</code> <span class="desc">→ Price alert, BTC coin, title contains "Up"</span></p>
-<p><code>"@P@ETH@Down"</code></p>
+<p><code>@E@BTC@Sell@30m</code> <span class="desc">→ Extra Indicator, BTC coin, title contains "Sell", 30m</span></p>
+<p><code>@E@BTC@Buy@1h</code></p>
+<p><code>@E@ETH@Breakout@15m</code></p>
+<p><code>@E@BTC@Breakdown@5m</code></p>
+<p><code>@E@BTC@Near Support@1m</code></p>
+<p><code>@E@BTC@Near Resistance@5m</code></p>
+<p><code>@E@BTC@EMA50@1h</code></p>
+<p><code>@P@BTC@Up</code> <span class="desc">→ Price alert, BTC coin, title contains "Up"</span></p>
+<p><code>@P@ETH@Down</code></p>
 </div>
 </div>
 <!-- Combination Alerts Section -->
@@ -478,7 +482,7 @@
           • 'Alert with keyword A' AND<br/>
           • 'Alert with keyword B' both arrive, OR<br/>
           • 'Alert with keyword C' arrives</p>
-<p>Enter <code>(1&amp;2)|3</code> in 'Alarm Combination' and <code>1h 30m</code> in 'Time Combination'.</p>
+<p>Enter <code>(1&amp;2)|3</code> in <strong>Alarm Combination</strong> and <code>1h 30m</code> in <strong>Time Window</strong>.</p>
 </div>
 </div>
 <div class="highlight">
